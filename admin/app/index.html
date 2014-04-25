@@ -16,12 +16,12 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
     <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/hub.bmm/dist/styles/bmm.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap-combined.css">
+    <link rel="stylesheet" href="common/styles/bmm.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -73,7 +73,6 @@
     <script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
     <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/hub.bmm/dist/bmm.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
@@ -86,22 +85,24 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/welcome.js"></script>
-        <script src="scripts/controllers/album.js"></script>
-        <script src="scripts/controllers/current.js"></script>
-        <script src="scripts/controllers/track.js"></script>
-        <script src="scripts/controllers/contributors.js"></script>
-        <script src="scripts/controllers/permissions.js"></script>
-        <script src="scripts/controllers/track_bible.js"></script>
-        <script src="scripts/controllers/track_uploader.js"></script>
-        <script src="scripts/controllers/image_uploader.js"></script>
-        <script src="scripts/controllers/album_uploader.js"></script>
-        <script src="scripts/controllers/search.js"></script>
-        <script src="scripts/controllers/ftp_linker.js"></script>
-        <script src="scripts/controllers/contributor_uploader.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="common/bmm.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/welcome.js"></script>
+    <script src="scripts/controllers/album.js"></script>
+    <script src="scripts/controllers/current.js"></script>
+    <script src="scripts/controllers/track.js"></script>
+    <script src="scripts/controllers/contributors.js"></script>
+    <script src="scripts/controllers/permissions.js"></script>
+    <script src="scripts/controllers/track_bible.js"></script>
+    <script src="scripts/controllers/track_uploader.js"></script>
+    <script src="scripts/controllers/image_uploader.js"></script>
+    <script src="scripts/controllers/album_uploader.js"></script>
+    <script src="scripts/controllers/search.js"></script>
+    <script src="scripts/controllers/ftp_linker.js"></script>
+    <script src="scripts/controllers/contributor_uploader.js"></script>
+    <!-- endbuild -->
+
 </body>
 </html>

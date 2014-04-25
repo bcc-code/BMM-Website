@@ -11,7 +11,6 @@
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
     "jplayer": "~2.5.4",
-    "hub.bmm": "*",
     "angular-touch": "~1.2.14",
     "fastclick": "~1.0.1"
   },

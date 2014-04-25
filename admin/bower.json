@@ -10,7 +10,6 @@
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
     "jplayer": "~2.5.4",
-    "hub.bmm": "*",
     "angular-strap": "latest",
     "jqueryui": "~1.10.3",
     "jqueryui-touch-punch": "*",

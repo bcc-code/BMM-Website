@@ -306,6 +306,18 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      client: {
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        dest: '../client/app/common',
+        src: '**/*'
+      },
+      admin: {
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        dest: '../admin/app/common',
+        src: '**/*'
       }
     },
 
@@ -403,7 +415,9 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'copy:client',
+    'copy:admin'
   ]);
 
   grunt.registerTask('default', [
