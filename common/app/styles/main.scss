@@ -1,0 +1,91 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+@import 'bower_components/sass-bootstrap/lib/bootstrap';
+
+.bmm-lib-navigator {
+	width: 100%;
+	list-style: none;
+	overflow: auto;
+	padding: 1em;
+	background-color: #333;
+	li {
+		padding: 0.4em;
+		float: left;
+		border-radius: 0.3em;
+		background-color: #ddd;
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			color: black;
+		}
+	}
+	li:hover {
+		background-color: #fff;
+	}
+}
+
+.bmm-full-size {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.bmm-lib-view {
+	//margin: 2em;
+}
+
+.bmm-lib-directives {
+	width: 100%;
+	list-style: none;
+	overflow: auto;
+	padding: 2em;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 0.7em;
+	margin: 0 auto 2em;
+	li {
+		padding: 2em;
+		margin: 0 1em 1em 0;
+		float: left;
+		border-radius: 0.3em;
+		background-color: #ddd;
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			color: black;
+		}
+	}
+	li:hover {
+		background-color: #fff;
+	}
+}
+
+.bmm-groups {
+	background: rgba(19, 95, 230, 0.53);
+	li {
+		background: rgba(230, 240, 114, 0.94)
+	}
+}
+
+.bmm-units {
+	background: rgba(155, 226, 89, 0.53);
+	li {
+		background: rgba(29, 118, 231, 0.53);
+	}
+}
+
+.bmm-lib-preview {
+	position: relative;
+	margin: 2em;
+	height: 45em;
+	background-color: white;
+}
+
+.bmm-lib-api-paragraph {
+	position: relative;
+	margin: 1.5em 2em;
+	padding: 1em 2em;
+	min-height: 2em;
+	background-color: #3D6172;
+	color: #ddd;
+}
