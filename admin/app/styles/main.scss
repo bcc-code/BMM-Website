@@ -1,0 +1,17 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+body {
+	padding: 0 !important;
+}
+
+.bmm-logo {
+	background-image: url(../images/svg/logo_backend.svg);
+	width: 7.5em;
+}
+
+input {
+  width: 7em;
+}

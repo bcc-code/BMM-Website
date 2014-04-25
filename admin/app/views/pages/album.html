@@ -1,0 +1,142 @@
+<div class="bmm-floatbox">
+
+	<div class="bmm-size-full">
+		{{translation.backend.lastEditBy}}:
+	</div>
+
+	<div class="bmm-float-right bmm-no-padding">
+		<div class="bmm-information">{{information}}</div>
+		<button ng-click="delete()">{{translation.backend.delete}}</button>
+		<button ng-click="save()">{{translation.backend.save}}</button>
+	</div>
+
+	<div class="bmm-size-full">
+		<input class="bmm-input-title"
+			   ng-model="title"
+			   ng-change="change()"
+			   placeholder="{{translation.backend.albumTitle}}"
+			   >
+	</div>
+
+	<div ng-controller="AlbumUploaderCtrl" class="bmm-album-image">
+		<input type="file" ng-file-select><button ng-click="removeCover()">{{translation.backend.delete}}</button>
+		<img src="{{coverImage | bmmCover:'album'}}" width="100%" height="100%"></img>
+	</div>
+
+	<div>
+		<b>{{translation.backend.bmmid}}</b><br>
+		<input class="bmm-size-medium"
+			   type="text"
+			   ng-model="bmmId"
+			   ng-change="change()"
+			   placeholder="{{translation.backend.bmmid}}"
+			   >
+	</div>
+
+	<div>
+		<b>{{translation.backend.publishdate}}</b><br>
+
+		<input class="bmm-size-medium"
+			   type="text"
+			   bs-datepicker
+			   data-autoclose="1"
+			   data-date-format="dd.MM.yyyy"
+			   min-view="date"
+			   ng-model="datePublished"
+			   ng-change="change()"
+			   placeholder="{{translation.backend.chooseDate}}"
+			   ><br>
+
+		<input class="bmm-size-medium"
+			   type="text"
+			   bs-timepicker
+			   data-time-format="HH:mm"
+			   data-autoclose="1"
+			   ng-model="datePublished"
+			   ng-change="change()"
+			   placeholder="{{translation.backend.chooseTime}}"
+			   >
+	</div>
+
+	<div>
+		<b>{{translation.backend.Language}} ({{language}})</b><br>
+		<select ng-model="language"
+				class="bmm-size-medium"
+				ng-change="languageSelect()"
+				ng-options="option.value as option.name for option in translations">
+		</select><br>
+		<select class="bmm-size-medium"
+				ng-model="visible"
+				ng-change="change()">
+			<option value="true">{{translation.backend.published}}</option>
+			<option value="false">{{translation.backend.notPublished}}</option>
+		</select><br>
+		<input type="submit"
+			   ng-click="removeLanguage()"
+			   value="{{translation.backend.removeTranslation}}"
+			   ng-disabled="languageDisableEdit"
+			   class="bmm-size-medium"
+		/><br>
+		<input type="submit"
+			   ng-click="setOriginal()"
+			   value="{{translation.backend.chooseAsOriginalLanguage}}"
+			   ng-disabled="languageDisableEdit"
+			   class="bmm-size-medium"
+		/>
+	</div>
+
+	<div>
+		<b>{{translation.backend.languagesAvailable}}</b><br>
+		<select ng-model="available"
+				class="bmm-size-medium"
+				ng-options="option.value as option.name for option in availables">
+		</select><br>
+		<input type="submit"
+			   ng-click="addLanguage()"
+			   value="{{translation.backend.addLanguage}}"
+			   class="bmm-size-medium"
+		/>
+	</div>
+
+	<div>
+		<b>{{translation.backend.publishAlbum}}</b><br>
+		<select class="bmm-size-medium"
+				ng-model="published"
+				ng-change="change()">
+			<option value="true">{{translation.backend.published}}</option>
+			<option value="false">{{translation.backend.notPublished}}</option>
+		</select>
+	</div>
+
+	<div class="bmm-border"></div>
+
+	<form class="bmm-size-full">
+		<div>
+			<b>{{translation.backend.tags}}</b> ({{translation.backend.englishOnly}})<br>
+			<input ng-model="tag" type="text" typeahead="tag for tag in tagSuggestions | filter:$viewValue | limitTo:8" class="bmm-suggestions"/>
+			<input type="submit" ng-click="addTag(tag);" value="{{translation.backend.add}}">
+			<button ng-click="generateTitles();">Generate title based on tags</button>
+		</div>
+	</form>
+
+	<div>
+		<ul>
+			<li ng-repeat="tag in tags">
+				{{tag}}
+				<button ng-click="removeTag($index);">{{translation.backend.delete}}</button>
+			</li>
+		</ul>
+	</div>
+
+	<div class="bmm-border"></div>
+
+	<div class="bmm-size-full">
+		<b>{{translation.backend.description}}</b>
+		<textarea style="width: 100%; min-height: 10em;"
+				  ng-model="description"
+				  ng-change="change()"
+				  placeholder="{{translation.backend.albumDescription}}"
+		></textarea>
+	</div>
+
+</div>

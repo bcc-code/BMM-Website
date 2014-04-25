@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <!-- stylesheet link (common for all widgets) --> <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" /> <!-- end stylesheet link -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" value="notranslate">
+    <title>bmm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/jqueryui/themes/eggplant/jquery-ui.css" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
+    <link rel="stylesheet" href="bower_components/hub.bmm/dist/styles/bmm.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="bmmApp">
+
+    <!-- topbar widget --> <script src="https://widgets.brunstad.org/TopBar/js?mode=public" type="text/javascript" ></script> <!-- end topbar widget -->
+
+    <!-- Add your site or application content here -->
+    <div class="bmm-fullsize" ng-include="'views/main.html'"></div>
+
+    <!--[if lt IE 10]>
+        <div class="bmm-browser-unsuported">
+            <h1>OOoops!</h1>
+            <h2>Seems like your browser is out of date</h2>
+            <h2>Please use one of the following browsers to get full access:</h2><br><br>
+
+            <a href="https://www.google.com/chrome"><img src="http://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"></a>
+            <a href="http://www.mozilla.org/firefox"><img src="https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300-rw"></a>
+            <a href="http://www.opera.com/"><img src="http://blog.rbutr.com/wp-content/uploads/2014/02/Opera-icon-high-res.png"></a>
+        </div>
+    <![endif]-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-50359571-1', 'brunstad.org');
+        ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
+    <script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/hub.bmm/dist/bmm.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/welcome.js"></script>
+        <script src="scripts/controllers/music.js"></script>
+        <script src="scripts/controllers/speeches.js"></script>
+        <script src="scripts/controllers/video.js"></script>
+        <script src="scripts/controllers/audiobooks.js"></script>
+        <script src="scripts/controllers/archive.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/playlist.js"></script>
+        <script src="scripts/controllers/album.js"></script>
+        <script src="scripts/controllers/track.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

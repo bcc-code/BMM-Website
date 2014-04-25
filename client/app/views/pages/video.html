@@ -1,0 +1,33 @@
+<div class="bmm-latest-video">
+<h2>{{translation.page.videos.latestVideos}}</h2>
+<ul>
+	<li>
+		<div ng-repeat="video in firstVideos"
+             class="bmm-latest video draggable latest"
+             id="{{video.id}}"
+             language="{{video.language}}"
+             ng-click="play(firstVideos, $index);">
+			<div class="bmm-latest-bullet">{{$index+1}}</div>
+			<div>
+				<div title="{{video.albumTitle}}"
+					class="bmm-latest-thumbnail" style="
+					background-image: url({{video.cover | bmmCover:'video'}});
+				"></div>
+			</div>
+			<div title="{{video.title}}" class="bmm-latest-title">{{video.title}}</div>
+			<div title="{{video.performers}}" class="bmm-latest-interprets">{{video.performers}}</div>
+			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class="bmm-margin-top">
+	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
+		<div class="album-latest-image" style="
+				background-image: url({{album.cover}});
+			"></div>
+		<div class="album-latest-title">{{album.title}}</div>
+		<div class="album-latest-about"></div>
+	</div>
+</div>

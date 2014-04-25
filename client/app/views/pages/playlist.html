@@ -1,0 +1,46 @@
+<h2>{{title}}</h2>
+<!--h3 ng-show="podcast.isset">
+	<a ng-href="{{podcast.itunes}}">{{translation.playlist.addToItunes}}</a>
+</h3-->
+<div ng-show="podcast.isset">
+	{{translation.playlist.copyPodcastLink}}: 
+	<input type="text" value="{{podcast.link}}">
+</div>
+<br ng-show="podcast.isset">
+<br ng-show="podcast.isset">
+<!--a title="Download ZIP" class="bmm-track-download bmm-zip" ng-show="zip.show" download ng-href="{{zip.url}}"></a--><br>
+<b>{{translation.playlist.content}};</b> ( {{tracks}} {{translation.playlist.tracks}}; {{translation.playlist.totalDuration}}: {{duration | bmmTime}} )
+<div bmm-playlist>
+	<table>
+		
+		<thead>
+			<tr>
+				<th ng-show="private"></th>
+				<th class="bmm-large-only">{{translation.playlist.nr}}</th>
+				<th>{{translation.playlist.title}}</th>
+				<th></th>
+				<th>{{translation.playlist.duration}}</th>
+				<th class="bmm-large-only">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody ui-sortable="sortableOptions" ng-model="playlist">
+			<tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist"
+			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
+				<td ng-show="private" class="sort bmm-sort"></td>
+				<td class="bmm-large-only drag">{{$index+1}}</td>
+				<td title="{{track.combinedTitle}}" class="drag" ng-click="play(playlist, $index);">{{track.combinedTitle | bmmMin:40}}</td>
+				<td title="{{track.albumTitle}}" class="drag">{{track.albumTitle | bmmMin:20}}</td>
+				<td class="drag">{{track.duration | bmmTime}}</td>
+				<td class="bmm-large-only"><div class="bmm-flag" ng-class="{'flags-{{track.language}}': track.language!=mediaLanguage}"></div></td>
+				<td>
+					<div bmm-track-favorite></div>
+					<a download bmm-track-download ng-href="{{track.file}}?download=1"></a>
+					<div ng-show="track.video" bmm-player-video ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist, $index);"></div>
+					<div class="bmm-remove-playlist" ng-show="private" ng-click="remove($index)"</div>
+				</td>
+			</tr>
+		</tbody>
+
+	</table>
+</div>

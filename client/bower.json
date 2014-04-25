@@ -1,0 +1,25 @@
+{
+  "name": "bmm",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "1.2.6",
+    "json3": "~3.2.6",
+    "es5-shim": "~2.1.0",
+    "jquery": "~1.10.2",
+    "sass-bootstrap": "~3.0.2",
+    "angular-resource": "1.2.6",
+    "angular-sanitize": "1.2.6",
+    "angular-route": "1.2.6",
+    "jplayer": "~2.5.4",
+    "hub.bmm": "*",
+    "angular-touch": "~1.2.14",
+    "fastclick": "~1.0.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.6",
+    "angular-scenario": "1.2.6"
+  },
+  "resolutions": {
+    "angular": "1.2.6"
+  }
+}

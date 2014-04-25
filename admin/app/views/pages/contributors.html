@@ -1,0 +1,10 @@
+<div class="bmm-floatbox">
+
+	<h2>{{contributor.name}}</h2>
+
+	<div ng-controller="ContributorUploaderCtrl" class="bmm-album-image">
+		<input type="file" ng-file-select><button ng-click="removeCover()">{{translation.backend.delete}}</button>
+		<img src="{{coverImage | bmmCover:type}}" width="100%" height="100%"></img>
+	</div>
+
+</div>

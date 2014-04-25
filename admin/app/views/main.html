@@ -1,0 +1,125 @@
+
+<div class="bmm-background-right"></div>
+<div class="bmm-background-left"></div>
+
+<div bmm-container-main class="bmm-player-target" ng-controller="MainCtrl">
+
+  <div class="bmm-container-header main" ng-class="{'bmm-small': miniScreen}">
+    <div class="bmm-wrapper">
+
+      <a ng-href="#" class="bmm-logo"></a> <p style=" font-size: 0.8em; color: white; float: left">BETA 1.0.6</p>
+
+      <div class="bmm-search">
+
+        <form ng-submit="go('/search/'+bmm.term);" class="bmm-search">
+
+          <input ng-model="bmm.term" type="text" placeholder="{{translation.general.search}}"/>
+          <input ng-href="#search/" type="submit" value=""/>
+
+        </form>
+
+      </div>
+
+      <div class="bmm-navigator-main">
+
+        <ul>
+
+          <li><a ng-href="#ftp_linker">Files from FTP</a></li>
+          <li><a ng-href="#contributors">{{translation.backend.menu.contributors}}</a></li>
+          <li><a ng-href="#permissions">{{translation.backend.menu.permission}}</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bmm-wrapper bmm-main-container" ng-class="{'bmm-small': miniScreen}">
+
+    <div ng-hide="contributors" class="bmm-navigator-backend" ng-class="{'bmm-small': miniScreen}">
+
+      <div class="bmm-navigator-switch"
+         ng-class="{'bmm-small': miniScreen}"
+         ng-click="miniScreen=!miniScreen;"
+      >
+      </div>
+
+      <div class="bmm-container-header bmm-small"
+       ng-class="{'bmm-small': miniScreen}">
+        
+        <div class="bmm-wrapper">
+
+          <a ng-href="#" class="bmm-logo"></a> <p style="font-size: 0.8em; color: white; float: left">BETA 1.0.6</p>
+
+          <div class="bmm-search">
+
+            <form ng-submit="go('/search/'+bmm.term);" class="bmm-search">
+
+              <input ng-model="bmm.term" type="text" placeholder="{{translation.general.search}}"/>
+              <input ng-href="#search/" type="submit" value=""/>
+
+            </form>
+
+          </div>
+
+          <div class="bmm-navigator-main">
+
+            <ul>
+              <li><a ng-href="#ftp_linker">Files from FTP</a></li>
+              <li><a ng-href="#contributors">{{translation.backend.menu.contributors}}</a></li>
+              <li><a ng-href="#permissions">{{translation.backend.menu.permission}}</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+      <h1>{{translation.backend.menu.archive}}</h1>
+      <div class="bmm-margin-top"
+        data-admin="true"
+        data-bmm-lib-app="true"
+        data-bmm-treeview="roleList"
+        data-tree-id="tree"
+        data-node-id="roleId"
+        data-node-label="roleName"
+        data-node-children="children" >
+      </div>
+
+    </div>
+
+    <div ng-show="contributors" class="bmm-navigator-backend" ng-class="{'bmm-small': miniScreen}">
+
+      <h1>Contributors</h1>
+        <ul>
+          <li class="bmm-contributor">
+            <b>Filter:</b>
+          </li>
+          <li class="bmm-contributor">
+            <input type="text" ng-model="searchFilter">
+          </li>
+          <li class="bmm-contributor" ng-repeat="contributor in _contributors | filter:searchFilter">
+            <a ng-href="#contributors/{{contributor.id}}">{{contributor.name}}</a>
+          </li>
+          <li class="bmm-contributor" ng-show="loading">
+            Laster...
+          </li>
+        </ul>
+
+    </div>
+
+    <div class="bmm-view" ng-class="{'bmm-small': miniScreen}">
+
+      <div class="bmm-navigator-toggle load"></div>
+
+      <ng-view></ng-view>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div bmm-player-controller>
+</div>

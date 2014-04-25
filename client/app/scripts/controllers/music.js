@@ -1,0 +1,184 @@
+'use strict';
+
+angular.module('bmmApp')
+  .controller('MusicCtrl', function (
+    $scope,
+    $timeout,
+    bmmApi,
+    bmmFormatterTrack,
+    bmmFormatterAlbum,
+    bmmUser
+  ) {
+
+    $('.bmm-view').off('scrollBottom');
+
+    var albumFrom = 0, loading=true, end=false, loadAmount=84;
+
+    $('.bmm-view').on('scrollBottom', function() {
+
+      if (!loading&&!end) {
+
+        $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+
+        var cnt = 0;
+        loading = true;
+
+        //LATEST AUDIO ALBUMS
+        bmmApi.albumLatest({
+          from: albumFrom,
+          size: loadAmount,
+          'content-type': ['song'],
+          'media-type': ['audio']
+        }, bmmUser.mediaLanguage).done(function(data) {
+
+          $.each(data, function() {
+
+            $scope.latestAlbums.push(bmmFormatterAlbum.resolve(this));
+            albumFrom++;
+            cnt++;
+
+          });
+
+          $scope.$apply();
+
+          loading = false;
+          $('.bmm-loading').remove();
+          if (cnt<loadAmount) { end = true; }
+
+        });
+
+      }
+
+    });
+
+    //LATEST MUSIC
+    bmmApi.trackLatest({
+      size: 10,
+      'content-type': ['song'],
+      'media-type': ['audio']
+    }, bmmUser.mediaLanguage).done(function(data) {
+
+      var left = [], right = [];
+
+      $.each(data, function(index) {
+
+        if (index<5) {
+          left.push(bmmFormatterTrack.resolve(this));
+        } else {
+          right.push(bmmFormatterTrack.resolve(this));
+        }
+
+      });
+
+      $scope.$apply(function() {
+        $scope.latestMusicLeft = left;
+        $scope.latestMusicRight = right;
+        makeDraggable();
+      });
+
+    });
+
+    //LATEST AUDIO ALBUMS
+    bmmApi.albumLatest({
+      size: loadAmount,
+      'content-type': ['song'],
+      'media-type': ['audio']
+    }, bmmUser.mediaLanguage).done(function(data) {
+
+      var albums=[];
+
+      $.each(data, function() {
+
+        albums.push(bmmFormatterAlbum.resolve(this));
+        albumFrom++;
+
+      });
+
+      $scope.$apply(function() {
+        $scope.latestAlbums = albums;
+      });
+
+      loading=false;
+
+    });
+
+    $scope.contributors = [];
+
+    //4 will randomly be selected and shown
+    var randomBrothers = [
+      65224, //Jermund Pedersen
+      59268, //Astrid Reinhardt
+      45275, //Gjermund Frivold
+      81631, //Rebekka Frivold
+      75152, //Elisa Frivold
+      59596, //Oliver Tangen
+      43806, //Alise Helgheim
+      64808, //Pia Veronica Jacobsen
+      80142, //Pia Gjøsund
+      41644, //Dag Helge Bernhardsen
+      60455, //Atle Johnsen
+      51294, //Hanne Trinkle
+      65006, //Ingrid Holm Andersen
+      41621, //Jostein Østmoen
+      49935, //Karethe Opitz
+      50442, //Kristiane Opitz
+      50440, //Linn Helgheim
+      84408, //Liv Ragnhild Foltland
+      61350, //Mads Jacobsen
+      60845, //Marte Hannson
+      60844  //Vegar Sandberg
+    ];
+
+    //Randomize function
+    var shuffle = function(o) {
+      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x){}
+      return o;
+    };
+
+    //Catch 4 contributors
+    randomBrothers = shuffle(randomBrothers);
+    $.each(randomBrothers, function(index) {
+      bmmApi.contributorIdGet(this).done(function(data) {
+        $scope.contributors.push(data);
+        $scope.$apply();
+      });
+      if (index===3) {
+        return false;
+      }
+    });
+
+    var makeDraggable = function() {
+
+      $timeout(function() {
+
+        $('.draggable').draggable({
+          helper: 'clone',
+          appendTo: 'body',
+          revert: 'invalid',
+          scope: 'move',
+          zIndex: '1000',
+          distance: 20,
+          cursorAt: {
+            left: 20
+          }
+        });
+
+        $('body').find('.bmm-playlist-private').droppable({
+          scope: 'move',
+          activeClass: 'active',
+          hoverClass: 'hover',
+          tolerance: 'pointer',
+          drop: function(ev, ui) {
+
+            bmmApi.userTrackCollectionLink($(this).attr('id'), [
+              ui.draggable.attr('id')
+            ]);
+
+          }
+        });
+
+      });
+
+    };
+
+  });

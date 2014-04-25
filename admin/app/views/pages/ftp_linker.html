@@ -1,0 +1,68 @@
+
+<div class="bmm-floatbox">
+
+	<div>
+		Her kobles filer som er lastet opp via FTP til track
+	</div>
+
+</div>
+
+<h2>Filer som venter på godkjenning</h2>
+<div class="bmm-playlist">
+	<table ng-repeat="(index, file) in groups.guessed">
+		<thead>
+			<tr>
+				<th><b>{{file.link}}</b></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="color: #333!important;" ng-repeat="track in file.tracks" ng-class="{even: $even, odd: $odd}">
+				<td>{{track.albumTitle}}</td>
+				<td>{{track.combinedTitle}}</td>
+				<td>{{track.language}}</td>
+				<td>{{track.date | date:'dd.MM.yyyy'}}</td>
+				<td><button ng-click="link(file.link, track, index);">Koble til</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h2>Filer som ikke kan identifiseres med noen spor</h2>
+<div class="bmm-playlist">
+	<table>
+		<thead>
+			<tr>
+				<th><b>Fil sti</b></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="color: #333!important;" ng-repeat="file in groups.unknown_bmm_id" ng-class="{even: $even, odd: $odd}">
+				<td>{{file}}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h2>Filer med feil BMM ID</h2>
+<div class="bmm-playlist">
+	<table>
+		<thead>
+			<tr>
+				<th><b>Fil sti</b></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="color: #333!important;" ng-repeat="file in groups.unguessable" ng-class="{even: $even, odd: $odd}">
+				<td>{{file}}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

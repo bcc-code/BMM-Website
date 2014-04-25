@@ -1,0 +1,42 @@
+<div class="bmm-thumbnail" style="
+	background-image: url({{mainAlbum.cover}});
+	margin-right: 1em;
+"></div>
+<h2 style="width: auto; margin-right: 1em;">{{mainAlbum.title}}</h2>
+<div style="float: none;">{{mainAlbum.description}}</div>
+
+<ul>
+	<li ng-repeat="playlist in playlists">
+		<h2>{{playlist.title}}</h2>
+		<b>{{translation.playlist.content}};</b> ( {{playlist.count}} {{translation.playlist.tracks}}; {{translation.playlist.totalDuration}}: {{playlist.duration | bmmTime}} )
+		<div bmm-playlist>
+			<table>
+				<thead>
+					<tr>
+						<th class="bmm-large-only">{{translation.playlist.nr}}</th>
+						<th>{{translation.playlist.title}}</th>
+						<th></th>
+						<th>{{translation.playlist.duration}}</th>
+						<th class="bmm-large-only">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody ui-sortable="sortableOptions">
+					<tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist.tracks"
+					  ng-class="{even: $even, odd: $odd, playing: track.playing}">
+						<td class="bmm-large-only drag">{{$index+1}}</td>
+						<td title="{{track.combinedTitle}}" class="drag" ng-click="play(playlist.tracks, $index);">{{track.combinedTitle | bmmMin:40}}</td>
+						<td title="{{track.albumTitle}}" class="drag">{{track.albumTitle | bmmMin:20}}</td>
+						<td class="drag">{{track.duration | bmmTime}}</td>
+                        <td class="bmm-large-only"><div class="bmm-flag" ng-class="{'flags-{{track.language}}': track.language!=mediaLanguage}"></div></td>
+                        <td>
+							<div bmm-track-favorite></div>
+							<a download target="_blank" bmm-track-download ng-href="{{track.file}}"></a>
+							<div ng-show="track.video" bmm-player-video ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist.tracks, $index);"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</li>
+</ul>

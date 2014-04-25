@@ -1,0 +1,173 @@
+<div class="bmm-background-right"></div>
+<div class="bmm-background-left"></div>
+
+<div bmm-container-main class="bmm-player-target" ng-controller="MainCtrl">
+
+<!--temp-->
+<div ng-hide="loadEnd" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgb(31, 156, 98); z-index: 999;"><div class="bmm-logo" style="float: none; margin: 5em auto 0; height: 15em; width: 20%; background-size: 100% auto;"></div><div style="width: 20%; background-position: center center; background-repeat: no-repeat; height: 7em; background-image: url(data:image/gif;base64,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); z-index: 9999; position: relative; margin: 0em auto;"></div></div>
+<!--temp-->
+
+  <div class="bmm-container-header main"
+       ng-class="{'bmm-small': miniScreen}">
+    <div class="bmm-wrapper">
+
+      <a ng-href="#" class="bmm-logo"></a>
+
+      <li class="dropdown bmm-options">
+        <a class="dropdown-toggle flags-{{mediaLanguage}}">
+          {{mediaLanguage | bmmLanguage}}
+        </a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="lang in languages">
+            <a class="flags-{{lang}}"
+               ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <div class="bmm-search">
+
+        <form ng-submit="go('/search/'+bmm.term);" class="bmm-search">
+
+          <input ng-model="bmm.term" type="text" placeholder="{{translation.general.search}}"/>
+          <input ng-href="#search/" type="submit" value=""/>
+
+        </form>
+
+      </div>
+
+      <div class="bmm-navigator-main">
+
+        <ul>
+
+          <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
+          <li><a ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
+          <li><a ng-href="#video">{{translation.menu.main.video}}</a></li>
+          <li><a ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
+          <li><a ng-href="#archive">{{translation.menu.main.archive}}</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bmm-wrapper bmm-main-container" ng-class="{'bmm-small': miniScreen}">
+
+    <div class="bmm-navigator-playlist"
+         ng-class="{'bmm-small': miniScreen}"
+         ng-swipe-right="miniScreen=false;"
+         ng-swipe-left="miniScreen=true;"
+    >
+
+      <div class="bmm-navigator-switch"
+         ng-class="{'bmm-small': miniScreen}"
+         ng-click="miniScreen=!miniScreen;"
+      >
+      </div>
+
+      <div class="bmm-container-header bmm-small"
+       ng-class="{'bmm-small': miniScreen}">
+        
+        <div class="bmm-wrapper">
+
+          <a ng-href="#" class="bmm-logo"></a>
+
+          <li class="dropdown bmm-options">
+            <a class="dropdown-toggle flags-{{mediaLanguage}}">
+              {{mediaLanguage | bmmLanguage}}
+            </a>
+            <ul class="dropdown-menu">
+              <li ng-repeat="lang in languages">
+                <a class="flags-{{lang}}"
+                   ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+              </li>
+            </ul>
+          </li>
+
+          <div class="bmm-search">
+
+            <form ng-submit="go('/search/'+bmm.term);" class="bmm-search">
+
+              <input ng-model="bmm.term" type="text" placeholder="{{translation.general.search}}"/>
+              <input ng-href="#search/" type="submit" value=""/>
+
+            </form>
+
+          </div>
+
+          <div class="bmm-navigator-main">
+
+            <ul>
+
+              <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
+              <li><a ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
+              <li><a ng-href="#video">{{translation.menu.main.video}}</a></li>
+              <li><a ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
+              <li><a ng-href="#archive">{{translation.menu.main.archive}}</a></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+      <h1>{{translation.menu.secondary.playlists}}</h1>
+
+      <ul>
+
+        <li><a ng-href="#playlist/latest">{{translation.menu.secondary.latestTracks}}</a></li>
+        <li class="future"><a ng-href="#playlist">{{translation.menu.secondary.lastPlayed}}</a></li>
+        <li class="future"><a ng-href="#playlist">{{translation.menu.secondary.mostPlayed}}</a></li>
+        <li class="future"><a ng-href="#playlist">{{translation.menu.secondary.favorites}}</a></li>
+        <li><p ng-click="getCurrent()">{{translation.menu.secondary.current}}</p></li>
+
+      </ul>
+
+      <h3 ng-click="bmmPlaylistAdd = true">{{translation.menu.secondary.newPlaylist}}</h3>
+
+      <ul>
+
+        <li class="bmm-playlist-private" ng-show="bmmPlaylistAdd">
+          <form class="bmm-private">
+            <input type="text" ng-model="newPlaylist" placeholder="{{translation.menu.secondary.nameOnPlaylist}}"/>
+            <input type="submit" value="" class="bmm-confirm" ng-click="addPLaylist(newPlaylist);">
+            <div class="bmm-remove" ng-click="bmmPlaylistAdd = false"></div>
+          </form>
+        </li>
+
+        <li id="{{collection.id}}"
+            ng-repeat="collection in trackCollections" class="bmm-playlist-private">
+          <a ng-hide="collection.edit == true" ng-href="#/playlist/private/{{collection.id}}">{{collection.name}}</a>
+          <form class="bmm-private" ng-show="collection.edit == true">
+            <input type="text" ng-model="collection.newName"/>
+            <input type="submit" value="" class="bmm-confirm" ng-click="renamePlaylist(collection);">
+            <div class="bmm-remove" ng-click="exitRename(collection);"></div>
+          </form>
+          <div ng-hide="collection.edit == true" class="bmm-edit" ng-click="collection.edit = true"></div>
+          <div ng-hide="collection.edit == true" ng-click="removePLaylist(collection.id);" class="bmm-button-delete"></div>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="bmm-view" ng-class="{'bmm-small': miniScreen}">
+
+      <div class="bmm-navigator-toggle load"></div>
+
+      <ng-view></ng-view>
+
+      <div class="bmm-copyright">{{copyright}}</div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div bmm-player-controller
+     copyright="Stiftelsen skjulte skatters forlag">
+</div>

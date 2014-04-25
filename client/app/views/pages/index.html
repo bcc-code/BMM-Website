@@ -1,0 +1,120 @@
+<h2 class="speech">{{translation.page.welcome.latestSpeeches}}</h2>
+
+<ul class="bmm-latest-list">
+	<li ng-repeat="track in latestSpeaksLeft"
+        class="draggable latest"
+        id="{{track.id}}"
+        language="{{track.language}}"
+        ng-click="play(latestSpeaksLeft, $index);">
+		<div class="bmm-latest">
+			<div class="bmm-latest-bullet">{{$index+1}}</div>
+			<div>
+				<div title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail bmm-move" style="
+					background-image: url({{track.cover | bmmCover:'speech'}});
+				"></div>
+			</div>
+			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
+			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
+			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+		</div>
+	</li>
+</ul>
+
+<ul class="bmm-latest-list last">
+	<li ng-repeat="track in latestSpeaksRight"
+        class="draggable latest"
+        id="{{track.id}}"
+        language="{{track.language}}"
+        ng-click="play(latestSpeaksRight, $index);">
+		<div class="bmm-latest">
+			<div class="bmm-latest-bullet">{{$index+6}}</div>
+			<div>
+				<div title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail bmm-move" style="
+					background-image: url({{track.cover | bmmCover:'speech'}});
+				"></div>
+			</div>
+			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
+			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
+			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+		</div>
+	</li>
+</ul>
+
+<h2  class="video">{{translation.page.welcome.latestVideos}}</h2>
+
+<div bmm-slider-video>
+	<div class="bmm-videos">
+		<div title="{{video.combinedTitle}}" ng-repeat="video in latestVideos">
+			<div ng-click="play(latestVideos, $index);"
+				 class="bmm-hover"
+				 style="background-image: url({{video.cover | bmmCover:'video'}});"
+			>
+				<div class="bmm-slider-video-play"></div>
+			</div>
+			<p>
+				<a class="draggable bmm-move" id="{{video.id}}" language="{{video.language}}" ng-click="play(latestVideos, $index);">{{video.title}}</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<h2  class="audio">{{translation.page.welcome.latestMusic}}</h2>
+
+<ul class="bmm-latest-list">
+	<li ng-repeat="track in latestMusicLeft"
+        class="draggable latest"
+        id="{{track.id}}"
+        language="{{track.language}}"
+        ng-click="play(latestMusicLeft, $index);">
+		<div class="bmm-latest">
+			<div class="bmm-latest-bullet">{{$index+1}}</div>
+			<div>
+				<div title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail" style="
+					background-image: url({{track.cover | bmmCover:'song'}});
+				"></div>
+			</div>
+			<div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
+			<div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
+			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+		</div>
+	</li>
+</ul>
+
+<ul class="bmm-latest-list last">
+	<li ng-repeat="track in latestMusicRight"
+        class="draggable latest"
+        id="{{track.id}}"
+        language="{{track.language}}"
+        ng-click="play(latestMusicRight, $index);">
+		<div class="bmm-latest">
+			<div class="bmm-latest-bullet">{{$index+4}}</div>
+			<div>
+				<div title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail" style="
+					background-image: url({{track.cover | bmmCover:'song'}});
+				"></div>
+			</div>
+			<div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
+			<div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
+			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+		</div>
+	</li>
+</ul>
+
+<h2  class="album">{{translation.page.welcome.latestAlbums}}</h2>
+
+<div bmm-slider-album>
+	<ul>
+		<li ng-click="go('/album/'+album.id);"
+			ng-repeat="album in latestAlbums"
+			title="{{album.title}}"
+			style="
+				background-image: url({{album.cover}});
+				background-size: contain"
+			class="bmm-hover">
+		</li>
+	</ul>
+</div>

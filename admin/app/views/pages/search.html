@@ -1,0 +1,26 @@
+<div class="bmm-search-results">
+<h2>{{translation.page.search.searchResults}}</h2>
+<div class="bmm-margin-top"></div>
+<ul>
+	<li ng-repeat="result in results">
+		<div class="bmm-latest video">
+			
+			<div class="bmm-latest-bullet">{{$index+1}}</div>
+			<div class="{{result.draggable}} bmm-move" id="{{result.id}}" language="{{result.language}}" ng-click="open(result.type, result.id);">
+				<div class="bmm-thumbnail-search result.type"
+					 style="
+					   background-image: url({{result.cover | bmmCover:result.subtype }});
+					   "
+					 ng-class="{'bmm-thumbnail-search-video': result.video}"
+				></div>
+			</div>
+			<div class="bmm-cell">
+				<div class="bmm-latest-title bmm-hover" ng-click="open(result.type, result.id);">{{result.title}}</div>
+				<div ng-repeat="relation in result.relations" class="bmm-search-relation">
+					<b>{{relation.title}}:</b> {{relation.content}}
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+</div>
