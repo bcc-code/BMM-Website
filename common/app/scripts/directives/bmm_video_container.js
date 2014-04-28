@@ -52,9 +52,9 @@ angular.module('bmmLibApp')
             scope.$watch('bmmPlayer.isVideo', function(is) {
               if (isResized) {
                 if (is) {
-                  element.resizable('enable');
+                  //element.resizable('enable');
                 } else {
-                  element.resizable('disable');
+                  //element.resizable('disable');
                 }
               }
             });

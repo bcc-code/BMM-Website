@@ -1,79 +1,7 @@
-@import "compass/utilities";
-@import "compass/css3";
-@import "flags/*.png";
-
-@include  all-flags-sprites;
-
 $bmm-main: #1F9C62;
 $bmm-background: #F6F2F2;
 $bmm-background-inverse: #282E33;
 $gray: #858585;
-
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro");
-body, h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-body {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-ul {
-  list-style-type: none;
-}
-
-//***********************************//
-//*********FUTURE COMPONENTS*********//
-.bmm-track-favorite {
-  display: none;
-}
-
-.future {
-  display: none;
-}
-
-//***********************************//
-//************SCROLL BARS************//
-::-webkit-scrollbar {
-  width: .5em;
-  height: .5em;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #cfcfcf;
-} /* the new scrollbar will have a flat appearance with the set background color */
- 
-::-webkit-scrollbar-thumb {
-  background-color: #769989;
-} /* this will style the thumb, ignoring the track */
- 
-::-webkit-scrollbar-button {
-  display: none;
-} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
- 
-::-webkit-scrollbar-corner {
-  background-color: #E7E7E7;
-}
-
-//***********************************//
-//**********admin-drag-drop**********//
-.admin-draggable.ui-draggable-dragging {
-  background: #1F9C62;
-  color: white;
-  list-style-type: none;
-  max-width: 12em;
-  max-height: 5em;
-  overflow: hidden;
-  * {
-    float: left;
-    white-space: nowrap;
-  }
-}
-
-.admin-droppable span.active.hover {
-  background: #F6F2F2;
-  color: #282E33;
-}
 
 //***********************************//
 //***********bmm-bible-book**********//
@@ -85,9 +13,9 @@ ul {
     float: left;
   }
   > p {
-      background: black;
-      padding: .1em .4em;
-    }
+    background: black;
+    padding: .1em .4em;
+  }
   > * {
     > p {
       background: white;
@@ -107,170 +35,41 @@ ul {
 }
 
 //***********************************//
-//*************bmm-swipe*************//
-.bmm-swipe {
-  display: none;
-}
-
-//***********************************//
-//*************MINIFIED**************//
-@media screen and (max-width: 27em) {
-  .bmm-volume-controller {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: 46.5em) {
-
-  .bmm-player-clock {
-      
-  }
-
-  .bmm-player-buttons {
-    padding: .5em;
-  }
-
-  .bmm-player-mediaslider {
-    //width: auto;
-    //float: none;
-  }
-
-  .bmm-player-about {
-
-    //padding: .5em 0 0 .8em !important;
-    //height: auto !important;
-    //width: 0 !important;
-    //float: none !important;
-    //overflow: visible !important;
-
-    .bmm-player-thumbnail,
-    .bmm-player-subtitle,
-    .bmm-player-extra {
-      display: none;
-    }
-
-    .bmm-player-title {
-      //padding: 0 !important;
-      //overflow: visible !important;
-    }
-
-  }
-
-}
-
-@media screen and (max-width: 30em) {
-
-  .bmm-large-only {
-    display: none;
-  }
-
-  .bmm-container-header ul.dropdown-menu {
-    width: auto;
-    li {
-      padding: .1em .5em !important;
-      margin: 0 !important;
-    }
-  }
-
-  .bmm-container-header,
-  .bmm-container-main,
-  .bmm-main-container
-  {
-    $animation-video-speed: .5s;
-    $animation-video-type: ease;
-
-    -webkit-transition: margin-left $animation-video-speed $animation-video-type;
-    -moz-transition: margin-left $animation-video-speed $animation-video-type;
-    -ms-transition: margin-left $animation-video-speed $animation-video-type;
-    -o-transition: margin-left $animation-video-speed $animation-video-type;
-    transition: margin-left $animation-video-speed $animation-video-type;
-  }
-
-  .bmm-navigator-backend .bmm-container-header,
-  .bmm-navigator-playlist .bmm-container-header {
-    display: inline-block !important;
-    ul {
-      float: none !important;
-      width: 100%;
-      margin-bottom: 1em !important;
-      li {
-        float: none !important;
-        padding: .5em 0 .5em 1.8em !important;
-        margin: 0 1.1em !important;
-      }
-    }
-  }
-
-  .bmm-navigator-backend,
-  .bmm-navigator-playlist {
-    position: fixed !important;
-    top: 32px;
-    z-index: 1;
-  }
-
-  .bmm-container-header {
-    display: none;
-  }
-
-  .bmm-container-main {
-    overflow-x: hidden !important;
-  }
-
-  .bmm-view {
-    width: auto;
-  }
-
-}
-
-tr.ui-draggable-dragging {
-  background-color: $bmm-main;
-}
-
-tr.ui-draggable-dragging * {
-  float: left;
-  margin-right: .5em;
-}
-
-tr.ui-draggable-dragging div {
-  display: none;
-}
-
-//***********************************//
 //************bmm-interpret**********//
 .bmm-interpret {
-    overflow: hidden;
-    min-width: 14em;
+  overflow: hidden;
+  min-width: 14em;
 }
 
 .bmm-interpret:hover {
-    cursor: pointer;
-    background: #EDECEC;
+  cursor: pointer;
+  background: #EDECEC;
 }
 
 .bmm-interpret-thumbnail {
-    width: 3.5em;
-    height: 3.5em;
-    margin: .5em .4em .5em .7em;
-    float: left;
-    background-size: contain;
-    background-repeat: no-repeat;
+  width: 3.5em;
+  height: 3.5em;
+  margin: .5em .4em .5em .7em;
+  float: left;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .bmm-interpret-title {
-    padding-top: .5em;
-    font-weight: bold;
-    font-size: .9em;
+  padding-top: .5em;
+  font-weight: bold;
+  font-size: .9em;
 }
 
 .bmm-interpret-about {
-    font-size: .9em;
-    color: #555;
+  font-size: .9em;
+  color: #555;
 }
 
 //***********************************//
 //**************bmm-cell*************//
 .bmm-cell {
-    display: table-cell;
+  display: table-cell;
 }
 
 //***********************************//
@@ -300,76 +99,6 @@ tr.ui-draggable-dragging div {
 }
 
 //***********************************//
-//*************tree-view*************//
-div[data-bmm-lib-app] {
-  /* prevent user selection */
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  /* default */
-  font-size:13px;
-  text-decoration: none;
-}
-
-div[data-bmm-treeview] ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; 
-  border: none;
-  overflow: hidden;
-}
-
-div[data-bmm-treeview] li {
-  position: relative;
-  padding: 0 0 0 20px;
-  line-height: 20px;
-  white-space: nowrap;
-}
-
-div[data-bmm-treeview] li .expanded {
-  padding: 1px 10px;
-  background-image: url("../images/treeview/folder.png");
-  background-repeat: no-repeat;
-}
-
-div[data-bmm-treeview] li .collapsed {
-  padding: 1px 10px;
-  background-image: url("../images/treeview/folder-closed.png");
-  background-repeat: no-repeat;
-}
-
-div[data-bmm-treeview] li .new-album {
-  padding: 1px 0 0 20px;
-  background-image: url("../images/treeview/folder-new-album.png");
-  background-repeat: no-repeat;
-}
-
-div[data-bmm-treeview] li .new-track {
-  padding: 1px 10px 0 20px;
-  background-image: url("../images/treeview/folder-new-track.png");
-  background-repeat: no-repeat;
-}
-
-div[data-bmm-treeview] li .normal {
-  padding: 1px 10px;
-  background-image: url("../images/treeview/file.png");
-  background-repeat: no-repeat;
-}
-
-div[data-bmm-treeview] li i, div[data-bmm-treeview] li span {
-  cursor: pointer;
-}
-
-div[data-bmm-treeview] li .selected {
-  background-color: #aaddff;
-  font-weight: bold;
-  padding: 1px 5px;
-}
-
-//***********************************//
 //*************bmm-albums************//
 .bmm-albums {
   width: 100%;
@@ -394,14 +123,14 @@ div[data-bmm-treeview] li .selected {
 
 .bmm-album {
   display: inline-block;
-    position: relative;
-    width: 29.3%;
+  position: relative;
+  width: 29.3%;
   div {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -422,7 +151,7 @@ h2.audio {
   background-size: contain;
   padding: .6em 0 0 2.2em;
   margin: 1.2em 0 .4em 0 !important;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 h2.video {
@@ -430,7 +159,7 @@ h2.video {
   background-size: 1.8em;
   padding: .6em 0 0 2.2em;
   margin: 1.2em 0 .4em 0 !important;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 h2.album {
@@ -438,7 +167,7 @@ h2.album {
   background-size: contain;
   padding: .6em 0 0 2.2em;
   margin: 1.2em 0 .4em 0 !important;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 h2.speech {
@@ -446,7 +175,7 @@ h2.speech {
   background-size: contain;
   padding: .6em 0 0 2.2em;
   margin: 1.2em 0 .4em 0 !important;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 //***********************************//
@@ -479,10 +208,6 @@ h2.speech {
   width: 50%;
   height: 100%;
   background-color: $bmm-background;
-}
-
-.bmm-background-left {
-  
 }
 
 body {
@@ -566,17 +291,17 @@ body {
 
 .ui-resizable-n {
   top: 0;
-    height: 10px
+  height: 10px
 }
 
 .ui-resizable-s {
   bottom: 0;
-    height: 10px
+  height: 10px
 }
 
 .ui-resizable-e,
 .ui-resizable-w {
-    width: 10px
+  width: 10px
 }
 
 //***********************************//
@@ -595,27 +320,27 @@ body {
 
 .album-latest:first-child,
 .album-latest:first-child {
-    margin-left: 0;
-    overflow: visible;
-    width: auto;
+  margin-left: 0;
+  overflow: visible;
+  width: auto;
 }
 
 .album-latest:first-child .album-latest-image {
-    width: 19.5em;
-    height: 20em;
+  width: 19.5em;
+  height: 20em;
 }
 
 .album-latest-image {
-    width: 9em;
-    height: 9.3em;
-    background-size: contain;
-    background-repeat: no-repeat;
+  width: 9em;
+  height: 9.3em;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .album-latest-title {
-    padding-top: 0.5em;
-    font-weight: bold;
-    height: 3.4em;
+  padding-top: 0.5em;
+  font-weight: bold;
+  height: 3.4em;
 }
 .album-latest-about { color: #555; }
 
@@ -665,7 +390,7 @@ body {
 
 .bmm-search-relation {
   font-size: .7em;
-    color: #555;
+  color: #555;
 }
 
 * .bmm-search-results {
@@ -1220,8 +945,8 @@ body {
     width: 100%;
     thead {
       background-color: #e7e7e7;
-      border-top: .3em solid #e7e7e7; 
-      border-bottom: .3em solid #e7e7e7; 
+      border-top: .3em solid #e7e7e7;
+      border-bottom: .3em solid #e7e7e7;
       color: $gray;
       th {
         font-weight: normal;
@@ -1586,7 +1311,7 @@ body {
   height: 3em;
   background-image: url(../images/svg/play.svg);
   background-size:
-  contain; background-repeat: no-repeat;
+    contain; background-repeat: no-repeat;
   cursor: pointer;
 }
 
@@ -1932,7 +1657,7 @@ $animation-video-type: ease;
       transition: all $animation-video-speed $animation-video-type;
 
       @include transform(perspective(600px) scale(1,1) rotateY(0deg) translate3d(0,0,0));
-      
+
       > img {
         position: absolute;
         width: 100%;
@@ -2026,10 +1751,10 @@ $animation-video-type: ease;
     overflow: hidden;
     margin-top: .2em;
     margin-left: .4em;
-      ul {
-        padding: 0;
-        margin: 0
-      }
+    ul {
+      padding: 0;
+      margin: 0
+    }
   }
 
   .bmm-latest-list {
@@ -2042,24 +1767,24 @@ $animation-video-type: ease;
   }
 
   .bmm-latest-bullet {
-      padding: 0.8em 0;
-      width: 1.9em;
-      text-align: center;
-      background: silver;
-      float: left;
-      color: white;
-      font-weight: bold;
-      font-size: 1.3em;
+    padding: 0.8em 0;
+    width: 1.9em;
+    text-align: center;
+    background: silver;
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
   }
 
   .bmm-latest-thumbnail {
-      width: 2.5em;
-      height: 2.5em;
-      margin: .5em .4em .5em .7em;
-      float: left;
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
+    width: 2.5em;
+    height: 2.5em;
+    margin: .5em .4em .5em .7em;
+    float: left;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
   .bmm-latest-title {
@@ -2067,15 +1792,15 @@ $animation-video-type: ease;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-      font-weight: bold;
-      font-size: .8em;
+    font-weight: bold;
+    font-size: .8em;
   }
 
   .bmm-latest-interprets,
   .bmm-latest-about {
-      font-size: .7em;
-      color: #555;
-      overflow: hidden;
+    font-size: .7em;
+    color: #555;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -2085,7 +1810,7 @@ $animation-video-type: ease;
 //SMALL
 
 .bmm-latest-list.small {
-    width: 17em;
+  width: 17em;
 }
 
 .bmm-latest-list {
@@ -2095,12 +1820,12 @@ $animation-video-type: ease;
 }
 
 .small .bmm-latest-bullet {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .small .bmm-latest-thumbnail {
-    width: 2em;
-    height: 2em;
+  width: 2em;
+  height: 2em;
 }
 
 .small {
@@ -2110,24 +1835,24 @@ $animation-video-type: ease;
 //***********************************//
 //************album-video************//
 .album-video {
-    width: 10.2em;
-    height: 19em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    float: left;
-    font-size: .9em;
-    margin-right: .6em;
-    margin-bottom: .5em;
+  width: 10.2em;
+  height: 19em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  font-size: .9em;
+  margin-right: .6em;
+  margin-bottom: .5em;
 }
 
 .album-video-image {
-    width: 10.2em;
-    height: 14em;
+  width: 10.2em;
+  height: 14em;
 }
 
 .album-video-title {
-    padding-top: 0.5em;
-    font-weight: bold;
+  padding-top: 0.5em;
+  font-weight: bold;
 }
 .album-video-about { color: #555; }
 

@@ -1,0 +1,103 @@
+//SIZE RELATIONS
+$bmm-large: 70em;
+$bmm-desktop: 60em;
+$bmm-tablet: 46.5em;
+$bmm-mobile: 30em;
+
+@media screen and (max-width: 27em) {
+  .bmm-volume-controller {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: $bmm-mobile) {
+
+  .bmm-large-only {
+    display: none;
+  }
+
+  .bmm-container-header ul.dropdown-menu {
+    width: auto;
+    li {
+      padding: .1em .5em !important;
+      margin: 0 !important;
+    }
+  }
+
+  .bmm-container-header,
+  .bmm-container-main,
+  .bmm-main-container
+  {
+    $animation-video-speed: .5s;
+    $animation-video-type: ease;
+
+    -webkit-transition: margin-left $animation-video-speed $animation-video-type;
+    -moz-transition: margin-left $animation-video-speed $animation-video-type;
+    -ms-transition: margin-left $animation-video-speed $animation-video-type;
+    -o-transition: margin-left $animation-video-speed $animation-video-type;
+    transition: margin-left $animation-video-speed $animation-video-type;
+  }
+
+  .bmm-navigator-backend .bmm-container-header,
+  .bmm-navigator-playlist .bmm-container-header {
+    display: inline-block !important;
+    ul {
+      float: none !important;
+      width: 100%;
+      margin-bottom: 1em !important;
+      li {
+        float: none !important;
+        padding: .5em 0 .5em 1.8em !important;
+        margin: 0 1.1em !important;
+      }
+    }
+  }
+
+  .bmm-navigator-backend,
+  .bmm-navigator-playlist {
+    position: fixed !important;
+    top: 32px;
+    z-index: 1;
+  }
+
+  .bmm-container-header {
+    display: none;
+  }
+
+  .bmm-container-main {
+    overflow-x: hidden !important;
+  }
+
+  .bmm-view {
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: $bmm-tablet) {
+
+  .bmm-player-buttons {
+    padding: .5em;
+  }
+
+  .bmm-player-mediaslider {
+    //width: auto;
+    //float: none;
+  }
+
+  .bmm-player-about {
+
+    .bmm-player-thumbnail,
+    .bmm-player-subtitle,
+    .bmm-player-extra {
+      display: none;
+    }
+
+    .bmm-player-title {
+      //padding: 0 !important;
+      //overflow: visible !important;
+    }
+
+  }
+
+}

@@ -1,9 +1,10 @@
 
 WELCOME AS DEVELOPER FOR THE BMM 2.0 PROJECT
-____________________________________________
+============================================
 
 
 INTRODUCTION
+------------
 
 The website consist of 3 separate projects
 
@@ -32,6 +33,7 @@ NOTE:
     Same in admin/app/scripts/app.js
 
 SETUP DEVELOPER ENVIRONMENT
+---------------------------
 
     1. Install the following components
         * yeoman with all its dependencies @see yeoman.io
@@ -53,6 +55,7 @@ ____________________________________________
 
 
 DEBUG AND TEST RUN 'client' OR 'admin'
+--------------------------------------
 
     1. Run your default browser with --disable-web-security
         Ex. linux: google-chrome --disable-web-security
@@ -66,6 +69,7 @@ ____________________________________________
 
 
 MAKE STANDALONE BUILDS
+----------------------
 
     1. Run command: grunt build
         The standalone is build into the dist folder
