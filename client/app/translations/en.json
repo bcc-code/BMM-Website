@@ -1,6 +1,6 @@
 {
-    "language": "Norsk",
-    "iso-639-1": "nb",
+    "language": "English",
+    "iso-639-1": "en",
 
     "general": {
         "search": "Search..."
@@ -8,7 +8,7 @@
     "menu": {
         "main": {
             "music": "Music",
-            "speeches": "Speechs",
+            "speeches": "Messages",
             "video": "Videos",
             "archive": "Archive",
             "audiobooks": "Audiobooks"
@@ -26,7 +26,7 @@
     },
     "page": {
         "welcome": {
-            "latestSpeeches": "Latest Speechs",
+            "latestSpeeches": "Latest Messages",
             "latestVideos": "Latest Videos",
             "latestMusic": "Latest Music",
             "latestAlbums": "Latest Albums"
@@ -39,7 +39,7 @@
             "instrumental": "Instrumental"
         },
         "speeches": {
-            "latestSpeeches": "Latest Speechs",
+            "latestSpeeches": "Latest Messages",
             "recommended": "Recommended"
         },
         "videos": {
