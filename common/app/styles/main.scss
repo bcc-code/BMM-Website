@@ -1,20 +1,27 @@
-//COMPASS DEFAULT MIXINS
+//MIXINS
 @import "compass/utilities";
 @import "compass/css3";
+@import "mixins/transition.scss";
+@import "mixins/marquee.scss";
 
 //SPRITES
 @import "flags/*.png";
 @include  all-flags-sprites;
 
-//TEMPORARY
-@import "common/test.scss";
+//MAIN
+@import "main/config.scss";
+@import "main/reset.scss";
+@import "main/basic.scss";
 
 //PARTIALS
-@import "common/partials/global.scss";
-@import "common/partials/resize.scss";
-@import "common/partials/dragdrop.scss";
+@import "partials/header.scss";
+@import "partials/navigator.scss";
+@import "partials/viewer.scss";
+@import "partials/viewer-frontend.scss";
+@import "partials/viewer-backend.scss";
+@import "partials/player.scss";
 
 //DIRECTIVES
-@import "common/directives/treeview.scss";
-
-//MIXINS
+@import "directives/videoslider.scss";
+@import "directives/albumslider.scss";
+@import "directives/treeview.scss";

@@ -1,0 +1,15 @@
+@mixin bmm-transition($style: margin-left, $speed: .3s, $type: ease) {
+  -webkit-transition: $style, $speed $type;
+  -moz-transition: $style, $speed $type;
+  -ms-transition: $style, $speed $type;
+  -o-transition: $style, $speed $type;
+  transition: $style, $speed $type;
+}
+
+@mixin transition($style:all, $speed: .3s, $type: ease) {
+  -webkit-transition: $style $speed $type;
+  -moz-transition: $style $speed $type;
+  -ms-transition: $style $speed $type;
+  -o-transition: $style $speed $type;
+  transition: $style $speed $type;
+}

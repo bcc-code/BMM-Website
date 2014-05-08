@@ -219,51 +219,7 @@ body {
   max-width: 70em;
 }
 
-.bmm-options {
 
-  float: right;
-  padding: 1.4em 1em 0 0;
-  list-style-type: none;
-  cursor: default;
-  .dropdown-menu {
-    min-width: 0 !important;
-    left: -7em;
-    li {
-      padding: .1em .5em;
-      margin: 0;
-    }
-  }
-
-  > a {
-    font-size: .9em;
-    border-radius: .4em;
-    background-color: #006B3D;
-    color: $bmm-background;
-    border: none;
-    padding: .5em 1em .3em 3em !important;
-    background-position-x: .2em;
-  }
-
-  li {
-    color: $bmm-background !important;
-  }
-
-  li a {
-    color: $bmm-background !important;
-    padding: .2em 2em !important;
-  }
-
-  li:hover, li a:hover {
-    color: $bmm-background-inverse !important;
-  }
-
-  ul, li {
-    list-style-type: none;
-    background-color: #006B3D;
-    color: $bmm-background;
-  }
-
-}
 
 .bmm-main-container {
   position: relative;

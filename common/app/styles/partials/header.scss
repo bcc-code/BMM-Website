@@ -1,0 +1,184 @@
+header, .sub-header {
+  width: 100%;
+  background-color: $colorMain;
+  z-index: 4;
+}
+
+header {
+  @include transition(margin-top);
+  position: absolute;
+  top: $topbarHeight;
+  height: $headerHeight;
+
+  .page-positioning {
+    position: relative;
+    height: 100%;
+    .menu {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.sub-header {
+  display: none;//inline-block;
+  .menu {
+    float: left;
+    width: 100%;
+    margin: .5em 0;
+    li {
+      width:100%;
+      padding: 0 .5em;
+      a {
+        padding: .5em 0 .5em .2em;
+        display: inline-block;
+        width: 100%;
+      }
+      a:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+  .dropdown {
+    width: 100%;
+    margin: .5em 0;
+    padding: .5em .5em 0;
+    a {
+      width: 100%;
+    }
+    > ul {
+      margin-left: .5em !important;
+    }
+  }
+  .search {
+    width: 100%;
+    padding: 0 .5em;
+    form {
+      padding: 0;
+      float: none;
+      div {
+        margin-right: 3em;
+        input {
+          background-image: none;
+          background-color: $colorForeground;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-top-left-radius: .2em;
+          border-bottom-left-radius: .2em;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  float: right;
+  margin: 1.3em .9em 0 0;
+  padding: 0;
+  > a {
+    > div {
+      display: inline-block;
+      width: 2em;
+      height: 1.5em;
+    }
+    display: inline-block;
+    color: $colorForeground;
+    cursor: pointer;
+    font-size: .9em;
+    border-radius: .4em;
+    background-color: #006B3D;
+    padding: .1em .5em .1em .3em;
+  }
+  > ul {
+    margin-left: -6em !important;
+  }
+  > ul > li > a {
+    padding: .2em 0 0 2em !important;
+  }
+}
+
+.search {
+  position: relative;
+  margin: auto;
+  width: 15em;
+  z-index: 1;
+
+  > * {
+    float: left;
+    padding: 1.3em 0 0;
+  }
+
+  input {
+    height: 1.7em;
+    float: left;
+  }
+
+  input:first-child {
+    padding: .1em .5em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 12em;
+  }
+  input:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: .4em;
+    border-bottom-right-radius: .4em;
+    background-image: url(../images/svg/search.svg);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #006B3D;
+    width: 3em;
+    padding: 0;
+  }
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.menu li a {
+  @include bmm-transition(all, .2s);
+  padding: .3em .8em;
+  color: $colorForeground;
+  font-weight: bold;
+  border-radius: .2em;
+}
+
+.menu li a:hover {
+  background-color: $colorForeground;
+  color: $colorBackground;
+}
+
+.logo {
+  float: left;
+  margin: .65em 0 0 .6em;
+  background-image: url(../images/svg/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 7.5em;
+  height: 2.8em;
+}
+
+@media screen and (max-width: $mobileWidth) {
+  header {
+    margin-top: -$headerHeight;
+    overflow: hidden;
+  }
+  .sub-header {//.ng-hide {
+    display: inline-block !important;
+  }
+}

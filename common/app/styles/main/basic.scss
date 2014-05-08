@@ -1,0 +1,33 @@
+.page-positioning {
+  position: relative;
+  margin: auto;
+  max-width: $pageWidth;
+}
+
+.bmm-margin-top {
+  margin-top: 2em;
+}
+
+.background-left {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: $colorBackground;
+  z-index: -1;
+}
+
+.background-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: $colorForeground;
+  z-index: -1;
+}
+
+.bmm-flag {
+  width: 1.7em;
+  height: 1.4em;
+}

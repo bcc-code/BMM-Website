@@ -1,0 +1,423 @@
+[player] {
+  @include bmm-transition(height);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: $playerHeight;
+  background-color: $colorPlayer;
+  z-index: 5;
+  color: #686868;
+
+  .behind {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1F9C62;
+    width: 0;
+    height:100%;
+  }
+
+  .videoscreen.ui-resizable-resizing {
+    @include transition(none);
+  }
+  .videoscreen.ng-hide {
+    display: block !important;
+    height: 0 !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .videoscreen {
+    $videoHeight: 10em;
+    @include transition(height); //Must fire CSS change in player.js after transition
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    height: $videoHeight;
+    background-color: $colorPlayer;
+    overflow: hidden;
+    padding-top: .5em;
+    .display {
+      position: relative;
+      margin: auto;
+      height: 100%;
+      width: $videoHeight * (16/9);
+      .fullscreen-toggle:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+      .fullscreen-toggle.unvisible {
+        opacity: 0;
+      }
+      .fullscreen-toggle {
+        @include transition(opacity, .5s);
+        position: absolute;
+        bottom: .7em;
+        background-image: url(../images/svg/fullscreen.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 2em;
+        height: 1.7em;
+        right: .8em;
+        opacity: .7;
+      }
+      .video-target {
+        background-color: #000;
+      }
+      .fullscreen-controllers.unvisible {
+        opacity: 0;
+      }
+      .fullscreen-controllers {
+        @include transition(opacity, .5s);
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 1.3em .5em .5em .5em;
+        background-color: $colorPlayer;
+        > div {
+          float: left;
+        }
+        .duration {
+          margin: .4em .4em 0 1.3em;
+        }
+        .slider {
+          float: none;
+          overflow: hidden;
+          padding: 1em 1em .7em;
+        }
+        .fullscreen-toggle.unvisible {
+          opacity: .7;
+        }
+        .fullscreen-toggle {
+          position: relative;
+          float: right;
+          right: auto;
+          bottom: auto;
+          margin: .5em;
+        }
+        .previous:hover {
+          background-image: url(../images/svg/previous_hover.svg);
+        }
+        .previous {
+          cursor: pointer;
+          margin: 0 .8em 0 0;
+          width: 2.1em;
+          height: 2.1em;
+          background-image: url(../images/svg/previous.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .play:hover {
+          background-image: url(../images/svg/play_hover.svg);
+        }
+        .play {
+          cursor: pointer;
+          width: 3em;
+          height: 3em;
+          margin-top: -.5em;
+          background-image: url(../images/svg/play.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .play.pause {
+          background-image: url(../images/svg/pause.svg);
+        }
+        .play.pause:hover {
+          background-image: url(../images/svg/pause_hover.svg);
+        }
+        .next:hover {
+          background-image: url(../images/svg/next_hover.svg);
+        }
+        .next {
+          cursor: pointer;
+          margin: 0 0 0 .8em;
+          width: 2.1em;
+          height: 2.1em;
+          background-image: url(../images/svg/next.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .mute:hover {
+          opacity: 1;
+        }
+        .mute {
+          cursor: pointer;
+          float: right;
+          opacity: .6;
+          width: 1.3em;
+          height: 1.4em;
+          margin: .6em .6em 0 0;
+          background-image: url(../images/svg/mute.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .mute.active {
+          background-image: url(../images/svg/muted.svg);
+        }
+        .volume {
+          margin: 1em;
+          width: 5em;
+          float: right;
+        }
+        .videoToggle:hover {
+          opacity: 1;
+        }
+        .videoToggle {
+          cursor: pointer;
+          float: right;
+          width: 1.8em;
+          height: 1.35em;
+          margin: .2em .4em .2em 0;
+          opacity: .6;
+          background-image: url(../images/svg/video.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .about:hover {
+    width: auto;
+    div {
+      text-overflow: none;
+      overflow: visible;
+    }
+  }
+  .about {
+    overflow: hidden;
+    padding: .5em;
+    min-width: 20em;
+    width: 20em;
+    float: left;
+    margin: 0;
+    img {
+      width: auto;
+      min-width: 4.5em;
+      height: 4.5em;
+      margin-right: .5em;
+      background-color: #000;
+      border: .2em #F6F2F2 solid;
+      float: left;
+    }
+    h3 {
+      padding-top: 1em;
+      font-size: 1em;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+    div {
+      font-size: .8em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 6.2em;
+    }
+  }
+
+  .controllers {
+    .time {
+      padding: .5em;
+      .current {
+        float: left;
+        margin-top: .2em;
+      }
+      .remaining {
+        float: right;
+        margin-top: .2em;
+      }
+      .slider {
+        overflow: hidden;
+        padding:.7em 1em;
+      }
+    }
+    .main {
+      padding: 0 .5em .5em .5em;
+      > div {
+        float: left;
+      }
+      .repeat.active {
+        background-image: url(../images/svg/repeat_hover.svg);
+      }
+      .repeat:hover, .repeat.active:hover {
+        background-image: url(../images/svg/repeat.svg);
+        opacity: 1;
+      }
+      .repeat {
+        cursor: pointer;
+        width: 1.12em;
+        height: 1.2em;
+        margin: .5em .7em 0 0;
+        opacity: .6;
+        background-image: url(../images/svg/repeat.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .previous:hover {
+        background-image: url(../images/svg/previous_hover.svg);
+      }
+      .previous {
+        cursor: pointer;
+        margin: 0 .8em 0 0;
+        width: 2.1em;
+        height: 2.1em;
+        background-image: url(../images/svg/previous.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .play:hover {
+        background-image: url(../images/svg/play_hover.svg);
+      }
+      .play {
+        cursor: pointer;
+        width: 3em;
+        height: 3em;
+        margin-top: -.5em;
+        background-image: url(../images/svg/play.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .play.pause {
+        background-image: url(../images/svg/pause.svg);
+      }
+      .play.pause:hover {
+        background-image: url(../images/svg/pause_hover.svg);
+      }
+      .next:hover {
+        background-image: url(../images/svg/next_hover.svg);
+      }
+      .next {
+        cursor: pointer;
+        margin: 0 0 0 .8em;
+        width: 2.1em;
+        height: 2.1em;
+        background-image: url(../images/svg/next.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .shuffle.active {
+        background-image: url(../images/svg/shuffle_hover.svg);
+      }
+      .shuffle:hover, .shuffle.active:hover {
+        background-image: url(../images/svg/shuffle.svg);
+        opacity: 1;
+      }
+      .shuffle {
+        cursor: pointer;
+        width: 1.2em;
+        height: 1.1em;
+        margin: .5em 0 0 .7em;
+        opacity: .6;
+        background-image: url(../images/svg/shuffle.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .mute:hover {
+        opacity: 1;
+      }
+      .mute {
+        cursor: pointer;
+        float: right;
+        opacity: .6;
+        width: 1.3em;
+        height: 1.4em;
+        margin: .3em 0 0;
+        background-image: url(../images/svg/mute.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .mute.active {
+        background-image: url(../images/svg/muted.svg);
+      }
+      .volume {
+        margin: .8em;
+        width: 5em;
+        float: right;
+      }
+      .download:hover {
+        opacity: 1;
+      }
+      .download {
+        cursor: pointer;
+        float: right;
+        width: 1.8em;
+        height: 1.35em;
+        margin: .2em .4em .2em 0;
+        opacity: .6;
+        background-image: url(../images/svg/download.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .videoToggle:hover {
+        opacity: 1;
+      }
+      .videoToggle {
+        cursor: pointer;
+        float: right;
+        width: 1.8em;
+        height: 1.35em;
+        margin: .2em .4em .2em 0;
+        opacity: .6;
+        background-image: url(../images/svg/video.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .scroller {
+        float: none;
+        overflow: hidden;
+        padding: .4em .5em 0;
+        span:hover {
+          @include marquee();
+          padding-left: 100%;
+        }
+        span {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: $maxWidth) {
+  [player] .controllers .main {
+    .scroller {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $maxWidth) {
+  [player] .about {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobileWidth) {
+  [player] .controllers .main {
+    .scroller span {
+      @include marquee(12s);
+      padding-left: 100%;
+    }
+    .mute, .volume {
+      display: none;
+    }
+    .previous, .repeat {
+      margin-right: .2em;
+    }
+    .repeat {
+      margin-right: .3em;
+    }
+    .next, .shuffle {
+      margin-left: .3em;
+    }
+    .download {
+      margin-right: 0;
+    }
+  }
+}

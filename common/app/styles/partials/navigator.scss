@@ -1,0 +1,285 @@
+[navigator] {
+  position: absolute;
+  margin-top: $headerHeight;
+  width: $navigationWidth;
+  color: $colorForeground;
+  overflow: auto;
+  z-index: 4;
+
+  @include transition(margin-left);
+  h2 {
+    margin-left: .2em;
+  }
+}
+
+.fixed[navigator] {
+  position: fixed;
+  margin-top: $topbarHeight;
+  top: 0;
+  bottom: $playerHeight;
+}
+
+.absolute[navigator] {
+  padding-bottom: $playerHeight;
+}
+
+.nav-toggle {
+  display: none;
+  position: absolute;
+  margin-top: $headerHeight + .5em;
+  width: 1.6em;
+  height: 2em;
+  background-image: url(../images/svg/toggle.svg);
+  background-position: .6em .43em;
+  background-size: .4em 1.2em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 3;
+
+  @include transition(margin-left);
+}
+
+.nav-toggle.fixed {
+  position: fixed;
+  margin-top: .5em;
+}
+
+.playlists-generated {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  a, span {
+    color: $colorForeground;
+    cursor: pointer;
+  }
+  li {
+    @include bmm-transition(all, .2s);
+    background-image: url(../images/svg/playliststatic.svg);
+    background-size: 1.6em 1.2em;
+    background-position: 0 .7em;
+    background-repeat: no-repeat;
+    padding: .5em 0 .5em 1.8em;
+    margin: 0 .5em;
+    list-style-type: none;
+    border-radius: .2em;
+  }
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.playlists-add {
+  background-color: transparent;
+  width: 100%;
+  padding: .5em;
+  text-align: left;
+  span {
+    @include bmm-transition(all, .2s);
+    background-image: url(../images/svg/pluss.svg);
+    background-size: 1.4em 1.3em;
+    background-position: .25em .35em;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    padding: .5em 0 .5em 1.8em;
+    border-radius: .2em;
+    cursor: pointer;
+    color: $colorForeground;
+  }
+  span:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.playlists-private {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  a {
+    color: $colorForeground;
+  }
+  li {
+    @include bmm-transition(all, .2s);
+    position: relative;
+    background-image: url(../images/svg/playlistprivate.svg);
+    background-size: 1.25em .9em;
+    background-position: .29em .8em;
+    background-repeat: no-repeat;
+    padding: .5em 0 .5em 1.8em;
+    margin: 0 .5em;
+    list-style-type: none;
+    border-radius: .2em;
+    .edit {
+      @include bmm-transition(opacity, .2s);
+      position: absolute;
+      right: 1.65em;
+      top: 0;
+      height: 100%;
+      width: 1.5em;
+      background-image: url(../images/svg/edit.svg);
+      background-position: center center;
+      background-size: 1.2em 1.2em;
+      background-repeat: no-repeat;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .trash {
+      @include bmm-transition(opacity, .2s);
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1.5em;
+      background-image: url(../images/svg/trash.svg);
+      background-position: center center;
+      background-size: 1.2em 1.2em;
+      background-repeat: no-repeat;
+      opacity: 0;
+      cursor: pointer;
+    }
+    input:first-child {
+      width: $navigationWidth - 7em;
+    }
+    input:nth-child(2) {
+      position: absolute;
+      right: 1.8em;
+      height: 1.4em;
+      width: 1.2em;
+      margin: 0;
+      padding: 0;
+      border: none;
+      display: inline-block;
+      background: url(../images/svg/confirm.svg);
+      background-position: center center;
+      background-size: 1.2em 1.2em;
+      background-repeat: no-repeat;
+    }
+    button {
+      position: absolute;
+      right: .2em;
+      height: 1.4em;
+      width: 1.2em;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      background: url(../images/svg/cross.svg);
+      background-position: center center;
+      background-size: 1.2em 1.2em;
+      background-repeat: no-repeat;
+    }
+  }
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    .edit, .trash {
+      opacity: 1;
+    }
+  }
+  li.bmm-playlist-private.active {
+    border: rgba(255, 255, 255, 0.18) dashed .2em;
+  }
+  li.bmm-playlist-private.active.hover {
+    border: rgba(255, 255, 255, 1) dashed .2em;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  bottom: $playerHeight;
+  width: $navigationWidth;
+  background-color: $colorBackground;
+  z-index: 3;
+
+  @include bmm-transition();
+}
+
+//Topbar changes to absolute
+@media
+screen and (max-height: $maxHeight) {
+
+  .fixed.fixedSmall[navigator] {
+    position: fixed;
+    margin-top: 0 !important;
+    top: 0;
+    bottom: $playerHeight;
+  }
+  .absolute[navigator], .fixed[navigator] {
+    position: absolute;
+    margin-top: $headerHeight;
+    bottom: auto;
+  }
+  .nav-toggle.fixed.fixedSmall {
+    position: fixed;
+    top: 0;
+    margin-top: .5em;
+  }
+  .nav-toggle.absolute, .nav-toggle.fixed {
+    position: absolute;
+    margin-top: $headerHeight + .5em;
+    top: auto;
+  }
+
+}
+
+@media
+screen and (max-height: $maxHeight) and (max-width: $mobileWidth) {
+  .nav-toggle.absolute {
+    position: absolute !important;
+    top: auto !important;
+    margin-top: .5em !important;
+  }
+  .absolute[navigator] {
+    position: absolute !important;
+    top: auto !important;
+    margin-top: 0 !important;
+    bottom: auto !important;
+  }
+  .nav-toggle {
+    top: 0 !important;
+    margin-top: .5em !important;
+  }
+  [navigator] {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: $mobileWidth) {
+  [navigator] {
+    position: fixed !important;
+    margin-top: $topbarHeight;
+    top: 0 !important;
+    bottom: $playerHeight !important;
+  }
+  .nav-toggle {
+    position: fixed !important;
+    margin-top: .5em !important;
+  }
+}
+
+@media screen and (max-width: $maxWidth) {
+  [navigator] {
+    overflow: hidden;
+  }
+  [navigator], .background {
+    margin-left: $navigationMinWidth - $navigationWidth;
+  }
+
+  [navigator].visible {
+    overflow: auto;
+  }
+  [navigator].visible, .background.visible {
+    margin-left: 0;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+    background-color: $colorBackground;
+    background-image: url(../images/svg/toggle_closed.svg);
+    margin-left: $navigationMinWidth;
+  }
+  .nav-toggle.visible {
+    background-image: url(../images/svg/toggle.svg);
+    margin-left: $navigationWidth;
+  }
+}

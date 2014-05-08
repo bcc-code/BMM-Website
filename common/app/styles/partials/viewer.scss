@@ -1,0 +1,52 @@
+[ng-view] {
+  $animate: margin-left;
+  @include bmm-transition($animate);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: $headerHeight 0 0 $navigationWidth;
+  padding: 0 1.7em $playerHeight;
+  z-index: 2;
+
+  > div {
+    float: left;
+
+    h2 {
+      display: block;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    float: none;
+  }
+}
+
+.foreground {
+  position: fixed;
+  top: 0;
+  bottom: $playerHeight;
+  width: 100%;
+  max-width: $pageWidth;
+  background-color: $colorForeground;
+  z-index: 0;
+}
+
+@media screen and (max-width: $maxWidth) {
+  [ng-view] {
+    margin-left: $navigationMinWidth;
+  }
+  //Visible means navigator is visible @todo - change name
+  [ng-view].visible {
+    overflow: hidden;
+    margin-left: $navigationWidth;
+  }
+}
+
+@media screen and (max-width: $mobileWidth) {
+  [ng-view] {
+    margin-top: 0;
+  }
+}

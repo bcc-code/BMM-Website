@@ -1,0 +1,38 @@
+@mixin marquee($speed: 7s) {
+  $animation: marquee $speed linear infinite;
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  90% { transform: translate(-110%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
+
+@-webkit-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  90% { transform: translate(-110%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
+
+@-moz-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  90% { transform: translate(-110%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
+
+@-ms-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  90% { transform: translate(-110%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
+
+@-o-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  90% { transform: translate(-110%, 0); }
+  100% { transform: translate(-110%, 0); }
+}

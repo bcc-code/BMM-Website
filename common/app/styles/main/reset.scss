@@ -1,0 +1,72 @@
+//Remove link and image styles from different browsers
+a, a:focus, a img, img, button {
+  text-decoration: none !important;
+  outline: none;
+  border: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+h2 {
+  color: $colorMain;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+input {
+  border-radius: .2em;
+  border: 0;
+}
+
+//Unset bootstrap line-height (messing up top-bar)
+input, button, select, textarea {
+  line-height: normal!important;
+}
+
+table {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+//Important for sorting
+tr {
+  padding: 0;
+  margin: 0;
+}
+
+//jQuery ui fix
+.ui-slider .ui-corner-all {
+  border: 0;
+}
+
+.ui-slider .ui-slider-handle:hover {
+  background-image: url(../images/svg/sliderbutton_hover.svg);
+}
+.ui-slider .ui-slider-handle {
+  background-image: url(../images/svg/sliderbutton.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 1.3em;
+  width: 1.3em;
+  top: -.6em;
+  cursor: pointer;
+}
+
+.ui-slider-horizontal {
+  height: .2em;
+  background: #ccc;
+  border: none;
+}
+
+.ui-resizable-n {
+  height: 15px;
+}

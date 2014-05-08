@@ -1,0 +1,358 @@
+//Draggable latest list
+.latest {
+  cursor: pointer;
+}
+
+.latest:hover {
+  background: #EEE;
+  box-shadow: 0 0 .5em #CCC;
+}
+.latest.ui-draggable-dragging {
+  width: 17em;
+}
+
+.latest.long.ui-draggable-dragging {
+  width: 30em;
+}
+
+.ui-draggable-dragging {
+  padding: .2em .2em .4em .2em;
+  box-shadow: 0 0 .4em #999;
+  background: #eee;
+  cursor: pointer;
+}
+
+//Latest list
+.bmm-latest-list {
+  width: 19em;
+  float: left;
+}
+
+.bmm-latest {
+  overflow: hidden;
+  margin-top: .2em;
+  margin-left: .4em;
+}
+
+.bmm-latest-about {
+  font-size: .7em;
+  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bmm-latest-bullet {
+  padding: .8em 0;
+  width: 1.9em;
+  text-align: center;
+  background: #C0C0C0;
+  float: left;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.bmm-latest-thumbnail {
+  width: 2.5em;
+  height: 2.5em;
+  margin: .5em .4em .5em .7em;
+  float: left;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.bmm-latest-title {
+  max-width: 30em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-size: .8em;
+}
+
+.bmm-latest-interprets {
+  font-size: .7em;
+  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bmm-interpret:hover {
+  cursor: pointer;
+  background: #EDECEC;
+}
+
+//Welcome page
+h2.speech, h2.video, h2.audio, h2.album {
+  background-size: contain;
+  padding: .6em 0 0 2.2em;
+  margin: 1.2em 0 .4em;
+  background-repeat: no-repeat;
+}
+
+h2.speech {
+  background-image: url(../images/svg/speech.svg);
+  margin-top: .2em;
+}
+
+h2.video {
+  background-image: url(../images/svg/video_title.svg);
+  background-size: 1.8em !important;
+}
+
+h2.audio {
+  background-image: url(../images/svg/audio.svg);
+}
+
+h2.album {
+  background-image: url(../images/svg/album.svg);
+}
+
+//Playlist
+.bmm-flag {
+  width: 1.7em;
+  height: 1.4em;
+}
+
+.bmm-zip {
+  width: 2.5em;
+  height: 2em;
+  display: inline-block;
+  float: right;
+}
+
+.bmm-playlist {
+  width: 100%;
+}
+
+.bmm-playlist table {
+  width: 100%;
+}
+
+.bmm-playlist table tr.playing,
+.bmm-playlist table tr.odd.playing{
+  background-color: rgba(31, 156, 98, 0.67);
+}
+
+.bmm-playlist table td>* {
+  float: left;
+}
+
+.bmm-playlist table tbody td:last-child .bmm-track-download {
+  margin: 0 .2em;
+}
+
+.bmm-playlist table thead {
+  background-color: #E7E7E7;
+  border-top: .3em solid #E7E7E7;
+  border-bottom: .3em solid #E7E7E7;
+  color: #858585;
+}
+
+.bmm-playlist table thead th {
+  font-weight: 400;
+  border-right: .1em solid #CCC;
+  padding: 0 0 0 .5em;
+}
+.bmm-playlist table thead th:last-child {
+  border-right: 0;
+}
+
+.bmm-playlist table tbody td {
+  padding: 0 0 0 .5em;
+  background-position-x: center;
+}
+.bmm-playlist table tbody td:last-child {
+  zoom: 75%;
+  padding: 0 .5em 0 0;
+  float: right;
+}
+
+.bmm-playlist table tbody tr.odd {
+  background-color: #F2F2F2;
+}
+
+.bmm-playlist table tbody tr:hover {
+  color: #F6F2F2;
+  background-color: #1F9C62;
+  cursor: default;
+}
+
+.bmm-track-download {
+  width: 1.8em;
+  height: 1.35em;
+  margin: .2em 0;
+  opacity: .6;
+  background-image: url(../images/svg/download.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bmm-player-video {
+  width: 1.7em;
+  height: 1.35em;
+  margin: .3em .3em 0 0;
+  opacity: .6;
+  background-image: url(../images/svg/video.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bmm-sort {
+  opacity: .7;
+  width: 1em;
+  background: url(../images/svg/sort.svg);
+  background-position: center center;
+  background-size: .6em 1em;
+  background-repeat: no-repeat;
+}
+
+.bmm-remove-playlist {
+  opacity: .6;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  background: url(../images/svg/cross.svg);
+  background-position: center center;
+  background-size: 1.2em 1.2em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+//Interprets
+.bmm-interpret {
+  overflow: hidden;
+  min-width: 14em;
+}
+
+.bmm-interpret-thumbnail {
+  width: 3.5em;
+  height: 3.5em;
+  margin: .5em .4em .5em .7em;
+  float: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bmm-interpret-title {
+  padding-top: .5em;
+  font-weight: 700;
+  font-size: .9em;
+}
+
+.bmm-interpret-about {
+  font-size: .9em;
+  color: #555;
+}
+
+//Album latest
+.album-latest:first-child {
+  margin-left: 0;
+  overflow: visible;
+  width: auto;
+}
+
+.album-latest {
+  width: 9em;
+  overflow: hidden;
+  float: left;
+  font-size: .7em;
+  margin-right: 1.5em;
+  margin-bottom: .5em;
+}
+
+.album-latest:first-child .album-latest-image {
+  width: 19.5em;
+  height: 20em;
+}
+
+.album-latest-image {
+  width: 9em;
+  height: 9.3em;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.album-latest-title {
+  padding-top: .5em;
+  font-weight: 700;
+  height: 3.4em;
+}
+
+.album-latest-about {
+  color: #555;
+}
+
+//Music page
+.bmm-albums {
+  width: 100%;
+  margin: 2em 0;
+}
+
+.bmm-albums>div {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bmm-album {
+  display: inline-block;
+  position: relative;
+  width: 29.3%;
+}
+
+.bmm-album:after {
+  content: '';
+  display: block;
+  margin-top: 90%;
+}
+
+.bmm-hover:hover {
+  cursor: pointer;
+  color: #0087FF;
+  opacity: .7;
+}
+
+.bmm-kilden {
+  background-image: url(../images/svg/mp3kilden.svg);
+}
+
+.bmm-barnas {
+  background-image: url(../images/svg/barnasmp3.svg);
+}
+
+.bmm-instrumental {
+  background-image: url(../images/svg/instrumental.svg);
+}
+
+//Video
+.bmm-latest-video {
+  width: 100%;
+}
+
+.bmm-latest-video .bmm-latest-thumbnail {
+  width: 9em;
+  height: 5em;
+  margin: .1em .4em .1em .7em;
+}
+
+.bmm-latest-video .bmm-latest-bullet {
+  padding: 1.3em 0;
+  width: 1.6em;
+}
+
+.bmm-latest-video .bmm-latest-title {
+  font-size: .9em;
+}
+
+//Album
+.bmm-thumbnail {
+  height: 10em;
+  width: 10em;
+  float: left;
+  margin-top: 1em;
+  background-size: contain;
+}
