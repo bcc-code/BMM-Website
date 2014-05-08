@@ -1,19 +1,16 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
-    <!-- stylesheet link (common for all widgets) --> <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" /> <!-- end stylesheet link -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google" value="notranslate">
-    <title>bmm</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>bmm</title>
+
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/eggplant/jquery-ui.css" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
-    <link rel="stylesheet" href="bower_components/jqueryui/themes/eggplant/jquery-ui.css" />
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
@@ -23,13 +20,14 @@
     <link rel="stylesheet" href="common/styles/bmm.css" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!-- stylesheet link (common for all widgets) -->
+    <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" />
+    <!-- end stylesheet link -->
   </head>
   <body ng-app="bmmApp">
 
-    <!-- topbar widget --> <script src="https://widgets.brunstad.org/TopBar/js?mode=public" type="text/javascript" ></script> <!-- end topbar widget -->
-
     <!-- Add your site or application content here -->
-    <div class="bmm-fullsize" ng-include="'views/main.html'"></div>
+    <div ng-include="'views/main.html'"></div>
 
     <!--[if lt IE 10]>
         <div class="bmm-browser-unsuported">
@@ -54,16 +52,12 @@
         ga('send', 'pageview');
     </script>
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -91,5 +85,10 @@
         <script src="scripts/controllers/album.js"></script>
         <script src="scripts/controllers/track.js"></script>
         <!-- endbuild -->
+
+    <!-- topbar widget -->
+        <script src="https://widgets.brunstad.org/TopBar/js?mode=optional" ></script>
+    <!-- end topbar widget -->
+
 </body>
 </html>

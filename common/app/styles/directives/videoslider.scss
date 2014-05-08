@@ -1,0 +1,166 @@
+//***********************************//
+//**********bmm-slider-video*********//
+$animation-video-speed: 0.7s;
+$animation-video-type: ease;
+
+.bmm-slider-video {
+
+  position: relative;
+  width: 100%;
+  margin: 1em 0;
+
+  > div.bmm-video-shadow {
+    position: relative;
+    margin: auto;
+    top: 86%;
+    width: 45%;
+    height: 8%;
+    background-image: url(../images/svg/videoshadow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  > div.bmm-slider-video-prev,
+  > div.bmm-slider-video-next {
+    position: absolute;
+    height: 30%;
+    width: 5%;
+    left: 0;
+    z-index: 10;
+  }
+
+  > div.bmm-slider-video-next {
+    background-image: url(../images/svg/videonext.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    right: 0;
+    left: auto;
+    width: 4em;
+    height: 5em;
+  }
+
+  > div.bmm-slider-video-prev {
+    background-image: url(../images/svg/videoprevious.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    width: 4em;
+    height: 5em;
+  }
+
+  > div.bmm-slider-video-next:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  > div.bmm-slider-video-prev:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  > div.bmm-videos > div:hover {
+    > div .bmm-slider-video-play {
+      opacity: 1;
+    }
+    cursor: pointer;
+  }
+
+  > div.bmm-videos {
+
+    //DEFAULT POSITION (LEFT)
+    > div {
+      //COMMON SETTINGS
+      position: absolute;
+      margin: auto;
+      top: 5%;
+      left: 25%;
+      width: 47.8%;
+      height: 75%;
+      background-color: black;
+      display: none;
+
+      -webkit-transition: all $animation-video-speed $animation-video-type;
+      -moz-transition: all $animation-video-speed $animation-video-type;
+      -ms-transition: all $animation-video-speed $animation-video-type;
+      -o-transition: all $animation-video-speed $animation-video-type;
+      transition: all $animation-video-speed $animation-video-type;
+
+      @include transform(perspective(600px) scale(1,1) rotateY(0deg) translate3d(0,0,0));
+
+      > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      > p {
+        visibility: hidden;
+      }
+
+      > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        .bmm-slider-video-play {
+          position: relative;
+          margin: auto;
+          margin-top: -3em;
+          top: 50%;
+          width: 6em;
+          height: 6em;
+          background-image: url(../images/svg/playsymbol.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.7;
+        }
+      }
+
+    }
+
+    //LEFT ELEMENT
+    > div.left {
+      display: block;
+      left: 6%;
+      @include transform(perspective(600px) scale(0.8,0.8) rotateY(20deg));
+      -webkit-transform-origin: 0% 45%;
+      -ms-transform-origin: 0% 45%;
+      transform-origin: 0% 45%;
+    }
+
+    //ELEMENT IN FOCUS
+    > div.middle {
+      display: block;
+      > p {
+        position: relative;
+        top: 65%;
+        margin: auto;
+        visibility: visible;
+        background-color: #1D74D3;
+        color: white;
+        padding: .4em .7em .2em .7em;
+        text-decoration:underline;
+        display: table;
+        a {
+          color: white;
+        }
+      }
+    }
+
+    //RIGHT ELEMENT
+    > div.right {
+      display: block;
+      left: 44%;
+      @include transform(perspective(400px) scale(0.8,0.8) rotateY(-20deg));
+      -webkit-transform-origin: 100% 45%;
+      -ms-transform-origin: 100% 45%;
+      transform-origin: 100% 45%;
+    }
+
+  }
+}
