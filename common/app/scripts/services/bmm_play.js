@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', function (bmmPlaylist, bmmPlayer, $location, $filter) {
+  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmUser', function (bmmPlaylist, bmmPlayer, $location, $filter, bmmUser) {
     
     var factory = {};
 
@@ -28,13 +28,18 @@ angular.module('bmmLibApp')
           performers = this.title;
         }
 
+        var file = this.file;
+
+        file = file.replace('://','://'+bmmUser.getUser().username+':'+bmmUser.getUser().token+'@');
+        file = file.replace('/file/','/podcast/file/');
+
         tracks.push({
           id: this.id,
           title: title,
           subtitle: performers,
           extra: this.language,
           cover: $filter('bmmCover')(this.cover,this.subtype),
-          url: this.file,
+          url: file,
           duration: this.duration,
           video: video
         });
