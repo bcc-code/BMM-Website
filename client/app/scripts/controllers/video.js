@@ -10,15 +10,15 @@ angular.module('bmmApp')
     bmmUser
   ) {
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
     var albumFrom = 3, loading=true;
 
-    $('.bmm-view').on('scrollBottom', function() {
+    $(window).on('scrollBottom', function() {
 
       if (!loading) {
 
-        $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
         loading = true;
 

@@ -14,7 +14,7 @@ angular.module('bmmApp')
     bmmPlay
   ) {
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
     $scope.tracks = 0;
     $scope.duration = 0;
     $scope.playlists = [];

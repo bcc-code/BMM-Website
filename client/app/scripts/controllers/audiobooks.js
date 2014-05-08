@@ -9,16 +9,16 @@ angular.module('bmmApp')
     bmmFormatterAlbum,
     bmmUser
   ) {
-    
-    $('.bmm-view').off('scrollBottom');
+
+    $(window).off('scrollBottom');
 
     var albumFrom = 0, loading=true, end=false, loadAmount=84;
 
-    $('.bmm-view').on('scrollBottom', function() {
+    $(window).on('scrollBottom', function() {
 
       if (!loading&&!end) {
 
-        $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
         var cnt = 0;
         loading = true;

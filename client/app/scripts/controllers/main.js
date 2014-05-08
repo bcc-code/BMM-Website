@@ -118,7 +118,12 @@ angular.module('bmmApp')
             });
 
             $timeout(function() {
-              $('.bmm-playlist').trigger('dragdrop');
+              $scope.$apply(function() {
+                //For playlists
+                $('.bmm-playlist').trigger('dragdrop');
+                //Other draggables
+                makeDraggable();
+              });
             });
 
           });
@@ -197,9 +202,45 @@ angular.module('bmmApp')
 
     };
 
+    var makeDraggable = function() {
+
+      $('.draggable').draggable({
+        helper: 'clone',
+        appendTo: 'body',
+        revert: 'invalid',
+        scope: 'move',
+        zIndex: '1000',
+        distance: 20,
+        cursorAt: {
+          left: 20
+        }
+      });
+
+      $('body').find('.bmm-playlist-private').droppable({
+        scope: 'move',
+        activeClass: 'active',
+        hoverClass: 'hover',
+        tolerance: 'pointer',
+        drop: function(ev, ui) {
+
+          bmmApi.userTrackCollectionLink($(this).attr('id'), [
+            ui.draggable.attr('id')
+          ]);
+
+        }
+      });
+
+    };
+
     $scope.exitRename = function(_collection) {
       _collection.newName = '';
       _collection.edit = false;
     };
+
+    $(window).bind('scroll', function() {
+      if($(window).scrollTop() + $(window).height()===$(document).height()) {
+        $(window).trigger('scrollBottom');
+      }
+    });
 
   });

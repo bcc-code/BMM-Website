@@ -10,7 +10,7 @@ angular.module('bmmApp')
     bmmUser
   ) {
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
     //LATEST SPEECHS
     bmmApi.trackLatest({

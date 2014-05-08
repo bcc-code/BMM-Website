@@ -16,15 +16,15 @@ angular.module('bmmApp')
     ) {
 
     $scope.results = [];
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
     var searchFrom = 0, loading=true, end=false, loadAmount=80;
 
-    $('.bmm-view').on('scrollBottom', function() {
+    $(window).on('scrollBottom', function() {
 
       if (!loading&&!end) {
 
-        $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
         loading = true;
         search(searchFrom);
 

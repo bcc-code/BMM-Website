@@ -12,7 +12,7 @@ angular.module('bmmApp')
     bmmPlay
   ) {
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
     //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
     bmmApi.facetsTrackRecordedYears().done(function(data) {
@@ -175,10 +175,9 @@ angular.module('bmmApp')
       $timeout(function() {
 
         var a,b,c; //Quickfix for wrong y-position while scrolling
-
         $('.draggable').draggable({
           helper: 'clone',
-          appendTo: '.bmm-container-main',
+          appendTo: 'body',
           revert: 'invalid',
           scope: 'move',
           zIndex: '1000',
@@ -186,15 +185,15 @@ angular.module('bmmApp')
           distance: 20,
           cursorAt: {
             left: 20,
-            top: 2+$('.bmm-container-main').scrollTop()
+            top: 2+$('body').scrollTop()
           },
           start: function(e,ui) {
             a = ui.position.top;
-            b = $('.bmm-container-main').scrollTop();
+            b = $('body').scrollTop();
             c = e.pageY;
           },
           drag: function(e,ui) {
-            ui.position.top = a+$('.bmm-container-main').scrollTop()-b+e.pageY-c;
+            ui.position.top = a+$('body').scrollTop()-b+e.pageY-c;
           }
         });
 

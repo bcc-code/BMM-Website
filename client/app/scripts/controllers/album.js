@@ -13,7 +13,7 @@ angular.module('bmmApp')
     bmmPlaylist
   ) {
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
     $scope.tracks = 0;
     $scope.duration = 0;
     $scope.playlists = [];
@@ -162,32 +162,5 @@ angular.module('bmmApp')
     $scope.$watch('bmmPlayer.getTrackCount', function() {
       findPlayingTrack();
     });
-
-    /*
-      //RELATED Albums
-      bmmApi.search(data.title, {
-        size: 21,
-        'resource-type': ['album'],
-      }, bmmUser.mediaLanguage).done(function(results) {
-
-        var albums=[];
-
-        $.each(results, function() {
-          if (this.id!==data.id) {
-            albums.push(bmmFormatterAlbum.resolve(this));
-          }
-        });
-
-        $scope.$apply(function() {
-          $scope.relatedAlbums = albums;
-          $timeout(function() {
-            $(window).trigger('resize');
-          });
-        });
-
-      });
-      
-    });
-    */
 
   });

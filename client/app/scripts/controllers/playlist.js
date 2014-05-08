@@ -10,6 +10,7 @@ angular.module('bmmApp')
     bmmFormatterTrack,
     bmmUser,
     bmmPlay,
+    bmmPlayer,
     bmmPlaylist
   ) {
 
@@ -21,7 +22,7 @@ angular.module('bmmApp')
     $scope.zip = {};
     $scope.zip.show = false;
 
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
     $scope.playlist = [];
     $scope.private = false;
@@ -32,12 +33,12 @@ angular.module('bmmApp')
         $scope.title = 'Siste tracks';
         size = 0;
 
-        $('.bmm-view').on('scrollBottom', function() {
+        $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
 
             loading = true;
-            $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -104,11 +105,11 @@ angular.module('bmmApp')
 
         size = 0;
         $scope.title = 'Mp3 kilden';
-        $('.bmm-view').on('scrollBottom', function() {
+        $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
             loading = true;
-            $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -155,11 +156,11 @@ angular.module('bmmApp')
 
         size = 0;
         $scope.title = 'Barnas mp3';
-        $('.bmm-view').on('scrollBottom', function() {
+        $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
             loading = true;
-            $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -206,11 +207,11 @@ angular.module('bmmApp')
 
         size = 0;
         $scope.title = 'Instrumental';
-        $('.bmm-view').on('scrollBottom', function() {
+        $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
             loading = true;
-            $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -257,11 +258,11 @@ angular.module('bmmApp')
 
         size = 0;
         $scope.title = $routeParams.id;
-        $('.bmm-view').on('scrollBottom', function() {
+        $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
             loading = true;
-            $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
             bmmApi.contributorTracksGet($routeParams.id, {
               from: size,
@@ -393,7 +394,8 @@ angular.module('bmmApp')
     };
 
     //When new track is set
-    $scope.$watch('bmmPlayer.getTrackCount', function() {
+    $scope.player = bmmPlayer;
+    $scope.$watch('player.trackSwitched', function() {
       findPlayingTrack();
     });
 
