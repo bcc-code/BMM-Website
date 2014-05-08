@@ -4,14 +4,19 @@ angular.module('bmmLibApp')
   .factory('bmmApi', [function () {
   
   var factory = {},
-      serverUrli = 'localhost/';
+      serverUrl = 'https://localhost/'; //Fallback
 
   factory.serverUrl = function(url) {
-    serverUrli = url;
+    serverUrl = url;
   };
 
+  //@todo - use a proper url generator
+  factory.setCredentials = function(username, password) {
+    serverUrl = serverUrl.replace('://','://'+username+':'+password+'@');
+  }
+
   factory.getserverUrli = function() {
-    return serverUrli;
+    return serverUrl;
   };
 
   /** Get the basic information about the API **/
@@ -20,7 +25,7 @@ angular.module('bmmLibApp')
     return $.ajax({
       method: 'GET',
       crossDomain: true,
-      url: serverUrli,
+      url: serverUrl,
       dataType: 'json'
     }).fail( function(xhr) {
 
@@ -32,12 +37,12 @@ angular.module('bmmLibApp')
 
   /** Save a new album **/
   factory.albumPost = function(options) {
-    
+
     if (typeof options === 'undefined') { options = {}; }
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'album/',
+      url: serverUrl+'album/',
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -55,13 +60,13 @@ angular.module('bmmLibApp')
 
   /** Get the latest albums of a specific type (Default is all types) **/
   factory.albumLatest = function(options, language) {
-    
+
     if (typeof options === 'undefined') { options = {}; }
     if (typeof language === 'undefined') { language = ''; }
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'album/',
+      url: serverUrl+'album/',
       headers: {
         'Accept-Language': language
       },
@@ -81,7 +86,7 @@ angular.module('bmmLibApp')
 
   /** Get all albums in a year **/
   factory.albumPublishedYear = function(year, options, language) {
-    
+
     if (typeof options === 'undefined') { options = {}; }
     if (typeof language === 'undefined') { language = ''; }
 
@@ -95,7 +100,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'album/published/'+year+'/',
+      url: serverUrl+'album/published/'+year+'/',
       headers: {
         'Accept-Language': language
       },
@@ -115,7 +120,7 @@ angular.module('bmmLibApp')
 
     /** Get all albums in a year **/
   factory.albumTracksRecordedYear = function(year, options, language) {
-    
+
     if (typeof options === 'undefined') { options = {}; }
     if (typeof language === 'undefined') { language = ''; }
 
@@ -129,7 +134,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'album/tracks_recorded/'+year+'/',
+      url: serverUrl+'album/tracks_recorded/'+year+'/',
       headers: {
         'Accept-Language': language
       },
@@ -176,7 +181,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'album/'+id,
+      url: serverUrl+'album/'+id,
       headers: {
         'Accept-Language': language
       },
@@ -217,7 +222,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
-      url: serverUrli+'album/'+id,
+      url: serverUrl+'album/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -238,7 +243,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
-      url: serverUrli+'album/'+id,
+      url: serverUrl+'album/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -265,7 +270,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'facets/album_published/years',
+      url: serverUrl+'facets/album_published/years',
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -293,7 +298,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'facets/track_recorded/years',
+      url: serverUrl+'facets/track_recorded/years',
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -320,7 +325,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'login/authentication',
+      url: serverUrl+'login/authentication',
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -339,7 +344,7 @@ angular.module('bmmLibApp')
   /** Authenticates the user by redirecting him to the Sherwood SignOn Server **/
   factory.loginRedirect = function() {
 
-    window.location = serverUrli+'login/redirect?redirect_to='+window.location;
+    window.location = serverUrl+'login/redirect?redirect_to='+window.location;
 
   };
 
@@ -360,7 +365,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'search/'+term,
+      url: serverUrl+'search/'+term,
       headers: {
         'Accept-Language': language
       },
@@ -385,7 +390,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'suggest/'+term,
+      url: serverUrl+'suggest/'+term,
       headers: {
         'Accept-Language': language
       },
@@ -409,7 +414,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'track/',
+      url: serverUrl+'track/',
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -442,7 +447,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'track/',
+      url: serverUrl+'track/',
       headers: {
         'Accept-Language': language
       },
@@ -476,7 +481,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'track/rel/'+key+'/',
+      url: serverUrl+'track/rel/'+key+'/',
       headers: {
         'Accept-Language': language
       },
@@ -506,7 +511,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'track/'+id,
+      url: serverUrl+'track/'+id,
       headers: {
         'Accept-Language': language
       },
@@ -531,7 +536,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
-      url: serverUrli+'track/'+id,
+      url: serverUrl+'track/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -552,7 +557,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
-      url: serverUrli+'track/'+id,
+      url: serverUrl+'track/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -571,7 +576,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'track/'+id+'/files/',
+      url: serverUrl+'track/'+id+'/files/',
       file: file,
       dataType: 'json',
       data: JSON.stringify({
@@ -595,7 +600,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'login/user',
+      url: serverUrl+'login/user',
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -614,7 +619,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'file/uploaded/guess_tracks',
+      url: serverUrl+'file/uploaded/guess_tracks',
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -635,13 +640,13 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'file/uploaded/'+name+'?_method=LINK',
+      url: serverUrl+'file/uploaded/'+name+'?_method=LINK',
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
       },
       beforeSend: function (xhr) {
-        xhr.setRequestHeader('Link', '<'+serverUrli+'track/'+track.id+'>');
+        xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+track.id+'>');
         xhr.setRequestHeader('Accept-Language', track.language);
       },
       crossDomain: true
@@ -660,7 +665,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'user/',
+      url: serverUrl+'user/',
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -680,7 +685,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'user/'+username,
+      url: serverUrl+'user/'+username,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -701,7 +706,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
-      url: serverUrli+'user/'+username,
+      url: serverUrl+'user/'+username,
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -722,7 +727,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
-      url: serverUrli+'user/'+username,
+      url: serverUrl+'user/'+username,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -749,7 +754,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'track_collection/',
+      url: serverUrl+'track_collection/',
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -778,11 +783,11 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'track_collection/'+playlist+'?_method=LINK',
+      url: serverUrl+'track_collection/'+playlist+'?_method=LINK',
       beforeSend: function (xhr) {
         $.each(tracks, function() {
           //@todo - Find a solution for multiple Link requests
-          xhr.setRequestHeader('Link', '<'+serverUrli+'track/'+this+'>');
+          xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+this+'>');
         });
         xhr.setRequestHeader('Accept-Language', language);
       },
@@ -804,7 +809,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'track_collection/'+id,
+      url: serverUrl+'track_collection/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -835,7 +840,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
-      url: serverUrli+'track_collection/'+id,
+      url: serverUrl+'track_collection/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -856,7 +861,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
-      url: serverUrli+'track_collection/'+id,
+      url: serverUrl+'track_collection/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -877,7 +882,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'contributor/',
+      url: serverUrl+'contributor/',
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -899,7 +904,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      url: serverUrli+'contributor/',
+      url: serverUrl+'contributor/',
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -922,7 +927,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'contributor/'+id,
+      url: serverUrl+'contributor/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -946,7 +951,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
-      url: serverUrli+'contributor/'+id,
+      url: serverUrl+'contributor/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -967,7 +972,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
-      url: serverUrli+'contributor/'+id,
+      url: serverUrl+'contributor/'+id,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -989,7 +994,7 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      url: serverUrli+'contributor/'+id+'/track/',
+      url: serverUrl+'contributor/'+id+'/track/',
       data: $.param(options),
       headers: {
         'Accept-Language': language

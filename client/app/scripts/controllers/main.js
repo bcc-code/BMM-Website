@@ -66,6 +66,7 @@ angular.module('bmmApp')
       $scope.trackCollections = user.track_collections;
       bmmUser.setUsername(user.username);
       bmmUser.setUser(user);
+      bmmApi.setCredentials(bmmUser.getUser().username, bmmUser.getUser().token);
 
       bmmApi.root().done(function(root) {
 
