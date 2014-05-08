@@ -5,9 +5,10 @@ angular.module('bmmLibApp')
     
     var factory = {},
         url='',
-        shuffle=false,
-        repeat=false,
         tracks=[];
+
+    factory.shuffle=false;
+    factory.repeat=false;
 
     factory.setTracks = function(options) {
 
@@ -42,22 +43,22 @@ angular.module('bmmLibApp')
     factory.setShuffle = function(bool) {
 
       if (typeof bool!== 'undefined') {
-        shuffle = bool;
+        factory.shuffle = bool;
       } else {
-        shuffle = !shuffle;
+        factory.shuffle = !factory.shuffle;
       }
 
-      return shuffle;
+      return factory.shuffle;
 
     };
 
     factory.setRepeat = function(bool) {
       if (typeof bool!== 'undefined') {
-        repeat = bool;
+        factory.repeat = bool;
       } else {
-        repeat = !repeat;
+        factory.repeat = !factory.repeat;
       }
-      return repeat;
+      return factory.repeat;
     };
 
     factory.getUrl = function() {
@@ -93,13 +94,13 @@ angular.module('bmmLibApp')
 
     factory.getNext = function() {
 
-      if (shuffle) {
+      if (factory.shuffle) {
         factory.index = Math.floor(Math.random()*tracks.length);
         return factory.getCurrent();
       } else if (factory.index<(tracks.length-1)) {
         factory.index++;
         return factory.getCurrent();
-      } else if (repeat) {
+      } else if (factory.repeat) {
         factory.index=0;
         return factory.getCurrent();
       } else {
@@ -113,7 +114,7 @@ angular.module('bmmLibApp')
       if (factory.index>0) {
         factory.index--;
         return factory.getCurrent();
-      } else if (repeat) {
+      } else if (factory.repeat) {
         factory.index=(tracks.length-1);
         return factory.getCurrent();
       } else {
