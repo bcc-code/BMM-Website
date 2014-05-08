@@ -36,26 +36,12 @@ angular.module('bmmDebug', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/pages/directives.html',
+        templateUrl: 'views/pages/frontend.html',
         controller: 'MainCtrl'
       })
-      .when('/bmm_main', {
-        templateUrl: 'views/previews/bmm_main.html',
+      .when('/backend', {
+        templateUrl: 'views/pages/backend.html',
         controller: 'MainCtrl'
-      })
-      .when('/bmm_sliders', {
-        templateUrl: 'views/previews/bmm_sliders.html',
-        controller: 'MainCtrl'
-      })
-      .when('/bmm_api', {
-        templateUrl: 'views/previews/bmm_api.html',
-        controller: 'ApiCtrl'
-      })
-      .when('/bmm_player_controller', {
-        templateUrl: 'views/previews/bmm_player_controller.html',
-      })
-      .when('/bmm_player_about', {
-        templateUrl: 'views/previews/bmm_player_about.html',
       })
       .otherwise({
         redirectTo: '/'
