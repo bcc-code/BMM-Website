@@ -16,15 +16,11 @@ angular.module('bmmLibApp')
         element.addClass('bmm-playlist');
 
         $('.bmm-playlist').on('dragdrop', function() {
-
           appendDragDrop();
-
         });
 
         scope.$watch('playlist', function() {
-
           appendDragDrop();
-
         });
 
         element.click(function() {
@@ -32,15 +28,15 @@ angular.module('bmmLibApp')
         });
 
         var a,b,c; //Quickfix for wrong y-position while scrolling
-
         var appendDragDrop = function() {
           element.find('tbody').find('tr').each(function() {
             $(this).draggable({
               handle: '.drag',
               helper: 'clone',
-              appendTo: '.bmm-main-container',
+              appendTo: 'body',
               revert: 'invalid',
               scope: 'move',
+              zIndex: 100,
               distance: 10,
               scroll: true,
               start: function(e,ui) {
