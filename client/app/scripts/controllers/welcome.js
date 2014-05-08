@@ -10,140 +10,151 @@ angular.module('bmmApp')
     bmmUser
   ) {
 
-    $(window).off('scrollBottom');
-
-    //LATEST SPEECHS
-    bmmApi.trackLatest({
-      size: 10,
-      'content-type': ['speech']
-    }, bmmUser.mediaLanguage).done(function(data) {
-
-      var left = [], right = [], track;
-
-      $.each(data, function(index) {
-
-        track = bmmFormatterTrack.resolve(this);
-
-        if (index<5) {
-          left.push(track);
-        } else {
-          right.push(track);
-        }
-
-      });
-
-      $scope.$apply(function() {
-        $scope.latestSpeaksLeft = left;
-        $scope.latestSpeaksRight = right;
-        makeDraggable();
-      });
-
+    //Temporary solution. @todo - Dig into $routeProvider & resolve for a better solution
+    $scope.$parent.$watch('loadEnd', function(loadEnd) {
+      if (loadEnd) {
+        init();
+      }
     });
 
-    //LATEST VIDEO
-    bmmApi.trackLatest({
-      size: 5,
-      'content-type': ['video']
-    }, bmmUser.mediaLanguage).done(function(data) {
+    var init = function() {
 
-      var videos = [], track;
+      $(window).off('scrollBottom');
 
-      $.each(data, function() {
+      //LATEST SPEECHS
+      bmmApi.trackLatest({
+        size: 10,
+        'content-type': ['speech']
+      }, bmmUser.mediaLanguage).done(function(data) {
 
-        track = bmmFormatterTrack.resolve(this);
-        videos.push(track);
+        var left = [], right = [], track;
 
-      });
+        $.each(data, function(index) {
 
-      $scope.$apply(function() {
-        $scope.latestVideos = videos;
-        makeDraggable();
-      });
+          track = bmmFormatterTrack.resolve(this);
 
-    });
+          if (index<5) {
+            left.push(track);
+          } else {
+            right.push(track);
+          }
 
-    //LATEST MUSIC
-    bmmApi.trackLatest({
-      size: 6,
-      'content-type': ['song']
-    }, bmmUser.mediaLanguage).done(function(data) {
+        });
 
-      var left = [], right = [], track;
-
-      $.each(data, function(index) {
-
-        track = bmmFormatterTrack.resolve(this);
-
-        if (index<3) {
-          left.push(track);
-        } else {
-          right.push(track);
-        }
+        $scope.$apply(function() {
+          $scope.latestSpeaksLeft = left;
+          $scope.latestSpeaksRight = right;
+          makeDraggable();
+        });
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestMusicLeft = left;
-        $scope.latestMusicRight = right;
-        makeDraggable();
+      //LATEST VIDEO
+      bmmApi.trackLatest({
+        size: 5,
+        'content-type': ['video']
+      }, bmmUser.mediaLanguage).done(function(data) {
+
+        var videos = [], track;
+
+        $.each(data, function() {
+
+          track = bmmFormatterTrack.resolve(this);
+          videos.push(track);
+
+        });
+
+        $scope.$apply(function() {
+          $scope.latestVideos = videos;
+          makeDraggable();
+        });
+
       });
 
-    });
+      //LATEST MUSIC
+      bmmApi.trackLatest({
+        size: 6,
+        'content-type': ['song']
+      }, bmmUser.mediaLanguage).done(function(data) {
 
-    //LATEST ALBUMS
-    bmmApi.albumLatest({
-      size: 20
-    }, bmmUser.mediaLanguage).done(function(data) {
+        var left = [], right = [], track;
 
-      var albums=[], album;
+        $.each(data, function(index) {
 
-      $.each(data, function() {
+          track = bmmFormatterTrack.resolve(this);
 
-        album = bmmFormatterAlbum.resolve(this);
-        albums.push(album);
+          if (index<3) {
+            left.push(track);
+          } else {
+            right.push(track);
+          }
+
+        });
+
+        $scope.$apply(function() {
+          $scope.latestMusicLeft = left;
+          $scope.latestMusicRight = right;
+          makeDraggable();
+        });
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = albums;
+      //LATEST ALBUMS
+      bmmApi.albumLatest({
+        size: 20
+      }, bmmUser.mediaLanguage).done(function(data) {
+
+        var albums=[], album;
+
+        $.each(data, function() {
+
+          album = bmmFormatterAlbum.resolve(this);
+          albums.push(album);
+
+        });
+
+        $scope.$apply(function() {
+          $scope.latestAlbums = albums;
+          $timeout(function() {
+            $(window).trigger('resize');
+          });
+        });
+
+      });
+
+      var makeDraggable = function() {
+
         $timeout(function() {
-          $(window).trigger('resize');
-        });
-      });
 
-    });
+          $('.draggable').draggable({
+            helper: 'clone',
+            appendTo: 'body',
+            revert: 'invalid',
+            scope: 'move',
+            zIndex: '1000',
+            distance: 20,
+            cursorAt: {
+              left: 20
+            }
+          });
 
-    var makeDraggable = function() {
+          $('body').find('.bmm-playlist-private').droppable({
+            scope: 'move',
+            activeClass: 'active',
+            hoverClass: 'hover',
+            tolerance: 'pointer',
+            drop: function(ev, ui) {
 
-      $timeout(function() {
+              bmmApi.userTrackCollectionLink($(this).attr('id'), [
+                ui.draggable.attr('id')
+              ]);
 
-        $('.draggable').draggable({
-          helper: 'clone',
-          appendTo: 'body',
-          revert: 'invalid',
-          scope: 'move',
-          zIndex: '1000',
-          distance: 20,
-          cursorAt: {
-            left: 20
-          }
-        });
+            }
+          });
 
-        $('body').find('.bmm-playlist-private').droppable({
-          scope: 'move',
-          activeClass: 'active',
-          hoverClass: 'hover',
-          tolerance: 'pointer',
-          drop: function(ev, ui) {
-
-            bmmApi.userTrackCollectionLink($(this).attr('id'), [
-              ui.draggable.attr('id')
-            ]);
-
-          }
         });
 
-      });
+      };
 
     };
 

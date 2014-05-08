@@ -77,10 +77,12 @@ angular.module('bmmApp')
           }
         });
 
-        $scope.languages = root.languages; //Must set before findTrans..
-        findTranslation(user.languages,0);
-        findMediaLanguage(user.languages,0);
-        $scope.loadEnd = true;
+        $scope.$apply(function() {
+          $scope.languages = root.languages; //Must set before findTrans..
+          findTranslation(user.languages,0);
+          findMediaLanguage(user.languages,0);
+          $scope.loadEnd = true;
+        });
 
       });
 
