@@ -7,6 +7,22 @@ angular.module('bmmLibApp')
       videoTarget,
       source;
 
+  factory.currentTime = 0;
+  factory.currentTimePercent = 0;
+  factory.volume = 0;
+  factory.muted = false;
+  factory.cover = '';
+  factory.title = '';
+  factory.subtitle = '';
+  factory.extraTitle = '';
+  factory.id = -1;
+  factory.fullscreen = false;
+  factory.showVideo = false;
+  factory.video = false;
+  factory.source = '';
+  factory.playing = false;
+  factory.trackSwitched = false;
+
   factory.initialize = function(target) {
 
     if (typeof target!=='undefined') {
@@ -19,7 +35,7 @@ angular.module('bmmLibApp')
         ready: function(e) {
           //Initialization complete
           factory.setSource(bmmPlaylist.getCurrent());
-          factory.getVolume = e.jPlayer.options.volume;
+          factory.volume = e.jPlayer.options.volume;
         },
         swfPath: 'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
         supplied: 'm4v, mp3',
@@ -35,10 +51,10 @@ angular.module('bmmLibApp')
         timeupdate: function() {
           //Track step
           $rootScope.safeApply(function() {
-            factory.getCurrentTime = $(videoTarget).data('jPlayer').
-                                     status.currentTime;
-            factory.getCurrentTimePercent = $(videoTarget).data('jPlayer').
-                                            status.currentPercentAbsolute;
+            factory.currentTime =
+              $(videoTarget).data('jPlayer').status.currentTime;
+            factory.currentTimePercent =
+              $(videoTarget).data('jPlayer').status.currentPercentAbsolute;
           });
         },
         ended: function() {
@@ -48,11 +64,7 @@ angular.module('bmmLibApp')
         resize: function() {
           //Fullscreen was toggled
           $rootScope.$apply(function() {
-            if (factory.getFullscreen==='off') {
-              factory.getFullscreen='on';
-            } else {
-              factory.getFullscreen='off';
-            }
+            factory.fullscreen = !factory.fullscreen;
           });
         },
         size: {
@@ -67,23 +79,17 @@ angular.module('bmmLibApp')
 
   factory.setPlay = function() {
     $(videoTarget).jPlayer('play');
-    //$rootScope.$apply(function() {
-    factory.getPlaying = true;
-    //});
+    factory.playing = true;
   };
 
   factory.setPause = function() {
     $(videoTarget).jPlayer('pause');
-    //$rootScope.$apply(function() {
-    factory.getPlaying = false;
-    //});
+    factory.playing = false;
   };
 
   factory.setStop = function() {
     $(videoTarget).jPlayer('stop');
-    //$rootScope.$apply(function() {
-    factory.getPlaying = false;
-    //});
+    factory.playing = false;
   };
 
   factory.setNext = function(play) {
@@ -107,15 +113,19 @@ angular.module('bmmLibApp')
     if (typeof bool!=='undefined') {
       if (bool) {
         $(videoTarget).jPlayer('mute');
+        factory.muted = true;
       } else {
         $(videoTarget).jPlayer('unmute');
+        factory.muted = false;
       }
       
     } else {
       if ($(videoTarget).data('jPlayer').options.muted) {
         $(videoTarget).jPlayer('unmute');
+        factory.muted = false;
       } else {
         $(videoTarget).jPlayer('mute');
+        factory.muted = true;
       }
     }
   };
@@ -124,13 +134,7 @@ angular.module('bmmLibApp')
     if (typeof bool!=='undefined') {
       $(videoTarget).jPlayer({ fullScreen: bool });
     } else {
-
-      if (factory.getFullscreen==='off') {
-        bool = true;
-      } else {
-        bool = false;
-      }
-      
+      bool = !factory.fullscreen;
     }
     $(videoTarget).jPlayer({ fullScreen: bool });
     return bool;
@@ -138,35 +142,37 @@ angular.module('bmmLibApp')
 
   factory.setVolume = function(volume) {
     $(videoTarget).jPlayer('volume', volume);
-    factory.getVolume = volume;
+    factory.volume = volume;
   };
 
   factory.setSource = function(track) {
 
+    $(videoTarget).jPlayer('clearMedia');
+
     var paused = $(videoTarget).data('jPlayer').status.paused;
     source = track;
 
-    factory.getCover = track.cover;
-    factory.getTitle = track.title;
-    factory.getSubtitle = track.subtitle;
-    factory.getExtra = track.extra;
-    factory.getId = track.id;
+    factory.cover = track.cover;
+    factory.title = track.title;
+    factory.subtitle = track.subtitle;
+    factory.extraTitle = track.extra;
+    factory.id = track.id;
     factory.source = source.url;
 
     if (source.video) {
       $(videoTarget).jPlayer('setMedia', {
         m4v: source.url,
-        poster: factory.getCover
+        poster: factory.cover
       });
       factory.showVideo = true;
-      factory.isVideo = true;
+      factory.video = true;
     } else {
       $(videoTarget).jPlayer('setMedia', {
         mp3: source.url,
-        poster: factory.getCover
+        poster: factory.cover
       });
       factory.showVideo = false;
-      factory.isVideo = false;
+      factory.video = false;
       factory.setFullscreen(false);
     }
 
@@ -174,7 +180,7 @@ angular.module('bmmLibApp')
       factory.setPlay();
     }
 
-    factory.getTrackCount++;
+    factory.trackSwitched = !factory.trackSwitched;
 
   };
 
@@ -185,21 +191,6 @@ angular.module('bmmLibApp')
   factory.getDuration = function() {
     return $(videoTarget).data('jPlayer').status.duration;
   };
-
-  factory.getCurrentTime = 0;
-  factory.getCurrentTimePercent = 0;
-  factory.getVolume = 0;
-  factory.getCover = '';
-  factory.getTitle = '';
-  factory.getSubtitle = '';
-  factory.getExtra = '';
-  factory.getId = -1;
-  factory.getFullscreen = 'off';
-  factory.showVideo = false;
-  factory.isVideo = false;
-  factory.source = '';
-  factory.getPlaying = false;
-  factory.getTrackCount = 0; //Checked by playlists (updates current playing track)
 
   $rootScope.safeApply = function(fn) {
     var phase = this.$root.$$phase;
