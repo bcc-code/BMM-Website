@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   margin: $headerHeight 0 0 $navigationWidth;
-  padding: 0 1.7em $playerHeight;
+  padding: 0 1.7em $playerHeight+2em;
   z-index: 2;
 
   > div {
