@@ -8,17 +8,24 @@ angular.module('bmmApp', [
   'ui.bootstrap',
   'ui.sortable',
   'ngTouch'
-]).run(['$route', '$location', 'bmmApi', function($route, $location, bmmApi)  {
-    
+]).run(['$route', '$location', 'bmmApi',
+    function($route, $location, bmmApi)  {
+
     // 'https://bmm-api.brunstad.org/' 'https://127.0.0.1/bmm/api/web/app_dev.php/' 'https://devapibmm.brunstad.org/'
     bmmApi.serverUrl('https://bmm-api.brunstad.org/');
 
-    if ($location.protocol()!=='https') {
+    //Port 9001 is used for development
+    if ($location.protocol()!=='https'&&$location.port()!==9001) {
       var link = 'https://'+window.location.href.substr(5);
       link = link.replace('////','//'); //IE FIX
       window.location = link;
     } else {
       $route.reload();
+    }
+
+    //Removes unwanted urlchange done by topbar while developing
+    if ($location.url().indexOf('&topbarInitialized=true')>-1) {
+      $location.url($location.url().replace('&topbarInitialized=true',''));
     }
 
     //Fastclick attempts to kill some touch delay for IPAD/IPHONE
