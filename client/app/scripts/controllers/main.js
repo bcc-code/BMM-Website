@@ -15,6 +15,17 @@ angular.module('bmmApp')
 
     $scope.loadEnd = false;
 
+    //Check for iphone / ipod / ipad
+    var ipad = (navigator.userAgent.match(/iPad/i) !== null);
+    var iphone = (navigator.userAgent.match(/iPhone/i) !== null);
+    var ipod = (navigator.userAgent.match(/iPod/i) !== null);
+
+    if (ipad||iphone||ipod) {
+      $scope.ios = true;
+    } else {
+      $scope.ios = false;
+    }
+
     $scope.setMediaLanguage = function(lang) {
       bmmUser.setMediaLanguage(lang);
       $scope.mediaLanguage = bmmUser.mediaLanguage;
@@ -241,7 +252,7 @@ angular.module('bmmApp')
     };
 
     $(window).bind('scroll', function() {
-      if($(window).scrollTop() + $(window).height()===$(document).height()) {
+      if($(window).scrollTop() + $(window).height()>=$(document).height()) {
         $(window).trigger('scrollBottom');
       }
     });
