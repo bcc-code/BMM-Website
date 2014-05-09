@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          protocol: 'https',
+          protocol: 'http',
           livereload: true
         }
       },
@@ -64,13 +64,13 @@ module.exports = function (grunt) {
         port: 9001,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
-        protocol: 'https',
+        protocol: 'http',
         livereload: 35729
       },
       livereload: {
         options: {
           open: true,
-          protocol: 'https',
+          protocol: 'http',
           base: [
             '.tmp',
             '<%= yeoman.app %>'
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
       test: {
         options: {
           port: 9002,
-          protocol: 'https',
+          protocol: 'http',
           base: [
             '.tmp',
             'test',
@@ -224,6 +224,11 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
+        },{
+          expand: true,
+          cwd: '<%= yeoman.app %>/common/images',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
@@ -234,7 +239,12 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
           dest: '<%= yeoman.dist %>/images'
-        }]
+        }/*,{
+          expand: true,
+          cwd: '<%= yeoman.app %>/common/images',
+          src: '{,*\/}*.svg',
+          dest: '<%= yeoman.dist %>/images'
+        }*/]
       }
     },
     htmlmin: {
@@ -308,7 +318,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.app %>/bower_components/hub.bmm/dist/images',
+          cwd: '<%= yeoman.app %>/common/images',
           dest: '<%= yeoman.dist %>/images',
           src: '{,*/}*'
         }, {
