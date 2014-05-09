@@ -30,8 +30,21 @@ angular.module('bmmLibApp')
 
         var file = this.file;
 
-        file = file.replace('://','://'+bmmUser.getUser().username+':'+bmmUser.getUser().token+'@');
-        file = file.replace('/file/','/podcast/file/');
+        //Add exception for ie (have problem with verification)
+        var ie = function() {
+          if (window.navigator.userAgent.indexOf("MSIE ") > 0 ||
+            !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+            $(document.body).css('position','relative');
+            return true;
+          } else {
+            return false;
+          }
+        };
+
+        if (!ie()) {
+          file = file.replace('://','://'+bmmUser.getUser().username+':'+bmmUser.getUser().token+'@');
+          file = file.replace('/file/','/podcast/file/');
+        }
 
         tracks.push({
           id: this.id,
