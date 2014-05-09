@@ -21,8 +21,8 @@ angular.module('bmmLibApp')
               '{{(player.getDuration()-player.currentTime) | bmmTime}}' +
             '</div>' +
             '<div class="fullscreen-toggle"></div>' +
-            '<div class="mute" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
-            '<div class="volume"></div>' +
+            '<div class="mute" ng-hide="ios" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
+            '<div class="volume" ng-hide="ios"></div>' +
             '<div class="slider"><div class="target"></div></div>' +
           '</div>')
         (scope));
@@ -121,7 +121,7 @@ angular.module('bmmLibApp')
         var timer = $timeout(function() {
           element.find('.fullscreen-toggle').addClass('unvisible');
           element.find('.fullscreen-controllers').addClass('unvisible');
-        },2000);
+        },4000);
 
         $(window).on('mousemove click', function() {
           element.find('.fullscreen-toggle').removeClass('unvisible');
@@ -130,7 +130,7 @@ angular.module('bmmLibApp')
           timer = $timeout(function() {
             element.find('.fullscreen-toggle').addClass('unvisible');
             element.find('.fullscreen-controllers').addClass('unvisible');
-          },2000);
+          },4000);
         });
         element.find('.fullscreen-toggle').click(function() {
           bmmPlayer.setFullscreen();
