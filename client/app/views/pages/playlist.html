@@ -1,14 +1,12 @@
 <h2>{{title}}</h2>
-<!--h3 ng-show="podcast.isset">
-	<a ng-href="{{podcast.itunes}}">{{translation.playlist.addToItunes}}</a>
-</h3-->
+
 <div ng-show="podcast.isset">
 	{{translation.playlist.copyPodcastLink}}: 
 	<input type="text" value="{{podcast.link}}">
 </div>
 <br ng-show="podcast.isset">
 <br ng-show="podcast.isset">
-<!--a title="Download ZIP" class="bmm-track-download bmm-zip" ng-show="zip.show" download ng-href="{{zip.url}}"></a--><br>
+<a title="Download ZIP" class="bmm-track-download bmm-zip" ng-show="zip.show&&!ios" target="_blank" ng-href="{{zip.url}}"></a><br>
 <b>{{translation.playlist.content}};</b> ( {{tracks}} {{translation.playlist.tracks}}; {{translation.playlist.totalDuration}}: {{duration | bmmTime}} )
 <div bmm-playlist>
 	<table>
@@ -34,9 +32,8 @@
 				<td class="drag">{{track.duration | bmmTime}}</td>
 				<td class="bmm-large-only"><div class="bmm-flag" ng-class="{'flags-{{track.language}}': track.language!=mediaLanguage}"></div></td>
 				<td>
-					<div bmm-track-favorite></div>
-					<a download bmm-track-download ng-href="{{track.file}}?download=1"></a>
-					<div ng-show="track.video" bmm-player-video ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist, $index);"></div>
+					<a ng-hide="ios" download class="bmm-track-download" ng-href="{{track.file}}?download=1"></a>
+					<div ng-show="track.video" class="bmm-player-video" ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist, $index);"></div>
 					<div class="bmm-remove-playlist" ng-show="private" ng-click="remove($index)"</div>
 				</td>
 			</tr>

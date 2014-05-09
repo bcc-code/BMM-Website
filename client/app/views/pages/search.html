@@ -6,23 +6,22 @@
         class="{{result.draggable}} latest long"
         id="{{result.id}}"
         language="{{result.language}}"
-        ng-click="open(result.type, result.id, result.language);">
-		<div class="bmm-latest video">
+        ng-click="open(result.type, result.id, result.language, result.track);">
+		<div class="search-result">
 			
-			<div class="bmm-latest-bullet">{{$index+1}}</div>
-			<div >
-				<div class="bmm-thumbnail-search result.type"
-					 style="
-					   background-image: url({{result.cover | bmmCover:result.subtype }});
-					   "
-					 ng-class="{'bmm-thumbnail-search-video': result.video}"
-				></div>
-			</div>
-			<div class="bmm-cell">
-				<div class="bmm-latest-title">{{result.title}}</div>
-				<div ng-repeat="relation in result.relations" class="bmm-search-relation">
+			<div class="bullet">{{$index+1}}</div>
+            <img class="bmm-thumbnail-search result.type"
+                 ng-class="{'bmm-thumbnail-search-video': result.video}"
+                 ng-src="{{result.cover | bmmCover:result.subtype }}"
+                 width="auto" height="54"/>
+			<div class="content">
+				<h3>{{result.title}}</h3>
+				<span ng-repeat="relation in result.relations">
 					<b>{{relation.title}}:</b> {{relation.content}}
-				</div>
+				</span>
+                <span>
+                    <i>{{result.date | date:'dd.MM.yyyy'}} ({{result.duration | bmmTime}}) - {{result.language | bmmLanguage}}</i>
+                </span>
 			</div>
 		</div>
 	</li>

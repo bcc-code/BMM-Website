@@ -21,7 +21,7 @@
 						<th></th>
 					</tr>
 				</thead>
-				<tbody ui-sortable="sortableOptions">
+				<tbody>
 					<tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist.tracks"
 					  ng-class="{even: $even, odd: $odd, playing: track.playing}">
 						<td class="bmm-large-only drag">{{$index+1}}</td>
@@ -30,9 +30,8 @@
 						<td class="drag">{{track.duration | bmmTime}}</td>
                         <td class="bmm-large-only"><div class="bmm-flag" ng-class="{'flags-{{track.language}}': track.language!=mediaLanguage}"></div></td>
                         <td>
-							<div bmm-track-favorite></div>
-							<a download target="_blank" bmm-track-download ng-href="{{track.file}}"></a>
-							<div ng-show="track.video" bmm-player-video ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist.tracks, $index);"></div>
+							<a download ng-hide="ios" target="_blank" class="bmm-track-download" ng-href="{{track.file}}"></a>
+							<div ng-show="track.video" class="bmm-player-video" ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist.tracks, $index);"></div>
 						</td>
 					</tr>
 				</tbody>

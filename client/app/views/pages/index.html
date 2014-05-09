@@ -9,10 +9,8 @@
 		<div class="bmm-latest">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
-				<div title="{{track.albumTitle}}"
-					class="bmm-latest-thumbnail bmm-move" style="
-					background-image: url({{track.cover | bmmCover:'speech'}});
-				"></div>
+				<img title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
 			</div>
 			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
 			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
@@ -30,10 +28,8 @@
 		<div class="bmm-latest">
 			<div class="bmm-latest-bullet">{{$index+6}}</div>
 			<div>
-				<div title="{{track.albumTitle}}"
-					class="bmm-latest-thumbnail bmm-move" style="
-					background-image: url({{track.cover | bmmCover:'speech'}});
-				"></div>
+                <img title="{{track.albumTitle}}"
+                     class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
 			</div>
 			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
 			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
@@ -71,10 +67,8 @@
 		<div class="bmm-latest">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
-				<div title="{{track.albumTitle}}"
-					class="bmm-latest-thumbnail" style="
-					background-image: url({{track.cover | bmmCover:'song'}});
-				"></div>
+				<img title="{{track.albumTitle}}"
+					class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
 			</div>
 			<div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
 			<div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
@@ -92,10 +86,8 @@
 		<div class="bmm-latest">
 			<div class="bmm-latest-bullet">{{$index+4}}</div>
 			<div>
-				<div title="{{track.albumTitle}}"
-					class="bmm-latest-thumbnail" style="
-					background-image: url({{track.cover | bmmCover:'song'}});
-				"></div>
+                <img title="{{track.albumTitle}}"
+                     class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
 			</div>
 			<div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
 			<div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>

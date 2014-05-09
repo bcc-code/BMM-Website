@@ -83,9 +83,10 @@
 
                     <div class="mute"
                          ng-class="{'active': player.muted}"
-                         ng-click="player.setMute();"></div>
-                    <div class="volume"></div>
-                    <a class="download"></a>
+                         ng-click="player.setMute();"
+                         ng-hide="ios"></div>
+                    <div class="volume" ng-hide="ios"></div>
+                    <a class="download" download ng-hide="ios" ng-href="{{player.source}}?download=1"></a>
                     <div class="videoToggle" ng-click="player.showVideo=!player.showVideo" ng-show="player.video"></div>
 
                     <div class="scroller">

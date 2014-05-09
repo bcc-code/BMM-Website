@@ -9,10 +9,9 @@
              ng-click="play(firstVideos, $index);">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
-				<div title="{{video.albumTitle}}"
-					class="bmm-latest-thumbnail" style="
-					background-image: url({{video.cover | bmmCover:'video'}});
-				"></div>
+				<img title="{{video.albumTitle}}"
+					 class="bmm-latest-thumbnail"
+                     ng-src="{{video.cover | bmmCover:'video'}}"/>
 			</div>
 			<div title="{{video.title}}" class="bmm-latest-title">{{video.title}}</div>
 			<div title="{{video.performers}}" class="bmm-latest-interprets">{{video.performers}}</div>
@@ -24,9 +23,7 @@
 
 <div class="bmm-margin-top">
 	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
-		<div class="album-latest-image" style="
-				background-image: url({{album.cover}});
-			"></div>
+        <img class="album-latest-image" ng-src="{{album.cover}}" width="9em" height="9.3em"/>
 		<div class="album-latest-title">{{album.title}}</div>
 		<div class="album-latest-about"></div>
 	</div>
