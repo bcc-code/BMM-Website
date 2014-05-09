@@ -23,11 +23,6 @@ angular.module('bmmLibApp')
           appendDragDrop();
         });
 
-        element.click(function() {
-          element.toggleClass('active');
-        });
-
-        var a,b,c; //Quickfix for wrong y-position while scrolling
         var appendDragDrop = function() {
           element.find('tbody').find('tr').each(function() {
             $(this).draggable({
@@ -39,14 +34,6 @@ angular.module('bmmLibApp')
               zIndex: 100,
               distance: 10,
               scroll: true,
-              start: function(e,ui) {
-                a = ui.position.top;
-                b = $('.bmm-container-main').scrollTop();
-                c = e.pageY;
-              },
-              drag: function(e,ui) {
-                ui.position.top = a+$('.bmm-container-main').scrollTop()-b+e.pageY-c;
-              },
               cursorAt: {
                 left: 2,
                 top: 2
