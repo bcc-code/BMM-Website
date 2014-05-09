@@ -28,7 +28,6 @@
     overflow: hidden;
   }
   .videoscreen {
-    $videoHeight: 10em;
     @include transition(height); //Must fire CSS change in player.js after transition
     position: absolute;
     width: 100%;
