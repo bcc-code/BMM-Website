@@ -1,4 +1,11 @@
 //Remove link and image styles from different browsers
+
+@-moz-document url-prefix() {
+  body {
+    position: relative;
+  }
+}
+
 a, a:focus, a img, img, button {
   text-decoration: none !important;
   outline: none;
@@ -69,4 +76,26 @@ tr {
 
 .ui-resizable-n {
   height: 15px;
+}
+
+//Chrome & safari scroll-bars
+::-webkit-scrollbar {
+  width: .5em;
+  height: .5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #769989;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #E7E7E7;
 }
