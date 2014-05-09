@@ -12,7 +12,8 @@ angular.module('bmmLibApp')
 
   //@todo - use a proper url generator
   factory.setCredentials = function(username, password) {
-    serverUrl = serverUrl.replace('://','://'+username+':'+password+'@');
+    //OBS!! - Fixes iPad, iPhone, iPod, but rubbish firefox
+    //serverUrl = serverUrl.replace('://','://'+username+':'+password+'@');
   }
 
   factory.getserverUrli = function() {
