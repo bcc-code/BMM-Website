@@ -15,7 +15,7 @@ angular.module('bmmApp')
     bmmPlay
     ) {
 
-    //Temporary solution. @todo - Dig into $routeProvider & resolve for a better solution
+    //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
     $scope.$parent.$watch('loadEnd', function(loadEnd) {
       if (loadEnd) {
         init();
@@ -49,14 +49,14 @@ angular.module('bmmApp')
         $scope.$parent.bmm.term = '';
       });
 
-      $scope.open = function(type, id, language) {
+      $scope.open = function(type, id, language, track) {
         if (type==='track') {
 
-          bmmApi.trackGet(id, {}, language).done(function(data) {
-            var track = bmmFormatterTrack.resolve(data);
+          //bmmApi.trackGet(id, {}, language).done(function(data) {
+            //var track = bmmFormatterTrack.resolve(data);
             bmmPlay.setPlay([track], 0);
-            $scope.$apply();
-          });
+            //$scope.$apply();
+          //});
         } else {
           $location.path('/'+type+'/'+id);
         }
@@ -94,6 +94,8 @@ angular.module('bmmApp')
                 type: type,
                 subtype: this.subtype,
                 language: this.language,
+                date: track.date,
+                duration: track.duration,
                 video: false,
                 draggable: draggable
               });
@@ -134,8 +136,11 @@ angular.module('bmmApp')
                       subtype: this.subtype,
                       draggable: draggable,
                       language: this.language,
+                      date: track.date,
+                      duration: track.duration,
                       video: vid,
-                      relations: relations
+                      relations: relations,
+                      track: track
                     });
                     break;
                   default:
@@ -147,11 +152,14 @@ angular.module('bmmApp')
                       subtype: this.subtype,
                       draggable: draggable,
                       language: this.language,
+                      date: track.date,
+                      duration: track.duration,
                       video: vid,
                       relations: [
                         {title: 'Interpreter', content: track.performers},
                         {title: 'Album', content: track.parentTitle}
-                      ]
+                      ],
+                      track: track
                     });
                     break;
                 }
@@ -166,11 +174,14 @@ angular.module('bmmApp')
                   subtype: this.subtype,
                   draggable: draggable,
                   language: this.language,
+                  date: track.date,
+                  duration: track.duration,
                   video: vid,
                   relations: [
                     {title: 'Interpreter', content: track.performers},
                     {title: 'Album', content: track.parentTitle}
-                  ]
+                  ],
+                  track: track
                 });
 
               }
@@ -203,7 +214,7 @@ angular.module('bmmApp')
 
           $('.draggable').draggable({
             helper: 'clone',
-            appendTo: '.bmm-container-main',
+            appendTo: 'body',
             revert: 'invalid',
             scope: 'move',
             zIndex: '1000',
@@ -211,15 +222,15 @@ angular.module('bmmApp')
             distance: 20,
             cursorAt: {
               left: 20,
-              top: 2+$('.bmm-container-main').scrollTop()
+              top: 2+$('body').scrollTop()
             },
             start: function(e,ui) {
               a = ui.position.top;
-              b = $('.bmm-container-main').scrollTop();
+              b = $('body').scrollTop();
               c = e.pageY;
             },
             drag: function(e,ui) {
-              ui.position.top = a+$('.bmm-container-main').scrollTop()-b+e.pageY-c;
+              ui.position.top = a+$('body').scrollTop()-b+e.pageY-c;
             }
           });
 
