@@ -1,3 +1,37 @@
+.search-result {
+  margin-bottom: .5em;
+  display: inline-block;
+  img {
+    height: 6em;
+    width: auto;
+    float: left;
+  }
+  .bullet {
+    padding-top: 2em;
+    height: 4.6em;
+    width: 1.8em;
+    text-align: center;
+    background: #C0C0C0;
+    float: left;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .content {
+    display: table;
+    padding-left: .5em;
+    h3 {
+      font-size: 1.2em;
+      padding: 0;
+      margin: 0;
+    }
+    span {
+      display: block;
+      font-size: .9em;
+    }
+  }
+}
+
 //Draggable latest list
 .latest {
   cursor: pointer;
@@ -12,7 +46,7 @@
 }
 
 .latest.long.ui-draggable-dragging {
-  width: 30em;
+  width: 35em;
 }
 
 .ui-draggable-dragging {
