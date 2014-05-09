@@ -2,13 +2,17 @@
   "name": "bmm",
   "version": "1.0.0",
   "dependencies": {
+    "angular": "1.2.6",
+    "jquery": "~1.10.2",
+    "jquery-ui": "~1.10.3",
     "sass-bootstrap": "~3.0.2",
     "angular-resource": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
     "jplayer": "~2.6.0",
     "angular-touch": "~1.2.14",
-    "fastclick": "~1.0.1"
+    "fastclick": "~1.0.1",
+    "jqueryui-touch-punch": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
