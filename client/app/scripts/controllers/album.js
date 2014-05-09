@@ -10,10 +10,11 @@ angular.module('bmmApp')
     bmmFormatterAlbum,
     bmmFormatterTrack,
     bmmUser,
+    bmmPlayer,
     bmmPlaylist
   ) {
 
-    //Temporary solution. @todo - Dig into $routeProvider & resolve for a better solution
+    //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
     $scope.$parent.$watch('loadEnd', function(loadEnd) {
       if (loadEnd) {
         init();
@@ -136,11 +137,15 @@ angular.module('bmmApp')
 
                 });
 
+                $('.bmm-playlist').trigger('dragdrop');
+
               });
 
             }
 
           }
+
+          $('.bmm-playlist').trigger('dragdrop');
 
         });
 
@@ -155,11 +160,16 @@ angular.module('bmmApp')
 
           $.each($scope.playlists, function() {
             $.each(this.tracks, function(index) {
-              if (index===bmmPlaylist.index&&bmmPlaylist.getCurrent().url===this.file) {
+
+              var url = bmmPlaylist.getCurrent().url.replace(bmmUser.getUser().username+':'+bmmUser.getUser().token+'@','');
+              url = url.replace('podcast/','');
+
+              if (index===bmmPlaylist.index&&this.file===url) {
                 this.playing = true;
               } else {
                 this.playing = false;
               }
+
             });
           });
 
@@ -167,7 +177,8 @@ angular.module('bmmApp')
       };
 
       //When new track is set
-      $scope.$watch('bmmPlayer.getTrackCount', function() {
+      $scope.player = bmmPlayer;
+      $scope.$watch('player.trackSwitched', function() {
         findPlayingTrack();
       });
     };

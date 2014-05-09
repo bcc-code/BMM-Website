@@ -14,7 +14,7 @@ angular.module('bmmApp')
     bmmPlay
   ) {
 
-    //Temporary solution. @todo - Dig into $routeProvider & resolve for a better solution
+    //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
     $scope.$parent.$watch('loadEnd', function(loadEnd) {
       if (loadEnd) {
         init();
