@@ -23,8 +23,8 @@
                 </form>
             </div>
             <ul class="menu">
-                <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
                 <li><a ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
+                <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
                 <li><a ng-href="#video">{{translation.menu.main.video}}</a></li>
                 <li><a ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
                 <li><a ng-href="#archive">{{translation.menu.main.archive}}</a></li>
@@ -123,7 +123,7 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form ng-submit="go('/search/'+bmm.term);">
+                    <form ng-submit="go('/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
                                     type="text"
                                     placeholder="{{translation.general.search}}"></div>
@@ -131,11 +131,11 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
-                    <li><a ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
-                    <li><a ng-href="#video">{{translation.menu.main.video}}</a></li>
-                    <li><a ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-href="#archive">{{translation.menu.main.archive}}</a></li>
+                    <li><a ng-href="#speeches" ng-click="visible=false">{{translation.menu.main.speeches}}</a></li>
+                    <li><a ng-href="#music" ng-click="visible=false">{{translation.menu.main.music}}</a></li>
+                    <li><a ng-href="#video" ng-click="visible=false">{{translation.menu.main.video}}</a></li>
+                    <li><a ng-href="#audiobooks" ng-click="visible=false">{{translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-href="#archive" ng-click="visible=false">{{translation.menu.main.archive}}</a></li>
                 </ul>
             </div>
 
@@ -143,8 +143,8 @@
             <h2>{{translation.menu.secondary.playlists}}</h2>
 
             <ul class="playlists-generated">
-                <li><a ng-href="#playlist/latest">{{translation.menu.secondary.latestTracks}}</a></li>
-                <li><span ng-click="getCurrent()">{{translation.menu.secondary.current}}</span></li>
+                <li><a ng-href="#playlist/latest" ng-click="visible=false">{{translation.menu.secondary.latestTracks}}</a></li>
+                <li><span ng-click="getCurrent()" ng-click="visible=false">{{translation.menu.secondary.current}}</span></li>
             </ul>
 
             <button class="playlists-add" ng-click="bmmPlaylistAdd=!bmmPlaylistAdd">
@@ -167,7 +167,8 @@
                     id="{{collection.id}}"
                     ng-repeat="collection in trackCollections">
                     <a ng-hide="collection.edit == true"
-                       ng-href="#/playlist/private/{{collection.id}}">
+                       ng-click="$parent.visible=false"
+                       ng-href="#playlist/private/{{collection.id}}">
                         {{collection.name}}</a>
                     <form ng-show="collection.edit == true">
                         <input type="text" ng-model="collection.newName"/>
