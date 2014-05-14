@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterAlbum', [ function () {
+  .factory('bmmFormatterAlbum', ['bmmApi', function (bmmApi) {
     
     var factory = {};
 
@@ -13,7 +13,9 @@ angular.module('bmmLibApp')
       resolvedData.cover = data.cover;
       if (resolvedData.cover===null) {
         resolvedData.cover='fallback_images/svg/album.svg';
-      }
+      } /*else {
+        resolvedData.cover = resolvedData.cover.replace('://','://'+bmmApi.getCredentials()+'@');
+      }*/
 
       //Find title
       resolvedData.title = data.title;
