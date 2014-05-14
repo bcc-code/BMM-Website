@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('bmmPlaylist', ['$rootScope', 'bmmApi', function ($rootScope, bmmApi) {
+  .directive('bmmPlaylist', ['$rootScope', 'bmmApi', 'draggable', function ($rootScope, bmmApi, draggable) {
     return {
       link: function postLink(scope, element) {
 
@@ -16,49 +16,12 @@ angular.module('bmmLibApp')
         element.addClass('bmm-playlist');
 
         $('.bmm-playlist').on('dragdrop', function() {
-          appendDragDrop();
+          draggable.playlist(element, scope);
         });
 
         scope.$watch('playlist', function() {
-          appendDragDrop();
+          draggable.playlist(element, scope);
         });
-
-        var appendDragDrop = function() {
-          element.find('tbody').find('tr').each(function() {
-            $(this).draggable({
-              handle: '.drag',
-              helper: 'clone',
-              appendTo: 'body',
-              revert: 'invalid',
-              scope: 'move',
-              zIndex: 100,
-              distance: 10,
-              scroll: true,
-              cursorAt: {
-                left: 2,
-                top: 2
-              }
-            });
-          });
-
-          $('body').find('.bmm-playlist-private').droppable({
-            scope: 'move',
-            activeClass: 'active',
-            hoverClass: 'hover',
-            tolerance: 'pointer',
-            drop: function(ev, ui) {
-              
-              bmmApi.userTrackCollectionLink($(this).attr('id'), [
-                ui.draggable.attr('id') //@todo - make possible for multiple ids
-              ], ui.draggable.attr('language')).fail(function() {
-
-                $rootScope.$apply();
-
-              });
-
-            }
-          });
-        };
 
       }
     };
