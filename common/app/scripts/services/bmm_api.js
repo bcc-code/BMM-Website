@@ -1,19 +1,22 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmApi', [function () {
+  .factory('bmmApi', [ function () {
   
   var factory = {},
+      credentials,
       serverUrl = 'https://localhost/'; //Fallback
 
   factory.serverUrl = function(url) {
     serverUrl = url;
   };
 
-  //@todo - use a proper url generator
   factory.setCredentials = function(username, password) {
-    //OBS!! - Fixes iPad, iPhone, iPod, but rubbish firefox
-    //serverUrl = serverUrl.replace('://','://'+username+':'+password+'@');
+    credentials = username+':'+password;
+  }
+
+  factory.getCredentials = function() {
+    return credentials;
   }
 
   factory.getserverUrli = function() {
@@ -25,6 +28,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       crossDomain: true,
       url: serverUrl,
       dataType: 'json'
@@ -43,6 +49,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'album/',
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -69,7 +78,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/',
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -103,7 +113,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/published/'+year+'/',
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -137,7 +148,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/tracks_recorded/'+year+'/',
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -184,7 +196,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/'+id,
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -223,6 +236,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'album/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -244,6 +260,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'album/'+id,
       dataType: 'json',
       xhrFields: {
@@ -259,9 +278,10 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of years with albums for the archive (published sorting) **/
-  factory.facetsAlbumPublishedYears = function(options) {
+  factory.facetsAlbumPublishedYears = function(options, language) {
 
     if (typeof options === 'undefined') { options = {}; }
+    if (typeof language === 'undefined') { language = ''; }
 
     /** OPTIONS (Stars = Required)
      *    content-type              Array(String)   song|speech|audiobook|singsong|video
@@ -271,6 +291,10 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'facets/album_published/years',
       data: $.param(options),
       dataType: 'json',
@@ -299,6 +323,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'facets/track_recorded/years',
       data: $.param(options),
       dataType: 'json',
@@ -326,6 +353,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'login/authentication',
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -368,7 +398,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'search/'+term,
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -393,7 +424,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'suggest/'+term,
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       dataType: 'json',
       xhrFields: {
@@ -415,6 +447,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track/',
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -450,7 +485,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/',
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -484,7 +520,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/rel/'+key+'/',
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -514,7 +551,8 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/'+id,
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
       dataType: 'json',
@@ -537,6 +575,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -558,6 +599,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track/'+id,
       dataType: 'json',
       xhrFields: {
@@ -577,6 +621,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track/'+id+'/files/',
       file: file,
       dataType: 'json',
@@ -601,6 +648,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'login/user',
       dataType: 'json',
       xhrFields: {
@@ -620,6 +670,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'file/uploaded/guess_tracks',
       dataType: 'json',
       xhrFields: {
@@ -641,6 +694,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'file/uploaded/'+name+'?_method=LINK',
       dataType: 'json',
       xhrFields: {
@@ -666,6 +722,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'user/',
       data: $.param(options),
       dataType: 'json',
@@ -686,6 +745,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'user/'+username,
       dataType: 'json',
       xhrFields: {
@@ -707,6 +769,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'user/'+username,
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -728,6 +793,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'user/'+username,
       dataType: 'json',
       xhrFields: {
@@ -759,6 +827,9 @@ angular.module('bmmLibApp')
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       xhrFields: {
         'withCredentials': true
       },
@@ -784,6 +855,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track_collection/'+playlist+'?_method=LINK',
       beforeSend: function (xhr) {
         $.each(tracks, function() {
@@ -810,6 +884,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track_collection/'+id,
       dataType: 'json',
       xhrFields: {
@@ -841,6 +918,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track_collection/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -862,6 +942,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'track_collection/'+id,
       dataType: 'json',
       xhrFields: {
@@ -883,6 +966,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'contributor/',
       data: $.param(options),
       dataType: 'json',
@@ -905,6 +991,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'contributor/',
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -934,7 +1023,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       crossDomain: true
     }).fail( function(xhr) {
@@ -952,6 +1042,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'PUT',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'contributor/'+id,
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -973,6 +1066,9 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'DELETE',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
       url: serverUrl+'contributor/'+id,
       dataType: 'json',
       xhrFields: {
@@ -998,7 +1094,8 @@ angular.module('bmmLibApp')
       url: serverUrl+'contributor/'+id+'/track/',
       data: $.param(options),
       headers: {
-        'Accept-Language': language
+        'Accept-Language': language,
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       dataType: 'json',
       xhrFields: {

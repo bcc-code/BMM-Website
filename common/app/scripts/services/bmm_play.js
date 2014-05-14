@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmUser', function (bmmPlaylist, bmmPlayer, $location, $filter, bmmUser) {
+  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmUser', 'bmmApi',
+    function (bmmPlaylist, bmmPlayer, $location, $filter, bmmUser,  bmmApi) {
     
     var factory = {};
 
@@ -41,10 +42,9 @@ angular.module('bmmLibApp')
           }
         };
 
-        if (!ie()) {
-          file = file.replace('://','://'+bmmUser.getUser().username+':'+bmmUser.getUser().token+'@');
-          file = file.replace('/file/','/podcast/file/');
-        }
+        //if (!ie()) {
+          //file = file.replace('://','://'+bmmApi.getCredentials()+'@');
+        //}
 
         tracks.push({
           id: this.id,
