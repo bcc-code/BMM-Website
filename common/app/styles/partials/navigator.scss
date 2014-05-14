@@ -193,6 +193,18 @@
   @include bmm-transition();
 }
 
+//Admin only
+.quick-menu {
+  margin: 0 .5em;
+  select {
+    width: 100%;
+  }
+  button, input[type='submit'] {
+    color: #333;
+    border-radius: .2em;
+  }
+}
+
 //Topbar changes to absolute
 @media
 screen and (max-height: $maxHeight) {
