@@ -14,26 +14,35 @@ angular.module('bmmApp', [
     //'https://bmm-api.brunstad.org/' 'https://127.0.0.1/bmm/api/web/app_dev.php/' 'https://devapibmm.brunstad.org/' https://api.bmm/
     bmmApi.serverUrl('https://bmm-api.brunstad.org/');
 
-    $(function() {
-      FastClick.attach(document.body);
-    });
-
-    if ($location.protocol()!=='https') {
-      window.location = 'https://'+window.location.href.substr(5);
+    //Port 9001 is used for development
+    if ($location.protocol()!=='https'&&$location.port()!==9001) {
+      var link = 'https://'+window.location.href.substr(5);
+      link = link.replace('////','//'); //IE FIX
+      window.location = link;
     } else {
       $route.reload();
     }
+
+    //Removes unwanted urlchange done by topbar while developing
+    if ($location.url().indexOf('&topbarInitialized=true')>-1) {
+      $location.url($location.url().replace('&topbarInitialized=true',''));
+    }
+
+    //Fastclick attempts to kill some touch delay for IPAD/IPHONE
+    $(function() {
+      FastClick.attach(document.body);
+    });
 
   }])
   .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-      .when('/welcome', {
+      .when('/dashboard', {
         templateUrl: 'views/pages/index.html'
       })
-      .when('/ftp_linker', {
-        templateUrl: 'views/pages/ftp_linker.html',
-        controller: 'FtpLinkerCtrl'
+      .when('/waitings', {
+        templateUrl: 'views/pages/waitings.html',
+        controller: 'WaitingsCtrl'
       })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
@@ -41,7 +50,12 @@ angular.module('bmmApp', [
       })
       .when('/album/:id', {
         templateUrl: 'views/pages/album.html',
-        controller: 'AlbumCtrl'
+        controller: 'AlbumCtrl',
+        resolve: {
+          'localsData': function(locals) {
+            return locals.fetchFiles('translations/locals');
+          }
+        }
       })
       .when('/track/:id', {
         templateUrl: 'views/pages/track.html',
