@@ -10,7 +10,8 @@ angular.module('bmmApp')
       bmmPlaylist,
       bmmPlayer,
       bmmUser,
-      bmmPlay
+      bmmPlay,
+      draggable
     ) {
 
     $scope.loadEnd = false;
@@ -78,6 +79,7 @@ angular.module('bmmApp')
       bmmUser.setUsername(user.username);
       bmmUser.setUser(user);
       bmmApi.setCredentials(bmmUser.getUser().username, bmmUser.getUser().token);
+      console.log(bmmApi.getserverUrli());
 
       bmmApi.root().done(function(root) {
 
@@ -136,7 +138,7 @@ angular.module('bmmApp')
                 //For playlists
                 $('.bmm-playlist').trigger('dragdrop');
                 //Other draggables
-                makeDraggable();
+                draggable.makeDraggable($scope);
               });
             });
 
@@ -212,36 +214,6 @@ angular.module('bmmApp')
 
         });
 
-      });
-
-    };
-
-    var makeDraggable = function() {
-
-      $('.draggable').draggable({
-        helper: 'clone',
-        appendTo: 'body',
-        revert: 'invalid',
-        scope: 'move',
-        zIndex: '1000',
-        distance: 20,
-        cursorAt: {
-          left: 20
-        }
-      });
-
-      $('body').find('.bmm-playlist-private').droppable({
-        scope: 'move',
-        activeClass: 'active',
-        hoverClass: 'hover',
-        tolerance: 'pointer',
-        drop: function(ev, ui) {
-
-          bmmApi.userTrackCollectionLink($(this).attr('id'), [
-            ui.draggable.attr('id')
-          ]);
-
-        }
       });
 
     };

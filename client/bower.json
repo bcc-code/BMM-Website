@@ -12,7 +12,7 @@
     "jplayer": "~2.6.0",
     "angular-touch": "~1.2.14",
     "fastclick": "~1.0.1",
-    "jqueryui-touch-punch": "*"
+    "jquery.ui.touch-punch.dk": "~0.3.3"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

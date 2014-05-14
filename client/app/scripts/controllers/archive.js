@@ -9,7 +9,8 @@ angular.module('bmmApp')
     bmmUser,
     bmmFormatterTrack,
     bmmFormatterAlbum,
-    bmmPlay
+    bmmPlay,
+    draggable
   ) {
 
     //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
@@ -112,7 +113,7 @@ angular.module('bmmApp')
                 });
 
                 $scope.$apply();
-                makeDraggable();
+                draggable.makeDraggable($scope);
 
               });
 
@@ -168,7 +169,7 @@ angular.module('bmmApp')
                 });
 
                 $scope.$apply();
-                makeDraggable();
+                draggable.makeDraggable($scope);
 
               });
 

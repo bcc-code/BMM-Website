@@ -12,6 +12,7 @@ angular.module('bmmApp')
     bmmPlaylist,
     bmmPlayer,
     bmmUser,
+    draggable,
     bmmPlay
     ) {
 
@@ -76,7 +77,7 @@ angular.module('bmmApp')
 
           var track,
               type,
-              draggable,
+              dragging,
               vid = false,
               cnt=0;
 
@@ -84,7 +85,7 @@ angular.module('bmmApp')
 
             if (typeof this.type!=='undefined'&&this.type==='album') {
               type = 'album';
-              draggable = 'false';
+              dragging = 'false';
               track = bmmFormatterAlbum.resolve(this);
 
               $scope.results.push({
@@ -97,12 +98,12 @@ angular.module('bmmApp')
                 date: track.date,
                 duration: track.duration,
                 video: false,
-                draggable: draggable
+                draggable: dragging
               });
 
             } else {
               type = 'track';
-              draggable = 'draggable';
+              dragging = 'draggable';
               track = bmmFormatterTrack.resolve(this);
 
               if (track.subtype==='video') {
@@ -134,7 +135,7 @@ angular.module('bmmApp')
                       id: this.id,
                       type: type,
                       subtype: this.subtype,
-                      draggable: draggable,
+                      draggable: dragging,
                       language: this.language,
                       date: track.date,
                       duration: track.duration,
@@ -150,7 +151,7 @@ angular.module('bmmApp')
                       id: this.id,
                       type: type,
                       subtype: this.subtype,
-                      draggable: draggable,
+                      draggable: dragging,
                       language: this.language,
                       date: track.date,
                       duration: track.duration,
@@ -172,7 +173,7 @@ angular.module('bmmApp')
                   id: this.id,
                   type: type,
                   subtype: this.subtype,
-                  draggable: draggable,
+                  draggable: dragging,
                   language: this.language,
                   date: track.date,
                   duration: track.duration,
@@ -192,9 +193,11 @@ angular.module('bmmApp')
 
           });
 
+          var scope = $scope;
           $scope.$apply(function() {
-            makeDraggable();
+            draggable.makeDraggable(scope);
           });
+
           loading = false;
           $('.bmm-loading').remove();
           searchFrom+=loadAmount;
@@ -205,7 +208,7 @@ angular.module('bmmApp')
       };
 
       search();
-
+      /*
       var makeDraggable = function() {
 
         $timeout(function() {
@@ -250,7 +253,8 @@ angular.module('bmmApp')
 
         }, 200);
 
-      };
+      };*/
     };
+
 
   });

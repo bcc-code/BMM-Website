@@ -12,7 +12,7 @@ angular.module('bmmApp', [
     function($route, $location, bmmApi)  {
 
     // 'https://bmm-api.brunstad.org/' 'https://127.0.0.1/bmm/api/web/app_dev.php/' 'https://devapibmm.brunstad.org/'
-    bmmApi.serverUrl('https://bmm-api.brunstad.org/');
+    bmmApi.serverUrl('https://devapibmm.brunstad.org/');
 
     //Port 9001 is used for development
     if ($location.protocol()!=='https'&&$location.port()!==9001) {

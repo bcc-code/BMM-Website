@@ -7,7 +7,8 @@ angular.module('bmmApp')
     bmmApi,
     bmmFormatterTrack,
     bmmFormatterAlbum,
-    bmmUser
+    bmmUser,
+    draggable
   ) {
 
     //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
@@ -83,7 +84,7 @@ angular.module('bmmApp')
         $scope.$apply(function() {
           $scope.latestSpeechLeft = left;
           $scope.latestSpeechRight = right;
-          makeDraggable();
+          draggable.makeDraggable($scope);
         });
 
       });
@@ -154,40 +155,6 @@ angular.module('bmmApp')
         });
 
       });
-
-      var makeDraggable = function() {
-
-        $timeout(function() {
-
-          $('.draggable').draggable({
-            helper: 'clone',
-            appendTo: 'body',
-            revert: 'invalid',
-            scope: 'move',
-            zIndex: '1000',
-            distance: 20,
-            cursorAt: {
-              left: 20
-            }
-          });
-
-          $('body').find('.bmm-playlist-private').droppable({
-            scope: 'move',
-            activeClass: 'active',
-            hoverClass: 'hover',
-            tolerance: 'pointer',
-            drop: function(ev, ui) {
-
-              bmmApi.userTrackCollectionLink($(this).attr('id'), [
-                ui.draggable.attr('id')
-              ]);
-
-            }
-          });
-
-        });
-
-      };
 
     };
 
