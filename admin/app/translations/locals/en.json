@@ -1,0 +1,16 @@
+{
+  "local": "en",
+  "date": {
+    "shortday": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "d": "shortday,",
+    "Versammlung Sa, 12. Aug. 17:30": "Versammlung - Sa 12. Aug 17:30"
+  }
+}
