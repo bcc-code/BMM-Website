@@ -7,17 +7,17 @@
     <!-- stylesheet link (common for all widgets) --> <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" /> <!-- end stylesheet link -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>bmm admin</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/jqueryui/themes/eggplant/jquery-ui.css" />
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
-    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
     <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap-combined.css">
@@ -26,13 +26,10 @@
     <!-- endbuild -->
   </head>
   <body ng-app="bmmApp">
-    <!-- topbar widget --> <script src="https://widgets.brunstad.org/TopBar/js?mode=public" type="text/javascript" ></script> <!-- end topbar widget -->
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="bmm-fullsize" ng-include="'views/main.html'"></div>
+    <div ng-include="'views/main.html'"></div>
+
     <!--[if lt IE 10]>
         <div class="bmm-browser-unsuported">
             <h1>OOoops!</h1>
@@ -56,32 +53,28 @@
        ga('send', 'pageview');
     </script>
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
-    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
-    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
-    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
-    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
-    <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/jquery.ui.touch-punch.dk/jquery.ui.touch-punch.dk.js"></script>
+    <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/vendor2.js -->
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbuild -->
 
@@ -91,18 +84,18 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/welcome.js"></script>
     <script src="scripts/controllers/album.js"></script>
-    <script src="scripts/controllers/current.js"></script>
     <script src="scripts/controllers/track.js"></script>
     <script src="scripts/controllers/contributors.js"></script>
-    <script src="scripts/controllers/permissions.js"></script>
     <script src="scripts/controllers/track_bible.js"></script>
-    <script src="scripts/controllers/track_uploader.js"></script>
-    <script src="scripts/controllers/image_uploader.js"></script>
-    <script src="scripts/controllers/album_uploader.js"></script>
     <script src="scripts/controllers/search.js"></script>
-    <script src="scripts/controllers/ftp_linker.js"></script>
-    <script src="scripts/controllers/contributor_uploader.js"></script>
+    <script src="scripts/controllers/uploader.js"></script>
+    <script src="scripts/controllers/users.js"></script>
+    <script src="scripts/controllers/waitings.js"></script>
     <!-- endbuild -->
+
+    <!-- topbar widget -->
+        <script src="https://widgets.brunstad.org/TopBar/js?mode=optional" ></script>
+    <!-- end topbar widget -->
 
 </body>
 </html>
