@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterTrack', [ function () {
+  .factory('bmmFormatterTrack', ['bmmApi', function (bmmApi) {
     
     var factory = {};
 
@@ -21,11 +21,13 @@ angular.module('bmmLibApp')
             typeof data._meta.parent.cover!=='undefined'&&
             data._meta.parent.cover!==null) {
           resolvedData.cover = data._meta.parent.cover;
+          //resolvedData.cover = resolvedData.cover.replace('://','://'+bmmApi.getCredentials()+'@');
         } else if (typeof data._meta!=='undefined'&&
             typeof data._meta.root_parent!=='undefined'&&
             typeof data._meta.root_parent.cover!=='undefined'&&
             data._meta.root_parent.cover!==null) {
           resolvedData.cover = data._meta.root_parent.cover;
+          //resolvedData.cover = resolvedData.cover.replace('://','://'+bmmApi.getCredentials()+'@');
         } else {
 
           switch(data.subtype) {
