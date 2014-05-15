@@ -1,5 +1,10 @@
 {
 	"Easter Conference": {
+    "af": "Easter Konferensie",
+    "cs": "Velikonoční konference",
+    "hr": "Húsvét Konferencia",
+    "ro": "Conferința de Paști",
+    "zh": "復活節會議",
 		"en": "Easter Conference",
 		"de": "Osterkonferenz",
 		"nb": "Påskestevne",
@@ -16,6 +21,11 @@
 		"pt": "Conferencia de Páscoa"
 	},
 	"New Year Conference": {
+    "af": "Nuwe Jaar Konferensie",
+    "cs": "Novoroční konference",
+    "hr": "Újévi Konferencia",
+    "ro": "Anul Nou Conference",
+    "zh": "新年會議",
 		"en": "New Year Conference",
 		"de": "Neujahrskonferenz",
 		"nb": "Nyttårsstevne",
@@ -32,6 +42,11 @@
 		"pt": "Conferencia de ano novo"
 	},
 	"Summer Conference": {
+    "af": "Somer Konferensie",
+    "cs": "letní konference",
+    "hr": "Nyári Konferencia",
+    "ro": "Conferința de vară",
+    "zh": "夏令會",
 		"en": "Summer Conference",
 		"de": "Sommerkonferenz",
 		"nb": "Sommerstevne",
@@ -48,6 +63,11 @@
 		"pt": "Conferencia de veräo"
 	},
 	"Summer Conference July": {
+    "af": "Somer Konferensie Julie",
+    "cs": "Letní konference července",
+    "hr": "Nyári konferencián július",
+    "ro": "Conferința de vară iulie",
+    "zh": "夏令會七月",
 		"en": "Summer Conference July",
 		"de": "Sommerkonferenz Juli",
 		"nb": "Sommerstevne Juli",
@@ -64,6 +84,11 @@
 		"pt": "Conferencia de veräo"
 	},
 	"Summer Conference August": {
+    "af": "Somer Konferensie Augustus",
+    "cs": "Letní srpnové konferenci",
+    "hr": "Nyári konferencián augusztus",
+    "ro": "Vară Conferința august",
+    "zh": "夏令會八月",
 		"en": "Summer Conference August",
 		"de": "Sommerkonferenz August",
 		"nb": "Sommerstevne August",
@@ -80,6 +105,11 @@
 		"pt": "Conferencia de veräo"
 	},
 	"Sisters' Conference": {
+    "af": "Susters se konferensie",
+    "cs": "Konference sester",
+    "hr": "Sisters konferencia",
+    "ro": "Conferința surori",
+    "zh": "姐妹會",
 		"en": "Sisters' Conference",
 		"de": "Schwesternkonferenz",
 		"nb": "Søstrestevne",
@@ -96,6 +126,11 @@
 		"pt": "Conferencia de irmäs"
 	},
 	"Brothers' Conference": {
+    "af": "Brothers Konferensie",
+    "cs": "Konference Brothers",
+    "hr": "Brothers konferencia",
+    "ro": "Conferința Brothers",
+    "zh": "兄弟會",
 		"en": "Brothers' Conference",
 		"de": "Brüderkonferenz",
 		"nb": "Brødrestevne",
@@ -112,6 +147,11 @@
 		"pt": "Conferencia de irmäos"
 	},
 	"Pentecost Conference": {
+    "af": "Pinkster Konferensie",
+    "cs": "Letnice konference",
+    "hr": "Pünkösd Konferencia",
+    "ro": "Rusalii Conference",
+    "zh": "五旬節大會",
 		"en": "Pentecost Conference",
 		"de": "Pfingstkonferenz",
 		"nb": "Pinsestevne",
@@ -128,6 +168,11 @@
 		"pt": "Conferncia de Pentecoste"
 	},
 	"Parents' and Couples Conference": {
+    "af": "Ouers en paartjies Konferensie",
+    "cs": "Rodiče a páry konference",
+    "hr": "Szülők és párok Konferencia",
+    "ro": "Părinților și Cupluri Conferință",
+    "zh": "父母和伴侶會議",
 		"en": "Parents' and Couples Conference",
 		"de": "Eltern und Ehepaarkonferenz",
 		"nb": "Foreldre- og ekteparstevne",
@@ -144,6 +189,11 @@
 		"pt": "Conferencia de pais e casais"
 	},
 	"Meeting": {
+    "af": "Ontmoet",
+    "cs": "Setkání",
+    "hr": "Találkozás",
+    "ro": "întâlnire",
+    "zh": "會議",
 		"en": "Meeting",
 		"de": "Versammlung",
 		"nb": "Møte",

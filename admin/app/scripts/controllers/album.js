@@ -218,18 +218,18 @@ angular.module('bmmApp')
 
     $scope.generateTitles = function() {
 
-      var generators = bmmUser.getGenerators();
+      var translation = bmmUser.getTags().album;
 
       $.each($scope.model.tags, function() {
-        var tag = this; console.log(this); console.log(translation);
+        var tag = this;
         if (typeof translation[tag]!=='undefined') {
           $.each($scope.model.translations, function() {
-            console.log(this);
+
             if (typeof translation[tag][this.language]!=='undefined') {
               this.title = translation[tag][this.language];
 
               if (tag==='Meeting') {
-                this.title+=' '+$filter('date')($scope.model.published_at,'dd.MM - HH:mm');
+                this.title+=' '+$filter('locals')($scope.model.published_at, this.language);
               } else {
                 this.title+=' '+$filter('date')($scope.model.published_at,'yyyy');
               }
@@ -242,7 +242,5 @@ angular.module('bmmApp')
       });
 
     };
-
-    console.log(locals.date());
 
   });
