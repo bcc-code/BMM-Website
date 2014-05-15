@@ -1,0 +1,31 @@
+{
+  "id": "hu",
+  "date": {
+    "SHORTDAY": [
+      "V",
+      "H",
+      "K",
+      "Sze",
+      "Cs",
+      "P",
+      "Szo"
+    ],
+    "SHORTMONTH": [
+      "jan.",
+      "febr.",
+      "m\u00e1rc.",
+      "\u00e1pr.",
+      "m\u00e1j.",
+      "j\u00fan.",
+      "j\u00fal.",
+      "aug.",
+      "szept.",
+      "okt.",
+      "nov.",
+      "dec."
+    ],
+    "am": "de.",
+    "pm": "du.",
+    "output": "{SHORTDAY}. {SHORTMONTH} {d}. {H}:{mm}"
+  }
+}

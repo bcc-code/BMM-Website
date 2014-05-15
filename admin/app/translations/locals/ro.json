@@ -1,0 +1,31 @@
+{
+  "id": "ro",
+  "date": {
+    "SHORTDAY": [
+      "Du",
+      "Lu",
+      "Ma",
+      "Mi",
+      "Jo",
+      "Vi",
+      "S\u00e2"
+    ],
+    "SHORTMONTH": [
+      "ian.",
+      "feb.",
+      "mar.",
+      "apr.",
+      "mai",
+      "iun.",
+      "iul.",
+      "aug.",
+      "sept.",
+      "oct.",
+      "nov.",
+      "dec."
+    ],
+    "am": "AM",
+    "pm": "PM",
+    "output": "{SHORTDAY} {d} {SHORTMONTH} {HH}:{mm}"
+  }
+}

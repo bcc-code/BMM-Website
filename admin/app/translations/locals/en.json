@@ -1,7 +1,7 @@
 {
-  "local": "en",
+  "id": "en",
   "date": {
-    "shortday": [
+    "SHORTDAY": [
       "Sun",
       "Mon",
       "Tue",
@@ -10,7 +10,22 @@
       "Fri",
       "Sat"
     ],
-    "d": "shortday,",
-    "Versammlung Sa, 12. Aug. 17:30": "Versammlung - Sa 12. Aug 17:30"
+    "SHORTMONTH": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "am": "AM",
+    "pm": "PM",
+    "output": "{SHORTDAY} {d}. {SHORTMONTH} {h}:{mm} {a}"
   }
 }
