@@ -24,7 +24,7 @@ angular.module('bmmApp')
 
       //LATEST SPEECHS
       bmmApi.trackLatest({
-        size: 10,
+        size: 6,
         'content-type': ['speech']
       }, bmmUser.mediaLanguage).done(function(data) {
 
@@ -34,7 +34,7 @@ angular.module('bmmApp')
 
           track = bmmFormatterTrack.resolve(this);
 
-          if (index<5) {
+          if (index<3) {
             left.push(track);
           } else {
             right.push(track);
@@ -74,7 +74,7 @@ angular.module('bmmApp')
 
       //LATEST MUSIC
       bmmApi.trackLatest({
-        size: 6,
+        size: 8,
         'content-type': ['song']
       }, bmmUser.mediaLanguage).done(function(data) {
 
@@ -84,7 +84,7 @@ angular.module('bmmApp')
 
           track = bmmFormatterTrack.resolve(this);
 
-          if (index<3) {
+          if (index<4) {
             left.push(track);
           } else {
             right.push(track);

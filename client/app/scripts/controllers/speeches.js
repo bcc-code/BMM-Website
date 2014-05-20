@@ -146,6 +146,11 @@ angular.module('bmmApp')
         randomBrothers = shuffle(randomBrothers);
         $.each(randomBrothers, function(index) {
           bmmApi.contributorIdGet(this).done(function(data) {
+
+            if (data.cover!==null) {
+              data.cover = bmmApi.secureFile(data.cover);
+            }
+
             $scope.contributors.push(data);
             $scope.$apply();
           });
