@@ -12,7 +12,7 @@ angular.module('bmmApp', [
     function($route, $location, bmmApi)  {
 
     // 'https://bmm-api.brunstad.org/' 'https://127.0.0.1/bmm/api/web/app_dev.php/' 'https://devapibmm.brunstad.org/'
-    bmmApi.serverUrl('https://devapibmm.brunstad.org/');
+    bmmApi.serverUrl('https://bmm-api.brunstad.org/');
 
     //Port 9001 is used for development
     if ($location.protocol()!=='https'&&$location.port()!==9001) {
@@ -28,6 +28,9 @@ angular.module('bmmApp', [
       $location.url($location.url().replace('&topbarInitialized=true',''));
     }
 
+    //SetKeepAliveTime for browsers that doesnt suport credentials for files
+    bmmApi.setKeepAliveTime(60000*60*10);
+
     //Fastclick attempts to kill some touch delay for IPAD/IPHONE
     $(function() {
       FastClick.attach(document.body);
@@ -39,15 +42,30 @@ angular.module('bmmApp', [
     $routeProvider
       .when('/welcome', {
         templateUrl: 'views/pages/index.html',
-        controller: 'WelcomeCtrl'
+        controller: 'WelcomeCtrl',
+        resolve: {
+          localsData: ['locals', function(locals) {
+            return locals.fetchFiles('translations/locals');
+          }]
+        }
       })
       .when('/music', {
         templateUrl: 'views/pages/music.html',
-        controller: 'MusicCtrl'
+        controller: 'MusicCtrl',
+        resolve: {
+          localsData: ['locals', function(locals) {
+            return locals.fetchFiles('translations/locals');
+          }]
+        }
       })
       .when('/speeches', {
         templateUrl: 'views/pages/speeches.html',
-        controller: 'SpeechesCtrl'
+        controller: 'SpeechesCtrl',
+        resolve: {
+          localsData: ['locals', function(locals) {
+            return locals.fetchFiles('translations/locals');
+          }]
+        }
       })
       .when('/video', {
         templateUrl: 'views/pages/video.html',
