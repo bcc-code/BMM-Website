@@ -52,12 +52,7 @@ angular.module('bmmApp')
 
       $scope.open = function(type, id, language, track) {
         if (type==='track') {
-
-          //bmmApi.trackGet(id, {}, language).done(function(data) {
-            //var track = bmmFormatterTrack.resolve(data);
-            bmmPlay.setPlay([track], 0);
-            //$scope.$apply();
-          //});
+          bmmPlay.setPlay([track], 0);
         } else {
           $location.path('/'+type+'/'+id);
         }
