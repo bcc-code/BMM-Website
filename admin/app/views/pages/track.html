@@ -1,32 +1,184 @@
+<div class="controlbar">
+    <b>{{standardModel.title}}</b> -
+    <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
+        {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
+</div>
+<div class="controlbar">
+    <b>{{translation.page.editor.status}}</b>: {{status}}
+    <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
+</div>
 <div class="foldbox">
     <div class="header"
-         ng-click="show=!show"
-         ng-init="show=true">
-        <h3>{{translation.page.album.mainSettings}}</h3>
+         ng-click="main=!main"
+         ng-init="main=true">
+        <h3>{{translation.page.editor.mainSettings}}</h3>
     </div>
-    <div class="body" ng-class="{'visible': show}">
-        <div style="float: left">
-            {{translation.page.album.bmmId}}<br>
-            <input ng-model="mainSettings.bmmId"><br>
-            {{translation.page.album.publishDate}}<br>
-            <input bs-datepicker data-autoclose="1"
+    <div class="body" ng-class="{'visible': main}">
+        <div style="float: left; margin-right: 1em">
+            <b>{{translation.page.editor.publishDate}}</b><br>
+            <input bs-datepicker data-autoclose="1" type="text"
                    data-date-format="dd.MM.yyyy"
                    min-view="date"
-                   ng-model="mainSettings.publishDate"
+                   ng-model="model.published_at"
                     ><br>
-            <input bs-timepicker data-autoclose="1"
+            <input bs-timepicker data-autoclose="1" type="text"
                    data-time-format="HH:mm"
-                   ng-model="mainSettings.publishTime"
+                   ng-model="model.published_at"
+                    ><br>
+            <b>{{translation.page.editor.recordDate}}</b><br>
+            <input bs-datepicker data-autoclose="1" type="text"
+                   data-date-format="dd.MM.yyyy"
+                   min-view="date"
+                   ng-model="model.recorded_at"
+                    ><br>
+            <input bs-timepicker data-autoclose="1" type="text"
+                   data-time-format="HH:mm"
+                   ng-model="model.recorded_at"
                     >
         </div>
-        <div class="cover">
-            <div class="new"></div>
-            <div class="trash"></div>
-            <img ng-src="{{null | bmmCover:'album'}}">
-            <div class="progress" style="width:0"></div>
+        <div style="float: left">
+            <b>{{translation.page.editor.album}}: </b> {{parentAlbumCurrent}}<br>
+            <i>{{translation.page.editor.setNewParentAlbum}}</i>
+            <select ng-change="parentAlbums = []; findParentAlbums(albumParentYear);"
+                    ng-model="albumParentYear"
+                    ng-options="year for year in years"
+                    style="display: block">
+            </select>
+
+            <select ng-disabled="parentAlbums.length<=0"
+                    ng-model="parentAlbum"
+                    ng-options="album.title for album in parentAlbums"
+                    style="display: block">
+            </select>
+            <button ng-click="selectParentAlbum(parentAlbum);">{{translation.page.editor.select}}</button><br>
+
+            <select ng-disabled="parentSubAlbums.length<=0"
+                    ng-model="parentSubAlbum"
+                    ng-options="album.title for album in parentSubAlbums"
+                    style="display: block">
+            </select>
+            <button ng-click="selectParentAlbum(parentSubAlbum);">{{translation.page.editor.select}}</button>
+        </div>
+        <div ng-controller="UploaderCtrl"
+             ng-init="init($parent.uploadCover);"
+             class="cover">
+            <div class="new" style="overflow: hidden;">
+                <input ng-file-select type="file" style="opacity: 0">
+            </div>
+            <div class="trash" ng-click="$parent.model.cover=null"></div>
+            <img ng-src="{{$parent.model.cover | bmmCover:'album':model.id}}">
+            <div class="progress" style="width:{{progress}}%;
+                                         background-color: #CAEC81;
+                                         background-image: none;
+                                         margin: 0"></div>
         </div>
     </div>
-    <div class="footer">
+</div>
 
+<div class="foldbox">
+    <div class="header"
+         ng-click="language=!language">
+        <h3>{{translation.page.editor.translations}}</h3>
     </div>
+    <div class="body" ng-class="{'visible': language}">
+        <ul style="width: 50%; float: left">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="language in model.translations"
+                ng-class="{'original': language.language==model.original_language,
+                           'unpublished': !language.is_visible}"
+                ng-click="switchLanguage(language.language)"
+                style="float: left;">
+                <div class="flags-{{language.language}}"
+                     style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                </div>
+                <span>
+                    {{language.language | bmmLanguage}}
+                </span>
+                <div class="publish"
+                     ng-click="language.is_visible=!language.is_visible">-</div>
+                <div class="trash"
+                     ng-hide="language.language==model.original_language"
+                     ng-click="removeLanguage(language.language)">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left">
+            <h4>{{translation.page.editor.available}}</h4>
+            <li ng-repeat="language in availableLanguages"
+                style="float: left;"
+                class="available"
+                ng-click="addLanguage(language)">
+                <div class="flags-{{language}}"
+                     style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                </div>
+                <span>
+                    {{language | bmmLanguage}}
+                </span>
+            </li>
+        </ul>
+        <div style="width:100%; padding: 1em 0; display: inline-block">
+            <b>{{translation.page.editor.selectedLanguage}}</b>:
+            {{edited.language | bmmLanguage}}
+            <div class="flags-{{edited.language}}"
+                 style="width: 2em; height: 1.5em; display: inline-block">
+            </div>
+            <button ng-click="model.original_language=edited.language"
+                    ng-disabled="edited.language==model.original_language"
+                    ng-class="{'disabled': edited.language==model.original_language}">
+                {{translation.page.editor.originalLanguage}}
+            </button>
+            <button ng-click="edited.is_visible=!edited.is_visible">
+                <span ng-show="edited.is_visible">{{translation.page.editor.unpublish}}</span>
+                <span ng-hide="edited.is_visible">{{translation.page.editor.publish}}</span>
+            </button>
+            <button ng-click="generateTitles()">
+                {{translation.page.editor.generateTitlesByTag}}
+            </button>
+            <br>
+            {{translation.page.editor.title}}
+            <br>
+            <input type="text" style="width: 100%"
+                   placeholder="{{originalLanguage.title}}"
+                   ng-model="edited.title"><br>
+            {{translation.page.editor.description}}<br>
+            <textarea ng-model="edited.description" style="width: 100%"
+                      placeholder="{{originalLanguage.description}}">
+            </textarea>
+        </div>
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="tags=!tags">
+        <h3>{{translation.page.editor.tags}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': tags}">
+        <ul style="width: 50%; float: left">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="tag in model.tags"
+                ng-click="removeTag(tag)"
+                style="float: left;">
+                <span>
+                    {{tag}}
+                </span>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left">
+            <h4>{{translation.page.editor.available}}</h4>
+            <li ng-repeat="tag in availableTags"
+                ng-click="addTag(tag)"
+                style="float: left;">
+                <span>
+                    {{tag}}
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="controlbar">
+    <b>{{translation.page.editor.status}}</b>: {{status}}
+    <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
 </div>

@@ -38,40 +38,43 @@ angular.module('bmmApp', [
 
     $routeProvider
       .when('/dashboard', {
-        templateUrl: 'views/pages/index.html'
+        templateUrl: 'views/pages/index.html',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/waitings', {
         templateUrl: 'views/pages/waitings.html',
-        controller: 'WaitingsCtrl'
+        controller: 'WaitingsCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
-        controller: 'SearchCtrl'
+        controller: 'SearchCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/album/:id', {
         templateUrl: 'views/pages/album.html',
         controller: 'AlbumCtrl',
-        resolve: {
-          'localsData': function(locals) {
-            return locals.fetchFiles('translations/locals');
-          }
-        }
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/track/:id', {
         templateUrl: 'views/pages/track.html',
-        controller: 'TrackCtrl'
+        controller: 'TrackCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/contributors', {
         templateUrl: 'views/pages/contributors.html',
-        controller: 'ContributorsCtrl'
+        controller: 'ContributorsCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/contributors/:id', {
         templateUrl: 'views/pages/contributors.html',
-        controller: 'ContributorsCtrl'
+        controller: 'ContributorsCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .when('/permissions', {
         templateUrl: 'views/pages/permissions.html',
-        controller: 'PermissionsCtrl'
+        controller: 'PermissionsCtrl',
+        resolve: { 'initData': function(init) { return init.promise(true); }}
       })
       .otherwise({
         redirectTo: '/welcome'

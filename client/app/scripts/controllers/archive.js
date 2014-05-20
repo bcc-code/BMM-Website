@@ -6,224 +6,214 @@ angular.module('bmmApp')
     $timeout,
     $location,
     bmmApi,
-    bmmUser,
+    init,
     bmmFormatterTrack,
     bmmFormatterAlbum,
     bmmPlay,
     draggable
   ) {
 
-    //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
-    $scope.$parent.$watch('loadEnd', function(loadEnd) {
-      if (loadEnd) {
-        init();
-      }
-    });
+    $(window).off('scrollBottom');
 
-    var init = function() {
+    //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
+    bmmApi.facetsTrackRecordedYears().done(function(data) {
 
-      $(window).off('scrollBottom');
+      $scope.roleList = [];
 
-      //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
-      bmmApi.facetsTrackRecordedYears().done(function(data) {
+      $.each(data, function() {
 
-        $scope.roleList = [];
-
-        $.each(data, function() {
-
-          $scope.roleList.push({
-            roleName : this.year,
-            roleId: this.year,
-            collapsed: true,
-            group: 'year',
-            loadAttempt: false,
-            children: []
-          });
-
+        $scope.roleList.push({
+          roleName : this.year,
+          roleId: this.year,
+          collapsed: true,
+          group: 'year',
+          loadAttempt: false,
+          children: []
         });
 
-        $scope.roleList.reverse();
-        $scope.$apply();
-
       });
 
-      //OPEN SELECTED TRACK / ALBUM
-      $scope.$watch( 'tree.currentNode', function() {
+      $scope.roleList.reverse();
+      $scope.$apply();
 
-        if( $scope.tree && angular.isObject($scope.tree.currentNode) ) {
+    });
 
-          if ($scope.tree.currentNode.group==='album') {
+    //OPEN SELECTED TRACK / ALBUM
+    $scope.$watch( 'tree.currentNode', function() {
 
-            $location.path( '/album/'+$scope.tree.currentNode.roleId );
+      if( $scope.tree && angular.isObject($scope.tree.currentNode) ) {
 
-          } else if ($scope.tree.currentNode.group==='track') {
+        if ($scope.tree.currentNode.group==='album') {
 
-            bmmApi.trackGet(
-              $scope.tree.currentNode.roleId,
-              bmmUser.mediaLanguage).done(function(track) {
+          $location.path( '/album/'+$scope.tree.currentNode.roleId );
 
-                track = bmmFormatterTrack.resolve(track);
-                bmmPlay.setPlay([track], 0);
+        } else if ($scope.tree.currentNode.group==='track') {
 
-              });
+          bmmApi.trackGet(
+            $scope.tree.currentNode.roleId,
+            init.mediaLanguage).done(function(track) {
 
-          }
+              track = bmmFormatterTrack.resolve(track);
+              bmmPlay.setPlay([track], 0);
+
+            });
 
         }
 
-      });
+      }
 
-      //EXPAND ARCHIVE WITH NEW DATA
-      $scope.$watch( 'tree.expandedNode', function() {
+    });
 
-        if( $scope.tree && angular.isObject($scope.tree.expandedNode) ) {
+    //EXPAND ARCHIVE WITH NEW DATA
+    $scope.$watch( 'tree.expandedNode', function() {
 
-          if ($scope.tree.expandedNode.group==='track') {
-            bmmApi.trackGet(
-              $scope.tree.expandedNode.roleId,
-              bmmUser.mediaLanguage).done(function(track) {
+      if( $scope.tree && angular.isObject($scope.tree.expandedNode) ) {
 
-                track = bmmFormatterTrack.resolve(track);
-                bmmPlay.setPlay([track], 0);
+        if ($scope.tree.expandedNode.group==='track') {
+          bmmApi.trackGet(
+            $scope.tree.expandedNode.roleId,
+            init.mediaLanguage).done(function(track) {
 
-              });
+              track = bmmFormatterTrack.resolve(track);
+              bmmPlay.setPlay([track], 0);
 
-          } else if (!$scope.tree.expandedNode.loadAttempt) {
+            });
 
-            $scope.tree.expandedNode.loadAttempt = true;
+        } else if (!$scope.tree.expandedNode.loadAttempt) {
 
-            //IF A YEAR IS OPENED, DISPLAY ALBUMS FOR THE WHOLE YEAR
-            if ($scope.tree.expandedNode.group==='year') {
+          $scope.tree.expandedNode.loadAttempt = true;
 
-              bmmApi.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {},
-                bmmUser.mediaLanguage).done(function(data) {
+          //IF A YEAR IS OPENED, DISPLAY ALBUMS FOR THE WHOLE YEAR
+          if ($scope.tree.expandedNode.group==='year') {
 
-                $scope.tree.expandedNode.children = [];
-                $.each(data, function() {
+            bmmApi.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {},
+              init.mediaLanguage).done(function(data) {
 
-                  $scope.tree.expandedNode.children.push({
-                    roleName : this.title,
-                    roleId: this.id,
-                    collapsed: true,
-                    group: 'album',
-                    loadAttempt: false,
-                    children: []
-                  });
+              $scope.tree.expandedNode.children = [];
+              $.each(data, function() {
 
+                $scope.tree.expandedNode.children.push({
+                  roleName : this.title,
+                  roleId: this.id,
+                  collapsed: true,
+                  group: 'album',
+                  loadAttempt: false,
+                  children: []
                 });
 
-                $scope.$apply();
-                draggable.makeDraggable($scope);
-
               });
 
-            }
+              $scope.$apply();
+              draggable.makeDraggable($scope);
 
-            //IF AN ALBUM IS OPENED, DISPLAY SUB ALBUMS AND TRACKS
-            if ($scope.tree.expandedNode.group==='album') {
+            });
 
-              bmmApi.albumGet(
-                $scope.tree.expandedNode.roleId, bmmUser.mediaLanguage
-              ).done(function(data) {
+          }
 
-                var albums = [], tracks = [];
+          //IF AN ALBUM IS OPENED, DISPLAY SUB ALBUMS AND TRACKS
+          if ($scope.tree.expandedNode.group==='album') {
 
-                $.each(data.children, function() {
+            bmmApi.albumGet(
+              $scope.tree.expandedNode.roleId, init.mediaLanguage
+            ).done(function(data) {
 
-                  if (typeof this.type!=='undefined') {
-                    if (this.type==='album') {
-                      albums.push(bmmFormatterAlbum.resolve(this));
-                    } else if (this.type==='track') {
-                      tracks.push(bmmFormatterTrack.resolve(this));
-                    }
+              var albums = [], tracks = [];
+
+              $.each(data.children, function() {
+
+                if (typeof this.type!=='undefined') {
+                  if (this.type==='album') {
+                    albums.push(bmmFormatterAlbum.resolve(this));
+                  } else if (this.type==='track') {
+                    tracks.push(bmmFormatterTrack.resolve(this));
                   }
-
-                });
-
-                $scope.tree.expandedNode.children = [];
-
-                $.each(tracks, function() {
-
-                  $scope.tree.expandedNode.children.push({
-                    roleName : this.combinedTitle,
-                    roleId: this.id,
-                    language: this.language,
-                    collapsed: true,
-                    group: 'track',
-                    loadAttempt: false
-                  });
-
-                });
-
-                $.each(albums, function() {
-
-                  $scope.tree.expandedNode.children.push({
-                    roleName : this.title,
-                    roleId: this.id,
-                    collapsed: true,
-                    group: 'album',
-                    loadAttempt: false,
-                    children: []
-                  });
-
-                });
-
-                $scope.$apply();
-                draggable.makeDraggable($scope);
+                }
 
               });
 
-            }
+              $scope.tree.expandedNode.children = [];
+
+              $.each(tracks, function() {
+
+                $scope.tree.expandedNode.children.push({
+                  roleName : this.combinedTitle,
+                  roleId: this.id,
+                  language: this.language,
+                  collapsed: true,
+                  group: 'track',
+                  loadAttempt: false
+                });
+
+              });
+
+              $.each(albums, function() {
+
+                $scope.tree.expandedNode.children.push({
+                  roleName : this.title,
+                  roleId: this.id,
+                  collapsed: true,
+                  group: 'album',
+                  loadAttempt: false,
+                  children: []
+                });
+
+              });
+
+              $scope.$apply();
+              draggable.makeDraggable($scope);
+
+            });
 
           }
 
         }
-      }, false);
 
-      var makeDraggable = function() {
+      }
+    }, false);
 
-        $timeout(function() {
+    var makeDraggable = function() {
 
-          var a,b,c; //Quickfix for wrong y-position while scrolling
-          $('.draggable').draggable({
-            helper: 'clone',
-            appendTo: 'body',
-            revert: 'invalid',
-            scope: 'move',
-            zIndex: '1000',
-            scroll: true,
-            distance: 20,
-            cursorAt: {
-              left: 20,
-              top: 2+$('body').scrollTop()
-            },
-            start: function(e,ui) {
-              a = ui.position.top;
-              b = $('body').scrollTop();
-              c = e.pageY;
-            },
-            drag: function(e,ui) {
-              ui.position.top = a+$('body').scrollTop()-b+e.pageY-c;
-            }
-          });
+      $timeout(function() {
 
-          $('body').find('.bmm-playlist-private').droppable({
-            scope: 'move',
-            activeClass: 'active',
-            hoverClass: 'hover',
-            tolerance: 'pointer',
-            drop: function(ev, ui) {
+        var a,b,c; //Quickfix for wrong y-position while scrolling
+        $('.draggable').draggable({
+          helper: 'clone',
+          appendTo: 'body',
+          revert: 'invalid',
+          scope: 'move',
+          zIndex: '1000',
+          scroll: true,
+          distance: 20,
+          cursorAt: {
+            left: 20,
+            top: 2+$('body').scrollTop()
+          },
+          start: function(e,ui) {
+            a = ui.position.top;
+            b = $('body').scrollTop();
+            c = e.pageY;
+          },
+          drag: function(e,ui) {
+            ui.position.top = a+$('body').scrollTop()-b+e.pageY-c;
+          }
+        });
 
-              bmmApi.userTrackCollectionLink($(this).attr('id'), [
-                ui.draggable.attr('id')
-              ], ui.draggable.attr('language'));
+        $('body').find('.bmm-playlist-private').droppable({
+          scope: 'move',
+          activeClass: 'active',
+          hoverClass: 'hover',
+          tolerance: 'pointer',
+          drop: function(ev, ui) {
 
-            }
-          });
+            bmmApi.userTrackCollectionLink($(this).attr('id'), [
+              ui.draggable.attr('id')
+            ], ui.draggable.attr('language'));
 
-        }, 200);
+          }
+        });
 
-      };
+      }, 200);
+
     };
 
   });

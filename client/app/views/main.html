@@ -8,7 +8,7 @@
                     <div class="flags-{{mediaLanguage}}"></div>
                     {{mediaLanguage | bmmLanguage}}</a>
                 <ul class="dropdown-menu">
-                    <li ng-repeat="lang in languages">
+                    <li ng-repeat="lang in root.languages">
                         <a class="flags-{{lang}}"
                            ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
                     </li>
@@ -116,7 +116,7 @@
                         <div class="flags-{{mediaLanguage}}"></div>
                         {{mediaLanguage | bmmLanguage}}</a>
                     <ul class="dropdown-menu">
-                        <li ng-repeat="lang in languages">
+                        <li ng-repeat="lang in root.languages">
                             <a class="flags-{{lang}}"
                                ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
                         </li>
@@ -165,7 +165,7 @@
                 </li>
                 <li class="bmm-playlist-private"
                     id="{{collection.id}}"
-                    ng-repeat="collection in trackCollections">
+                    ng-repeat="collection in user.track_collections">
                     <a ng-hide="collection.edit == true"
                        ng-click="$parent.visible=false"
                        ng-href="#playlist/private/{{collection.id}}">

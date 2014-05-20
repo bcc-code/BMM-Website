@@ -118,7 +118,7 @@
             <!--QUICK MENU -->
             <h2>{{translation.menu.secondary.quickMenu}}</h2>
             <div class="quick-menu">
-                <button>{{translation.menu.secondary.newAlbum}}</button>
+                <button ng-click="go('/album/new')">{{translation.menu.secondary.newAlbum}}</button>
                 <button>{{translation.menu.secondary.newTrack}}</button><br><br>
 
                     {{translation.menu.secondary.year}}
@@ -138,7 +138,7 @@
                         {{translation.menu.secondary.open}}
                     </button><br><br>
 
-                    {{translation.menu.secondary.childAlbum}}
+                    {{translation.menu.secondary.childAlbums}}
                     <select ng-disabled="childAlbums.length<=0"
                             ng-model="albumChild"
                             ng-options="childAlbum.title for childAlbum in childAlbums">

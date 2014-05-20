@@ -43,68 +43,66 @@ angular.module('bmmApp', [
       .when('/welcome', {
         templateUrl: 'views/pages/index.html',
         controller: 'WelcomeCtrl',
-        resolve: {
-          localsData: ['locals', function(locals) {
-            return locals.fetchFiles('translations/locals');
-          }]
-        }
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/music', {
         templateUrl: 'views/pages/music.html',
         controller: 'MusicCtrl',
-        resolve: {
-          localsData: ['locals', function(locals) {
-            return locals.fetchFiles('translations/locals');
-          }]
-        }
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/speeches', {
         templateUrl: 'views/pages/speeches.html',
         controller: 'SpeechesCtrl',
-        resolve: {
-          localsData: ['locals', function(locals) {
-            return locals.fetchFiles('translations/locals');
-          }]
-        }
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/video', {
         templateUrl: 'views/pages/video.html',
-        controller: 'VideoCtrl'
+        controller: 'VideoCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/archive', {
         templateUrl: 'views/pages/archive.html',
-        controller: 'ArchiveCtrl'
+        controller: 'ArchiveCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/audiobooks', {
         templateUrl: 'views/pages/audiobooks.html',
-        controller: 'AudiobooksCtrl'
+        controller: 'AudiobooksCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
-        controller: 'SearchCtrl'
+        controller: 'SearchCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/search', {
-        redirectTo: '/search/no results'
+        redirectTo: '/search/no results',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/album/:id', {
         templateUrl: 'views/pages/album.html',
-        controller: 'AlbumCtrl'
+        controller: 'AlbumCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/track/:id', {
         templateUrl: 'views/pages/album.html',
-        controller: 'TrackCtrl'
+        controller: 'TrackCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/track/:id/:language', {
         templateUrl: 'views/pages/album.html',
-        controller: 'TrackCtrl'
+        controller: 'TrackCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/playlist/:playlist', {
         templateUrl: 'views/pages/playlist.html',
-        controller: 'PlaylistCtrl'
+        controller: 'PlaylistCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .when('/playlist/:playlist/:id', {
         templateUrl: 'views/pages/playlist.html',
-        controller: 'PlaylistCtrl'
+        controller: 'PlaylistCtrl',
+        resolve: { 'initData': function(init) { return init.promise(); }}
       })
       .otherwise({
         redirectTo: '/welcome'

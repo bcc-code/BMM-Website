@@ -1,6 +1,6 @@
 {
-    "language": "Norsk",
-    "iso-639-1": "nb",
+    "language": "English",
+    "iso-639-1": "en",
 
     "general": {
         "search": "Search..."
@@ -28,6 +28,7 @@
         "bmmId": "BMM-ID",
         "publishDate": "Publish date",
         "save": "Save",
+        "delete": "Delete",
         "status": "Status",
         "translations": "Translations",
         "tags": "Tags",

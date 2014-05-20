@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmUser', 'bmmApi',
-    function (bmmPlaylist, bmmPlayer, $location, $filter, bmmUser,  bmmApi) {
+  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmApi',
+    function (bmmPlaylist, bmmPlayer, $location, $filter,  bmmApi) {
     
     var factory = {};
 

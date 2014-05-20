@@ -11,7 +11,7 @@ angular.module('bmmApp')
     bmmFormatterAlbum,
     bmmPlaylist,
     bmmPlayer,
-    bmmUser
+    init
     ) {
 
     $scope.$parent.contributors = false;
@@ -47,7 +47,7 @@ angular.module('bmmApp')
         unpublished: 'show',
         from: _from,
         size: 20
-      }, bmmUser.mediaLanguage).done(function(data) {
+      }, init.mediaLanguage).done(function(data) {
 
         var track,
             type,

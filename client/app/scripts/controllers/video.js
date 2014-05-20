@@ -7,105 +7,94 @@ angular.module('bmmApp')
     bmmApi,
     bmmFormatterTrack,
     bmmFormatterAlbum,
-    bmmUser,
+    init,
     draggable
   ) {
 
-    //Temporary solution. @todo - Dig into '$routeProvider & resolve' for a better solution
-    $scope.$parent.$watch('loadEnd', function(loadEnd) {
-      if (loadEnd) {
-        init();
-      }
-    });
+    $(window).off('scrollBottom');
 
-    var init = function() {
+    var albumFrom = 3, loading=true;
 
-      $(window).off('scrollBottom');
+    $(window).on('scrollBottom', function() {
 
-      var albumFrom = 3, loading=true;
+      if (!loading) {
 
-      $(window).on('scrollBottom', function() {
+        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
 
-        if (!loading) {
+        loading = true;
 
-          $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+        //ALBUMS
+        bmmApi.albumLatest({
+          from: albumFrom,
+          size: 20,
+          'content-type': ['video']
+        }, init.mediaLanguage).done(function(data) {
 
-          loading = true;
+          $.each(data, function() {
 
-          //ALBUMS
-          bmmApi.albumLatest({
-            from: albumFrom,
-            size: 20,
-            'content-type': ['video']
-          }, bmmUser.mediaLanguage).done(function(data) {
+            $scope.latestAlbums.push(bmmFormatterAlbum.resolve(this));
 
-            $.each(data, function() {
-
-              $scope.latestAlbums.push(bmmFormatterAlbum.resolve(this));
-
-              albumFrom++;
-
-            });
-
-            $scope.$apply(function() {
-              draggable.makeDraggable($scope);
-            });
-
-            $('.bmm-loading').remove();
-            loading = false;
+            albumFrom++;
 
           });
 
-        }
+          $scope.$apply(function() {
+            draggable.makeDraggable($scope);
+          });
+
+          $('.bmm-loading').remove();
+          loading = false;
+
+        });
+
+      }
+
+    });
+
+    //VIDEOS
+    bmmApi.trackLatest({
+      size: 3,
+      'content-type': ['video']
+    }, init.mediaLanguage).done(function(data) {
+
+      var videos = [];
+
+      $.each(data, function() {
+
+        videos.push(bmmFormatterTrack.resolve(this));
 
       });
 
-      //VIDEOS
-      bmmApi.trackLatest({
-        size: 3,
-        'content-type': ['video']
-      }, bmmUser.mediaLanguage).done(function(data) {
+      $scope.$apply(function() {
+        $scope.firstVideos = videos;
+        draggable.makeDraggable($scope);
+      });
 
-        var videos = [];
+    });
 
-        $.each(data, function() {
+    //ALBUMS
+    bmmApi.albumLatest({
+      size: 20,
+      'content-type': ['video']
+    }, init.mediaLanguage).done(function(data) {
 
-          videos.push(bmmFormatterTrack.resolve(this));
+      var album = [];
 
-        });
+      $.each(data, function() {
 
-        $scope.$apply(function() {
-          $scope.firstVideos = videos;
-          draggable.makeDraggable($scope);
-        });
+        album.push(bmmFormatterAlbum.resolve(this));
+
+        albumFrom++;
 
       });
 
-      //ALBUMS
-      bmmApi.albumLatest({
-        size: 20,
-        'content-type': ['video']
-      }, bmmUser.mediaLanguage).done(function(data) {
-
-        var album = [];
-
-        $.each(data, function() {
-
-          album.push(bmmFormatterAlbum.resolve(this));
-
-          albumFrom++;
-
-        });
-
-        $scope.$apply(function() {
-          $scope.latestAlbums = album;
-          draggable.makeDraggable($scope);
-        });
-
-        loading = false;
-
+      $scope.$apply(function() {
+        $scope.latestAlbums = album;
+        draggable.makeDraggable($scope);
       });
 
-    };
+      loading = false;
+
+    });
 
   });

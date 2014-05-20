@@ -1,134 +1,60 @@
 {
-    "language": "Norsk",
-    "iso-639-1": "nb",
+  "language": "English",
+  "iso-639-1": "en",
 
-    "general": {
-        "search": "Søk..."
+  "general": {
+    "search": "Search..."
+  },
+  "menu": {
+    "main": {
+      "dashboard": "Dashboard",
+      "waitings": "Waitings",
+      "contributors": "Contributors",
+      "users": "Users"
     },
-    "menu": {
-        "main": {
-            "music": "Musikk",
-            "speeches": "Taler",
-            "video": "Video",
-            "archive": "Arkiv",
-            "audiobooks": "Lydbøker"
-        },
-        "secondary": {
-            "playlists": "Spillelister",
-            "latestTracks": "Nye spor",
-            "lastPlayed": "Sist spillte",
-            "mostPlayed": "Mest spillte",
-            "favorites": "Favoritter",
-            "current": "Gjeldende",
-            "newPlaylist": "Ny spilleliste",
-            "nameOnPlaylist": "Navn på spilleliste"
-        }
-    },
-    "page": {
-        "welcome": {
-            "latestSpeeches": "Siste Taler",
-            "latestVideos": "Siste Videoer",
-            "latestMusic": "Siste Musikk",
-            "latestAlbums": "Siste Album"
-        },
-        "music": {
-            "latestMusic": "Siste Musikk",
-            "artists": "Artister",
-            "mp3Source": "MP3-Kilden",
-            "childrensMp3Source": "Barnas MP3-Kilden",
-            "instrumental": "Instrumental"
-        },
-        "speeches": {
-            "latestSpeeches": "Siste Taler",
-            "recommended": "Anbefalt"
-        },
-        "videos": {
-            "latestVideos": "Siste Videoer"
-        },
-        "archive": {
-            "archive": "Arkiv"
-        },
-        "audiobooks": {
-            "latestAudiobooks": "Siste Lydbøker"
-        },
-        "search": {
-            "searchResults": "Søkeresultater"
-        }
-    },
-    "track": {
-        "duration": "Varighet",
-        "unknown": "Ukjent",
-        "dragMeToPlaylist": "Dra meg i spilleliste"
-    },
-    "album": {
-        "tracks": "Spor",
-        "childAlbums": "Tilhørende Album",
-        "relatedAlbums": "Lignende Album"
-    },
-    "playlist": {
-        "content": "Innhold",
-        "tracks": "Spor",
-        "totalDuration": "Samlet varighet",
-        "duration": "Varighet",
-        "nr": "Nr.",
-        "title": "Tittel"
-    },
-    "backend": {
-        "lastEditBy": "Sist endret av",
-        "albumTitle": "Album tittel",
-        "trackTitle": "Spor tittel",
-        "bmmid": "BMM-ID",
-        "publishdate": "Publiseringsdato",
-        "language": "Språk",
-        "delete": "Slett",
-        "save": "Lagre",
-        "play": "Spill av",
-        "add": "Legg til",
-        "chooseDate": "Velg dato",
-        "chooseTime": "Velg klokkeslett",
-        "published": "Publisert",
-        "notPublished": "Ikke publisert",
-        "removeTranslation": "Fjern oversettelse",
-        "chooseAsOriginalLanguage": "Velg som original språk",
-        "languagesAvailable": "Språk tilgjengelig",
-        "addLanguage": "Legg til språk",
-        "publishAlbum": "Puliser album",
-        "publishTrack": "Publiser Spor",
-        "description": "Beskrivelse",
-        "albumDescription": "Album beskrivelse",
-        "recordDate": "Opptaksdato",
-        "files": "Filer",
-        "duration": "Varighet",
-        "mimeType": "Mime-Type",
-        "size": "Størrelse",
-        "type": "Type",
-        "tags": "Tags",
-        "englishOnly": "Kun Engelsk",
-        "songbookAndNumber": "Sangbok og nummer",
-        "songbook": "Sangbok",
-        "number": "Nummer",
-        "nr": "Nr.",
-        "performer": "Utøver",
-        "composer": "Komponist",
-        "lyricist": "Forfatter",
-        "bibleVerse": "Bibel vers",
-        "start": "Start",
-        "end": "Slutt",
-        "record": "Start opptak",
-        "pause": "Pause",
-        "reset": "Tilbakestill",
-        "functions": "Funksjoner",
-        "ex": "Eks.",
-        "note": "Notat",
-        "fileTypeAllreadyExists": "Filtype eksisterer allerede, slett den gamle først",
-        "menu": {
-            "current": "Gjeldende",
-            "contributors": "Utøvere",
-            "permission": "Bruker administrasjon",
-            "archive": "Arkiv"
-        }
-    },
+    "secondary": {
+      "quickMenu": "Quick Menu",
+      "newAlbum": "New album",
+      "newTrack": "New track",
+      "year": "Year",
+      "album": "Album",
+      "childAlbums": "Child albums",
+      "open": "open"
+    }
+  },
+  "page": {
+    "editor": {
+      "mainSettings": "Main settings",
+      "bmmId": "BMM-ID",
+      "publishDate": "Publish date",
+      "recordDate": "Record date",
+      "save": "Save",
+      "delete": "Delete",
+      "status": "Status",
+      "translations": "Translations",
+      "tags": "Tags",
+      "generateTitlesByTag": "Generate titles by tag",
+      "active": "Active",
+      "available": "Available",
+      "title": "Title",
+      "description": "Description",
+      "selectedLanguage": "Selected language",
+      "originalLanguage": "Original language",
+      "confirmTranslatedDeletion": "Language is translated, confirm deletion",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "missingTitle": "Please fill in title first",
+      "album": "Album",
+      "parentAlbum": "Parent album",
+      "setNewParentAlbum": "Set new parent album",
+      "lastModified": "Last modified",
+      "by": "by",
+      "noParentAlbum": "No parent album",
+      "tracks": "Tracks",
+      "select": "Select"
+    }
+  },
 
-    "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
+  "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
 
 }

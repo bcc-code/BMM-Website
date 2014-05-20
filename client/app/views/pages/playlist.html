@@ -9,7 +9,7 @@
             <div class="flags-{{podcastLanguage}}"></div>
             {{podcastLanguage | bmmLanguage}}</a>
         <ul class="dropdown-menu" style="margin-left: 0!important">
-            <li ng-repeat="lang in languages">
+            <li ng-repeat="lang in root.languages">
                 <a class="flags-{{lang}}"
                    ng-click="$parent.podcastLanguage=lang">{{lang | bmmLanguage}}</a>
             </li>

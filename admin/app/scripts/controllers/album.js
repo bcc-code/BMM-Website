@@ -1,72 +1,191 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('AlbumCtrl', function ($scope, $filter, $location, $rootScope, $routeParams, $timeout, bmmApi, bmmUser, locals) {
+  .controller('AlbumCtrl', function (
+    $scope,
+    $filter,
+    $location,
+    $rootScope,
+    $routeParams,
+    $timeout,
+    bmmApi,
+    init,
+    bmmFormatterAlbum
+  ) {
 
-    var modelLoaded=false;
-    $scope.model = {};
+    var modelLoaded=false, newAlbum=false;
+
+    if ($routeParams.id==='new') {
+      newAlbum = true;
+    }
+
+    $scope.model = {}; //Raw
+    $scope.standardModel = {}; //Standard
+    $scope.hasChildAlbums = false;
     $scope.status = 'No changes';
-    $scope.originalLanguage;
 
-    var fetchModel = function() {
-      return bmmApi.albumGet($routeParams.id, '', { raw: true });
+    $scope.fetchModel = function(_raw) {
+      if (!newAlbum) {
+        if (typeof _raw==='undefined'||_raw) {
+          return bmmApi.albumGet($routeParams.id, '', { raw: true });
+        } else {
+          return bmmApi.albumGet($routeParams.id, init.mediaLanguage);
+        }
+      } else {
+        $scope.model = {
+          parent_id: null,
+          type: 'album',
+          published_at: new Date(),
+          original_language: init.mediaLanguage,
+          translations: [{
+            language: init.mediaLanguage
+          }],
+          tags: [],
+          cover: null,
+          cover_upload: null
+        };
+        return;
+      }
     };
 
-    fetchModel().done(function(model) {
-      $scope.$apply(function() {
-        $scope.model = model;
-        findAvailableTranslations();
-        findAvailableTags();
-      });
-      modelLoaded = true;
-    });
+    $scope.refreshModel = function() {
+      try {
+        $scope.fetchModel().done(function(model) {
+          $scope.$apply(function() {
+            $scope.model = model;
+            findAvailableTranslations();
+            findAvailableTags();
+          });
+          modelLoaded = true;
+        });
+        $scope.fetchModel(false).done(function(model) {
+          $scope.$apply(function() {
+            $scope.standardModel = model;
+          });
+          if (typeof model.children!=='undefined') {
+            $scope.hasChildAlbums = false;
+            $scope.tracks = [];
+            $scope.$apply(function() {
+              $.each(model.children, function() {
+                if (this.type==='album') {
+                  $scope.hasChildAlbums = true;
+                } else {
+                  $scope.tracks.push(this);
+                }
+              });
+            });
+          }
+        });
+      }
+      catch(err) {
+        //Model is not yet created, fires when routeParams.id === 'new'
+        $timeout(function() {
+          findAvailableTranslations();
+          findAvailableTags();
+        });
+      }
+    };
+    $scope.refreshModel();
 
     var saveModel = function() {
       //Delete parts that's unexpected by the API
-      delete $scope.model._meta;
-      delete $scope.model.id;
-      return bmmApi.albumPut($routeParams.id, angular.copy($scope.model));
-    };
-
-    $scope.save = function() {
-      $scope.status = 'Attempt to save, please wait...';
-      saveModel().done(function() {
-        $scope.status = 'Save succeed, fetching new data.';
-        $scope.$apply();
-        fetchModel().done(function() {
-          $scope.$apply(); //Model-watcher updates status to changed
-          $timeout(function() { //Secure that watcher is fired
-            $scope.status = 'Saved'; //Update status
-            $scope.$apply(); //Render status
-          });
-          $scope.$apply(function() {
-            $scope.status = 'Saved';
-          });
-        }).fail(function() {
-          $scope.status = 'Could not fetch new data, check your internet connection.';
-          $scope.$apply();
-        });
-      }).fail(function() {
-        $scope.status = 'Could not save, check your internet connection.';
-        $scope.$apply();
-      });
-    };
-
-    $scope.availableLanguages = [];
-    var findAvailableTranslations = function() {
-      bmmApi.root().done(function(root) {
-        $.each(root.languages, function() {
-          var available = this, found=false;
-          $.each($scope.model.translations, function() {
-            if (this.language===available) {
-              found = true;
-            }
-          });
-          if (!found) {
-            $scope.availableLanguages.push(available);
+      var toApi = angular.copy($scope.model);
+      delete toApi._meta;
+      delete toApi.id;
+      if (newAlbum) {
+        bmmApi.albumPost(toApi).always(function(xhr) {
+          if (xhr.status===201) {
+            $location.path(/album/+xhr.getResponseHeader('X-Document-Id'));
+          } else {
+            $scope.status = 'Could not create album, errorcode: '+xhr.status;
           }
         });
-        $scope.switchLanguage($scope.model.original_language);
+      } else {
+        return bmmApi.albumPut($routeParams.id, toApi);
+      }
+    };
+
+    $scope.save = function(options) {
+      $scope.status = 'Attempt to save, please wait...';
+      try {
+        saveModel().done(function() {
+          $scope.status = 'Save succeed, fetching new data.';
+          $scope.$apply();
+          $scope.fetchModel().done(function(model) {
+            $scope.$apply(); //Model-watcher updates status to changed
+            $scope.model = model;
+            findAvailableTranslations();
+            findAvailableTags();
+            $timeout(function() { //Secure that watcher is fired
+              $scope.status = 'Saved'; //Update status
+              $scope.$apply(); //Render status
+            });
+            $scope.$apply(function() {
+              $scope.status = 'Saved';
+              if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
+                options.done();
+              }
+            });
+          }).fail(function() {
+            $scope.status = 'Could not fetch new data, check your internet connection.';
+            $scope.$apply();
+          });
+          $scope.fetchModel(false).done(function(model) {
+            $scope.$apply(function() {
+              $scope.standardModel = model;
+            });
+            if (typeof model.children!=='undefined') {
+              $scope.hasChildAlbums = false;
+              $.each(model.children, function() {
+                if (this.type==='album') {
+                  $scope.$apply(function() {
+                    $scope.hasChildAlbums = true;
+                  });
+                  return false;
+                }
+              });
+            }
+          });
+        }).fail(function() {
+          $scope.status = 'Could not save, check your internet connection.';
+          $scope.$apply();
+        });
+      }
+      catch(err) {
+        //Model is not yet created, fires when routeParams.id === 'new'
+      }
+    };
+
+    $scope.delete = function() {
+      if (typeof $scope.model.id!=='undefined') {
+        if (confirm('Are you sure you want to delete album with all its sub albums and tracks?')) {
+          bmmApi.albumDelete($scope.model.id).always(function() {
+            $scope.$apply(function() {
+              alert('Album deleted');
+              $location.path( '/' );
+            });
+          });
+        }
+      }
+    };
+
+    var findAvailableTranslations = function() {
+      $scope.availableLanguages = [];
+      bmmApi.root().done(function(root) {
+        $scope.$apply(function() {
+          $.each(root.languages, function() {
+            var available = this, found=false;
+            $.each($scope.model.translations, function() {
+              if (this.language===available) {
+                found = true;
+              }
+            });
+            if (!found) {
+              $scope.availableLanguages.push(available);
+            }
+          });
+          $scope.switchLanguage($scope.model.original_language);
+        });
       });
     };
 
@@ -103,7 +222,7 @@ angular.module('bmmApp')
     };
 
     $scope.switchLanguage = function(newLang, oldLang) {
-      if (typeof oldLang!='undefined') {
+      if (typeof oldLang!=='undefined') {
         $.each($scope.model.translations, function(index) {
           if (this.language===oldLang) {
             $scope.model.translations[index] = $scope.edited;
@@ -131,15 +250,27 @@ angular.module('bmmApp')
       }
     }, true);
 
-    $scope.$watch('model', function() {
+    $scope.$watch('model', function(model) {
       if (modelLoaded) {
         $scope.status = 'Changes performed';
       }
+
+      if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
+        bmmApi.albumGet(model.parent_id, init.mediaLanguage).done(function(album) {
+          $scope.$apply(function() {
+            $scope.albumParentYear = parseInt($filter('date')(album.published_at, 'yyyy'),10);
+            if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
+              $scope.findParentAlbums($scope.albumParentYear, album);
+            }
+          });
+        });
+      }
+
     }, true);
 
     $scope.$watch('model.original_language', function(lang) {
       if (typeof $scope.model.translations!=='undefined') {
-        $.each($scope.model.translations, function(index) {
+        $.each($scope.model.translations, function() {
           if (this.language===lang) {
             $scope.originalLanguage = this;
             return false;
@@ -181,8 +312,8 @@ angular.module('bmmApp')
       'Opening'
     ];
 
-    $scope.availableTags = [];
     var findAvailableTags = function() {
+      $scope.availableTags = [];
       $.each(suggestedTags, function() {
         var available = this, found=false;
         $.each($scope.model.tags, function() {
@@ -218,7 +349,7 @@ angular.module('bmmApp')
 
     $scope.generateTitles = function() {
 
-      var translation = bmmUser.getTags().album;
+      var translation = init.titles.album;
 
       $.each($scope.model.tags, function() {
         var tag = this;
@@ -241,6 +372,46 @@ angular.module('bmmApp')
 
       });
 
+    };
+
+    $scope.uploadCover = {
+      url: bmmApi.getserverUrli()+'album/'+$routeParams.id+'/cover'
+    };
+
+    //FETCH ALBUMS
+    $scope.parentAlbums = [];
+    $scope.findParentAlbums = function(year, _album) {
+      bmmApi.albumPublishedYear(year, {
+        unpublished: 'show'
+      }, init.mediaLanguage).done(function(albums) {
+
+        $scope.$apply(function() {
+          $.each(albums, function() {
+            var album = bmmFormatterAlbum.resolve(this);
+            $scope.parentAlbums.push(album);
+          });
+          $scope.parentAlbums.push({
+            title: '['+$scope.$parent.translation.page.editor.noParentAlbum+']',
+            id: null
+          });
+          $scope.parentAlbums.reverse();
+          if (typeof _album!=='undefined') {
+            $.each($scope.parentAlbums, function(index) {
+              if (this.id===_album.id) {
+                $scope.parentAlbum = $scope.parentAlbums[index];
+                $scope.parentAlbumCurrent = this.title;
+                return false;
+              }
+            });
+          }
+        });
+
+      });
+    };
+
+    $scope.selectParentAlbum = function(album) {
+      $scope.model.parent_id = album.id;
+      $scope.parentAlbumCurrent = album.title;
     };
 
   });
