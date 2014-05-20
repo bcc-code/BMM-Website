@@ -101,7 +101,6 @@ angular.module('bmmApp')
 
     }).fail(function() {
 
-      console.log(bmmApi.getserverUrli());
       bmmApi.loginRedirect();
 
     });
@@ -172,8 +171,6 @@ angular.module('bmmApp')
 
             });
 
-          } else {
-            console.log('Failed...');
           }
 
         });
