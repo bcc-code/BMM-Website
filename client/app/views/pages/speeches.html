@@ -7,16 +7,15 @@
         id="{{track.id}}"
         language="{{track.language}}"
         ng-click="play(latestSpeechLeft, $index);">
-		<div class="bmm-latest">
+		<div class="bmm-latest" title="{{track.albumTitle}}">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
-				<img title="{{track.albumTitle}}"
-					 class="bmm-latest-thumbnail"
+				<img class="bmm-latest-thumbnail"
                      ng-src="{{track.cover | bmmCover:'speech'}}"/>
 			</div>
-			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
-			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
-			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+			<div class="bmm-latest-title">{{track.performers}}</div>
+			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
+			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}} ({{track.duration | bmmTime}})</div>
 		</div>
 	</li>
 </ul>
@@ -27,16 +26,15 @@
         id="{{track.id}}"
         language="{{track.language}}"
         ng-click="play(latestSpeechRight, $index);">
-		<div class="bmm-latest">
+		<div class="bmm-latest" title="{{track.albumTitle}}">
 			<div class="bmm-latest-bullet">{{$index+6}}</div>
 			<div>
-                <img title="{{track.albumTitle}}"
-                     class="bmm-latest-thumbnail"
+                <img class="bmm-latest-thumbnail"
                      ng-src="{{track.cover | bmmCover:'speech'}}"/>
 			</div>
-			<div title="{{track.performers}}" class="bmm-latest-title">{{track.performers}}</div>
-			<div title="{{track.title}}" class="bmm-latest-interprets">{{track.title}}</div>
-			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
+			<div class="bmm-latest-title">{{track.performers}}</div>
+			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
+			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}} ({{track.duration | bmmTime}})</div>
 		</div>
 	</li>
 </ul>
@@ -50,9 +48,7 @@
 			 ng-repeat="contributor in contributors"
 			 ng-click="go('/playlist/contributor/'+contributor.name);"
 			 title="{{contributor.name}}">
-			<div class="bmm-interpret-thumbnail" style="
-				background-image: url({{contributor.cover | bmmCover:'contributor'}});
-			"></div>
+            <img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
 			<div class="bmm-interpret-title">{{contributor.name}}</div>
 			<div class="bmm-interpret-about"><!--@todo amount of tracks--></div>
 		</div>
