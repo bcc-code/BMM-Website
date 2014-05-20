@@ -15,12 +15,14 @@
             </li>
         </ul>
     </div> -
-    <span>{{translation.playlist.allLanguages}}</span>
+    <span ng-click="allLanguages=!allLanguages">{{translation.playlist.allLanguages}}</span>
     <input type="checkbox" ng-model="allLanguages"> -
     <span>{{translation.playlist.feedSize}}</span>
     <input type="number" ng-model="fileRestriction" ng-init="fileRestriction=20" min="1">
 	<textarea style="display: inline-block; width: 100%"
-              readonly>{{podcast.link}}language={{podcastLanguage}}&size={{fileRestriction}}</textarea>
+              onkeydown="event.preventDefault();event.stopPropagation();return false;"
+              oncut="event.preventDefault();event.stopPropagation();return false;"
+    >{{podcast.link}}language={{podcastLanguage}}&size={{fileRestriction}}</textarea>
 </div>
 <br ng-show="podcast.isset">
 <br ng-show="podcast.isset">
