@@ -5,6 +5,12 @@ angular.module('bmmLibApp')
 
     var factory = {};
 
+    //If ie, make body relative (or y position gets wrong while scroll)
+    if (window.navigator.userAgent.indexOf("MSIE ") > 0 ||
+      !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      $(document.body).css('position','relative');
+    }
+
     factory.makeDraggable = function($scope) {
 
       var navStatus=false;
