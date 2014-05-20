@@ -21,6 +21,20 @@ angular.module('bmmApp')
       }
     });
 
+    $scope.podcastLanguage = bmmUser.mediaLanguage;
+    var oldLang = bmmUser.mediaLanguage;
+    $scope.$parent.$watch('mediaLanguage', function(lang) {
+      $scope.podcastLanguage = lang;
+    });
+    $scope.$watch('allLanguages', function(enabled) {
+      if (enabled) {
+        oldLang = $scope.podcastLanguage;
+        $scope.podcastLanguage = '';
+      } else {
+        $scope.podcastLanguage = oldLang;
+      }
+    });
+
     var init = function() {
 
       var loading=true, size, end=false, loadAmount=80;
@@ -76,7 +90,7 @@ angular.module('bmmApp')
           break;
         case 'private':
 
-          $scope.zip.url = bmmApi.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download';
+          $scope.zip.url = bmmApi.secureFile(bmmApi.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download');
           $scope.zip.show = true;
           $scope.private = true;
           bmmApi.userTrackCollectionGet($routeParams.id).done(function(data) {
@@ -151,13 +165,11 @@ angular.module('bmmApp')
             $scope.podcast.link = 'https://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=mp3-kilden&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=mp3-kilden&';
             $scope.podcast.itunes = 'itpc://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=mp3-kilden&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=mp3-kilden&';
           },1500);
 
           break;
@@ -202,13 +214,11 @@ angular.module('bmmApp')
             $scope.podcast.link = 'https://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=child-favorites&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=child-favorites&';
             $scope.podcast.itunes = 'itpc://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=child-favorites&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=child-favorites&';
           },1500);
 
           break;
@@ -253,13 +263,11 @@ angular.module('bmmApp')
             $scope.podcast.link = 'https://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=instrumental&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=instrumental&';
             $scope.podcast.itunes = 'itpc://'+bmmUser.getUser().username+':'+
                                   bmmUser.getUser().token+'@'+
                                   bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/track/?tags[]=instrumental&language='+
-                                  bmmUser.mediaLanguage;
+                                  'podcast/track/?tags[]=instrumental&';
           },1500);
 
           break;
@@ -303,13 +311,11 @@ angular.module('bmmApp')
               $scope.podcast.link = 'https://'+bmmUser.getUser().username+':'+
                                     bmmUser.getUser().token+'@'+
                                     bmmApi.getserverUrli().replace('https://','')+
-                                    'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?language='+
-                                    bmmUser.mediaLanguage;
+                                    'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?';
               $scope.podcast.itunes = 'itpc://'+bmmUser.getUser().username+':'+
                                     bmmUser.getUser().token+'@'+
                                     bmmApi.getserverUrli().replace('https://','')+
-                                    'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?language='+
-                                    bmmUser.mediaLanguage;
+                                    'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?';
             },1500);
           }
 

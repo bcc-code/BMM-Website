@@ -1,8 +1,26 @@
 <h2>{{title}}</h2>
 
-<div ng-show="podcast.isset">
-	{{translation.playlist.copyPodcastLink}}: 
-	<input type="text" value="{{podcast.link}}">
+<div ng-show="podcast.isset" style="width: 100%">
+	<b>{{translation.playlist.copyPodcastLink}}</b><br>
+    <span ng-hide="allLanguages">{{translation.playlist.language}}</span>
+    <div class="dropdown" ng-hide="allLanguages"
+         style="float: none; margin: 0; display: inline-block">
+        <a class="dropdown-toggle">
+            <div class="flags-{{podcastLanguage}}"></div>
+            {{podcastLanguage | bmmLanguage}}</a>
+        <ul class="dropdown-menu" style="margin-left: 0!important">
+            <li ng-repeat="lang in languages">
+                <a class="flags-{{lang}}"
+                   ng-click="$parent.podcastLanguage=lang">{{lang | bmmLanguage}}</a>
+            </li>
+        </ul>
+    </div> -
+    <span>{{translation.playlist.allLanguages}}</span>
+    <input type="checkbox" ng-model="allLanguages"> -
+    <span>{{translation.playlist.feedSize}}</span>
+    <input type="number" ng-model="fileRestriction" ng-init="fileRestriction=20" min="1">
+	<textarea style="display: inline-block; width: 100%"
+              readonly>{{podcast.link}}language={{podcastLanguage}}&size={{fileRestriction}}</textarea>
 </div>
 <br ng-show="podcast.isset">
 <br ng-show="podcast.isset">
@@ -34,7 +52,7 @@
 				<td>
 					<a ng-hide="ios" download class="bmm-track-download" ng-href="{{track.file}}?download=1"></a>
 					<div ng-show="track.video" class="bmm-player-video" ng-class="{'bmm-transparent': track.video!=true}" ng-click="play(playlist, $index);"></div>
-					<div class="bmm-remove-playlist" ng-show="private" ng-click="remove($index)"</div>
+					<div class="bmm-remove-playlist" ng-show="private" ng-click="remove($index)"></div>
 				</td>
 			</tr>
 		</tbody>
