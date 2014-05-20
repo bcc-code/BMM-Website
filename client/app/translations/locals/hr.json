@@ -1,0 +1,31 @@
+{
+  "id": "hr",
+  "date": {
+    "SHORTDAY": [
+      "ned",
+      "pon",
+      "uto",
+      "sri",
+      "\u010det",
+      "pet",
+      "sub"
+    ],
+    "SHORTMONTH": [
+      "sij",
+      "velj",
+      "o\u017eu",
+      "tra",
+      "svi",
+      "lip",
+      "srp",
+      "kol",
+      "ruj",
+      "lis",
+      "stu",
+      "pro"
+    ],
+    "am": "AM",
+    "pm": "PM",
+    "output": "{SHORTDAY} {d}. {SHORTMONTH} {HH}:{mm}"
+  }
+}

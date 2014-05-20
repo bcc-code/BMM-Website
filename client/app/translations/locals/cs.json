@@ -1,0 +1,31 @@
+{
+  "id": "cs",
+  "date": {
+    "SHORTDAY": [
+      "ne",
+      "po",
+      "\u00fat",
+      "st",
+      "\u010dt",
+      "p\u00e1",
+      "so"
+    ],
+    "SHORTMONTH": [
+      "Led",
+      "\u00dano",
+      "B\u0159e",
+      "Dub",
+      "Kv\u011b",
+      "\u010cer",
+      "\u010cvc",
+      "Srp",
+      "Z\u00e1\u0159",
+      "\u0158\u00edj",
+      "Lis",
+      "Pro"
+    ],
+    "am": "dop.",
+    "pm": "odp.",
+    "output": "{SHORTDAY} {d}. {SHORTMONTH} {H}:{mm}"
+  }
+}

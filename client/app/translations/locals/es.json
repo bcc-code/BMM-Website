@@ -1,0 +1,31 @@
+{
+  "id": "es",
+  "date": {
+    "SHORTDAY": [
+      "dom",
+      "lun",
+      "mar",
+      "mi\u00e9",
+      "jue",
+      "vie",
+      "s\u00e1b"
+    ],
+    "SHORTMONTH": [
+      "ene",
+      "feb",
+      "mar",
+      "abr",
+      "may",
+      "jun",
+      "jul",
+      "ago",
+      "sep",
+      "oct",
+      "nov",
+      "dic"
+    ],
+    "am": "a.m.",
+    "pm": "p.m.",
+    "output": "{SHORTDAY} {d} {SHORTMONTH} {HH}:{mm}"
+  }
+}

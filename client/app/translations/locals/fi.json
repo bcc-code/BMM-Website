@@ -1,0 +1,31 @@
+{
+  "id": "fi",
+  "date": {
+    "SHORTDAY": [
+      "su",
+      "ma",
+      "ti",
+      "ke",
+      "to",
+      "pe",
+      "la"
+    ],
+    "SHORTMONTH": [
+      "tammikuuta",
+      "helmikuuta",
+      "maaliskuuta",
+      "huhtikuuta",
+      "toukokuuta",
+      "kes\u00e4kuuta",
+      "hein\u00e4kuuta",
+      "elokuuta",
+      "syyskuuta",
+      "lokakuuta",
+      "marraskuuta",
+      "joulukuuta"
+    ],
+    "am": "ap.",
+    "pm": "ip.",
+    "output": "{SHORTDAY} {d}. {SHORTMONTH} {H}.{mm}"
+  }
+}
