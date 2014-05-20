@@ -1,14 +1,60 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmApi', [ function () {
+  .factory('bmmApi', [ '$timeout', function ($timeout) {
   
   var factory = {},
       credentials,
+      credentialsSuported = 'unresolved',
+      keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/'; //Fallback
 
   factory.serverUrl = function(url) {
     serverUrl = url;
+  };
+
+  factory.setKeepAliveTime = function(time) {
+    keepAliveTime = time;
+  };
+
+  factory.exceptionHandler = function(xhr) {
+    if (xhr.status===401) {
+      factory.loginRedirect();
+    }
+  };
+    
+  factory.keepAlive = function() {
+    $timeout(function() {
+      factory.loginUser().done(function() {
+        factory.keepAlive();
+      });
+    }, keepAliveTime);
+  };
+
+  factory.secureFile = function(file) {
+    //Is credentials supported by browser? Else cookies is automatically used
+    if (credentialsSuported==='unresolved') {
+      var el = document.createElement('img');
+      try {
+        el.src = factory.getserverUrli().replace('://','://'+factory.getCredentials()+'@');
+        if (el.src) {
+          credentialsSuported = true;
+        } else {
+          credentialsSuported = false;
+          factory.keepAlive();
+        }
+      }
+      catch(err) {
+        credentialsSuported = false;
+        factory.keepAlive();
+      }
+    }
+
+    if (credentialsSuported) {
+      return file.replace('://','://'+factory.getCredentials()+'@');
+    } else {
+      return file;
+    }
   };
 
   factory.setCredentials = function(username, password) {
@@ -35,9 +81,7 @@ angular.module('bmmLibApp')
       url: serverUrl,
       dataType: 'json'
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -61,9 +105,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -88,9 +130,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -123,9 +163,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -158,9 +196,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -206,9 +242,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -248,9 +282,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -270,9 +302,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -303,9 +333,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -334,9 +362,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -365,9 +391,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -408,9 +432,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -433,9 +455,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -459,9 +479,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -495,9 +513,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -530,9 +546,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -561,9 +575,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -587,9 +599,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -609,9 +619,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -636,9 +644,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -658,9 +664,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -679,10 +683,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -695,9 +697,10 @@ angular.module('bmmLibApp')
     return $.ajax({
       method: 'POST',
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
-      url: serverUrl+'file/uploaded/'+name+'?_method=LINK',
+      url: serverUrl+'file/uploaded/'+name,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -707,10 +710,8 @@ angular.module('bmmLibApp')
         xhr.setRequestHeader('Accept-Language', track.language);
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -733,9 +734,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -755,9 +754,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -781,9 +778,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -803,9 +798,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      //console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -834,10 +827,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -856,9 +847,10 @@ angular.module('bmmLibApp')
     return $.ajax({
       method: 'POST',
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
-      url: serverUrl+'track_collection/'+playlist+'?_method=LINK',
+      url: serverUrl+'track_collection/'+playlist,
       beforeSend: function (xhr) {
         $.each(tracks, function() {
           //@todo - Find a solution for multiple Link requests
@@ -871,10 +863,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -894,9 +884,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -929,10 +917,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -951,10 +937,8 @@ angular.module('bmmLibApp')
         'withCredentials': true
       },
       crossDomain: true
-    }).fail( function() {
-
-      //console.log(xhr);
-
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -977,9 +961,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -1003,9 +985,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -1028,9 +1008,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -1054,9 +1032,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -1076,9 +1052,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };
@@ -1103,9 +1077,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-
-      console.log(xhr);
-
+      factory.exceptionHandler(xhr);
     });
 
   };

@@ -20,14 +20,16 @@ angular.module('bmmLibApp')
             typeof data._meta.parent!=='undefined'&&
             typeof data._meta.parent.cover!=='undefined'&&
             data._meta.parent.cover!==null) {
-          resolvedData.cover = data._meta.parent.cover;
-          //resolvedData.cover = resolvedData.cover.replace('://','://'+bmmApi.getCredentials()+'@');
+
+          resolvedData.cover = bmmApi.secureFile(data._meta.parent.cover);
+
         } else if (typeof data._meta!=='undefined'&&
             typeof data._meta.root_parent!=='undefined'&&
             typeof data._meta.root_parent.cover!=='undefined'&&
             data._meta.root_parent.cover!==null) {
-          resolvedData.cover = data._meta.root_parent.cover;
-          //resolvedData.cover = resolvedData.cover.replace('://','://'+bmmApi.getCredentials()+'@');
+
+          resolvedData.cover = bmmApi.secureFile(data._meta.root_parent.cover);
+
         } else {
 
           switch(data.subtype) {
@@ -70,10 +72,14 @@ angular.module('bmmLibApp')
       }
 
       //Set album title
-      if (resolvedData.parentTitle!==''&&resolvedData.parentRootTitle!=='') {
-        resolvedData.albumTitle = resolvedData.parentRootTitle+' - '+resolvedData.parentTitle;
+      if (resolvedData.parentTitle!==resolvedData.parentRootTitle) {
+        if (resolvedData.parentTitle!==''&&resolvedData.parentRootTitle!=='') {
+          resolvedData.albumTitle = resolvedData.parentRootTitle+' - '+resolvedData.parentTitle;
+        } else {
+          resolvedData.albumTitle = resolvedData.parentRootTitle+' '+resolvedData.parentTitle;
+        }
       } else {
-        resolvedData.albumTitle = resolvedData.parentRootTitle+' '+resolvedData.parentTitle;
+        resolvedData.albumTitle = resolvedData.parentRootTitle;
       }
 
       //Find file type, url and length

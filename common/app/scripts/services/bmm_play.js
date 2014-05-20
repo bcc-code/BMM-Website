@@ -29,22 +29,7 @@ angular.module('bmmLibApp')
           performers = this.title;
         }
 
-        var file = this.file;
-
-        //Add exception for ie (have problem with verification)
-        var ie = function() {
-          if (window.navigator.userAgent.indexOf("MSIE ") > 0 ||
-            !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-            $(document.body).css('position','relative');
-            return true;
-          } else {
-            return false;
-          }
-        };
-
-        //if (!ie()) {
-          //file = file.replace('://','://'+bmmApi.getCredentials()+'@');
-        //}
+        var file = bmmApi.secureFile(this.file);
 
         tracks.push({
           id: this.id,
