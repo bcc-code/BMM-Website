@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmCover', function () {
-    return function (cover, type) {
+  .filter('bmmCover', [ 'bmmApi', function (bmmApi) {
+    return function (cover, type, id) {
 
       if (cover===null) {
         if (typeof type==='undefined') {
@@ -31,8 +31,10 @@ angular.module('bmmLibApp')
               break;
           }
         }
+      } else if (typeof id!=='undefined') {
+        cover = bmmApi.secureFile(bmmApi.getserverUrli()+type+'/'+id+'/cover');
       }
       
       return cover;
     };
-  });
+  }]);
