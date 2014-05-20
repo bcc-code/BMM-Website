@@ -8,8 +8,12 @@ angular.module('bmmLibApp')
         size = 15;
       }
 
-      if (str.length>size) {
-        str = str.substring(0,size)+'...';
+      if (typeof str!=='undefined') {
+        if (str.length>size) {
+          str = str.substring(0,size)+'...';
+        }
+      } else {
+        str = '';
       }
 
       return str;
