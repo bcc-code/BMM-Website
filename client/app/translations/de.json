@@ -73,7 +73,10 @@
         "nr": "Nr.",
         "title": "Titel",
         "addToItunes": "Add to iTunes",
-        "copyPodcastLink": "Copy podcast link"
+        "copyPodcastLink": "Copy podcast link",
+        "language": "Sprache",
+        "allLanguages": "Alle Sprachen",
+        "feedSize": "Feedgröße"
     },
     "backend": {
         "lastEditBy": "Sist endret av",
