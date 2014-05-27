@@ -12,8 +12,11 @@ angular.module('bmmLibApp')
         return $filter('date')(date, str);//$locale.formatDate(new Date(date), str);
       };
 
-      if (typeof locals.getAll().date[lang]!=='undefined'&&
-          typeof locals.getAll().date[lang].output!=='undefined') {
+      if (typeof locals.getAll().date[lang]==='undefined') {
+        lang = 'nb'; //Fallback
+      }
+
+      if (typeof locals.getAll().date[lang].output!=='undefined') {
 
         local = locals.getAll().date[lang];
         if (typeof out==='undefined') {
