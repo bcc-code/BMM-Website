@@ -1,4 +1,4 @@
-<div class="controlbar">
+<div class="controlbar" ng-hide="model.id==undefined">
     <b>{{standardModel.title}}</b> -
     <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
     {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
@@ -6,7 +6,7 @@
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
-    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
+    <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>
 <div class="foldbox">
     <div class="header"
@@ -30,7 +30,8 @@
                     >
         </div>
         <div style="float: left" ng-hide="hasChildAlbums">
-            <b>{{translation.page.editor.parentAlbum}}: </b> {{parentAlbumCurrent}}<br>
+            <b>{{translation.page.editor.parentAlbum}} </b><br>
+            <u>{{parentAlbumCurrent}}</u><br>
             <i>{{translation.page.editor.setNewParentAlbum}}</i>
             <select ng-change="parentAlbums = []; findParentAlbums(albumParentYear);"
                     ng-model="albumParentYear"
@@ -58,10 +59,10 @@
         <div ng-controller="UploaderCtrl"
              ng-init="init($parent.uploadCover);"
              class="cover">
-            <div class="new" style="overflow: hidden;">
+            <div ng-hide="model.id==undefined" class="new" style="overflow: hidden;">
                 <input ng-file-select type="file" style="opacity: 0">
             </div>
-            <div class="trash" ng-click="$parent.model.cover=null"></div>
+            <div ng-hide="model.id==undefined" class="trash" ng-click="$parent.model.cover=null"></div>
             <img ng-src="{{$parent.model.cover | bmmCover:'album':model.id}}">
             <div class="progress" style="width:{{progress}}%;
                                          background-color: #CAEC81;
@@ -74,7 +75,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="language=!language">
-        <h3>{{translation.page.editor.translations}}</h3>
+        <h3>{{translation.page.editor.languages}}</h3>
     </div>
     <div class="body" ng-class="{'visible': language}">
         <ul style="width: 50%; float: left">
@@ -172,12 +173,16 @@
     </div>
 </div>
 
-<div class="foldbox">
+<div class="foldbox" ng-hide="model.id==undefined">
     <div class="header"
          ng-click="_tracks=!_tracks">
         <h3>{{translation.page.editor.tracks}}</h3>
     </div>
     <div class="body" ng-class="{'visible': _tracks}">
+        <button ng-click="go('track/new/'+model.id+'/'+standardModel.children.length)"
+                style="margin-bottom: 1em">
+            {{translation.page.editor.addTrack}}
+        </button>
         <ul style="width: 100%;">
             <li ng-repeat="track in tracks"
                 ng-click="go('/track/'+track.id)"
@@ -193,5 +198,5 @@
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
-    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
+    <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>
