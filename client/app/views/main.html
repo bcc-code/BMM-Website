@@ -1,4 +1,14 @@
 <div ng-controller="MainCtrl">
+
+    <!--LOADINGSCREEN-->
+    <div class="loadscreen" ng-hide="load.loaded">
+        <div class="logo"></div>
+        <div class="progress">
+            <div class="buffer"
+                 style="width: {{load.percent}}%"></div>
+        </div>
+    </div>
+
     <!--HEADER - MUST DUBLICATE IN NAVIGATOR > SUB-HEADER -->
     <header>
         <div class="page-positioning">

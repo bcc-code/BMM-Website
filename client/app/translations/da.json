@@ -1,0 +1,81 @@
+{
+  "language":"Dansk",
+  "iso-639-1":"da",
+  "general":{
+    "search":"Søg..."
+  },
+  "menu":{
+    "main":{
+      "music":"Musik",
+      "speeches":"Beskeder",
+      "video":"Videoer",
+      "archive":"Arkiv",
+      "audiobooks":"Lydbøger"
+    },
+    "secondary":{
+      "playlists":"Spillelister",
+      "latestTracks":"Nye sange",
+      "lastPlayed":"Sidst afspillet",
+      "mostPlayed":"Mest afspillet",
+      "favorites":"Favoritter",
+      "current":"Nuværende",
+      "newPlaylist":"Ny spilleliste",
+      "nameOnPlaylist":"Navn på spilleliste"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Nyeste beskeder",
+      "latestVideos":"Nyeste videoer",
+      "latestMusic":"Nyeste musik",
+      "latestAlbums":"Nyeste albums"
+    },
+    "music":{
+      "latestMusic":"Nyeste musik\n",
+      "artists":"Artister",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Børnenes MP3-Kilde",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Nyeste Beskeder",
+      "recommended":"Anbefalede"
+    },
+    "videos":{
+      "latestVideos":"Nyeste videoer"
+    },
+    "archive":{
+      "archive":"Arkiv"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Nyeste lydbøger"
+    },
+    "search":{
+      "searchResults":"Søgeresultater"
+    }
+  },
+  "track":{
+    "duration":"Længde",
+    "unknown":"Ukendt",
+    "dragMeToPlaylist":"Træk til spilleliste"
+  },
+  "album":{
+    "tracks":"Sange",
+    "childAlbums":"Børnealbums",
+    "relatedAlbums":"Lignende albums"
+  },
+  "playlist":{
+    "content":"Indhold",
+    "tracks":"Sange",
+    "totalDuration":"Fuld længde",
+    "duration":"Længde",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Tilføj til iTunes",
+    "copyPodcastLink":"Kopier podcast-link",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+}

@@ -5,12 +5,15 @@ angular.module('bmmApp')
     $scope,
     $timeout,
     $location,
+    $route,
     init,
     bmmApi,
     bmmPlaylist,
     bmmPlay,
     draggable
   ) {
+
+    $scope.load = init.load;
 
     init.load.complete.promise.then(function() {
 
@@ -24,6 +27,13 @@ angular.module('bmmApp')
 
       $scope.getCurrent = function() {
         $location.path( bmmPlaylist.getUrl() );
+      };
+
+      $scope.setMediaLanguage = function(lang) {
+        init.mediaLanguage = lang;
+        $scope.mediaLanguage = lang;
+        init.originalLanguage = lang;
+        $route.reload();
       };
 
       $scope.go = function ( path ) {
