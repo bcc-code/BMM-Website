@@ -64,9 +64,9 @@ angular.module('bmmApp', [
         controller: 'ContributorsCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
       })
-      .when('/permissions', {
-        templateUrl: 'views/pages/permissions.html',
-        controller: 'PermissionsCtrl',
+      .when('/users', {
+        templateUrl: 'views/pages/users.html',
+        controller: 'UsersCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
       })
       .otherwise({

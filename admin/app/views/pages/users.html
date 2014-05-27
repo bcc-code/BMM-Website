@@ -1,0 +1,87 @@
+<div class="foldbox">
+    <div class="header"
+         ng-click="_user=!_user"
+         ng-init="_user=true">
+    </div>
+    <div class="body" ng-class="{'visible': _user}">
+
+        <ul>
+            <h4>{{translation.page.contributors.search}}</h4>
+            <input type="text" ng-model="userSearch">
+        </ul>
+
+        <table style="width: 100%">
+            <tr>
+                <th>{{translation.page.contributors.name}}</th>
+                <th>{{translation.page.users.albumManager}}</th>
+                <th>{{translation.page.users.trackManager}}</th>
+                <th>{{translation.page.users.contributorManager}}</th>
+                <th>{{translation.page.users.allRights}}</th>
+            </tr>
+            <tr ng-repeat="user in searchResults">
+                <td>
+                    {{user.id}}
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_ALBUM_MANAGER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_TRACK_MANAGER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_CONTRIBUTOR_MANAGER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user, true)">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<div class="controlbar">
+    <b>{{translation.page.editor.status}}</b>: {{status}}
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="_users=!_users">
+        <h3>{{translation.page.users.adminUsers}}</h3>
+        ({{users.length}}<span ng-show="users.length==500">+</span>)
+    </div>
+    <div class="body" ng-class="{'visible': _users}" ng-init="_users=true">
+
+        <button ng-click="fetchUsers()">
+            {{translation.page.users.refreshList}}
+        </button>
+
+        <table style="width: 100%">
+            <tr>
+                <th>{{translation.page.contributors.name}}</th>
+                <th>{{translation.page.users.albumManager}}</th>
+                <th>{{translation.page.users.trackManager}}</th>
+                <th>{{translation.page.users.contributorManager}}</th>
+                <th>{{translation.page.users.allRights}}</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>
+                    {{user.id}}
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_ALBUM_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_TRACK_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_CONTRIBUTOR_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user)">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>

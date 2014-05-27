@@ -85,7 +85,7 @@ angular.module('bmmApp')
       bmmPlay.setPlay([track], 0);
     };
 
-    $scope.addContributor = function(contributor, suggestions) {
+    $scope.addContributor = function(contributor) {
       if (contributor!=='') {
         bmmApi.contributorPost({
           type: 'contributor',
@@ -94,7 +94,7 @@ angular.module('bmmApp')
           cover_upload: null
         }).always(function() {
           $timeout(function() {
-            bmmApi.contributorSuggestorCompletionGet($scope.contributor).done(function(data) {
+            bmmApi.contributorSuggesterCompletionGet($scope.contributor).done(function(data) {
               $scope.$apply(function() {
                 $scope.contributors = data;
               });
@@ -106,7 +106,7 @@ angular.module('bmmApp')
 
     $scope.$watch('contributor', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggestorCompletionGet(name).done(function(data) {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors = data;
           });

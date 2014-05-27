@@ -93,6 +93,14 @@
       "tracks": "Tracks",
       "search": "Search",
       "contributors": "Contributors"
+    },
+    "users": {
+      "adminUsers": "Administrator users",
+      "albumManager": "Album manager",
+      "trackManager": "Track manager",
+      "contributorManager": "Contributor manager",
+      "allRights": "All rights",
+      "refreshList": "Refresh list"
     }
   },
 

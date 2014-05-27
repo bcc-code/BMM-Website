@@ -121,7 +121,7 @@ angular.module('bmmApp')
           cover_upload: null
         }).always(function() {
           $timeout(function() {
-            bmmApi.contributorSuggestorCompletionGet(contributor).done(function(data) {
+            bmmApi.contributorSuggesterCompletionGet(contributor).done(function(data) {
               $scope.$apply(function() {
                 $scope.contributors.interprets = data;
                 $scope.contributors.lyricists = data;
@@ -136,7 +136,7 @@ angular.module('bmmApp')
     $scope.contributors = {};
     $scope.$watch('contributors.interpret', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggestorCompletionGet(name).done(function(data) {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.interprets = data;
           });
@@ -147,7 +147,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.lyricist', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggestorCompletionGet(name).done(function(data) {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.lyricists = data;
           });
@@ -158,7 +158,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.composer', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggestorCompletionGet(name).done(function(data) {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.composers = data;
           });
