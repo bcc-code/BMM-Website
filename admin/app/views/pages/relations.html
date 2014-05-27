@@ -1,0 +1,200 @@
+<div class="foldbox">
+    <div class="header"
+         ng-click="interprets=!interprets">
+        <h3>{{translation.page.editor.interprets}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': interprets}">
+
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="interpret in rel.interprets"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span>
+                    {{interpret.name}}
+                </span>
+                <div class="trash"
+                     style="float: right"
+                     ng-click="deleteReference($index,'interprets')">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.available}}</h4>
+            <input type="text" ng-model="contributors.interpret">
+            <button ng-click="addContributor(contributors.interpret, contributors.interprets)"
+                    style="margin-bottom: .5em">
+                {{translation.page.editor.createNewContributor}}
+            </button>
+            <li ng-repeat="contributor in contributors.interprets"
+                style="width: 100%; display: inline-block"
+                ng-click="activateContributor(contributor.name, 'interpret')">
+                <span>
+                    {{contributor.name}}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="lyricists=!lyricists">
+        <h3>{{translation.page.editor.lyricists}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': lyricists}">
+
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="lyricist in rel.lyricists"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span>
+                    {{lyricist.name}}
+                </span>
+                <div class="trash"
+                     style="float: right"
+                     ng-click="deleteReference($index,'lyricists')">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.available}}</h4>
+            <input type="text" ng-model="contributors.lyricist">
+            <button ng-click="addContributor(contributors.lyricist, contributors.lyricists)"
+                    style="margin-bottom: .5em">
+                {{translation.page.editor.createNewContributor}}
+            </button>
+            <li ng-repeat="contributor in contributors.lyricists"
+                style="width: 100%; display: inline-block"
+                ng-click="activateContributor(contributor.name, 'lyricist')">
+                <span>
+                    {{contributor.name}}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="composers=!composers">
+        <h3>{{translation.page.editor.composers}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': composers}">
+
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="composer in rel.composers"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span>
+                    {{composer.name}}
+                </span>
+                <div class="trash"
+                     style="float: right"
+                     ng-click="deleteReference($index,'composers')">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.available}}</h4>
+            <input type="text" ng-model="contributors.composer">
+            <button ng-click="addContributor(contributors.composer, contributors.composers)"
+                    style="margin-bottom: .5em">
+                {{translation.page.editor.createNewContributor}}
+            </button>
+            <li ng-repeat="contributor in contributors.composers"
+                style="width: 100%; display: inline-block"
+                ng-click="activateContributor(contributor.name, 'composer')">
+                <span>
+                    {{contributor.name}}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="songbooks=!songbooks">
+        <h3>{{translation.page.editor.songbooks}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': songbooks}">
+
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.active}}</h4>
+            <li ng-repeat="songbook in rel.songbooks"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span style="width: 100%">
+                    <b>{{songbook.name}}</b>
+                </span>
+                {{translation.page.editor.number}}<br>
+                <input type="text" ng-model="songbook.id"><br>
+                {{translation.page.editor.timestamp}}<br>
+                <input type="text" ng-model="songbook.timestamp">
+                <div class="trash"
+                     style="float: right"
+                     ng-click="deleteReference($index,'songbooks')">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{translation.page.editor.available}}</h4>
+            <li ng-repeat="songbook in availableSongbooks"
+                style="width: 100%; display: inline-block"
+                ng-click="activateSongbook(songbook)">
+                <span>
+                    {{songbook}}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
+         ng-click="bibles=!bibles">
+        <h3>{{translation.page.editor.bibleReferences}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': bibles}">
+
+        <button ng-click="addBibleReference()" style="margin-bottom: .5em">
+            {{translation.page.editor.addBibleReference}}
+        </button>
+
+        <button ng-click="toggleRecord()" style="margin-bottom: .5em">
+            <span ng-hide="recording">{{translation.page.editor.record}}</span>
+            <span ng-show="recording">{{translation.page.editor.pause}}</span>
+        </button>
+
+        ({{recorder | bmmTime}})
+
+        <button ng-click="recorderReset()" style="margin-bottom: .5em">
+            {{translation.page.editor.resetTime}}
+        </button>
+
+        <ul>
+            <li ng-repeat="bible in rel.bibles" ng-controller="TrackBibleCtrl"class="no-hover">
+
+                <input type="text" ng-model="bible.raw" style="width: 100%">
+
+                <div ng-repeat="book in filtered" class="bible-results">
+                    <span>{{book.name}}</span>
+                    <div ng-repeat="chapter in book.chapters">
+                        <span><b>{{chapter.number}}</b></span>
+                        <div ng-repeat="verse in chapter.verses">
+                            <span>{{verse}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{translation.page.editor.timestamp}}<br>
+                <input type="text" ng-model="bible.time"><br>
+                <button ng-click="deleteReference($index,'bibles')">{{$parent.translation.page.editor.delete}}</button>
+
+            </li>
+        </ul>
+
+    </div>
+</div>
