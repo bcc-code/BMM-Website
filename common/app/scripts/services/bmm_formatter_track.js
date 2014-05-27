@@ -83,10 +83,10 @@ angular.module('bmmLibApp')
       }
 
       //Find file type, url and length
-      if (typeof data.media!=='undefined'&&data.media.length>0) {
+      if (typeof data.media!=='undefined'&&data.media!==null&&data.media.length>0) {
         $.each( data.media, function() {
 
-          resolvedData.file = this.files[0].url;
+          resolvedData.file = bmmApi.secureFile(this.files[0].url);
           resolvedData.duration = Number(this.files[0].duration);
           resolvedData.type = this.type;
 
@@ -96,6 +96,13 @@ angular.module('bmmLibApp')
           }
 
         });
+      }
+
+      //If track is a waiting, fetch waiting file
+      if (typeof data.link!=='undefined') {
+        resolvedData.file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link;
+        resolvedData.file = bmmApi.secureFile(resolvedData.file);
+        resolvedData.link = data.link;
       }
 
       //Find title
