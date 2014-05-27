@@ -1,13 +1,45 @@
-<div class="controlbar">
+<div class="controlbar" ng-hide="model.id==undefined">
     <b>{{standardModel.title}}</b> -
     <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
         {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
 </div>
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
-    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
+    <button ng-click="model.is_visible=!model.is_visible">
+        <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
+        <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
+    </button>
 </div>
+
+<div class="foldbox" ng-show="waitings.length>0">
+    <div class="header"
+         ng-click="_waitings=!_waitings">
+        <h3>{{translation.page.editor.waitingsReady}}</h3> ({{waitings.length}})
+    </div>
+    <div class="body" ng-class="{'visible': _waitings}">
+
+        <ul class="waitings">
+            <li ng-repeat="track in waitings">
+                <img ng-src="{{track.cover | bmmCover}}">
+                <div>
+                    <div class="flags-{{track.language}}"
+                         style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                    </div>
+                    <button ng-click="playLinked(track)">{{translation.page.editor.play}}</button>
+                    <button ng-click="linkWaiting(track.link, track.id, track.language, $index)">{{translation.page.waitings.link}}</button>
+                    <span>{{track.combinedTitle}}</span>
+                    <span>{{track.albumTitle}}</span>
+                    <span>{{track.performers}}</span>
+                    <span>{{track.type}} ({{track.subtype}})</span>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
 <div class="foldbox">
     <div class="header"
          ng-click="main=!main"
@@ -16,6 +48,13 @@
     </div>
     <div class="body" ng-class="{'visible': main}">
         <div style="float: left; margin-right: 1em">
+            <b>{{translation.page.editor.type}}</b>
+            <select ng-model="model.subtype"
+                    ng-options="type for type in possibleSubtypes"
+                    style="display: block">
+            </select>
+            <b>{{translation.page.editor.sortOrder}}</b><br>
+            <input type="text" ng-model="model.order"><br>
             <b>{{translation.page.editor.publishDate}}</b><br>
             <input bs-datepicker data-autoclose="1" type="text"
                    data-date-format="dd.MM.yyyy"
@@ -38,36 +77,43 @@
                     >
         </div>
         <div style="float: left">
-            <b>{{translation.page.editor.album}}: </b> {{parentAlbumCurrent}}<br>
+            <b>{{translation.page.editor.album}}</b><br>
+            <u>{{parentAlbumCurrent}}</u><br>
             <i>{{translation.page.editor.setNewParentAlbum}}</i>
             <select ng-change="parentAlbums = []; findParentAlbums(albumParentYear);"
                     ng-model="albumParentYear"
                     ng-options="year for year in years"
+                    ng-style="{backgroundColor: parentAlbumCurrent==undefined ? '#F84F4F' : '' }"
                     style="display: block">
             </select>
 
-            <select ng-disabled="parentAlbums.length<=0"
+            <select ng-change="parentSubAlbums = []; findParentSubAlbums(parentAlbum.id);"
+                    ng-disabled="parentAlbums.length<=0"
                     ng-model="parentAlbum"
                     ng-options="album.title for album in parentAlbums"
+                    ng-style="{backgroundColor: parentAlbumCurrent==undefined ? '#F84F4F' : '' }"
                     style="display: block">
             </select>
-            <button ng-click="selectParentAlbum(parentAlbum);">{{translation.page.editor.select}}</button><br>
+            <button ng-click="selectParentAlbum(parentAlbum);"
+                    style="margin-bottom: 1em">{{translation.page.editor.select}}</button><br>
 
             <select ng-disabled="parentSubAlbums.length<=0"
                     ng-model="parentSubAlbum"
                     ng-options="album.title for album in parentSubAlbums"
+                    ng-style="{backgroundColor: parentAlbumCurrent==undefined ? '#F84F4F' : '' }"
                     style="display: block">
             </select>
-            <button ng-click="selectParentAlbum(parentSubAlbum);">{{translation.page.editor.select}}</button>
+            <button ng-click="selectParentAlbum(parentSubAlbum);"
+                    style="margin-bottom: 1em">{{translation.page.editor.select}}</button>
         </div>
         <div ng-controller="UploaderCtrl"
              ng-init="init($parent.uploadCover);"
              class="cover">
-            <div class="new" style="overflow: hidden;">
+            <div ng-hide="model.id==undefined" class="new" style="overflow: hidden;">
                 <input ng-file-select type="file" style="opacity: 0">
             </div>
-            <div class="trash" ng-click="$parent.model.cover=null"></div>
-            <img ng-src="{{$parent.model.cover | bmmCover:'album':model.id}}">
+            <div ng-hide="model.id==undefined" class="trash" ng-click="$parent.model.cover=null"></div>
+            <img ng-src="{{$parent.model.cover | bmmCover:'track':model.id}}">
             <div class="progress" style="width:{{progress}}%;
                                          background-color: #CAEC81;
                                          background-image: none;
@@ -79,7 +125,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="language=!language">
-        <h3>{{translation.page.editor.translations}}</h3>
+        <h3>{{translation.page.editor.languages}}</h3>
     </div>
     <div class="body" ng-class="{'visible': language}">
         <ul style="width: 50%; float: left">
@@ -116,7 +162,7 @@
                 </span>
             </li>
         </ul>
-        <div style="width:100%; padding: 1em 0; display: inline-block">
+        <div class="language-edit">
             <b>{{translation.page.editor.selectedLanguage}}</b>:
             {{edited.language | bmmLanguage}}
             <div class="flags-{{edited.language}}"
@@ -131,19 +177,40 @@
                 <span ng-show="edited.is_visible">{{translation.page.editor.unpublish}}</span>
                 <span ng-hide="edited.is_visible">{{translation.page.editor.publish}}</span>
             </button>
-            <button ng-click="generateTitles()">
-                {{translation.page.editor.generateTitlesByTag}}
-            </button>
             <br>
             {{translation.page.editor.title}}
             <br>
             <input type="text" style="width: 100%"
                    placeholder="{{originalLanguage.title}}"
                    ng-model="edited.title"><br>
-            {{translation.page.editor.description}}<br>
-            <textarea ng-model="edited.description" style="width: 100%"
-                      placeholder="{{originalLanguage.description}}">
-            </textarea>
+            <span ng-hide="model.id==undefined">
+                <b>{{translation.page.editor.uploadFile}}</b> ({{edited.language | bmmLanguage}})
+            </span><br>
+            <div ng-hide="model.id==undefined" ng-controller="UploaderCtrl"
+                 ng-init="init($parent.uploadMedia);">
+
+                <input ng-file-select type="file">
+
+                <div class="progress" style="width:{{progress}}%;
+                                         background-color: #CAEC81;
+                                         background-image: none;
+                                         margin: 0"></div>
+            </div>
+            <span ng-hide="model.id==undefined">
+                <b>{{translation.page.editor.mediaFiles}}</b> ({{edited.language | bmmLanguage}})
+            </span>
+            <ul ng-hide="model.id==undefined" class="files">
+                <div ng-repeat="media in edited.media">
+                    <li ng-repeat="file in media.files">
+                        <span>{{file.mime_type}}</span>
+                        <span><b>{{translation.page.editor.duration}}:</b> {{file.duration}}</span>
+                        <span><b>{{translation.page.editor.size}}:</b> {{file.size}}</span>
+                        <button ng-click="deleteFile(edited.media, $parent.$index, $index)">{{translation.page.editor.delete}}</button>
+                        <button ng-click="play(file)">{{translation.page.editor.play}}</button>
+                    </li>
+                </div>
+            </ul>
+
         </div>
     </div>
 </div>
@@ -177,8 +244,17 @@
     </div>
 </div>
 
+<div ng-include="'views/pages/relations.html'"
+     ng-controller="RelationsCtrl"
+     style="width: 100%;"></div>
+
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
-    <button ng-click="delete();">{{translation.page.editor.delete}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
+    <button ng-click="model.is_visible=!model.is_visible">
+        <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
+        <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
+    </button>
+
 </div>
