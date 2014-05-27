@@ -16,7 +16,7 @@ angular.module('bmmLibApp')
         var results = 1;
 
         $.each(root.languages, function() {
-          promises.push($http.get(url+'/'+this+'.json')
+          promises.push($http.get(url+this+'.json')
             .success(function(file) {
               if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
                 locals.date[file.id] = file.date;
@@ -35,9 +35,6 @@ angular.module('bmmLibApp')
           );
         });
 
-        /*$q.all(promises).then(function() {
-          localsLoaded.resolve();
-        });*/
       });
 
       return $q.all([localsLoaded.promise]);
