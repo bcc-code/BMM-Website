@@ -29,15 +29,13 @@ angular.module('bmmLibApp')
           performers = this.title;
         }
 
-        var file = bmmApi.secureFile(this.file);
-
         tracks.push({
           id: this.id,
           title: title,
           subtitle: performers,
           extra: this.language,
           cover: $filter('bmmCover')(this.cover,this.subtype),
-          url: file,
+          url: this.file,
           duration: this.duration,
           video: video
         });
