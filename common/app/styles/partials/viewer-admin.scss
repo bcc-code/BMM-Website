@@ -1,7 +1,7 @@
 .admin {
 
   [ng-view] {
-    padding: 0 0 $playerHeight+2em 0;
+    padding: 1em 1em $playerHeight+2em 1em;
     .dropdown-menu button {
       color: #333;
     }
@@ -36,14 +36,14 @@
 
   .foldbox {
     $blueHover: #44B4FF;
-    $greenHover: #96ff67;
+    $greenHover: #71BB50;
     $redHover: #ff6718;
     $originalColor: #ffd73a;
     position: relative;
     width: 100%;
     padding: 0;
-    background-color: #D9E2EB;
     border: .2em rgba(90, 86, 102, 0.17) dotted;
+    margin: .5em 0;
 
     h3 {
       padding: 0;
@@ -105,26 +105,22 @@
       ul {
         li {
           cursor: pointer;
-          background-color: #83A3BB;
           margin: 0 .2em .2em 0;
-          padding-left: .3em;
-          border-radius: .3em;
+          padding: .2em .2em .2em .5em;
+          border-radius: .2em;
+          border: .1em dotted #9E9797;
           .trash, .publish {
             display: inline-block;
             padding: .1em .4em;
             height: 100%;
             color: $colorForeground;
             background-color: #ff4a37;
-            border-bottom-right-radius: .3em;
-            border-top-right-radius: .3em;
             float: left;
           }
           .trash:hover, .publish:hover {
             background-color: $redHover;
           }
           .publish {
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
             background-color: #333;
           }
           span {
@@ -146,10 +142,73 @@
           opacity: .4;
         }
       }
+      .files {
+        li {
+          display: inline-block;
+          padding: .5em;
+          cursor: default;
+          span {
+            display: block;
+            float: none;
+          }
+        }
+      }
+      .no-hover:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+      .bible-results {
+        width: 100%;
+        display: inline-block;
+        > span {
+          background-color: #5676AF;
+          padding: .2em .5em;
+          color: #fff;
+        }
+        > div {
+          > span {
+            padding: .15em .5em;
+            margin-top: .05em;
+            background-color: #8CB5DA;
+          }
+          > div {
+            > span {
+              padding: 0 .5em;
+              margin-top: .2em;
+              background-color: #C2D3FD;
+              color: #3A3A3A;
+              border-right: .2em solid #A9B4A4;
+            }
+          }
+        }
+      }
+      .waitings {
+        li {
+          display: flex;
+          img {
+            margin: .5em;
+            height: 5em;
+            width: auto;
+            float: left;
+          }
+          span {
+            display: block;
+            float: none;
+          }
+        }
+      }
+
     }
     .body.visible {
       padding: .4em;
       height: auto;
+    }
+    .language-edit {
+      width:100%;
+      padding: 1em;
+      display: inline-block;
+      margin-top: 1em;
+      background-color: #D6D6CD;
     }
   }
 

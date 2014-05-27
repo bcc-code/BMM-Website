@@ -16,6 +16,10 @@ a {
   cursor: pointer;
 }
 
+h1, h2, h3 {
+  line-height: normal;
+}
+
 h2 {
   color: $colorMain;
 }
