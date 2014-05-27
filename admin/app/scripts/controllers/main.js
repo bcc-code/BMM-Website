@@ -11,6 +11,8 @@ angular.module('bmmApp')
     bmmFormatterAlbum
   ) {
 
+    $scope.load = init.load;
+
     init.load.complete.promise.then(function() {
 
       $('.bmm-view').off('scrollBottom');

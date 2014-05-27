@@ -224,6 +224,11 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
+        },{
+          expand: true,
+          cwd: '<%= yeoman.app %>/common/images',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
@@ -296,6 +301,11 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/scripts',
+          dest: '<%= yeoman.dist %>/scripts',
+          src: ['config.json']
         }]
       },
       styles: {
@@ -306,6 +316,12 @@ module.exports = function (grunt) {
       },
       vendor: {
         files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/common/images',
+          dest: '<%= yeoman.dist %>/images',
+          src: '{,*/}*'
+        },{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/bower_components/hub.bmm/dist/images',

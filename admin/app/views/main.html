@@ -1,4 +1,15 @@
 <div ng-controller="MainCtrl" class="admin">
+
+    <!--LOADINGSCREEN-->
+    <div class="loadscreen" ng-hide="load.loaded">
+        <div class="logo"></div>
+        <div class="progress">
+            <div class="buffer"
+                 style="width: {{load.percent}}%"></div><br>
+            <span>{{load.status}}</span>
+        </div>
+    </div>
+
     <!--HEADER - MUST DUBLICATE IN NAVIGATOR > SUB-HEADER -->
     <header>
         <div class="page-positioning">
@@ -119,7 +130,7 @@
             <h2>{{translation.menu.secondary.quickMenu}}</h2>
             <div class="quick-menu">
                 <button ng-click="go('/album/new')">{{translation.menu.secondary.newAlbum}}</button>
-                <button>{{translation.menu.secondary.newTrack}}</button><br><br>
+                <button ng-click="go('/track/new')">{{translation.menu.secondary.newTrack}}</button><br><br>
 
                     {{translation.menu.secondary.year}}
                     <select ng-change="findAlbums(year);"
