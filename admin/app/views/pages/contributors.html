@@ -1,10 +1,108 @@
-<div class="bmm-floatbox">
+<div class="foldbox">
+    <div class="header"
+         ng-click="_contributor=!_contributor"
+         ng-init="_contributor=true">
+        <h3>{{translation.page.contributors.contributors}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': _contributor}">
 
-	<h2>{{contributor.name}}</h2>
+        <ul>
+            <h4>{{translation.page.contributors.search}}</h4>
+            <input type="text" ng-model="contributor">
+            <button ng-click="addContributor(contributor, contributors)"
+                    style="margin-bottom: .5em">
+                {{translation.page.editor.createNewContributor}}
+            </button>
+            <li ng-repeat="contributor in contributors"
+                style="width: 100%; display: inline-block"
+                ng-click="go('contributors/'+contributor.id);">
+                <span>
+                    {{contributor.name}}
+                </span>
+            </li>
+        </ul>
 
-	<div ng-controller="ContributorUploaderCtrl" class="bmm-album-image">
-		<input type="file" ng-file-select><button ng-click="removeCover()">{{translation.backend.delete}}</button>
-		<img src="{{coverImage | bmmCover:type}}" width="100%" height="100%"></img>
-	</div>
+    </div>
+</div>
 
+<div class="controlbar" ng-hide="model.id==undefined">
+    <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
+        {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
+</div>
+<div class="controlbar">
+    <b>{{translation.page.editor.status}}</b>: {{status}}
+    <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-show="user.username=='simonsimcity' || user.username=='dadde' || user.username=='steffan'"
+            ng-click="delete();">
+        {{translation.page.editor.delete}}</button>
+</div>
+
+<div class="foldbox" ng-hide="model.id==undefined">
+    <div class="header"
+         ng-click="main=!main"
+         ng-init="main=true">
+        <h3>{{model.name}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': main}">
+        <div style="float: left; margin-right: 1em">
+            <b ng-show="user.username=='simonsimcity' || user.username=='steffan'">
+                {{translation.page.contributors.name}}
+            </b><br>
+            <input ng-show="user.username=='simonsimcity' || user.username=='steffan'" ng-model="model.name" type="text"><br>
+            <button ng-click="model.is_visible=!model.is_visible">
+                <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
+                <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
+            </button>
+        </div>
+        <div style="float: left">
+
+        </div>
+        <div ng-controller="UploaderCtrl"
+             ng-init="init($parent.uploadCover);"
+             class="cover">
+            <div class="new" style="overflow: hidden;">
+                <input ng-file-select type="file" style="opacity: 0">
+            </div>
+            <div class="trash" ng-click="$parent.model.cover=null"></div>
+            <img ng-src="{{$parent.model.cover | bmmCover:'contributor':model.id}}">
+            <div class="progress" style="width:{{progress}}%;
+                                         background-color: #CAEC81;
+                                         background-image: none;
+                                         margin: 0"></div>
+        </div>
+    </div>
+</div>
+
+<div class="foldbox" ng-hide="model.id==undefined">
+    <div class="header"
+         ng-click="_tracks=!_tracks">
+        <h3>{{translation.page.contributors.tracks}}</h3>
+        ({{tracks.length}}<span ng-show="tracks.length==100">+</span>)
+    </div>
+    <div class="body" ng-class="{'visible': _tracks}">
+
+        <ul>
+            <li ng-repeat="track in tracks" class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span style="width: 100%;">
+                    <i>{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}}</i>
+                    (<b>{{track.duration | bmmTime}}</b>)
+                    -
+                    {{track.combinedTitle}}
+                </span>
+                <span style="width: 100%;">
+                    {{track.albumTitle}}
+                </span>
+                <button ng-click="play(track)">
+                    {{translation.page.editor.play}}
+                </button>
+                <button>
+                    <a ng-href="#track/{{track.id}}">
+                        {{translation.page.waitings.openTrack}}
+                    </a>
+                </button>
+            </li>
+        </ul>
+
+    </div>
 </div>

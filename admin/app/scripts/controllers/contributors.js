@@ -1,36 +1,119 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('ContributorsCtrl', function ($scope, $routeParams, bmmApi) {
+  .controller('ContributorsCtrl', function ($scope, $location, $timeout, $routeParams, bmmApi, bmmFormatterTrack, bmmPlay, init) {
     
-    $scope.contributor={};
-    $scope.$parent.contributors = true;
+    $scope.model={};
+    $scope.status = 'Waiting for selection';
 
-    if (typeof $routeParams.id!=='undefined') {
-      bmmApi.contributorIdGet($routeParams.id).done(function(contributor) {
+    $scope.loadContributor = function(id) {
 
-        $scope.coverImage = contributor.cover;
-        $scope.contributor = contributor;
-        $scope.$apply();
+      $scope.status = 'Loading contributor, please wait...';
 
-      });
-    }
+      bmmApi.contributorIdGet(id, {
+        unpublished: 'show'
+      }).done (function(model) {
 
-    $scope.removeCover = function() {
-
-      delete $scope.contributor.id;
-      delete $scope.contributor._meta;
-
-      $scope.contributor.cover=null;
-      bmmApi.contributorIdPut($routeParams.id,
-        angular.copy($scope.contributor)
-      ).done(function() {
-        alert('Bilde er slettet');
         $scope.$apply(function() {
-          $scope.coverImage=null;
+          $scope.model = model;
+          $scope.status = 'Loading tracks...';
+          $scope.uploadUrl = bmmApi.getserverUrli()+'contributor/'+model.id+'/cover';
         });
+
+        bmmApi.contributorTracksGet(model.name, {
+          size: 100
+        }, init.mediaLanguage).done(function(data) {
+
+          $scope.$apply(function() {
+
+            $scope.tracks = [];
+            $.each(data, function() {
+              if (this.type==='track') {
+                $scope.tracks.push(bmmFormatterTrack.resolve(this));
+              }
+            });
+
+            $scope.status = 'Contributor successfully loaded';
+
+          });
+
+        });
+
       });
 
     };
+
+    if (typeof $routeParams.id!=='undefined') {
+      $scope.loadContributor($routeParams.id);
+    }
+
+    $scope.save = function(options) {
+      $scope.status = 'Saving contributor, please wait...';
+      //Delete parts that's unexpected by the API
+      var toApi = angular.copy($scope.model);
+      delete toApi._meta;
+      delete toApi.id;
+      bmmApi.contributorIdPut($scope.model.id, toApi).done(function() {
+        $scope.loadContributor($scope.model.id);
+        options.done();
+      });
+    };
+
+    $scope.delete = function() {
+      if (confirm('ARE YOU REALLY SURE YOU WANT TO DELETE THIS CONTRIBUTOR? ALL LINKED TRACKS WILL BE DELETED!!!')) {
+        $scope.status = 'Deleting contributor, please wait...';
+
+        bmmApi.contributorIdDelete($scope.model.id).always(function() {
+          $scope.$apply(function() {
+            $location.path('contributors');
+          });
+        });
+      }
+    };
+
+    $scope.uploadCover = {
+      url: bmmApi.getserverUrli()+'contributor/'+$routeParams.id+'/cover',
+      method: 'PUT'
+    };
+    $scope.uploadUrl = bmmApi.getserverUrli()+'contributor/'+$scope.model.id+'/cover';
+
+    $scope.refreshModel = function() {
+      $scope.loadContributor($scope.model.id);
+    };
+
+    $scope.play = function(track) {
+      bmmPlay.setPlay([track], 0);
+    };
+
+    $scope.addContributor = function(contributor, suggestions) {
+      if (contributor!=='') {
+        bmmApi.contributorPost({
+          type: 'contributor',
+          is_visible: true,
+          name: contributor,
+          cover_upload: null
+        }).always(function() {
+          $timeout(function() {
+            bmmApi.contributorSuggestorCompletionGet($scope.contributor).done(function(data) {
+              $scope.$apply(function() {
+                $scope.contributors = data;
+              });
+            });
+          }, 1000);
+        });
+      }
+    };
+
+    $scope.$watch('contributor', function(name) {
+      if (name!=='') {
+        bmmApi.contributorSuggestorCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors = data;
+          });
+        });
+      } else {
+        $scope.contributors = [];
+      }
+    });
 
   });
