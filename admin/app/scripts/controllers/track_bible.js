@@ -1,15 +1,12 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('TrackBibleCtrl', function ($scope, $filter, $timeout) {
+  .controller('TrackBibleCtrl', function ($scope, $filter) {
 
-    $scope.$watch('bible.raw', function(text) {
+    $scope.filtered = {};
 
-      //Timeout because of strange bug @todo - find out why
-      $timeout(function() {
-        $scope.bible.filtered = $filter('bmmBibleVerse')(text);
-      }, 500);
-
+    $scope.$watch('bible.raw', function(raw) {
+      $scope.filtered = $filter('bmmBibleVerse')(raw);
     });
 
   });
