@@ -39,6 +39,8 @@ angular.module('bmmLibApp')
         el.src = factory.getserverUrli().replace('://','://'+factory.getCredentials()+'@');
         if (el.src) {
           credentialsSuported = true;
+          //Logout session (cookies not needed)
+          factory.logout();
         } else {
           credentialsSuported = false;
           factory.keepAlive();
@@ -437,6 +439,22 @@ angular.module('bmmLibApp')
 
   };
 
+  /** Logout cookie session **/
+  factory.logout = function() {
+
+    return $.ajax({
+      method: 'POST',
+      url: serverUrl+'logout',
+      crossDomain: true,
+      xhrFields: {
+        'withCredentials': true
+      }
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
+    });
+
+  };
+
   /** Get a list of suggestions based on a given term **/
   factory.suggest = function(term, language) {
 
@@ -461,7 +479,7 @@ angular.module('bmmLibApp')
   };
 
   /** Save a new track **/
-  factory.track = function(options) {
+  factory.trackPost = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -690,9 +708,9 @@ angular.module('bmmLibApp')
   };
 
   /** Accept track guessed for file, when file is uploaded through FTP **/
-  factory.fileUploadedNameLink = function(name, track) {
+  factory.fileUploadedNameLink = function(link, id, lang) {
 
-    if (typeof track.language === 'undefined') { return false; }
+    if (typeof lang === 'undefined') { return false; }
 
     return $.ajax({
       method: 'POST',
@@ -700,14 +718,14 @@ angular.module('bmmLibApp')
         'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
-      url: serverUrl+'file/uploaded/'+name,
+      url: serverUrl+'file/uploaded/'+link,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
       },
       beforeSend: function (xhr) {
-        xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+track.id+'>');
-        xhr.setRequestHeader('Accept-Language', track.language);
+        xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+id+'>');
+        xhr.setRequestHeader('Accept-Language', lang);
       },
       crossDomain: true
     }).fail( function(xhr) {
@@ -991,20 +1009,40 @@ angular.module('bmmLibApp')
   };
 
   /** Get a contributor **/
-  factory.contributorIdGet = function(id, language) {
+  factory.contributorIdGet = function(id, options) {
 
-    if (typeof language === 'undefined') { language = ''; }
+    if (typeof options === 'undefined') { options = {}; }
 
     return $.ajax({
       method: 'GET',
       url: serverUrl+'contributor/'+id,
-      dataType: 'json',
       xhrFields: {
         'withCredentials': true
       },
+      data: $.param(options),
+      dataType: 'json',
       headers: {
-        'Accept-Language': language,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
+      crossDomain: true
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
+    });
+
+  };
+
+  /** Contributor autocompletion search **/
+  factory.contributorSuggestorCompletionGet = function(term) {
+
+    return $.ajax({
+      method: 'GET',
+      url: serverUrl+'contributor/suggester/completion/'+term,
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
+      dataType: 'json',
+      xhrFields: {
+        'withCredentials': true
       },
       crossDomain: true
     }).fail( function(xhr) {
