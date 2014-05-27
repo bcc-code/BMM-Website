@@ -4,7 +4,7 @@ angular.module('bmmLibApp')
   .filter('bmmCover', [ 'bmmApi', function (bmmApi) {
     return function (cover, type, id) {
 
-      if (cover===null) {
+      if (typeof cover==='undefined' || cover===null || cover==='') {
         if (typeof type==='undefined') {
           cover = 'fallback_images/svg/person.svg';
         } else {
@@ -32,9 +32,10 @@ angular.module('bmmLibApp')
           }
         }
       } else if (typeof id!=='undefined') {
-        cover = bmmApi.secureFile(bmmApi.getserverUrli()+type+'/'+id+'/cover');
+        var antiCache = '';//'?'+ Math.floor(Math.random() * 9000000) + 1000000;
+        cover = bmmApi.secureFile(bmmApi.getserverUrli()+type+'/'+id+'/cover')+antiCache;
       }
-      
+
       return cover;
     };
   }]);
