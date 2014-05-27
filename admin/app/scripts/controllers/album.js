@@ -29,7 +29,9 @@ angular.module('bmmApp')
         if (typeof _raw==='undefined'||_raw) {
           return bmmApi.albumGet($routeParams.id, '', { raw: true });
         } else {
-          return bmmApi.albumGet($routeParams.id, init.mediaLanguage);
+          return bmmApi.albumGet($routeParams.id, init.mediaLanguage, {
+            unpublished: 'show'
+          });
         }
       } else {
         $scope.model = {
@@ -92,10 +94,11 @@ angular.module('bmmApp')
       var toApi = angular.copy($scope.model);
       delete toApi._meta;
       delete toApi.id;
+      delete toApi.show_in_listing;
       if (newAlbum) {
         bmmApi.albumPost(toApi).always(function(xhr) {
           if (xhr.status===201) {
-            $location.path(/album/+xhr.getResponseHeader('X-Document-Id'));
+            $location.path('/album/'+xhr.getResponseHeader('X-Document-Id'));
           } else {
             $scope.status = 'Could not create album, errorcode: '+xhr.status;
           }
@@ -184,7 +187,11 @@ angular.module('bmmApp')
               $scope.availableLanguages.push(available);
             }
           });
-          $scope.switchLanguage($scope.model.original_language);
+          if (typeof $scope.edited==='undefined') {
+            $scope.switchLanguage($scope.model.original_language);
+          } else {
+            $scope.switchLanguage($scope.edited.language);
+          }
         });
       });
     };
@@ -239,12 +246,14 @@ angular.module('bmmApp')
     };
 
     $scope.$watch('edited', function(newEdit, oldEdit) {
-      if (typeof newEdit!=='undefined'&&newEdit.title==='') {
+      if (typeof newEdit!=='undefined'&&(newEdit.title===''||
+        typeof newEdit.title==='undefined')) {
         newEdit.is_visible = false;
         //Inform why change cant be done when trying to publish
-        if (newEdit.is_visible===oldEdit.is_visible&&
-            newEdit.language===oldEdit.language&&
-            newEdit.title===oldEdit.title) {
+        if (typeof oldEdit!=='undefined'&&
+          newEdit.is_visible===oldEdit.is_visible&&
+          newEdit.language===oldEdit.language&&
+          newEdit.title===oldEdit.title) {
           alert($scope.$parent.translation.page.editor.missingTitle);
         }
       }
@@ -256,7 +265,9 @@ angular.module('bmmApp')
       }
 
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
-        bmmApi.albumGet(model.parent_id, init.mediaLanguage).done(function(album) {
+        bmmApi.albumGet(model.parent_id, init.mediaLanguage, {
+          unpublished: 'show'
+        }).done(function(album) {
           $scope.$apply(function() {
             $scope.albumParentYear = parseInt($filter('date')(album.published_at, 'yyyy'),10);
             if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
@@ -375,7 +386,8 @@ angular.module('bmmApp')
     };
 
     $scope.uploadCover = {
-      url: bmmApi.getserverUrli()+'album/'+$routeParams.id+'/cover'
+      url: bmmApi.getserverUrli()+'album/'+$routeParams.id+'/cover',
+      method: 'PUT'
     };
 
     //FETCH ALBUMS
