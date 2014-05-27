@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmBibleVerse', ['bmmTranslator', function (bmmTranslator) {
+  .filter('bmmBibleVerse', ['init', function (init) {
     return function (input) {
 
       var output=[];
       if (typeof input!=='undefined'&&input!=='') {
 
         //Comparable removes unnesesary characters for better comparision
-        var comparable={};
+        var comparableShortcodes={}, comparableBooks={};
 
-        //Make the comparables
-        $.each(bmmTranslator.getBible().books, function(key) {
+        //Make the comparable shortcodes
+        $.each(init.bible.shortcodes, function(key) {
 
           //Make sure translation is in lowercase
           var compare = this.toLowerCase();
@@ -19,7 +19,20 @@ angular.module('bmmLibApp')
           //Whitelist is not recomended as multiple languages is suported
           compare = compare.replace(/[\s\.¦:;¶*~"'_\\\/\-\,><!$£#¤%&=+?|{}\[\]¨^`´@]/g,'');
           //Use the same key
-          comparable[key] = compare;
+          comparableShortcodes[key] = compare;
+
+        });
+
+        //Make the comparable books
+        $.each(init.bible.books, function(key) {
+
+          //Make sure translation is in lowercase
+          var compare = this.toLowerCase();
+          //Filter out strange characters (Blacklist)
+          //Whitelist is not recomended as multiple languages is suported
+          compare = compare.replace(/[\s\.¦:;¶*~"'_\\\/\-\,><!$£#¤%&=+?|{}\[\]¨^`´@]/g,'');
+          //Use the same key
+          comparableBooks[key] = compare;
 
         });
 
@@ -128,17 +141,38 @@ angular.module('bmmLibApp')
 
           });
 
-          $.each(comparable, function(key) {
 
-            if (this.indexOf(book.name)!==-1) {
-              book.name = this;
-              book.shortcode = bmmTranslator.getBible().shortcodes[key];
-              book.key = key;
-              output.push(book);
-              return false;
-            }
+          var bookName = book.name;
+          var compare = function(comparable) {
+            var alternativeIndex = -1;
+            $.each(comparable, function(key) {
 
-          });
+              var _index = this.indexOf(book.name);
+
+              if (_index>-1&&(alternativeIndex===-1||_index<alternativeIndex)) {
+                alternativeIndex = _index;
+                bookName = init.bible.books[key];
+                book.shortcode = init.bible.shortcodes[key];
+                book.key = key;
+              }
+
+            });
+            return alternativeIndex;
+          };
+
+          //Could find multiple instances,
+          //Choose where index is lowest
+          var index = -1;
+
+          //Find by comparing to shortcodes
+          index = compare(comparableShortcodes);
+
+          //If not found, try compare with names
+          if (index===-1) { index = compare(comparableBooks); }
+
+          //If found, push out
+          book.name = bookName;
+          if (index!==-1) { output.push(book); }
 
         });
       }
