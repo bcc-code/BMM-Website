@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('UploaderCtrl', function ($scope, $fileUploader) {
+  .controller('UploaderCtrl', function ($scope, $fileUploader, bmmApi) {
 
     $scope.progress = 0;
 
     $scope.init = function(options) {
 
-      if ( typeof options.language==='undefined') {
-        options.language = '';
+      if (typeof options.method==='undefined') {
+        options.method = 'POST'
       }
 
       var uploader = $fileUploader.create({
@@ -16,16 +16,30 @@ angular.module('bmmApp')
         scope: $scope, //to automatically update the html
         url: options.url, //bmmApi.getserverUrli()+'track/'+$routeParams.id+'/cover?_method=PUT',
         withCredentials: true,
+        removeAfterUpload: true,
         headers: {
-          'Accept-Language': options.language,
-          'X-HTTP-METHOD-OVERRIDE': 'PUT'
+          'X-HTTP-METHOD-OVERRIDE': options.method,
+          'Authorization': 'Basic '+window.btoa(bmmApi.getCredentials())
         }
       });
 
       uploader.bind('afteraddingfile', function (event, item) {
 
+        var lang = '';
+        if (typeof $scope.$parent.edited!=='undefined'&&
+            typeof $scope.$parent.edited.language!=='undefined') {
+          lang = $scope.$parent.edited.language;
+        }
+
+        if (typeof $scope.$parent.uploadUrl!=='undefined') {
+          item.url = $scope.$parent.uploadUrl;
+        }
+
+        item.headers['Accept-Language'] = lang;
+
         $scope.$parent.save({
           done: function() {
+
             var file = new FileReader();
             file.readAsDataURL(item.file);
 
@@ -51,6 +65,11 @@ angular.module('bmmApp')
       uploader.bind('success', function () {
         $scope.$parent.refreshModel();
         $scope.progress = 0;
+      });
+
+      uploader.bind('error', function () {
+        var tranScope = $scope.$parent.$parent.translation.page.editor;
+        alert(tranScope.uploadError);
       });
 
     };
