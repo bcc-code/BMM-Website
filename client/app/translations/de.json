@@ -1,137 +1,81 @@
 {
-    "language": "Deutsch",
-    "iso-639-1": "de",
-
-    "general": {
-        "search": "Suchen ..."
+  "language":"Deutsch",
+  "iso-639-1":"de",
+  "general":{
+    "search":"Suchen ..."
+  },
+  "menu":{
+    "main":{
+      "music":"Musik",
+      "speeches":"Reden",
+      "video":"Video",
+      "archive":"Archiv",
+      "audiobooks":"Hörbücher"
     },
-    "menu": {
-        "main": {
-            "music": "Musik",
-            "speeches": "Reden",
-            "video": "Video",
-            "archive": "Archiv",
-            "audiobooks": "Hörbücher"
-        },
-        "secondary": {
-            "playlists": "Playlists",
-            "latestTracks": "Letzte Tracks",
-            "lastPlayed": "Zuletzt gespielt",
-            "mostPlayed": "Häufigst gespielt",
-            "favorites": "Favoriten",
-            "current": "Aktuell",
-            "newPlaylist": "Neue Playlist",
-            "nameOnPlaylist": "Name der Playlist"
-        }
+    "secondary":{
+      "playlists":"Playlisten",
+      "latestTracks":"Letzte Tracks",
+      "lastPlayed":"Zuletzt gespielt",
+      "mostPlayed":"Häufigst gespielt",
+      "favorites":"Favoriten",
+      "current":"Aktuell",
+      "newPlaylist":"Neue Playlist",
+      "nameOnPlaylist":"Name der Playlist"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Letzte Reden",
+      "latestVideos":"Letzte Videos",
+      "latestMusic":"Letzte Musik",
+      "latestAlbums":"Letzte Alben"
     },
-    "page": {
-        "welcome": {
-            "latestSpeeches": "Letzte Reden",
-            "latestVideos": "Letzte Videos",
-            "latestMusic": "Letzte Musik",
-            "latestAlbums": "Letzte Alben"
-        },
-        "music": {
-            "latestMusic": "Letzte Musik",
-            "artists": "Artisten",
-            "mp3Source": "MP3-Kilden",
-            "childrensMp3Source": "Barnas MP3-Kilden",
-            "instrumental": "Instrumental"
-        },
-        "speeches": {
-            "latestSpeeches": "Letzte Reden",
-            "recommended": "Hervorgehoben"
-        },
-        "videos": {
-            "latestVideos": "Letzte Videos"
-        },
-        "archive": {
-            "archive": "Archiv"
-        },
-        "audiobooks": {
-            "latestAudiobooks": "Letzte Hörbücher"
-        },
-        "search": {
-            "searchResults": "Suchergebnisse"
-        }
+    "music":{
+      "latestMusic":"Letzte Musik",
+      "artists":"Artisten",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barnas MP3-Kilden",
+      "instrumental":"Instrumental"
     },
-    "track": {
-        "duration": "Länge",
-        "unknown": "Unbekannt",
-        "dragMeToPlaylist": "Zieh mich in deine Playlist"
+    "speeches":{
+      "latestSpeeches":"Letzte Reden",
+      "recommended":"Hervorgehoben"
     },
-    "album": {
-        "tracks": "Tracks",
-        "childAlbums": "Album",
-        "relatedAlbums": "Ähnliche Alben"
+    "videos":{
+      "latestVideos":"Letzte Videos"
     },
-    "playlist": {
-        "content": "Titel",
-        "tracks": "Tracks",
-        "totalDuration": "Gesamtlänge",
-        "duration": "Länge",
-        "nr": "Nr.",
-        "title": "Titel",
-        "addToItunes": "Add to iTunes",
-        "copyPodcastLink": "Copy podcast link",
-        "language": "Sprache",
-        "allLanguages": "Alle Sprachen",
-        "feedSize": "Feedgröße"
+    "archive":{
+      "archive":"Archiv"
     },
-    "backend": {
-        "lastEditBy": "Sist endret av",
-        "albumTitle": "Album tittel",
-        "trackTitle": "Spor tittel",
-        "bmmid": "BMM-ID",
-        "publishdate": "Publiseringsdato",
-        "language": "Språk",
-        "delete": "Slett",
-        "save": "Lagre",
-        "play": "Spill av",
-        "add": "Legg til",
-        "chooseDate": "Velg dato",
-        "published": "Publisert",
-        "notPublished": "Ikke publisert",
-        "removeTranslation": "Fjern oversettelse",
-        "chooseAsOriginal": "Velg som original",
-        "languagesAvailable": "Språk tilgjengelig",
-        "addLanguage": "Legg til språk",
-        "publishAlbum": "Puliser album",
-        "publishTrack": "Publiser Spor",
-        "description": "Beskrivelse",
-        "albumDescription": "Album beskrivelse",
-        "recordDate": "Opptaksdato",
-        "files": "Filer",
-        "duration": "Varighet",
-        "mimeType": "Mime-Type",
-        "size": "Størrelse",
-        "type": "Type",
-        "tags": "Tags",
-        "englishOnly": "Kun Engelsk",
-        "songbookAndNumber": "Sangbok og nummer",
-        "songbook": "Sangbok",
-        "number": "Nummer",
-        "nr": "Nr.",
-        "performer": "Utøver",
-        "composer": "Komponist",
-        "lyricist": "Forfatter",
-        "bibleVerse": "Bibel vers",
-        "start": "Start",
-        "end": "Slutt",
-        "record": "Start opptak",
-        "pause": "Pause",
-        "reset": "Tilbakestill",
-        "functions": "Funksjoner",
-        "ex": "Eks.",
-        "note": "Notat",
-        "menu": {
-            "current": "Gjeldende",
-            "performers": "Utøvere",
-            "permission": "Tilgang",
-            "archive": "Arkiv"
-        }
+    "audiobooks":{
+      "latestAudiobooks":"Letzte Hörbücher"
     },
-
-    "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
-
+    "search":{
+      "searchResults":"Suchergebnisse"
+    }
+  },
+  "track":{
+    "duration":"Länge",
+    "unknown":"Unbekannt",
+    "dragMeToPlaylist":"Zieh mich in deine Playlist"
+  },
+  "album":{
+    "tracks":"Track(s)",
+    "childAlbums":"Album",
+    "relatedAlbums":"Ähnliche Alben"
+  },
+  "playlist":{
+    "content":"Titel",
+    "tracks":"Track(s)",
+    "totalDuration":"Gesamtlänge",
+    "duration":"Länge",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Zu iTunes hinzufügen",
+    "copyPodcastLink":"Podcast-Link kopieren",
+    "language": "Sprache",
+    "allLanguages": "Alle Sprachen",
+    "feedSize": "Feedgröße"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
 }

@@ -1,83 +1,81 @@
 {
-    "language": "Norsk",
-    "iso-639-1": "nb",
-
-    "general": {
-        "search": "Søk..."
+  "language":"Norsk",
+  "iso-639-1":"nb",
+  "general":{
+    "search":"Søk..."
+  },
+  "menu":{
+    "main":{
+      "music":"Musikk",
+      "speeches":"Taler",
+      "video":"Video",
+      "archive":"Arkiv",
+      "audiobooks":"Lydbøker"
     },
-    "menu": {
-        "main": {
-            "music": "Musikk",
-            "speeches": "Taler",
-            "video": "Video",
-            "archive": "Arkiv",
-            "audiobooks": "Lydbøker"
-        },
-        "secondary": {
-            "playlists": "Spillelister",
-            "latestTracks": "Nye spor",
-            "lastPlayed": "Sist spillte",
-            "mostPlayed": "Mest spillte",
-            "favorites": "Favoritter",
-            "current": "Spilles nå",
-            "newPlaylist": "Ny spilleliste",
-            "nameOnPlaylist": "Navn på spilleliste"
-        }
+    "secondary":{
+      "playlists":"Spillelister",
+      "latestTracks":"Nye spor",
+      "lastPlayed":"Sist spillte",
+      "mostPlayed":"Mest spillte",
+      "favorites":"Favoritter",
+      "current":"Spilles nå",
+      "newPlaylist":"Ny spilleliste",
+      "nameOnPlaylist":"Navn på spilleliste"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Siste Taler",
+      "latestVideos":"Siste Videoer",
+      "latestMusic":"Siste Musikk",
+      "latestAlbums":"Siste Album"
     },
-    "page": {
-        "welcome": {
-            "latestSpeeches": "Siste Taler",
-            "latestVideos": "Siste Videoer",
-            "latestMusic": "Siste Musikk",
-            "latestAlbums": "Siste Album"
-        },
-        "music": {
-            "latestMusic": "Siste Musikk",
-            "artists": "Artister",
-            "mp3Source": "MP3-Kilden",
-            "childrensMp3Source": "Barnas MP3-Kilden",
-            "instrumental": "Instrumental"
-        },
-        "speeches": {
-            "latestSpeeches": "Siste Taler",
-            "recommended": "Anbefalt"
-        },
-        "videos": {
-            "latestVideos": "Siste Videoer"
-        },
-        "archive": {
-            "archive": "Arkiv"
-        },
-        "audiobooks": {
-            "latestAudiobooks": "Siste Lydbøker"
-        },
-        "search": {
-            "searchResults": "Søkeresultater"
-        }
+    "music":{
+      "latestMusic":"Siste Musikk",
+      "artists":"Artister",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barnas MP3-Kilden",
+      "instrumental":"Instrumental"
     },
-    "track": {
-        "duration": "Varighet",
-        "unknown": "Ukjent",
-        "dragMeToPlaylist": "Dra meg i spilleliste"
+    "speeches":{
+      "latestSpeeches":"Siste Taler",
+      "recommended":"Anbefalt"
     },
-    "album": {
-        "tracks": "Spor",
-        "childAlbums": "Tilhørende Album",
-        "relatedAlbums": "Lignende Album"
+    "videos":{
+      "latestVideos":"Siste Videoer"
     },
-    "playlist": {
-        "content": "Innhold",
-        "tracks": "Spor",
-        "totalDuration": "Samlet varighet",
-        "duration": "Varighet",
-        "nr": "Nr.",
-        "title": "Tittel",
-        "addToItunes": "Legg til i iTunes",
-        "copyPodcastLink": "Kopier podcast link",
-        "language": "Språk",
-        "allLanguages": "Alle språk",
-        "feedSize": "Feed størrelse"
+    "archive":{
+      "archive":"Arkiv"
     },
-    "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
-
+    "audiobooks":{
+      "latestAudiobooks":"Siste Lydbøker"
+    },
+    "search":{
+      "searchResults":"Søkeresultater"
+    }
+  },
+  "track":{
+    "duration":"Varighet",
+    "unknown":"Ukjent",
+    "dragMeToPlaylist":"Dra meg til spilleliste"
+  },
+  "album":{
+    "tracks":"Spor",
+    "childAlbums":"Tilhørende Album",
+    "relatedAlbums":"Lignende Album"
+  },
+  "playlist":{
+    "content":"Innhold",
+    "tracks":"Spor",
+    "totalDuration":"Samlet varighet",
+    "duration":"Varighet",
+    "nr":"Nr.",
+    "title":"Tittel",
+    "addToItunes":"Legg til i iTunes",
+    "copyPodcastLink":"Kopier podcast link",
+    "language": "Språk",
+    "allLanguages": "Alle språk",
+    "feedSize": "Feed størrelse"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
 }

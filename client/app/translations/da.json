@@ -7,7 +7,7 @@
   "menu":{
     "main":{
       "music":"Musik",
-      "speeches":"Beskeder",
+      "speeches":"Taler",
       "video":"Videoer",
       "archive":"Arkiv",
       "audiobooks":"Lydbøger"
@@ -25,20 +25,20 @@
   },
   "page":{
     "welcome":{
-      "latestSpeeches":"Nyeste beskeder",
+      "latestSpeeches":"Nyeste taler",
       "latestVideos":"Nyeste videoer",
       "latestMusic":"Nyeste musik",
       "latestAlbums":"Nyeste albums"
     },
     "music":{
-      "latestMusic":"Nyeste musik\n",
+      "latestMusic":"Nyeste musik",
       "artists":"Artister",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Børnenes MP3-Kilde",
       "instrumental":"Instrumental"
     },
     "speeches":{
-      "latestSpeeches":"Nyeste Beskeder",
+      "latestSpeeches":"Nyeste Taler",
       "recommended":"Anbefalede"
     },
     "videos":{

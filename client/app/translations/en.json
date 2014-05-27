@@ -1,137 +1,81 @@
 {
-    "language": "English",
-    "iso-639-1": "en",
-
-    "general": {
-        "search": "Search..."
+  "language":"English",
+  "iso-639-1":"en",
+  "general":{
+    "search":"Search..."
+  },
+  "menu":{
+    "main":{
+      "music":"Music",
+      "speeches":"Messages",
+      "video":"Videos",
+      "archive":"Archive",
+      "audiobooks":"Audiobooks"
     },
-    "menu": {
-        "main": {
-            "music": "Music",
-            "speeches": "Messages",
-            "video": "Videos",
-            "archive": "Archive",
-            "audiobooks": "Audiobooks"
-        },
-        "secondary": {
-            "playlists": "Playlists",
-            "latestTracks": "New tracks",
-            "lastPlayed": "Last played",
-            "mostPlayed": "Most played",
-            "favorites": "Favorites",
-            "current": "Current",
-            "newPlaylist": "New playlist",
-            "nameOnPlaylist": "Playlist title"
-        }
+    "secondary":{
+      "playlists":"Playlists",
+      "latestTracks":"New tracks",
+      "lastPlayed":"Last played",
+      "mostPlayed":"Most played",
+      "favorites":"Favorites",
+      "current":"Current",
+      "newPlaylist":"New playlist",
+      "nameOnPlaylist":"Playlist title"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Latest Messages",
+      "latestVideos":"Latest Videos",
+      "latestMusic":"Latest Music",
+      "latestAlbums":"Latest Albums"
     },
-    "page": {
-        "welcome": {
-            "latestSpeeches": "Latest Messages",
-            "latestVideos": "Latest Videos",
-            "latestMusic": "Latest Music",
-            "latestAlbums": "Latest Albums"
-        },
-        "music": {
-            "latestMusic": "Latest Music",
-            "artists": "Artists",
-            "mp3Source": "MP3-Source",
-            "childrensMp3Source": "Childs MP3-Source",
-            "instrumental": "Instrumental"
-        },
-        "speeches": {
-            "latestSpeeches": "Latest Messages",
-            "recommended": "Recommended"
-        },
-        "videos": {
-            "latestVideos": "Latest Videos"
-        },
-        "archive": {
-            "archive": "Archive"
-        },
-        "audiobooks": {
-            "latestAudiobooks": "Latest Audiobooks"
-        },
-        "search": {
-            "searchResults": "Search Results"
-        }
+    "music":{
+      "latestMusic":"Latest Music",
+      "artists":"Artists",
+      "mp3Source":"MP3-Source",
+      "childrensMp3Source":"Childs MP3-Source",
+      "instrumental":"Instrumental"
     },
-    "track": {
-        "duration": "Duration",
-        "unknown": "Unknown",
-        "dragMeToPlaylist": "Drag me to playlist"
+    "speeches":{
+      "latestSpeeches":"Latest Messages",
+      "recommended":"Recommended"
     },
-    "album": {
-        "tracks": "Tracks",
-        "childAlbums": "Child Albums",
-        "relatedAlbums": "Related Albumes"
+    "videos":{
+      "latestVideos":"Latest Videos"
     },
-    "playlist": {
-        "content": "Content",
-        "tracks": "Tracks",
-        "totalDuration": "Total Duration",
-        "duration": "Duration",
-        "nr": "Nr.",
-        "title": "Title",
-        "addToItunes": "Add to iTunes",
-        "copyPodcastLink": "Copy podcast link",
-        "language": "Language",
-        "allLanguages": "All languages",
-        "feedSize": "Feed size"
+    "archive":{
+      "archive":"Archive"
     },
-    "backend": {
-        "lastEditBy": "Last edit by",
-        "albumTitle": "Album title",
-        "trackTitle": "Track title",
-        "bmmid": "BMM-ID",
-        "publishdate": "Publised date",
-        "language": "Language",
-        "delete": "Slett",
-        "save": "Save",
-        "play": "Play",
-        "add": "Add",
-        "chooseDate": "Choose date",
-        "published": "Published",
-        "notPublished": "Not published",
-        "removeTranslation": "Remove translation",
-        "chooseAsOriginal": "Choose as original",
-        "languagesAvailable": "Language available",
-        "addLanguage": "Add language",
-        "publishAlbum": "Publish album",
-        "publishTrack": "Publish Track",
-        "description": "Description",
-        "albumDescription": "Album description",
-        "recordDate": "Record date",
-        "files": "Files",
-        "duration": "Duration",
-        "mimeType": "Mime-Type",
-        "size": "Size",
-        "type": "Type",
-        "tags": "Tags",
-        "englishOnly": "English only",
-        "songbookAndNumber": "Songbook and number",
-        "songbook": "Songbook",
-        "number": "Number",
-        "nr": "Nr.",
-        "performer": "Performer",
-        "composer": "Composer",
-        "lyricist": "Lyricist",
-        "bibleVerse": "Bible verse",
-        "start": "Start",
-        "end": "End",
-        "record": "Record",
-        "pause": "Pause",
-        "reset": "Reset",
-        "functions": "Functions",
-        "ex": "Ex.",
-        "note": "Note",
-        "menu": {
-            "current": "Current",
-            "performers": "Performers",
-            "permission": "Permission",
-            "archive": "Archive"
-        }
+    "audiobooks":{
+      "latestAudiobooks":"Latest Audiobooks"
     },
-
-    "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
-
+    "search":{
+      "searchResults":"Search Results"
+    }
+  },
+  "track":{
+    "duration":"Duration",
+    "unknown":"Unknown",
+    "dragMeToPlaylist":"Drag me to playlist"
+  },
+  "album":{
+    "tracks":"Track(s)",
+    "childAlbums":"Child Albums",
+    "relatedAlbums":"Related Albumes"
+  },
+  "playlist":{
+    "content":"Content",
+    "tracks":"Track(s)",
+    "totalDuration":"Total Duration",
+    "duration":"Duration",
+    "nr":"Nr.",
+    "title":"Title",
+    "addToItunes":"Add to iTunes",
+    "copyPodcastLink":"Copy podcast link",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
 }

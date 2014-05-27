@@ -1,0 +1,81 @@
+{
+  "language":"Dutch",
+  "iso-639-1":"nl",
+  "general":{
+    "search":"Zoeken..."
+  },
+  "menu":{
+    "main":{
+      "music":"Muziek",
+      "speeches":"Toespraken",
+      "video":"Video's",
+      "archive":"Archief",
+      "audiobooks":"Audioboeken"
+    },
+    "secondary":{
+      "playlists":"Afspeellijsten",
+      "latestTracks":"Nieuwe nummers",
+      "lastPlayed":"Laatst afgespeeld",
+      "mostPlayed":"Meest gespeeld",
+      "favorites":"Favorieten",
+      "current":"Huidige",
+      "newPlaylist":"Nieuwe afspeellijst",
+      "nameOnPlaylist":"Afspeellijst titel"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Laatste toespraken",
+      "latestVideos":"Laatste video's",
+      "latestMusic":"Laatste muziek",
+      "latestAlbums":"Laatste albums"
+    },
+    "music":{
+      "latestMusic":"Laatste muziek",
+      "artists":"Artiesten",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barnas MP3-favoritter",
+      "instrumental":"Instrumentaal"
+    },
+    "speeches":{
+      "latestSpeeches":"Laatste toespraken",
+      "recommended":"Aanbevolen"
+    },
+    "videos":{
+      "latestVideos":"Laatste video's"
+    },
+    "archive":{
+      "archive":"Archief"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Nieuwste audioboeken"
+    },
+    "search":{
+      "searchResults":"Zoek resultaten"
+    }
+  },
+  "track":{
+    "duration":"Duur",
+    "unknown":"Onbekend",
+    "dragMeToPlaylist":"Sleep mij naar de afspeellijst"
+  },
+  "album":{
+    "tracks":"Nummers",
+    "childAlbums":"Albums voor kinderen",
+    "relatedAlbums":"Gerelateerd Albums"
+  },
+  "playlist":{
+    "content":"Inhoud",
+    "tracks":"Nummers",
+    "totalDuration":"Totale duur",
+    "duration":"Duur",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Voeg toe aan iTunes",
+    "copyPodcastLink":"Podcast link kopiëren",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+}

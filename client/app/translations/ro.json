@@ -1,0 +1,81 @@
+{
+  "language":"Românește",
+  "iso-639-1":"ro",
+  "general":{
+    "search":"Căutaţi..."
+  },
+  "menu":{
+    "main":{
+      "music":"Muzică",
+      "speeches":"Vorbiri",
+      "video":"Videoclipuri",
+      "archive":"Arhivă",
+      "audiobooks":"Cărți audio"
+    },
+    "secondary":{
+      "playlists":"Play-list-uri",
+      "latestTracks":"Piese noi",
+      "lastPlayed":"Ultimele redate",
+      "mostPlayed":"Cele mai redate",
+      "favorites":"Favorite",
+      "current":"Curentă",
+      "newPlaylist":"Play-list nou",
+      "nameOnPlaylist":"Titlul play-list-ului"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Ultimele vorbiri",
+      "latestVideos":"Ultimele videoclipuri",
+      "latestMusic":"Ultimele melodii",
+      "latestAlbums":"Ultimele albume"
+    },
+    "music":{
+      "latestMusic":"Ultimele melodii",
+      "artists":"Artiști",
+      "mp3Source":"Sursă-MP3",
+      "childrensMp3Source":"Sursă-MP3 pentru copii",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Ultimele vorbiri",
+      "recommended":"Recomandate"
+    },
+    "videos":{
+      "latestVideos":"Ultimele videoclipuri"
+    },
+    "archive":{
+      "archive":"Arhivă"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Cele mai recente cărți audio"
+    },
+    "search":{
+      "searchResults":"Rezultatele căutării"
+    }
+  },
+  "track":{
+    "duration":"Durată",
+    "unknown":"Anonim",
+    "dragMeToPlaylist":"Trageţi-mă în play-list"
+  },
+  "album":{
+    "tracks":"Piese",
+    "childAlbums":"Albume pentru copii",
+    "relatedAlbums":"Albume asemănătoare"
+  },
+  "playlist":{
+    "content":"Conţinut",
+    "tracks":"Piese",
+    "totalDuration":"Durata totală",
+    "duration":"Durată",
+    "nr":"Nr.",
+    "title":"Titlu",
+    "addToItunes":"Adaugă în iTunes",
+    "copyPodcastLink":"Copiază linkul podcast-ului",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Drepturi de autor Stiftelsen Skjulte Skatters Forlag"
+}

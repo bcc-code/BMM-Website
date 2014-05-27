@@ -1,0 +1,81 @@
+{
+  "language":"Suomi",
+  "iso-639-1":"fi",
+  "general":{
+    "search":"Etsi..."
+  },
+  "menu":{
+    "main":{
+      "music":"Musiikki",
+      "speeches":"Puheet",
+      "video":"Videot",
+      "archive":"Arkisto",
+      "audiobooks":"Äänikirjat"
+    },
+    "secondary":{
+      "playlists":"Soittolistat",
+      "latestTracks":"Uudet kappaleet",
+      "lastPlayed":"Viimeksi kuunnellut",
+      "mostPlayed":"Eniten kuunnellut",
+      "favorites":"Suosikit",
+      "current":"Nykyinen",
+      "newPlaylist":"Uusi soittolista",
+      "nameOnPlaylist":"Soittolistan nimi"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Uusimmat puheet",
+      "latestVideos":"Uusimmat videot",
+      "latestMusic":"Uusimmat kappaleet",
+      "latestAlbums":"Uusimmat albumit"
+    },
+    "music":{
+      "latestMusic":"Uusimmat kappaleet",
+      "artists":"Artistit",
+      "mp3Source":"MP3-Lähde",
+      "childrensMp3Source":"Lasten MP3-lähde",
+      "instrumental":"Instrumentaali"
+    },
+    "speeches":{
+      "latestSpeeches":"Uusimmat puheet",
+      "recommended":"Suositellut"
+    },
+    "videos":{
+      "latestVideos":"Uusimmat videot"
+    },
+    "archive":{
+      "archive":"Arkisto"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Uusimmat äänikirjat"
+    },
+    "search":{
+      "searchResults":"Hakutulokset"
+    }
+  },
+  "track":{
+    "duration":"Kesto",
+    "unknown":"Tuntematon",
+    "dragMeToPlaylist":"Vedä minut soittolistalle"
+  },
+  "album":{
+    "tracks":"Kappaleet",
+    "childAlbums":"Lasten albumit",
+    "relatedAlbums":"Samankaltaiset albumit"
+  },
+  "playlist":{
+    "content":"Sisältö",
+    "tracks":"Kappaleet",
+    "totalDuration":"Kokonaiskesto",
+    "duration":"Kesto",
+    "nr":"Nro.",
+    "title":"Otsikko",
+    "addToItunes":"Lisää iTunesiin",
+    "copyPodcastLink":"Kopioi podcast linkki",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+}

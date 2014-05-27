@@ -1,0 +1,81 @@
+{
+  "language":"英语",
+  "iso-639-1":"zh",
+  "general":{
+    "search":"搜索"
+  },
+  "menu":{
+    "main":{
+      "music":"音乐",
+      "speeches":"信息",
+      "video":"视频",
+      "archive":"存档",
+      "audiobooks":"有声读物"
+    },
+    "secondary":{
+      "playlists":"播放列表",
+      "latestTracks":"新的曲目",
+      "lastPlayed":"近期播放",
+      "mostPlayed":"最常播放",
+      "favorites":"喜欢的曲目",
+      "current":"当前",
+      "newPlaylist":"新的播放列表",
+      "nameOnPlaylist":"播放列表标题"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"最新消息",
+      "latestVideos":"最新视频",
+      "latestMusic":"最新的音乐",
+      "latestAlbums":"最新专辑"
+    },
+    "music":{
+      "latestMusic":"最新的音乐",
+      "artists":"表演者",
+      "mp3Source":"MP3 源",
+      "childrensMp3Source":"儿童 MP3-源",
+      "instrumental":"纯器乐"
+    },
+    "speeches":{
+      "latestSpeeches":"最新消息",
+      "recommended":"建议"
+    },
+    "videos":{
+      "latestVideos":"最新视频"
+    },
+    "archive":{
+      "archive":"存档"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"最新有声读物"
+    },
+    "search":{
+      "searchResults":"搜索结果"
+    }
+  },
+  "track":{
+    "duration":"持续时间",
+    "unknown":"未知",
+    "dragMeToPlaylist":"拖入播放列表"
+  },
+  "album":{
+    "tracks":"曲目",
+    "childAlbums":"儿童专辑",
+    "relatedAlbums":"相关的专辑"
+  },
+  "playlist":{
+    "content":"目录",
+    "tracks":"曲目",
+    "totalDuration":"总持续时间",
+    "duration":"持续时间",
+    "nr":"第",
+    "title":"标题",
+    "addToItunes":"添加到 iTunes",
+    "copyPodcastLink":"复制播客链接",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size"
+  },
+  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+}
