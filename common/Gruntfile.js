@@ -227,6 +227,12 @@ module.exports = function (grunt) {
       }
     },
     svgmin: {
+      options: {
+        plugins: [
+          { removeUnknownsAndDefaults: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      },
       dist: {
         files: [{
           expand: true,

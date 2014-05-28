@@ -234,17 +234,18 @@ module.exports = function (grunt) {
     },
     svgmin: {
       dist: {
+        options: {
+          plugins: [
+            { removeUnknownsAndDefaults: false },
+            { removeUselessStrokeAndFill: false }
+          ]
+        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
           dest: '<%= yeoman.dist %>/images'
-        }/*,{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          src: '{,*\/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }*/]
+        }]
       }
     },
     htmlmin: {
