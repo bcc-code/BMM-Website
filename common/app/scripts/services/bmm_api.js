@@ -757,6 +757,29 @@ angular.module('bmmLibApp')
 
   };
 
+  /** Contributor autocompletion search **/
+  factory.userSuggesterCompletionGet = function(term, options) {
+
+    if (typeof options === 'undefined') { options = {}; }
+
+    return $.ajax({
+      method: 'GET',
+      url: serverUrl+'user/suggester/completion/'+term,
+      data: $.param(options),
+      dataType: 'json',
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
+      xhrFields: {
+        'withCredentials': true
+      },
+      crossDomain: true
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
+    });
+
+  };
+
   /** Get a user profile **/
   factory.userUsernameGet = function(username) {
 
@@ -1032,7 +1055,7 @@ angular.module('bmmLibApp')
   };
 
   /** Contributor autocompletion search **/
-  factory.contributorSuggestorCompletionGet = function(term) {
+  factory.contributorSuggesterCompletionGet = function(term) {
 
     return $.ajax({
       method: 'GET',
