@@ -1,51 +1,111 @@
 {
-    "language": "English",
-    "iso-639-1": "en",
+  "language": "English",
+  "iso-639-1": "en",
 
-    "general": {
-        "search": "Search..."
+  "general": {
+    "search": "Search..."
+  },
+  "menu": {
+    "main": {
+      "dashboard": "Dashboard",
+      "waitings": "Waitings",
+      "contributors": "Contributors",
+      "users": "Users"
     },
-    "menu": {
-        "main": {
-            "dashboard": "Dashboard",
-            "waitings": "Waitings",
-            "contributors": "Contributors",
-            "users": "Users"
-        },
-        "secondary": {
-            "quickMenu": "Quick Menu",
-            "newAlbum": "New album",
-            "newTrack": "New track",
-            "year": "Year",
-            "album": "Album",
-            "childAlbum": "Child album",
-            "open": "open"
-        }
+    "secondary": {
+      "quickMenu": "Quick Menu",
+      "newAlbum": "New album",
+      "newTrack": "New track",
+      "year": "Year",
+      "album": "Album",
+      "childAlbums": "Child albums",
+      "tracks": "Tracks",
+      "childTracks": "Child tracks",
+      "open": "open"
+    }
+  },
+  "page": {
+    "editor": {
+      "mainSettings": "Main settings",
+      "bmmId": "BMM-ID",
+      "publishDate": "Publish date",
+      "recordDate": "Record date",
+      "save": "Save",
+      "delete": "Delete",
+      "play": "Play",
+      "status": "Status",
+      "languages": "Languages",
+      "tags": "Tags",
+      "generateTitlesByTag": "Generate titles by tag",
+      "active": "Active",
+      "available": "Available",
+      "title": "Title",
+      "description": "Description",
+      "selectedLanguage": "Selected language",
+      "originalLanguage": "Original language",
+      "confirmTranslatedDeletion": "Language has content, confirm deletion",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "missingTitle": "Please fill in title first",
+      "missingFile": "Please add a file first",
+      "album": "Album",
+      "type": "Type",
+      "parentAlbum": "Parent album",
+      "setNewParentAlbum": "Set new parent album",
+      "lastModified": "Last modified",
+      "by": "by",
+      "noParentAlbum": "No parent album",
+      "tracks": "Tracks",
+      "addTrack": "Add track",
+      "select": "Select",
+      "duration": "Duration",
+      "size": "Size",
+      "mediaFiles": "Media files",
+      "uploadFile": "Upload file",
+      "uploadError": "Could not upload, please check that your file is in the correct format",
+      "imageAllowed": "jpeg, png, gif",
+      "mediaAllowed": "mp3, mp4",
+      "composers": "Composers",
+      "interprets": "Artists and/or Speakers",
+      "lyricists": "Lyricists",
+      "songbooks": "Songbooks",
+      "bibleReferences": "Bible references",
+      "addBibleReference": "Add bible reference",
+      "record": "Record",
+      "pause": "Pause",
+      "resetTime": "Reset time",
+      "createNewContributor": "Create new contributor",
+      "number": "Number",
+      "timestamp": "Timestamp",
+      "sortOrder": "Sort order",
+      "waitingsReady": "Waitings ready",
+      "missingTrack": "Missing track",
+      "missingAlbum": "Missing album",
+      "wrongId": "Wrong BMM-ID"
     },
-    "page": {
-      "editor": {
-        "mainSettings": "Main settings",
-        "bmmId": "BMM-ID",
-        "publishDate": "Publish date",
-        "save": "Save",
-        "delete": "Delete",
-        "status": "Status",
-        "translations": "Translations",
-        "tags": "Tags",
-        "generateTitlesByTag": "Generate titles by tag",
-        "active": "Active",
-        "available": "Available",
-        "title": "Title",
-        "description": "Description",
-        "selectedLanguage": "Selected language",
-        "originalLanguage": "Original language",
-        "confirmTranslatedDeletion": "Language is translated, confirm deletion",
-        "publish": "Publish",
-        "unpublish": "Unpublish",
-        "missingTitle": "Please fill in title first"
-      }
+    "waitings": {
+      "link": "Link",
+      "conflict": "Conflict",
+      "conflicts": "Conflicts (dublicates)",
+      "openTrack": "Open track",
+      "linkAllTracks": "Link all tracks"
     },
+    "contributors": {
+      "name": "Name",
+      "tracks": "Tracks",
+      "search": "Search",
+      "contributors": "Contributors"
+    },
+    "users": {
+      "adminUsers": "Administrator users",
+      "albumManager": "Album manager",
+      "trackManager": "Track manager",
+      "contributorManager": "Contributor manager",
+      "allRights": "All rights",
+      "refreshList": "Refresh list"
+    }
+  },
 
-    "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
+  "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"
 
 }

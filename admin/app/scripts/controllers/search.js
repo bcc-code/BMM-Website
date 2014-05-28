@@ -14,17 +14,16 @@ angular.module('bmmApp')
     init
     ) {
 
-    $scope.$parent.contributors = false;
     $scope.results = [];
-    $('.bmm-view').off('scrollBottom');
+    $(window).off('scrollBottom');
 
-    var searchFrom = 0, loading=true;
+    var searchFrom = 0, loading=true, end=false, loadAmount=80, cnt=0;
 
-    $('.bmm-view').on('scrollBottom', function() {
+    $(window).on('scrollBottom', function() {
 
-      if (!loading) {
+      if (!loading&&!end) {
 
-        $('.bmm-view').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
         loading = true;
         search(searchFrom);
 
@@ -32,7 +31,15 @@ angular.module('bmmApp')
 
     });
 
-    $scope.open = function(type, id) {
+    //Ensure search field has the term
+    $scope.$parent.bmm = {};
+    $scope.$parent.bmm.term = $routeParams.term;
+    //Reset search field on leave
+    $scope.$on('$destroy', function() {
+      $scope.$parent.bmm.term = '';
+    });
+
+    $scope.open = function(type, id, language, track) {
       $location.path('/'+type+'/'+id);
     };
 
@@ -44,14 +51,14 @@ angular.module('bmmApp')
 
       //SEARCH RESULTS
       bmmApi.search($routeParams.term, {
-        unpublished: 'show',
         from: _from,
-        size: 20
+        size: loadAmount
       }, init.mediaLanguage).done(function(data) {
 
         var track,
-            type,
-            vid = false;
+          type,
+          vid = false,
+          cnt=0;
 
         $.each(data, function() {
 
@@ -66,6 +73,8 @@ angular.module('bmmApp')
               type: type,
               subtype: this.subtype,
               language: this.language,
+              date: track.date,
+              duration: track.duration,
               video: false
             });
 
@@ -84,6 +93,18 @@ angular.module('bmmApp')
               switch(this.subtype) {
 
                 case 'speech':
+
+                  var relations=[];
+                  if (track.title!==''&&track.title!=='-') {
+                    relations.push({title: 'Innhold', content: track.title});
+                  }
+                  if (track.bible!=='') {
+                    relations.push({title: 'Bibelvers', content: track.bible});
+                  }
+                  if (track.albumTitle!=='') {
+                    relations.push({title: 'Album', content: track.albumTitle});
+                  }
+
                   $scope.results.push({
                     cover: track.cover,
                     title: track.performers,
@@ -91,12 +112,11 @@ angular.module('bmmApp')
                     type: type,
                     subtype: this.subtype,
                     language: this.language,
+                    date: track.date,
+                    duration: track.duration,
                     video: vid,
-                    relations: [
-                      {title: 'Innhold', content: track.title},
-                      {title: 'Bibelvers', content: track.bible},
-                      {title: 'Album', content: track.parentTitle}
-                    ]
+                    relations: relations,
+                    track: track
                   });
                   break;
                 default:
@@ -107,11 +127,14 @@ angular.module('bmmApp')
                     type: type,
                     subtype: this.subtype,
                     language: this.language,
+                    date: track.date,
+                    duration: track.duration,
                     video: vid,
                     relations: [
                       {title: 'Interpreter', content: track.performers},
                       {title: 'Album', content: track.parentTitle}
-                    ]
+                    ],
+                    track: track
                   });
                   break;
               }
@@ -125,28 +148,35 @@ angular.module('bmmApp')
                 type: type,
                 subtype: this.subtype,
                 language: this.language,
+                date: track.date,
+                duration: track.duration,
                 video: vid,
                 relations: [
                   {title: 'Interpreter', content: track.performers},
                   {title: 'Album', content: track.parentTitle}
-                ]
+                ],
+                track: track
               });
 
             }
 
           }
 
+          cnt++;
+
         });
 
-        $scope.$apply();
         loading = false;
         $('.bmm-loading').remove();
-        searchFrom+=20;
+        searchFrom+=loadAmount;
+        if (cnt<loadAmount) { end = true; }
+
+        $scope.$apply();
 
       });
 
     };
 
     search();
-    
+
   });

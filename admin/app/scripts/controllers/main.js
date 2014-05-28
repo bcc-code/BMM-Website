@@ -8,7 +8,8 @@ angular.module('bmmApp')
     init,
     bmmApi,
     bmmPlay,
-    bmmFormatterAlbum
+    bmmFormatterAlbum,
+    bmmFormatterTrack
   ) {
 
     $scope.load = init.load;
@@ -46,6 +47,9 @@ angular.module('bmmApp')
         $scope.$apply(function() {
           $scope.year = [];
           $scope.years = [];
+          $scope.tracks = [];
+          $scope.childAlbums = [];
+          $scope.childTracks = [];
           $.each(years, function() {
             $scope.years.push(this.year);
           });
@@ -63,11 +67,34 @@ angular.module('bmmApp')
 
           $scope.$apply(function() {
             $scope.albums = [];
+            $scope.childAlbums = [];
+            $scope.childTracks = [];
             $.each(albums, function() {
               var album = bmmFormatterAlbum.resolve(this);
               $scope.albums.push(album);
             });
             $scope.albums.reverse();
+          });
+
+        });
+      };
+
+      //FETCH TRACKS
+      $scope.tracks = [];
+      $scope.findTracks = function(id) {
+        bmmApi.albumGet(id, init.mediaLanguage, {
+          unpublished: 'show'
+        }).done(function(data) {
+
+          $scope.$apply(function() {
+            $scope.track = [];
+            $scope.tracks = [];
+            $.each(data.children, function() {
+              if (typeof this.type!=='undefined'&&this.type==='track') {
+                $scope.tracks.push(bmmFormatterTrack.resolve(this));
+              }
+            });
+            $scope.tracks.reverse();
           });
 
         });
@@ -88,7 +115,28 @@ angular.module('bmmApp')
                 $scope.childAlbums.push(bmmFormatterAlbum.resolve(this));
               }
             });
-            $scope.albums.reverse();
+            $scope.childAlbums.reverse();
+          });
+
+        });
+      };
+
+      //FETCH CHILD-TRACKS
+      $scope.childTracks = [];
+      $scope.findChildTracks = function(id) {
+        bmmApi.albumGet(id, init.mediaLanguage, {
+          unpublished: 'show'
+        }).done(function(data) {
+
+          $scope.$apply(function() {
+            $scope.childTrack = [];
+            $scope.childTracks = [];
+            $.each(data.children, function() {
+              if (typeof this.type!=='undefined'&&this.type==='track') {
+                $scope.childTracks.push(bmmFormatterTrack.resolve(this));
+              }
+            });
+            $scope.childTracks.reverse();
           });
 
         });

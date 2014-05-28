@@ -393,6 +393,7 @@ angular.module('bmmApp')
     //FETCH ALBUMS
     $scope.parentAlbums = [];
     $scope.findParentAlbums = function(year, _album) {
+
       bmmApi.albumPublishedYear(year, {
         unpublished: 'show'
       }, init.mediaLanguage).done(function(albums) {
@@ -402,6 +403,7 @@ angular.module('bmmApp')
             var album = bmmFormatterAlbum.resolve(this);
             $scope.parentAlbums.push(album);
           });
+
           $scope.parentAlbums.push({
             title: '['+$scope.$parent.translation.page.editor.noParentAlbum+']',
             id: null

@@ -132,32 +132,53 @@
                 <button ng-click="go('/album/new')">{{translation.menu.secondary.newAlbum}}</button>
                 <button ng-click="go('/track/new')">{{translation.menu.secondary.newTrack}}</button><br><br>
 
-                    {{translation.menu.secondary.year}}
+                    <span>{{translation.menu.secondary.year}}</span>
                     <select ng-change="findAlbums(year);"
                             ng-model="year"
                             ng-options="year for year in years">
                     </select>
 
-                    {{translation.menu.secondary.album}}
-                    <select ng-disabled="albums.length<=0"
-                            ng-change="findChildAlbums(album.id);"
-                            ng-model="album"
-                            ng-options="album.title for album in albums">
-                    </select>
-                    <button ng-disabled="albums.length<=0"
-                            ng-click="go('/album/'+album.id);">
-                        {{translation.menu.secondary.open}}
-                    </button><br><br>
+                    <div ng-hide="albums.length<=0" style="margin: 0">
+                        <span>{{translation.menu.secondary.album}}</span>
+                        <select ng-change="findChildAlbums(album.id); findChildTracks(album.id);"
+                                ng-model="album"
+                                ng-options="album.title for album in albums">
+                        </select>
+                        <button ng-click="go('/album/'+album.id);">
+                            {{translation.menu.secondary.open}}
+                        </button><br><br>
+                    </div>
 
-                    {{translation.menu.secondary.childAlbums}}
-                    <select ng-disabled="childAlbums.length<=0"
-                            ng-model="albumChild"
-                            ng-options="childAlbum.title for childAlbum in childAlbums">
-                    </select>
-                    <button ng-disabled="childAlbums.length<=0"
-                            ng-click="go('/album/'+albumChild.id);">
-                        {{translation.menu.secondary.open}}
-                    </button>
+                    <div ng-hide="tracks.length<=0" style="margin: 0">
+                        <span>{{translation.menu.secondary.tracks}}</span>
+                        <select ng-model="track"
+                                ng-options="track.combinedTitle for track in tracks">
+                        </select>
+                        <button ng-click="go('/track/'+track.id);">
+                            {{translation.menu.secondary.open}}
+                        </button><br><br>
+                    </div>
+
+                    <div ng-hide="childAlbums.length<=0" style="margin: 0">
+                        <span>{{translation.menu.secondary.childAlbums}}</span>
+                        <select ng-change="findChildTracks(albumChild.id);"
+                                ng-model="albumChild"
+                                ng-options="childAlbum.title for childAlbum in childAlbums">
+                        </select>
+                        <button ng-click="go('/album/'+albumChild.id);">
+                            {{translation.menu.secondary.open}}
+                        </button><br><br>
+                    </div>
+
+                    <div ng-hide="childTracks.length<=0" style="margin: 0">
+                        <span>{{translation.menu.secondary.childTracks}}</span>
+                        <select ng-model="trackChild"
+                                ng-options="childTrack.combinedTitle for childTrack in childTracks">
+                        </select>
+                        <button ng-click="go('/track/'+trackChild.id);">
+                            {{translation.menu.secondary.open}}
+                        </button>
+                    </div>
 
             </div>
 
