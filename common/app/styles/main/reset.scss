@@ -59,22 +59,23 @@ tr {
 }
 
 .ui-slider .ui-slider-handle:hover {
-  background-image: url(../images/svg/sliderbutton_hover.svg);
+  //background-image: url(../images/svg/sliderbutton_hover.svg);
 }
 .ui-slider .ui-slider-handle {
-  background-image: url(../images/svg/sliderbutton.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  height: 1.3em;
-  width: 1.3em;
-  top: -.6em;
+  background-image: none;//url(../images/svg/sliderbutton.svg);
+  //background-size: contain;
+  //background-repeat: no-repeat;
+  background-color: #fff;//transparent;
+  height: .9em;
+  width: .9em;
+  top: -.35em;
   cursor: pointer;
+  border-radius: .6em;
 }
 
 .ui-slider-horizontal {
   height: .2em;
-  background: #ccc;
+  background: #1e3851;
   border: none;
 }
 

@@ -184,59 +184,109 @@
     }
   }
   .about {
-    overflow: hidden;
-    padding: .5em;
-    min-width: 20em;
-    width: 20em;
+    min-width: 18em;
+    width: 18em;
     float: left;
-    margin: 0;
+    margin: .6em;
     img {
       width: auto;
-      min-width: 4.5em;
-      height: 4.5em;
+      min-width: 3.8em;
+      height: 3.8em;
       margin-right: .5em;
       background-color: #000;
-      border: .2em #F6F2F2 solid;
+      border-radius: .4em;
       float: left;
     }
     h3 {
-      padding-top: 1em;
+      padding-top: .6em;
       font-size: 1em;
       font-weight: 700;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: #fff;
       margin: 0;
     }
     div {
-      font-size: .8em;
+      font-size: .9em;
+      line-height: 1.2em;
+      font-style: italic;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-left: 6.2em;
+      margin-left: 4em;
+      color: #5c7082;
     }
   }
-
-  .controllers {
-    .time {
-      padding: .5em;
-      .current {
-        float: left;
-        margin-top: .2em;
-      }
-      .remaining {
-        float: right;
-        margin-top: .2em;
-      }
-      .slider {
-        overflow: hidden;
-        padding:.7em 1em;
-      }
+  .options {
+    float: right;
+    width: 2em;
+    background-color: red;
+    height: 2.5em;
+    width: .7em;
+    margin-top: 1em;
+    padding: .5em;
+  }
+  .volumeControllers {
+    width: 10em;
+    float: right;
+    .volume {
+      margin-top: 3.2em;
     }
-    .main {
-      padding: 0 .5em .5em .5em;
+    .mute:hover {
+      opacity: 1;
+    }
+    .mute {
+      cursor: pointer;
+      float: left;
+      width: 1.3em;
+      height: 1.4em;
+      margin: 1.1em 0 0;
+      background-image: url(../images/svg/mute.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .mute.active {
+      background-image: url(../images/svg/muted.svg);
+    }
+    .mute:hover {
+      opacity: 1;
+    }
+    .max {
+      cursor: pointer;
+      float: right;
+      width: 1.6em;
+      height: 1.4em;
+      margin: 1.1em 0 0;
+      background-image: url(../images/svg/maxvolume.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .max.active {
+      background-image: url(../images/svg/maxvolume.svg);
+    }
+  }
+  .mainControllers {
+    padding: 1em 2em 1em 1em;
+    overflow: hidden;
+    font-weight: bold;
+    color: #fff;
+    .current {
+      float: left;
+      margin-top: .2em;
+    }
+    .remaining {
+      float: right;
+      margin-top: .2em;
+    }
+    .slider {
+      margin-top: 2.5em;
+    }
+    .centered {
+      margin: auto;
+      width: 8em;
       > div {
-        float: left;
+        float: lefT;
       }
       .repeat.active {
         background-image: url(../images/svg/repeat_hover.svg);
@@ -246,12 +296,14 @@
         opacity: 1;
       }
       .repeat {
+        position: absolute;
+        repeat: no-repeat;
         cursor: pointer;
         width: 1.12em;
         height: 1.2em;
-        margin: .5em .7em 0 0;
+        margin: 0 .7em 0 8.6em;
         opacity: .6;
-        background-image: url(../images/svg/repeat.svg);
+        background-image: url(../images/svg/repeat_hover.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
@@ -260,9 +312,9 @@
       }
       .previous {
         cursor: pointer;
-        margin: 0 .8em 0 0;
-        width: 2.1em;
-        height: 2.1em;
+        margin: .3em 1.5em 0 0;
+        width: 1.6em;
+        height: 1em;
         background-image: url(../images/svg/previous.svg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -272,9 +324,8 @@
       }
       .play {
         cursor: pointer;
-        width: 3em;
-        height: 3em;
-        margin-top: -.5em;
+        width: 1.5em;
+        height: 1.5em;
         background-image: url(../images/svg/play.svg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -290,9 +341,9 @@
       }
       .next {
         cursor: pointer;
-        margin: 0 0 0 .8em;
-        width: 2.1em;
-        height: 2.1em;
+        margin: .3em 0 0 1.2em;
+        width: 1.6em;
+        height: 1em;
         background-image: url(../images/svg/next.svg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -305,36 +356,24 @@
         opacity: 1;
       }
       .shuffle {
+        position: absolute;
+        repeat: no-repeat;
         cursor: pointer;
-        width: 1.2em;
-        height: 1.1em;
-        margin: .5em 0 0 .7em;
-        opacity: .6;
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0 0 0 -2.8em;
         background-image: url(../images/svg/shuffle.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
-      .mute:hover {
-        opacity: 1;
-      }
-      .mute {
-        cursor: pointer;
-        float: right;
-        opacity: .6;
-        width: 1.3em;
-        height: 1.4em;
-        margin: .3em 0 0;
-        background-image: url(../images/svg/mute.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-      .mute.active {
-        background-image: url(../images/svg/muted.svg);
-      }
-      .volume {
-        margin: .8em;
-        width: 5em;
-        float: right;
+    }
+  }
+  .controllers {
+    .main {
+      padding: 0 .5em .5em .5em;
+      display: inline-block;
+      .buttons > div {
+        float: left;
       }
       .download:hover {
         opacity: 1;
