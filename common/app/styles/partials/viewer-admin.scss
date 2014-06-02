@@ -45,6 +45,11 @@
     border: .2em rgba(90, 86, 102, 0.17) dotted;
     margin: .5em 0;
 
+    input, select {
+      height: 2em;
+      width: 15em;
+    }
+
     h3 {
       padding: 0;
       margin: 0;

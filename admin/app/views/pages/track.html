@@ -54,7 +54,9 @@
                     style="display: block">
             </select>
             <b>{{translation.page.editor.sortOrder}}</b><br>
-            <input type="text" ng-model="model.order"><br>
+            <input type="number"
+                   ng-style="{backgroundColor: model.order==undefined ? '#F84F4F' : '' }"
+                   ng-model="model.order"><br>
             <b>{{translation.page.editor.publishDate}}</b><br>
             <input bs-datepicker data-autoclose="1" type="text"
                    data-date-format="dd.MM.yyyy"

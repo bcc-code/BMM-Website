@@ -43,9 +43,14 @@ angular.module('bmmApp')
           });
         }
       } else {
+
+        if (typeof $routeParams.order==='undefined') {
+          $routeParams.order = 0;
+        }
+
         $scope.model = {
           parent_id: $routeParams.parentId,
-          order: $routeParams.order,
+          order: parseInt($routeParams.order),
           type: 'track',
           subtype: 'song',
           recorded_at: new Date(),
