@@ -179,7 +179,7 @@
         <h3>{{translation.page.editor.tracks}}</h3>
     </div>
     <div class="body" ng-class="{'visible': _tracks}">
-        <button ng-click="go('track/new/'+model.id+'/'+standardModel.children.length)"
+        <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
                 style="margin-bottom: 1em">
             {{translation.page.editor.addTrack}}
         </button>

@@ -5,7 +5,7 @@
 </div>
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
     <button ng-click="model.is_visible=!model.is_visible">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
@@ -54,7 +54,9 @@
                     style="display: block">
             </select>
             <b>{{translation.page.editor.sortOrder}}</b><br>
-            <input type="text" ng-model="model.order"><br>
+            <input type="number"
+                   ng-style="{backgroundColor: model.order==undefined ? '#F84F4F' : '' }"
+                   ng-model="model.order"><br>
             <b>{{translation.page.editor.publishDate}}</b><br>
             <input bs-datepicker data-autoclose="1" type="text"
                    data-date-format="dd.MM.yyyy"
@@ -250,7 +252,7 @@
 
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
     <button ng-click="model.is_visible=!model.is_visible">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>

@@ -112,7 +112,7 @@ angular.module('bmmApp')
       return newArray;
     };
 
-    $scope.addContributor = function(contributor, suggestions) {
+    $scope.addContributor = function(contributor) {
       if (contributor!=='') {
         bmmApi.contributorPost({
           type: 'contributor',
@@ -300,10 +300,11 @@ angular.module('bmmApp')
       });
     };
 
-    $scope.activateContributor = function(_name, relation) {
+    $scope.activateContributor = function(contributor, relation) {
       $scope.rel[relation+'s'].splice(0,0, {
-        name: _name,
-        type: relation
+        name: contributor.name,
+        type: relation,
+        id: contributor.id
       });
     };
 
