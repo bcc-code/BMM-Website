@@ -49,7 +49,7 @@ angular.module('bmmApp', [
         controller: 'TrackCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
       })
-      .when('/track/:id/:parentId/:order', {
+      .when('/track/:id/:parentId/:order/:language', {
         templateUrl: 'views/pages/track.html',
         controller: 'TrackCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
