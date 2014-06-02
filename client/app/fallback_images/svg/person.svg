@@ -1,81 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Ebene_1"
-   x="0px"
-   y="0px"
-   width="988.90625"
-   height="988.90625"
-   viewBox="0 0 988.90628 988.90622"
-   enable-background="new 0 0 988.91 988.918"
-   xml:space="preserve"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="BMM Leercover Personen.svg"><metadata
-     id="metadata22"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-     id="defs20" /><sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview18"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.23864465"
-     inkscape:cx="421.98624"
-     inkscape:cy="559.10348"
-     inkscape:window-x="0"
-     inkscape:window-y="420"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="Ebene_1" /><radialGradient
-     id="SVGID_1_"
-     cx="274.92941"
-     cy="845.3186"
-     r="479.457"
-     gradientTransform="matrix(1,0,0,-1,219.53175,1339.7622)"
-     gradientUnits="userSpaceOnUse"><stop
-       offset="0"
-       style="stop-color:#F7F7F7"
-       id="stop4" /><stop
-       offset="0.6611"
-       style="stop-color:#B8B8B8"
-       id="stop6" /><stop
-       offset="1"
-       style="stop-color:#9C9C9C"
-       id="stop8" /></radialGradient><rect
-     x="15.006248"
-     y="14.98472"
-     stroke-miterlimit="10"
-     width="958.90997"
-     height="958.91803"
-     id="rect10"
-     style="fill:url(#SVGID_1_);stroke:#adadad;stroke-width:30;stroke-miterlimit:10" /><g
-     id="g12"
-     transform="translate(-72.46875,-64.656278)"><path
-       d="m 561.093,322.577 c 8.408,-0.401 17.722,1.265 24.895,3.275 21.745,6.108 37.956,18.649 51.731,32.427 4.756,4.757 8.918,10.249 12.629,15.422 7.686,10.708 14.168,23.221 18.215,37.887 2.063,7.48 3.764,15.681 3.764,24.286 0,18.393 -3.991,32.865 -10.317,45.66 -12.375,25.024 -31.035,43.435 -55.619,56.59 -12.12,6.487 -27.3,11.681 -43.958,12.145 -18.316,0.51 -33.489,-4.183 -45.903,-10.321 -12.718,-6.288 -23.25,-14.264 -32.544,-23.559 -9.376,-9.377 -17.126,-20.29 -23.073,-33.029 -6.026,-12.919 -10.146,-27.795 -9.958,-46.146 0.183,-17.068 5.846,-32.81 11.66,-44.566 6.45,-13.049 13.838,-23.023 23.069,-33.028 8.851,-9.59 19.255,-17.91 31.454,-24.651 6.022,-3.332 12.507,-6.229 19.67,-8.379 7.281,-2.188 15.044,-4.007 24.046,-4.007 0.075,-0.006 0.157,-0.004 0.239,-0.006 z"
-       id="path14"
-       inkscape:connector-curvature="0"
-       style="fill:#565656" /><path
-       d="m 779.675,752.458 c -142.354,0 -284.735,0 -427.087,0 0,-17.525 0,-34.832 0,-51.855 0,-16.729 -0.272,-33.229 0.118,-49.668 0.4,-16.686 2.002,-31.256 7.652,-42.26 2.812,-5.476 6.232,-10.314 9.955,-15.058 3.701,-4.713 7.377,-9.229 12.022,-12.993 9.411,-7.623 20.774,-12.361 36.553,-13.356 15.667,-0.99 32.974,-0.364 49.667,-0.366 75.567,0 149.036,0.239 224.654,0.244 8.484,0 16.892,-0.411 24.65,0.363 14.773,1.479 26.409,7.145 35.336,14.692 11.371,9.617 19.275,22.355 24.896,37.521 0.556,1.504 1.205,3.028 1.578,4.617 0.4,1.705 0.437,3.698 0.605,5.705 0.616,7.266 1.375,15.147 0.975,23.801 -1.526,32.915 -1.805,64.817 -1.574,98.613 z"
-       id="path16"
-       inkscape:connector-curvature="0"
-       style="fill:#565656" /></g></svg>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 1</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <radialGradient cx="-1.33226763e-13%" cy="0%" fx="-1.33226763e-13%" fy="0%" r="136.060156%" id="radialGradient-1">
+            <stop stop-color="#132B40" offset="0%"></stop>
+            <stop stop-color="#08111A" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="123.863249%" y1="173.858992%" x2="9.00672684%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#03D67F" offset="0%"></stop>
+            <stop stop-color="#C2EF66" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup">
+            <rect id="Base" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="1000" height="1000"></rect>
+            <g id="Person" sketch:type="MSLayerGroup" transform="translate(259.000000, 183.000000)" fill="url(#linearGradient-2)">
+                <path d="M134.966635,275.506334 C103.311867,246.521155 83.4617214,204.854202 83.4617214,158.551 C83.4617214,70.992727 154.441726,0.0127218856 242,0.0127218856 C329.558274,0.0127218856 400.538279,70.992727 400.538279,158.551 C400.538279,204.854202 380.688133,246.521155 349.033365,275.506334 C428.71698,314.966697 483.503906,397.11346 483.503906,492.056395 C483.503906,625.435319 375.378924,634.987278 242,634.987278 C108.621076,634.987278 0.49609375,625.435319 0.49609375,492.056395 C0.49609375,397.11346 55.2830196,314.966697 134.966651,275.506326 L134.966635,275.506334 Z M103.17705,540.263515 C94.5759001,536.519491 90.1226931,532.898029 87.3756495,528.489027 C83.2673248,521.895171 80.4617214,510.556895 80.4617214,492.203752 C80.4617214,403.180404 152.767734,331.012722 241.961721,331.012722 C331.155708,331.012722 403.461721,403.180404 403.461721,492.203752 C403.461721,510.556895 400.656118,521.895171 396.547793,528.489027 C393.80075,532.898029 389.347543,536.519491 380.746392,540.263515 C356.320463,550.895959 316.322985,555.012722 241.961721,555.012722 C167.600458,555.012722 127.60298,550.895959 103.17705,540.263515 Z M163.461721,158.512722 C163.461721,115.158369 198.607369,80.0127219 241.961721,80.0127219 C285.316074,80.0127219 320.461721,115.158369 320.461721,158.512722 C320.461721,201.867075 285.316074,237.012722 241.961721,237.012722 C198.607369,237.012722 163.461721,201.867075 163.461721,158.512722 Z" id="Path" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
