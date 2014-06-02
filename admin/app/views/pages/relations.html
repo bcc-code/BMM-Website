@@ -21,13 +21,13 @@
         <ul style="width: 50%; float: left; padding:.5em">
             <h4>{{translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.interpret">
-            <button ng-click="addContributor(contributors.interpret, contributors.interprets)"
+            <button ng-click="addContributor(contributors.interpret)"
                     style="margin-bottom: .5em">
                 {{translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.interprets"
                 style="width: 100%; display: inline-block"
-                ng-click="activateContributor(contributor.name, 'interpret')">
+                ng-click="activateContributor(contributor, 'interpret')">
                 <span>
                     {{contributor.name}}
                 </span>
@@ -60,13 +60,13 @@
         <ul style="width: 50%; float: left; padding:.5em">
             <h4>{{translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.lyricist">
-            <button ng-click="addContributor(contributors.lyricist, contributors.lyricists)"
+            <button ng-click="addContributor(contributors.lyricist)"
                     style="margin-bottom: .5em">
                 {{translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.lyricists"
                 style="width: 100%; display: inline-block"
-                ng-click="activateContributor(contributor.name, 'lyricist')">
+                ng-click="activateContributor(contributor, 'lyricist')">
                 <span>
                     {{contributor.name}}
                 </span>
@@ -99,13 +99,13 @@
         <ul style="width: 50%; float: left; padding:.5em">
             <h4>{{translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.composer">
-            <button ng-click="addContributor(contributors.composer, contributors.composers)"
+            <button ng-click="addContributor(contributors.composer)"
                     style="margin-bottom: .5em">
                 {{translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.composers"
                 style="width: 100%; display: inline-block"
-                ng-click="activateContributor(contributor.name, 'composer')">
+                ng-click="activateContributor(contributor, 'composer')">
                 <span>
                     {{contributor.name}}
                 </span>
