@@ -54,7 +54,7 @@
   }
   li {
     @include bmm-transition(all, .2s);
-    background-image: url(../images/svg/playliststatic.svg);
+    background-image: url(../images/svg/v3/Icon_Playlist.svg);
     background-size: 1.6em 1.2em;
     background-position: 0 .7em;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@
   text-align: left;
   span {
     @include bmm-transition(all, .2s);
-    background-image: url(../images/svg/pluss.svg);
+    background-image: url(../images/svg/v3/Icon_Playlist_Plus.svg);
     background-size: 1.4em 1.3em;
     background-position: .25em .35em;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@
   li {
     @include bmm-transition(all, .2s);
     position: relative;
-    background-image: url(../images/svg/playlistprivate.svg);
+    background-image: url(../images/svg/v3/Icon_Playlist.svg);
     background-size: 1.25em .9em;
     background-position: .29em .8em;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@
       top: 0;
       height: 100%;
       width: 1.5em;
-      background-image: url(../images/svg/edit.svg);
+      background-image: url(../images/svg/v3/Icon_Edit.svg);
       background-position: center center;
       background-size: 1.2em 1.2em;
       background-repeat: no-repeat;
@@ -130,7 +130,7 @@
       top: 0;
       height: 100%;
       width: 1.5em;
-      background-image: url(../images/svg/trash.svg);
+      background-image: url(../images/svg/v3/Icon_Delete.svg);
       background-position: center center;
       background-size: 1.2em 1.2em;
       background-repeat: no-repeat;
@@ -162,7 +162,7 @@
       margin: 0;
       padding: 0;
       display: inline-block;
-      background: url(../images/svg/cross.svg);
+      background: url(../images/svg/v3/Icon_Delete.svg);
       background-position: center center;
       background-size: 1.2em 1.2em;
       background-repeat: no-repeat;
