@@ -127,24 +127,6 @@ h2.speech, h2.video, h2.audio, h2.album {
   background-repeat: no-repeat;
 }
 
-h2.speech {
-  background-image: url(../images/svg/speech.svg);
-  margin-top: .2em;
-}
-
-h2.video {
-  background-image: url(../images/svg/video_title.svg);
-  background-size: 1.8em !important;
-}
-
-h2.audio {
-  background-image: url(../images/svg/audio.svg);
-}
-
-h2.album {
-  background-image: url(../images/svg/album.svg);
-}
-
 //Playlist
 .bmm-flag {
   width: 1.7em;
@@ -220,7 +202,7 @@ h2.album {
   height: 1.35em;
   margin: .2em 0;
   opacity: .6;
-  background-image: url(../images/svg/download.svg);
+  background-image: url(../images/svg/v3/Icon_Options-Download.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -230,7 +212,7 @@ h2.album {
   height: 1.35em;
   margin: .3em .3em 0 0;
   opacity: .6;
-  background-image: url(../images/svg/video.svg);
+  background-image: url(../images/svg/v3/Icon_Video.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -238,7 +220,7 @@ h2.album {
 .bmm-sort {
   opacity: .7;
   width: 1em;
-  background: url(../images/svg/sort.svg);
+  background: url(../images/svg/v3/Drag_Handle.svg);
   background-position: center center;
   background-size: .6em 1em;
   background-repeat: no-repeat;
@@ -250,7 +232,7 @@ h2.album {
   width: 2em;
   height: 2em;
   display: inline-block;
-  background: url(../images/svg/cross.svg);
+  background: url(../images/svg/v3/Icon_Delete.svg);
   background-position: center center;
   background-size: 1.2em 1.2em;
   background-repeat: no-repeat;
