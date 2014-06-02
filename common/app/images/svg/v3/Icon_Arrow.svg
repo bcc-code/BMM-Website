@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="5px" viewBox="0 0 8 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Arrow</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-20.000000, -611.000000)" fill="#15293C">
+            <g id="Icon_Arrow" sketch:type="MSLayerGroup" transform="translate(20.000000, 611.000000)">
+                <path d="M4.00431377,4.82837765 C4.25827344,4.82783319 4.51079898,4.73184171 4.70058582,4.54205487 L7.54205487,1.70058582 C7.92897773,1.31366296 7.92878086,0.686140174 7.53553391,0.292893219 C7.14500961,-0.0976310729 6.50953952,-0.0953259547 6.1278413,0.286372258 L4,2.41421356 L1.8721587,0.286372258 C1.48523583,-0.100550606 0.857713049,-0.100353737 0.464466094,0.292893219 C0.0739418023,0.683417511 0.0762469206,1.31888761 0.457945134,1.70058582 L3.29941418,4.54205487 C3.49180915,4.73444983 3.74369276,4.83112893 3.99668182,4.83136307 L4.00431377,4.82837765 Z" id="Arrow" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

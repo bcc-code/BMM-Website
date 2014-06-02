@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Player_Cross_green</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-16.000000, -76.000000)" fill="#C2EF66">
+            <g id="Player_Cross_green" sketch:type="MSLayerGroup" transform="translate(10.000000, 70.000000)">
+                <path d="M13,15 L4.99180311,15 C4.45530558,15 4,14.5522847 4,14 C4,13.4438648 4.44404538,13 4.99180311,13 L13,13 L13,4.99180311 C13,4.45530558 13.4477153,4 14,4 C14.5561352,4 15,4.44404538 15,4.99180311 L15,13 L23.0081969,13 C23.5446944,13 24,13.4477153 24,14 C24,14.5561352 23.5559546,15 23.0081969,15 L15,15 L15,23.0081969 C15,23.5446944 14.5522847,24 14,24 C13.4438648,24 13,23.5559546 13,23.0081969 L13,15 Z" id="Cross-green" sketch:type="MSShapeGroup" transform="translate(14.000000, 14.000000) rotate(45.000000) translate(-14.000000, -14.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

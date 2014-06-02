@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="16px" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Nav icon</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-839.000000, -351.000000)" fill="#FFFFFF">
+            <g id="Nav-icon" sketch:type="MSLayerGroup" transform="translate(839.000000, 351.000000)">
+                <rect id="Rectangle-142" sketch:type="MSShapeGroup" x="0" y="0" width="23" height="2" rx="20"></rect>
+                <rect id="Rectangle-143" sketch:type="MSShapeGroup" x="0" y="7" width="23" height="2" rx="20"></rect>
+                <rect id="Rectangle-144" sketch:type="MSShapeGroup" x="0" y="14" width="23" height="2" rx="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

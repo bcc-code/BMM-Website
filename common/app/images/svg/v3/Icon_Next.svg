@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="28px" viewBox="0 0 15 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Next</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-135.000000, -359.000000)" fill="#08111A">
+            <g id="Icon_Next" sketch:type="MSLayerGroup" transform="translate(122.000000, 359.000000)">
+                <path d="M6,22 L23.0081969,22 C23.5446944,22 24,22.4477153 24,23 C24,23.5561352 23.5559546,24 23.0081969,24 L4.99180311,24 C4.72488144,24 4.47805742,23.8891759 4.29740461,23.7097875 C4.10988116,23.5275955 4,23.2807335 4,23.0081969 L4,4.99180311 C4,4.45530558 4.44771525,4 5,4 C5.55613518,4 6,4.44404538 6,4.99180311 L6,22 Z" id="Next" sketch:type="MSShapeGroup" transform="translate(14.000000, 14.000000) scale(-1, 1) rotate(45.000000) translate(-14.000000, -14.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
