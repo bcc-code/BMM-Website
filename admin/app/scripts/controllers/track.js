@@ -48,6 +48,10 @@ angular.module('bmmApp')
           $routeParams.order = 0;
         }
 
+        if (typeof $routeParams.language==='undefined') {
+          $routeParams.language = init.mediaLanguage;
+        }
+
         $scope.model = {
           parent_id: $routeParams.parentId,
           order: parseInt($routeParams.order),
@@ -55,9 +59,10 @@ angular.module('bmmApp')
           subtype: 'song',
           recorded_at: new Date(),
           published_at: new Date(),
-          original_language: init.mediaLanguage,
+          original_language: $routeParams.language,
+          is_visible: true,
           translations: [{
-            language: init.mediaLanguage,
+            language: $routeParams.language,
             title: '',
             is_visible: false,
             media: []
