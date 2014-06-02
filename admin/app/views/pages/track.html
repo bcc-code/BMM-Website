@@ -5,7 +5,7 @@
 </div>
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
     <button ng-click="model.is_visible=!model.is_visible">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
@@ -252,7 +252,7 @@
 
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
+    <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
     <button ng-click="model.is_visible=!model.is_visible">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
