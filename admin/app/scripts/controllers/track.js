@@ -23,7 +23,7 @@ angular.module('bmmApp')
 
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
-    $scope.status = 'No changes';
+    $scope.status = init.translation.states.noChanges;
     $scope.possibleSubtypes = [
       'song',
       'speech',
@@ -137,7 +137,8 @@ angular.module('bmmApp')
           if (xhr.status===201) {
             $location.path('/track/'+xhr.getResponseHeader('X-Document-Id'));
           } else {
-            $scope.status = 'Could not create track, errorcode: '+xhr.status;
+            $scope.status = init.translation.states.couldNotCreateTrack+', '
+                            init.translation.states.errorCode+': '+xhr.status;
           }
         });
       } else {
@@ -166,10 +167,10 @@ angular.module('bmmApp')
     };
 
     $scope.save = function(options) {
-      $scope.status = 'Attempt to save, please wait...';
+      $scope.status = init.translation.states.attemptToSave;
 
       saveModel().done(function() {
-        $scope.status = 'Save succeed, fetching new data.';
+        $scope.status = init.translation.states.saveSucceedFetchingNewData;
         $scope.$apply();
         $scope.fetchModel().done(function(model) {
           $scope.$apply(); //Model-watcher updates status to changed
@@ -177,17 +178,17 @@ angular.module('bmmApp')
           findAvailableTranslations();
           findAvailableTags();
           $timeout(function() { //Secure that watcher is fired
-            $scope.status = 'Saved'; //Update status
+            $scope.status = init.translation.states.saved; //Update status
             $scope.$apply(); //Render status
           });
           $scope.$apply(function() {
-            $scope.status = 'Saved';
+            $scope.status = init.translation.states.saved;
             if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
               options.done();
             }
           });
         }).fail(function() {
-          $scope.status = 'Could not fetch new data, check your internet connection.';
+          $scope.status = init.translation.states.couldNotFetchData;
           $scope.$apply();
         });
         $scope.fetchModel(false).done(function(model) {
@@ -196,7 +197,7 @@ angular.module('bmmApp')
           });
         });
       }).fail(function() {
-        $scope.status = 'Could not save, check your internet connection.';
+        $scope.status = init.translation.states.couldNotSave;
         $scope.$apply();
       });
 
@@ -204,10 +205,10 @@ angular.module('bmmApp')
 
     $scope.delete = function() {
       if (typeof $scope.model.id!=='undefined') {
-        if (confirm('Are you sure you want to delete track with all its content?')) {
+        if (confirm(init.translation.warnings.confirmTrackDeletion)) {
           bmmApi.trackDelete($scope.model.id).always(function() {
             $scope.$apply(function() {
-              alert('Track deleted');
+              alert(init.translation.states.trackDeleted);
               $location.path( '/' );
             });
           });
@@ -275,7 +276,7 @@ angular.module('bmmApp')
         if (this.language === lang) {
           if (((typeof this.title!=='undefined'&&this.title.length>0)||
             (typeof this.media!=='undefined'&&this.media.length>0))&&
-            !confirm($scope.$parent.translation.page.editor.confirmTranslatedDeletion)) {
+            !confirm(init.translation.warnings.confirmTranslatedDeletion)) {
             return false;
           }
           $scope.model.translations.splice(index,1);
@@ -321,7 +322,7 @@ angular.module('bmmApp')
 
     $scope.$watch('model', function(model) {
       if (modelLoaded) {
-        $scope.status = 'Changes performed';
+        $scope.status = init.translation.states.changesPerformed;
       }
 
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {

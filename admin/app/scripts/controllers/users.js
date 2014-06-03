@@ -3,7 +3,7 @@
 angular.module('bmmApp')
   .controller('UsersCtrl', function ($scope, $timeout, bmmApi) {
 
-    $scope.status = 'Loading users...';
+    $scope.status = init.translation.states.loadingUsers;
 
     $scope.$watch('userSearch', function(name) {
       if (name!=='') {
@@ -46,7 +46,7 @@ angular.module('bmmApp')
         }
       });
 
-      $scope.status = 'Saving changes...';
+      $scope.status = init.translation.states.savingChanges;
 
       if (search) {
         bmmApi.userUsernamePut(user.id, {
@@ -62,14 +62,14 @@ angular.module('bmmApp')
         bmmApi.userUsernamePut(user.id, {
           roles: _roles
         }).always(function() {
-          $scope.status = 'All is well';
+          $scope.status = init.translation.states.allIsWell;
         });
       }
     };
 
     $scope.fetchUsers = function() {
 
-      $scope.status = 'Loading users...';
+      $scope.status = init.translation.states.loadingUsers;
 
       bmmApi.userGet({
         size: 500,
@@ -98,7 +98,7 @@ angular.module('bmmApp')
           });
 
           $scope.users = users;
-          $scope.status = 'All is well';
+          $scope.status = init.translation.states.allIsWell;
 
         });
       });

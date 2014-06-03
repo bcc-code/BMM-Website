@@ -1,9 +1,8 @@
 {
   "language": "English",
-  "iso-639-1": "en",
-
   "general": {
-    "search": "Search..."
+    "search": "Search...",
+    "loading": "Loading..."
   },
   "menu": {
     "main": {
@@ -25,6 +24,17 @@
     }
   },
   "page": {
+    "search":{
+      "searchResults":"Search Results",
+      "content": "Content",
+      "bibleVerse": "Bible verse",
+      "album": "Album",
+      "artist": "Artist",
+      "lyricist": "Lyricist",
+      "composer": "Composer",
+      "contributor": "Contributor",
+      "interprets": "Interprets"
+    },
     "editor": {
       "mainSettings": "Main settings",
       "bmmId": "BMM-ID",
@@ -43,7 +53,6 @@
       "description": "Description",
       "selectedLanguage": "Selected language",
       "originalLanguage": "Original language",
-      "confirmTranslatedDeletion": "Language has content, confirm deletion",
       "publish": "Publish",
       "unpublish": "Unpublish",
       "missingTitle": "Please fill in title first",
@@ -104,6 +113,38 @@
       "allRights": "All rights",
       "refreshList": "Refresh list"
     }
+  },
+  "states": {
+    "noChanges":"No changes",
+    "allIsWell": "All is well",
+    "changesPerformed": "Changes performed",
+    "couldNotCreateAlbum": "Could not create album",
+    "couldNotCreateTrack": "Could not create track",
+    "errorCode": "Error code",
+    "attemptToSave": "Attempt to save, please wait...",
+    "savingContributor": "Saving contributor, please wait...",
+    "savingChanges": "Saving changes, please wait...",
+    "saveSucceedFetchingNewData": "Save succeed, fetching new data",
+    "couldNotFetchData": "Could not fetch new data, please check your internet connection",
+    "couldNotSave": "Could not save, please check your internet connection",
+    "saved": "Saved",
+    "loadingContributor": "Loading contributor...",
+    "loadingTracks": "Loading tracks...",
+    "loadingUsers": "Loading users...",
+    "loadingFiles": "Loading files, please wait...",
+    "filesLoaded": "Files successfully loaded",
+    "waitingForSelection": "Waiting for selection",
+    "contributorLoaded": "Contributor successfully loaded",
+    "deletingContributor": "Deleting contributor, please wait...",
+    "trackDeleted": "Track deleted",
+    "notSet": "Not set",
+    "attemptToLinkTracks": "Attempt to link tracks in album, please wait..."
+  },
+  "warnings": {
+    "confirmAlbumDeletion": "Are you sure you want to delete album with all its sub albums and tracks?",
+    "confirmTrackDeletion": "Are you sure you want to delete track with all its content?",
+    "confirmTranslatedDeletion": "Language has content, confirm deletion",
+    "confirmContributorDeletion": "ARE YOU REALLY SURE YOU WANT TO DELETE THIS CONTRIBUTOR? ALL LINKED TRACKS WILL BE DELETED!"
   },
 
   "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"

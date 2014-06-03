@@ -9,7 +9,7 @@ angular.module('bmmApp')
     $scope.waitings.missingTrack = []; //Correct
     $scope.waitings.missingAlbum = [];
     $scope.waitings.wrongId = [];
-    $scope.status = 'Loading waitings, please wait...';
+    $scope.status = init.translation.states.loadingFiles;
 
     bmmApi.fileUploadedGuessTracksGet().done(function(links) {
 
@@ -31,7 +31,7 @@ angular.module('bmmApp')
 
               //Check if track in same language allready exists
               var extension = String(key).split('.').pop(),
-                  type = 'not set',
+                  type = init.translation.states.notSet,
                   possibleConflicts = [],
                   conflict = false;
 
@@ -129,7 +129,7 @@ angular.module('bmmApp')
 
         $scope.waitings.missingAlbum = links.unknown_bmm_id;
         $scope.waitings.wrongId = links.unguessable;
-        $scope.status = 'Waitings successfully loaded';
+        $scope.status = init.translation.states.filesLoaded;
 
       });
 
@@ -168,7 +168,7 @@ angular.module('bmmApp')
     $scope.linkWaitings = function(tracks) {
 
       var promises = 0;
-      $scope.status = 'Attempt to link tracks in album, please wait...';
+      $scope.status = init.translation.states.attemptToLinkTracks;
 
       $.each(tracks, function() {
 

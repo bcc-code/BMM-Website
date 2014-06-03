@@ -167,10 +167,12 @@ angular.module('bmmLibApp')
 
       factory.load.status = 'Fetch translation';
 
+      //Fallback
       if (typeof lang[index]==='undefined'||lang.length<1) {
-        lang[index] = 'nb'; //Fallback
+        lang[index] = 'nb';
       }
 
+      //Attempt to fetch file
       $.ajax({
         url: factory.config.translationFolder+lang[index]+'.json',
         error: function() {
@@ -178,6 +180,7 @@ angular.module('bmmLibApp')
         },
         success: function(data) {
           factory.translation = data;
+          factory.translation['iso-639-1'] = lang[index];
           promise.resolve();
           factory.load.percent+=20;
         }

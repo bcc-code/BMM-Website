@@ -23,7 +23,7 @@ angular.module('bmmApp')
 
       if (!loading&&!end) {
 
-        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
         loading = true;
         search(searchFrom);
 
@@ -96,13 +96,13 @@ angular.module('bmmApp')
 
                   var relations=[];
                   if (track.title!==''&&track.title!=='-') {
-                    relations.push({title: 'Innhold', content: track.title});
+                    relations.push({title: init.translation.page.search.content, content: track.title});
                   }
                   if (track.bible!=='') {
-                    relations.push({title: 'Bibelvers', content: track.bible});
+                    relations.push({title: init.translation.page.search.bibleVerse, content: track.bible});
                   }
                   if (track.albumTitle!=='') {
-                    relations.push({title: 'Album', content: track.albumTitle});
+                    relations.push({title: init.translation.page.search.album, content: track.albumTitle});
                   }
 
                   $scope.results.push({
@@ -131,8 +131,8 @@ angular.module('bmmApp')
                     duration: track.duration,
                     video: vid,
                     relations: [
-                      {title: 'Interpreter', content: track.performers},
-                      {title: 'Album', content: track.parentTitle}
+                      {title: init.translation.page.search.interprets, content: track.performers},
+                      {title: init.translation.page.search.album, content: track.parentTitle}
                     ],
                     track: track
                   });
@@ -152,8 +152,8 @@ angular.module('bmmApp')
                 duration: track.duration,
                 video: vid,
                 relations: [
-                  {title: 'Interpreter', content: track.performers},
-                  {title: 'Album', content: track.parentTitle}
+                  {title: init.translation.page.search.interprets, content: track.performers},
+                  {title: init.translation.page.search.album, content: track.parentTitle}
                 ],
                 track: track
               });

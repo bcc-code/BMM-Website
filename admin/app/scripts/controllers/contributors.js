@@ -4,11 +4,11 @@ angular.module('bmmApp')
   .controller('ContributorsCtrl', function ($scope, $location, $timeout, $routeParams, bmmApi, bmmFormatterTrack, bmmPlay, init) {
     
     $scope.model={};
-    $scope.status = 'Waiting for selection';
+    $scope.status = init.translation.states.waitingForSelection;
 
     $scope.loadContributor = function(id) {
 
-      $scope.status = 'Loading contributor, please wait...';
+      $scope.status = init.translation.states.loadingContributor;
 
       bmmApi.contributorIdGet(id, {
         unpublished: 'show'
@@ -16,7 +16,7 @@ angular.module('bmmApp')
 
         $scope.$apply(function() {
           $scope.model = model;
-          $scope.status = 'Loading tracks...';
+          $scope.status = init.translation.states.loadingTracks;
           $scope.uploadUrl = bmmApi.getserverUrli()+'contributor/'+model.id+'/cover';
         });
 
@@ -33,7 +33,7 @@ angular.module('bmmApp')
               }
             });
 
-            $scope.status = 'Contributor successfully loaded';
+            $scope.status = init.translation.states.contributorLoaded;
 
           });
 
@@ -48,7 +48,7 @@ angular.module('bmmApp')
     }
 
     $scope.save = function(options) {
-      $scope.status = 'Saving contributor, please wait...';
+      $scope.status = init.translation.states.savingContributor;
       //Delete parts that's unexpected by the API
       var toApi = angular.copy($scope.model);
       delete toApi._meta;
@@ -60,8 +60,8 @@ angular.module('bmmApp')
     };
 
     $scope.delete = function() {
-      if (confirm('ARE YOU REALLY SURE YOU WANT TO DELETE THIS CONTRIBUTOR? ALL LINKED TRACKS WILL BE DELETED!!!')) {
-        $scope.status = 'Deleting contributor, please wait...';
+      if (confirm(init.translation.warnings.confirmContributorDeletion)) {
+        $scope.status = init.translation.states.deletingContributor;
 
         bmmApi.contributorIdDelete($scope.model.id).always(function() {
           $scope.$apply(function() {

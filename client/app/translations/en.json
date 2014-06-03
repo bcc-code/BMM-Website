@@ -1,12 +1,35 @@
 {
   "language":"English",
-  "iso-639-1":"en",
   "general":{
     "search":"Search...",
     "loading": "Loading...",
     "waysOfTheLord": "Ways of the Lord",
     "almondBlossom": "Almond Blossom",
-    "noTitle": "No title"
+    "noTitle": "No title",
+    "settings": "Settings",
+    "Feedback": "Feedback",
+    "Suport": "Suport",
+    "readMore": "Read more"
+  },
+  "options":{
+    "addToPlaylist": "Add to playlist",
+    "download": "Download",
+    "downloadAudio": "Download audio",
+    "downloadVideo": "Download video",
+    "goToAlbum": "Go to album",
+    "podcast": "Podcast",
+    "changeLanguage": "Change language",
+    "goBack": "Go back",
+    "addToFavorites": "Add to favorites",
+    "moreInfo": "More info",
+    "choosePlaylist": "Choose playlist",
+    "setupPodcast": "To set up the podcast you have to copy the link below and paste it into your prefered podcast software.",
+    "chooseLanguage": "Choose language",
+    "includeLatest": "Include the latest",
+    "website language": "Website language",
+    "Content language": "Content language",
+    "tracks": "tracks",
+    "copyUrl": "Copy URL"
   },
   "menu":{
     "main":{
@@ -93,5 +116,6 @@
     "latestTracks": "Latest tracks",
     "instrumental": "Instrumental"
   },
-  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+  "copyright":"Copyright",
+  "copyrightBy": "Stiftelsen Skjulte Skatters Forlag"
 }
