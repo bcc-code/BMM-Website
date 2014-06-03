@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('WaitingsCtrl', function ($scope, $filter, $route, bmmApi, bmmPlay, bmmFormatterTrack) {
+  .controller('WaitingsCtrl', function ($scope, $filter, $route, bmmApi, bmmPlay, bmmFormatterTrack, init) {
 
     $scope.waitings = {};
     $scope.waitings.ready = []; //Correct and ready

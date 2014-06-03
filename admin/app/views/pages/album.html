@@ -5,6 +5,10 @@
 </div>
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
+    <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
+            style="margin-left: .5em">
+        {{translation.page.editor.addTrack}}
+    </button>
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>
@@ -197,6 +201,10 @@
 
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
+    <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
+            style="margin-left: .5em">
+        {{translation.page.editor.addTrack}}
+    </button>
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>

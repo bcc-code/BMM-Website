@@ -84,7 +84,7 @@
                         <img ng-src="{{waiting.track.cover | bmmCover}}">
                         <div>
                             <span><b>{{waiting.track.albumTitle}}</b></span>
-                            <div class="flags-{{file.language}}"
+                            <div class="flags-{{waiting.track.language}}"
                                  style="width: 2em; height: 1.5em; display: inline-block; float: left;">
                             </div>
                             <span>{{waiting.track.combinedTitle}}</span>
@@ -100,8 +100,8 @@
                         <button ng-click="playConflict(waiting.conflict)" style="margin-right: .5em">
                             {{translation.page.editor.play}}
                         </button>
-                        <button ng-click="go('track/'+track.track.id)">
-                            <a ng-href="#track/{{track.track.id}}">
+                        <button>
+                            <a ng-href="#track/{{waiting.track.id}}">
                                 {{translation.page.waitings.openTrack}}
                             </a>
                         </button>

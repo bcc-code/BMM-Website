@@ -337,14 +337,14 @@ angular.module('bmmApp')
               bmmApi.albumGet(album.parent_id, init.mediaLanguage, {
                 unpublished: 'show'
               }).done(function(album) {
-                $scope.albumParentYear = parseInt($filter('date')(album.published_at, 'yyyy'),10);
+                $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
                 if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
                   $scope.findParentAlbums($scope.albumParentYear, album);
                 }
               });
 
             } else {
-              $scope.albumParentYear = parseInt($filter('date')(album.published_at, 'yyyy'),10);
+              $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
               if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
                 $scope.findParentAlbums($scope.albumParentYear, album);
               }
