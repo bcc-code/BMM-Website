@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterTrack', ['bmmApi', function (bmmApi) {
+  .factory('bmmFormatterTrack', ['bmmApi', 'init', function (bmmApi, init) {
     
     var factory = {};
 
@@ -230,13 +230,13 @@ angular.module('bmmLibApp')
         if (resolvedData.subtype==='speech') {
           resolvedData.combinedTitle = resolvedData.performers + bindSign + resolvedData.title;
         } else if (resolvedData.subtype==='exegesis') {
-          resolvedData.combinedTitle = 'Tydning';
+          resolvedData.combinedTitle = init.translation.track.exegesis;
         } else {
           resolvedData.combinedTitle = resolvedData.title + bindSign + resolvedData.performers;
         }
 
         if (resolvedData.combinedTitle === '') {
-          resolvedData.combinedTitle = '-';
+          resolvedData.combinedTitle = init.translation.general.noTitle;
         }
 
       }

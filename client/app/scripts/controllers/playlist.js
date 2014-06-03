@@ -44,7 +44,7 @@ angular.module('bmmApp')
     switch($routeParams.playlist) {
       case 'latest':
 
-        $scope.title = 'Siste tracks';
+        $scope.title = init.translation.playlist.latestTracks;
         size = 0;
 
         $(window).on('scrollBottom', function() {
@@ -52,7 +52,7 @@ angular.module('bmmApp')
           if (!loading&&!end) {
 
             loading = true;
-            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -123,7 +123,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -172,7 +172,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -216,12 +216,12 @@ angular.module('bmmApp')
       case 'instrumental':
 
         size = 0;
-        $scope.title = 'Instrumental';
+        $scope.title = init.translation.playlist.instrumental;
         $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
             loading = true;
-            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
             bmmApi.trackLatest({
               from: size,
@@ -270,7 +270,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
             bmmApi.contributorTracksGet($routeParams.id, {
               from: size,

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterAlbum', ['bmmApi', function (bmmApi) {
+  .factory('bmmFormatterAlbum', ['bmmApi', 'init', function (bmmApi, init) {
     
     var factory = {};
 
@@ -20,7 +20,7 @@ angular.module('bmmLibApp')
       //Find title
       resolvedData.title = data.title;
       if (typeof resolvedData.title==='undefined'||resolvedData.title===''||resolvedData.title===null) {
-        resolvedData.title='-';
+        resolvedData.title=init.translation.general.noTitle;
       }
 
       //Find id
@@ -29,7 +29,7 @@ angular.module('bmmLibApp')
       if (data.description!==null) {
         resolvedData.description = data.description;
       } else {
-        resolvedData.description = 'Ingen informasjon';
+        resolvedData.description = '';
       }
 
       /**

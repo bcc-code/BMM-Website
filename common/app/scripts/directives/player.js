@@ -84,6 +84,16 @@ angular.module('bmmLibApp')
         //Resizeable display
         element.find('.videoscreen').resizable({
           handles: 'n',
+          create: function() {
+            $(this).css('top','auto');
+            $(this).find('.display').width($(this).height()*(16/9));
+            $('[navigator]').css({
+              marginBottom: $(this).outerHeight()
+            });
+            $('[ng-view]').css({
+              marginBottom: element.outerHeight()+$(this).outerHeight()
+            });
+          },
           resize: function() {
             $(this).css('top','auto');
             $(this).find('.display').width($(this).height()*(16/9));

@@ -73,8 +73,6 @@ angular.module('bmmApp')
               });
 
             });
-          } else {
-            console.log('Failed...');
           }
 
         });
@@ -82,7 +80,7 @@ angular.module('bmmApp')
       };
 
       $scope.removePLaylist = function(playlist) {
-        if (confirm('Are you sure you want to delete this playlist?')) {
+        if (confirm(init.translation.playlist.confirmPlaylistDeletion)) {
           bmmApi.userTrackCollectionDelete(playlist).fail(function(xhr) {
             if (xhr.status<300) {
               $.each($scope.user.track_collections, function(index) {

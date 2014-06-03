@@ -51,19 +51,30 @@
     <div player>
 
         <div class="videoscreen" ng-show="player.showVideo">
-            <div class="display">
-                <div class="fullscreen-toggle"></div>
-                <div class="video-target">
-                    <div style="position: absolute;
-                                bottom: 0;
-                                width: 100%;
-                                height: 5em;
-                                background: red;"></div>
+            <div class="page-positioning">
+                <div class="videoClose"
+                     ng-click="player.showVideo=false"
+                     ng-hide="player.video&&!player.showVideo"></div>
+
+                <div class="display">
+                    <div class="fullscreen-toggle"></div>
+                    <div class="video-target">
+                        <div style="position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: 5em;
+                                    background: red;"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="page-positioning">
+
+            <div class="videoOpen"
+                 ng-click="player.showVideo=true"
+                 ng-show="player.video&&!player.showVideo"></div>
 
             <div class="about">
                 <img ng-src="{{player.cover | bmmCover:'song'}}"/>

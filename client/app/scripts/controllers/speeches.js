@@ -19,7 +19,7 @@ angular.module('bmmApp')
 
       if (!loading&&!end) {
 
-        $('[ng-view]').append('<div class="bmm-loading">Laster...</div>');
+        $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
 
         loading = true;
 
