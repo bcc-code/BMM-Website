@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="7.6597433"
+   height="4.8342996"
+   viewBox="0 0 7.6597433 4.8342996"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Icon_Arrow_up.svg">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Icon_Arrow</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1414"
+     inkscape:window-height="480"
+     id="namedview14"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="43.5"
+     inkscape:cx="-0.26357404"
+     inkscape:cy="2.2853861"
+     inkscape:window-x="0"
+     inkscape:window-y="293"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">Icon_Arrow</title>
+  <description
+     id="description6">Created with Sketch.</description>
+  <defs
+     id="defs8" />
+  <g
+     id="Assets"
+     sketch:type="MSPage"
+     transform="matrix(1,0,0,-1,-0.17162001,4.8313631)"
+     style="fill:#c2ef66;stroke:none;fill-opacity:1">
+    <g
+       id="Style"
+       sketch:type="MSArtboardGroup"
+       transform="translate(-20,-611)"
+       style="fill:#c2ef66;fill-opacity:1">
+      <g
+         id="Icon_Arrow"
+         sketch:type="MSLayerGroup"
+         transform="translate(20,611)"
+         style="fill:#c2ef66;fill-opacity:1">
+        <path
+           d="M 4.0043138,4.8283776 C 4.2582734,4.8278332 4.510799,4.7318417 4.7005858,4.5420549 L 7.5420549,1.7005858 C 7.9289777,1.313663 7.9287809,0.68614017 7.5355339,0.29289322 7.1450096,-0.09763107 6.5095395,-0.09532595 6.1278413,0.28637226 L 4,2.4142136 1.8721587,0.28637226 C 1.4852358,-0.10055061 0.85771305,-0.10035374 0.46446609,0.29289322 0.0739418,0.68341751 0.07624692,1.3188876 0.45794513,1.7005858 L 3.2994142,4.5420549 c 0.192395,0.1923949 0.4442786,0.289074 0.6972676,0.2893082 l 0.00763,-0.00299 z"
+           id="Arrow"
+           sketch:type="MSShapeGroup"
+           inkscape:connector-curvature="0"
+           style="fill:#c2ef66;fill-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>

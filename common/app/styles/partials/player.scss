@@ -6,7 +6,7 @@
   height: $playerHeight;
   background-color: $colorPlayer;
   z-index: 5;
-  color: #686868;
+  color: $colorPlayerText;
 
   .behind {
     position: absolute;
@@ -35,142 +35,161 @@
     height: $videoHeight;
     background-color: $colorPlayer;
     overflow: hidden;
-    padding-top: .5em;
-    .display {
+    padding: 1.5em 0;
+    border-bottom: .1em solid #173541;
+    .page-positioning {
       position: relative;
-      margin: auto;
-      height: 100%;
-      width: $videoHeight * (16/9);
-      .fullscreen-toggle:hover {
-        cursor: pointer;
+      .videoClose:hover {
         opacity: 1;
       }
-      .fullscreen-toggle.unvisible {
-        opacity: 0;
-      }
-      .fullscreen-toggle {
-        @include transition(opacity, .5s);
+      .videoClose {
         position: absolute;
-        bottom: .7em;
-        background-image: url(../images/svg/fullscreen.svg);
-        background-size: contain;
+        right: .5em;
+        width: 1.2em;
+        height: 1.2em;
         background-repeat: no-repeat;
-        width: 2em;
-        height: 1.7em;
-        right: .8em;
-        opacity: .7;
+        background-size: contain;
+        background-image: url(../images/svg/v3/Player_Cross_green.svg);
+        opacity: .8;
+        cursor: pointer;
       }
-      .video-target {
-        background-color: #000;
-      }
-      .fullscreen-controllers.unvisible {
-        opacity: 0;
-      }
-      .fullscreen-controllers {
-        @include transition(opacity, .5s);
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        padding: 1.3em .5em .5em .5em;
-        background-color: $colorPlayer;
-        > div {
-          float: left;
-        }
-        .duration {
-          margin: .4em .4em 0 1.3em;
-        }
-        .slider {
-          float: none;
-          overflow: hidden;
-          padding: 1em 1em .7em;
+      .display {
+        position: relative;
+        margin: auto;
+        height: 100%;
+        width: $videoHeight * (16/9);
+        max-width: 90%;
+        .fullscreen-toggle:hover {
+          cursor: pointer;
+          opacity: 1;
         }
         .fullscreen-toggle.unvisible {
-          opacity: .7;
+          opacity: 0;
         }
         .fullscreen-toggle {
-          position: relative;
-          float: right;
-          right: auto;
-          bottom: auto;
-          margin: .5em;
-        }
-        .previous:hover {
-          background-image: url(../images/svg/previous_hover.svg);
-        }
-        .previous {
-          cursor: pointer;
-          margin: 0 .8em 0 0;
-          width: 2.1em;
-          height: 2.1em;
-          background-image: url(../images/svg/previous.svg);
+          @include transition(opacity, .5s);
+          position: absolute;
+          bottom: .7em;
+          background-image: url(../images/svg/v3/Icon_Fullscreen.svg);
           background-size: contain;
           background-repeat: no-repeat;
+          width: 2em;
+          height: 1.7em;
+          right: .8em;
+          opacity: .7;
         }
-        .play:hover {
-          background-image: url(../images/svg/play_hover.svg);
+        .video-target {
+          background-color: #000;
         }
-        .play {
-          cursor: pointer;
-          width: 3em;
-          height: 3em;
-          margin-top: -.5em;
-          background-image: url(../images/svg/play.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
+        .fullscreen-controllers.unvisible {
+          opacity: 0;
         }
-        .play.pause {
-          background-image: url(../images/svg/pause.svg);
-        }
-        .play.pause:hover {
-          background-image: url(../images/svg/pause_hover.svg);
-        }
-        .next:hover {
-          background-image: url(../images/svg/next_hover.svg);
-        }
-        .next {
-          cursor: pointer;
-          margin: 0 0 0 .8em;
-          width: 2.1em;
-          height: 2.1em;
-          background-image: url(../images/svg/next.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-        .mute:hover {
-          opacity: 1;
-        }
-        .mute {
-          cursor: pointer;
-          float: right;
-          opacity: .6;
-          width: 1.3em;
-          height: 1.4em;
-          margin: .6em .6em 0 0;
-          background-image: url(../images/svg/mute.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-        .mute.active {
-          background-image: url(../images/svg/muted.svg);
-        }
-        .volume {
-          margin: 1em;
-          width: 5em;
-          float: right;
-        }
-        .videoToggle:hover {
-          opacity: 1;
-        }
-        .videoToggle {
-          cursor: pointer;
-          float: right;
-          width: 1.8em;
-          height: 1.35em;
-          margin: .2em .4em .2em 0;
-          opacity: .6;
-          background-image: url(../images/svg/video.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
+        .fullscreen-controllers {
+          @include transition(opacity, .5s);
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          padding: 1.3em .5em .5em .5em;
+          background-color: $colorPlayer;
+          > div {
+            float: left;
+          }
+          .duration {
+            margin: .4em .4em 0 1.3em;
+          }
+          .slider {
+            float: none;
+            overflow: hidden;
+            padding: 1em 1em .7em;
+          }
+          .fullscreen-toggle.unvisible {
+            opacity: .7;
+          }
+          .fullscreen-toggle {
+            position: relative;
+            float: right;
+            right: auto;
+            bottom: auto;
+            margin: .5em;
+          }
+          .previous:hover {
+            background-image: url(../images/svg/v3/Player_Prev_Hover.svg);
+          }
+          .previous {
+            cursor: pointer;
+            margin: 0 .8em 0 0;
+            width: 2.1em;
+            height: 2.1em;
+            background-image: url(../images/svg/v3/Player_Prev.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          .play:hover {
+            background-image: url(../images/svg/v3/Player_Play_Hover.svg);
+          }
+          .play {
+            cursor: pointer;
+            width: 3em;
+            height: 3em;
+            margin-top: -.5em;
+            background-image: url(../images/svg/v3/Player_Play.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          .play.pause {
+            background-image: url(../images/svg/v3/Icon_Pause.svg);
+          }
+          .play.pause:hover {
+            background-image: url(../images/svg/v3/Icon_Pause_Hover.svg);
+          }
+          .next:hover {
+            background-image: url(../images/svg/v3/Player_Next_Hover.svg);
+          }
+          .next {
+            cursor: pointer;
+            margin: 0 0 0 .8em;
+            width: 2.1em;
+            height: 2.1em;
+            background-image: url(../images/svg/v3/Player_Next.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          .mute:hover {
+            opacity: 1;
+          }
+          .mute {
+            cursor: pointer;
+            float: right;
+            opacity: .6;
+            width: 1.3em;
+            height: 1.4em;
+            margin: .6em .6em 0 0;
+            background-image: url(../images/svg/v3/Icon-No-Audio.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          .mute.active {
+            background-image: url(../images/svg/muted.svg);
+          }
+          .volume {
+            margin: 1em;
+            width: 5em;
+            float: right;
+          }
+          .videoToggle:hover {
+            opacity: 1;
+          }
+          .videoToggle {
+            cursor: pointer;
+            float: right;
+            width: 1.8em;
+            height: 1.35em;
+            margin: .2em .4em .2em 0;
+            opacity: .6;
+            background-image: url(../images/svg/video.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
         }
       }
     }
@@ -204,7 +223,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #fff;
       margin: 0;
     }
     div {
@@ -215,7 +233,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       margin-left: 4em;
-      color: #5c7082;
+      color: $colorPlayerTextSecondary;
     }
   }
   .options:hover {
@@ -229,12 +247,13 @@
     background-repeat: no-repeat;
     height: 1.9em;
     width: .7em;
-    margin: 1.5em 0 0 1.3em;
+    margin: 1.5em .5em 0 0;
     cursor: pointer;
   }
   .volumeControllers {
     width: 10em;
     float: right;
+    margin-right: 1.3em;
     .volume {
       margin-top: 3.2em;
     }
@@ -271,11 +290,25 @@
       background-image: url(../images/svg/v3/Icon_Audio.svg);
     }
   }
+  .videoOpen:hover {
+    opacity: 1;
+  }
+  .videoOpen {
+    position: absolute;
+    top: -1.2em;
+    right: .5em;
+    width: 1.2em;
+    height: 1.2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/svg/v3/Icon_Arrow_up.svg);
+    opacity: .8;
+    cursor: pointer;
+  }
   .mainControllers {
     padding: 1em 2em 1em 1em;
     overflow: hidden;
     font-weight: bold;
-    color: #fff;
     .current {
       float: left;
       margin-top: .2em;
@@ -429,13 +462,14 @@
 
 }
 
+/*
 @media screen and (min-width: $maxWidth) {
   [player] .controllers .main {
     .scroller {
       display: none;
     }
   }
-}
+}*/
 
 @media screen and (max-width: $maxWidth) {
   [player] .about {
@@ -444,25 +478,14 @@
 }
 
 @media screen and (max-width: $mobileWidth) {
-  [player] .controllers .main {
-    .scroller span {
-      @include marquee(12s);
-      padding-left: 100%;
-    }
-    .mute, .volume {
+  [player] {
+    .shuffle,
+    .repeat,
+    .volumeControllers {
       display: none;
     }
-    .previous, .repeat {
-      margin-right: .2em;
-    }
-    .repeat {
-      margin-right: .3em;
-    }
-    .next, .shuffle {
-      margin-left: .3em;
-    }
-    .download {
-      margin-right: 0;
+    .mainControllers {
+      padding: 1em;
     }
   }
 }
