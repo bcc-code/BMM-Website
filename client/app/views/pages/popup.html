@@ -1,0 +1,21 @@
+<!--PLAYLIST-->
+<div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
+    <div class="verticalCenter">
+        <div class="container">
+
+        <div class="exit" ng-click="trackToPlaylist.id=false"></div>
+
+        <b>{{translation.options.choosePlaylist}}</b>
+        <br><br>
+
+        <ul class="playlist">
+            <li ng-repeat="collection in user.track_collections"
+                ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
+                          trackToPlaylist.id=false;">
+                {{collection.name}}
+            </li>
+        </ul>
+
+        </div>
+    </div>
+</div>
