@@ -1,4 +1,4 @@
-@mixin marquee($speed: 7s) {
+@mixin marquee($speed: 10s) {
   $animation: marquee $speed linear infinite;
   -webkit-animation: $animation;
   -moz-animation: $animation;

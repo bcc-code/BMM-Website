@@ -77,17 +77,19 @@
 }
 
 .bmm-latest-bullet {
-  padding: .8em 0;
-  width: 1.9em;
+  background-image: url(../images/svg/v3/Icon_Shape.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: .2em 0;
+  margin-right: .6em;
+  width: 1.7em;
+  height: 4em;
   text-align: center;
-  background: #C0C0C0;
   float: left;
-  color: #FFF;
-  font-weight: 700;
-  font-size: 1.3em;
 }
 
 .bmm-latest-thumbnail {
+  display: none;
   width: 2.5em;
   height: 2.5em;
   margin: .5em .4em .5em .7em;
@@ -117,14 +119,6 @@
 .bmm-interpret:hover {
   cursor: pointer;
   background: #EDECEC;
-}
-
-//Welcome page
-h2.speech, h2.video, h2.audio, h2.album {
-  background-size: contain;
-  padding: .6em 0 0 2.2em;
-  margin: 1.2em 0 .4em;
-  background-repeat: no-repeat;
 }
 
 //Playlist

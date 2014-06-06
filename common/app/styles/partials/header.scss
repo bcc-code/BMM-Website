@@ -1,6 +1,7 @@
 header, .sub-header {
   width: 100%;
-  background-color: $colorMain;
+  background-color: #fff;//$colorMain;
+  border-bottom: .1em solid $colorBorders;
   z-index: 4;
 }
 
@@ -153,8 +154,7 @@ header {
 .menu li a {
   @include bmm-transition(all, .2s);
   padding: .3em .8em;
-  color: $colorForeground;
-  font-weight: bold;
+  color: #000;//$colorForeground;
   border-radius: .2em;
 }
 

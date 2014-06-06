@@ -11,8 +11,8 @@
   .behind {
     position: absolute;
     top: 0;
-    left: 0;
-    background-color: #1F9C62;
+    right: 0;
+    background-color: $colorPlayerElements;
     width: 0;
     height:100%;
   }
@@ -39,6 +39,7 @@
     border-bottom: .1em solid #173541;
     .page-positioning {
       position: relative;
+      height: 100%;
       .videoClose:hover {
         opacity: 1;
       }
@@ -78,9 +79,6 @@
           right: .8em;
           opacity: .7;
         }
-        .video-target {
-          background-color: #000;
-        }
         .fullscreen-controllers.unvisible {
           opacity: 0;
         }
@@ -89,7 +87,7 @@
           position: absolute;
           width: 100%;
           bottom: 0;
-          padding: 1.3em .5em .5em .5em;
+          padding: .5em .5em 0;
           background-color: $colorPlayer;
           > div {
             float: left;
@@ -117,9 +115,9 @@
           }
           .previous {
             cursor: pointer;
-            margin: 0 .8em 0 0;
-            width: 2.1em;
-            height: 2.1em;
+            margin: .6em .8em 0 0;
+            width: 1.6em;
+            height: 1em;
             background-image: url(../images/svg/v3/Player_Prev.svg);
             background-size: contain;
             background-repeat: no-repeat;
@@ -129,9 +127,9 @@
           }
           .play {
             cursor: pointer;
-            width: 3em;
-            height: 3em;
-            margin-top: -.5em;
+            width: 1.5em;
+            height: 1.5em;
+            margin-top: .3em;
             background-image: url(../images/svg/v3/Player_Play.svg);
             background-size: contain;
             background-repeat: no-repeat;
@@ -147,9 +145,9 @@
           }
           .next {
             cursor: pointer;
-            margin: 0 0 0 .8em;
-            width: 2.1em;
-            height: 2.1em;
+            margin: .6em 0 0 .8em;
+            width: 1.6em;
+            height: 1em;
             background-image: url(../images/svg/v3/Player_Next.svg);
             background-size: contain;
             background-repeat: no-repeat;
@@ -206,7 +204,7 @@
     min-width: 18em;
     width: 18em;
     float: left;
-    margin: .6em;
+    margin: .6em .6em .6em 1em;
     img {
       width: auto;
       min-width: 3.8em;
@@ -236,19 +234,97 @@
       color: $colorPlayerTextSecondary;
     }
   }
-  .options:hover {
-    background-image: url(../images/svg/v3/Player_Options_Hover.svg);
-  }
   .options {
+    position: relative;
     float: right;
     width: 2em;
-    background-image: url(../images/svg/v3/Player_Options.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
     height: 1.9em;
     width: .7em;
-    margin: 1.5em .5em 0 0;
-    cursor: pointer;
+    margin: 1.5em 1em 0 0;
+    background: none;
+    text-align: left;
+    .optionsToggl {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/svg/v3/Player_Options.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .optionsToggl:hover {
+      background-image: url(../images/svg/v3/Player_Options_Hover.svg);
+    }
+    .arrow {
+      position: absolute;
+      width: .5em;
+      height: .5em;
+      background: #FFF;
+      bottom: 100%;
+      margin-bottom: .25em;
+      right: .15em;
+      -webkit-transform: rotate(45deg);
+      -ms-transform:rotate(45deg);
+      transform:rotate(45deg);
+      border-radius: .2em;
+      z-index: 1;
+    }
+    ul {
+      background: $colorPopup;
+      bottom: 100%;
+      margin-bottom: .5em;
+      right: -.5em;
+      position: absolute;
+      border: .1em solid $colorBorders;
+      border-radius: .3em;
+      color: #000;
+      li {
+        cursor: pointer;
+        height: 2.3em;
+        padding: .5em 0;
+        border-bottom: .1em solid $colorBorders;
+        white-space: nowrap;
+        a {
+          width: 100%;
+          height: 100%;
+          color: #000;
+          display: inline-block;
+        }
+        .icon {
+          display: inline-block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          height: 1.4em;
+          width: 1.5em;
+          margin: 0 .2em 0 .6em
+        }
+        .icon.playlist { background-image: url('../images/svg/v3/Icon_Options-Playlist.svg'); }
+        .icon.download { background-image: url('../images/svg/v3/Icon_Options-Download.svg'); }
+        .icon.album { background-image: url('../images/svg/v3/Icon_Options-Album.svg'); }
+        .icon.pocast { background-image: url('../images/svg/v3/Icon_Options-Podcast.svg'); }
+        .icon.settings { background-image: url('../images/svg/v3/Icon_Options-Settings.svg'); }
+        span {
+          font-size: .9em;
+          bottom: .4em;
+          position: relative;
+          margin-right: .8em;
+        }
+      }
+      li:hover {
+        background-color: $colorPopupHover;
+      }
+      li:first-child {
+        border-top-left-radius: .3em;
+        border-top-right-radius: .3em;
+      }
+      li:last-child {
+        border-bottom-left-radius: .3em;
+        border-bottom-right-radius: .3em;
+        border-bottom: none;
+      }
+    }
   }
   .volumeControllers {
     width: 10em;
@@ -295,10 +371,10 @@
   }
   .videoOpen {
     position: absolute;
-    top: -1.2em;
-    right: .5em;
-    width: 1.2em;
-    height: 1.2em;
+    top: -1.4em;
+    right: .65em;
+    width: 1.5em;
+    height: 1.5em;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(../images/svg/v3/Icon_Arrow_up.svg);
@@ -309,6 +385,7 @@
     padding: 1em 2em 1em 1em;
     overflow: hidden;
     font-weight: bold;
+    white-space: nowrap;
     .current {
       float: left;
       margin-top: .2em;
@@ -406,78 +483,57 @@
       }
     }
   }
-  .controllers {
-    .main {
-      padding: 0 .5em .5em .5em;
+  .scroller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .4em;
+    z-index: -1;
+    span {
       display: inline-block;
-      .buttons > div {
-        float: left;
-      }
-      .download:hover {
-        opacity: 1;
-      }
-      .download {
-        cursor: pointer;
-        float: right;
-        width: 1.8em;
-        height: 1.35em;
-        margin: .2em .4em .2em 0;
-        opacity: .6;
-        background-image: url(../images/svg/v3/Icon_Options-Download.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-      /*
-      .videoToggle:hover {
-        opacity: 1;
-      }
-      .videoToggle {
-        cursor: pointer;
-        float: right;
-        width: 1.8em;
-        height: 1.35em;
-        margin: .2em .4em .2em 0;
-        opacity: .6;
-        background-image: url(../images/svg/v3/Icon_Video.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-      */
-      .scroller {
-        float: none;
-        overflow: hidden;
-        padding: .4em .5em 0;
-        span:hover {
-          @include marquee();
-          padding-left: 100%;
-        }
-        span {
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-        }
-      }
+      overflow: hidden;
+      white-space: nowrap;
+      @include marquee();
+      padding-left: 100%;
     }
   }
 
 }
 
-/*
-@media screen and (min-width: $maxWidth) {
-  [player] .controllers .main {
+
+@media screen and (min-width: $mobileWidth) {
+  [player] {
     .scroller {
       display: none;
     }
   }
-}*/
-
-@media screen and (max-width: $maxWidth) {
-  [player] .about {
-    display: none;
-  }
 }
 
 @media screen and (max-width: $mobileWidth) {
+  [player] .scroller {
+    padding: 0;
+  }
+  [player] .about {
+    display: none;
+  }
+  [player] .mainControllers {
+    padding-top: 1.7em !important;
+  }
+  [player] .options {
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: $maxWidth) {
+  [player] .about {
+    min-width: 10em;
+    width: 10em;
+    div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
   [player] {
     .shuffle,
     .repeat,
@@ -486,6 +542,7 @@
     }
     .mainControllers {
       padding: 1em;
+      min-width: 17em;
     }
   }
 }

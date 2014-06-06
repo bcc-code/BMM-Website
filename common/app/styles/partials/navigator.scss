@@ -2,7 +2,7 @@
   position: absolute;
   margin-top: $headerHeight;
   width: $navigationWidth;
-  color: $colorForeground;
+  //color: $colorForeground;
   overflow: auto;
   z-index: 4;
 
@@ -49,22 +49,21 @@
   padding: 0;
   list-style-type: none;
   a, span {
-    color: $colorForeground;
+    color: #000;//$colorForeground;
     cursor: pointer;
   }
   li {
     @include bmm-transition(all, .2s);
+    font-size: .9em;
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
-    background-size: 1.6em 1.2em;
-    background-position: 0 .7em;
+    background-size: 1.7em 1.7em;
+    background-position: 0 .45em;
     background-repeat: no-repeat;
-    padding: .5em 0 .5em 1.8em;
+    padding: .5em 0 .5em 2.3em;
     margin: 0 .5em;
-    list-style-type: none;
-    border-radius: .2em;
   }
   li:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -75,6 +74,7 @@
   text-align: left;
   span {
     @include bmm-transition(all, .2s);
+    font-size: .9em;
     background-image: url(../images/svg/v3/Icon_Playlist_Plus.svg);
     background-size: 1.4em 1.3em;
     background-position: .25em .35em;
@@ -84,10 +84,10 @@
     padding: .5em 0 .5em 1.8em;
     border-radius: .2em;
     cursor: pointer;
-    color: $colorForeground;
+    color: #000;//$colorForeground;
   }
   span:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -96,19 +96,18 @@
   padding: 0;
   list-style-type: none;
   a {
-    color: $colorForeground;
+    color: #000;//$colorForeground;
   }
   li {
     @include bmm-transition(all, .2s);
+    font-size: .9em;
     position: relative;
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
-    background-size: 1.25em .9em;
-    background-position: .29em .8em;
+    background-size: 1.7em 1.7em;
+    background-position: 0 .45em;
     background-repeat: no-repeat;
-    padding: .5em 0 .5em 1.8em;
+    padding: .5em 0 .5em 2.3em;
     margin: 0 .5em;
-    list-style-type: none;
-    border-radius: .2em;
     .edit {
       @include bmm-transition(opacity, .2s);
       position: absolute;
@@ -169,7 +168,7 @@
     }
   }
   li:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     .edit, .trash {
       opacity: 1;
     }
@@ -187,7 +186,8 @@
   top: 0;
   bottom: $playerHeight;
   width: $navigationWidth;
-  background-color: $colorBackground;
+  //background-color: $colorBackground;
+  border-right: .1em solid $colorBorders;
   z-index: 3;
 
   @include bmm-transition();

@@ -21,7 +21,10 @@ h1, h2, h3 {
 }
 
 h2 {
-  color: $colorMain;
+  color: #000;//$colorMain;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 
 ul, li {
@@ -75,32 +78,18 @@ tr {
 
 .ui-slider-horizontal {
   height: .2em;
-  background: $colorPlayerElements;
+  //background: $colorPlayerElements;
+  //OBS! webkit is inverse from the other ones
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
+  background-image: -moz-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
+  background-image: -o-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #2DAD54), color-stop(1, #D7EF3C));
+  background-image: -webkit-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
+  background-image: linear-gradient(to right, #2DAD54 0%, #D7EF3C 100%);
   border: none;
 }
 
 .ui-resizable-n {
   height: 15px;
-}
-
-//Chrome & safari scroll-bars
-::-webkit-scrollbar {
-  width: .5em;
-  height: .5em;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #cfcfcf;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #769989;
-}
-
-::-webkit-scrollbar-button {
-  display: none;
-}
-
-::-webkit-scrollbar-corner {
-  background-color: #E7E7E7;
 }

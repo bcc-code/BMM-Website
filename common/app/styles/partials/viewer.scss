@@ -19,7 +19,6 @@
   h2 {
     display: inline-block;
     width: 100%;
-    margin-bottom: 0;
     float: none;
   }
 }
@@ -30,7 +29,7 @@
   bottom: $playerHeight;
   width: 100%;
   max-width: $pageWidth;
-  background-color: $colorForeground;
+  //background-color: $colorForeground;
   z-index: 0;
 }
 
