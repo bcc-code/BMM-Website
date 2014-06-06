@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('UsersCtrl', function ($scope, $timeout, bmmApi) {
+  .controller('UsersCtrl', function ($scope, $timeout, bmmApi, init) {
 
     $scope.status = init.translation.states.loadingUsers;
 
