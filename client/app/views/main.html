@@ -13,17 +13,6 @@
     <header>
         <div class="page-positioning">
             <a ng-href="#" class="logo"></a> - Demo 2.1
-            <div class="dropdown">
-                <a class="dropdown-toggle">
-                    <div class="flags-{{mediaLanguage}}"></div>
-                    {{mediaLanguage | bmmLanguage}}</a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="lang in root.languages">
-                        <a class="flags-{{lang}}"
-                           ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
-                    </li>
-                </ul>
-            </div>
             <div class="search">
                 <form ng-submit="go('/search/'+bmm.term);">
                     <input ng-model="bmm.term"

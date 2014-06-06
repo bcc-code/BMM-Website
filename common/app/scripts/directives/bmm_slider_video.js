@@ -190,10 +190,10 @@ angular.module('bmmLibApp')
 
           element.height(element.width()/2.8);
           btnLeft.css({
-            top: (element.height()/2)-(btnLeft.height()/1.3)
+            top: (element.height()/2)-(btnLeft.height())
           });
           btnRight.css({
-            top: (element.height()/2)-(btnRight.height()/1.3)
+            top: (element.height()/2)-(btnRight.height())
           });
           
         });
@@ -202,10 +202,10 @@ angular.module('bmmLibApp')
 
           element.height(element.width()/2.8);
           btnLeft.css({
-            top: (element.height()/2)-(btnLeft.height()/1.3)
+            top: (element.height()/2)-(btnLeft.height())
           });
           btnRight.css({
-            top: (element.height()/2)-(btnRight.height()/1.3)
+            top: (element.height()/2)-(btnRight.height())
           });
 
         });

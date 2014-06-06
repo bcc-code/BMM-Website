@@ -105,7 +105,7 @@ $animation-video-type: ease;
         width: 100%;
         height: 100%;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         border-radius: .3em;
         .bmm-slider-video-play {
@@ -140,14 +140,13 @@ $animation-video-type: ease;
     > div.middle {
       display: block;
       > p {
-        position: relative;
-        top: 65%;
-        margin: auto;
+        position: absolute;
+        text-shadow: 0em 0em .1em #000;
+        border-top-left-radius: .3em;
         visibility: visible;
-        background-color: #1D74D3;
+        background-color: rgba(0, 0, 0, 0.52);
         color: white;
-        padding: .4em .7em .2em .7em;
-        text-decoration:underline;
+        padding: .1em .5em;
         display: table;
         a {
           color: white;

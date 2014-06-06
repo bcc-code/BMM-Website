@@ -19,3 +19,29 @@
         </div>
     </div>
 </div>
+
+<!--SETTINGS-->
+<div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
+    <div class="verticalCenter">
+        <div class="container">
+
+            <div class="exit" ng-click="trackToPlaylist.id=false"></div>
+
+            <b>{{translation.general.settings}}</b>
+            <br><br>
+
+            <div class="dropdown">
+                <a class="dropdown-toggle">
+                    <div class="flags-{{mediaLanguage}}"></div>
+                    {{mediaLanguage | bmmLanguage}}</a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="lang in root.languages">
+                        <a class="flags-{{lang}}"
+                           ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

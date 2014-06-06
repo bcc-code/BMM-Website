@@ -1,81 +1,121 @@
 {
-  "language":"Norsk",
-  "iso-639-1":"nb",
+  "language":"English",
   "general":{
-    "search":"Søk..."
+    "search":"Search...",
+    "loading": "Loading...",
+    "waysOfTheLord": "Ways of the Lord",
+    "almondBlossom": "Almond Blossom",
+    "noTitle": "No title",
+    "settings": "Settings",
+    "Feedback": "Feedback",
+    "Suport": "Suport",
+    "readMore": "Read more"
+  },
+  "options":{
+    "addToPlaylist": "Add to playlist",
+    "download": "Download",
+    "downloadAudio": "Download audio",
+    "downloadVideo": "Download video",
+    "goToAlbum": "Go to album",
+    "podcast": "Podcast",
+    "changeLanguage": "Change language",
+    "goBack": "Go back",
+    "addToFavorites": "Add to favorites",
+    "moreInfo": "More info",
+    "choosePlaylist": "Choose playlist",
+    "setupPodcast": "To set up the podcast you have to copy the link below and paste it into your prefered podcast software.",
+    "chooseLanguage": "Choose language",
+    "includeLatest": "Include the latest",
+    "website language": "Website language",
+    "Content language": "Content language",
+    "tracks": "tracks",
+    "copyUrl": "Copy URL"
   },
   "menu":{
     "main":{
-      "music":"Musikk",
-      "speeches":"Taler",
-      "video":"Video",
-      "archive":"Arkiv",
-      "audiobooks":"Lydbøker"
+      "music":"Music",
+      "speeches":"Messages",
+      "video":"Videos",
+      "archive":"Archive",
+      "audiobooks":"Audiobooks"
     },
     "secondary":{
-      "playlists":"Spillelister",
-      "latestTracks":"Nye spor",
-      "lastPlayed":"Sist spillte",
-      "mostPlayed":"Mest spillte",
-      "favorites":"Favoritter",
-      "current":"Spilles nå",
-      "newPlaylist":"Ny spilleliste",
-      "nameOnPlaylist":"Navn på spilleliste"
+      "playlists":"Playlists",
+      "latestTracks":"New tracks",
+      "lastPlayed":"Last played",
+      "mostPlayed":"Most played",
+      "favorites":"Favorites",
+      "current":"Current",
+      "newPlaylist":"New playlist",
+      "nameOnPlaylist":"Playlist title"
     }
   },
   "page":{
     "welcome":{
-      "latestSpeeches":"Siste Taler",
-      "latestVideos":"Siste Videoer",
-      "latestMusic":"Siste Musikk",
-      "latestAlbums":"Siste Album"
+      "latestSpeeches":"Latest Messages",
+      "latestVideos":"Latest Videos",
+      "latestMusic":"Latest Music",
+      "latestAlbums":"Latest Albums"
     },
     "music":{
-      "latestMusic":"Siste Musikk",
-      "artists":"Artister",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Barnas MP3-Kilden",
+      "latestMusic":"Latest Music",
+      "artists":"Artists",
+      "mp3Source":"MP3-Source",
+      "childrensMp3Source":"Childs MP3-Source",
       "instrumental":"Instrumental"
     },
     "speeches":{
-      "latestSpeeches":"Siste Taler",
-      "recommended":"Anbefalt"
+      "latestSpeeches":"Latest Messages",
+      "recommended":"Recommended"
     },
     "videos":{
-      "latestVideos":"Siste Videoer"
+      "latestVideos":"Latest Videos"
     },
     "archive":{
-      "archive":"Arkiv"
+      "archive":"Archive"
     },
     "audiobooks":{
-      "latestAudiobooks":"Siste Lydbøker"
+      "latestAudiobooks":"Latest Audiobooks"
     },
     "search":{
-      "searchResults":"Søkeresultater"
+      "searchResults":"Search Results",
+      "content": "Content",
+      "bibleVerse": "Bible verse",
+      "album": "Album",
+      "artist": "Artist",
+      "lyricist": "Lyricist",
+      "composer": "Composer",
+      "contributor": "Contributor",
+      "interprets": "Interprets"
     }
   },
   "track":{
-    "duration":"Varighet",
-    "unknown":"Ukjent",
-    "dragMeToPlaylist":"Dra meg til spilleliste"
+    "duration":"Duration",
+    "unknown":"Unknown",
+    "dragMeToPlaylist":"Drag me to playlist",
+    "exegesis": "Exegesis"
   },
   "album":{
-    "tracks":"Spor",
-    "childAlbums":"Tilhørende Album",
-    "relatedAlbums":"Lignende Album"
+    "tracks":"Track(s)",
+    "childAlbums":"Child Albums",
+    "relatedAlbums":"Related Albumes"
   },
   "playlist":{
-    "content":"Innhold",
-    "tracks":"Spor",
-    "totalDuration":"Samlet varighet",
-    "duration":"Varighet",
+    "content":"Content",
+    "tracks":"Track(s)",
+    "totalDuration":"Total Duration",
+    "duration":"Duration",
     "nr":"Nr.",
-    "title":"Tittel",
-    "addToItunes":"Legg til i iTunes",
-    "copyPodcastLink":"Kopier podcast link",
-    "language": "Språk",
-    "allLanguages": "Alle språk",
-    "feedSize": "Feed størrelse"
+    "title":"Title",
+    "addToItunes":"Add to iTunes",
+    "copyPodcastLink":"Copy podcast link",
+    "language": "Language",
+    "allLanguages": "All languages",
+    "feedSize": "Feed size",
+    "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
+    "latestTracks": "Latest tracks",
+    "instrumental": "Instrumental"
   },
-  "copyright":"© Copyright Stiftelsen Skjulte Skatters Forlag"
+  "copyright":"Copyright",
+  "copyrightBy": "Stiftelsen Skjulte Skatters Forlag"
 }
