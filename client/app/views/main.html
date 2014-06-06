@@ -12,7 +12,7 @@
     <!--HEADER - MUST DUBLICATE IN NAVIGATOR > SUB-HEADER -->
     <header>
         <div class="page-positioning">
-            <a ng-href="#" class="logo"></a>
+            <a ng-href="#" class="logo"></a> - Demo 2.1
             <div class="dropdown">
                 <a class="dropdown-toggle">
                     <div class="flags-{{mediaLanguage}}"></div>
@@ -76,16 +76,59 @@
                  ng-click="player.showVideo=true"
                  ng-show="player.video&&!player.showVideo"></div>
 
+            <div class="scroller">
+                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | bmmLanguage}} </span>
+            </div>
+
             <div class="about">
                 <img ng-src="{{player.cover | bmmCover:'song'}}"/>
                 <h3>{{player.title}}</h3>
                 <div>{{player.subtitle}}</div>
-                <div>{{player.extraTitle | bmmLanguage}}</div>
+                <div>{{player.language | bmmLanguage}}</div>
             </div>
 
-            <div class="options">
+            <button class="options"
+                    ng-init="flags=false"
+                    ng-model="playerOptions"
+                    ng-blur="playerOptions=false">
 
-            </div>
+                <div class="optionsToggl" ng-click="playerOptions=!playerOptions; flags=false"></div>
+
+                <div class="arrow" ng-show="playerOptions"></div>
+
+                <ul ng-show="playerOptions&&!flags">
+                    <li ng-click="trackToPlaylist.id=player.id; trackToPlaylist.language=player.language">
+                        <div class="icon playlist"></div>
+                        <span>{{translation.options.addToPlaylist}}</span>
+                    </li>
+                    <li ng-hide="ios">
+                        <a download ng-href="{{player.source}}?download=1">
+                            <div class="icon download"></div>
+                            <span>{{translation.options.download}}</span>
+                        </a>
+                    </li>
+                    <li ng-click="go('/album/'+player.raw._meta.parent.id)">
+                        <div class="icon album"></div>
+                        <span>{{translation.options.goToAlbum}}</span></li>
+                    <li ng-click="flags=!flags">
+                        <div class="icon settings"></div>
+                        <span>{{translation.options.changeLanguage}}</span>
+                    </li>
+                </ul>
+
+                <ul ng-show="playerOptions&&flags">
+                    <li ng-repeat="language in player.raw.languages" ng-click="player.changeLanguage(language)">
+                    <div class="flags-{{language}}"
+                             style="width: 2em; height: 1.5em; margin-left: .6em; display: inline-block;">
+                    </div>
+                        <span>{{language | bmmLanguage}}</span>
+                    </li>
+                    <li ng-click="flags=!flags"><div class="icon settings"></div>
+                        <span>{{translation.options.goBack}}</span>
+                    </li>
+                </ul>
+
+            </button>
 
             <div class="volumeControllers">
 
@@ -145,7 +188,7 @@
 
             <!--SUB-HEADER-->
             <div class="sub-header" ng-class="{'visible': fixed}">
-                <a ng-href="#" class="logo"></a>
+                <a ng-href="#" class="logo"></a> - Demo 2.1
                 <div class="dropdown">
                     <a class="dropdown-toggle">
                         <div class="flags-{{mediaLanguage}}"></div>
@@ -229,6 +272,8 @@
         <div class="background" ng-class="{'visible': visible}"></div>
         <div class="foreground"></div>
     </div>
+
+    <div ng-include="'views/pages/popup.html'"></div>
 
     <!--BACKGROUND-->
     <div class="background-left"></div>

@@ -35,11 +35,11 @@ angular.module('bmmLibApp')
             $(this).append('<div class="behind"></div>');
           },
           slide: function(e, ui) {
-            trackSlider.find('.behind').css({ width: ui.value+'%' });
+            trackSlider.find('.behind').css({ width: (100-ui.value)+'%' });
             scope.player.setCurrentTime(ui.value);
           },
           change: function(e, ui) {
-            trackSlider.find('.behind').css({ width: ui.value+'%' });
+            trackSlider.find('.behind').css({ width: (100-ui.value)+'%' });
           }
         });
 
@@ -66,11 +66,11 @@ angular.module('bmmLibApp')
             $(this).append('<div class="behind"></div>');
           },
           slide: function(e, ui) {
-            volumeSlider.find('.behind').css({ width: ui.value+'%' });
+            volumeSlider.find('.behind').css({ width: (100-ui.value)+'%' });
             scope.player.setVolume((ui.value/100));
           },
           change: function(e, ui) {
-            volumeSlider.find('.behind').css({ width: ui.value+'%' });
+            volumeSlider.find('.behind').css({ width: (100-ui.value)+'%' });
           }
         });
 
@@ -84,16 +84,7 @@ angular.module('bmmLibApp')
         //Resizeable display
         element.find('.videoscreen').resizable({
           handles: 'n',
-          create: function() {
-            $(this).css('top','auto');
-            $(this).find('.display').width($(this).height()*(16/9));
-            $('[navigator]').css({
-              marginBottom: $(this).outerHeight()
-            });
-            $('[ng-view]').css({
-              marginBottom: element.outerHeight()+$(this).outerHeight()
-            });
-          },
+          minHeight: 100,
           resize: function() {
             $(this).css('top','auto');
             $(this).find('.display').width($(this).height()*(16/9));
@@ -110,6 +101,8 @@ angular.module('bmmLibApp')
         scope.$watch('player.showVideo', function(on) {
           if (on) {
             $timeout(function() {
+              element.find('.videoscreen').css('top','auto');
+              element.find('.display').width(element.find('.videoscreen').height()*(16/9));
               $('[navigator]').css({
                 marginBottom: element.find('.videoscreen').outerHeight()
               });
@@ -131,15 +124,18 @@ angular.module('bmmLibApp')
         var timer = $timeout(function() {
           element.find('.fullscreen-toggle').addClass('unvisible');
           element.find('.fullscreen-controllers').addClass('unvisible');
+          $('body').css('cursor', 'none');
         },4000);
 
         $(window).on('mousemove click', function() {
           element.find('.fullscreen-toggle').removeClass('unvisible');
           element.find('.fullscreen-controllers').removeClass('unvisible');
+          $('body').css('cursor', 'auto');
           $timeout.cancel( timer );
           timer = $timeout(function() {
             element.find('.fullscreen-toggle').addClass('unvisible');
             element.find('.fullscreen-controllers').addClass('unvisible');
+            $('body').css('cursor', 'none');
           },4000);
         });
         element.find('.fullscreen-toggle').click(function() {

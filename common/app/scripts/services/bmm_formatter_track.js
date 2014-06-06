@@ -241,9 +241,11 @@ angular.module('bmmLibApp')
 
       }
 
+      resolvedData.raw = data;
+
       /**
        * Returns: file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
-       *          combinedTitle, parentRootTitle, albumTitle
+       *          combinedTitle, parentRootTitle, albumTitle, raw
        */
 
       return resolvedData;

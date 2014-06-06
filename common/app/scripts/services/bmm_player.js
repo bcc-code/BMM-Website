@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlayer', ['bmmPlaylist', '$timeout', '$rootScope', function (bmmPlaylist, $timeout, $rootScope) {
+  .factory('bmmPlayer', ['bmmPlaylist', '$timeout', '$rootScope', '$filter', 'bmmApi', 'bmmFormatterTrack',
+    function (bmmPlaylist, $timeout, $rootScope, $filter, bmmApi, bmmFormatterTrack) {
   
   var factory = {},
       videoTarget,
@@ -15,6 +16,7 @@ angular.module('bmmLibApp')
   factory.title = '';
   factory.subtitle = '';
   factory.extraTitle = '';
+  factory.raw = {};
   factory.id = -1;
   factory.fullscreen = false;
   factory.showVideo = false;
@@ -155,9 +157,10 @@ angular.module('bmmLibApp')
     factory.cover = track.cover;
     factory.title = track.title;
     factory.subtitle = track.subtitle;
-    factory.extraTitle = track.extra;
+    factory.language = track.language;
     factory.id = track.id;
     factory.source = source.url;
+    factory.raw = track.raw;
 
     if (source.video) {
       $(videoTarget).jPlayer('setMedia', {
@@ -182,6 +185,52 @@ angular.module('bmmLibApp')
 
     factory.trackSwitched = !factory.trackSwitched;
 
+  };
+
+  factory.changeLanguage = function(lang) {
+
+    if (factory.playing) {
+      $(videoTarget).jPlayer('pause');
+    };
+
+    bmmApi.trackGet(factory.id, lang).done(function(track) {
+
+      track = bmmFormatterTrack.resolve(track);
+
+      var video = false;
+      if (this.type==='video') {
+        video = true;
+      }
+
+      var title = track.title;
+      var performers = track.performers;
+      if (track.subtype==='speech') {
+        title = track.performers;
+        performers = track.title;
+      }
+
+      var newTrack = {
+        id: track.id,
+        title: title,
+        subtitle: performers,
+        language: track.language,
+        cover: $filter('bmmCover')(track.cover,track.subtype),
+        url: track.file,
+        duration: track.duration,
+        video: video,
+        raw: track.raw
+      };
+
+      $rootScope.$apply(function(){
+        bmmPlaylist.updateCurrent(newTrack);
+        factory.setSource(newTrack);
+      });
+
+      if (factory.playing) {
+        $(videoTarget).jPlayer('play');
+      };
+
+    });
   };
 
   factory.setCurrentTime = function(value) {

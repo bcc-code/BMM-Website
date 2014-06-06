@@ -92,6 +92,14 @@ angular.module('bmmLibApp')
       }
     };
 
+    factory.updateCurrent = function(track) {
+      if (tracks.length) {
+        tracks[factory.index] = track;
+      } else {
+        return false;
+      }
+    };
+
     factory.getNext = function() {
 
       if (factory.shuffle) {

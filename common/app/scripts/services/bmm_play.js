@@ -33,11 +33,12 @@ angular.module('bmmLibApp')
           id: this.id,
           title: title,
           subtitle: performers,
-          extra: this.language,
+          language: this.language,
           cover: $filter('bmmCover')(this.cover,this.subtype),
           url: this.file,
           duration: this.duration,
-          video: video
+          video: video,
+          raw: this.raw
         });
 
       });

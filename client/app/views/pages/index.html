@@ -44,7 +44,6 @@
 	<div class="bmm-videos">
 		<div title="{{video.combinedTitle}}" ng-repeat="video in latestVideos">
 			<div ng-click="play(latestVideos, $index);"
-				 class="bmm-hover"
 				 style="background-image: url({{video.cover | bmmCover:'video'}});"
 			>
 				<div class="bmm-slider-video-play"></div>

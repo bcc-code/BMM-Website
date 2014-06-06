@@ -44,6 +44,12 @@ angular.module('bmmApp')
         bmmPlay.setPlay(playlist, index);
       };
 
+      $scope.addToPlaylist = function(playlistId, trackId, language) {
+        bmmApi.userTrackCollectionLink(playlistId, [
+          trackId
+        ], language);
+      };
+
       $scope.addPLaylist = function(newPlaylist) {
 
         bmmApi.userTrackCollectionPost({
