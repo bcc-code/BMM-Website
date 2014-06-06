@@ -59,7 +59,7 @@ angular.module('bmmLibApp')
 
             bmmApi.userTrackCollectionLink($(this).attr('id'), [
               ui.draggable.attr('id')
-            ]);
+            ], ui.draggable.attr('language'));
 
           }
         });
