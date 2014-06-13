@@ -2,7 +2,8 @@
   "language": "English",
   "general": {
     "search": "Search...",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "noTitle": "No title"
   },
   "menu": {
     "main": {
@@ -75,7 +76,7 @@
       "imageAllowed": "jpeg, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Composers",
-      "interprets": "Artists and/or Speakers",
+      "interprets": "Artists and/or Speechers",
       "lyricists": "Lyricists",
       "songbooks": "Songbooks",
       "bibleReferences": "Bible references",
@@ -145,6 +146,12 @@
     "confirmTrackDeletion": "Are you sure you want to delete track with all its content?",
     "confirmTranslatedDeletion": "Language has content, confirm deletion",
     "confirmContributorDeletion": "ARE YOU REALLY SURE YOU WANT TO DELETE THIS CONTRIBUTOR? ALL LINKED TRACKS WILL BE DELETED!"
+  },
+  "track":{
+    "duration":"Duration",
+    "unknown":"Unknown",
+    "dragMeToPlaylist":"Drag me to playlist",
+    "exegesis": "Exegesis"
   },
 
   "copyright": "© Copyright Stiftelsen Skjulte Skatters Forlag"

@@ -29,7 +29,10 @@
     "website language": "Website language",
     "Content language": "Content language",
     "tracks": "tracks",
-    "copyUrl": "Copy URL"
+    "copyUrl": "Copy URL",
+    "delete": "Delete",
+    "remove": "Remove",
+    "playPlaylist": "Play playlist"
   },
   "menu":{
     "main":{
