@@ -712,7 +712,7 @@ angular.module('bmmLibApp')
 
     if (typeof lang === 'undefined') { return false; }
 
-    return $.ajax({
+    return $.ajaxq('linking', {
       method: 'POST',
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
@@ -893,10 +893,11 @@ angular.module('bmmLibApp')
       },
       url: serverUrl+'track_collection/'+playlist,
       beforeSend: function (xhr) {
+        var links = '';
         $.each(tracks, function() {
-          //@todo - Find a solution for multiple Link requests
-          xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+this+'>');
+          links+='<'+serverUrl+'track/'+this+'>,';
         });
+        xhr.setRequestHeader('Link', links);
         xhr.setRequestHeader('Accept-Language', language);
       },
       dataType: 'json',
