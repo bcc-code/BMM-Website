@@ -14,7 +14,8 @@
     "angular-touch": "~1.2.14",
     "fastclick": "~1.0.1",
     "jquery.ui.touch-punch.dk": "~0.3.3",
-    "angular-file-upload": "~0.5.6"
+    "angular-file-upload": "~0.5.6",
+    "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

@@ -116,13 +116,16 @@ module.exports = function (grunt) {
 
     // Empties folders to start fresh
     clean: {
+      options: { force: true },
       dist: {
         files: [{
           dot: true,
           src: [
             //'.tmp',
             '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*'
+            '!<%= yeoman.dist %>/.git*',
+            '../client/app/common/**/*',
+            '../admin/app/common/**/*'
           ]
         }]
       },
@@ -221,7 +224,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: '**/*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -300,6 +303,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '.tmp/images/generated',
           dest: '<%= yeoman.dist %>/images/generated',
+          src: ['*']
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/images/treeview',
+          dest: '<%= yeoman.dist %>/images/treeview',
           src: ['*']
         }]
       },
