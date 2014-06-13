@@ -9,8 +9,20 @@ angular.module('bmmLibApp')
           update: function() {
             scope.$apply('playlist');
           },
-          handle: '.sort',
-          axis: 'y'
+          handle: '.sort_handle',
+          axis: 'y',
+          helper: function(e, ui) {
+            ui.children().each(function() {
+              $(this).width($(this).width());
+            });
+            return ui;
+          },
+          stop: function(e, ui) {
+            ui.item.children().each(function() {
+              $(this).width('');
+            });
+          }
+
         };
 
         element.addClass('bmm-playlist');
