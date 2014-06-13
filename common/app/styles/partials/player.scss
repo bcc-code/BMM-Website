@@ -31,7 +31,7 @@
     @include transition(height); //Must fire CSS change in player.js after transition
     position: absolute;
     width: 100%;
-    bottom: 100%;
+    bottom: 99%;
     height: $videoHeight;
     background-color: $colorPlayer;
     overflow: hidden;
