@@ -214,7 +214,7 @@ angular.module('bmmLibApp')
         resolvedData.language = data.language;
 
         //date
-        resolvedData.date = data.published_at;
+        resolvedData.date = data.recorded_at;
 
         //subtype
         resolvedData.subtype = data.subtype;
