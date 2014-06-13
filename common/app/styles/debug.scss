@@ -1,6 +1,5 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import 'bower_components/sass-bootstrap/lib/bootstrap';
-@import 'directives.scss';
 
 .bmm-lib-navigator {
 	width: 100%;
@@ -64,7 +63,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 .bmm-groups {
 	background: rgba(19, 95, 230, 0.53);
 	li {
-		background: rgba(230, 240, 114, 0.94)
+		background: rgba(230, 240, 114, 0.94);
 	}
 }
 
