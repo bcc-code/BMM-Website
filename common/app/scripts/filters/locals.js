@@ -27,7 +27,7 @@ angular.module('bmmLibApp')
         out = out.replace('AM', local.am);
         out = out.replace('PM', local.pm);
         out = out.replace('{SHORTDAY}', local.SHORTDAY[wd]);
-        out = out.replace('{SHORTMONTH}', local.SHORTMONTH[d('M')]);
+        out = out.replace('{SHORTMONTH}', local.SHORTMONTH[d('M')-1]);
         out = out.replace('{yyyy}', d('yyyy'));
         out = out.replace('{yy}', d('yy'));
         out = out.replace('{y}', d('y'));
