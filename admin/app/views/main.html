@@ -40,58 +40,83 @@
     <div player>
 
         <div class="videoscreen" ng-show="player.showVideo">
-            <div class="display">
-                <div class="fullscreen-toggle"></div>
-                <div class="video-target">
-                    <div style="position: absolute;
-                                bottom: 0;
-                                width: 100%;
-                                height: 5em;
-                                background: red;"></div>
+            <div class="page-positioning">
+                <div class="videoClose"
+                     ng-click="player.showVideo=false"
+                     ng-hide="player.video&&!player.showVideo"></div>
+
+                <div class="display">
+                    <div class="fullscreen-toggle"></div>
+                    <div class="video-target">
+                        <div style="position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: 5em;
+                                    background: red;"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="page-positioning">
 
-            <div class="about">
-                <img ng-src="{{player.cover}}"/>
-                <h3>{{player.title}}</h3>
-                <div>{{player.subtitle}}</div>
-                <div>{{player.extraTitle | bmmLanguage}}</div>
+            <div class="videoOpen"
+                 ng-click="player.showVideo=true"
+                 ng-show="player.video&&!player.showVideo"></div>
+
+            <div class="scroller">
+                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | bmmLanguage}} </span>
             </div>
 
-            <div class="controllers">
-                <div class="time">
-                    <div class="current">{{player.currentTime | bmmTime}}</div>
-                    <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div>
-                    <div class="slider"><div class="target"></div></div>
-                </div>
-                <div class="main">
-                    <div class="repeat"
-                         ng-class="{'active': playlist.repeat}"
-                         ng-click="playlist.setRepeat();"></div>
+            <div class="about">
+                <img ng-src="{{player.cover | bmmCover:'song'}}"/>
+                <h3>{{player.title}}</h3>
+                <div>{{player.subtitle}}</div>
+                <div>{{player.language | bmmLanguage}}</div>
+            </div>
+
+            <div class="volumeControllers">
+
+                <div class="mute"
+                     ng-class="{'active': player.muted}"
+                     ng-click="player.setMute();"
+                     ng-hide="ios"></div>
+                <div class="max"
+                     ng-click="player.setVolume(1);"
+                     ng-hide="ios"></div>
+                <div class="volume" ng-hide="ios"></div>
+
+            </div>
+
+            <div class="mainControllers">
+
+                <div class="current">{{player.currentTime | bmmTime}}</div>
+                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div>
+
+                <div class="centered">
+                    <div class="shuffle"
+                         ng-class="{'active': playlist.shuffle}"
+                         ng-click="playlist.setShuffle();"></div>
                     <div class="previous" ng-click="player.setPrevious();"></div>
                     <div class="play"
                          ng-class="{'pause': player.playing}"
                          ng-click="togglePlay();"></div>
                     <div class="next" ng-click="player.setNext();"></div>
-                    <div class="shuffle"
-                         ng-class="{'active': playlist.shuffle}"
-                         ng-click="playlist.setShuffle();"></div>
+                    <div class="repeat"
+                         ng-class="{'active': playlist.repeat}"
+                         ng-click="playlist.setRepeat();"></div>
 
-                    <div class="mute"
-                         ng-class="{'active': player.muted}"
-                         ng-click="player.setMute();"
-                         ng-hide="ios"></div>
-                    <div class="volume" ng-hide="ios"></div>
-                    <a class="download" download ng-hide="ios" ng-href="{{player.source}}?download=1"></a>
-                    <div class="videoToggle" ng-click="player.showVideo=!player.showVideo" ng-show="player.video"></div>
-
-                    <div class="scroller">
-                        <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | bmmLanguage}} </span>
-                    </div>
                 </div>
+
+                <!--div class="current">{{player.currentTime | bmmTime}}</div>
+                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div-->
+                <div class="slider"><div class="target"></div></div>
+
+            </div>
+
+            <div>
+
             </div>
 
         </div>
