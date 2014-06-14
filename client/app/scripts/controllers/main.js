@@ -22,8 +22,14 @@ angular.module('bmmApp')
       $scope.user = init.user;
       $scope.root = init.root;
       $scope.translation = init.translation;
-      $scope.mediaLanguage = init.mediaLanguage;
+      $scope.podcastLanguage = $scope.mediaLanguage = init.mediaLanguage;
       $scope.ios = init.ios;
+
+      $scope.$parent.$watch('mediaLanguage', function(lang) {
+        if (typeof mediaLanguage!=='undefined') {
+          $scope.podcastLanguage = lang;
+        }
+      });
 
       $scope.getCurrent = function() {
         $location.path( bmmPlaylist.getUrl() );
@@ -44,10 +50,19 @@ angular.module('bmmApp')
         bmmPlay.setPlay(playlist, index);
       };
 
+      //Deprecated
       $scope.addToPlaylist = function(playlistId, trackId, language) {
         bmmApi.userTrackCollectionLink(playlistId, [
           trackId
         ], language);
+      };
+
+      $scope.addTracksToPlaylist = function(playlistId, tracks) {
+        var ids = [];
+        $.each(tracks, function() {
+          ids.push(this.id);
+        });
+        bmmApi.userTrackCollectionLink(playlistId, ids, init.mediaLanguage);
       };
 
       $scope.addPLaylist = function(newPlaylist) {
@@ -127,7 +142,6 @@ angular.module('bmmApp')
             $scope.$apply(function() {
               _collection.edit = false;
               _collection.name = _collection.newName;
-              _collection.newName = '';
             });
 
           });
@@ -137,7 +151,6 @@ angular.module('bmmApp')
       };
 
       $scope.exitRename = function(_collection) {
-        _collection.newName = '';
         _collection.edit = false;
       };
 
