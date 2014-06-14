@@ -12,7 +12,8 @@
     "jplayer": "~2.6.0",
     "jqueryui": "~1.10.3",
     "angular-ui-sortable": "~0.10.0",
-    "angular-ui-bootstrap-bower": "~0.10.0"
+    "angular-ui-bootstrap-bower": "~0.10.0",
+    "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
