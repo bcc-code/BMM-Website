@@ -15,11 +15,11 @@ angular.module('bmmApp')
 
     //LATEST SPEECHS
     bmmApi.trackLatest({
-      size: 6,
+      size: 9,
       'content-type': ['speech']
     }, init.mediaLanguage).done(function(data) {
 
-      var left = [], right = [], track;
+      var left = [], right = [], largeScreen = [], track;
 
       $.each(data, function(index) {
 
@@ -27,8 +27,10 @@ angular.module('bmmApp')
 
         if (index<3) {
           left.push(track);
-        } else {
+        } else if (index<6) {
           right.push(track);
+        } else {
+          largeScreen.push(track);
         }
 
       });
@@ -36,6 +38,7 @@ angular.module('bmmApp')
       $scope.$apply(function() {
         $scope.latestSpeaksLeft = left;
         $scope.latestSpeaksRight = right;
+        $scope.latestSpeaksLargeScreen = largeScreen;
         draggable.makeDraggable($scope);
       });
 
@@ -43,7 +46,7 @@ angular.module('bmmApp')
 
     //LATEST VIDEO
     bmmApi.trackLatest({
-      size: 5,
+      size: 10,
       'content-type': ['video']
     }, init.mediaLanguage).done(function(data) {
 
@@ -65,11 +68,11 @@ angular.module('bmmApp')
 
     //LATEST MUSIC
     bmmApi.trackLatest({
-      size: 8,
+      size: 12,
       'content-type': ['song']
     }, init.mediaLanguage).done(function(data) {
 
-      var left = [], right = [], track;
+      var left = [], right = [], largeOnly = [], track;
 
       $.each(data, function(index) {
 
@@ -77,8 +80,10 @@ angular.module('bmmApp')
 
         if (index<4) {
           left.push(track);
-        } else {
+        } else if (index<8) {
           right.push(track);
+        } else {
+          largeOnly.push(track);
         }
 
       });
@@ -86,6 +91,7 @@ angular.module('bmmApp')
       $scope.$apply(function() {
         $scope.latestMusicLeft = left;
         $scope.latestMusicRight = right;
+        $scope.latestMusicLargeOnly = largeOnly;
         draggable.makeDraggable($scope);
       });
 

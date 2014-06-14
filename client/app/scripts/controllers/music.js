@@ -55,19 +55,21 @@ angular.module('bmmApp')
 
     //LATEST MUSIC
     bmmApi.trackLatest({
-      size: 10,
+      size: 15,
       'content-type': ['song'],
       'media-type': ['audio']
     }, init.mediaLanguage).done(function(data) {
 
-      var left = [], right = [];
+      var left = [], right = [], largeOnly = [];
 
       $.each(data, function(index) {
 
         if (index<5) {
           left.push(bmmFormatterTrack.resolve(this));
-        } else {
+        } else if (index<10) {
           right.push(bmmFormatterTrack.resolve(this));
+        } else {
+          largeOnly.push(bmmFormatterTrack.resolve(this));
         }
 
       });
@@ -75,6 +77,7 @@ angular.module('bmmApp')
       $scope.$apply(function() {
         $scope.latestMusicLeft = left;
         $scope.latestMusicRight = right;
+        $scope.latestLargeOnly = largeOnly;
         draggable.makeDraggable($scope);
       });
 
@@ -117,16 +120,15 @@ angular.module('bmmApp')
       43806, //Alise Helgheim
       64808, //Pia Veronica Jacobsen
       80142, //Pia Gjøsund
-      41644, //Dag Helge Bernhardsen
+      41600, //Dag Helge Bernhardsen
       60455, //Atle Johnsen
       51294, //Hanne Trinkle
-      65006, //Ingrid Holm Andersen
-      41621, //Jostein Østmoen
+      41576, //Ingrid Holm Andersen
+      41598, //Jostein Østmoen
       49935, //Karethe Opitz
-      50442, //Kristiane Opitz
-      50440, //Linn Helgheim
-      84408, //Liv Ragnhild Foltland
-      61350, //Mads Jacobsen
+      49933, //Kristiane Opitz
+      45272, //Linn Helgheim
+      41622, //Liv Ragnhild Fotland
       60845, //Marte Hannson
       60844  //Vegar Sandberg
     ];

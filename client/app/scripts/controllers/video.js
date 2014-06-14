@@ -53,20 +53,28 @@ angular.module('bmmApp')
 
     //VIDEOS
     bmmApi.trackLatest({
-      size: 3,
+      size: 9,
       'content-type': ['video']
     }, init.mediaLanguage).done(function(data) {
 
-      var videos = [];
+      var left = [], right = [], largeOnly = [];
 
-      $.each(data, function() {
+      $.each(data, function(index) {
 
-        videos.push(bmmFormatterTrack.resolve(this));
+        if (index<3) {
+          left.push(bmmFormatterTrack.resolve(this));
+        } else if (index<6) {
+          right.push(bmmFormatterTrack.resolve(this));
+        } else {
+          largeOnly.push(bmmFormatterTrack.resolve(this));
+        }
 
       });
 
       $scope.$apply(function() {
-        $scope.firstVideos = videos;
+        $scope.latestVideoLeft = left;
+        $scope.latestVideoRight = right;
+        $scope.latestLargeOnly = largeOnly;
         draggable.makeDraggable($scope);
       });
 

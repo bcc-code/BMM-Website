@@ -20,7 +20,7 @@
 	</li>
 </ul>
 
-<ul class="bmm-latest-list last small">
+<ul class="bmm-latest-list small">
 	<li ng-repeat="track in latestMusicRight"
         class="draggable latest"
         id="{{track.id}}"
@@ -38,6 +38,25 @@
 		</div>
 	</li>
 </ul>
+
+    <ul class="bmm-latest-list small largeOnly">
+        <li ng-repeat="track in latestLargeOnly"
+            class="draggable latest"
+            id="{{track.id}}"
+            language="{{track.language}}"
+            title="{{track.albumTitle}}"
+            ng-click="play(latestLargeOnly, $index);">
+            <div class="bmm-latest">
+                <div class="bmm-latest-bullet">{{$index+11}}</div>
+                <div>
+                    <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
+                </div>
+                <div class="bmm-latest-title">{{track.title}}</div>
+                <div class="bmm-latest-interprets">{{track.performers}}</div>
+                <div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH}'}} ({{track.duration | bmmTime}})</div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div>
@@ -46,7 +65,7 @@
 	<li>
 		<div class="bmm-interpret"
 			 ng-repeat="contributor in contributors"
-			 ng-click="go('/playlist/contributor/'+contributor.name);"
+			 ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
 			 title="{{contributor.name}}">
 			<img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
 			<div class="bmm-interpret-title">{{contributor.name}}</div>
@@ -61,6 +80,8 @@
 	<div title="{{translation.page.music.childrensMp3Source}}" ng-click="go('/playlist/barnasmp3');"  class="bmm-album bmm-hover bmm-barnas"></div>
 	<div title="{{translation.page.music.instrumental}}" ng-click="go('/playlist/instrumental');" class="bmm-album bmm-hover bmm-instrumental"></div>
 </div>
+
+<h2>{{translation.page.welcome.latestAlbums}}</h2>
 
 <div>
 	<div title="{{album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in latestAlbums">

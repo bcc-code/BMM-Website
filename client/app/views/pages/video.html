@@ -1,27 +1,66 @@
-<div class="bmm-latest-video">
-<h2>{{translation.page.videos.latestVideos}}</h2>
-<ul>
-	<li>
-		<div ng-repeat="video in firstVideos"
-             class="bmm-latest video draggable latest"
-             id="{{video.id}}"
-             language="{{video.language}}"
-             ng-click="play(firstVideos, $index);">
-			<div class="bmm-latest-bullet">{{$index+1}}</div>
-			<div>
-				<img title="{{video.albumTitle}}"
-					 class="bmm-latest-thumbnail"
-                     ng-src="{{video.cover | bmmCover:'video'}}"/>
-			</div>
-			<div title="{{video.title}}" class="bmm-latest-title">{{video.title}}</div>
-			<div title="{{video.performers}}" class="bmm-latest-interprets">{{video.performers}}</div>
-			<div class="bmm-latest-about">{{track.date | date:'dd.MM HH:mm'}} ({{track.duration | bmmTime}})</div>
-		</div>
-	</li>
-</ul>
+<div>
+    <h2>{{translation.page.videos.latestVideos}}</h2>
+    <ul class="bmm-latest-list bmm-latest-video">
+        <li ng-repeat="track in latestVideoLeft"
+            class="draggable latest"
+            id="{{track.id}}"
+            language="{{track.language}}"
+            ng-click="play(latestVideoLeft, $index);">
+            <div class="bmm-latest">
+                <div class="bmm-latest-bullet">{{$index+1}}</div>
+                <div>
+                    <img title="{{track.albumTitle}}"
+                         class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'video'}}"/>
+                </div>
+                <div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
+                <div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
+                <div class="bmm-latest-about">{{translation.track.duration}}: {{track.duration | bmmTime}}</div>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="bmm-latest-list bmm-latest-video video">
+        <li ng-repeat="track in latestVideoRight"
+            class="draggable latest"
+            id="{{track.id}}"
+            language="{{track.language}}"
+            ng-click="play(latestVideoRight, $index);">
+            <div class="bmm-latest">
+                <div class="bmm-latest-bullet">{{$index+4}}</div>
+                <div>
+                    <img title="{{track.albumTitle}}"
+                         class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'video'}}"/>
+                </div>
+                <div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
+                <div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
+                <div class="bmm-latest-about">{{translation.track.duration}}: {{track.duration | bmmTime}}</div>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="bmm-latest-list bmm-latest-video video largeOnly">
+        <li ng-repeat="track in latestLargeOnly"
+            class="draggable latest"
+            id="{{track.id}}"
+            language="{{track.language}}"
+            ng-click="play(latestLargeOnly, $index);">
+            <div class="bmm-latest">
+                <div class="bmm-latest-bullet">{{$index+7}}</div>
+                <div>
+                    <img title="{{track.albumTitle}}"
+                         class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'video'}}"/>
+                </div>
+                <div title="{{track.title}}" class="bmm-latest-title">{{track.title}}</div>
+                <div title="{{track.performers}}" class="bmm-latest-interprets">{{track.performers}}</div>
+                <div class="bmm-latest-about">{{translation.track.duration}}: {{track.duration | bmmTime}}</div>
+            </div>
+        </li>
+    </ul>
 </div>
 
-<div class="bmm-margin-top">
+<h2>{{translation.page.welcome.latestAlbums}}</h2>
+
+<div>
 	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
         <img class="album-latest-image" ng-src="{{album.cover}}" width="9em" height="9.3em"/>
 		<div class="album-latest-title">{{album.title}}</div>

@@ -171,49 +171,4 @@ angular.module('bmmApp')
       }
     }, false);
 
-    var makeDraggable = function() {
-
-      $timeout(function() {
-
-        var a,b,c; //Quickfix for wrong y-position while scrolling
-        $('.draggable').draggable({
-          helper: 'clone',
-          appendTo: 'body',
-          revert: 'invalid',
-          scope: 'move',
-          zIndex: '1000',
-          scroll: true,
-          distance: 20,
-          cursorAt: {
-            left: 20,
-            top: 2+$('body').scrollTop()
-          },
-          start: function(e,ui) {
-            a = ui.position.top;
-            b = $('body').scrollTop();
-            c = e.pageY;
-          },
-          drag: function(e,ui) {
-            ui.position.top = a+$('body').scrollTop()-b+e.pageY-c;
-          }
-        });
-
-        $('body').find('.bmm-playlist-private').droppable({
-          scope: 'move',
-          activeClass: 'active',
-          hoverClass: 'hover',
-          tolerance: 'pointer',
-          drop: function(ev, ui) {
-
-            bmmApi.userTrackCollectionLink($(this).attr('id'), [
-              ui.draggable.attr('id')
-            ], ui.draggable.attr('language'));
-
-          }
-        });
-
-      }, 200);
-
-    };
-
   });

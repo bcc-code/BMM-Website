@@ -55,19 +55,21 @@ angular.module('bmmApp')
 
     //LATEST SPEECHS
     bmmApi.trackLatest({
-      size: 10,
+      size: 15,
       'content-type': ['speech'],
       'media-type': ['audio']
     }, init.mediaLanguage).done(function(data) {
 
-      var left = [], right = [];
+      var left = [], right = [], largeOnly = [];
 
       $.each(data, function(index) {
 
         if (index<5) {
           left.push(bmmFormatterTrack.resolve(this));
-        } else {
+        } else if (index<10) {
           right.push(bmmFormatterTrack.resolve(this));
+        } else {
+          largeOnly.push(bmmFormatterTrack.resolve(this));
         }
 
       });
@@ -75,6 +77,7 @@ angular.module('bmmApp')
       $scope.$apply(function() {
         $scope.latestSpeechLeft = left;
         $scope.latestSpeechRight = right;
+        $scope.latestSpeechLargeOnly = largeOnly;
         draggable.makeDraggable($scope);
       });
 
