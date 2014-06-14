@@ -14,25 +14,24 @@ angular.module('bmmApp')
     bmmPlaylist
   ) {
 
-    $scope.podcastLanguage = init.mediaLanguage;
-    var oldLang = init.mediaLanguage;
-    $scope.$parent.$watch('mediaLanguage', function(lang) {
-      $scope.podcastLanguage = lang;
-    });
-    $scope.$watch('allLanguages', function(enabled) {
-      if (enabled) {
-        oldLang = $scope.podcastLanguage;
-        $scope.podcastLanguage = '';
-      } else {
-        $scope.podcastLanguage = oldLang;
-      }
-    });
+    $scope.getPlaylistCopy = function(filter) {
+      var array = [];
+      $.each($scope.playlist, function() {
+        if (typeof filter!=='undefined'&&filter!=='') {
+          if (this.language===filter) {
+            array.push(this);
+          }
+        } else {
+          array.push(this);
+        }
+      });
+      return array;
+    };
 
     var loading=true, size, end=false, loadAmount=80;
     $scope.tracks = 0;
     $scope.duration = 0;
     $scope.podcast = {};
-    $scope.podcast.isset = false;
     $scope.zip = {};
     $scope.zip.show = false;
 
@@ -152,7 +151,6 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.isset = true;
           $scope.podcast.link = 'https://'+init.user.username+':'+
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
@@ -201,7 +199,6 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.isset = true;
           $scope.podcast.link = 'https://'+init.user.username+':'+
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
@@ -250,7 +247,6 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.isset = true;
           $scope.podcast.link = 'https://'+init.user.username+':'+
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
@@ -265,7 +261,7 @@ angular.module('bmmApp')
       case 'contributor':
 
         size = 0;
-        $scope.title = $routeParams.id;
+        $scope.title = $routeParams.name;
         $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
@@ -296,19 +292,16 @@ angular.module('bmmApp')
 
         });
 
-        if ($routeParams.id==='Kåre J. Smith') {
-          $timeout(function() {
-            $scope.podcast.isset = true;
-            $scope.podcast.link = 'https://'+init.user.username+':'+
-                                  init.user.token+'@'+
-                                  bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?';
-            $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
-                                  init.user.token+'@'+
-                                  bmmApi.getserverUrli().replace('https://','')+
-                                  'podcast/contributor/K%C3%A5re%20J.%20Smith/track/?';
-          },1500);
-        }
+        $timeout(function() {
+          $scope.podcast.link = 'https://'+init.user.username+':'+
+                                init.user.token+'@'+
+                                bmmApi.getserverUrli().replace('https://','')+
+                                'podcast/contributor/'+$routeParams.id+'/track/?';
+          $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
+                                init.user.token+'@'+
+                                bmmApi.getserverUrli().replace('https://','')+
+                                'podcast/contributor/'+$routeParams.id+'/track/?';
+        },1500);
 
         break;
     }
@@ -388,7 +381,7 @@ angular.module('bmmApp')
     var findPlayingTrack = function() {
       if ($location.path()===bmmPlaylist.getUrl()) {
 
-        $.each($scope.playlist, function(index) {
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
           if (index===bmmPlaylist.index) {
             this.playing = true;
           } else {

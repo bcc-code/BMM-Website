@@ -17,9 +17,32 @@ angular.module('bmmApp')
     $(window).off('scrollBottom');
 
     $scope.tracks = 0;
+    $scope.playlist = [];
     $scope.duration = 0;
     $scope.playlists = [];
     $scope.mainAlbum = [];
+    $scope.zip = {};
+    $scope.zip.url = bmmApi.secureFile(bmmApi.getserverUrli()+'album'+'/'+$routeParams.id+'/download');
+
+    $scope.podcast = {};
+    $scope.podcast.link = 'https://'+init.user.username+':'+
+      init.user.token+'@'+
+      bmmApi.getserverUrli().replace('https://','')+
+      'podcast/album/'+$routeParams.id+'/track/?';
+
+    $scope.getPlaylistCopy = function(filter) {
+      var array = [];
+      $.each($scope.playlist, function() {
+        if (typeof filter!=='undefined'&&filter!=='') {
+          if (this.language===filter) {
+            array.push(this);
+          }
+        } else {
+          array.push(this);
+        }
+      });
+      return array;
+    };
 
     bmmApi.albumGet($routeParams.id, init.mediaLanguage).done(function(mainAlbum) {
 
@@ -67,6 +90,7 @@ angular.module('bmmApp')
             }
 
             track = bmmFormatterTrack.resolve(this);
+            track.albumTitle = formattedAlbum.title;
 
             if (track.type==='video') {
               track.video = true;
@@ -74,8 +98,10 @@ angular.module('bmmApp')
 
             $scope.$apply(function() {
               $scope.playlists[0].tracks.push(track);
+              $scope.playlist.push(track);
               $scope.playlists[0].duration+=track.duration;
               $scope.playlists[0].count++;
+              $scope.tracks++;
             });
 
           } else if (this.type === 'album') {
@@ -115,6 +141,7 @@ angular.module('bmmApp')
                   }
 
                   track = bmmFormatterTrack.resolve(this);
+                  track.albumTitle = formattedAlbum.title;
 
                   if (track.type==='video') {
                     track.video = true;
@@ -122,8 +149,10 @@ angular.module('bmmApp')
 
                   $scope.$apply(function() {
                     $scope.playlists[l].tracks.push(track);
+                    $scope.playlist.push(track);
                     $scope.playlists[l].duration+=track.duration;
                     $scope.playlists[l].count++;
+                    $scope.tracks++;
                   });
 
                 } //If not track, dont display (will only display one level up)
@@ -131,6 +160,7 @@ angular.module('bmmApp')
               });
 
               $('.bmm-playlist').trigger('dragdrop');
+              findPlayingTrack();
 
             });
 
@@ -139,6 +169,7 @@ angular.module('bmmApp')
         }
 
         $('.bmm-playlist').trigger('dragdrop');
+        findPlayingTrack();
 
       });
 
@@ -150,22 +181,13 @@ angular.module('bmmApp')
 
     var findPlayingTrack = function() {
       if ($location.path()===bmmPlaylist.getUrl()) {
-
-        $.each($scope.playlists, function() {
-          $.each(this.tracks, function(index) {
-
-            var url = bmmPlaylist.getCurrent().url.replace(init.user.username+':'+init.user.token+'@','');
-            url = url.replace('podcast/','');
-
-            if (index===bmmPlaylist.index&&this.file===url) {
-              this.playing = true;
-            } else {
-              this.playing = false;
-            }
-
-          });
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
+          if (index===bmmPlaylist.index) {
+            this.playing = true;
+          } else {
+            this.playing = false;
+          }
         });
-
       }
     };
 

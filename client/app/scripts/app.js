@@ -88,6 +88,11 @@ angular.module('bmmApp', [
         controller: 'PlaylistCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
       })
+      .when('/playlist/:playlist/:id/:name', {
+        templateUrl: 'views/pages/playlist.html',
+        controller: 'PlaylistCtrl',
+        resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
+      })
       .otherwise({
         redirectTo: '/welcome'
       });
