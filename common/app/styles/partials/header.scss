@@ -9,21 +9,29 @@ header {
   @include transition(margin-top);
   position: absolute;
   top: $topbarHeight;
+  padding-top: 1.5em;
   height: $headerHeight;
 
   .page-positioning {
     position: relative;
     height: 100%;
     .menu {
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      float: right;
+
     }
   }
 }
 
 .sub-header {
   display: none;//inline-block;
+  border-bottom: none;
+  background-color: transparent;
+
+  .logo {
+    display: inline-block;
+    position: relative;
+    margin: .7em 0 0 .6em;
+  }
   .menu {
     float: left;
     width: 100%;
@@ -35,26 +43,20 @@ header {
         padding: .5em 0 .5em .2em;
         display: inline-block;
         width: 100%;
+        border-radius: 1em;
+        border: .15em solid #fff;
       }
       a:hover {
-        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 1em;
+        border-color: #97D5B7;
       }
-    }
-  }
-  .dropdown {
-    width: 100%;
-    margin: .5em 0;
-    padding: .5em .5em 0;
-    a {
-      width: 100%;
-    }
-    > ul {
-      margin-left: .5em !important;
     }
   }
   .search {
     width: 100%;
     padding: 0 .5em;
+    float: none;
+    margin: .8em 0 0 0;
     form {
       padding: 0;
       float: none;
@@ -62,7 +64,7 @@ header {
         margin-right: 3em;
         input {
           background-image: none;
-          background-color: $colorForeground;
+          //background-color: $colorForeground;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
           border-top-left-radius: .2em;
@@ -74,42 +76,15 @@ header {
   }
 }
 
-.dropdown {
-  position: relative;
-  float: right;
-  margin: 1.3em .9em 0 0;
-  padding: 0;
-  > a {
-    > div {
-      display: inline-block;
-      width: 2em;
-      height: 1.5em;
-    }
-    display: inline-block;
-    color: $colorForeground;
-    cursor: pointer;
-    font-size: .9em;
-    border-radius: .4em;
-    background-color: #006B3D;
-    padding: .1em .5em .1em .3em;
-  }
-  > ul {
-    margin-left: -6em !important;
-  }
-  > ul > li > a {
-    padding: .2em 0 0 2em !important;
-  }
-}
-
 .search {
   position: relative;
-  margin: auto;
+  margin: .2em 0 0 18em;
   width: 15em;
+  float: left;
   z-index: 1;
 
   > * {
     float: left;
-    padding: 1.3em 0 0;
   }
 
   input {
@@ -132,7 +107,7 @@ header {
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: #006B3D;
+    background-color: transparent;
     width: 3em;
     padding: 0;
   }
@@ -142,6 +117,7 @@ header {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  margin-top: .5em;
 }
 
 .menu li {
@@ -156,16 +132,18 @@ header {
   padding: .3em .8em;
   color: #000;//$colorForeground;
   border-radius: .2em;
+  border-radius: 1em;
+  border: .15em solid transparent;
 }
 
 .menu li a:hover {
-  background-color: $colorForeground;
-  color: $colorBackground;
+  border-radius: 1em;
+  border-color: #97D5B7;
 }
 
 .logo {
-  float: left;
-  margin: .65em 0 0 .6em;
+  position: absolute;
+  margin: -.5em 0 0 .6em;
   background-image: url(../images/svg/logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
