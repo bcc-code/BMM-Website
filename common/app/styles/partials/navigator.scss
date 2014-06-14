@@ -54,40 +54,40 @@
   }
   li {
     @include bmm-transition(all, .2s);
-    font-size: .9em;
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
-    background-size: 1.7em 1.7em;
+    background-size: 2em 2em;
     background-position: 0 .45em;
     background-repeat: no-repeat;
-    padding: .5em 0 .5em 2.3em;
-    margin: 0 .5em;
-  }
-  li:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    border: .2em solid transparent;
+    padding: .8em 0 .5em 2.7em;
+    margin: 0 0 .2em;
   }
 }
 
 .playlists-add {
   background-color: transparent;
   width: 100%;
-  padding: .5em;
+  padding: .5em 0;
   text-align: left;
   span {
     @include bmm-transition(all, .2s);
-    font-size: .9em;
-    background-image: url(../images/svg/v3/Icon_Playlist_Plus.svg);
-    background-size: 1.4em 1.3em;
-    background-position: .25em .35em;
+    font-weight: bold;
+    background-color: #03d67f;
+    background-image: url(../images/svg/v3/Icon_plus.svg);
+    background-size: .8em .8em;
+    background-position: .7em .7em;
     background-repeat: no-repeat;
     display: inline-block;
     width: 100%;
-    padding: .5em 0 .5em 1.8em;
-    border-radius: .2em;
+    margin-top: 2em;
+    padding: .5em 0 .5em 2.7em;
+    border-radius: 1em;
     cursor: pointer;
-    color: #000;//$colorForeground;
+    color: #fff;//$colorForeground;
+    border: .2em solid transparent;
   }
   span:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #0AB66F;
   }
 }
 
@@ -99,19 +99,18 @@
     color: #000;//$colorForeground;
   }
   li {
-    @include bmm-transition(all, .2s);
-    font-size: .9em;
     position: relative;
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
-    background-size: 1.7em 1.7em;
+    background-size: 2.2em 2.2em;
     background-position: 0 .45em;
     background-repeat: no-repeat;
-    padding: .5em 0 .5em 2.3em;
-    margin: 0 .5em;
-    .edit {
-      @include bmm-transition(opacity, .2s);
+    padding: .8em 0 .5em 2.7em;
+    margin: 0 0 .2em;
+    border: .2em solid transparent;
+    border-radius: .2em;
+    .edit, input:nth-child(2) {
       position: absolute;
-      right: 1.65em;
+      right: 0;
       top: 0;
       height: 100%;
       width: 1.5em;
@@ -122,62 +121,58 @@
       opacity: 0;
       cursor: pointer;
     }
-    .trash {
-      @include bmm-transition(opacity, .2s);
+    .trash, button {
       position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 1.5em;
+      left: .7em;
+      top: .7em;
+      height: 1.4em;
+      width: 1.1em;
       background-image: url(../images/svg/v3/Icon_Delete.svg);
-      background-position: center center;
-      background-size: 1.2em 1.2em;
+      background-size: contain;
       background-repeat: no-repeat;
       opacity: 0;
       cursor: pointer;
     }
     input:first-child {
-      width: $navigationWidth - 7em;
+      border: .1em solid #CDD6E9;
+      width: $navigationWidth - 6em;
     }
     input:nth-child(2) {
       position: absolute;
-      right: 1.8em;
-      height: 1.4em;
+      height: 100%;
       width: 1.2em;
       margin: 0;
       padding: 0;
-      border: none;
       display: inline-block;
       background: url(../images/svg/confirm.svg);
       background-position: center center;
       background-size: 1.2em 1.2em;
       background-repeat: no-repeat;
+      opacity: 1;
     }
     button {
-      position: absolute;
-      right: .2em;
-      height: 1.4em;
-      width: 1.2em;
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      background: url(../images/svg/v3/Icon_Delete.svg);
-      background-position: center center;
-      background-size: 1.2em 1.2em;
-      background-repeat: no-repeat;
+     background-color: transparent;
+     opacity: 1;
     }
   }
   li:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-image: none;
     .edit, .trash {
       opacity: 1;
     }
   }
+  li.playlists-new {
+    background-image: none;
+  }
+  li.bmm-playlist-private.edited {
+    background-image: none;
+  }
   li.bmm-playlist-private.active {
-    border: rgba(255, 255, 255, 0.18) dashed .2em;
+    border: .2em rgba(0, 0, 0, 0.18) dashed;
   }
   li.bmm-playlist-private.active.hover {
-    border: rgba(255, 255, 255, 1) dashed .2em;
+    //background-image: none;
+    border: .2em rgba(0, 0, 0, 1) dashed;
   }
 }
 
@@ -187,7 +182,7 @@
   bottom: $playerHeight;
   width: $navigationWidth;
   //background-color: $colorBackground;
-  border-right: .1em solid $colorBorders;
+  //border-right: .1em solid $colorBorders;
   z-index: 3;
 
   @include bmm-transition();
