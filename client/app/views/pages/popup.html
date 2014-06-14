@@ -1,47 +1,156 @@
-<!--PLAYLIST-->
+<!--ADD TRACK TO PLAYLIST-->
 <div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
-    <div class="verticalCenter">
-        <div class="container">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
 
-        <div class="exit" ng-click="trackToPlaylist.id=false"></div>
+                <div class="exit" ng-click="trackToPlaylist.id=false"></div>
 
-        <b>{{translation.options.choosePlaylist}}</b>
-        <br><br>
+                <b>{{translation.options.choosePlaylist}}</b>
+                <br><br>
 
-        <ul class="playlist">
-            <li ng-repeat="collection in user.track_collections"
-                ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
-                          trackToPlaylist.id=false;">
-                {{collection.name}}
-            </li>
-        </ul>
+                <ul class="playlist">
+                    <li ng-repeat="collection in user.track_collections"
+                        ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
+                              trackToPlaylist.id=false;">
+                        {{collection.name}}
+                    </li>
+                </ul>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ADD TRACKS TO PLAYLIST-->
+<div class="popup" ng-if="tracksToPlaylist.length>0">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
+
+                <div class="exit" ng-click="tracksToPlaylist.length=0"></div>
+
+                <b>{{translation.options.choosePlaylist}}</b>
+                <br><br>
+
+                <ul class="playlist">
+                    <li ng-repeat="collection in user.track_collections"
+                        ng-click="addTracksToPlaylist(collection.id, tracksToPlaylist); tracksToPlaylist.length=0">
+                        {{collection.name}}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--PODCAST-->
+<div class="popup" ng-hide="newPodcast.show==undefined||newPodcast.show!=true">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
+
+                <div class="exit" ng-click="newPodcast.show=false"></div>
+
+                <b>{{translation.options.podcast}}</b>
+                <br><br>
+                {{translation.options.setupPodcast}}
+                <br><br>
+
+                <div style="width: 47%; float: left;">
+                    <b>{{translation.options.chooseLanguage}}</b>
+                    <div class="dropdown"
+                         style="float: none; margin: 0; display: inline-block">
+                        <a class="dropdown-toggle" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
+                            <div class="flags-{{podcastLanguage}}"></div>
+                            {{podcastLanguage | bmmLanguage}}</a>
+                        <ul class="dropdown-menu" style="margin-left: 0!important">
+                            <li ng-repeat="lang in root.languages">
+                                <a class="flags-{{lang}}"
+                                   ng-click="$parent.podcastLanguage=lang">{{lang | bmmLanguage}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="width: 47%; float: right;">
+                    <b>{{translation.options.includeLatest}}</b>
+                    <select ng-model="fileRestriction" ng-init="fileRestriction=20">
+                        <option value="10">10 {{translation.options.tracks}}</option>
+                        <option value="20" selected>20 {{translation.options.tracks}}</option>
+                        <option value="50">50 {{translation.options.tracks}}</option>
+                        <option value="100">100 {{translation.options.tracks}}</option>
+                        <option value="250">250 {{translation.options.tracks}}</option>
+                        <option value="500">500 {{translation.options.tracks}}</option>
+                        <option value="1000">1000 {{translation.options.tracks}}</option>
+                    </select>
+                </div>
+
+                <div style="width: 100%; margin-top: 1em; float: left;">
+                    <span ng-click="allLanguages=!allLanguages;">
+                        <b>{{translation.playlist.allLanguages}}</b>
+                    </span><br>
+                    <input type="checkbox" ng-model="allLanguages">
+                </div>
+
+                <div style="width: 100%; margin-top: 1em; float: left;">
+                    <b>{{translation.options.copyUrl}}</b>
+                    <span style="   display: inline-block;
+                                    background-color: white;
+                                    border: .1em solid gray;
+                                    overflow: auto;
+                                    padding: .5em;
+                                    width: 100%;"
+                    >{{newPodcast.link}}language={{allLanguages ? '' : podcastLanguage}}&size={{fileRestriction}}</span>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
 
 <!--SETTINGS-->
-<div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
-    <div class="verticalCenter">
-        <div class="container">
+<div class="popup" ng-hide="settings==undefined||settings==false">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
 
-            <div class="exit" ng-click="trackToPlaylist.id=false"></div>
+                <div class="exit" ng-click="settings=false"></div>
 
-            <b>{{translation.general.settings}}</b>
-            <br><br>
+                <b>{{translation.general.settings}}</b>
 
-            <div class="dropdown">
-                <a class="dropdown-toggle">
-                    <div class="flags-{{mediaLanguage}}"></div>
-                    {{mediaLanguage | bmmLanguage}}</a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="lang in root.languages">
-                        <a class="flags-{{lang}}"
-                           ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
-                    </li>
-                </ul>
+                <div style="width: 47%; float: left;">
+                    <b>{{translation.options.websiteLanguage}}</b>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle">
+                            <div class="flags-{{mediaLanguage}}"></div>
+                            {{mediaLanguage | bmmLanguage}}</a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="lang in root.languages">
+                                <a class="flags-{{lang}}"
+                                   ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="width: 47%; float: right;">
+                    <b>{{translation.options.contentLanguage}}</b>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle">
+                            <div class="flags-{{mediaLanguage}}"></div>
+                            {{mediaLanguage | bmmLanguage}}</a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="lang in root.languages">
+                                <a class="flags-{{lang}}"
+                                   ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-
         </div>
     </div>
 </div>
