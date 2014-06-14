@@ -10,6 +10,7 @@ angular.module('bmmLibApp')
         } else {
           switch(type) {
             case 'speech':
+            case 'exegesis':
               cover='fallback_images/svg/speech.svg';
               break;
             case 'song':
