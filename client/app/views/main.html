@@ -2,7 +2,7 @@
 
     <!--LOADINGSCREEN-->
     <div class="loadscreen" ng-hide="load.loaded">
-        <div class="logo"></div>
+        <div class="logo" style="position: relative; margin: 3em auto;"></div>
         <div class="progress">
             <div class="buffer"
                  style="width: {{load.percent}}%"></div>
@@ -12,7 +12,7 @@
     <!--HEADER - MUST DUBLICATE IN NAVIGATOR > SUB-HEADER -->
     <header>
         <div class="page-positioning">
-            <a ng-href="#" class="logo"></a> - Demo 2.1
+            <a ng-href="#" class="logo"></a>
             <div class="search">
                 <form ng-submit="go('/search/'+bmm.term);">
                     <input ng-model="bmm.term"
@@ -96,7 +96,7 @@
                             <span>{{translation.options.download}}</span>
                         </a>
                     </li>
-                    <li ng-click="go('/album/'+player.raw._meta.parent.id)">
+                    <li ng-click="go('/album/'+player.raw._meta.root_parent_id)">
                         <div class="icon album"></div>
                         <span>{{translation.options.goToAlbum}}</span></li>
                     <li ng-click="flags=!flags">
@@ -106,7 +106,8 @@
                 </ul>
 
                 <ul ng-show="playerOptions&&flags">
-                    <li ng-repeat="language in player.raw.languages" ng-click="player.changeLanguage(language)">
+                    <li ng-repeat="language in player.raw.languages"
+                        ng-click="player.changeLanguage(language);">
                     <div class="flags-{{language}}"
                              style="width: 2em; height: 1.5em; margin-left: .6em; display: inline-block;">
                     </div>
@@ -177,18 +178,7 @@
 
             <!--SUB-HEADER-->
             <div class="sub-header" ng-class="{'visible': fixed}">
-                <a ng-href="#" class="logo"></a> - Demo 2.1
-                <div class="dropdown">
-                    <a class="dropdown-toggle">
-                        <div class="flags-{{mediaLanguage}}"></div>
-                        {{mediaLanguage | bmmLanguage}}</a>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="lang in root.languages">
-                            <a class="flags-{{lang}}"
-                               ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
-                        </li>
-                    </ul>
-                </div>
+                <a ng-href="#" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
@@ -211,6 +201,9 @@
 
             <ul class="playlists-generated">
                 <li><a ng-href="#playlist/latest" ng-click="visible=false">{{translation.menu.secondary.latestTracks}}</a></li>
+                <li><a ng-href="#playlist/mp3kilden" ng-click="visible=false">{{translation.page.music.mp3Source}}</a></li>
+                <li><a ng-href="#playlist/barnasmp3" ng-click="visible=false">{{translation.page.music.childrensMp3Source}}</a></li>
+                <li><a ng-href="#playlist/instrumental" ng-click="visible=false">{{translation.page.music.instrumental}}</a></li>
                 <li><span ng-click="getCurrent()" ng-click="visible=false">{{translation.menu.secondary.current}}</span></li>
             </ul>
 
@@ -231,6 +224,7 @@
                     </form>
                 </li>
                 <li class="bmm-playlist-private"
+                    ng-class="{'edited': collection.edit}"
                     id="{{collection.id}}"
                     ng-repeat="collection in user.track_collections">
                     <a ng-hide="collection.edit == true"
@@ -238,7 +232,7 @@
                        ng-href="#playlist/private/{{collection.id}}">
                         {{collection.name}}</a>
                     <form ng-show="collection.edit == true">
-                        <input type="text" ng-model="collection.newName"/>
+                        <input type="text" ng-model="collection.newName" ng-init="collection.newName=collection.name"/>
                         <input type="submit" value="" ng-click="renamePlaylist(collection);">
                         <button ng-click="exitRename(collection);"></button>
                     </form>
