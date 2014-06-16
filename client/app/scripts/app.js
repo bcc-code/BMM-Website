@@ -93,6 +93,10 @@ angular.module('bmmApp', [
         controller: 'PlaylistCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
       })
+      .when('/copyright', {
+        templateUrl: 'views/pages/copyright.html',
+        resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
+      })
       .otherwise({
         redirectTo: '/welcome'
       });
