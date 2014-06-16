@@ -111,32 +111,32 @@
 </div>
 
 <!--SETTINGS-->
-<div class="popup" ng-hide="settings==undefined||settings==false">
+<div class="popup" ng-hide="settings.show==undefined||settings.show==false">
     <div class="container">
         <div class="verticalCenter">
             <div class="container">
 
-                <div class="exit" ng-click="settings=false"></div>
+                <div class="exit" ng-click="settings.show=false"></div>
 
-                <b>{{translation.general.settings}}</b>
+                <b style="float: left; width: 100%;">{{translation.general.settings}}</b>
 
-                <div style="width: 47%; float: left;">
+                <div style="width: 47%; float: left; margin-top: 1em;">
                     <b>{{translation.options.websiteLanguage}}</b>
                     <div class="dropdown">
                         <a class="dropdown-toggle">
-                            <div class="flags-{{mediaLanguage}}"></div>
-                            {{mediaLanguage | bmmLanguage}}</a>
+                            <div class="flags-{{websiteLanguage}}"></div>
+                            {{websiteLanguage | bmmLanguage}}</a>
                         <ul class="dropdown-menu">
-                            <li ng-repeat="lang in root.languages">
+                            <li ng-repeat="lang in translations.available">
                                 <a class="flags-{{lang}}"
-                                   ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+                                   ng-click="setWebsiteLanguage(lang);">{{lang | bmmLanguage}}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div style="width: 47%; float: right;">
-                    <b>{{translation.options.contentLanguage}}</b>
+                <div style="width: 47%; float: right; margin-top: 1em;">
+                    <b>{{translation.options.preferredContentLanguage}}</b>
                     <div class="dropdown">
                         <a class="dropdown-toggle">
                             <div class="flags-{{mediaLanguage}}"></div>
@@ -149,6 +149,56 @@
                         </ul>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--MORE INFO FOR A TRACK-->
+<div class="popup" ng-hide="trackInfo.show==undefined||trackInfo.show==false">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
+
+                <div class="exit" ng-click="trackInfo.show=false"></div>
+
+                <b style="float: left; width: 100%;">{{trackInfo.track.title}}</b><br><br>
+
+                <b>{{translation.track.recordedDate}}</b><br>
+                    {{trackInfo.track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
+
+                <b>{{translation.track.duration}}</b><br>
+                    <span>
+                        {{trackInfo.track.duration | bmmTime}}
+                    </span><br><br>
+
+                <b>{{translation.track.album}}</b><br>
+                    <span class="link"
+                          ng-click="go('/album/'+trackInfo.track.raw.parent_id); trackInfo.show=false;">
+                        {{trackInfo.track.albumTitle}}
+                    </span><br><br>
+
+                <b>{{translation.track.artist}}</b><br>
+                    <span class="link"
+                          ng-repeat="artist in trackInfo.track.interprets"
+                       ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); trackInfo.show=false;">
+                        {{artist.name}}<em ng-hide="$last">, </em>
+                    </span><br><br>
+
+                <b>{{translation.track.lyricist}}</b><br>
+                    <span class="link"
+                          ng-repeat="lyricist in trackInfo.track.lyricists"
+                          ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); trackInfo.show=false;">
+                        {{lyricist.name}}<em ng-hide="$last">, </em>
+                    </span><br><br>
+
+                <b>{{translation.track.composer}}</b><br>
+                    <span class="link"
+                          ng-repeat="composer in trackInfo.track.composers"
+                          ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
+                        {{composer.name}}<em ng-hide="$last">, </em>
+                    </span><br><br>
 
             </div>
         </div>
