@@ -14,7 +14,7 @@
         <div class="page-positioning">
             <a ng-href="#" class="logo"></a>
             <div class="search">
-                <form ng-submit="go('/search/'+bmm.term);">
+                <form ng-submit="go('/playlist/search/'+bmm.term);">
                     <input ng-model="bmm.term"
                            type="text"
                            placeholder="{{translation.general.search}}">
@@ -86,6 +86,9 @@
                 <div class="arrow" ng-show="playerOptions"></div>
 
                 <ul ng-show="playerOptions&&!flags">
+                    <li ng-click="trackInfo.track=player.formatted; trackInfo.show=true;">
+                        <div class="icon"></div>
+                        <span>{{translation.track.details}}</span></li>
                     <li ng-click="trackToPlaylist.id=player.id; trackToPlaylist.language=player.language">
                         <div class="icon playlist"></div>
                         <span>{{translation.options.addToPlaylist}}</span>
@@ -180,7 +183,7 @@
             <div class="sub-header" ng-class="{'visible': fixed}">
                 <a ng-href="#" class="logo"></a>
                 <div class="search">
-                    <form ng-submit="go('/search/'+bmm.term); visible=false;">
+                    <form ng-submit="go('/playlist/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
                                     type="text"
                                     placeholder="{{translation.general.search}}"></div>
@@ -245,10 +248,27 @@
                 </li>
             </ul>
 
+
+            <button class="settings"
+                    ng-click="settings.show=true">{{translation.general.settings}}</button>
+
             <a href="mailto:project-bmm@derhub.de"
-               style="margin: 2em 0 0 1.1em;
-               float: left;
-               font-size: .7em;">Feedback</a>
+               style="  margin-top: 1em;
+                        color: black;
+                        opacity: .7;
+                        float: left;
+                        font-size: .8em;">
+                {{translation.general.suport}}</a>
+
+            <a href="#/copyright"
+               style="  margin: 1em 0;
+                        color: black;
+                        opacity: .7;
+                        width: 100%;
+                        float: left;
+                        font-size: .8em;">
+                © {{translation.copyright}} {{now | date : 'yyyy'}}, <br>
+                &nbsp&nbsp {{translation.copyrightBy}}</a>
 
         </div>
 
