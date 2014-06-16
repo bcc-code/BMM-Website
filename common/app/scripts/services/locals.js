@@ -16,23 +16,25 @@ angular.module('bmmLibApp')
         var results = 1;
 
         $.each(root.languages, function() {
-          promises.push($http.get(url+this+'.json')
-            .success(function(file) {
-              if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
-                locals.date[file.id] = file.date;
-              }
-              results++;
-              if (results>=expectedResponses) {
-                localsLoaded.resolve();
-              }
-            })
-            .error(function() {
-              results++;
-              if (results>=expectedResponses) {
-                localsLoaded.resolve();
-              }
-            })
-          );
+          if (this!=='ar') {
+            promises.push($http.get(url+this+'.json')
+              .success(function(file) {
+                if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
+                  locals.date[file.id] = file.date;
+                }
+                results++;
+                if (results>=expectedResponses) {
+                  localsLoaded.resolve();
+                }
+              })
+              .error(function() {
+                results++;
+                if (results>=expectedResponses) {
+                  localsLoaded.resolve();
+                }
+              })
+            );
+          }
         });
 
       });
