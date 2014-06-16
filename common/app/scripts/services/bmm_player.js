@@ -17,6 +17,7 @@ angular.module('bmmLibApp')
   factory.subtitle = '';
   factory.extraTitle = '';
   factory.raw = {};
+  factory.formatted = {};
   factory.id = -1;
   factory.fullscreen = false;
   factory.showVideo = false;
@@ -161,6 +162,7 @@ angular.module('bmmLibApp')
     factory.id = track.id;
     factory.source = source.url;
     factory.raw = track.raw;
+    factory.formatted = bmmFormatterTrack.resolve(track.raw);
 
     if (source.video) {
       $(videoTarget).jPlayer('setMedia', {
