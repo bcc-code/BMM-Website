@@ -9,6 +9,8 @@ angular.module('bmmLibApp')
     factory.user = {};
     factory.root = {};
     factory.translation = {};
+    factory.translations = {}; //Object with actual translations
+    factory.translations.available = []; //Array with translations available
     factory.mediaLanguage = 'nb'; //Fallback
     factory.ios = false;
     factory.config = {};
@@ -83,7 +85,19 @@ angular.module('bmmLibApp')
             $.each(root.languages, function(index) {
               if (this==='ar') {
                 root.languages.splice(index,1);
+                return false;
               }
+            });
+            //Load all translations (Loads in background, not time dependent)
+            $.each(factory.config.translationsAvailable, function() {
+              var lang = this;
+              $.ajax({
+                url: factory.config.translationFolder+lang+'.json',
+                success: function(data) {
+                  factory.translations[lang] = data;
+                  factory.translations.available.push(lang);
+                }
+              });
             });
             factory.root = root;
             rootLoaded.resolve();
