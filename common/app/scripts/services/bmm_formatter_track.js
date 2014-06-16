@@ -81,6 +81,12 @@ angular.module('bmmLibApp')
       } else {
         resolvedData.albumTitle = resolvedData.parentRootTitle;
       }
+      //Get from id3 as last option
+      if (resolvedData.albumTitle === '' &&
+          typeof data._meta!=='undefined'&&
+          typeof data._meta.album!=='undefined') {
+        resolvedData.albumTitle=data._meta.album;
+      }
 
       //Find file type, url and length
       if (typeof data.media!=='undefined'&&data.media!==null&&data.media.length>0) {
@@ -144,14 +150,33 @@ angular.module('bmmLibApp')
         resolvedData.performers = '';
         resolvedData.bible = '';
         resolvedData.unsorted = '';
+        resolvedData.interprets = [];
+        resolvedData.lyricists = [];
+        resolvedData.composers = [];
 
         //Format relations to strings
         $.each(resolvedData.relations, function(key) {
 
           switch (key) {
+
+            case 'lyricist':
+
+              $.each(resolvedData.relations[key], function(index) {
+                resolvedData.lyricists.push(this);
+              });
+
+            break;
+            case 'composer':
+
+              $.each(resolvedData.relations[key], function(index) {
+                resolvedData.composers.push(this);
+              });
+
+            break;
             case 'interpret':
 
               $.each(resolvedData.relations[key], function(index) {
+                resolvedData.interprets.push(this);
                 if ((resolvedData.relations[key].length-1)===index) {
                   resolvedData.performers+= this.name;
                 } else {
@@ -245,7 +270,7 @@ angular.module('bmmLibApp')
 
       /**
        * Returns: file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
-       *          combinedTitle, parentRootTitle, albumTitle, raw
+       *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, composers, interprets
        */
 
       return resolvedData;
