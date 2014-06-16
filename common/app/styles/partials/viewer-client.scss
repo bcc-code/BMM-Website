@@ -58,8 +58,19 @@
 
 //Latest list
 .bmm-latest-list {
+  position: relative;
   width: 23em;
   float: left;
+}
+
+.bmm-latest-list li {
+  position: relative;
+  .options {
+    top: .8em;
+    position: absolute;
+    float: none;
+    right: 0;
+  }
 }
 
 .bmm-latest-list.small {
@@ -231,13 +242,6 @@
 .bmm-interpret-about {
   font-size: .9em;
   color: #555;
-}
-
-//Album latest
-.album-latest:first-child {
-  margin-left: 0;
-  overflow: visible;
-  width: auto;
 }
 
 .album-latest {
