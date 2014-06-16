@@ -1,5 +1,10 @@
+<div ng-show="searchResults"><br>
+    <b>{{translation.general.searchResultsFor}}</b>
+</div>
 <h3>{{title}}</h3>
-{{tracks}} {{translation.playlist.tracks}}
+<span ng-hide="tracks<1">{{tracks}} {{translation.playlist.tracks}}</span>
+<br ng-show="tracks>0&&albumCount>0">
+<span ng-hide="albumCount<1">{{albumCount}} {{translation.playlist.albums}}</span>
 <br>
 <div class="play-playlist"
      ng-click="play(getPlaylistCopy(languageFilter), 0);">
@@ -53,7 +58,7 @@
 
 </button>
 
-<div bmm-playlist>
+<div bmm-playlist ng-hide="tracks<1">
 	<table>
 
 		<thead>
@@ -90,6 +95,9 @@
                         <div class="arrow" ng-show="trackOptions"></div>
 
                         <ul ng-show="trackOptions">
+                            <li ng-click="$parent.$parent.trackInfo.track=track; trackInfo.show=true;">
+                                <div class="icon"></div>
+                                <span>{{translation.track.details}}</span></li>
                             <li ng-click="$parent.$parent.trackToPlaylist.id=track.id; $parent.$parent.trackToPlaylist.language=track.language">
                                 <div class="icon playlist"></div>
                                 <span>{{translation.options.addToPlaylist}}</span>
@@ -100,7 +108,7 @@
                                     <span>{{translation.options.download}}</span>
                                 </a>
                             </li>
-                            <li ng-click="go('/album/'+track.raw._meta.parent.id)">
+                            <li ng-click="go('/album/'+track.raw.parent_id)">
                                 <div class="icon album"></div>
                                 <span>{{translation.options.goToAlbum}}</span></li>
                             <li ng-show="private" ng-click="remove($index)">
@@ -116,4 +124,12 @@
 		</tbody>
 
 	</table>
+</div>
+
+<div style="margin-top: 2em; width: 100%;">
+    <div title="{{album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in albums">
+        <img class="album-latest-image" ng-src="{{album.cover}}"/>
+        <div class="album-latest-title">{{album.title}}</div>
+        <div class="album-latest-about"></div>
+    </div>
 </div>

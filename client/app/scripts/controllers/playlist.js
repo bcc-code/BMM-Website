@@ -8,6 +8,7 @@ angular.module('bmmApp')
     $location,
     bmmApi,
     bmmFormatterTrack,
+    bmmFormatterAlbum,
     init,
     bmmPlay,
     bmmPlayer,
@@ -34,6 +35,9 @@ angular.module('bmmApp')
     $scope.podcast = {};
     $scope.zip = {};
     $scope.zip.show = false;
+    $scope.albums = [];
+    $scope.albumCount = 0;
+    $scope.searchResults = false;
 
     $(window).off('scrollBottom');
 
@@ -41,6 +45,52 @@ angular.module('bmmApp')
     $scope.private = false;
 
     switch($routeParams.playlist) {
+      case 'search':
+
+        //Ensure search field has the term
+        $scope.$parent.bmm = {};
+        $scope.$parent.bmm.term = $routeParams.id;
+        //Reset search field on leave
+        $scope.$on('$destroy', function() {
+          $scope.$parent.bmm.term = '';
+        });
+
+        $scope.searchResults = true;
+        $scope.title = $routeParams.id;
+        size = 0;
+
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+
+            loading = true;
+            $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
+
+            bmmApi.search($routeParams.id, {
+              from: size,
+              size: loadAmount
+            }, init.mediaLanguage).done(function(data) {
+
+              $('.bmm-loading').remove();
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        bmmApi.search($routeParams.id, {
+          size: loadAmount
+        }, init.mediaLanguage).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        break;
       case 'latest':
 
         $scope.title = init.translation.playlist.latestTracks;
@@ -59,7 +109,7 @@ angular.module('bmmApp')
             }, init.mediaLanguage).done(function(data) {
 
               $('.bmm-loading').remove();
-              resolveTracks(data, size);
+              resolveTracks(data);
               size+=loadAmount;
 
             });
@@ -131,7 +181,7 @@ angular.module('bmmApp')
             }, init.mediaLanguage).done(function(data) {
 
               $('.bmm-loading').remove();
-              resolveTracks(data, size);
+              resolveTracks(data);
               size+=loadAmount;
 
             });
@@ -179,7 +229,7 @@ angular.module('bmmApp')
             }, init.mediaLanguage).done(function(data) {
 
               $('.bmm-loading').remove();
-              resolveTracks(data, size);
+              resolveTracks(data);
               size+=loadAmount;
 
             });
@@ -227,7 +277,7 @@ angular.module('bmmApp')
             }, init.mediaLanguage).done(function(data) {
 
               $('.bmm-loading').remove();
-              resolveTracks(data, size);
+              resolveTracks(data);
               size+=loadAmount;
 
             });
@@ -274,7 +324,7 @@ angular.module('bmmApp')
             }, init.mediaLanguage).done(function(data) {
 
               $('.bmm-loading').remove();
-              resolveTracks(data, size);
+              resolveTracks(data);
               size+=loadAmount;
 
             });
@@ -306,36 +356,40 @@ angular.module('bmmApp')
         break;
     }
 
-    var resolveTracks = function(data, startindex) {
-
-      if (typeof startindex==='undefined') {
-        startindex = 0;
-      }
+    var resolveTracks = function(data) {
 
       var track, cnt=0;
 
       $.each(data, function(index) {
 
-        track = bmmFormatterTrack.resolve(this);
-
-        if ($routeParams.playlist!=='private') {
-          track.order = track.date;
+        if (this.type==='album') {
+          $scope.albums.push(bmmFormatterAlbum.resolve(this));
+          $scope.albumCount++;
+          cnt++;
         } else {
-          track.order = index;
-        }
 
-        if (track.type==='video') {
-          track.video = true;
-        }
+          track = bmmFormatterTrack.resolve(this);
 
-        $scope.playlist.push(track);
+          if ($routeParams.playlist!=='private') {
+            track.order = track.date;
+          } else {
+            track.order = index;
+          }
 
-        if (typeof track.duration!=='undefined'&&
-            $.isNumeric(track.duration)) {
-          $scope.duration+=track.duration;
+          if (track.type==='video') {
+            track.video = true;
+          }
+
+          $scope.playlist.push(track);
+
+          if (typeof track.duration!=='undefined'&&
+              $.isNumeric(track.duration)) {
+            $scope.duration+=track.duration;
+          }
+          $scope.tracks++;
+          cnt++;
+
         }
-        $scope.tracks++;
-        cnt++;
 
       });
 
