@@ -141,13 +141,15 @@ $animation-video-type: ease;
       display: block;
       > p {
         position: absolute;
-        text-shadow: 0em 0em .1em #000;
-        border-top-left-radius: .3em;
+        text-shadow: 0 0 .1em #000;
         visibility: visible;
         background-color: rgba(0, 0, 0, 0.52);
-        color: white;
+        color: #FFF;
         padding: .1em .5em;
-        display: table;
+        bottom: 0;
+        font-size: 1.5em;
+        width: 100%;
+        text-align: center;
         a {
           color: white;
         }
