@@ -6,8 +6,8 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}"
-        ng-click="play(latestSpeaksLeft, $index);">
-		<div class="bmm-latest">
+        >
+		<div class="bmm-latest" ng-click="play(latestSpeaksLeft, $index);">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
 				<img class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
@@ -16,6 +16,7 @@
 			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
 			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}} ({{track.duration | bmmTime}})</div>
 		</div>
+        <div ng-include="'views/pages/options.html'"></div>
 	</li>
 </ul>
 
@@ -24,9 +25,8 @@
         class="draggable latest"
         id="{{track.id}}"
         language="{{track.language}}"
-        title="{{track.albumTitle}}"
-        ng-click="play(latestSpeaksRight, $index);">
-		<div class="bmm-latest">
+        title="{{track.albumTitle}}">
+		<div class="bmm-latest" ng-click="play(latestSpeaksRight, $index);">
 			<div class="bmm-latest-bullet">{{$index+4}}</div>
 			<div>
                 <img class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
@@ -35,6 +35,7 @@
 			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
 			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}} ({{track.duration | bmmTime}})</div>
 		</div>
+        <div ng-include="'views/pages/options.html'"></div>
 	</li>
 </ul>
 
@@ -43,9 +44,8 @@
         class="draggable latest"
         id="{{track.id}}"
         language="{{track.language}}"
-        title="{{track.albumTitle}}"
-        ng-click="play(latestSpeaksLargeScreen, $index);">
-        <div class="bmm-latest">
+        title="{{track.albumTitle}}">
+        <div class="bmm-latest" ng-click="play(latestSpeaksRight, $index);">
             <div class="bmm-latest-bullet">{{$index+7}}</div>
             <div>
                 <img class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
@@ -54,6 +54,7 @@
             <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
             <div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {HH}:{mm}'}} ({{track.duration | bmmTime}})</div>
         </div>
+        <div ng-include="'views/pages/options.html'"></div>
     </li>
 </ul>
 
@@ -81,9 +82,8 @@
         class="draggable latest"
         id="{{track.id}}"
         language="{{track.language}}"
-        title="{{track.albumTitle}}"
-        ng-click="play(latestMusicLeft, $index);">
-		<div class="bmm-latest">
+        title="{{track.albumTitle}}">
+		<div class="bmm-latest" ng-click="play(latestMusicLargeOnly, $index);">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
 				<img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -92,6 +92,7 @@
 			<div class="bmm-latest-interprets">{{track.performers}}</div>
 			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH}'}} ({{track.duration | bmmTime}})</div>
 		</div>
+        <div ng-include="'views/pages/options.html'"></div>
 	</li>
 </ul>
 
@@ -100,9 +101,8 @@
         class="draggable latest"
         id="{{track.id}}"
         language="{{track.language}}"
-        title="{{track.albumTitle}}"
-        ng-click="play(latestMusicRight, $index);">
-		<div class="bmm-latest">
+        title="{{track.albumTitle}}">
+		<div class="bmm-latest" ng-click="play(latestMusicLargeOnly, $index);">
 			<div class="bmm-latest-bullet">{{$index+5}}</div>
 			<div>
                 <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -111,6 +111,7 @@
 			<div class="bmm-latest-interprets">{{track.performers}}</div>
 			<div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH}'}} ({{track.duration | bmmTime}})</div>
 		</div>
+        <div ng-include="'views/pages/options.html'"></div>
 	</li>
 </ul>
 
@@ -119,9 +120,8 @@
         class="draggable latest"
         id="{{track.id}}"
         language="{{track.language}}"
-        title="{{track.albumTitle}}"
-        ng-click="play(latestMusicLargeOnly, $index);">
-        <div class="bmm-latest">
+        title="{{track.albumTitle}}">
+        <div class="bmm-latest" ng-click="play(latestMusicLargeOnly, $index);">
             <div class="bmm-latest-bullet">{{$index+9}}</div>
             <div>
                 <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -130,6 +130,7 @@
             <div class="bmm-latest-interprets">{{track.performers}}</div>
             <div class="bmm-latest-about">{{track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH}'}} ({{track.duration | bmmTime}})</div>
         </div>
+        <div ng-include="'views/pages/options.html'"></div>
     </li>
 </ul>
 
@@ -144,6 +145,9 @@
 				background-image: url({{album.cover}});
 				background-size: contain"
 			class="bmm-hover">
+            <div class="title">
+                {{album.title}}
+            </div>
 		</li>
 	</ul>
 </div>
