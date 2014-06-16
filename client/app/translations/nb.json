@@ -2,13 +2,14 @@
   "language":"English",
   "general":{
     "search":"Search...",
+    "searchResultsFor": "Search results for:",
     "loading": "Loading...",
     "waysOfTheLord": "Ways of the Lord",
     "almondBlossom": "Almond Blossom",
     "noTitle": "No title",
     "settings": "Settings",
-    "Feedback": "Feedback",
-    "Suport": "Suport",
+    "feedback": "Feedback",
+    "suport": "Suport",
     "readMore": "Read more"
   },
   "options":{
@@ -28,7 +29,7 @@
     "chooseLanguage": "Choose language",
     "includeLatest": "Include the latest",
     "websiteLanguage": "Website language",
-    "contentLanguage": "Content language",
+    "preferredContentLanguage": "Preferred content language",
     "tracks": "tracks",
     "filterByLanguage": "Filter by language",
     "copyUrl": "Copy URL",
@@ -96,9 +97,16 @@
   },
   "track":{
     "duration":"Duration",
+    "details": "Details",
     "unknown":"Unknown",
     "dragMeToPlaylist":"Drag me to playlist",
-    "exegesis": "Exegesis"
+    "exegesis": "Exegesis",
+    "recordedDate": "Recorded date",
+    "artist": "Artist",
+    "lyricist": "Lyricist",
+    "composer": "Composer",
+    "album": "Album",
+    "duration": "Duration"
   },
   "album":{
     "tracks":"Track(s)",
@@ -108,6 +116,7 @@
   "playlist":{
     "content":"Content",
     "tracks":"Track(s)",
+    "albums":"Album(s)",
     "totalDuration":"Total Duration",
     "duration":"Duration",
     "nr":"Nr.",
