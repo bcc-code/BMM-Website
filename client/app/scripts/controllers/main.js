@@ -22,8 +22,10 @@ angular.module('bmmApp')
       $scope.user = init.user;
       $scope.root = init.root;
       $scope.translation = init.translation;
-      $scope.podcastLanguage = $scope.mediaLanguage = init.mediaLanguage;
+      $scope.translations = init.translations;
+      $scope.podcastLanguage = $scope.websiteLanguage = $scope.mediaLanguage = init.mediaLanguage;
       $scope.ios = init.ios;
+      $scope.now = new Date();
 
       $scope.$parent.$watch('mediaLanguage', function(lang) {
         if (typeof mediaLanguage!=='undefined') {
@@ -36,10 +38,13 @@ angular.module('bmmApp')
       };
 
       $scope.setMediaLanguage = function(lang) {
-        init.mediaLanguage = lang;
-        $scope.mediaLanguage = lang;
-        init.originalLanguage = lang;
+        $scope.mediaLanguage = init.originalLanguage = init.mediaLanguage = lang;
         $route.reload();
+      };
+
+      $scope.setWebsiteLanguage = function(lang) {
+        $scope.websiteLanguage = lang;
+        $scope.translation = init.translation = init.translations[lang];
       };
 
       $scope.go = function ( path ) {
