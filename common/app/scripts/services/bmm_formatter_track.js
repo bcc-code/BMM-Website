@@ -90,25 +90,90 @@ angular.module('bmmLibApp')
 
       //Find file type, url and length
       if (typeof data.media!=='undefined'&&data.media!==null&&data.media.length>0) {
+
+        resolvedData.videos = [];
+        resolvedData.audios = [];
+        resolvedData.unknowns = [];
+        resolvedData.video = false;
+        resolvedData.audio = false;
+        resolvedData.unknown = false;
+
+        //In media there can currently be 'audio' and 'video'
         $.each( data.media, function() {
 
-          resolvedData.file = bmmApi.secureFile(this.files[0].url);
+          //Get duration from first file available
+          //If audio and video exist it will be overwritten one time
           resolvedData.duration = Number(this.files[0].duration);
-          resolvedData.type = this.type;
 
-          //Keep search while no video is found and more files available
-          if (this.type==='video') {
-            return;
-          }
+          var _type = this.type;
+
+          $.each(this.files, function() {
+            if (_type==='video') {
+              resolvedData.video = true;
+              resolvedData.videos.push({
+                file: bmmApi.secureFile(this.url),
+                type: this.mime_type,
+                duration: Number(this.duration)
+              });
+            } else {
+              resolvedData.audio = true;
+              resolvedData.audios.push({
+                file: bmmApi.secureFile(this.url),
+                type: this.mime_type,
+                duration: Number(this.duration)
+              });
+            }
+          });
 
         });
+
       }
 
       //If track is a waiting, fetch waiting file
       if (typeof data.link!=='undefined') {
-        resolvedData.file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link;
-        resolvedData.file = bmmApi.secureFile(resolvedData.file);
+        var _file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link;
+        resolvedData.unknown = true;
+        resolvedData.unknowns.push({
+          file: bmmApi.secureFile(_file),
+          type: 'Unknown',
+          duration: 0
+        });
         resolvedData.link = data.link;
+      }
+
+      //If only one file exist, make a direct download
+      resolvedData.directDownload = {};
+      resolvedData.directDownload.exist = false;
+      if (resolvedData.audios.length+
+          resolvedData.videos.length+
+          resolvedData.unknowns.length===1) {
+
+        if (resolvedData.audios.length===1) {
+          resolvedData.directDownload = {
+            file: resolvedData.audios[0].file,
+            type: resolvedData.audios[0].mime_type,
+            duration: Number(resolvedData.audios[0].duration)
+          }
+        }
+
+        if (resolvedData.videos.length===1) {
+          resolvedData.directDownload = {
+            file: resolvedData.videos[0].file,
+            type: resolvedData.videos[0].mime_type,
+            duration: Number(resolvedData.videos[0].duration)
+          }
+        }
+
+        if (resolvedData.unknowns.length===1) {
+          resolvedData.directDownload = {
+            file: resolvedData.unknowns[0].file,
+            type: resolvedData.unknowns[0].mime_type,
+            duration: Number(resolvedData.unknowns[0].duration)
+          }
+        }
+
+        resolvedData.directDownload.exist = true;
+
       }
 
       //Find title

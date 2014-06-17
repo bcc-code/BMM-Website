@@ -10,7 +10,7 @@ angular.module('bmmLibApp')
 
   factory.currentTime = 0;
   factory.currentTimePercent = 0;
-  factory.volume = 0;
+  factory.volume = .8;
   factory.muted = false;
   factory.cover = '';
   factory.title = '';
@@ -22,9 +22,9 @@ angular.module('bmmLibApp')
   factory.fullscreen = false;
   factory.showVideo = false;
   factory.video = false;
-  factory.source = '';
   factory.playing = false;
   factory.trackSwitched = false;
+  factory.videoFirst = true; //Show video if available
 
   factory.initialize = function(target) {
 
@@ -80,13 +80,21 @@ angular.module('bmmLibApp')
 
   };
 
-  factory.setPlay = function() {
-    $(videoTarget).jPlayer('play');
+  factory.setPlay = function(time) {
+    if (typeof time!=='undefined') {
+      $(videoTarget).jPlayer('play', time);
+    } else {
+      $(videoTarget).jPlayer('play');
+    }
     factory.playing = true;
   };
 
-  factory.setPause = function() {
-    $(videoTarget).jPlayer('pause');
+  factory.setPause = function(time) {
+    if (typeof time!=='undefined') {
+      $(videoTarget).jPlayer('pause', time);
+    } else {
+      $(videoTarget).jPlayer('pause');
+    }
     factory.playing = false;
   };
 
@@ -133,6 +141,14 @@ angular.module('bmmLibApp')
     }
   };
 
+  factory.toggleVideoFirst = function() {
+    factory.videoFirst = !factory.videoFirst;
+    if (typeof factory.source!=='undefined' &&
+        factory.source.video&&factory.source.audio) {
+      factory.setSource(factory.source, factory.currentTime);
+    }
+  };
+
   factory.setFullscreen = function(bool) {
     if (typeof bool!=='undefined') {
       $(videoTarget).jPlayer({ fullScreen: bool });
@@ -148,44 +164,47 @@ angular.module('bmmLibApp')
     factory.volume = volume;
   };
 
-  factory.setSource = function(track) {
+  factory.setSource = function(source, time) {
 
-    $(videoTarget).jPlayer('clearMedia');
+    if (typeof source!=='undefined') {
 
-    var paused = $(videoTarget).data('jPlayer').status.paused;
-    source = track;
+      var paused = $(videoTarget).data('jPlayer').status.paused;
+      $(videoTarget).jPlayer('clearMedia');
 
-    factory.cover = track.cover;
-    factory.title = track.title;
-    factory.subtitle = track.subtitle;
-    factory.language = track.language;
-    factory.id = track.id;
-    factory.source = source.url;
-    factory.raw = track.raw;
-    factory.formatted = bmmFormatterTrack.resolve(track.raw);
+      //Below is deprecated
+      factory.cover = source.cover;
+      factory.title = source.title;
+      factory.subtitle = source.subtitle;
+      factory.language = source.language;
+      factory.id = source.id;
+      factory.raw = source.raw;
+      factory.formatted = bmmFormatterTrack.resolve(source.raw);
 
-    if (source.video) {
-      $(videoTarget).jPlayer('setMedia', {
-        m4v: source.url,
-        poster: factory.cover
-      });
-      factory.showVideo = true;
-      factory.video = true;
-    } else {
-      $(videoTarget).jPlayer('setMedia', {
-        mp3: source.url,
-        poster: factory.cover
-      });
-      factory.showVideo = false;
-      factory.video = false;
-      factory.setFullscreen(false);
+      //You should use this
+      factory.source = source;
+
+      var type, file, src;
+      if ((source.video && source.audio && factory.videoFirst)||
+          (source.video && !source.audio)) {
+        src = factory.resolveTypes(source.videos, true);
+        $(videoTarget).jPlayer('setMedia', src);
+      } else if (source.audio) {
+        src = factory.resolveTypes(source.audios);
+        $(videoTarget).jPlayer('setMedia', src);
+      } else if (source.unknown) {
+        src = factory.resolveTypes(source.unknowns);
+        $(videoTarget).jPlayer('setMedia', src);
+      }
+
+      if (!paused) {
+        factory.setPlay(time);
+      } else {
+        factory.setPause(time);
+      }
+
+      factory.trackSwitched = !factory.trackSwitched;
+
     }
-
-    if (!paused) {
-      factory.setPlay();
-    }
-
-    factory.trackSwitched = !factory.trackSwitched;
 
   };
 
@@ -242,6 +261,68 @@ angular.module('bmmLibApp')
   factory.getDuration = function() {
     return $(videoTarget).data('jPlayer').status.duration;
   };
+
+  //Convert mime_type from API to type from
+  factory.resolveTypes = function(files, video) {
+
+    if (typeof video==='undefined') {
+      video = false;
+    }
+
+    var sourceReady = {
+      poster: factory.cover
+    };
+
+    $.each(files, function() {
+
+      switch(this.type) {
+        case 'audio/mpeg':
+          sourceReady.mp3 = this.file;
+          factory.setAudio();
+          break;
+        case 'video/mp4':
+          sourceReady.m4v = this.file;
+          factory.setVideo();
+          break;
+        case 'application/ogg':
+          if (video) {
+            sourceReady.ogv = this.file;
+            factory.setVideo();
+          } else {
+            sourceReady.oga = this.file;
+            factory.setAudio();
+          }
+          break;
+        case 'video/webm':
+          sourceReady.webmv = this.file;
+          factory.setVideo();
+          break;
+        case 'audio/webm':
+          sourceReady.webma = this.file;
+          factory.setAudio();
+          break;
+        default:
+          sourceReady.mp3 = this.file;
+          factory.setAudio();
+          break;
+      };
+
+    });
+
+    return sourceReady;
+
+  };
+
+  factory.setAudio = function() {
+    factory.showVideo = false;
+    factory.video = false;
+    factory.setFullscreen(false);
+  }
+
+  factory.setVideo = function() {
+    factory.showVideo = true;
+    factory.video = true;
+  }
 
   $rootScope.safeApply = function(fn) {
     var phase = this.$root.$$phase;

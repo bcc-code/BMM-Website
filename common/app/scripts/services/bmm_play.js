@@ -17,11 +17,6 @@ angular.module('bmmLibApp')
 
       $.each(playlist, function() {
 
-        video = false;
-        if (this.type==='video') {
-          video = true;
-        }
-
         title = this.title;
         performers = this.performers;
         if (this.subtype==='speech') {
@@ -35,9 +30,13 @@ angular.module('bmmLibApp')
           subtitle: performers,
           language: this.language,
           cover: $filter('bmmCover')(this.cover,this.subtype),
-          url: this.file,
           duration: this.duration,
-          video: video,
+          audios: this.audios,
+          videos: this.videos,
+          unknowns: this.unknowns,
+          audio: this.audio,
+          video: this.video,
+          unknown: this.unknown,
           raw: this.raw
         });
 
