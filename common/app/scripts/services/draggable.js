@@ -11,6 +11,32 @@ angular.module('bmmLibApp')
       $(document.body).css('position','relative');
     }
 
+    var resizer = function(target) {
+      if ($(target).is(':data(ui-draggable)')) {
+        if ($('#size-detector').width()<2&&!$(target).draggable('option', 'disabled')) {
+          $(target).draggable('disable');
+        } else if ($('#size-detector').width()>1&&$(target).draggable('option', 'disabled')) {
+          $(target).draggable('enable');
+        }
+      }
+    };
+
+    var draggableToggle = function(target) {
+
+      resizer(target);
+
+      $(window).off('resize', resizer);
+      $(window).bind('resize', function() {
+        if(typeof sizewait !== 'undefined'){
+          clearTimeout(sizewait);
+        }
+        var sizewait = setTimeout(function(){
+          resizer(target);
+        },200);
+      });
+
+    }
+
     factory.makeDraggable = function($scope) {
 
       var navStatus=false;
@@ -50,6 +76,8 @@ angular.module('bmmLibApp')
 
         });
 
+        draggableToggle('.draggable');
+
         $('body').find('.bmm-playlist-private').droppable({
           scope: 'move',
           activeClass: 'active',
@@ -64,7 +92,7 @@ angular.module('bmmLibApp')
           }
         });
 
-      });
+      }, 1000);
 
     };
 
@@ -106,6 +134,9 @@ angular.module('bmmLibApp')
             });
           }
         });
+
+        draggableToggle(this);
+
       });
 
       $('body').find('.bmm-playlist-private').droppable({
