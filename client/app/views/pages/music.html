@@ -7,7 +7,7 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestLargeOnly, $index);">
+		<div class="bmm-latest" ng-click="play(latestMusicLeft, $index);">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
 				<img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -26,7 +26,7 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestLargeOnly, $index);">
+		<div class="bmm-latest" ng-click="play(latestMusicRight, $index);">
 			<div class="bmm-latest-bullet">{{$index+6}}</div>
 			<div>
                 <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -59,27 +59,24 @@
     </ul>
 </div>
 
-<div>
-<h2 class="interprets">{{translation.page.music.artists}}</h2>
-<ul>
-	<li>
-		<div class="bmm-interpret"
-			 ng-repeat="contributor in contributors"
-			 ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
-			 title="{{contributor.name}}">
-			<img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
-			<div class="bmm-interpret-title">{{contributor.name}}</div>
-			<div class="bmm-interpret-about"><!--Here comes amount of tracks--></div>
-		</div>
-	</li>
-</ul>
+<div style="width: 15em;">
+    <h2 class="interprets">{{translation.page.music.artists}}</h2>
+    <input type="text"
+           style="width: 100%; height: 2em;"
+           placeholder="{{translation.general.search}}"
+           ng-model="contributor">
+    <ul>
+        <li>
+            <div class="bmm-interpret"
+                 ng-repeat="contributor in contributors | limitTo: 4"
+                 ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
+                 title="{{contributor.name}}">
+                <img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
+                <div class="bmm-interpret-title">{{contributor.name}}</div>
+            </div>
+        </li>
+    </ul>
 </div>
-
-<!--div class="bmm-albums">
-	<div title="{{translation.page.music.mp3Source}}" ng-click="go('/playlist/mp3kilden');" class="bmm-album bmm-hover bmm-kilden"></div>
-	<div title="{{translation.page.music.childrensMp3Source}}" ng-click="go('/playlist/barnasmp3');"  class="bmm-album bmm-hover bmm-barnas"></div>
-	<div title="{{translation.page.music.instrumental}}" ng-click="go('/playlist/instrumental');" class="bmm-album bmm-hover bmm-instrumental"></div>
-</div-->
 
 <h2>{{translation.page.welcome.latestAlbums}}</h2>
 

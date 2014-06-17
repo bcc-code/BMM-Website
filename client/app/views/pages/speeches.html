@@ -27,7 +27,7 @@
             id="{{track.id}}"
             language="{{track.language}}"
             title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechLargeOnly, $index);">
+            <div class="bmm-latest" ng-click="play(latestSpeechRight, $index);">
                 <div class="bmm-latest-bullet">{{$index+6}}</div>
                 <div>
                     <img class="bmm-latest-thumbnail"
@@ -62,20 +62,23 @@
     </ul>
 </div>
 
-<div>
-<h2 class="interprets">{{translation.page.speeches.recommended}}</h2>
-<ul>
-	<li>
-		<div class="bmm-interpret"
-			 ng-repeat="contributor in contributors"
-			 ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
-			 title="{{contributor.name}}">
-            <img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
-			<div class="bmm-interpret-title">{{contributor.name}}</div>
-			<div class="bmm-interpret-about"><!--@todo amount of tracks--></div>
-		</div>
-	</li>
-</ul>
+<div style="width: 15em;">
+    <h2 class="interprets">{{translation.page.speeches.recommended}}</h2>
+        <input type="text"
+               style="width: 100%; height: 2em;"
+               placeholder="{{translation.general.search}}"
+               ng-model="contributor">
+    <ul>
+        <li>
+            <div class="bmm-interpret"
+                 ng-repeat="contributor in contributors | limitTo: 4"
+                 ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
+                 title="{{contributor.name}}">
+                <img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | bmmCover:'contributor'}}">
+                <div class="bmm-interpret-title">{{contributor.name}}</div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <h2>{{translation.page.welcome.latestAlbums}}</h2>

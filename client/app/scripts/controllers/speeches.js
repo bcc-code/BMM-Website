@@ -53,6 +53,19 @@ angular.module('bmmApp')
 
     });
 
+    //AUTOCOMPLETION
+    $scope.$watch('contributor', function(name) {
+      if (name!==''&&typeof name!=='undefined') {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors = data;
+          });
+        });
+      } else {
+        $scope.contributors = $scope.randomBrothers;
+      }
+    });
+
     //LATEST SPEECHS
     bmmApi.trackLatest({
       size: 15,
@@ -109,12 +122,12 @@ angular.module('bmmApp')
     });
 
     //FETCH INTERPRETS
-    $scope.contributors = [];
+    $scope.randomBrothers = [];
 
     //Kåre J. Smith
     bmmApi.contributorIdGet(36491).done(function(data) {
 
-      $scope.contributors.push(data);
+      $scope.randomBrothers.push(data);
 
       //3 will randomly be selected and shown
       var randomBrothers = [
@@ -145,7 +158,8 @@ angular.module('bmmApp')
             data.cover = bmmApi.secureFile(data.cover);
           }
 
-          $scope.contributors.push(data);
+          $scope.randomBrothers.push(data);
+          $scope.contributors = $scope.randomBrothers;
           $scope.$apply();
         });
         if (index===2) {

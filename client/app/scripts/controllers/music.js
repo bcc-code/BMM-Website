@@ -53,6 +53,19 @@ angular.module('bmmApp')
 
     });
 
+    //AUTOCOMPLETION
+    $scope.$watch('contributor', function(name) {
+      if (name!==''&&typeof name!=='undefined') {
+        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors = data;
+          });
+        });
+      } else {
+        $scope.contributors = $scope.randomArtists;
+      }
+    });
+
     //LATEST MUSIC
     bmmApi.trackLatest({
       size: 15,
@@ -107,7 +120,7 @@ angular.module('bmmApp')
 
     });
 
-    $scope.contributors = [];
+    $scope.randomArtists = [];
 
     //4 will randomly be selected and shown
     var randomBrothers = [
@@ -149,8 +162,9 @@ angular.module('bmmApp')
           data.cover = bmmApi.secureFile(data.cover);
         }
 
-        $scope.contributors.push(data);
+        $scope.randomArtists.push(data);
         $scope.$apply();
+        $scope.contributors = $scope.randomArtists;
       });
       if (index===3) {
         return false;
