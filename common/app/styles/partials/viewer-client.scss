@@ -34,12 +34,14 @@
 
 //Draggable latest list
 .latest {
-  cursor: pointer;
+  cursor: default;
+  .icon {
+    display: inline-block;
+  }
 }
 
 .latest:hover {
-  background: #E6E6E6;
-  box-shadow: 0 0 .5em #CCC;
+  background: $colorPopupHover;
 }
 .latest.ui-draggable-dragging {
   width: 17em;
@@ -52,8 +54,14 @@
 .ui-draggable-dragging {
   padding: .2em .2em .4em .2em;
   box-shadow: 0 0 .4em #999;
-  background: #eee;
+  background: #fff !important;
   cursor: pointer;
+  .options {
+    display: none;
+  }
+  td:first-child {
+    padding-right: 1em;
+  }
 }
 
 //Latest list
@@ -111,6 +119,7 @@
 .bmm-latest-title {
   max-width: 30em;
   overflow: hidden;
+  max-width: 80%;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 700;
@@ -120,6 +129,7 @@
   font-size: .9em;
   color: #ABBED3;
   overflow: hidden;
+  max-width: 80%;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -128,6 +138,7 @@
   font-size: .8em;
   color: #ABBED3;
   overflow: hidden;
+  max-width: 80%;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -245,11 +256,13 @@
 }
 
 .album-latest {
+  position: relative;
   width: 12em;
   overflow: hidden;
   float: left;
   margin-right: 1.5em;
-  margin-bottom: .5em;
+  margin-bottom: 1.5em;
+  opacity: .9;
 }
 
 /*.album-latest:first-child .album-latest-image {
@@ -265,13 +278,13 @@
 }
 
 .album-latest-title {
-  padding-top: .5em;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
   font-weight: 700;
-  height: 3.4em;
-}
-
-.album-latest-about {
-  color: #555;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,.8);
 }
 
 //Music page
@@ -299,8 +312,7 @@
 
 .bmm-hover:hover {
   cursor: pointer;
-  color: #0087FF;
-  opacity: .7;
+  opacity: 1;
 }
 
 .bmm-kilden {

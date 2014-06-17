@@ -66,6 +66,10 @@ tr {
   border: 0;
 }
 
+.ui-state-disabled {
+  opacity: 1;
+}
+
 .ui-slider .ui-slider-handle:hover {
   //background-image: url(../images/svg/sliderbutton_hover.svg);
 }

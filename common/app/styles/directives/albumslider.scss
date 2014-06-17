@@ -15,7 +15,7 @@
     position: absolute;
     bottom: 0;
     text-shadow: 0 0 .4em #000;
-    background-color: rgba(0, 0, 0, 0.56);
+    background-color: rgba(0, 0, 0, .8);
   }
 
   > .bmm-slider-album-prev,
@@ -78,6 +78,7 @@
     position: absolute;
     display: inline-block;
     list-style-type: none;
+    opacity: .9;
     .shadow {
       position: absolute;
       width: 100%;

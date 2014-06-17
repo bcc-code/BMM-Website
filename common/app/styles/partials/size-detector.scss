@@ -1,0 +1,16 @@
+#size-detector {
+  visibility: hidden;
+  width: 2px;
+}
+
+@media screen and (max-width: $maxWidth) {
+  #size-detector {
+    width: 1px;
+  }
+}
+
+@media screen and (max-width: $mobileWidth) {
+  #size-detector {
+    width: 0;
+  }
+}
