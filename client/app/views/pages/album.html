@@ -73,7 +73,7 @@
         </thead>
         <tbody>
             <tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
-                ng-class="{playing: track.playing}">
+                ng-class="{even: $even, odd: $odd, playing: track.playing}">
                 <td ng-class="{'sort': private}">
                     <div ng-show="private" class="sort_handle"></div>
                     <img ng-src="{{track.subtype | icon}}">
@@ -95,7 +95,7 @@
 
                         <div class="arrow" ng-show="trackOptions"></div>
 
-                        <ul ng-show="trackOptions">
+                        <ul ng-show="trackOptions&&!downloads">
                             <li ng-click="$parent.$parent.$parent.trackInfo.track=track; trackInfo.show=true;">
                                 <div class="icon"></div>
                                 <span>{{translation.track.details}}</span></li>
@@ -103,11 +103,40 @@
                                 <div class="icon playlist"></div>
                                 <span>{{translation.options.addToPlaylist}}</span>
                             </li>
-                            <li ng-hide="ios">
-                                <a download ng-href="{{track.file}}?download=1">
-                                    <div class="icon download"></div>
+                            <li ng-click="downloads=!downloads"
+                                ng-show="!track.directDownload.exist&&!ios">
+                                <div class="icon download"></div>
+                                <span>{{translation.options.download}}</span>
+                            </li>
+                            <li ng-show="!ios&&track.directDownload.exist">
+                                <div class="icon download"></div>
+                                <a download ng-href="{{track.directDownload.file}}?download=1">
                                     <span>{{translation.options.download}}</span>
                                 </a>
+                            </li>
+                        </ul>
+
+                        <ul ng-show="trackOptions&&downloads">
+                            <li ng-repeat="source in track.audios">
+                                <a download ng-href="{{source.file}}?download=1">
+                                    <div class="icon download"></div>
+                                    <span>{{source.type}}</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="source in track.videos">
+                                <a download ng-href="{{source.file}}?download=1">
+                                    <div class="icon download"></div>
+                                    <span>{{source.type}}</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="source in track.unknowns">
+                                <a download ng-href="{{source.file}}?download=1">
+                                    <div class="icon download"></div>
+                                    <span>{{source.type}}</span>
+                                </a>
+                            </li>
+                            <li ng-click="downloads=!downloads"><div class="icon settings"></div>
+                                <span>{{translation.options.goBack}}</span>
                             </li>
                         </ul>
 

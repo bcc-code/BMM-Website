@@ -25,7 +25,7 @@
             id="{{track.id}}"
             language="{{track.language}}"
             title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestVideoLeft, $index);">
+            <div class="bmm-latest" ng-click="play(latestVideoRight, $index);">
                 <div class="bmm-latest-bullet">{{$index+4}}</div>
                 <div>
                     <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'video'}}"/>

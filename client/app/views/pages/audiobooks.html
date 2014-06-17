@@ -26,7 +26,7 @@
             id="{{track.id}}"
             language="{{track.language}}"
             title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestAudiobookLargeOnly, $index);">
+            <div class="bmm-latest" ng-click="play(latestAudiobookRight, $index);">
                 <div class="bmm-latest-bullet">{{$index+6}}</div>
                 <div>
                     <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'audiobook'}}"/>

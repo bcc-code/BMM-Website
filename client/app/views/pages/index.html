@@ -45,7 +45,7 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}">
-        <div class="bmm-latest" ng-click="play(latestSpeaksRight, $index);">
+        <div class="bmm-latest" ng-click="play(latestSpeaksLargeScreen, $index);">
             <div class="bmm-latest-bullet">{{$index+7}}</div>
             <div>
                 <img class="bmm-latest-thumbnail " ng-src="{{track.cover | bmmCover:'speech'}}"/>
