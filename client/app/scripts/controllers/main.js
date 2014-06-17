@@ -10,6 +10,7 @@ angular.module('bmmApp')
     bmmApi,
     bmmPlaylist,
     bmmPlay,
+    bmmPlayer,
     draggable
   ) {
 
@@ -27,6 +28,27 @@ angular.module('bmmApp')
       $scope.ios = init.ios;
       $scope.now = new Date();
 
+      $scope.saveSession = function() {
+        sessionStorage[init.user.username] = angular.toJson({
+          mediaLanguage: $scope.mediaLanguage,
+          websiteLanguage: $scope.websiteLanguage,
+          videoFirst: bmmPlayer.videoFirst
+        });
+      };
+
+      $scope.restoreSession = function() {
+        var model = angular.fromJson(sessionStorage[init.user.username]);
+        if (typeof model!=='undefined') {
+          bmmPlayer.videoFirst = model.videoFirst;
+          $scope.mediaLanguage = init.mediaLanguage = model.mediaLanguage;
+          if (init.translations[model.websiteLanguage]!=='undefined') {
+            $scope.websiteLanguage = init.websiteLanguage = model.websiteLanguage;
+            $scope.translation = init.translation = init.translations[model.websiteLanguage];
+          }
+        }
+      };
+      $scope.restoreSession();
+
       $scope.$parent.$watch('mediaLanguage', function(lang) {
         if (typeof mediaLanguage!=='undefined') {
           $scope.podcastLanguage = lang;
@@ -39,12 +61,14 @@ angular.module('bmmApp')
 
       $scope.setMediaLanguage = function(lang) {
         $scope.mediaLanguage = init.originalLanguage = init.mediaLanguage = lang;
+        $scope.saveSession();
         $route.reload();
       };
 
       $scope.setWebsiteLanguage = function(lang) {
         $scope.websiteLanguage = lang;
         $scope.translation = init.translation = init.translations[lang];
+        $scope.saveSession();
       };
 
       $scope.go = function ( path ) {
