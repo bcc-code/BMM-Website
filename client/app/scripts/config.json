@@ -14,7 +14,6 @@
   "translationFolder": "translations/",
   "translationsAvailable": [
     "nb",
-    "en",
-    "zh"
+    "en"
   ]
 }
