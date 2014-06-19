@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlayer', ['bmmPlaylist', '$timeout', '$rootScope', '$filter', 'bmmApi', 'bmmFormatterTrack',
-    function (bmmPlaylist, $timeout, $rootScope, $filter, bmmApi, bmmFormatterTrack) {
+  .factory('bmmPlayer', ['bmmPlaylist', '$timeout', '$rootScope', '$filter', '$window', 'bmmApi', 'bmmFormatterTrack',
+    function (bmmPlaylist, $timeout, $rootScope, $filter, $window, bmmApi, bmmFormatterTrack) {
   
   var factory = {},
       videoTarget,
@@ -62,6 +62,9 @@ angular.module('bmmLibApp')
         },
         ended: function() {
           //End of track
+          // @analytics - Report track finnished to google analytics
+          $window.ga('send', 'event', 'tracks', 'play end', factory.title, factory.id);
+
           factory.setNext(true);
         },
         resize: function() {
@@ -179,6 +182,9 @@ angular.module('bmmLibApp')
       factory.id = source.id;
       factory.raw = source.raw;
       factory.formatted = bmmFormatterTrack.resolve(source.raw);
+
+      // @analytics - Report track started playing to google analytics
+      $window.ga('send', 'event', 'tracks', 'play start', factory.title, factory.id);
 
       //You should use this
       factory.source = source;
