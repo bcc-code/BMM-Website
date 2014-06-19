@@ -34,7 +34,7 @@ angular.module('bmmLibApp')
         }
       } else if (typeof id!=='undefined') {
         var antiCache = '';//'?'+ Math.floor(Math.random() * 9000000) + 1000000;
-        cover = bmmApi.secureFile(bmmApi.getserverUrli()+type+'/'+id+'/cover')+antiCache;
+        cover = bmmApi.secureImage(bmmApi.getserverUrli()+type+'/'+id+'/cover')+antiCache;
       }
 
       return cover;
