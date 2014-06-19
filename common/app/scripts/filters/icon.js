@@ -16,7 +16,10 @@ angular.module('bmmLibApp')
             icon = 'fallback_images/svg/Icon_Soundbook.svg';
             break;
           case 'video':
-            icon = 'fallback_images/svg/Icon_Shape.svg';
+            icon = 'fallback_images/svg/Icon_Category-Video.svg';
+            break;
+          case 'playing':
+            icon = 'fallback_images/svg/Icon_Now-playing.svg';
             break;
         }
       }
