@@ -54,15 +54,6 @@ angular.module('bmmApp', [
         controller: 'AudiobooksCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
       })
-      .when('/search/:term', {
-        templateUrl: 'views/pages/search.html',
-        controller: 'SearchCtrl',
-        resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
-      })
-      .when('/search', {
-        redirectTo: '/search/no results',
-        resolve: { 'initData': ['init', function(init) { return init.promise(); }]}
-      })
       .when('/album/:id', {
         templateUrl: 'views/pages/album.html',
         controller: 'AlbumCtrl',
