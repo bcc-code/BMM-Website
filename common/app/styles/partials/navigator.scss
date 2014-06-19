@@ -1,9 +1,11 @@
 [navigator] {
   position: absolute;
   margin-top: $headerHeight;
+  padding: 0 1em;
   width: $navigationWidth;
   overflow: auto;
   z-index: 4;
+  border-right: .1em solid $colorBorderLight;
 
   @include transition(margin-left);
   h2 {
@@ -62,7 +64,9 @@
 
 .playlists-generated {
   margin: 0;
-  padding: 0;
+  padding: 1em 0;
+  border-top: .1em solid $colorBorderLight;
+  border-bottom: .1em solid $colorBorderLight;
   list-style-type: none;
   a, span {
     color: #000;//$colorForeground;
@@ -75,8 +79,7 @@
     background-position: 0 .45em;
     background-repeat: no-repeat;
     border: .2em solid transparent;
-    padding: .8em 0 .5em 2.7em;
-    margin: 0 0 .2em;
+    padding: .8em 0 .1em 2.7em;
   }
 }
 
@@ -91,11 +94,11 @@
     background-color: #03d67f;
     background-image: url(../images/svg/v3/Icon_plus.svg);
     background-size: .8em .8em;
-    background-position: .7em .7em;
+    background-position: .75em .8em;
     background-repeat: no-repeat;
     display: inline-block;
     width: 100%;
-    margin-top: 2em;
+    margin-top: 1em;
     padding: .5em 0 .5em 2.7em;
     border-radius: 1em;
     cursor: pointer;
@@ -108,7 +111,7 @@
 }
 
 .playlists-private {
-  margin: 0;
+  margin: 0 0 1em 0;
   padding: 0;
   list-style-type: none;
   a {
@@ -117,18 +120,17 @@
   li {
     position: relative;
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
-    background-size: 2.2em 2.2em;
+    background-size: 2em 2em;
     background-position: 0 .45em;
     background-repeat: no-repeat;
-    padding: .8em 0 .5em 2.7em;
-    margin: 0 0 .2em;
+    padding: .8em 0 .1em 2.7em;
     border: .2em solid transparent;
     border-radius: .2em;
     .edit, input:nth-child(2) {
       position: absolute;
       right: 0;
-      top: 0;
-      height: 100%;
+      bottom: 0;
+      height: 1.5em;;
       width: 1.5em;
       background-image: url(../images/svg/v3/Icon_Edit.svg);
       background-position: center center;
@@ -137,9 +139,9 @@
       opacity: 0;
       cursor: pointer;
     }
-    .trash, button {
+    button {
       position: absolute;
-      left: .7em;
+      left: .5em;
       top: .7em;
       height: 1.4em;
       width: 1.1em;
@@ -151,20 +153,25 @@
     }
     input:first-child {
       border: .1em solid #CDD6E9;
-      width: $navigationWidth - 6em;
+      width: $navigationWidth - 7.6em;
     }
     input:nth-child(2) {
       position: absolute;
-      height: 100%;
-      width: 1.2em;
+      height: 1.6em;
+      bottom: 0;
+      width: 1.3em;
       margin: 0;
       padding: 0;
       display: inline-block;
-      background: url(../images/svg/confirm.svg);
+      background-color: transparent;
+      background-image: url(../images/svg/v3/Icon_Playlist-Accept.svg);
       background-position: center center;
-      background-size: 1.2em 1.2em;
+      background-size: contain;
       background-repeat: no-repeat;
       opacity: 1;
+    }
+    input:nth-child(2):hover {
+      background-image: url(../images/svg/v3/Icon_Playlist-Accept_hover.svg);
     }
     button {
      background-color: transparent;
@@ -172,8 +179,7 @@
     }
   }
   li:hover {
-    background-image: none;
-    .edit, .trash {
+    .edit {
       opacity: 1;
     }
   }
@@ -187,7 +193,6 @@
     border: .2em rgba(0, 0, 0, 0.18) dashed;
   }
   li.bmm-playlist-private.active.hover {
-    //background-image: none;
     border: .2em rgba(0, 0, 0, 1) dashed;
   }
 }

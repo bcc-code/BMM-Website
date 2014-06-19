@@ -1,7 +1,15 @@
-header, .sub-header {
+header {
   width: 100%;
   background-color: #fff;//$colorMain;
-  border-bottom: .1em solid $colorBorders;
+  box-shadow: 0 0 .2em #8F8F8F;
+  z-index: 4;
+  .wrapper {
+    margin-top: 2.3em;
+  }
+}
+
+.sub-header {
+  width: 100%;
   z-index: 4;
 }
 
@@ -9,7 +17,6 @@ header {
   @include transition(margin-top);
   position: absolute;
   top: $topbarHeight;
-  padding-top: 1.5em;
   height: $headerHeight;
 
   .page-positioning {
@@ -47,7 +54,9 @@ header {
         border: .15em solid #fff;
       }
       a:hover {
-        border-radius: 1em;
+        color: #97D5B7;
+      }
+      a.active {
         border-color: #97D5B7;
       }
     }
@@ -57,9 +66,10 @@ header {
     padding: 0 .5em;
     float: none;
     margin: .8em 0 0 0;
+    border: none;
     form {
-      padding: 0;
-      float: none;
+      border-radius: .25em;
+      border: .1em solid $colorBorderLight;
       div {
         margin-right: 3em;
         input {
@@ -78,25 +88,36 @@ header {
 
 .search {
   position: relative;
-  margin: .2em 0 0 18em;
-  width: 15em;
+  margin: .4em 0 0 16em;
+  width: 16em;
   float: left;
   z-index: 1;
+  border-radius: .25em;
+  border: .1em solid $colorBorderLight;
+  padding: .1em 0;
 
   > * {
     float: left;
   }
 
+  form {
+    width: 100%;
+  }
+
   input {
     height: 1.7em;
     float: left;
+    ::-webkit-input-placeholder { color: $colorPlaceholder; }
+    :-moz-placeholder { color: $colorPlaceholder; }
+    ::-moz-placeholder { color: $colorPlaceholder; }
+    :-ms-input-placeholder { color: $colorPlaceholder; }
   }
 
   input:first-child {
     padding: .1em .5em;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    width: 12em;
+    width: 12.8em;
   }
   input:last-child {
     border-top-left-radius: 0;
@@ -104,7 +125,7 @@ header {
     border-top-right-radius: .4em;
     border-bottom-right-radius: .4em;
     background-image: url(../images/svg/v3/Icon_Search.svg);
-    background-size: 40%;
+    background-size: 1.3em 1.2em;
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -137,12 +158,16 @@ header {
 }
 
 .menu li a:hover {
-  border-radius: 1em;
+  color: #97D5B7;
+}
+
+.menu li a.active {
   border-color: #97D5B7;
 }
 
 .logo {
   position: absolute;
+  left: 0;
   margin: -.5em 0 0 .6em;
   background-image: url(../images/svg/logo.svg);
   background-size: contain;
