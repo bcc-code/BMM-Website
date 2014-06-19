@@ -3,7 +3,8 @@
 angular.module('bmmLibApp')
   .factory('init', ['$http', '$q', '$location', 'bmmApi', 'locals', function ($http, $q, $location, bmmApi, locals) {
 
-    var factory = {};
+    var factory = {},
+        loginAttempts = 3;
 
     //Common
     factory.user = {};
@@ -32,7 +33,14 @@ angular.module('bmmLibApp')
     //Admin only
     factory.titles = {};
 
-    factory.authorize = function(admin) {
+    factory.authorize = function(admin, attempt) {
+
+      // -- Check if authorization has been attempted earlier
+      if (typeof attempt!=='undefined'&&attempt>loginAttempts) {
+        return false;
+      } else if (typeof attempt==='undefined') {
+        attempt = 0;
+      }
 
       if (factory.load.loaded) { return; }
       if (factory.load.progress) { return; }
@@ -41,12 +49,14 @@ angular.module('bmmLibApp')
 
       factory.load.status = 'Loading configuration';
 
+      // -- Load configurations
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
         bmmApi.serverUrl(config.serverUrl);
         bmmApi.setKeepAliveTime(config.keepAlive*1000);
 
+        // -- Secure that the correct protocol given by configuration is used
         if ($location.protocol()!==config.protocol&&
             $location.port()!==config.developerPort) {
           var link = config.protocol+'://'+window.location.href.substr(5);
@@ -56,6 +66,7 @@ angular.module('bmmLibApp')
 
         factory.load.status = 'Attempt to login';
 
+        // -- Attempt to login
         bmmApi.loginUser().done(function(user) {
 
           factory.load.percent+=20;
@@ -154,10 +165,25 @@ angular.module('bmmLibApp')
           });
 
         }).fail(function() {
-          bmmApi.loginRedirect();
+
+          if (attempt>=loginAttempts) {
+            window.location = config.serverUrl+'login/redirect?redirect_to='+window.location;
+          }
+
+          bmmApi.loginRedirect({
+            done: function() {
+              factory.load.progress = false;
+              factory.authorize(admin, (attempt+1));
+            },
+            fail: function(signOn) {
+              window.location = signOn;
+            }
+          });
+
         });
       }).error(function() {
-        alert('Config file is missing!');
+        factory.load.progress = false;
+        factory.authorize(admin, (attempt+1));
       });
     };
 

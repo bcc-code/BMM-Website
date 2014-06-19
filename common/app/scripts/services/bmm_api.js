@@ -6,6 +6,7 @@ angular.module('bmmLibApp')
   var factory = {},
       credentials,
       credentialsSuported = 'unresolved',
+      imageCredentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/'; //Fallback
 
@@ -31,7 +32,18 @@ angular.module('bmmLibApp')
     }, keepAliveTime);
   };
 
+  //Doesnt need to be secured
+  factory.secureDownload = function(download) {
+    return download;
+  };
+
+  //Doesnt need to be secured
+  factory.secureImage = function(image) {
+    return image;
+  };
+
   factory.secureFile = function(file) {
+
     //Is credentials supported by browser? Else cookies is automatically used
     if (credentialsSuported==='unresolved') {
       var el = document.createElement('img');
@@ -40,11 +52,11 @@ angular.module('bmmLibApp')
         if (el.src) {
           credentialsSuported = true;
           //Logout session (cookies not needed)
-          factory.logout();
+          //factory.logout();
         } else {
           credentialsSuported = false;
-          factory.keepAlive();
         }
+        factory.keepAlive();
       }
       catch(err) {
         credentialsSuported = false;
@@ -57,6 +69,7 @@ angular.module('bmmLibApp')
     } else {
       return file;
     }
+
   };
 
   factory.setCredentials = function(username, password) {
@@ -399,9 +412,33 @@ angular.module('bmmLibApp')
   };
 
   /** Authenticates the user by redirecting him to the Sherwood SignOn Server **/
-  factory.loginRedirect = function() {
+  factory.loginRedirect = function(options) {
 
-    window.location = serverUrl+'login/redirect?redirect_to='+window.location;
+    var loginUrl = serverUrl+'login/redirect?redirect_to='+window.location;
+    var iframe = '<iframe style="width: 0; height: 0; visibility: hidden;"'+
+                 'id="login" src="'+loginUrl+'"></iframe>',
+        loaded = false;
+
+    $('body').append(iframe);
+
+    //Login success
+    $('#login').load(function () {
+      loaded = true;
+      if (typeof options !=='undefined') {
+        options.done();
+      }
+    });
+
+    //Login failed
+    $timeout(function() {
+      if (!loaded) {
+        if (typeof options !=='undefined') {
+          options.fail(loginUrl);
+        } else {
+          window.location = loginUrl;
+        }
+      }
+    }, 3000);
 
   };
 
@@ -682,7 +719,7 @@ angular.module('bmmLibApp')
       },
       crossDomain: true
     }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      //factory.exceptionHandler(xhr); (Is handeled by the initializator)
     });
 
   };
