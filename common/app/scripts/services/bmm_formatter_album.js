@@ -14,7 +14,7 @@ angular.module('bmmLibApp')
       if (resolvedData.cover===null) {
         resolvedData.cover='fallback_images/svg/album.svg';
       } else {
-        resolvedData.cover = bmmApi.secureFile(resolvedData.cover);
+        resolvedData.cover = bmmApi.secureImage(resolvedData.cover);
       }
 
       //Find title
