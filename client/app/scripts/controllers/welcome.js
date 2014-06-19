@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('WelcomeCtrl', function (
     $scope,
     $timeout,
+    $window,
     bmmApi,
     bmmFormatterTrack,
     bmmFormatterAlbum,
@@ -12,6 +13,14 @@ angular.module('bmmApp')
   ) {
 
     $(window).off('scrollBottom');
+
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/welcome',
+        'title': 'Welcome'
+      });
+    });
 
     //LATEST SPEECHS
     bmmApi.trackLatest({

@@ -6,6 +6,7 @@ angular.module('bmmApp')
     $timeout,
     $routeParams,
     $location,
+    $window,
     bmmApi,
     bmmFormatterAlbum,
     bmmFormatterTrack,
@@ -15,6 +16,15 @@ angular.module('bmmApp')
   ) {
 
     $(window).off('scrollBottom');
+
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/track/'+$routeParams.id+'/'+$routeParams.language,
+        'title': $routeParams.id+'/'+$routeParams.language
+      });
+    });
+
     $scope.tracks = 0;
     $scope.duration = 0;
     $scope.playlists = [];

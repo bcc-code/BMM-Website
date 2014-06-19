@@ -5,6 +5,7 @@ angular.module('bmmApp')
     $scope,
     $timeout,
     $location,
+    $window,
     bmmApi,
     init,
     bmmFormatterTrack,
@@ -14,6 +15,14 @@ angular.module('bmmApp')
   ) {
 
     $(window).off('scrollBottom');
+
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/archive',
+        'title': 'Archive'
+      });
+    });
 
     //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
     bmmApi.facetsTrackRecordedYears().done(function(data) {

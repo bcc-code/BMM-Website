@@ -6,6 +6,7 @@ angular.module('bmmApp')
     $timeout,
     $routeParams,
     $location,
+    $window,
     bmmApi,
     bmmFormatterAlbum,
     bmmFormatterTrack,
@@ -16,13 +17,21 @@ angular.module('bmmApp')
 
     $(window).off('scrollBottom');
 
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/album',
+        'title': 'Album'
+      });
+    });
+
     $scope.tracks = 0;
     $scope.playlist = [];
     $scope.duration = 0;
     $scope.playlists = [];
     $scope.mainAlbum = [];
     $scope.zip = {};
-    $scope.zip.url = bmmApi.secureFile(bmmApi.getserverUrli()+'album'+'/'+$routeParams.id+'/download');
+    $scope.zip.url = bmmApi.secureDownload(bmmApi.getserverUrli()+'album'+'/'+$routeParams.id+'/download');
 
     $scope.podcast = {};
     $scope.podcast.link = 'https://'+init.user.username+':'+

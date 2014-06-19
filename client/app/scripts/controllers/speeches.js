@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('SpeechesCtrl', function (
     $scope,
     $timeout,
+    $window,
     bmmApi,
     bmmFormatterTrack,
     bmmFormatterAlbum,
@@ -12,6 +13,14 @@ angular.module('bmmApp')
   ) {
 
     $(window).off('scrollBottom');
+
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/speeches',
+        'title': 'Speeches'
+      });
+    });
 
     var albumFrom = 0, loading=true, end=false, loadAmount=84;
 
@@ -155,7 +164,7 @@ angular.module('bmmApp')
         bmmApi.contributorIdGet(this).done(function(data) {
 
           if (data.cover!==null) {
-            data.cover = bmmApi.secureFile(data.cover);
+            data.cover = bmmApi.secureImage(data.cover);
           }
 
           $scope.randomBrothers.push(data);

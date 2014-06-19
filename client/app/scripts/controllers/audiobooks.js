@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('AudiobooksCtrl', function (
     $scope,
     $timeout,
+    $window,
     bmmApi,
     bmmFormatterTrack,
     bmmFormatterAlbum,
@@ -12,6 +13,14 @@ angular.module('bmmApp')
   ) {
 
     $(window).off('scrollBottom');
+
+    // @analytics - Report page view to google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+      $window.ga('send', 'pageview', {
+        'page': '/audiobooks',
+        'title': 'Audiobooks'
+      });
+    });
 
     var albumFrom = 0, loading=true, end=false, loadAmount=84;
 
