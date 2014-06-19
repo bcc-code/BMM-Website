@@ -7,6 +7,7 @@
   margin: .8em .5em 0 .5em;
   background: none;
   text-align: left;
+  font-size: 1.2em;
   .optionsToggl {
     position: absolute;
     cursor: pointer;
@@ -25,7 +26,7 @@
     position: absolute;
     width: .5em;
     height: .5em;
-    background: #FFF;
+    background: #ECECEC;
     top: 100%;
     margin-top: .25em;
     right: .15em;
@@ -33,7 +34,6 @@
     -ms-transform:rotate(45deg);
     transform:rotate(45deg);
     border-radius: .2em;
-    z-index: 6;
   }
   ul {
     background: $colorPopup;
@@ -45,6 +45,7 @@
     border-radius: .3em;
     color: #000;
     z-index: 5;
+    font-size: .8em;
     li {
       cursor: pointer;
       height: 2.3em;
@@ -59,7 +60,14 @@
       }
       .icon {
         display: inline-block;
-        //background-size: contain;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 1.5em;
+        width: 1.5em;
+        margin: 0 .4em 0 .6em
+      }
+      .icon-flag {
+        display: inline-block;
         background-repeat: no-repeat;
         height: 1.4em;
         width: 1.5em;
@@ -70,6 +78,8 @@
       .icon.album { background-image: url('../images/svg/v3/Icon_Options-Album.svg'); }
       .icon.podcast { background-image: url('../images/svg/v3/Icon_Options-Podcast.svg'); }
       .icon.settings { background-image: url('../images/svg/v3/Icon_Options-Settings.svg'); }
+      .icon.details { background-image: url('../images/svg/v3/Icon_Options-Info.svg'); }
+      .icon.go-back { background-image: url('../images/svg/v3/Icon_Back_Arrow.svg'); }
       .icon.delete {
         background-image: url('../images/svg/v3/Icon_Delete.svg');
         background-position: .25em 0;

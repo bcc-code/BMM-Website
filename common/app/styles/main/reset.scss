@@ -24,11 +24,12 @@ h2 {
   color: #000;//$colorMain;
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 1em;
 }
 
 h3 {
   font-size: 2em;
+  font-weight: 200;
   margin-bottom: 0;
 }
 
@@ -39,7 +40,7 @@ ul, li {
 }
 
 input {
-  border-radius: .2em;
+  border-radius: .25em;
   border: 0;
 }
 
@@ -86,16 +87,8 @@ tr {
 }
 
 .ui-slider-horizontal {
+  @include gradient(#2DAD54 , #D7EF3C, true);
   height: .2em;
-  //background: $colorPlayerElements;
-  //OBS! webkit is inverse from the other ones
-  /* IE10 Consumer Preview */
-  background-image: -ms-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
-  background-image: -moz-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
-  background-image: -o-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #2DAD54), color-stop(1, #D7EF3C));
-  background-image: -webkit-linear-gradient(left, #2DAD54 0%, #D7EF3C 100%);
-  background-image: linear-gradient(to right, #2DAD54 0%, #D7EF3C 100%);
   border: none;
 }
 

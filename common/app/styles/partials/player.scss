@@ -107,11 +107,12 @@
             opacity: .7;
           }
           .fullscreen-toggle {
+            background-image: url(../images/svg/v3/Icon_Close_Fullscreen.svg);
             position: relative;
             float: right;
             right: auto;
             bottom: auto;
-            margin: .5em;
+            margin: .3em .5em .5em;
           }
           .previous:hover {
             background-image: url(../images/svg/v3/Player_Prev_Hover.svg);
@@ -130,7 +131,7 @@
           }
           .play {
             cursor: pointer;
-            width: 1.5em;
+            width: 1.3em;
             height: 1.5em;
             margin-top: .3em;
             background-image: url(../images/svg/v3/Player_Play.svg);
@@ -149,7 +150,7 @@
           .next {
             cursor: pointer;
             margin: .6em 0 0 .8em;
-            width: 1.6em;
+            width: 1.59em;
             height: 1em;
             background-image: url(../images/svg/v3/Player_Next.svg);
             background-size: contain;
@@ -161,19 +162,19 @@
           .mute {
             cursor: pointer;
             float: right;
-            opacity: .6;
+            opacity: .8;
             width: 1.3em;
             height: 1.4em;
-            margin: .6em .6em 0 0;
+            margin: .4em .6em 0 0;
             background-image: url(../images/svg/v3/Icon-No-Audio.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
           .mute.active {
-            background-image: url(../images/svg/muted.svg);
+            background-image: url(../images/svg/v3/Icon-Mute.svg);
           }
           .volume {
-            margin: 1em;
+            margin: .9em;
             width: 5em;
             float: right;
           }
@@ -274,7 +275,7 @@
       -ms-transform:rotate(45deg);
       transform:rotate(45deg);
       border-radius: .2em;
-      z-index: 1;
+      z-index: 6;
     }
     ul {
       background: $colorPopup;
@@ -303,9 +304,9 @@
           display: inline-block;
           background-size: contain;
           background-repeat: no-repeat;
-          height: 1.4em;
+          height: 1.5em;
           width: 1.5em;
-          margin: 0 .2em 0 .6em
+          margin: 0 .4em 0 .6em
         }
         .icon.playlist { background-image: url('../images/svg/v3/Icon_Options-Playlist.svg'); }
         .icon.download { background-image: url('../images/svg/v3/Icon_Options-Download.svg'); }
@@ -345,6 +346,7 @@
     }
     .mute {
       cursor: pointer;
+      opacity: .8;
       float: left;
       width: 1.3em;
       height: 1.4em;
@@ -354,12 +356,14 @@
       background-repeat: no-repeat;
     }
     .mute.active {
-      background-image: url(../images/svg/muted.svg);
+      margin-left: -.2em;
+      background-image: url(../images/svg/v3/Icon-Mute.svg);
     }
     .mute:hover {
       opacity: 1;
     }
     .max {
+      opacity: .8;
       cursor: pointer;
       float: right;
       width: 1.6em;
@@ -370,7 +374,7 @@
       background-repeat: no-repeat;
     }
     .max:hover {
-      background-image: url(../images/svg/v3/Icon_Audio.svg);
+      background-image: url(../images/svg/v3/Icon_Audio_Hover.svg);
     }
   }
   .videoOpen:hover {
@@ -421,10 +425,9 @@
         position: absolute;
         repeat: no-repeat;
         cursor: pointer;
-        width: 1.12em;
-        height: 1.2em;
+        width: 1.7em;
+        height: 1.5em;
         margin: 0 .7em 0 8.6em;
-        opacity: .6;
         background-image: url(../images/svg/v3/Icon_Repeat.svg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -446,7 +449,7 @@
       }
       .play {
         cursor: pointer;
-        width: 1.5em;
+        width: 1.3em;
         height: 1.5em;
         background-image: url(../images/svg/v3/Player_Play.svg);
         background-size: contain;
@@ -464,7 +467,7 @@
       .next {
         cursor: pointer;
         margin: .3em 0 0 1.2em;
-        width: 1.6em;
+        width: 1.59em;
         height: 1em;
         background-image: url(../images/svg/v3/Player_Next.svg);
         background-size: contain;
@@ -499,9 +502,9 @@
         position: absolute;
         repeat: no-repeat;
         cursor: pointer;
-        width: 1.9em;
-        height: 1.5em;
-        margin: 0 0 0 11em;
+        width: 1.7em;
+        height: 1.22em;
+        margin: .2em 0 0 11em;
         background-image: url(../images/svg/v3/Icon_Video.svg);
         background-size: contain;
         background-repeat: no-repeat;

@@ -8,6 +8,10 @@
   padding: 0 1.7em $playerHeight+2em;
   z-index: 2;
 
+  input {
+    border: .1em solid $colorBorderLight;
+  }
+
   > div {
     float: left;
 
