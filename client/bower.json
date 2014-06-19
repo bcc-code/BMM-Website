@@ -13,7 +13,7 @@
     "angular-touch": "~1.2.14",
     "fastclick": "~1.0.1",
     "jquery.ui.touch-punch.dk": "~0.3.3",
-    "angular-ui-sortable": "0.10.1",
+    "angular-ui-sortable": "0.12.8",
     "angular-ui-bootstrap-bower": "0.10.0"
   },
   "devDependencies": {
