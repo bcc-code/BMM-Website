@@ -8,7 +8,6 @@ angular.module('bmmLibApp')
         element.addClass('bmm-slider-video');
         element.append('<div class="bmm-slider-video-prev"></div>');
         element.append('<div class="bmm-slider-video-next"></div>');
-        element.append('<div class="bmm-video-shadow"></div>');
 
         var videos = element.find('.bmm-videos'),
             btnLeft = element.find('.bmm-slider-video-prev'),
@@ -50,7 +49,7 @@ angular.module('bmmLibApp')
         initialize();
 
         //SLIDE FUNCTIONALITY
-        btnLeft.click(function() {
+        btnRight.click(function() {
 
           var newActive, newNext, prev;
 
@@ -118,7 +117,7 @@ angular.module('bmmLibApp')
 
         });
 
-        btnRight.click(function() {
+        btnLeft.click(function() {
 
           var newActive, newNext, prev;
 
@@ -187,28 +186,22 @@ angular.module('bmmLibApp')
 
         //RESIZE FUNCTIONALITY
         $timeout(function() {
-
-          element.height(element.width()/2.8);
-          btnLeft.css({
-            top: (element.height()/2)-(btnLeft.height())
-          });
-          btnRight.css({
-            top: (element.height()/2)-(btnRight.height())
-          });
-          
+          resizeFunction();
         });
 
-        $(window).resize( function() {
+        var resizeFunction = function() {
 
-          element.height(element.width()/2.8);
-          btnLeft.css({
-            top: (element.height()/2)-(btnLeft.height())
-          });
-          btnRight.css({
-            top: (element.height()/2)-(btnRight.height())
-          });
+          if(typeof sizewait != 'undefined'){
+            clearTimeout(sizewait);
+          }
+          var sizewait = setTimeout(function(){
+            element.height(element.width()/3);
+          },200);
 
-        });
+        }
+
+        $(window).off('resize',resizeFunction);
+        $(window).on('resize',resizeFunction);
 
       }
     };

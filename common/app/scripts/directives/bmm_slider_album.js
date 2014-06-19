@@ -76,10 +76,6 @@ angular.module('bmmLibApp')
 
           element.find('li').each(function(i) {
 
-            if ($(this).find('.shadow').length===0) {
-              $(this).append('<div class="shadow"></div>');
-            }
-
             if (typeof animate==='undefined'||!animate) {
               $(this).css({
                 left: (($(this).width()+margin)*i)-
