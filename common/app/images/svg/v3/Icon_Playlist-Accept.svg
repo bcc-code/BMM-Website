@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Playlist-Accept</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -651.000000)" fill="#03D67F">
+            <g id="Icon_Playlist-Accept" sketch:type="MSLayerGroup" transform="translate(112.000000, 651.000000)">
+                <path d="M12.6661475,0.220561267 L5.43406023,7.18649625 L1.33385254,3.23689914 C1.02855659,2.94281745 0.533748702,2.94281745 0.228971963,3.23689914 C-0.0763239875,3.53098083 -0.0763239875,4.00761323 0.228971963,4.30119478 L4.87798546,8.77943873 C5.1827622,9.07352042 5.6780893,9.07352042 5.98286604,8.77943873 C5.99065421,8.77243679 13.771028,1.2848569 13.771028,1.2848569 C14.076324,0.990775215 14.076324,0.514142817 13.771028,0.220561267 C13.4662513,-0.0735204223 12.9709242,-0.0735204223 12.6661475,0.220561267 Z" id="playlist_accept" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
