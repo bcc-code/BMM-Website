@@ -199,6 +199,11 @@
                           ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
                         {{composer.name}}<em ng-hide="$last">, </em>
                     </span><br><br>
+                <b>{{translation.track.bibleVerse}}</b><br>
+                    <span class="link"
+                          ng-repeat="reference in trackInfo.track.bible">
+                        {{reference}}<em ng-hide="$last">, </em>
+                    </span><br><br>
 
             </div>
         </div>

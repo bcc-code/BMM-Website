@@ -12,22 +12,24 @@
     <!--HEADER - MUST DUBLICATE IN NAVIGATOR > SUB-HEADER -->
     <header>
         <div class="page-positioning">
-            <a ng-href="#" class="logo"></a>
-            <div class="search">
-                <form ng-submit="go('/playlist/search/'+bmm.term);">
-                    <input ng-model="bmm.term"
-                           type="text"
-                           placeholder="{{translation.general.search}}">
-                    <input type="submit" value="">
-                </form>
+            <div class="wrapper">
+                <a ng-href="#" class="logo"></a>
+                <div class="search">
+                    <form ng-submit="go('/playlist/search/'+bmm.term);">
+                        <input ng-model="bmm.term"
+                               type="text"
+                               placeholder="{{translation.general.search}}">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <ul class="menu">
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music">{{translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video">{{translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive">{{translation.menu.main.archive}}</a></li>
+                </ul>
             </div>
-            <ul class="menu">
-                <li><a ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
-                <li><a ng-href="#music">{{translation.menu.main.music}}</a></li>
-                <li><a ng-href="#video">{{translation.menu.main.video}}</a></li>
-                <li><a ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
-                <li><a ng-href="#archive">{{translation.menu.main.archive}}</a></li>
-            </ul>
         </div>
     </header>
 
@@ -76,18 +78,19 @@
                 <div>{{player.language | bmmLanguage}}</div>
             </div>
 
-            <button class="options"
+            <div class="options"
                     ng-init="flags=false; downloads=false;"
                     ng-model="playerOptions"
-                    ng-blur="playerOptions=false">
+                    click-elsewhere="playerOptions=false">
 
-                <div class="optionsToggl" ng-click="playerOptions=!playerOptions; flags=false; downloads=false;"></div>
+                <div class="optionsToggl"
+                     ng-click="playerOptions=!playerOptions; flags=false; downloads=false;"></div>
 
                 <div class="arrow" ng-show="playerOptions"></div>
 
                 <ul ng-show="playerOptions&&!flags&&!downloads">
                     <li ng-click="trackInfo.track=player.formatted; trackInfo.show=true;">
-                        <div class="icon"></div>
+                        <div class="icon details"></div>
                         <span>{{translation.track.details}}</span></li>
                     <li ng-click="trackToPlaylist.id=player.id; trackToPlaylist.language=player.language">
                         <div class="icon playlist"></div>
@@ -103,7 +106,7 @@
                     </li>
                     <li ng-show="!ios&&player.formatted.directDownload.exist">
                         <div class="icon download"></div>
-                        <a download ng-href="{{player.formatted.directDownload.file}}?download=1">
+                        <a download ng-href="{{player.formatted.directDownload.file}}">
                             <span>{{translation.options.download}}</span>
                         </a>
                     </li>
@@ -121,36 +124,36 @@
                         </div>
                         <span>{{language | bmmLanguage}}</span>
                     </li>
-                    <li ng-click="flags=!flags"><div class="icon settings"></div>
+                    <li ng-click="flags=!flags"><div class="icon go-back"></div>
                         <span>{{translation.options.goBack}}</span>
                     </li>
                 </ul>
 
                 <ul ng-show="playerOptions&&downloads">
                     <li ng-repeat="source in player.source.audios">
-                        <a download ng-href="{{source.file}}?download=1">
+                        <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.type}}</span>
+                            <span>{{source.name}}</span>
                         </a>
                     </li>
                     <li ng-repeat="source in player.source.videos">
-                        <a download ng-href="{{source.file}}?download=1">
+                        <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.type}}</span>
+                            <span>{{source.name}}</span>
                         </a>
                     </li>
                     <li ng-repeat="source in player.source.unknowns">
-                        <a download ng-href="{{source.file}}?download=1">
+                        <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.type}}</span>
+                            <span>{{source.name}}</span>
                         </a>
                     </li>
-                    <li ng-click="downloads=!downloads"><div class="icon settings"></div>
+                    <li ng-click="downloads=!downloads"><div class="icon go-back"></div>
                         <span>{{translation.options.goBack}}</span>
                     </li>
                 </ul>
 
-            </button>
+            </div>
 
             <div class="volumeControllers">
 
@@ -202,7 +205,7 @@
     </div>
 
     <!--NAVIGATOR-->
-    <div class="page-positioning">
+    <div class="page-positioning" style="z-index: 4">
 
         <div ng-click="visible=!visible;"
              class="nav-toggle"
@@ -223,11 +226,11 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-href="#speeches" ng-click="visible=false">{{translation.menu.main.speeches}}</a></li>
-                    <li><a ng-href="#music" ng-click="visible=false">{{translation.menu.main.music}}</a></li>
-                    <li><a ng-href="#video" ng-click="visible=false">{{translation.menu.main.video}}</a></li>
-                    <li><a ng-href="#audiobooks" ng-click="visible=false">{{translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-href="#archive" ng-click="visible=false">{{translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches" ng-click="visible=false">{{translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music" ng-click="visible=false">{{translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video" ng-click="visible=false">{{translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks" ng-click="visible=false">{{translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive" ng-click="visible=false">{{translation.menu.main.archive}}</a></li>
                 </ul>
             </div>
 
@@ -269,14 +272,11 @@
                     <form ng-show="collection.edit == true">
                         <input type="text" ng-model="collection.newName" ng-init="collection.newName=collection.name"/>
                         <input type="submit" value="" ng-click="renamePlaylist(collection);">
-                        <button ng-click="exitRename(collection);"></button>
+                        <button ng-click="removePLaylist(collection.id);"></button>
                     </form>
                     <div ng-hide="collection.edit == true"
                          class="edit"
                          ng-click="collection.edit = true"></div>
-                    <div ng-hide="collection.edit == true"
-                         class="trash"
-                         ng-click="removePLaylist(collection.id);"></div>
                 </li>
             </ul>
 
@@ -304,8 +304,6 @@
 
         </div>
 
-        <div class="background" ng-class="{'visible': visible}"></div>
-        <div class="foreground"></div>
     </div>
 
     <div ng-include="'views/pages/popup.html'"></div>

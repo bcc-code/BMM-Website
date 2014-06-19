@@ -16,9 +16,9 @@
    ng-href="{{zip.url}}">
     {{translation.options.download}}
 </a>
-<button class="options albumOptions"
+<div class="options albumOptions"
         ng-model="albumOptions"
-        ng-blur="albumOptions=false; languageFilterShow=false">
+        click-elsewhere="albumOptions=false; languageFilterShow=false">
 
     <div class="optionsToggl" ng-click="albumOptions=!albumOptions;"></div>
 
@@ -41,7 +41,7 @@
 
     <ul ng-show="languageFilterShow">
         <li ng-click="languageFilterShow=false">
-            <div class="icon settings"></div>
+            <div class="icon go-back"></div>
             <span>{{translation.options.goBack}}</span>
         </li>
         <li ng-click="languageFilter=''">
@@ -50,20 +50,19 @@
         </li>
         <li ng-repeat="lang in root.languages"
             ng-click="$parent.languageFilter=lang">
-            <div class="icon flags-{{lang}}"></div>
+            <div class="icon-flag flags-{{lang}}"></div>
             <span>{{lang | bmmLanguage}}</span>
         </li>
     </ul>
 
-</button>
+</div>
 
 <div bmm-playlist>
     <table>
 
         <thead>
         <tr>
-            <th>{{translation.playlist.title}}</th>
-            <th></th>
+            <th colspan="2">{{translation.playlist.title}}</th>
             <th>{{translation.page.search.artist}}</th>
             <th class="bmm-large-only">{{translation.page.search.album}}</th>
             <th>{{translation.playlist.duration}}</th>
@@ -76,7 +75,8 @@
                 ng-class="{even: $even, odd: $odd, playing: track.playing}">
                 <td ng-class="{'sort': private}">
                     <div ng-show="private" class="sort_handle"></div>
-                    <img ng-src="{{track.subtype | icon}}">
+                    <img ng-hide="track.playing" ng-src="{{track.subtype | icon}}">
+                    <img ng-show="track.playing" ng-src="{{'playing' | icon}}">
                 </td>
                 <td title="{{track.title}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.title | bmmMin:40}}</td>
                 <td title="{{track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.performers | bmmMin:20}}</td>
@@ -87,9 +87,9 @@
                 </td>
                 <td>
 
-                    <button class="options"
+                    <div class="options"
                             ng-model="trackOptions"
-                            ng-blur="trackOptions=false">
+                            click-elsewhere="trackOptions=false">
 
                         <div class="optionsToggl" ng-click="trackOptions=!trackOptions;"></div>
 
@@ -97,7 +97,7 @@
 
                         <ul ng-show="trackOptions&&!downloads">
                             <li ng-click="$parent.$parent.$parent.trackInfo.track=track; trackInfo.show=true;">
-                                <div class="icon"></div>
+                                <div class="icon details"></div>
                                 <span>{{translation.track.details}}</span></li>
                             <li ng-click="$parent.$parent.$parent.trackToPlaylist.id=track.id; $parent.$parent.$parent.trackToPlaylist.language=track.language">
                                 <div class="icon playlist"></div>
@@ -110,7 +110,7 @@
                             </li>
                             <li ng-show="!ios&&track.directDownload.exist">
                                 <div class="icon download"></div>
-                                <a download ng-href="{{track.directDownload.file}}?download=1">
+                                <a download ng-href="{{track.directDownload.file}}">
                                     <span>{{translation.options.download}}</span>
                                 </a>
                             </li>
@@ -118,29 +118,29 @@
 
                         <ul ng-show="trackOptions&&downloads">
                             <li ng-repeat="source in track.audios">
-                                <a download ng-href="{{source.file}}?download=1">
+                                <a download ng-href="{{source.downloadLink}}">
                                     <div class="icon download"></div>
-                                    <span>{{source.type}}</span>
+                                    <span>{{source.name}}</span>
                                 </a>
                             </li>
                             <li ng-repeat="source in track.videos">
-                                <a download ng-href="{{source.file}}?download=1">
+                                <a download ng-href="{{source.downloadLink}}">
                                     <div class="icon download"></div>
-                                    <span>{{source.type}}</span>
+                                    <span>{{source.name}}</span>
                                 </a>
                             </li>
                             <li ng-repeat="source in track.unknowns">
-                                <a download ng-href="{{source.file}}?download=1">
+                                <a download ng-href="{{source.downloadLink}}">
                                     <div class="icon download"></div>
-                                    <span>{{source.type}}</span>
+                                    <span>{{source.name}}</span>
                                 </a>
                             </li>
-                            <li ng-click="downloads=!downloads"><div class="icon settings"></div>
+                            <li ng-click="downloads=!downloads"><div class="icon go-back"></div>
                                 <span>{{translation.options.goBack}}</span>
                             </li>
                         </ul>
 
-                    </button>
+                    </div>
 
                 </td>
             </tr>

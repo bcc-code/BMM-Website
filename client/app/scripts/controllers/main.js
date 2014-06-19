@@ -183,6 +183,10 @@ angular.module('bmmApp')
         _collection.edit = false;
       };
 
+      $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+      };
+
       $(window).bind('scroll', function() {
         if($(window).scrollTop() + $(window).height()>=$(document).height()) {
           $(window).trigger('scrollBottom');
