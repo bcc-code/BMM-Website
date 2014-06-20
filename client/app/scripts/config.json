@@ -9,7 +9,6 @@
   "developerPort": 9001,
   "protocol": "https",
   "localsPath": "translations/locals/",
-  "titlesAlbum": "translations/titles/album.json",
   "keepAlive": 36000,
   "translationFolder": "translations/",
   "translationsAvailable": [

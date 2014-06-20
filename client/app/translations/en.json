@@ -33,9 +33,11 @@
     "tracks": "tracks",
     "filterByLanguage": "Filter by language",
     "copyUrl": "Copy URL",
+    "copyLink": "Copy link",
     "delete": "Delete",
     "remove": "Remove",
-    "playPlaylist": "Play playlist"
+    "playPlaylist": "Play playlist",
+    "share": "Share"
   },
   "menu":{
     "main":{
