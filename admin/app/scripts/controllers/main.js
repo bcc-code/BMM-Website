@@ -9,7 +9,8 @@ angular.module('bmmApp')
     bmmApi,
     bmmPlay,
     bmmFormatterAlbum,
-    bmmFormatterTrack
+    bmmFormatterTrack,
+    quickMenu
   ) {
 
     $scope.load = init.load;
@@ -60,13 +61,14 @@ angular.module('bmmApp')
 
       //FETCH ALBUMS
       $scope.albums = [];
-      $scope.findAlbums = function(year) {
+      $scope.findAlbums = function(year, options) {
         bmmApi.albumPublishedYear(year, {
           unpublished: 'show'
         }, init.mediaLanguage).done(function(albums) {
 
           $scope.$apply(function() {
             $scope.albums = [];
+            $scope.tracks = [];
             $scope.childAlbums = [];
             $scope.childTracks = [];
             $.each(albums, function() {
@@ -75,6 +77,10 @@ angular.module('bmmApp')
             });
             $scope.albums.reverse();
           });
+
+          if (typeof options!=='undefined') {
+            options.done();
+          };
 
         });
       };
@@ -94,7 +100,6 @@ angular.module('bmmApp')
                 $scope.tracks.push(bmmFormatterTrack.resolve(this));
               }
             });
-            $scope.tracks.reverse();
           });
 
         });
@@ -102,7 +107,7 @@ angular.module('bmmApp')
 
       //FETCH CHILD-ALBUMS
       $scope.childAlbums = [];
-      $scope.findChildAlbums = function(id) {
+      $scope.findChildAlbums = function(id, options) {
         bmmApi.albumGet(id, init.mediaLanguage, {
           unpublished: 'show'
         }).done(function(data) {
@@ -110,13 +115,19 @@ angular.module('bmmApp')
           $scope.$apply(function() {
             $scope.childAlbum = [];
             $scope.childAlbums = [];
+            $scope.childTracks = [];
             $.each(data.children, function() {
               if (typeof this.type!=='undefined'&&this.type==='album') {
-                $scope.childAlbums.push(bmmFormatterAlbum.resolve(this));
+                var album = bmmFormatterAlbum.resolve(this);
+                $scope.childAlbums.push(album);
               }
             });
             $scope.childAlbums.reverse();
           });
+
+          if (typeof options!=='undefined') {
+            options.done();
+          };
 
         });
       };
@@ -136,10 +147,63 @@ angular.module('bmmApp')
                 $scope.childTracks.push(bmmFormatterTrack.resolve(this));
               }
             });
-            $scope.childTracks.reverse();
           });
 
         });
+      };
+
+      //AUTOOPEN QUICK MENU
+      var autoOpen = function(year, rootId, parentId) {
+
+        $scope.year = year
+
+        $scope.findAlbums(year, {
+          done: function() {
+
+            $.each($scope.albums, function() {
+              if (this.id === rootId) {
+                $scope.album = this;
+                return false;
+              }
+            });
+
+            $scope.findTracks(rootId);
+
+            $scope.findChildAlbums(rootId, {
+              done: function() {
+
+                if (typeof parentId!=='undefined') {
+
+                  $.each($scope.childAlbums, function() {
+                    if (this.id === parentId) {
+                      $scope.albumChild = this;
+                      return false;
+                    }
+                  });
+
+                  $scope.findChildTracks(parentId);
+
+                }
+
+              }
+            });
+
+          }
+        })
+
+      };
+
+      $scope.quickMenu = quickMenu;
+      $scope.$watch('quickMenu.menu', function(menu) {
+        if (!menu.parentId===false) {
+          autoOpen(Number(menu.year), menu.rootId, menu.parentId);
+        } else {
+          autoOpen(Number(menu.year), menu.rootId);
+        }
+      }, true);
+
+      $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
       };
 
       $(window).bind('scroll', function() {
