@@ -10,7 +10,9 @@ angular.module('bmmApp')
     $timeout,
     bmmApi,
     init,
-    bmmFormatterAlbum
+    bmmFormatterAlbum,
+    bmmFormatterTrack,
+    quickMenu
   ) {
 
     var modelLoaded=false, newAlbum=false;
@@ -34,14 +36,34 @@ angular.module('bmmApp')
           });
         }
       } else {
+
+        if (typeof $routeParams.parentId==='undefined') {
+          $routeParams.parentId = null;
+        }
+
+        if (typeof $routeParams.language==='undefined') {
+          $routeParams.language = init.mediaLanguage;
+        }
+
+        if (typeof $routeParams.date==='undefined') {
+          $routeParams.date = new Date();
+        }
+
+        var languages = [];
+        if (typeof $routeParams.languages==='undefined') {
+          languages = [{language: $routeParams.language}];
+        } else {
+          $.each($routeParams.languages.split(','), function() {
+            languages.push({language: this});
+          });
+        }
+
         $scope.model = {
-          parent_id: null,
+          parent_id: $routeParams.parentId,
           type: 'album',
-          published_at: new Date(),
-          original_language: init.mediaLanguage,
-          translations: [{
-            language: init.mediaLanguage
-          }],
+          published_at: $routeParams.date,
+          original_language: $routeParams.language,
+          translations: languages,
           tags: [],
           cover: null,
           cover_upload: null
@@ -57,26 +79,38 @@ angular.module('bmmApp')
             $scope.model = model;
             findAvailableTranslations();
             findAvailableTags();
+            quickMenu.setMenu($scope.model.published_at.substring(0,4), $scope.model.parent_id, $scope.model.id);
           });
           modelLoaded = true;
         });
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
-            $scope.standardModel = model;
+
+            if (typeof $routeParams.add!=='undefined'&&$routeParams.add==='track') {
+
+              $location.path('/track/new/'+model.id+'/'+(model.children.length+1)+'/'+model.language+'/'+model.languages+'/'+model.published_at);
+
+            } else if (typeof $routeParams.add!=='undefined'&&$routeParams.add==='album') {
+
+              $location.path('/album/new/'+model.id+'/'+model.language+'/'+model.languages+'/'+model.published_at);
+
+            } else {
+
+              $scope.standardModel = model;
+              if (typeof model.children!=='undefined') {
+                $scope.hasChildAlbums = false;
+                $scope.tracks = [];
+                $.each(model.children, function() {
+                  if (this.type==='album') {
+                    $scope.hasChildAlbums = true;
+                  } else {
+                    $scope.tracks.push(bmmFormatterTrack.resolve(this));
+                  }
+                });
+              }
+
+            }
           });
-          if (typeof model.children!=='undefined') {
-            $scope.hasChildAlbums = false;
-            $scope.tracks = [];
-            $scope.$apply(function() {
-              $.each(model.children, function() {
-                if (this.type==='album') {
-                  $scope.hasChildAlbums = true;
-                } else {
-                  $scope.tracks.push(this);
-                }
-              });
-            });
-          }
         });
       }
       catch(err) {
@@ -129,6 +163,7 @@ angular.module('bmmApp')
               if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
                 options.done();
               }
+              quickMenu.setMenu($scope.model.published_at.substring(0,4), $scope.model.parent_id, $scope.model.id);
             });
           }).fail(function() {
             $scope.status = init.translation.states.couldNotFetchData;
@@ -137,6 +172,7 @@ angular.module('bmmApp')
           $scope.fetchModel(false).done(function(model) {
             $scope.$apply(function() {
               $scope.standardModel = model;
+              quickMenu.refresh();
             });
             if (typeof model.children!=='undefined') {
               $scope.hasChildAlbums = false;
@@ -166,6 +202,7 @@ angular.module('bmmApp')
           bmmApi.albumDelete($scope.model.id).always(function() {
             $scope.$apply(function() {
               alert('Album deleted');
+              quickMenu.refresh();
               $location.path( '/' );
             });
           });
@@ -376,7 +413,7 @@ angular.module('bmmApp')
               } else {
                 this.title+=' '+$filter('date')($scope.model.published_at,'yyyy');
               }
-
+              this.is_visible = true;
             }
 
           });
@@ -406,7 +443,7 @@ angular.module('bmmApp')
           });
 
           $scope.parentAlbums.push({
-            title: '['+$scope.$parent.translation.page.editor.noParentAlbum+']',
+            title: '['+init.translation.page.editor.noParentAlbum+']',
             id: null
           });
           $scope.parentAlbums.reverse();
