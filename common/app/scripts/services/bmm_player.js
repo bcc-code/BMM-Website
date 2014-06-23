@@ -83,6 +83,68 @@ angular.module('bmmLibApp')
 
   };
 
+  //Keyboard shortcuts
+  $(document).keydown(function(e){
+    if(!$("input,textarea").is(":focus")){
+      switch(e.keyCode) {
+        case 32: //Space
+          e.preventDefault();
+          factory.togglePlay();
+          break;
+        case 37: //Left arrow
+          e.preventDefault();
+          factory.setPrevious();
+          break;
+        case 39: //Right arrow
+          e.preventDefault();
+          factory.setNext();
+          break;
+        case 77: //m
+          e.preventDefault();
+          factory.setMute();
+          break;
+        case 70: //f
+          if (factory.video) {
+            e.preventDefault();
+            factory.setFullscreen();
+          }
+          break;
+        case 82: //r
+          e.preventDefault();
+          bmmPlaylist.setRepeat();
+          break;
+        case 83: //s
+          e.preventDefault();
+          bmmPlaylist.setShuffle();
+          break;
+        case 107: //+
+          e.preventDefault();
+          if (factory.volume+.1>1) {
+            factory.setVolume(1);
+          } else {
+            factory.setVolume(factory.volume+.1);
+          }
+          break;
+        case 109: //-
+          e.preventDefault();
+          if (factory.volume-.1<0) {
+            factory.setVolume(0);
+          } else {
+            factory.setVolume(factory.volume-.1);
+          }
+          break;
+      }
+    }
+  });
+
+  factory.togglePlay = function() {
+    if (factory.playing) {
+      factory.setPause();
+    } else {
+      factory.setPlay();
+    }
+  };
+
   factory.setPlay = function(time) {
     if (typeof time!=='undefined') {
       $(videoTarget).jPlayer('play', time);
@@ -196,9 +258,6 @@ angular.module('bmmLibApp')
         $(videoTarget).jPlayer('setMedia', src);
       } else if (source.audio) {
         src = factory.resolveTypes(source.audios);
-        $(videoTarget).jPlayer('setMedia', src);
-      } else if (source.unknown) {
-        src = factory.resolveTypes(source.unknowns);
         $(videoTarget).jPlayer('setMedia', src);
       }
 
