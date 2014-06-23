@@ -18,6 +18,10 @@
             <div class="icon playlist"></div>
             <span>{{translation.options.addToPlaylist}}</span>
         </li>
+        <li ng-click="$parent.$parent.$parent.share.link=track.path; $parent.share.show=true">
+            <div class="icon no-flag share"></div>
+            <span>{{translation.options.share}}</span>
+        </li>
         <li ng-click="go('/album/'+track.raw.parent_id)">
             <div class="icon album"></div>
             <span>{{translation.options.goToAlbum}}</span></li>
