@@ -39,6 +39,8 @@ angular.module('bmmApp')
     $scope.albums = [];
     $scope.albumCount = 0;
     $scope.searchResults = false;
+    $scope.path = $location.absUrl();
+    $scope.showPodcast = false;
 
     $(window).off('scrollBottom');
 
@@ -230,10 +232,7 @@ angular.module('bmmApp')
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=mp3-kilden&';
-          $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
-                                init.user.token+'@'+
-                                bmmApi.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=mp3-kilden&';
+          $scope.showPodcast = true;
         },1500);
 
         break;
@@ -284,10 +283,7 @@ angular.module('bmmApp')
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=child-favorites&';
-          $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
-                                init.user.token+'@'+
-                                bmmApi.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=child-favorites&';
+          $scope.showPodcast = true;
         },1500);
 
         break;
@@ -338,10 +334,7 @@ angular.module('bmmApp')
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=instrumental&';
-          $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
-                                init.user.token+'@'+
-                                bmmApi.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=instrumental&';
+          $scope.showPodcast = true;
         },1500);
 
         break;
@@ -390,10 +383,7 @@ angular.module('bmmApp')
                                 init.user.token+'@'+
                                 bmmApi.getserverUrli().replace('https://','')+
                                 'podcast/contributor/'+$routeParams.id+'/track/?';
-          $scope.podcast.itunes = 'itpc://'+init.user.username+':'+
-                                init.user.token+'@'+
-                                bmmApi.getserverUrli().replace('https://','')+
-                                'podcast/contributor/'+$routeParams.id+'/track/?';
+          $scope.showPodcast = true;
         },1500);
 
         break;

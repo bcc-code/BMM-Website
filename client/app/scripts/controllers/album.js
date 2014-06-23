@@ -18,7 +18,7 @@ angular.module('bmmApp')
     $(window).off('scrollBottom');
 
     // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function(event) {
+    $scope.$on('$viewContentLoaded', function() {
       $window.ga('send', 'pageview', {
         'page': '/album',
         'title': 'Album'
@@ -32,6 +32,7 @@ angular.module('bmmApp')
     $scope.mainAlbum = [];
     $scope.zip = {};
     $scope.zip.url = bmmApi.secureDownload(bmmApi.getserverUrli()+'album'+'/'+$routeParams.id+'/download');
+    $scope.path = $location.absUrl();
 
     $scope.podcast = {};
     $scope.podcast.link = 'https://'+init.user.username+':'+

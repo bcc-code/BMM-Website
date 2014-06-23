@@ -29,9 +29,9 @@
             <div class="icon no-flag playlist"></div>
             <span>{{translation.options.addToPlaylist}}</span>
         </li>
-        <li ng-click="$parent.newPodcast.link=podcast.link; $parent.newPodcast.show=true">
-            <div class="icon no-flag podcast"></div>
-            <span>{{translation.options.podcast}}</span>
+        <li ng-click="$parent.share.link=path; $parent.share.show=true">
+            <div class="icon no-flag share"></div>
+            <span>{{translation.options.share}}</span>
         </li>
         <li ng-click="languageFilterShow=true">
             <div class="icon no-flag settings"></div>
@@ -39,7 +39,7 @@
         </li>
     </ul>
 
-    <ul ng-show="languageFilterShow">
+    <ul ng-show="albumOptions&&languageFilterShow">
         <li ng-click="languageFilterShow=false">
             <div class="icon go-back"></div>
             <span>{{translation.options.goBack}}</span>
@@ -102,6 +102,10 @@
                             <li ng-click="$parent.$parent.$parent.trackToPlaylist.id=track.id; $parent.$parent.$parent.trackToPlaylist.language=track.language">
                                 <div class="icon playlist"></div>
                                 <span>{{translation.options.addToPlaylist}}</span>
+                            </li>
+                            <li ng-click="$parent.$parent.share.link=track.path; $parent.$parent.share.show=true">
+                                <div class="icon no-flag share"></div>
+                                <span>{{translation.options.share}}</span>
                             </li>
                             <li ng-click="downloads=!downloads"
                                 ng-show="!track.directDownload.exist&&!ios">
