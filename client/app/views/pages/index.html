@@ -16,6 +16,7 @@
 			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
 		</div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
 	</li>
 </ul>
 
@@ -34,6 +35,7 @@
 			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
 		</div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
 	</li>
 </ul>
 
@@ -52,6 +54,7 @@
             <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
         </div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
     </li>
 </ul>
 
@@ -80,7 +83,7 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestMusicLargeOnly, $index);">
+		<div class="bmm-latest" ng-click="play(latestMusicLeft, $index);">
 			<div class="bmm-latest-bullet">{{$index+1}}</div>
 			<div>
 				<img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -89,6 +92,7 @@
 			<div class="bmm-latest-interprets">{{track.performers}}</div>
 		</div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
 	</li>
 </ul>
 
@@ -98,7 +102,7 @@
         id="{{track.id}}"
         language="{{track.language}}"
         title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestMusicLargeOnly, $index);">
+		<div class="bmm-latest" ng-click="play(latestMusicRight, $index);">
 			<div class="bmm-latest-bullet">{{$index+5}}</div>
 			<div>
                 <img class="bmm-latest-thumbnail" ng-src="{{track.cover | bmmCover:'song'}}"/>
@@ -107,6 +111,7 @@
 			<div class="bmm-latest-interprets">{{track.performers}}</div>
 		</div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
 	</li>
 </ul>
 
@@ -125,6 +130,7 @@
             <div class="bmm-latest-interprets">{{track.performers}}</div>
         </div>
         <div ng-include="'views/pages/options.html'"></div>
+        <div ng-hide="track.language==mediaLanguage" class="flag flags-{{track.language}}"></div>
     </li>
 </ul>
 
