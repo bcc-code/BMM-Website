@@ -96,6 +96,10 @@
                         <div class="icon playlist"></div>
                         <span>{{translation.options.addToPlaylist}}</span>
                     </li>
+                    <li ng-click="share.link=player.formatted.path; share.show=true">
+                        <div class="icon no-flag share"></div>
+                        <span>{{translation.options.share}}</span>
+                    </li>
                     <li ng-click="go('/album/'+player.raw._meta.root_parent_id)">
                         <div class="icon album"></div>
                         <span>{{translation.options.goToAlbum}}</span></li>
@@ -180,7 +184,7 @@
                     <div class="previous" ng-click="player.setPrevious();"></div>
                     <div class="play"
                          ng-class="{'pause': player.playing}"
-                         ng-click="togglePlay();"></div>
+                         ng-click="player.togglePlay();"></div>
                     <div class="next" ng-click="player.setNext();"></div>
                     <div class="repeat"
                          ng-class="{'active': playlist.repeat}"
