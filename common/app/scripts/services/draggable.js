@@ -13,9 +13,9 @@ angular.module('bmmLibApp')
 
     var resizer = function(target) {
       if ($(target).is(':data(ui-draggable)')) {
-        if ($('#size-detector').width()<1&&!$(target).draggable('option', 'disabled')) {
+        if ($('#size-detector').width()<2&&!$(target).draggable('option', 'disabled')) {
           $(target).draggable('disable');
-        } else if ($('#size-detector').width()>0&&$(target).draggable('option', 'disabled')) {
+        } else if ($('#size-detector').width()>1&&$(target).draggable('option', 'disabled')) {
           $(target).draggable('enable');
         }
       }
