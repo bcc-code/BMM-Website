@@ -1,86 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Ebene_1"
-   x="0px"
-   y="0px"
-   width="988.90625"
-   height="988.90625"
-   viewBox="0 0 988.90628 988.90622"
-   enable-background="new 0 0 988.91 988.918"
-   xml:space="preserve"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="BMM Leercover Album.svg"><metadata
-     id="metadata26"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-     id="defs24" /><sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview22"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.23864465"
-     inkscape:cx="442.52315"
-     inkscape:cy="558.53532"
-     inkscape:window-x="0"
-     inkscape:window-y="420"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="Ebene_1" /><radialGradient
-     id="SVGID_1_"
-     cx="262.7634"
-     cy="837.48853"
-     r="479.457"
-     gradientTransform="matrix(1,0,0,-1,231.688,1331.9497)"
-     gradientUnits="userSpaceOnUse"><stop
-       offset="0"
-       style="stop-color:#F7F7F7"
-       id="stop4" /><stop
-       offset="0.6611"
-       style="stop-color:#B8B8B8"
-       id="stop6" /><stop
-       offset="1"
-       style="stop-color:#9C9C9C"
-       id="stop8" /></radialGradient><rect
-     x="14.996498"
-     y="15.002222"
-     stroke-miterlimit="10"
-     width="958.90997"
-     height="958.91803"
-     id="rect10"
-     style="fill:url(#SVGID_1_);stroke:#adadad;stroke-width:30;stroke-miterlimit:10" /><g
-     id="g12"
-     transform="translate(-60.3125,-72.468778)"><g
-       id="g14"><path
-         d="m 522.705,405.707 c 81.77,0 163.551,0 245.313,0 0,77.206 0,154.405 0,231.615 -22.109,0 -44.22,0 -66.328,0 0,-11.08 0,-22.162 0,-33.242 6.881,0 14.965,0 22.469,0 5.842,0 10.021,0.296 10.617,-5.229 0.658,-6.105 0,-12.971 0,-19.699 -0.002,-38.979 0.004,-79.099 0,-118.191 0,-6.489 0.35,-12.914 -0.461,-19.084 -0.709,-0.933 -1.529,-1.752 -2.463,-2.463 -6.861,-0.813 -14.061,-0.461 -21.236,-0.461 -46.638,0 -93.722,0 -140.974,0 -6.812,0 -13.115,-1.035 -13.849,5.079 -0.768,6.367 0.584,16.283 0,22.16 -11.03,-0.104 -22.472,0.206 -33.242,-0.153 0,-19.955 0,-39.91 0,-59.866 -0.013,-0.223 -0.025,-0.441 0.154,-0.466 z"
-         id="path16"
-         inkscape:connector-curvature="0"
-         style="fill:#565656" /><path
-         d="m 422.979,498.507 c 81.664,0 163.344,0 245.006,0 0.719,76.61 0.104,154.569 0.309,231.771 -22.109,0 -44.223,0 -66.328,0 0,-11.08 0,-22.16 0,-33.24 4.914,0 9.521,0 14.619,0 4.889,0 10.283,0.763 14.312,-0.309 5.025,-1.338 4.154,-6.521 4.154,-13.234 -0.002,-45.959 0.002,-91.102 0,-137.585 0,-6.817 1.082,-12.966 -4.771,-14.004 -3.177,-0.562 -6.898,-0.154 -10.621,-0.154 -50.157,0 -99.771,0 -150.355,0 -5.583,0 -10.909,-0.729 -12.62,2.771 -1.362,2.789 -0.615,8.104 -0.615,12.005 0,4.475 0,8.526 0,12.619 -11.081,0 -22.16,0 -33.241,0 0,-20.06 0,-40.116 0,-60.175 -0.016,-0.221 -0.026,-0.44 0.151,-0.465 z"
-         id="path18"
-         inkscape:connector-curvature="0"
-         style="fill:#565656" /><path
-         d="m 350.495,590.537 c 72.024,0 144.042,0 216.07,0 -0.104,68.123 0.204,136.666 -0.152,204.531 -72.026,0 -144.044,0 -216.071,0 0,-68.024 0,-136.041 0,-204.069 -0.014,-0.218 -0.029,-0.436 0.153,-0.462 z m 33.703,36.321 c -0.769,1.771 -0.615,4.924 -0.615,7.693 0,8.381 0,18.119 0,25.086 0,28.803 0,55.559 0,83.721 0,4.818 -0.698,13.502 0.771,16.006 0.274,0.469 1.091,1.168 1.386,1.388 2.808,2.065 12.071,1.075 17.236,1.075 37.604,-0.002 73.427,0.002 110.807,0 5.176,-0.002 14.509,1.054 17.394,-1.075 3.18,-2.353 2.152,-11.146 2.152,-17.394 0,-33.981 0,-68.02 0,-101.572 0,-4.926 0.624,-13.489 -1.077,-15.852 -2.44,-3.392 -11.925,-2.154 -18.773,-2.154 -35.946,0 -71.481,0 -106.805,0 -5.922,0 -12.849,-0.537 -18.007,0.152 -1.641,0.221 -3.544,0.787 -4.469,2.926 z"
-         id="path20"
-         inkscape:connector-curvature="0"
-         style="fill:#565656" /></g></g></svg>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 1</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <radialGradient cx="-1.33226763e-13%" cy="0%" fx="-1.33226763e-13%" fy="0%" r="136.060156%" id="radialGradient-1">
+            <stop stop-color="#132B40" offset="0%"></stop>
+            <stop stop-color="#08111A" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="89.6644467%" y1="105.901639%" x2="8.87295082%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#03D67F" offset="0%"></stop>
+            <stop stop-color="#C2EF66" offset="100%"></stop>
+        </linearGradient>
+        <path d="M37,304 L37,573 L306,573 L306,304 L37,304 Z M306,34 L306,303 L575,303 L575,34 L306,34 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup">
+            <rect id="Base" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="1000" height="1000"></rect>
+            <g id="Album" sketch:type="MSLayerGroup" transform="translate(193.000000, 198.000000)">
+                <circle id="Oval-5" stroke="url(#linearGradient-2)" stroke-width="80" sketch:type="MSShapeGroup" cx="305" cy="305" r="305"></circle>
+                <circle id="Oval-6" stroke="url(#linearGradient-2)" stroke-width="20" sketch:type="MSShapeGroup" cx="305" cy="305" r="53"></circle>
+                <mask id="mask-4" sketch:name="Rectangle 3" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <use id="Rectangle-3" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
+                <circle id="Oval-7" stroke="url(#linearGradient-2)" stroke-width="20" sketch:type="MSShapeGroup" mask="url(#mask-4)" cx="305.5" cy="305.5" r="182.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
