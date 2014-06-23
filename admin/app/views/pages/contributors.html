@@ -48,7 +48,7 @@
             <b ng-show="user.username=='simonsimcity' || user.username=='steffan'">
                 {{translation.page.contributors.name}}
             </b><br>
-            <input ng-show="user.username=='simonsimcity' || user.username=='steffan'" ng-model="model.name" type="text"><br>
+            <input ng-model="model.name" type="text"><br>
             <button ng-click="model.is_visible=!model.is_visible">
                 <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
                 <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
