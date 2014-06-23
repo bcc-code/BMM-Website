@@ -219,7 +219,6 @@ angular.module('bmmLibApp')
           findTranslation(lang, (index+1), promise);
         },
         success: function(data) {
-          data.copyrightText = data.copyrightText.replace(/\\/g, '<br>');
           factory.translation = data;
           factory.translation['iso-639-1'] = lang[index];
           promise.resolve();
