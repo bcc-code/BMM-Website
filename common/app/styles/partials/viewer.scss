@@ -9,7 +9,7 @@
   z-index: 2;
 
   input {
-    border: .1em solid $colorBorderLight;
+    border: .1em solid $colorBorderLight !important;
   }
 
   > div {
@@ -35,6 +35,12 @@
   max-width: $pageWidth;
   //background-color: $colorForeground;
   z-index: 0;
+}
+
+@media screen and (min-width: $mobileWidth) {
+  [ng-view] {
+    overflow-x: hidden;
+  }
 }
 
 @media screen and (max-width: $maxWidth) {

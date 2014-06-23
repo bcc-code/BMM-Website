@@ -28,6 +28,7 @@
     border: .1em solid $colorBorders;
     border-radius: .3em;
   }
+
 }
 
 .fixed[navigator] {
@@ -100,7 +101,7 @@
     width: 100%;
     margin-top: 1em;
     padding: .5em 0 .5em 2.7em;
-    border-radius: 1em;
+    border-radius: 2em;
     cursor: pointer;
     color: #fff;//$colorForeground;
     border: .2em solid transparent;
@@ -212,12 +213,43 @@
 //Admin only
 .quick-menu {
   margin: 0 .5em;
+  span {
+    font-weight: bold;
+  }
   select {
     width: 100%;
+    margin-bottom: .2em;
+  }
+  button:hover {
+    background-color: #E3F7C5;
   }
   button, input[type='submit'] {
     color: #333;
     border-radius: .2em;
+  }
+  .track {
+    position: relative;
+    text-align: left;
+    margin-bottom: .3em;
+    background-color: #E0E7DA;
+    width: 100%;
+    cursor: pointer;
+    padding: .5em;
+    .order {
+      position: absolute;
+      padding-top: .5em;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 2em;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      background-color: #414141;
+    }
+  }
+  .track:hover {
+    background-color: #E3F7C5;
   }
 }
 

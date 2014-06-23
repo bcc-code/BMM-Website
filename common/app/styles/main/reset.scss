@@ -39,9 +39,15 @@ ul, li {
   list-style-type: none;
 }
 
-input {
+form {
+  margin: 0;
+}
+
+input, input[type="text"] {
   border-radius: .25em;
   border: 0;
+  margin-bottom: 0;
+  box-shadow: none;
 }
 
 //Unset bootstrap line-height (messing up top-bar)
