@@ -96,13 +96,29 @@
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
                     <b>{{translation.options.copyUrl}}</b>
-                    <span style="   display: inline-block;
-                                    background-color: white;
-                                    border: .1em solid gray;
-                                    overflow: auto;
-                                    padding: .5em;
-                                    width: 100%;"
-                    >{{newPodcast.link}}language={{allLanguages ? '' : podcastLanguage}}&size={{fileRestriction}}</span>
+                    <input style="width: 100%; border: .1em solid gray;padding: .5em;"
+                           type="text" value="{{newPodcast.link}}language={{allLanguages ? '' : podcastLanguage}}&size={{fileRestriction}}">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SHARE-->
+<div class="popup" ng-hide="share.show==undefined||share.show!=true">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
+
+                <div class="exit" ng-click="share.show=false"></div>
+
+                <b>{{translation.options.share}}</b>
+
+                <div style="width: 100%; margin-top: 1em; float: left;">
+                    <b>{{translation.options.copyLink}}</b>
+                    <input style="width: 100%; border: .1em solid gray;padding: .5em;"
+                           type="text" value="{{share.link}}">
                 </div>
 
             </div>
