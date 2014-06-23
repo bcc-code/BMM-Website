@@ -50,15 +50,6 @@ angular.module('bmmLibApp')
           }
         });
 
-        //Toggle play
-        scope.togglePlay= function() {
-          if (scope.player.playing) {
-            scope.player.setPause();
-          } else {
-            scope.player.setPlay();
-          }
-        };
-
         //Volume slider
         var volumeSlider = element.find('.volume');
         volumeSlider.slider({
