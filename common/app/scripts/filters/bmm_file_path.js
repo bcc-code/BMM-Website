@@ -10,7 +10,7 @@ angular.module('bmmLibApp')
         path = bmmApi.getserverUrli()+'file/protected/'+path;
       }
 
-      path = bmmApi.secureFile(path);
+      path = path;
 
       return path;
     };
