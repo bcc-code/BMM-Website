@@ -49,8 +49,8 @@
                                                 <div class="flags-{{file.language}}"
                                                      style="width: 2em; height: 1.5em; display: inline-block; float: left;">
                                                 </div>
-                                                <button ng-click="playLinked(track.track)">{{translation.page.editor.play}}</button>
-                                                <button ng-click="linkWaiting(file.link, track.track.id, file.language, album, track, $index)"
+                                                <button ng-click="play(file.track)">{{translation.page.editor.play}}</button>
+                                                <button ng-click="linkWaiting(file.link, file.track.id, file.language, album, track, $index)"
                                                         style="position: absolute; right: 0">
                                                     {{translation.page.waitings.link}}
                                                 </button>
@@ -88,7 +88,7 @@
                                  style="width: 2em; height: 1.5em; display: inline-block; float: left;">
                             </div>
                             <span>{{waiting.track.combinedTitle}}</span>
-                            <button ng-click="playLinked(waiting.track)">
+                            <button ng-click="play(waiting.track)">
                                 {{translation.page.editor.play}}
                             </button>
                             <span>{{waiting.subtype}}</span>
@@ -97,7 +97,7 @@
                     </li>
                     <li class="no-hover">
                         <span><b>{{translation.page.waitings.conflict}}</b>: </span>
-                        <button ng-click="playConflict(waiting.conflict)" style="margin-right: .5em">
+                        <button ng-click="play(waiting.conflict)" style="margin-right: .5em">
                             {{translation.page.editor.play}}
                         </button>
                         <button>
