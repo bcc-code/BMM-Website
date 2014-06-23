@@ -10,7 +10,10 @@
   "protocol": "https",
   "localsPath": "translations/locals/",
   "biblePath": "translations/bible/",
-  "translationFolder": "translations/",
   "titlesAlbum": "translations/titles/album.json",
-  "keepAlive": 36000
+  "keepAlive": 36000,
+  "translationFolder": "translations/",
+  "translationsAvailable": [
+    "en"
+  ]
 }
