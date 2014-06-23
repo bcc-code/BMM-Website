@@ -26,6 +26,9 @@ angular.module('bmmLibApp')
       //Find id
       resolvedData.id = data.id;
 
+      //Find raw
+      resolvedData.raw = data;
+
       if (data.description!==null) {
         resolvedData.description = data.description;
       } else {
@@ -33,7 +36,7 @@ angular.module('bmmLibApp')
       }
 
       /**
-       * Returns: title, cover, id
+       * Returns: title, cover, id, raw
        */
 
       return resolvedData;

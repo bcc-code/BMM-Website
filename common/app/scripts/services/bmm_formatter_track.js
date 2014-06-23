@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterTrack', ['bmmApi', 'init', function (bmmApi, init) {
+  .factory('bmmFormatterTrack', ['bmmApi', 'init', '$location', function (bmmApi, init, $location) {
     
     var factory = {};
 
@@ -55,6 +55,10 @@ angular.module('bmmLibApp')
 
         }
 
+        //Path
+        resolvedData.path = $location.absUrl();
+        resolvedData.path = resolvedData.path.replace($location.path(), '/track/'+data.id+'/'+data.language);
+
         //Find parent title
         if (typeof data._meta!=='undefined'&&
             typeof data._meta.parent!=='undefined'&&
@@ -101,15 +105,13 @@ angular.module('bmmLibApp')
           }
         };
 
+        resolvedData.videos = [];
+        resolvedData.audios = [];
+        resolvedData.video = false;
+        resolvedData.audio = false;
+
         //Find file type, url and length
         if (typeof data.media!=='undefined'&&data.media!==null&&data.media.length>0) {
-
-          resolvedData.videos = [];
-          resolvedData.audios = [];
-          resolvedData.unknowns = [];
-          resolvedData.video = false;
-          resolvedData.audio = false;
-          resolvedData.unknown = false;
 
           //In media there can currently be 'audio' and 'video'
           $.each( data.media, function() {
@@ -148,14 +150,14 @@ angular.module('bmmLibApp')
 
         //If track is a waiting, fetch waiting file
         if (typeof data.link!=='undefined') {
-          var _file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link;
-          resolvedData.unknown = true;
-          resolvedData.unknowns.push({
+          var _file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link.file;
+          resolvedData[data.link.type] = true;
+          resolvedData[(data.link.type+'s')].push({
             file: bmmApi.secureFile(_file),
-            downloadLink: bmmApi.secureDownload(this.url)+'?download=1',
-            type: 'Unknown',
-            name: 'Unknown',
-            duration: 0
+            downloadLink: bmmApi.secureDownload(_file)+'?download=1',
+            type: data.link.mime_type,
+            name: renameMimeType(data.link.mime_type),
+            duration: data.link.duration
           });
           resolvedData.link = data.link;
         }
@@ -164,8 +166,7 @@ angular.module('bmmLibApp')
         resolvedData.directDownload = {};
         resolvedData.directDownload.exist = false;
         if (resolvedData.audios.length+
-            resolvedData.videos.length+
-            resolvedData.unknowns.length===1) {
+            resolvedData.videos.length===1) {
 
           if (resolvedData.audios.length===1) {
             resolvedData.directDownload = {
@@ -182,15 +183,6 @@ angular.module('bmmLibApp')
               type: resolvedData.videos[0].mime_type,
               name: renameMimeType(resolvedData.videos[0].mime_type),
               duration: Number(resolvedData.videos[0].duration)
-            }
-          }
-
-          if (resolvedData.unknowns.length===1) {
-            resolvedData.directDownload = {
-              file: resolvedData.unknowns[0].downloadLink,
-              type: resolvedData.unknowns[0].mime_type,
-              name: renameMimeType(resolvedData.unknowns[0].mime_type),
-              duration: Number(resolvedData.unknowns[0].duration)
             }
           }
 
@@ -352,7 +344,7 @@ angular.module('bmmLibApp')
         resolvedData.raw = data;
 
         /**
-         * Returns: file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
+         * Returns: path, file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
          *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, composers, interprets
          */
 
