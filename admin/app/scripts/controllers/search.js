@@ -17,7 +17,7 @@ angular.module('bmmApp')
     $scope.results = [];
     $(window).off('scrollBottom');
 
-    var searchFrom = 0, loading=true, end=false, loadAmount=80, cnt=0;
+    var searchFrom = 0, loading=true, end=false, loadAmount=80;
 
     $(window).on('scrollBottom', function() {
 
@@ -39,7 +39,7 @@ angular.module('bmmApp')
       $scope.$parent.bmm.term = '';
     });
 
-    $scope.open = function(type, id, language, track) {
+    $scope.open = function(type, id) {
       $location.path('/'+type+'/'+id);
     };
 

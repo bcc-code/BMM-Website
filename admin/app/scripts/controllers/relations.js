@@ -260,7 +260,7 @@ angular.module('bmmApp')
         time = parseInt(time[0],10);
       }
       return time;
-    }
+    };
 
     var ungroupBibles = function(array) {
 
