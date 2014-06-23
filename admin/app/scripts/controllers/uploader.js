@@ -8,7 +8,7 @@ angular.module('bmmApp')
     $scope.init = function(options) {
 
       if (typeof options.method==='undefined') {
-        options.method = 'POST'
+        options.method = 'POST';
       }
 
       var uploader = $fileUploader.create({
