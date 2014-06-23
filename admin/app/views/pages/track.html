@@ -1,5 +1,5 @@
 <div class="controlbar" ng-hide="model.id==undefined">
-    <b>{{standardModel.title}}</b> -
+    <h4>{{formattedModel.combinedTitle}}</h4>
     <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
         {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
 </div>
@@ -7,7 +7,7 @@
     <b>{{translation.page.editor.status}}</b>: {{status}}
     <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
-    <button ng-click="model.is_visible=!model.is_visible">
+    <button ng-click="model.is_visible=!model.is_visible; save();">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
         <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
     </button>
@@ -208,7 +208,8 @@
                         <span><b>{{translation.page.editor.duration}}:</b> {{file.duration}}</span>
                         <span><b>{{translation.page.editor.size}}:</b> {{file.size}}</span>
                         <button ng-click="deleteFile(edited.media, $parent.$index, $index)">{{translation.page.editor.delete}}</button>
-                        <button ng-click="play(file)">{{translation.page.editor.play}}</button>
+                        <button ng-click="play(file, media.type)">{{translation.page.editor.play}}</button>
+                        <button ng-click="download(file.path)">{{translation.page.editor.download}}</button>
                     </li>
                 </div>
             </ul>
@@ -254,7 +255,7 @@
     <b>{{translation.page.editor.status}}</b>: {{status}}
     <button ng-click="save();" ng-hide="parentAlbumCurrent==undefined||model.order==undefined" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined" style="margin-left: .5em">{{translation.page.editor.delete}}</button>
-    <button ng-click="model.is_visible=!model.is_visible">
+    <button ng-click="model.is_visible=!model.is_visible; save();">
         <span ng-hide="model.is_visible">{{translation.page.editor.publish}}</span>
         <span ng-show="model.is_visible">{{translation.page.editor.unpublish}}</span>
     </button>

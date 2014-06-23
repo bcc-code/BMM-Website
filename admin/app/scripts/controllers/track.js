@@ -8,11 +8,13 @@ angular.module('bmmApp')
     $rootScope,
     $routeParams,
     $timeout,
+    waitings,
     bmmPlay,
     bmmApi,
     init,
     bmmFormatterTrack,
-    bmmFormatterAlbum
+    bmmFormatterAlbum,
+    quickMenu
     ) {
 
     var modelLoaded=false, newTrack=false;
@@ -45,11 +47,34 @@ angular.module('bmmApp')
       } else {
 
         if (typeof $routeParams.order==='undefined') {
-          $routeParams.order = 0;
+          $routeParams.order = 1;
         }
 
         if (typeof $routeParams.language==='undefined') {
           $routeParams.language = init.mediaLanguage;
+        }
+
+        if (typeof $routeParams.date==='undefined') {
+          $routeParams.date = new Date();
+        }
+
+        var languages = [];
+        if (typeof $routeParams.languages==='undefined') {
+          languages = [{
+            language: $routeParams.language,
+            title: '',
+            is_visible: false,
+            media: []
+          }];
+        } else {
+          $.each($routeParams.languages.split(','), function() {
+            languages.push({
+              language: this,
+              title: '',
+              is_visible: false,
+              media: []
+            });
+          });
         }
 
         $scope.model = {
@@ -57,16 +82,11 @@ angular.module('bmmApp')
           order: parseInt($routeParams.order),
           type: 'track',
           subtype: 'song',
-          recorded_at: new Date(),
+          recorded_at: $routeParams.date,
           published_at: new Date(),
           original_language: $routeParams.language,
           is_visible: true,
-          translations: [{
-            language: $routeParams.language,
-            title: '',
-            is_visible: false,
-            media: []
-          }],
+          translations: languages,
           tags: [],
           cover: null,
           cover_upload: null,
@@ -89,6 +109,10 @@ angular.module('bmmApp')
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
             $scope.standardModel = model;
+            $scope.formattedModel = bmmFormatterTrack.resolve(model);
+            quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
+                      $scope.standardModel._meta.root_parent.id,
+                      $scope.standardModel.parent_id);
           });
         });
       }
@@ -114,7 +138,7 @@ angular.module('bmmApp')
 
         //@todo - remove when new developer data is added
         if (typeof this.media!=='undefined'&&this.media!==null) {
-          $.each(this.media, function(index) {
+          $.each(this.media, function() {
             if (typeof this.files!=='undefined'&&this.files!==null) {
               $.each(this.files, function() {
                 if (typeof this.length!=='undefined') {
@@ -137,7 +161,7 @@ angular.module('bmmApp')
           if (xhr.status===201) {
             $location.path('/track/'+xhr.getResponseHeader('X-Document-Id'));
           } else {
-            $scope.status = init.translation.states.couldNotCreateTrack+', '
+            $scope.status = init.translation.states.couldNotCreateTrack+', '+
                             init.translation.states.errorCode+': '+xhr.status;
           }
         });
@@ -146,20 +170,30 @@ angular.module('bmmApp')
       }
     };
 
-    $scope.play = function(file) {
-      var type = 'audio'
-      if (file.mime_type ==='video/mpeg') {
-        type = 'video';
-      }
-      bmmPlay.setPlay([{
-        title: $scope.edited.title,
-        subtitle: file.mime_type,
-        language: $scope.edited.language,
-        cover: $scope.model.cover,
-        file: $filter('bmmFilePath')(file.path),
+    $scope.play = function(file, type) {
+
+      var track = bmmFormatterTrack.resolve($scope.standardModel);
+
+      track.audio = false;
+      track.video = false;
+      track[type] = true;
+
+      track[(type+'s')] = [{
+        file: bmmApi.secureFile($filter('bmmFilePath')(file.path)),
+        type: file.mime_type,
         duration: file.duration,
-        type: type
-      }], 0);
+        name: file.mime_type
+      }];
+
+      track.language = $scope.edited.language;
+      track.title = $scope.edited.title;
+
+      bmmPlay.setPlay([track], 0);
+
+    };
+
+    $scope.download = function(path) {
+      window.location = $filter('bmmFilePath')(path)+'?download=1';
     };
 
     $scope.playLinked = function(track) {
@@ -186,6 +220,7 @@ angular.module('bmmApp')
             if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
               options.done();
             }
+            quickMenu.refresh();
           });
         }).fail(function() {
           $scope.status = init.translation.states.couldNotFetchData;
@@ -194,6 +229,9 @@ angular.module('bmmApp')
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
             $scope.standardModel = model;
+            quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
+              $scope.standardModel._meta.root_parent.id,
+              $scope.standardModel.parent_id);
           });
         });
       }).fail(function() {
@@ -209,6 +247,7 @@ angular.module('bmmApp')
           bmmApi.trackDelete($scope.model.id).always(function() {
             $scope.$apply(function() {
               alert(init.translation.states.trackDeleted);
+              quickMenu.refresh();
               $location.path( '/' );
             });
           });
@@ -313,7 +352,7 @@ angular.module('bmmApp')
           newEdit.is_visible===oldEdit.is_visible&&
           newEdit.language===oldEdit.language&&
           newEdit.title===oldEdit.title) {
-          alert($scope.$parent.translation.page.editor.missingFile);
+          $scope.status = init.translation.page.editor.missingFile;
         }
 
       }
@@ -477,21 +516,28 @@ angular.module('bmmApp')
       $scope.parentAlbumCurrent = album.title;
     };
 
-    bmmApi.fileUploadedGuessTracksGet().done(function(links) {
+    bmmApi.fileUploadedGuessTracksGet().done(function(_waitings) {
+
+      _waitings = waitings.resolve(_waitings);
 
       $scope.$apply(function() {
 
         $scope.waitings = [];
-        $.each(links.guessed, function(key) {
-          $.each(this, function() {
-            //When album found, but no tracks
-            if (this.id===$scope.model.id) {
-              var track = this;
-              track.link = key;
-              track = bmmFormatterTrack.resolve(track);
-              $scope.waitings.push(track);
-            }
+        $.each(_waitings.ready, function() {
+
+          $.each(this.tracks, function() {
+
+            $.each(this.files, function() {
+
+              //When track with connection to current track is found
+              if (this.track.id===$scope.model.id) {
+                $scope.waitings.push(this.track);
+              }
+
+            });
+
           });
+
         });
 
       });

@@ -1,14 +1,10 @@
 <div class="controlbar" ng-hide="model.id==undefined">
-    <b>{{standardModel.title}}</b> -
+    <h4>{{standardModel.title}}</h4>
     <i>{{translation.page.editor.lastModified}} <b>{{model['_meta'].modified_at | date:'dd.MM.yyyy'}}</b>
     {{translation.page.editor.by}} <b><u>{{model['_meta'].modified_by}}</u></b></i>
 </div>
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
-            style="margin-left: .5em">
-        {{translation.page.editor.addTrack}}
-    </button>
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>
@@ -177,34 +173,8 @@
     </div>
 </div>
 
-<div class="foldbox" ng-hide="model.id==undefined">
-    <div class="header"
-         ng-click="_tracks=!_tracks">
-        <h3>{{translation.page.editor.tracks}}</h3>
-    </div>
-    <div class="body" ng-class="{'visible': _tracks}">
-        <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
-                style="margin-bottom: 1em">
-            {{translation.page.editor.addTrack}}
-        </button>
-        <ul style="width: 100%;">
-            <li ng-repeat="track in tracks"
-                ng-click="go('/track/'+track.id)"
-                    style="width: 100%; display: inline-block">
-                <span>
-                    {{track.title}}
-                </span>
-            </li>
-        </ul>
-    </div>
-</div>
-
 <div class="controlbar">
     <b>{{translation.page.editor.status}}</b>: {{status}}
-    <button ng-click="go('track/new/'+model.id+'/'+(standardModel.children.length+1)+'/'+model.original_language)"
-            style="margin-left: .5em">
-        {{translation.page.editor.addTrack}}
-    </button>
     <button ng-click="save();" style="margin-left: .5em">{{translation.page.editor.save}}</button>
     <button ng-click="delete();" ng-hide="model.id==undefined">{{translation.page.editor.delete}}</button>
 </div>

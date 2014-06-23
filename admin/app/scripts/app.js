@@ -44,12 +44,22 @@ angular.module('bmmApp', [
         controller: 'AlbumCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
       })
+      .when('/album/:id/:add', {
+        templateUrl: 'views/pages/album.html',
+        controller: 'AlbumCtrl',
+        resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
+      })
+      .when('/album/:id/:parentId/:language/:languages/:date', {
+        templateUrl: 'views/pages/album.html',
+        controller: 'AlbumCtrl',
+        resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
+      })
       .when('/track/:id', {
         templateUrl: 'views/pages/track.html',
         controller: 'TrackCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
       })
-      .when('/track/:id/:parentId/:order/:language', {
+      .when('/track/:id/:parentId/:order/:language/:languages/:date', {
         templateUrl: 'views/pages/track.html',
         controller: 'TrackCtrl',
         resolve: { 'initData': ['init', function(init) { return init.promise(true); }]}
