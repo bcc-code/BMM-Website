@@ -209,7 +209,11 @@ angular.module('bmmLibApp')
 
       //Fallback
       if (typeof lang[index]==='undefined'||lang.length<1) {
-        lang[index] = 'nb';
+        if (lang[(index-1)]==='nb') {
+          lang[index] = 'en'; //Second fallback
+        } else {
+          lang[index] = 'nb'; //First fallback
+        }
       }
 
       //Attempt to fetch file
