@@ -22,17 +22,17 @@ angular.module('bmmLibApp')
         var fixNav = function() {
 
           if ($('[navigator]').height()<$('[ng-view]').height()+$('header').height()) {
-            if ($('body').scrollTop()>=$('header').height()+$('#sw-topbar').height()) {
+            if ($(document).scrollTop()>=$('header').height()+$('#sw-topbar').height()) {
               scope.fixedSmall = true;
             } else {
               scope.fixedSmall = false;
             }
-            if ($('body').scrollTop()>=$('#sw-topbar').height()) {
+            if ($(document).scrollTop()>=$('#sw-topbar').height()) {
               scope.absolute = false;
             } else {
               scope.absolute = true;
             }
-            if ($('body').scrollTop()>=$('header').height()) {
+            if ($(document).scrollTop()>=$('header').height()) {
               scope.fixed = true;
             } else {
               scope.fixed = false;

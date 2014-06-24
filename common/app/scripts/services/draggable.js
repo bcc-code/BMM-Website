@@ -25,6 +25,11 @@ angular.module('bmmLibApp')
 
       resizer(target);
 
+      //Attempt to solve bug with a latest list in iphone
+      $timeout(function() {
+        $(window).trigger('resize');
+      }, 1000);
+
       $(window).off('resize', resizer);
       $(window).bind('resize', function() {
         if(typeof sizewait !== 'undefined'){
@@ -35,7 +40,7 @@ angular.module('bmmLibApp')
         },200);
       });
 
-    }
+    };
 
     factory.makeDraggable = function($scope) {
 
