@@ -151,7 +151,11 @@ angular.module('bmmLibApp')
         //If track is a waiting, fetch waiting file
         if (typeof data.link!=='undefined') {
           var _file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link.file;
+          if (typeof data.link.conflict!=='undefined'&&data.link.conflict) {
+            _file = data.link.file;
+          }
           resolvedData[data.link.type] = true;
+          resolvedData[(data.link.type+'s')] = [];
           resolvedData[(data.link.type+'s')].push({
             file: bmmApi.secureFile(_file),
             downloadLink: bmmApi.secureDownload(_file)+'?download=1',
@@ -267,7 +271,10 @@ angular.module('bmmLibApp')
               case 'bible':
 
                 $.each(resolvedData.relations[key], function(index) {
-                  resolvedData.bible.push(this.book+' '+this.chapter+' '+this.verse);
+                  resolvedData.bible.push({
+                    name: this.book+' '+this.chapter+' '+this.verse,
+                    timestamp: this.timestamp
+                  });
                 });
 
                 break;

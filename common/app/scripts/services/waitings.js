@@ -60,6 +60,7 @@ angular.module('bmmLibApp')
             }
 
             waiting.link = {};
+            waiting.link.conflict = false;
             waiting.link.type = mType;
             waiting.link.file = key;
             waiting.link.mime_type = type;
@@ -73,6 +74,7 @@ angular.module('bmmLibApp')
               if (this.mime_type === type) {
 
                 var _conflict = waiting;
+                _conflict.link.conflict = true;
                 _conflict.link.type = mType;
                 _conflict.link.file = this.url;
                 _conflict.link.mime_type = this.mime_type;
