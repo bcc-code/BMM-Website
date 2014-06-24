@@ -245,6 +245,14 @@ angular.module('bmmLibApp')
       factory.raw = source.raw;
       factory.formatted = bmmFormatterTrack.resolve(source.raw);
 
+      if (typeof time==='undefined') {
+        if (typeof source.timestamp!=='undefined') {
+          time = source.timestamp;
+        } else {
+          time = 0;
+        }
+      }
+
       // @analytics - Report track started playing to google analytics
       $window.ga('send', 'event', 'tracks', 'play start', factory.title, factory.id);
 

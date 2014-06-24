@@ -199,26 +199,28 @@
                     <span class="link"
                           ng-repeat="artist in trackInfo.track.interprets"
                        ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); trackInfo.show=false;">
-                        {{artist.name}}<em ng-hide="$last">, </em>
+                        {{artist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
                 <b>{{translation.track.lyricist}}</b><br>
                     <span class="link"
                           ng-repeat="lyricist in trackInfo.track.lyricists"
                           ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); trackInfo.show=false;">
-                        {{lyricist.name}}<em ng-hide="$last">, </em>
+                        {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
                 <b>{{translation.track.composer}}</b><br>
                     <span class="link"
                           ng-repeat="composer in trackInfo.track.composers"
                           ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
-                        {{composer.name}}<em ng-hide="$last">, </em>
+                        {{composer.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
                 <b>{{translation.track.bibleVerse}}</b><br>
                     <span class="link"
+                          title="{{reference.timestamp | bmmTime}}"
+                          ng-click="play([trackInfo.track], 0, reference.timestamp, reference.name);"
                           ng-repeat="reference in trackInfo.track.bible">
-                        {{reference}}<em ng-hide="$last">, </em>
+                        {{reference.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
             </div>

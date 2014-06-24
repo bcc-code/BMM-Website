@@ -6,12 +6,15 @@ angular.module('bmmLibApp')
     
     var factory = {};
 
-    factory.setPlay = function(playlist, index, play) {
+    factory.setPlay = function(playlist, index, play, timestamp) {
       if (typeof index==='undefined') {
         index = 0;
       }
       if (typeof play==='undefined') {
         play = true;
+      }
+      if (typeof timestamp==='undefined') {
+        timestamp = 0;
       }
       var tracks = [], video, title, performers;
 
@@ -37,7 +40,8 @@ angular.module('bmmLibApp')
           audio: this.audio,
           video: this.video,
           unknown: this.unknown,
-          raw: this.raw
+          raw: this.raw,
+          timestamp: timestamp
         });
 
       });
@@ -49,8 +53,8 @@ angular.module('bmmLibApp')
       });
 
       if (play) {
-        bmmPlayer.setSource(bmmPlaylist.getCurrent());
-        bmmPlayer.setPlay();
+        bmmPlayer.setSource(bmmPlaylist.getCurrent(), timestamp);
+        bmmPlayer.setPlay(timestamp);
       }
 
     };

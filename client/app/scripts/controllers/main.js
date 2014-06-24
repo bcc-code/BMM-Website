@@ -6,6 +6,7 @@ angular.module('bmmApp')
     $timeout,
     $location,
     $route,
+    $window,
     init,
     bmmApi,
     bmmPlaylist,
@@ -75,8 +76,13 @@ angular.module('bmmApp')
         $location.path( path );
       };
 
-      $scope.play = function(playlist, index) {
-        bmmPlay.setPlay(playlist, index);
+      $scope.play = function(playlist, index, timestamp, verse) {
+
+        if (typeof verse!=='undefined') {
+          $window.ga('send', 'event', 'bible verse', 'play', verse);
+        }
+
+        bmmPlay.setPlay(playlist, index, true, timestamp);
       };
 
       //Deprecated
