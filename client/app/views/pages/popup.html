@@ -126,6 +126,25 @@
     </div>
 </div>
 
+<!--PUSH MESSAGE-->
+<div class="popup" ng-hide="pushMessage.show==undefined||pushMessage.show!=true">
+    <div class="container">
+        <div class="verticalCenter">
+            <div class="container">
+
+                <div class="exit" ng-click="pushMessage.show=false"></div>
+
+                <b>{{pushMessage.message.title}}</b>
+
+                <p>
+                    {{pushMessage.message.message}}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--SETTINGS-->
 <div class="popup" ng-hide="settings.show==undefined||settings.show==false">
     <div class="container">

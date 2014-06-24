@@ -33,7 +33,7 @@
 
 .fixed[navigator] {
   position: fixed;
-  margin-top: $topbarHeight;
+  margin-top: $topbarHeight!important;
   top: 0;
   bottom: $playerHeight;
 }

@@ -37,6 +37,16 @@ angular.module('bmmApp')
         });
       };
 
+      $scope.pushMessages = [
+        { title: 'Test push message', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et leo turpis. Ut dapibus elit ac orci tincidunt placerat. Nullam id congue risus.'},
+        { title: 'En annen push message', message: 'Aliquam iaculis purus nec diam laoreet, vitae ultricies felis facilisis.'},
+        { title: 'Osv..', message: 'Donec massa ligula, malesuada id sapien at, pharetra bibendum velit. Nunc condimentum quis turpis nec rutrum.'}
+      ];
+
+      $scope.removePushMessage = function(index) {
+        $scope.pushMessages.splice(index,1);
+      };
+
       $scope.restoreSession = function() {
         var model = angular.fromJson(sessionStorage[init.user.username]);
         if (typeof model!=='undefined') {

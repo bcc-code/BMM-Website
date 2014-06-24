@@ -1,8 +1,8 @@
 header {
   width: 100%;
   background-color: #fff;//$colorMain;
-  box-shadow: 0 0 .2em #8F8F8F;
-  z-index: 4;
+  box-shadow: 0 0 .5em #1F1F1F;
+  z-index: 5;
   .wrapper {
     margin-top: 2.3em;
   }
@@ -178,6 +178,7 @@ header {
 @media screen and (max-width: $mobileWidth) {
   header {
     margin-top: -$headerHeight;
+    height: 0;
     overflow: hidden;
   }
   .sub-header {//.ng-hide {

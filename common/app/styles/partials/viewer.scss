@@ -27,6 +27,55 @@
   }
 }
 
+.push-messages {
+  position: relative;
+  background-color: $colorLightGreen;
+  width: 100%;
+  overflow: hidden;
+  ul {
+    li {
+      position: relative;
+      padding: .5em;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      border-bottom: .1em solid rgba(255, 255, 255, 0.4);
+      button {
+        padding: .3em 1em;
+        border-radius: 3em;
+        border: .1em solid white;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        background-color: transparent;
+        margin-left: 1em;
+      }
+      button:hover {
+        background-color: #FFF;
+        color: #000;
+      }
+      .exit {
+        position: absolute;
+        top: 1em;
+        right: 0;
+        width: 1.3em;
+        height: 1.3em;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../images/svg/v3/Cross_white.svg);
+        opacity: .6;
+        cursor: pointer;
+      }
+      .exit:hover {
+        opacity: 1;
+      }
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
 .foreground {
   position: fixed;
   top: 0;

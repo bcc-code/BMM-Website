@@ -1,3 +1,74 @@
+.client {
+  [ng-view], [navigator] {
+    margin-top: 0;
+  }
+  .nav-toggle {
+    margin-top: .5em;
+  }
+  .nav-toggle.fixed {
+    top: $topbarHeight;
+  }
+  .push-messages {
+    margin-top: $headerHeight;
+  }
+}
+
+@media screen and (max-height: $maxHeight) {
+  .client .absolute[navigator], .client .fixed[navigator] {
+    margin-top: 0 !important;
+  }
+  .client .nav-toggle.fixed {
+    top: 0!important;
+  }
+}
+
+//@todo - this must be minified as much as possible
+
+@media screen and (max-width: $mobileWidth) {
+  .client [navigator] {
+    position: absolute!important;
+    bottom: auto!important;
+  }
+  .client .nav-toggle {
+    position: absolute!important;
+  }
+  .client .fixed.fixedSmall[navigator] {
+    position: fixed!important;
+    margin-top: 0!important;
+    top: 0!important;
+    bottom: $playerHeight!important;
+  }
+  .client .nav-toggle.fixed.fixedSmall {
+    position: fixed!important;
+    top: 0!important;
+    margin-top: .5em!important;
+  }
+  .client .push-messages {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: $mobileWidth) and (min-height: $maxHeight) {
+  .client .nav-toggle.fixed.fixedSmall {
+    top: $topbarHeight!important;
+    margin-top: .5em!important;
+  }
+  .client .fixed.fixedSmall[navigator] {
+    margin-top: $topbarHeight!important;
+  }
+  .client .fixed[navigator] {
+    position: fixed!important;
+    margin-top: $topbarHeight!important;
+    top: 0!important;
+    bottom: $playerHeight!important;
+  }
+  .client .nav-toggle.fixed {
+    position: fixed!important;
+    top: $topbarHeight!important;
+    margin-top: .5em!important;
+  }
+}
+
 .search-result {
   margin-bottom: .5em;
   overflow: hidden;

@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl">
+<div ng-controller="MainCtrl" class="client">
 
     <!--LOADINGSCREEN-->
     <div class="loadscreen" ng-hide="load.loaded">
@@ -32,6 +32,20 @@
             </div>
         </div>
     </header>
+
+    <!--PUSH MESSAGES-->
+    <div class="push-messages"
+         ng-style="{height: pushMessages.length<1 ? '0' : 'auto'}">
+        <div class="page-positioning" style="padding: 0 1em;">
+            <ul>
+                <li ng-repeat="message in pushMessages">
+                    <span>{{message.title}}</span>
+                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;">{{translation.general.readMore}}</button>
+                    <div class="exit" ng-click="removePushMessage($index)"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!--VIEWER-->
     <div class="page-positioning" style="z-index: 4">

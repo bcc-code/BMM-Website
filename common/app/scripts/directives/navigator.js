@@ -21,8 +21,8 @@ angular.module('bmmLibApp')
 
         var fixNav = function() {
 
-          if ($('[navigator]').height()<$('[ng-view]').height()+$('header').height()) {
-            if ($(document).scrollTop()>=$('header').height()+$('#sw-topbar').height()) {
+          if ($('[navigator]').height()<($('[ng-view]').height()+$('header').height()+$('.push-messages').height())) {
+            if ($(document).scrollTop()>=($('header').height()+$('#sw-topbar').height()+$('.push-messages').height())) {
               scope.fixedSmall = true;
             } else {
               scope.fixedSmall = false;
@@ -32,7 +32,7 @@ angular.module('bmmLibApp')
             } else {
               scope.absolute = true;
             }
-            if ($(document).scrollTop()>=$('header').height()) {
+            if ($(document).scrollTop()>=($('header').height()+$('.push-messages').height())) {
               scope.fixed = true;
             } else {
               scope.fixed = false;
