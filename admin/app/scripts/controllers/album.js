@@ -328,43 +328,11 @@ angular.module('bmmApp')
       }
     });
 
-    var suggestedTags = [
-      'Parents\' and Couples Conference',
-      'Childrens\' Conference',
-      'Sisters\' Conference',
-      'Sisters\' Meeting',
-      'Sisters\' Feast',
-      'Brothers\' Feast',
-      'Brothers\' Conference',
-      'Brothers\' Conference Grenland',
-      'Brothers\' Meeting',
-      'Youth Conference',
-      'Youth Meeting',
-      'BrunstadTV',
-      'Brunstadfeast',
-      'Feast Meeting',
-      'Fellowship-Weekend',
-      'Conference',
-      'Summer Conference',
-      'Summer Conference July',
-      'Summer Conference August',
-      'Easter Conference',
-      'Bible Competition',
-      'New Year Conference',
-      'Pentecostal Conference',
-      'Feast',
-      'child-favorites',
-      'instrumental',
-      'mp3-kilden',
-      'Meeting',
-      'Mission Meeting',
-      'Opening'
-    ];
-
     var findAvailableTags = function() {
+
       $scope.availableTags = [];
-      $.each(suggestedTags, function() {
-        var available = this, found=false;
+      $.each(init.titles.album, function(key) {
+        var available = key, found=false;
         $.each($scope.model.tags, function() {
           if (this===available) {
             found = true;
