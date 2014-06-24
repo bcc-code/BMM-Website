@@ -14,8 +14,15 @@ angular.module('bmmApp')
   ) {
 
     $scope.load = init.load;
+    $scope.access=true;
 
     init.load.complete.promise.then(function() {
+
+      var access=false;
+      $.each(init.user.roles, function() {
+        if (this==='ROLE_ADMINISTRATOR') { access=true; }
+      });
+      $scope.access = access;
 
       $('.bmm-view').off('scrollBottom');
 
