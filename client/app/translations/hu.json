@@ -1,0 +1,138 @@
+{
+  "language":"Magyar",
+  "general":{
+    "search":"Keresés...",
+    "searchResultsFor":"Találatok erre:",
+    "loading":"Töltés...",
+    "waysOfTheLord":"Az Úr Útjai",
+    "almondBlossom":"Mandulavirágok",
+    "noTitle":"Nincs cím",
+    "settings":"Beállítások",
+    "feedback":"Visszajelzés",
+    "suport":"Támogatás",
+    "readMore":"Tovább"
+  },
+  "options":{
+    "addToPlaylist":"Hozzáadás lejátszólistához",
+    "download":"Letöltés",
+    "downloadAudio":"Audió letöltése",
+    "downloadVideo":"Videó letöltése",
+    "goToAlbum":"Váltás erre az albumra",
+    "podcast":"Podcast",
+    "removeFilter":"Szűrő eltávolítása",
+    "changeLanguage":"Nyelv váltása",
+    "goBack":"Vissza",
+    "addToFavorites":"Hozzáadás a kedvencekhez",
+    "moreInfo":"További információ",
+    "choosePlaylist":"Válassz lejátszólistát",
+    "setupPodcast":"Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használd kliensszoftverbe.",
+    "chooseLanguage":"Válassz nyelvet",
+    "includeLatest":"Tartalmazza az újdonságokat",
+    "websiteLanguage":"Weboldal nyelve",
+    "preferredContentLanguage":"Elsődleges tartalom nyelv",
+    "tracks":"számok",
+    "filterByLanguage":"Szűrés nyelv szerint",
+    "copyUrl":"URL másolása",
+    "copyLink":"Link másolása",
+    "delete":"Törlés",
+    "remove":"Eltávolítás",
+    "playPlaylist":"Lejátszólista indítása",
+    "share":"Megosztás"
+  },
+  "menu":{
+    "main":{
+      "music":"Zene",
+      "speeches":"Beszédek",
+      "video":"Videók",
+      "archive":"Archív",
+      "audiobooks":"Hangoskönyvek"
+    },
+    "secondary":{
+      "playlists":"Lejátszólisták",
+      "latestTracks":"Új számok",
+      "lastPlayed":"Utoljára játszott",
+      "mostPlayed":"Legkedveltebb",
+      "favorites":"Kedvencek",
+      "current":"Aktuális",
+      "newPlaylist":"Új lejátszólista",
+      "nameOnPlaylist":"Lejátszólista címe"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Legújabb beszédek",
+      "latestVideos":"Legújabb videók",
+      "latestMusic":"Legújabb zenék",
+      "latestAlbums":"Legújabb albumok"
+    },
+    "music":{
+      "latestMusic":"Legújabb zenék",
+      "artists":"Művészek",
+      "mp3Source":"MP3 Kilden",
+      "childrensMp3Source":"Gyerek MP3 Kilden",
+      "instrumental":"Hangszeres"
+    },
+    "speeches":{
+      "latestSpeeches":"Legújabb beszédek",
+      "recommended":"Ajánlott"
+    },
+    "videos":{
+      "latestVideos":"Legújabb videók"
+    },
+    "archive":{
+      "archive":"Archív"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Legújabb hangoskönyvek"
+    },
+    "search":{
+      "searchResults":"Keresési találatok",
+      "content":"Tartalom",
+      "bibleVerse":"Bibliavers",
+      "album":"Album",
+      "artist":"Művész",
+      "lyricist":"Szövegíró",
+      "composer":"Zeneszerző",
+      "contributor":"Közreműködő",
+      "interprets":"Előadók"
+    }
+  },
+  "track":{
+    "duration":"Időtartam",
+    "details":"Részletek",
+    "unknown":"Ismeretlen",
+    "dragMeToPlaylist":"Húzd ezt az elemet a lejátszólistádhoz",
+    "exegesis":"Kijelentés",
+    "recordedDate":"Felvétel dátuma",
+    "artist":"Művész",
+    "lyricist":"Szövegíró",
+    "composer":"Zeneszerző",
+    "album":"Album",
+    "bibleVerse":"Bibliavers"
+  },
+  "album":{
+    "tracks":"Szám(ok)",
+    "childAlbums":"Gyerek albumok",
+    "relatedAlbums":"Hasonló albumok"
+  },
+  "playlist":{
+    "content":"Tartalom",
+    "tracks":"Szám(ok)",
+    "albums":"Album(ok)",
+    "totalDuration":"Teljes időtartam",
+    "duration":"Időtartam",
+    "nr":"sz.",
+    "title":"Cím",
+    "addToItunes":"Hozzáadás az iTunes-hoz",
+    "copyPodcastLink":"Podcast link másolása",
+    "language":"Nyelv",
+    "allLanguages":"Minden nyelv",
+    "feedSize":"Podcast mérete",
+    "confirmPlaylistDeletion":"Biztosan törlöd ezt a lejátszólistát?",
+    "latestTracks":"Legújabb számok",
+    "instrumental":"Hangszeres"
+  },
+  "copyright":"Szerzői jog",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":""
+}

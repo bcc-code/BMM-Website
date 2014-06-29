@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="10px" height="12px" viewBox="0 0 10 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon_Play-small</title>
-    <description>Created with Sketch.</description>
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Style" sketch:type="MSArtboardGroup" transform="translate(-20.000000, -306.000000)" stroke="#FFFFFF" stroke-width="2">
-            <g id="Icon_Play-small" sketch:type="MSLayerGroup" transform="translate(20.000000, 306.000000)">
-                <path d="M8.822,4.06498891 C10.583,5.10861391 10.1763333,7.28586391 8.822,8.03286391 C8.822,8.03286391 5.64,10.0158639 3.223,11.4697389 C0.107,13.3443639 0,9.65923891 0,9.65923891 L0,2.74236391 C0,1.19736391 0.74,-1.03726109 3.208,0.538113915 C5.801,2.19373891 8.822,4.06498891 8.822,4.06498891 Z" id="Play-small" sketch:type="MSShapeGroup"></path>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="020_Album" sketch:type="MSArtboardGroup" transform="translate(-431.000000, -207.000000)" fill="#FFFFFF">
+            <g id="Content" sketch:type="MSLayerGroup" transform="translate(266.000000, 95.000000)">
+                <g id="Top" sketch:type="MSShapeGroup">
+                    <g id="Play-btn" transform="translate(150.000000, 101.000000)">
+                        <g id="Path" transform="translate(15.000000, 11.000000)">
+                            <path d="M8.822,4.06498891 C10.583,5.10861391 10.1763333,7.28586391 8.822,8.03286391 C8.822,8.03286391 5.64,10.0158639 3.223,11.4697389 C0.107,13.3443639 0,9.65923891 0,9.65923891 L0,2.74236391 C0,1.19736391 0.74,-1.03726109 3.208,0.538113915 C5.801,2.19373891 8.822,4.06498891 8.822,4.06498891 Z M2.95777183,2.60243087 C3.04064753,2.65701111 3.04064753,2.65701111 3.12354097,2.71156305 C4.14237812,3.38193696 5.23308864,4.09310334 6.3236746,4.79985648 C6.70528323,5.04715758 7.05966562,5.27627332 7.37778288,5.48152631 C7.56887526,5.60482136 7.7052509,5.69265775 7.77886488,5.73999804 C8.06591588,5.91707756 8.0497163,6.17122303 7.86613083,6.27635137 L7.77423085,6.33234072 C7.71327297,6.37178117 7.71327297,6.37178117 7.43489625,6.5514766 C7.16384219,6.72632963 6.86117541,6.92121937 6.5345007,7.13112126 C5.60137272,7.73069424 4.66319828,8.33019925 3.78109332,8.88926973 C3.7167271,8.93005857 3.7167271,8.93005857 3.65235156,8.97082916 C3.12830018,9.30267341 2.64147589,9.60911143 2.19927495,9.88526874 C1.94317441,10.0452297 2.00708397,9.99122709 2.00708397,9.99122709 C2.00708397,9.99122709 2.00895456,9.82159049 2.006241,9.72456317 L2.00708397,2.60000869 C2.00708397,2.12606728 2.1164624,2 2.1164624,2 C2.1164624,2 2.67493135,2.41612299 2.95777183,2.60243087 Z"></path>
+                        </g>
+                    </g>
+                </g>
             </g>
         </g>
     </g>
