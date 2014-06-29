@@ -33,15 +33,23 @@
     <div ng-include="'views/main.html'"></div>
 
     <!--[if lt IE 10]>
-        <div class="bmm-browser-unsuported">
-            <h1>OOoops!</h1>
-            <h2>Seems like your browser is out of date</h2>
-            <h2>Please use one of the following browsers to get full access:</h2><br><br>
+    <div style="position: fixed;
+                    left: 0;
+                    top: 0;
+                    background-color: white;
+                    z-index: 99999;
+                    text-align: center;
+                    width: 100%;
+                    height:100%;">
+        <h1>Outdated browser</h1>
+        <h2>We're sorry, it seems like your browser is out of date.</h2>
+        <p style="width: 15em; margin: auto;">Please download and install one of the following browsers, or update your browser to the latest version to get access to this page.</p><br><br>
 
-            <a href="https://www.google.com/chrome"><img src="http://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"></a>
-            <a href="http://www.mozilla.org/firefox"><img src="https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300-rw"></a>
-            <a href="http://www.opera.com/"><img src="http://blog.rbutr.com/wp-content/uploads/2014/02/Opera-icon-high-res.png"></a>
-        </div>
+        <a href="https://www.google.com/chrome"><img style="width: 5em; height:5em;" src="http://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"></a>
+        <a href="http://www.mozilla.org/firefox"><img style="width: 5em; height:5em;" src="https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300-rw"></a>
+        <a href="http://www.opera.com/"><img style="width: 4.8em; height:4.8em;" src="http://blog.rbutr.com/wp-content/uploads/2014/02/Opera-icon-high-res.png"></a>
+        <a href="http://support.apple.com/downloads/#internet"><img style="width: 5em; height:5em;" src="http://icons.iconarchive.com/icons/morcha/browsers/256/Safari-icon.png"></a>
+    </div>
     <![endif]-->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

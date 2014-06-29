@@ -4,14 +4,11 @@ angular.module('bmmApp')
   .controller('SearchCtrl', function (
     $scope,
     $location,
-    $timeout,
     $routeParams,
-    bmmApi,
-    bmmFormatterTrack,
-    bmmFormatterAlbum,
-    bmmPlaylist,
-    bmmPlayer,
-    init
+    _api,
+    _track,
+    _album,
+    _init
     ) {
 
     $scope.results = [];
@@ -23,7 +20,7 @@ angular.module('bmmApp')
 
       if (!loading&&!end) {
 
-        $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
+        $('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
         loading = true;
         search(searchFrom);
 
@@ -50,10 +47,10 @@ angular.module('bmmApp')
       }
 
       //SEARCH RESULTS
-      bmmApi.search($routeParams.term, {
+      _api.search($routeParams.term, {
         from: _from,
         size: loadAmount
-      }, init.mediaLanguage).done(function(data) {
+      }, _init.contentLanguage).done(function(data) {
 
         var track,
           type,
@@ -64,7 +61,7 @@ angular.module('bmmApp')
 
           if (typeof this.type!=='undefined'&&this.type==='album') {
             type = 'album';
-            track = bmmFormatterAlbum.resolve(this);
+            track = _album.resolve(this);
 
             $scope.results.push({
               cover: track.cover,
@@ -80,7 +77,7 @@ angular.module('bmmApp')
 
           } else {
             type = 'track';
-            track = bmmFormatterTrack.resolve(this);
+            track = _track.resolve(this);
 
             if (track.subtype==='video') {
               vid = true;
@@ -96,13 +93,13 @@ angular.module('bmmApp')
 
                   var relations=[];
                   if (track.title!==''&&track.title!=='-') {
-                    relations.push({title: init.translation.page.search.content, content: track.title});
+                    relations.push({title: _init.translation.page.search.content, content: track.title});
                   }
                   if (track.bible!=='') {
-                    relations.push({title: init.translation.page.search.bibleVerse, content: track.bible});
+                    relations.push({title: _init.translation.page.search.bibleVerse, content: track.bible});
                   }
                   if (track.albumTitle!=='') {
-                    relations.push({title: init.translation.page.search.album, content: track.albumTitle});
+                    relations.push({title: _init.translation.page.search.album, content: track.albumTitle});
                   }
 
                   $scope.results.push({
@@ -131,8 +128,8 @@ angular.module('bmmApp')
                     duration: track.duration,
                     video: vid,
                     relations: [
-                      {title: init.translation.page.search.interprets, content: track.performers},
-                      {title: init.translation.page.search.album, content: track.parentTitle}
+                      {title: _init.translation.page.search.interprets, content: track.performers},
+                      {title: _init.translation.page.search.album, content: track.parentTitle}
                     ],
                     track: track
                   });
@@ -152,8 +149,8 @@ angular.module('bmmApp')
                 duration: track.duration,
                 video: vid,
                 relations: [
-                  {title: init.translation.page.search.interprets, content: track.performers},
-                  {title: init.translation.page.search.album, content: track.parentTitle}
+                  {title: _init.translation.page.search.interprets, content: track.performers},
+                  {title: _init.translation.page.search.album, content: track.parentTitle}
                 ],
                 track: track
               });

@@ -1,7 +1,7 @@
 <div ng-controller="MainCtrl" class="admin">
 
     <!--ACCESS-->
-    <div ng-show="!access"
+    <div ng-show="!init.admin&&init.load.loaded"
          style="position: fixed;
                 left: 0;
                 top: 0;
@@ -14,12 +14,12 @@
     </div>
 
     <!--LOADINGSCREEN-->
-    <div class="loadscreen" ng-hide="load.loaded">
+    <div class="loadscreen" ng-hide="init.load.loaded">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
         <div class="progress">
             <div class="buffer"
-                 style="width: {{load.percent}}%"></div><br>
-            <span>{{load.status}}</span>
+                 style="width: {{init.load.percent}}%"></div><br>
+            <span>{{init.load.status}}</span>
         </div>
     </div>
 
@@ -32,15 +32,31 @@
                     <form ng-submit="go('/search/'+bmm.term);">
                         <input ng-model="bmm.term"
                                type="text"
-                               placeholder="{{translation.general.search}}">
+                               placeholder="{{init.translation.general.search}}">
                         <input type="submit" value="">
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">{{translation.menu.main.dashboard}}</a></li>
-                    <li><a ng-class="{ active: isActive('/waitings')}" ng-href="#waitings">{{translation.menu.main.waitings}}</a></li>
-                    <li><a ng-class="{ active: isActive('/contributors')}" ng-href="#contributors">{{translation.menu.main.contributors}}</a></li>
-                    <li><a ng-class="{ active: isActive('/users')}" ng-href="#users">{{translation.menu.main.users}}</a></li>
+                    <li>
+                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">
+                            {{init.translation.menu.main.dashboard}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/waitings')}" ng-href="#waitings">
+                            {{init.translation.menu.main.waitings}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/contributors')}" ng-href="#contributors">
+                            {{init.translation.menu.main.contributors}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/users')}" ng-href="#users">
+                            {{init.translation.menu.main.users}}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -81,14 +97,14 @@
                  ng-show="player.video&&!player.showVideo"></div>
 
             <div class="scroller">
-                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | bmmLanguage}} </span>
+                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | _languageCode}} </span>
             </div>
 
             <div class="about">
-                <img ng-src="{{player.cover | bmmCover:'song'}}"/>
+                <img ng-src="{{player.cover | _cover:'song'}}"/>
                 <h3>{{player.title}}</h3>
                 <div>{{player.subtitle}}</div>
-                <div>{{player.language | bmmLanguage}}</div>
+                <div>{{player.language | _languageCode}}</div>
             </div>
 
             <div class="volumeControllers">
@@ -96,18 +112,18 @@
                 <div class="mute"
                      ng-class="{'active': player.muted}"
                      ng-click="player.setMute();"
-                     ng-hide="ios"></div>
+                     ng-hide="init.isIOS"></div>
                 <div class="max"
                      ng-click="player.setVolume(1);"
-                     ng-hide="ios"></div>
-                <div class="volume" ng-hide="ios"></div>
+                     ng-hide="init.isIOS"></div>
+                <div class="volume" ng-hide="init.isIOS"></div>
 
             </div>
 
             <div class="mainControllers">
 
-                <div class="current">{{player.currentTime | bmmTime}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div>
+                <div class="current">{{player.currentTime | _time}}</div>
+                <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div>
 
                 <div class="centered">
                     <div class="shuffle"
@@ -124,13 +140,7 @@
 
                 </div>
 
-                <!--div class="current">{{player.currentTime | bmmTime}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div-->
                 <div class="slider"><div class="target"></div></div>
-
-            </div>
-
-            <div>
 
             </div>
 
@@ -154,75 +164,86 @@
                     <form ng-submit="go('/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
                                     type="text"
-                                    placeholder="{{translation.general.search}}"></div>
+                                    placeholder="{{init.translation.general.search}}"></div>
                         <input type="submit" value="">
                     </form>
                 </div>
-                <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">{{translation.menu.main.dashboard}}</a></li>
-                    <li><a ng-class="{ active: isActive('/waitings')}" ng-href="#waitings">{{translation.menu.main.waitings}}</a></li>
-                    <li><a ng-class="{ active: isActive('/contributors')}" ng-href="#contributors">{{translation.menu.main.contributors}}</a></li>
-                    <li><a ng-class="{ active: isActive('/users')}" ng-href="#users">{{translation.menu.main.users}}</a></li>
+                <ul class="menu">kypesky
+                    <li>
+                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">
+                            {{init.translation.s.main.waitings}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/contributors')}" ng-href="#contributors">
+                            {{init.translation.menu.main.contributors}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/users')}" ng-href="#users">
+                            {{init.translation.menu.main.users}}
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <!--QUICK MENU -->
-            <h2>{{translation.menu.secondary.quickMenu}}</h2>
+            <h2>{{init.translation.menu.secondary.quickMenu}}</h2>
             <div class="quick-menu">
-                <button ng-click="go('/album/new')">{{translation.menu.secondary.newAlbum}}</button>
-                <button ng-click="go('/track/new')">{{translation.menu.secondary.newTrack}}</button><br><br>
+                <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
+                <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
 
-                    <span>{{translation.menu.secondary.year}}</span>
-                    <select ng-change="findAlbums(year);"
-                            ng-model="year"
-                            ng-options="year for year in years">
+                    <span>{{init.translation.menu.secondary.year}}</span>
+                    <select ng-change="quickMenu.findAlbums(quickMenu.year);"
+                            ng-model="quickMenu.year"
+                            ng-options="year for year in quickMenu.years">
                     </select><br><br>
 
-                    <div ng-hide="albums.length<=0" style="margin: 0">
-                        <span>{{translation.menu.secondary.album}}</span>
-                        <select ng-change="go('/album/'+album.id);"
-                                ng-model="album"
-                                ng-options="album.title for album in albums">
+                    <div ng-hide="quickMenu.albums.length<=0" style="margin: 0">
+                        <span>{{init.translation.menu.secondary.album}}</span>
+                        <select ng-change="go('/album/'+quickMenu.album.id);"
+                                ng-model="quickMenu.album"
+                                ng-options="album.title for album in quickMenu.albums">
                         </select>
-                        <button ng-click="go('/album/'+album.id+'/album');">
-                            {{translation.menu.secondary.newAlbum}}
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/album');">
+                            {{init.translation.menu.secondary.newAlbum}}
                         </button>
-                        <button ng-click="go('/album/'+album.id+'/track');">
-                            {{translation.menu.secondary.newTrack}}
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/track');">
+                            {{init.translation.menu.secondary.newTrack}}
                         </button>
-                        <button ng-click="go('/album/'+album.id);">
-                            {{translation.menu.secondary.open}}
+                        <button ng-click="go('/album/'+quickMenu.album.id);">
+                            {{init.translation.menu.secondary.open}}
                         </button><br><br>
                     </div>
 
-                    <div ng-hide="tracks.length<=0" style="margin: 0">
-                        <span>{{translation.menu.secondary.tracks}}</span>
+                    <div ng-hide="quickMenu.tracks.length<=0" style="margin: 0">
+                        <span>{{init.translation.menu.secondary.tracks}}</span>
                         <div class="track"
-                             ng-repeat="track in tracks"
+                             ng-repeat="track in quickMenu.tracks"
                              ng-click="go('/track/'+track.id);">
                             {{track.combinedTitle}}
                             <span class="order">{{track.raw.order}}</span>
                         </div><br><br>
                     </div>
 
-                    <div ng-hide="childAlbums.length<=0" style="margin: 0">
-                        <span>{{translation.menu.secondary.childAlbums}}</span>
-                        <select ng-change="go('/album/'+albumChild.id);"
-                                ng-model="albumChild"
-                                ng-options="childAlbum.title for childAlbum in childAlbums">
+                    <div ng-hide="quickMenu.childAlbums.length<=0" style="margin: 0">
+                        <span>{{init.translation.menu.secondary.childAlbums}}</span>
+                        <select ng-change="go('/album/'+quickMenu.albumChild.id);"
+                                ng-model="quickMenu.albumChild"
+                                ng-options="childAlbum.title for childAlbum in quickMenu.childAlbums">
                         </select>
-                        <button ng-click="go('/album/'+albumChild.id+'/track');">
-                            {{translation.menu.secondary.newTrack}}
+                        <button ng-click="go('/album/'+quickMenu.albumChild.id+'/track');">
+                            {{init.translation.menu.secondary.newTrack}}
                         </button>
-                        <button ng-click="go('/album/'+albumChild.id);">
-                            {{translation.menu.secondary.open}}
+                        <button ng-click="go('/album/'+quickMenu.albumChild.id);">
+                            {{init.translation.menu.secondary.open}}
                         </button><br><br>
                     </div>
 
-                    <div ng-hide="childTracks.length<=0" style="margin: 0">
-                        <span>{{translation.menu.secondary.childTracks}}</span>
+                    <div ng-hide="quickMenu.childTracks.length<=0" style="margin: 0">
+                        <span>{{init.translation.menu.secondary.childTracks}}</span>
                         <div class="track"
-                                ng-repeat="childTrack in childTracks"
+                                ng-repeat="childTrack in quickMenu.childTracks"
                                 ng-click="go('/track/'+childTrack.id);">
                             {{childTrack.combinedTitle}}
                             <span class="order">{{childTrack.raw.order}}</span>
@@ -235,9 +256,4 @@
 
     </div>
 
-    <!--div ng-include="'views/pages/popup.html'"></div-->
-
-    <!--BACKGROUND-->
-    <div class="background-left"></div>
-    <div class="background-right"></div>
 </div>

@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('UsersCtrl', function ($scope, $timeout, bmmApi, init) {
+  .controller('UsersCtrl', function ($scope, $timeout, _api, _init) {
 
-    $scope.status = init.translation.states.loadingUsers;
+    $scope.status = _init.translation.states.loadingUsers;
 
     $scope.$watch('userSearch', function(name) {
       if (name!=='') {
-        bmmApi.userSuggesterCompletionGet(name, {
+        _api.userSuggesterCompletionGet(name, {
           //roles: []
         }).done(function(users) {
           $scope.$apply(function() {
@@ -46,10 +46,10 @@ angular.module('bmmApp')
         }
       });
 
-      $scope.status = init.translation.states.savingChanges;
+      $scope.status = _init.translation.states.savingChanges;
 
       if (search) {
-        bmmApi.userUsernamePut(user.id, {
+        _api.userUsernamePut(user.id, {
           roles: _roles
         }).always(function() {
           $scope.$apply(function() {
@@ -59,19 +59,19 @@ angular.module('bmmApp')
           });
         });
       } else {
-        bmmApi.userUsernamePut(user.id, {
+        _api.userUsernamePut(user.id, {
           roles: _roles
         }).always(function() {
-          $scope.status = init.translation.states.allIsWell;
+          $scope.status = _init.translation.states.allIsWell;
         });
       }
     };
 
     $scope.fetchUsers = function() {
 
-      $scope.status = init.translation.states.loadingUsers;
+      $scope.status = _init.translation.states.loadingUsers;
 
-      bmmApi.userGet({
+      _api.userGet({
         size: 500,
         roles: [
           'ROLE_ADMINISTRATOR',
@@ -98,7 +98,7 @@ angular.module('bmmApp')
           });
 
           $scope.users = users;
-          $scope.status = init.translation.states.allIsWell;
+          $scope.status = _init.translation.states.allIsWell;
 
         });
       });

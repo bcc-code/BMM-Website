@@ -1,12 +1,12 @@
 <div class="foldbox">
     <div class="header"
          ng-click="interprets=!interprets">
-        <h3>{{translation.page.editor.interprets}}</h3>
+        <h3>{{init.translation.page.editor.interprets}}</h3>
     </div>
     <div class="body" ng-class="{'visible': interprets}">
 
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.active}}</h4>
+            <h4>{{init.translation.page.editor.active}}</h4>
             <li ng-repeat="interpret in rel.interprets"
                 class="no-hover"
                 style="width: 100%; display: inline-block">
@@ -19,11 +19,11 @@
             </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.available}}</h4>
+            <h4>{{init.translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.interpret">
             <button ng-click="addContributor(contributors.interpret)"
                     style="margin-bottom: .5em">
-                {{translation.page.editor.createNewContributor}}
+                {{init.translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.interprets"
                 style="width: 100%; display: inline-block"
@@ -40,12 +40,12 @@
 <div class="foldbox">
     <div class="header"
          ng-click="lyricists=!lyricists">
-        <h3>{{translation.page.editor.lyricists}}</h3>
+        <h3>{{init.translation.page.editor.lyricists}}</h3>
     </div>
     <div class="body" ng-class="{'visible': lyricists}">
 
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.active}}</h4>
+            <h4>{{init.translation.page.editor.active}}</h4>
             <li ng-repeat="lyricist in rel.lyricists"
                 class="no-hover"
                 style="width: 100%; display: inline-block">
@@ -58,11 +58,11 @@
             </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.available}}</h4>
+            <h4>{{init.translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.lyricist">
             <button ng-click="addContributor(contributors.lyricist)"
                     style="margin-bottom: .5em">
-                {{translation.page.editor.createNewContributor}}
+                {{init.translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.lyricists"
                 style="width: 100%; display: inline-block"
@@ -79,12 +79,12 @@
 <div class="foldbox">
     <div class="header"
          ng-click="composers=!composers">
-        <h3>{{translation.page.editor.composers}}</h3>
+        <h3>{{init.translation.page.editor.composers}}</h3>
     </div>
     <div class="body" ng-class="{'visible': composers}">
 
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.active}}</h4>
+            <h4>{{init.translation.page.editor.active}}</h4>
             <li ng-repeat="composer in rel.composers"
                 class="no-hover"
                 style="width: 100%; display: inline-block">
@@ -97,11 +97,11 @@
             </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.available}}</h4>
+            <h4>{{init.translation.page.editor.available}}</h4>
             <input type="text" ng-model="contributors.composer">
             <button ng-click="addContributor(contributors.composer)"
                     style="margin-bottom: .5em">
-                {{translation.page.editor.createNewContributor}}
+                {{init.translation.page.editor.createNewContributor}}
             </button>
             <li ng-repeat="contributor in contributors.composers"
                 style="width: 100%; display: inline-block"
@@ -118,21 +118,21 @@
 <div class="foldbox">
     <div class="header"
          ng-click="songbooks=!songbooks">
-        <h3>{{translation.page.editor.songbooks}}</h3>
+        <h3>{{init.translation.page.editor.songbooks}}</h3>
     </div>
     <div class="body" ng-class="{'visible': songbooks}">
 
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.active}}</h4>
+            <h4>{{init.translation.page.editor.active}}</h4>
             <li ng-repeat="songbook in rel.songbooks"
                 class="no-hover"
                 style="width: 100%; display: inline-block">
                 <span style="width: 100%">
                     <b>{{songbook.name}}</b>
                 </span>
-                {{translation.page.editor.number}}<br>
+                {{init.translation.page.editor.number}}<br>
                 <input type="text" ng-model="songbook.id"><br>
-                {{translation.page.editor.timestamp}}<br>
+                {{init.translation.page.editor.timestamp}}<br>
                 <input type="text" ng-model="songbook.timestamp">
                 <div class="trash"
                      style="float: right"
@@ -140,7 +140,7 @@
             </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
-            <h4>{{translation.page.editor.available}}</h4>
+            <h4>{{init.translation.page.editor.available}}</h4>
             <li ng-repeat="songbook in availableSongbooks"
                 style="width: 100%; display: inline-block"
                 ng-click="activateSongbook(songbook)">
@@ -156,23 +156,23 @@
 <div class="foldbox">
     <div class="header"
          ng-click="bibles=!bibles">
-        <h3>{{translation.page.editor.bibleReferences}}</h3>
+        <h3>{{init.translation.page.editor.bibleReferences}}</h3>
     </div>
     <div class="body" ng-class="{'visible': bibles}">
 
         <button ng-click="addBibleReference()" style="margin-bottom: .5em">
-            {{translation.page.editor.addBibleReference}}
+            {{init.translation.page.editor.addBibleReference}}
         </button>
 
         <button ng-click="toggleRecord()" style="margin-bottom: .5em">
-            <span ng-hide="recording">{{translation.page.editor.record}}</span>
-            <span ng-show="recording">{{translation.page.editor.pause}}</span>
+            <span ng-hide="recording">{{init.translation.page.editor.record}}</span>
+            <span ng-show="recording">{{init.translation.page.editor.pause}}</span>
         </button>
 
-        ({{recorder | bmmTime}})
+        ({{recorder | _time}})
 
         <button ng-click="recorderReset()" style="margin-bottom: .5em">
-            {{translation.page.editor.resetTime}}
+            {{init.translation.page.editor.resetTime}}
         </button>
 
         <ul>
@@ -189,9 +189,9 @@
                         </div>
                     </div>
                 </div>
-                {{translation.page.editor.timestamp}}<br>
+                {{init.translation.page.editor.timestamp}}<br>
                 <input type="text" ng-model="bible.time"><br>
-                <button ng-click="deleteReference($index,'bibles')">{{$parent.translation.page.editor.delete}}</button>
+                <button ng-click="deleteReference($index,'bibles')">{{$parent.init.translation.page.editor.delete}}</button>
 
             </li>
         </ul>

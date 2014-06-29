@@ -1,31 +1,33 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('WaitingsCtrl', function ($scope, $filter, $route, bmmApi, bmmPlay, init, waitings) {
+  .controller('WaitingsCtrl', function ($scope, $filter, $route, _api, _play, _init, _waitings) {
 
     $scope.waitings = {};
-    $scope.status = init.translation.states.loadingFiles;
+    $scope.status = _init.translation.states.loadingFiles;
 
-    bmmApi.fileUploadedGuessTracksGet().done(function(_waitings) {
+    _api.fileUploadedGuessTracksGet().done(function(waitings) {
 
       $scope.$apply(function() {
 
-        $scope.waitings = waitings.resolve(_waitings);
-        $scope.status = init.translation.states.filesLoaded;
+        $scope.waitings = _waitings.resolve(waitings);
+        $scope.status = _init.translation.states.filesLoaded;
 
       });
 
     });
 
     $scope.play = function(track) {
-      bmmPlay.setPlay([track], 0);
+      _play.setPlay([track], 0);
     };
 
     $scope.linkWaiting = function(link, id, lang, album, track, index) {
 
-      bmmApi.fileUploadedNameLink(link, id, lang).done(function() {
+      _api.fileUploadedNameLink(link, id, lang).done(function() {
 
-        track.files.splice(index, 1);
+        $scope.$apply(function() {
+          track.files.splice(index, 1);
+        });
 
       });
     };
@@ -33,7 +35,7 @@ angular.module('bmmApp')
     $scope.linkWaitings = function(tracks) {
 
       var promises = 0;
-      $scope.status = init.translation.states.attemptToLinkTracks;
+      $scope.status = _init.translation.states.attemptToLinkTracks;
 
       $.each(tracks, function() {
 
@@ -43,7 +45,7 @@ angular.module('bmmApp')
 
           promises++;
 
-          bmmApi.fileUploadedNameLink(this.link, track.track.id, this.language).done(function() {
+          _api.fileUploadedNameLink(this.link, track.track.id, this.language).done(function() {
             promises--;
             if (promises===0) {
               $route.reload();

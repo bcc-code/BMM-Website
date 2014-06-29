@@ -6,7 +6,7 @@ angular.module('bmmApp')
     $scope.filtered = {};
 
     $scope.$watch('bible.raw', function(raw) {
-      $scope.filtered = $filter('bmmBibleVerse')(raw);
+      $scope.filtered = $filter('_bibleVerse')(raw);
     });
 
   });

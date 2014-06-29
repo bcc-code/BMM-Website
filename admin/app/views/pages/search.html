@@ -1,5 +1,5 @@
 <div class="bmm-search-results">
-    <h2>{{translation.page.search.searchResults}}</h2>
+    <h2>{{init.translation.page.search.searchResults}}</h2>
     <div class="bmm-margin-top"></div>
     <ul>
         <li ng-repeat="result in results"
@@ -12,7 +12,7 @@
                 <div class="bullet">{{$index+1}}</div>
                 <img class="bmm-thumbnail-search result.type"
                      ng-class="{'bmm-thumbnail-search-video': result.video}"
-                     ng-src="{{result.cover | bmmCover:result.subtype }}"
+                     ng-src="{{result.cover | _cover:result.subtype }}"
                      width="auto" height="54"/>
                 <div class="content">
                     <h3>{{result.title}}</h3>
@@ -20,7 +20,7 @@
 					<b>{{relation.title}}:</b> {{relation.content}}
 				</span>
                 <span>
-                    <i>{{result.date | date:'dd.MM.yyyy'}} ({{result.duration | bmmTime}}) - {{result.language | bmmLanguage}}</i>
+                    <i>{{result.date | date:'dd.MM.yyyy'}} ({{result.duration | _time}}) - {{result.language | _languageCode}}</i>
                 </span>
                 </div>
             </div>

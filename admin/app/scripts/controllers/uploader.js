@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('UploaderCtrl', function ($scope, $fileUploader, bmmApi) {
+  .controller('UploaderCtrl', function ($scope, $fileUploader, _api) {
 
     $scope.progress = 0;
 
-    $scope.init = function(options) {
+    $scope.initialize = function(options) {
 
       if (typeof options.method==='undefined') {
         options.method = 'POST';
@@ -14,12 +14,12 @@ angular.module('bmmApp')
       var uploader = $fileUploader.create({
         method: 'POST',
         scope: $scope, //to automatically update the html
-        url: options.url, //bmmApi.getserverUrli()+'track/'+$routeParams.id+'/cover?_method=PUT',
+        url: options.url, //_api.getserverUrli()+'track/'+$routeParams.id+'/cover?_method=PUT',
         withCredentials: true,
         removeAfterUpload: true,
         headers: {
           'X-HTTP-METHOD-OVERRIDE': options.method,
-          'Authorization': 'Basic '+window.btoa(bmmApi.getCredentials())
+          'Authorization': 'Basic '+window.btoa(_api.getCredentials())
         }
       });
 
@@ -46,9 +46,6 @@ angular.module('bmmApp')
             file.onload = function (e) {
               $scope.file = e.target.result;
             };
-
-            //withCredentials
-            //$scope.$parent.coverForUpload = item.file;
 
             uploader.uploadItem(item);
           }

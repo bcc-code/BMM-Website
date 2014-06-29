@@ -1,10 +1,10 @@
 <div class="controlbar">
-    <b>{{translation.page.editor.status}}</b>: {{status}}
+    <b>{{init.translation.page.editor.status}}</b>: {{status}}
 </div>
 <div class="foldbox">
     <div class="header"
          ng-click="ready=!ready">
-        <h3>{{translation.page.editor.waitingsReady}}</h3> ({{waitings.ready.length}})
+        <h3>{{init.translation.page.editor.waitingsReady}}</h3> ({{waitings.ready.length}})
     </div>
     <div class="body" ng-class="{'visible': ready}">
 
@@ -19,7 +19,7 @@
 
                         <button ng-click="linkWaitings(album.tracks);"
                                 style="margin-bottom: .5em;">
-                            {{translation.page.waitings.linkAllTracks}}
+                            {{init.translation.page.waitings.linkAllTracks}}
                         </button>
 
                         <ul class="waitings">
@@ -34,11 +34,11 @@
 
                                         <button ng-click="go('track/'+track.track.id)">
                                             <a ng-href="#track/{{track.track.id}}">
-                                                {{translation.page.waitings.openTrack}}
+                                                {{init.translation.page.waitings.openTrack}}
                                             </a>
                                         </button>
 
-                                        <img ng-src="{{track.track.cover | bmmCover}}">
+                                        <img ng-src="{{track.track.cover | _cover}}">
                                         <div>
                                             <span>{{track.track.subtype}}</span>
                                             <span>{{track.track.performers}}</span>
@@ -47,12 +47,12 @@
                                         <ul class="waitings">
                                             <li ng-repeat="file in track.files" style="position: relative">
                                                 <div class="flags-{{file.language}}"
-                                                     style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                                                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
                                                 </div>
-                                                <button ng-click="play(file.track)">{{translation.page.editor.play}}</button>
+                                                <button ng-click="play(file.track)">{{init.translation.page.editor.play}}</button>
                                                 <button ng-click="linkWaiting(file.link, file.track.id, file.language, album, track, $index)"
                                                         style="position: absolute; right: 0">
-                                                    {{translation.page.waitings.link}}
+                                                    {{init.translation.page.waitings.link}}
                                                 </button>
                                             </li>
                                         </ul>
@@ -73,7 +73,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="conflicts=!conflicts">
-        <h3>{{translation.page.waitings.conflicts}}</h3> ({{waitings.conflicts.length}})
+        <h3>{{init.translation.page.waitings.conflicts}}</h3> ({{waitings.conflicts.length}})
     </div>
     <div class="body" ng-class="{'visible': conflicts}">
 
@@ -81,28 +81,28 @@
             <li ng-repeat="waiting in waitings.conflicts" class="no-hover">
                 <ul class="waitings" style="width: 100%">
                     <li class="no-hover">
-                        <img ng-src="{{waiting.track.cover | bmmCover}}">
+                        <img ng-src="{{waiting.track.cover | _cover}}">
                         <div>
                             <span><b>{{waiting.track.albumTitle}}</b></span>
                             <div class="flags-{{waiting.track.language}}"
-                                 style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                                 style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
                             </div>
                             <span>{{waiting.track.combinedTitle}}</span>
                             <button ng-click="play(waiting.track)">
-                                {{translation.page.editor.play}}
+                                {{init.translation.page.editor.play}}
                             </button>
                             <span>{{waiting.subtype}}</span>
                             <span>{{waiting.performers}}</span>
                         </div>
                     </li>
                     <li class="no-hover">
-                        <span><b>{{translation.page.waitings.conflict}}</b>: </span>
+                        <span><b>{{init.translation.page.waitings.conflict}}</b>: </span>
                         <button ng-click="play(waiting.conflict)" style="margin-right: .5em">
-                            {{translation.page.editor.play}}
+                            {{init.translation.page.editor.play}}
                         </button>
                         <button>
                             <a ng-href="#track/{{waiting.track.id}}">
-                                {{translation.page.waitings.openTrack}}
+                                {{init.translation.page.waitings.openTrack}}
                             </a>
                         </button>
                     </li>
@@ -116,7 +116,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="missingTrack=!missingTrack">
-        <h3>{{translation.page.editor.missingTrack}}</h3> ({{waitings.missingTrack.length}})
+        <h3>{{init.translation.page.editor.missingTrack}}</h3> ({{waitings.missingTrack.length}})
     </div>
     <div class="body" ng-class="{'visible': missingTrack}">
 
@@ -132,7 +132,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="missingAlbum=!missingAlbum">
-        <h3>{{translation.page.editor.missingAlbum}}</h3> ({{waitings.missingAlbum.length}})
+        <h3>{{init.translation.page.editor.missingAlbum}}</h3> ({{waitings.missingAlbum.length}})
     </div>
     <div class="body" ng-class="{'visible': missingAlbum}">
 
@@ -148,7 +148,7 @@
 <div class="foldbox">
     <div class="header"
          ng-click="wrongId=!wrongId">
-        <h3>{{translation.page.editor.wrongId}}</h3> ({{waitings.wrongId.length}})
+        <h3>{{init.translation.page.editor.wrongId}}</h3> ({{waitings.wrongId.length}})
     </div>
     <div class="body" ng-class="{'visible': wrongId}">
 
@@ -161,5 +161,5 @@
     </div>
 </div>
 <div class="controlbar">
-    <b>{{translation.page.editor.status}}</b>: {{status}}
+    <b>{{init.translation.page.editor.status}}</b>: {{status}}
 </div>

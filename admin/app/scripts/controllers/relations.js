@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('RelationsCtrl', function ($scope, bmmApi, init, $filter, $timeout) {
+  .controller('RelationsCtrl', function (
+      $scope,
+      $filter,
+      $timeout,
+      _api
+    ) {
 
     var unknownRelations = [], loaded = false;
 
@@ -74,7 +79,7 @@ angular.module('bmmApp')
             bibles.push(this);
           } else {
             if (this.type==='songbook') {
-              this.timestamp = $filter('bmmTime')(this.timestamp);
+              this.timestamp = $filter('_time')(this.timestamp);
             }
             $scope.rel[this.type+'s'].push(this);
           }
@@ -114,14 +119,14 @@ angular.module('bmmApp')
 
     $scope.addContributor = function(contributor) {
       if (contributor!=='') {
-        bmmApi.contributorPost({
+        _api.contributorPost({
           type: 'contributor',
           is_visible: true,
           name: contributor,
           cover_upload: null
         }).always(function() {
           $timeout(function() {
-            bmmApi.contributorSuggesterCompletionGet(contributor).done(function(data) {
+            _api.contributorSuggesterCompletionGet(contributor).done(function(data) {
               $scope.$apply(function() {
                 $scope.contributors.interprets = data;
                 $scope.contributors.lyricists = data;
@@ -136,7 +141,7 @@ angular.module('bmmApp')
     $scope.contributors = {};
     $scope.$watch('contributors.interpret', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.interprets = data;
           });
@@ -147,7 +152,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.lyricist', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.lyricists = data;
           });
@@ -158,7 +163,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.composer', function(name) {
       if (name!=='') {
-        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.composers = data;
           });
@@ -243,7 +248,7 @@ angular.module('bmmApp')
 
         bibles.push({
           raw: raw,
-          time: $filter('bmmTime')(timestamp)
+          time: $filter('_time')(timestamp)
         });
       });
 
@@ -270,7 +275,7 @@ angular.module('bmmApp')
         //Convert time
         time = convertTime(this.time);
 
-        $.each($filter('bmmBibleVerse')(this.raw), function() {
+        $.each($filter('_bibleVerse')(this.raw), function() {
           book = this.key;
 
           $.each(this.chapters, function() {
@@ -296,7 +301,7 @@ angular.module('bmmApp')
 
     $scope.addBibleReference = function() {
       $scope.rel.bibles.splice(0,0, {
-        time: $filter('bmmTime')($scope.recorder)
+        time: $filter('_time')($scope.recorder)
       });
     };
 
@@ -317,7 +322,7 @@ angular.module('bmmApp')
         id: 0,
         name: _name,
         type: 'songbook',
-        timestamp: $filter('bmmTime')(0)
+        timestamp: $filter('_time')(0)
       });
     };
 
