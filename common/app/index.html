@@ -1,104 +1,43 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <!-- stylesheet link (common for all widgets) --> <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" /> <!-- end stylesheet link -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
-    <!-- endbower -->
-    <link rel="stylesheet" href="bower_components/jqueryui/themes/eggplant/jquery-ui.css" />
-    <!--link rel="stylesheet" href="styles/debug.css"-->
-    <!-- build:css({.tmp,app}) styles/bmm.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="bmmDebug">
-    <!-- topbar widget --> <script src="https://widgets.brunstad.org/TopBar/js?mode=public" type="text/javascript" ></script> <!-- end topbar widget -->
+<html>
+    <head>
 
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+        <!-- build:css({.tmp,app}) styles/bmm.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
 
-    <!-- Add your site or application content here -->
-    <div ng-include="'views/main.html'" class="bmm-full-size"></div>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
-    <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
-    <script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
-    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
-    <script src="bower_components/angular-ui-sortable/src/sortable.js"></script>
-    <script src="bower_components/ajaxq/index.js"></script>
-    <!-- endbower -->
-
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="bower_components/angular-ui-sortable/sortable.js"></script>
-        <script src="bower_components/angular-treeview/angular.treeview.js"></script>
-        <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    </head>
+    <body>
 
         <!-- build:js({.tmp,app}) bmm.js -->
         <script src="scripts/bmm_lib.js"></script>
-        <script src="scripts/services/bmm_playlist.js"></script>
-        <script src="scripts/services/bmm_player.js"></script>
-        <script src="scripts/services/bmm_api.js"></script>
-        <script src="scripts/directives/bmm_playlist.js"></script>
-        <script src="scripts/directives/bmm_slider_album.js"></script>
-        <script src="scripts/directives/bmm_slider_video.js"></script>
-        <script src="scripts/filters/bmm_time.js"></script>
-        <script src="scripts/filters/bmm_bible_verse.js"></script>
-        <script src="scripts/filters/bmm_min.js"></script>
-        <script src="scripts/filters/bmm_language.js"></script>
-        <script src="scripts/filters/bmm_cover.js"></script>
-        <script src="scripts/directives/bmm_treeview.js"></script>
-        <script src="scripts/services/bmm_formatter_album.js"></script>
-        <script src="scripts/services/bmm_formatter_track.js"></script>
-        <script src="scripts/services/bmm_play.js"></script>
-        <script src="scripts/filters/bmm_file_path.js"></script>
+        <script src="scripts/directives/playlist.js"></script>
+        <script src="scripts/directives/slider_album.js"></script>
+        <script src="scripts/directives/slider_video.js"></script>
         <script src="scripts/directives/navigator.js"></script>
         <script src="scripts/directives/player.js"></script>
-        <script src="scripts/services/draggable.js"></script>
-        <script src="scripts/filters/locals.js"></script>
-        <script src="scripts/services/locals.js"></script>
-        <script src="scripts/services/init.js"></script>
-        <script src="scripts/filters/icon.js"></script>
-        <script src="scripts/directives/clickelsewhere.js"></script>
-        <script src="scripts/services/waitings.js"></script>
-        <script src="scripts/services/quick_menu.js"></script>
+        <script src="scripts/directives/click_elsewhere.js"></script>
+        <script src="scripts/directives/treeview.js"></script>
+        <script src="scripts/filters/_time.js"></script>
+        <script src="scripts/filters/_bible_verse.js"></script>
+        <script src="scripts/filters/_min.js"></script>
+        <script src="scripts/filters/_languageCode.js"></script>
+        <script src="scripts/filters/_cover.js"></script>
+        <script src="scripts/filters/_protectedURL.js"></script>
+        <script src="scripts/filters/_icon.js"></script>
+        <script src="scripts/filters/_locals.js"></script>
+        <script src="scripts/services/_playlist.js"></script>
+        <script src="scripts/services/_player.js"></script>
+        <script src="scripts/services/_api.js"></script>
+        <script src="scripts/services/_album.js"></script>
+        <script src="scripts/services/_track.js"></script>
+        <script src="scripts/services/_play.js"></script>
+        <script src="scripts/services/_draggable.js"></script>
+        <script src="scripts/services/_locals.js"></script>
+        <script src="scripts/services/_init.js"></script>
+        <script src="scripts/services/_waitings.js"></script>
+        <script src="scripts/services/_quick_menu.js"></script>
         <!-- endbuild -->
 
-        <!-- Requires bmm_lib -->
-        <script src="scripts/controllers/api.js"></script>
-
-</body>
+    </body>
 </html>

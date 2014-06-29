@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('player', [ '$timeout', '$compile', 'bmmPlayer', 'bmmPlaylist',
-  function ($timeout, $compile, bmmPlayer, bmmPlaylist) {
+  .directive('player', [ '$timeout', '$compile', '_player', '_playlist',
+  function ($timeout, $compile, _player, _playlist) {
     return {
       link: function postLink(scope, element) {
 
-        bmmPlayer.initialize('.video-target');
-        scope.player = bmmPlayer;
-        scope.playlist = bmmPlaylist;
+        _player.initialize('.video-target');
+        scope.player = _player;
+        scope.playlist = _playlist;
 
         //Fullscreen controllers HTML
         element.find('.video-target').append($compile(
@@ -17,12 +17,12 @@ angular.module('bmmLibApp')
             '<div class="play" ng-class="{\'pause\': player.playing}" ng-click="togglePlay();"></div>' +
             '<div class="next" ng-click="player.setNext();"></div>' +
             '<div class="duration">' +
-              '{{player.currentTime | bmmTime}} / ' +
-              '{{(player.getDuration()-player.currentTime) | bmmTime}}' +
+              '{{player.currentTime | _time}} / ' +
+              '{{(player.getDuration()-player.currentTime) | _time}}' +
             '</div>' +
             '<div class="fullscreen-toggle"></div>' +
-            '<div class="mute" ng-hide="ios" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
-            '<div class="volume" ng-hide="ios"></div>' +
+            '<div class="mute" ng-hide="init.isIOS" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
+            '<div class="volume" ng-hide="init.isIOS"></div>' +
             '<div class="slider"><div class="target"></div></div>' +
           '</div>')
         (scope));
@@ -130,7 +130,7 @@ angular.module('bmmLibApp')
           },4000);
         });
         element.find('.fullscreen-toggle').click(function() {
-          bmmPlayer.setFullscreen();
+          _player.setFullscreen();
         });
 
       }

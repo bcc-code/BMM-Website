@@ -70,7 +70,7 @@
             > div {
               display: inline-block;
               width: 2em;
-              height: 1.4em;
+              height: 1.1em;
               margin: -.1em;
             }
             display: inline-block;
@@ -82,7 +82,18 @@
             width: 100%;
           }
           > ul > li > a {
-            padding: .2em 0 0 2em !important;
+            padding: .0em 0 0 2em!important;
+            margin: .5em;
+            height: 1.1em;
+          }
+          > ul > li:hover {
+            color: #262626;
+            background-color: #F5F5F5;
+          }
+          > ul > li {
+            display: inline-block;
+            width: 100%;
+            cursor: pointer;
           }
           .dropdown-menu {
             //position: relative;

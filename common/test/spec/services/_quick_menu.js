@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: quickMenu', function () {
+describe('Service: _quickMenu', function () {
 
   // load the service's module
   beforeEach(module('bmmLibApp'));
 
   // instantiate service
-  var quickMenu;
-  beforeEach(inject(function (_quickMenu_) {
-    quickMenu = _quickMenu_;
+  var _quickMenu;
+  beforeEach(inject(function (__quickMenu_) {
+    _quickMenu = __quickMenu_;
   }));
 
   it('should do something', function () {
-    expect(!!quickMenu).toBe(true);
+    //expect(!!_quickMenu).toBe(true);
   });
 
 });

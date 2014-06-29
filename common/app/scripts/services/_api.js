@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmApi', [ '$timeout', function ($timeout) {
+  .factory('_api', [ '$timeout', function ($timeout) {
   
   var factory = {},
       credentials,
@@ -33,8 +33,12 @@ angular.module('bmmLibApp')
   };
 
   //Doesnt need to be secured
-  factory.secureDownload = function(download) {
-    return download;
+  factory.secureDownload = function(download, force) {
+    if (typeof force!=='undefined'&&force) {
+      return factory.secureFile(download);
+    } else {
+      return download;
+    }
   };
 
   //Doesnt need to be secured

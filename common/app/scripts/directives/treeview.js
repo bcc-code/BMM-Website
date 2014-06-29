@@ -28,7 +28,7 @@
 
 'use strict';
 angular.module('bmmLibApp')
-  .directive( 'bmmTreeview', ['$compile', function( $compile ) {
+  .directive( 'treeview', ['$compile', function( $compile ) {
     return {
       restrict: 'A',
       link: function ( scope, element, attrs ) {
@@ -39,7 +39,7 @@ angular.module('bmmLibApp')
         var admin = attrs.admin;
       
         //tree model
-        var bmmTreeview = attrs.bmmTreeview;
+        var treeview = attrs.treeview;
 
         //node id
         var nodeId = attrs.nodeId || 'id';
@@ -67,7 +67,7 @@ angular.module('bmmLibApp')
                 '<div class="bmm-remove" ng-click="node.newAlbum = false"></div>'+
               '</form>'+
             '</li>'+
-            '<li data-ng-repeat="node in ' + bmmTreeview + '"'+
+            '<li data-ng-repeat="node in ' + treeview + '"'+
                  'id="{{node.roleId}}" language="{{node.language}}" type="{{node.group}}"'+
                  'ng-class="{draggable: node.group==\'track\''+
                  ', \'admin-draggable\': ((node.group==\'album\'||node.group==\'track\')&&admin)'+ //&&admin
@@ -77,12 +77,12 @@ angular.module('bmmLibApp')
               '<i class="expanded" data-ng-show="(node.group==\'album\'||node.group==\'year\') && !node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node)"></i>' +
               '<i class="normal" data-ng-hide="(node.group==\'album\'||node.group==\'year\')"></i> ' +
               '<span data-ng-class="node.selected" data-ng-click="' + treeId + '.selectNodeLabel(node)">{{node.' + nodeLabel + '}}</span>' +
-              '<div data-ng-hide="node.collapsed" data-tree-id="' + treeId + '" data-bmm-treeview="node.' + nodeChildren + '" data-node-id=' + nodeId + ' data-node-label=' + nodeLabel + ' data-node-children=' + nodeChildren + '></div>' +
+              '<div data-ng-hide="node.collapsed" data-tree-id="' + treeId + '" data-treeview="node.' + nodeChildren + '" data-node-id=' + nodeId + ' data-node-label=' + nodeLabel + ' data-node-children=' + nodeChildren + '></div>' +
             '</li>' +
           '</ul>';
 
         //check tree id, tree model
-        if( treeId && bmmTreeview ) {
+        if( treeId && treeview ) {
           //root node
           if( attrs.bmmLibApp ) {
           

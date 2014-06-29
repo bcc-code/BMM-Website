@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterAlbum', ['bmmApi', 'init', function (bmmApi, init) {
+  .factory('_album', ['_api', '_init', function (_api, _init) {
     
     var factory = {};
 
@@ -14,13 +14,13 @@ angular.module('bmmLibApp')
       if (resolvedData.cover===null) {
         resolvedData.cover='fallback_images/svg/album.svg';
       } else {
-        resolvedData.cover = bmmApi.secureImage(resolvedData.cover);
+        resolvedData.cover = _api.secureImage(resolvedData.cover);
       }
 
       //Find title
       resolvedData.title = data.title;
       if (typeof resolvedData.title==='undefined'||resolvedData.title===''||resolvedData.title===null) {
-        resolvedData.title=init.translation.general.noTitle;
+        resolvedData.title=_init.translation.general.noTitle;
       }
 
       //Find id

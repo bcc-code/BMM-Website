@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlaylist', [ function () {
+  .factory('_playlist', [ function () {
     
     var factory = {},
         url='',

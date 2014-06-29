@@ -149,6 +149,7 @@
     position: relative;
     border-bottom: .1em solid $colorBorderLight;
     margin-right: 1em;
+    cursor: pointer;
 
     .options {
       position: absolute;
@@ -159,16 +160,22 @@
     }
 
     .flag {
-      width: 1.7em;
-      height: 1.4em;
-      right: 1.5em;
+      width: 1.6em;
+      height: 1.1em;
+      right: 1.8em;
       position: absolute;
-      border-radius: 1.4em 1.2em .5em .7em;
-      top: 0;
+      border-radius: .2em;
+      top: 1em;
     }
 
   }
 
+}
+
+.bmm-latest-video .flag {
+  top: .5em!important;
+  left: 3em!important;
+  right: auto!important;
 }
 
 .bmm-latest-list.small {
@@ -215,6 +222,10 @@
   font-weight: 700;
 }
 
+.small .bmm-latest-title, .small .bmm-latest-interprets, .small .bmm-latest-about {
+  max-width: 60%;
+}
+
 .bmm-latest-interprets, .bmm-latest-about {
   font-size: .9em;
   color: #ABBED3;
@@ -230,8 +241,8 @@
 }
 
 .bmm-flag {
-  width: 1.7em;
-  height: 1.4em;
+  width: 1.6em;
+  height: 1.1em;
 }
 
 .play-playlist {
@@ -259,7 +270,7 @@
   margin-top: 1em;
   display: inline-block;
   padding: .4em 1em .4em 2.2em;
-  border: .2em solid #03D67F;
+  border: .2em solid #CCD1CF;
   color: #03D67F;
   border-radius: 3em;
   background-image: url(../images/svg/v3/Icon_Download-small.svg);;
@@ -267,6 +278,11 @@
   background-repeat: no-repeat;
   background-position: 1em .75em;
   white-space: nowrap;
+}
+
+.bmm-zip:hover {
+  color: #03D67F;
+  border-color: #03D67F;
 }
 
 .bmm-track-download {
@@ -347,12 +363,13 @@
   margin-bottom: 1.5em;
   opacity: .9;
   .flag {
-    width: 1.7em;
-    height: 1.4em;
+    width: 1.6em;
+    height: 1.1em;
+    border-radius: .2em;
     right: .3em;
     position: absolute;
     top: .3em;
-    border-radius: 1.4em 1.4em .7em .7em;
+    border-radius: .2em;
   }
 }
 

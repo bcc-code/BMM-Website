@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmBibleVerse', ['init', function (init) {
+  .filter('_bibleVerse', ['_init', function (_init) {
     return function (input) {
 
       var output=[];
@@ -11,7 +11,7 @@ angular.module('bmmLibApp')
         var comparableShortcodes={}, comparableBooks={};
 
         //Make the comparable shortcodes
-        $.each(init.bible.shortcodes, function(key) {
+        $.each(_init.bible.shortcodes, function(key) {
 
           //Make sure translation is in lowercase
           var compare = this.toLowerCase();
@@ -24,7 +24,7 @@ angular.module('bmmLibApp')
         });
 
         //Make the comparable books
-        $.each(init.bible.books, function(key) {
+        $.each(_init.bible.books, function(key) {
 
           //Make sure translation is in lowercase
           var compare = this.toLowerCase();
@@ -151,8 +151,8 @@ angular.module('bmmLibApp')
 
               if (_index>-1&&(alternativeIndex===-1||_index<alternativeIndex)) {
                 alternativeIndex = _index;
-                bookName = init.bible.books[key];
-                book.shortcode = init.bible.shortcodes[key];
+                bookName = _init.bible.books[key];
+                book.shortcode = _init.bible.shortcodes[key];
                 book.key = key;
               }
 

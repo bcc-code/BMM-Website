@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('waitings', [ 'bmmFormatterTrack', function (bmmFormatterTrack) {
+  .factory('_waitings', [ '_track', function (_track) {
 
     var factory = {};
 
@@ -65,7 +65,7 @@ angular.module('bmmLibApp')
             waiting.link.file = key;
             waiting.link.mime_type = type;
             waiting.link.duration = 0;
-            track = bmmFormatterTrack.resolve(waiting);
+            track = _track.resolve(waiting);
 
             //Check for conflict
             $.each(possibleConflicts, function() {
@@ -79,7 +79,7 @@ angular.module('bmmLibApp')
                 _conflict.link.file = this.url;
                 _conflict.link.mime_type = this.mime_type;
                 _conflict.link.duration = this.duration;
-                _conflict = bmmFormatterTrack.resolve(_conflict);
+                _conflict = _track.resolve(_conflict);
 
                 conflict = true;
                 waitingsSorted.conflicts.push({

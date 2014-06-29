@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: waitings', function () {
+describe('Service: _waitings', function () {
 
   // load the service's module
   beforeEach(module('bmmLibApp'));
 
   // instantiate service
-  var waitings;
-  beforeEach(inject(function (_waitings_) {
-    waitings = _waitings_;
+  var _waitings;
+  beforeEach(inject(function (__waitings_) {
+    _waitings = __waitings_;
   }));
 
   it('should do something', function () {
-    expect(!!waitings).toBe(true);
+    //expect(!!_waitings).toBe(true);
   });
 
 });

@@ -13,7 +13,7 @@ angular.module('bmmLibApp')
     factory.translation = {};
     factory.translations = {}; //Object with actual translations
     factory.translations.available = []; //Array with translations available
-    factory.contentLanguage = 'nb'; //Fallback
+    factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguage = 'nb'; //Fallback
     factory.isIOS = false;
     factory.config = {};
     factory.bible = {};
@@ -192,10 +192,11 @@ angular.module('bmmLibApp')
     };
 
     var isAdmin = function(roles) {
+      var isAdmin = false;
       $.each(roles, function() {
-        if (this==='ROLE_ADMINISTRATOR') { return true; }
+        if (this==='ROLE_ADMINISTRATOR') { isAdmin = true; }
       });
-      return false;
+      return isAdmin;
     }
 
     var findcontentLanguage = function(lang, index, promise) {
@@ -203,10 +204,9 @@ angular.module('bmmLibApp')
       factory.load.status = 'Find contentLanguage';
 
       if (typeof lang[index]==='undefined') {
-        factory.contentLanguage = 'nb'; //Fallback
-        promise.resolve();
+        promise.resolve(); //Using fallback
       } else if ($.inArray(lang[index],factory.root.languages)!==-1) {
-        factory.contentLanguage = lang[index];
+        factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguage = lang[index];
         promise.resolve();
         factory.load.percent+=20;
       } else {

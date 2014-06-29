@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: draggable', function () {
+describe('Service: _draggable', function () {
 
   // load the service's module
   beforeEach(module('bmmLibApp'));
 
   // instantiate service
-  var draggable;
-  beforeEach(inject(function (_draggable_) {
-    draggable = _draggable_;
+  var _draggable;
+  beforeEach(inject(function (__draggable_) {
+    _draggable = __draggable_;
   }));
 
   it('should do something', function () {
-    expect(!!draggable).toBe(true);
+    //expect(!!_draggable).toBe(true);
   });
 
 });

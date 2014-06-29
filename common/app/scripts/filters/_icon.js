@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('icon', function () {
+  .filter('_icon', function () {
     return function (type) {
 
       var icon = 'fallback_images/svg/Icon_Music.svg';

@@ -1,7 +1,7 @@
 header {
   width: 100%;
   background-color: #fff;//$colorMain;
-  box-shadow: 0 0 .5em #1F1F1F;
+  box-shadow: 0 0 .5em rgba(31, 31, 31, .7);
   z-index: 5;
   .wrapper {
     margin-top: 2.3em;
@@ -53,10 +53,11 @@ header {
         border: .15em solid #fff;
       }
       a:hover {
-        color: #97D5B7;
+        color: #03d67f;
       }
       a.active {
-        border-color: #97D5B7;
+        border-color: #03d67f;
+        color: #03d67f;
       }
     }
   }
@@ -157,11 +158,12 @@ header {
 }
 
 .menu li a:hover {
-  color: #97D5B7;
+  color: #03d67f;
 }
 
 .menu li a.active {
-  border-color: #97D5B7;
+  border-color: #03d67f;
+  color: #03d67f;
 }
 
 .logo {

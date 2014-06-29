@@ -1,37 +1,11 @@
 {
   "name": "bmmLib",
-  "directory": "public",
   "version": "2.1.0",
-  "dependencies": {
-    "angular": "1.2.6",
-    "jquery": "~1.10.2",
-    "sass-bootstrap": "~3.0.2",
-    "angular-resource": "1.2.6",
-    "angular-sanitize": "1.2.6",
-    "angular-route": "1.2.6",
-    "jplayer": "~2.6.0",
-    "jqueryui": "~1.10.3",
-    "angular-ui-sortable": "~0.10.0",
-    "angular-ui-bootstrap-bower": "~0.10.0",
-    "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js"
-  },
+  "dependencies": {},
   "devDependencies": {
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6"
   },
-  "homepage": "https://github.com/steffanhalv/bmm",
-  "authors": [
-    "steffan <steffanhalv@gmail.com>"
-  ],
-  "description": "Javascript library for bmm",
-  "main": [
-    "dist/bmm.js",
-    "dist/styles/bmm.css"
-  ],
-  "keywords": [
-    "bmm"
-  ],
-  "license": "GPL2",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -50,8 +24,5 @@
     "karma-e2e.conf.js",
     "karma.conf.js",
     "package.json"
-  ],
-  "resolutions": {
-    "angular": "1.2.6"
-  }
+  ]
 }

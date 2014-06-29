@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: bmmLanguage', function () {
+describe('Filter: _languageCode', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var bmmLanguage;
+  var _languageCode;
   beforeEach(inject(function ($filter) {
-    bmmLanguage = $filter('bmmLanguage');
+    _languageCode = $filter('_languageCode');
   }));
 
-  it('should return the input prefixed with "bmmLanguage filter:"', function () {
+  it('should return the input prefixed with "_languageCode filter:"', function () {
     //var text = 'angularjs';
-    //expect(bmmLanguage(text)).toBe('bmmLanguage filter: ' + text);
+    //expect(_languageCode(text)).toBe('_languageCode filter: ' + text);
   });
 
 });

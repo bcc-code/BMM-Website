@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('locals', [ '$http', '$q', 'bmmApi', function ($http, $q, bmmApi) {
+  .factory('_locals', [ '$http', '$q', '_api', function ($http, $q, _api) {
     var factory = {},
         locals = {};
     locals.date = {};
@@ -9,7 +9,7 @@ angular.module('bmmLibApp')
     factory.fetchFiles = function(url) {
 
       var localsLoaded = $q.defer(), //Will be resolved at a later time
-          folderLoaded = bmmApi.root().done(function(root) {
+          folderLoaded = _api.root().done(function(root) {
 
         var promises = [];
         var expectedResponses = root.languages.length;

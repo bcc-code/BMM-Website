@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: bmmMin', function () {
+describe('Filter: _min', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var min;
+  var _min;
   beforeEach(inject(function ($filter) {
-    min = $filter('bmmMin');
+    _min = $filter('_min');
   }));
 
-  it('should return the input prefixed with "min filter:"', function () {
+  it('should return the input prefixed with "_min filter:"', function () {
     //var text = 'angularjs';
-    //expect(min(text)).toBe('min filter: ' + text);
+    //expect(_min(text)).toBe('_min filter: ' + text);
   });
 
 });

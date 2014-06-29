@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('bmmPlaylist', ['$rootScope', 'bmmApi', 'draggable', function ($rootScope, bmmApi, draggable) {
+  .directive('playlist', ['$rootScope', '_draggable', function ($rootScope, _draggable) {
     return {
       link: function postLink(scope, element) {
 
@@ -28,11 +28,11 @@ angular.module('bmmLibApp')
         element.addClass('bmm-playlist');
 
         $('.bmm-playlist').on('dragdrop', function() {
-          draggable.playlist(element, scope);
+          _draggable.playlist(element, scope);
         });
 
         scope.$watch('playlist', function() {
-          draggable.playlist(element, scope);
+          _draggable.playlist(element, scope);
         });
 
       }

@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: bmmBibleVerse', function () {
+describe('Filter: _bibleVerse', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var bmmBibleVerse;
+  var _bibleVerse;
   beforeEach(inject(function ($filter) {
-    bmmBibleVerse = $filter('bmmBibleVerse');
+    _bibleVerse = $filter('_bibleVerse');
   }));
 
-  it('should return the input prefixed with "bmmBibleVerse filter:"', function () {
+  it('should return the input prefixed with "_bibleVerse filter:"', function () {
     //var text = 'angularjs';
-    //expect(bmmBibleVerse(text)).toBe('bmmBibleVerse filter: ' + text);
+    //expect(_bibleVerse(text)).toBe('_bibleVerse filter: ' + text);
   });
 
 });

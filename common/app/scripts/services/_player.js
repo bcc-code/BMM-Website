@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlayer', ['bmmPlaylist', '$timeout', '$rootScope', '$filter', '$window', 'bmmApi', 'bmmFormatterTrack',
-    function (bmmPlaylist, $timeout, $rootScope, $filter, $window, bmmApi, bmmFormatterTrack) {
+  .factory('_player', ['$timeout', '$rootScope', '$filter', '$window', '_api', '_playlist', '_track',
+    function ($timeout, $rootScope, $filter, $window, _api, _playlist,  _track) {
   
   var factory = {},
       videoTarget,
@@ -37,7 +37,7 @@ angular.module('bmmLibApp')
       $(videoTarget).jPlayer({
         ready: function(e) {
           //Initialization complete
-          factory.setSource(bmmPlaylist.getCurrent());
+          factory.setSource(_playlist.getCurrent());
           factory.volume = e.jPlayer.options.volume;
         },
         swfPath: 'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
@@ -111,11 +111,11 @@ angular.module('bmmLibApp')
           break;
         case 82: //r
           e.preventDefault();
-          bmmPlaylist.setRepeat();
+          _playlist.setRepeat();
           break;
         case 83: //s
           e.preventDefault();
-          bmmPlaylist.setShuffle();
+          _playlist.setShuffle();
           break;
         case 107: //+
           e.preventDefault();
@@ -169,7 +169,7 @@ angular.module('bmmLibApp')
   };
 
   factory.setNext = function(play) {
-    var src = bmmPlaylist.getNext();
+    var src = _playlist.getNext();
     if (src!==false) {
       factory.setSource(src);
       if (typeof play!=='undefined'&&play) {
@@ -179,7 +179,7 @@ angular.module('bmmLibApp')
   };
 
   factory.setPrevious = function() {
-    var src = bmmPlaylist.getPrevious();
+    var src = _playlist.getPrevious();
     if (src!==false) {
       factory.setSource(src);
     }
@@ -243,7 +243,7 @@ angular.module('bmmLibApp')
       factory.language = source.language;
       factory.id = source.id;
       factory.raw = source.raw;
-      factory.formatted = bmmFormatterTrack.resolve(source.raw);
+      factory.formatted = _track.resolve(source.raw);
 
       if (typeof time==='undefined') {
         if (typeof source.timestamp!=='undefined') {
@@ -283,18 +283,16 @@ angular.module('bmmLibApp')
 
   factory.changeLanguage = function(lang) {
 
+    var playOnLoad = false, time = factory.currentTime;
+
     if (factory.playing) {
-      $(videoTarget).jPlayer('pause');
+      factory.setPause();
+      playOnLoad = true;
     };
 
-    bmmApi.trackGet(factory.id, lang).done(function(track) {
+    _api.trackGet(factory.id, lang).done(function(track) {
 
-      track = bmmFormatterTrack.resolve(track);
-
-      var video = false;
-      if (this.type==='video') {
-        video = true;
-      }
+      track = _track.resolve(track);
 
       var title = track.title;
       var performers = track.performers;
@@ -308,20 +306,25 @@ angular.module('bmmLibApp')
         title: title,
         subtitle: performers,
         language: track.language,
-        cover: $filter('bmmCover')(track.cover,track.subtype),
-        url: track.file,
+        cover: $filter('_cover')(track.cover,track.subtype),
         duration: track.duration,
-        video: video,
-        raw: track.raw
+        audios: track.audios,
+        videos: track.videos,
+        unknowns: track.unknowns,
+        audio: track.audio,
+        video: track.video,
+        unknown: track.unknown,
+        raw: track.raw,
+        timestamp: time
       };
 
       $rootScope.$apply(function(){
-        bmmPlaylist.updateCurrent(newTrack);
-        factory.setSource(newTrack);
+        _playlist.updateCurrent(newTrack);
+        factory.setSource(newTrack, time);
       });
 
-      if (factory.playing) {
-        $(videoTarget).jPlayer('play');
+      if (playOnLoad) {
+        factory.setPlay(time);
       };
 
     });

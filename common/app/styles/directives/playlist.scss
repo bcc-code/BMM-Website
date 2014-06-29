@@ -14,8 +14,8 @@
     }
   }
   .bmm-flag {
-    border-radius: 1.8em 1.8em .8em .8em;
-    margin-top: -.5em;
+    border-radius: .2em;
+    margin-top: -.2em;
   }
 
   tbody:last-child {
@@ -229,7 +229,7 @@
 
 .bmm-playlist table tbody tr:hover {
   background-color: $colorHover;
-  cursor: default;
+  cursor: pointer;
 }
 
 .bmm-playlist table thead tr {

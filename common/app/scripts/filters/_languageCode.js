@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmLanguage', function () {
+  .filter('_languageCode', function () {
     return function (lang) {
 
       var languageNames = {
         nb: 'Norsk',
+        dk: 'Dansk',
         af: 'Afrikaans',
         bg: 'Български език',
         cs: 'Čeština',

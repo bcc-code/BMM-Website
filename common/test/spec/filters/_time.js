@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: bmmTime', function () {
+describe('Filter: _time', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var bmmTime;
+  var _time;
   beforeEach(inject(function ($filter) {
-    bmmTime = $filter('bmmTime');
+    _time = $filter('_time');
   }));
 
-  it('should return the input prefixed with "bmmTime filter:"', function () {
+  it('should return the input prefixed with "_time filter:"', function () {
     //var text = 'angularjs';
-    //expect(bmmTime(text)).toBe('bmmTime filter: ' + text);
+    //expect(_time(text)).toBe('_time filter: ' + text);
   });
 
 });

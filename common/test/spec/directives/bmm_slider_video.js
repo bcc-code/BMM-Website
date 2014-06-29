@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: bmmSliderVideo', function () {
+describe('Directive: sliderVideo', function () {
 
   // load the directive's module
   beforeEach(module('bmmLibApp'));
@@ -13,8 +13,8 @@ describe('Directive: bmmSliderVideo', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<bmm-slider-video></bmm-slider-video>');
+    element = angular.element('<slider-video></slider-video>');
     element = $compile(element)(scope);
-    //expect(element.text()).toBe('this is the bmmSliderVideo directive');
+    //expect(element.text()).toBe('this is the sliderVideo directive');
   }));
 });

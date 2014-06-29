@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_quickMenu', ['_api', '_track', '_album', '_init', function (_api, _track, _album, _init) {
+  .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', '_init', function ($rootScope, $timeout, _api, _track, _album, _init) {
 
     var factory = {};
 
@@ -48,29 +48,43 @@ angular.module('bmmLibApp')
         }
       }
 
+      factory.autoOpen(Number(factory.menu.year), factory.menu.albumRootId, factory.menu.albumParentId);
+
     };
 
     factory.refresh = function() {
       factory.menu.reRender = (factory.menu.reRender+1);
+      $timeout(function() {
+        $rootScope.$broadcast('quickMenu:updated',factory);
+      });
     };
 
     //FETCH YEARS
     factory.years = [];
-    _api.facetsAlbumPublishedYears({
-      unpublished: 'show'
-    }).done(function(years) {
+    factory.findYears = function(options) {
 
-      factory.year = [];
-      factory.years = [];
-      factory.tracks = [];
-      factory.childAlbums = [];
-      factory.childTracks = [];
-      $.each(years, function() {
-        factory.years.push(this.year);
+      _api.facetsAlbumPublishedYears({
+        unpublished: 'show'
+      }).done(function(years) {
+
+        factory.year = [];
+        factory.years = [];
+        factory.tracks = [];
+        factory.childAlbums = [];
+        factory.childTracks = [];
+        $.each(years, function() {
+          factory.years.push(this.year);
+        });
+        factory.years.reverse();
+
+        if (typeof options!=='undefined') {
+          options.done();
+        }
+
+        factory.refresh();
+
       });
-      factory.years.reverse();
-
-    });
+    };
 
     //FETCH ALBUMS
     factory.albums = [];
@@ -93,6 +107,8 @@ angular.module('bmmLibApp')
           options.done();
         };
 
+        factory.refresh();
+
       });
     };
 
@@ -110,6 +126,8 @@ angular.module('bmmLibApp')
             factory.tracks.push(_track.resolve(this));
           }
         });
+
+        factory.refresh();
 
       });
     };
@@ -136,6 +154,8 @@ angular.module('bmmLibApp')
           options.done();
         };
 
+        factory.refresh();
+
       });
     };
 
@@ -153,6 +173,8 @@ angular.module('bmmLibApp')
             factory.childTracks.push(_track.resolve(this));
           }
         });
+
+        factory.refresh();
 
       });
     };
@@ -177,7 +199,7 @@ angular.module('bmmLibApp')
           factory.findChildAlbums(albumRootId, {
             done: function() {
 
-              if (typeof albumParentId!=='undefined') {
+              if (typeof albumParentId!=='undefined' && albumParentId!==false) {
 
                 $.each(factory.childAlbums, function() {
                   if (this.id === albumParentId) {
@@ -190,8 +212,12 @@ angular.module('bmmLibApp')
 
               }
 
+              factory.refresh();
+
             }
           });
+
+          factory.refresh();
 
         }
       })

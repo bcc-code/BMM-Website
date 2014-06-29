@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmCover', [ 'bmmApi', function (bmmApi) {
-    return function (cover, type, id) {
+  .filter('_cover', [ '_api', function (_api) {
+    return function (cover, type, id, antiCache) {
 
       if (typeof cover==='undefined' || cover===null || cover==='') {
         if (typeof type==='undefined') {
@@ -33,8 +33,13 @@ angular.module('bmmLibApp')
           }
         }
       } else if (typeof id!=='undefined') {
-        var antiCache = '';//'?'+ Math.floor(Math.random() * 9000000) + 1000000;
-        cover = bmmApi.secureImage(bmmApi.getserverUrli()+type+'/'+id+'/cover')+antiCache;
+        var antiC;
+        if (typeof antiCache==='undefined'||antiCache) {
+          antiC = '?'+ Math.floor(Math.random() * 9000000) + 1000000;
+        } else {
+          antiC = '';
+        }
+        cover = _api.secureFile(_api.getserverUrli()+type+'/'+id+'/cover')+antiC;
       }
 
       return cover;

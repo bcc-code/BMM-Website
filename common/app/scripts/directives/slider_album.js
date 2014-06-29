@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('bmmSliderAlbum', ['$timeout', function ($timeout) {
+  .directive('sliderAlbum', ['$timeout', function ($timeout) {
     return {
       link: function postLink(scope, element) {
 

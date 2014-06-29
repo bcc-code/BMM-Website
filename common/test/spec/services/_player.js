@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: bmmPlayer', function () {
+describe('Service: _player', function () {
 
   // load the service's module
   beforeEach(module('bmmLibApp'));
 
   // instantiate service
-  var bmmPlayer;
-  beforeEach(inject(function (_bmmPlayer_) {
-    bmmPlayer = _bmmPlayer_;
+  var _player;
+  beforeEach(inject(function (__player_) {
+    _player = __player_;
   }));
 
   it('should do something', function () {
-    //expect(!!bmmPlayer).toBe(true);
+    //expect(!!_player).toBe(true);
   });
 
 });

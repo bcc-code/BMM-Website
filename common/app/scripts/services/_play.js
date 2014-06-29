@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmPlay', ['bmmPlaylist', 'bmmPlayer', '$location', '$filter', 'bmmApi',
-    function (bmmPlaylist, bmmPlayer, $location, $filter,  bmmApi) {
+  .factory('_play', ['_playlist', '_player', '$location', '$filter', '_api',
+    function (_playlist, _player, $location, $filter,  _api) {
     
     var factory = {};
 
@@ -32,7 +32,7 @@ angular.module('bmmLibApp')
           title: title,
           subtitle: performers,
           language: this.language,
-          cover: $filter('bmmCover')(this.cover,this.subtype),
+          cover: $filter('_cover')(this.cover,this.subtype),
           duration: this.duration,
           audios: this.audios,
           videos: this.videos,
@@ -46,15 +46,15 @@ angular.module('bmmLibApp')
 
       });
 
-      bmmPlaylist.setTracks({
+      _playlist.setTracks({
         tracks: tracks,
         index: index,
         url: $location.path()
       });
 
       if (play) {
-        bmmPlayer.setSource(bmmPlaylist.getCurrent(), timestamp);
-        bmmPlayer.setPlay(timestamp);
+        _player.setSource(_playlist.getCurrent(), timestamp);
+        _player.setPlay(timestamp);
       }
 
     };

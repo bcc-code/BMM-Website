@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('bmmFormatterTrack', ['bmmApi', 'init', '$location', function (bmmApi, init, $location) {
+  .factory('_track', ['$location', '_api', '_init', function ($location, _api, _init) {
     
     var factory = {};
 
@@ -23,14 +23,14 @@ angular.module('bmmLibApp')
               typeof data._meta.parent.cover!=='undefined'&&
               data._meta.parent.cover!==null) {
 
-            resolvedData.cover = bmmApi.secureImage(data._meta.parent.cover);
+            resolvedData.cover = _api.secureImage(data._meta.parent.cover);
 
           } else if (typeof data._meta!=='undefined'&&
               typeof data._meta.root_parent!=='undefined'&&
               typeof data._meta.root_parent.cover!=='undefined'&&
               data._meta.root_parent.cover!==null) {
 
-            resolvedData.cover = bmmApi.secureImage(data._meta.root_parent.cover);
+            resolvedData.cover = _api.secureImage(data._meta.root_parent.cover);
 
           } else {
 
@@ -126,8 +126,8 @@ angular.module('bmmLibApp')
               if (_type==='video') {
                 resolvedData.video = true;
                 resolvedData.videos.push({
-                  file: bmmApi.secureFile(this.url),
-                  downloadLink: bmmApi.secureDownload(this.url)+'?download=1',
+                  file: _api.secureFile(this.url),
+                  downloadLink: _api.secureDownload(this.url)+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -135,8 +135,8 @@ angular.module('bmmLibApp')
               } else {
                 resolvedData.audio = true;
                 resolvedData.audios.push({
-                  file: bmmApi.secureFile(this.url),
-                  downloadLink: bmmApi.secureDownload(this.url)+'?download=1',
+                  file: _api.secureFile(this.url),
+                  downloadLink: _api.secureDownload(this.url)+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -150,15 +150,15 @@ angular.module('bmmLibApp')
 
         //If track is a waiting, fetch waiting file
         if (typeof data.link!=='undefined') {
-          var _file = bmmApi.getserverUrli()+'file/protected/upload/'+data.link.file;
+          var _file = _api.getserverUrli()+'file/protected/upload/'+data.link.file;
           if (typeof data.link.conflict!=='undefined'&&data.link.conflict) {
             _file = data.link.file;
           }
           resolvedData[data.link.type] = true;
           resolvedData[(data.link.type+'s')] = [];
           resolvedData[(data.link.type+'s')].push({
-            file: bmmApi.secureFile(_file),
-            downloadLink: bmmApi.secureDownload(_file)+'?download=1',
+            file: _api.secureFile(_file),
+            downloadLink: _api.secureDownload(_file)+'&download=1',
             type: data.link.mime_type,
             name: renameMimeType(data.link.mime_type),
             duration: data.link.duration
@@ -337,13 +337,13 @@ angular.module('bmmLibApp')
           if (resolvedData.subtype==='speech') {
             resolvedData.combinedTitle = resolvedData.performers + bindSign + resolvedData.title;
           } else if (resolvedData.subtype==='exegesis') {
-            resolvedData.combinedTitle = init.translation.track.exegesis;
+            resolvedData.combinedTitle = _init.translation.track.exegesis;
           } else {
             resolvedData.combinedTitle = resolvedData.title + bindSign + resolvedData.performers;
           }
 
           if (resolvedData.combinedTitle === '') {
-            resolvedData.combinedTitle = init.translation.general.noTitle;
+            resolvedData.combinedTitle = _init.translation.general.noTitle;
           }
 
         }

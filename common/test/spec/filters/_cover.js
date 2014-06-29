@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: bmmCover', function () {
+describe('Filter: _cover', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var bmmCover;
+  var _cover;
   beforeEach(inject(function ($filter) {
-    bmmCover = $filter('bmmCover');
+    _cover = $filter('_cover');
   }));
 
-  it('should return the input prefixed with "bmmCover filter:"', function () {
+  it('should return the input prefixed with "_cover filter:"', function () {
     //var text = 'angularjs';
-    //expect(bmmCover(text)).toBe('bmmCover filter: ' + text);
+    //expect(_cover(text)).toBe('_cover filter: ' + text);
   });
 
 });

@@ -11,7 +11,7 @@ div[data-bmm-lib-app] {
   text-decoration: none;
 }
 
-div[data-bmm-treeview] ul {
+div[data-treeview] ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -19,48 +19,48 @@ div[data-bmm-treeview] ul {
   overflow: hidden;
 }
 
-div[data-bmm-treeview] li {
+div[data-treeview] li {
   position: relative;
   padding: 0 0 0 20px;
   line-height: 20px;
   white-space: nowrap;
 }
 
-div[data-bmm-treeview] li .expanded {
+div[data-treeview] li .expanded {
   padding: 1px 10px;
   background-image: url("../images/treeview/folder.png");
   background-repeat: no-repeat;
 }
 
-div[data-bmm-treeview] li .collapsed {
+div[data-treeview] li .collapsed {
   padding: 1px 10px;
   background-image: url("../images/treeview/folder-closed.png");
   background-repeat: no-repeat;
 }
 
-div[data-bmm-treeview] li .new-album {
+div[data-treeview] li .new-album {
   padding: 1px 0 0 20px;
   background-image: url("../images/treeview/folder-new-album.png");
   background-repeat: no-repeat;
 }
 
-div[data-bmm-treeview] li .new-track {
+div[data-treeview] li .new-track {
   padding: 1px 10px 0 20px;
   background-image: url("../images/treeview/folder-new-track.png");
   background-repeat: no-repeat;
 }
 
-div[data-bmm-treeview] li .normal {
+div[data-treeview] li .normal {
   padding: 1px 10px;
   background-image: url("../images/treeview/file.png");
   background-repeat: no-repeat;
 }
 
-div[data-bmm-treeview] li i, div[data-bmm-treeview] li span {
+div[data-treeview] li i, div[data-treeview] li span {
   cursor: pointer;
 }
 
-div[data-bmm-treeview] li .selected {
+div[data-treeview] li .selected {
   background-color: #aaddff;
   font-weight: bold;
   padding: 1px 5px;

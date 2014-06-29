@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmTime', function () {
+  .filter('_time', function () {
     return function (input) {
 
       var convertTime = function(ss) {

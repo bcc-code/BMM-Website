@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('bmmMin', function () {
+  .filter('_min', function () {
     return function (str, size) {
 
       if (typeof size==='undefined') {

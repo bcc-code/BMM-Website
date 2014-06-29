@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: bmmApi', function () {
+describe('Service: _api', function () {
 
   // load the service's module
   beforeEach(module('bmmLibApp'));
 
   // instantiate service
-  var bmmApi;
-  beforeEach(inject(function (_bmmApi_) {
-    bmmApi = _bmmApi_;
+  var _api;
+  beforeEach(inject(function (__api_) {
+    _api = __api_;
   }));
 
   it('should do something', function () {
-    //expect(!!bmmApi).toBe(true);
+    //expect(!!_api).toBe(true);
   });
 
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: bmmSliderAlbum', function () {
+describe('Directive: sliderAlbum', function () {
 
   // load the directive's module
   beforeEach(module('bmmLibApp'));
@@ -13,8 +13,8 @@ describe('Directive: bmmSliderAlbum', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<bmm-slider-album></bmm-slider-album>');
+    element = angular.element('<slider-album></slider-album>');
     element = $compile(element)(scope);
-    //expect(element.text()).toBe('this is the bmmSliderMusic directive');
+    //expect(element.text()).toBe('this is the sliderMusic directive');
   }));
 });

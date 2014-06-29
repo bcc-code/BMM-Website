@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Filter: icon', function () {
+describe('Filter: _icon', function () {
 
   // load the filter's module
   beforeEach(module('bmmLibApp'));
 
   // initialize a new instance of the filter before each test
-  var icon;
+  var _icon;
   beforeEach(inject(function ($filter) {
-    icon = $filter('icon');
+    _icon = $filter('_icon');
   }));
 
-  it('should return the input prefixed with "icon filter:"', function () {
+  it('should return the input prefixed with "_icon filter:"', function () {
     var text = 'angularjs';
-    //expect(icon(text)).toBe('icon filter: ' + text);
+    //expect(_icon(text)).toBe('_icon filter: ' + text);
   });
 
 });

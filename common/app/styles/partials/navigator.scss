@@ -28,6 +28,13 @@
     border: .1em solid $colorBorders;
     border-radius: .3em;
   }
+  .suport {
+    line-height: normal!important;
+    background-image: url(../images/svg/v3/Icon_Support.svg);
+    color: black!important;
+    background-size: 1.6em 1.6em;
+    background-position: right .25em top .4em;
+  }
 
 }
 
@@ -73,6 +80,9 @@
     color: #000;//$colorForeground;
     cursor: pointer;
   }
+  span:hover {
+    color: #03D67F;
+  }
   li {
     @include bmm-transition(all, .2s);
     background-image: url(../images/svg/v3/Icon_Playlist.svg);
@@ -81,6 +91,11 @@
     background-repeat: no-repeat;
     border: .2em solid transparent;
     padding: .8em 0 .1em 2.7em;
+  }
+  li:hover {
+    a {
+      color: #03D67F;
+    }
   }
 }
 
@@ -182,6 +197,9 @@
   li:hover {
     .edit {
       opacity: 1;
+    }
+    a {
+      color: #03D67F;
     }
   }
   li.playlists-new {
