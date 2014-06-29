@@ -13,6 +13,14 @@
   "translationFolder": "translations/",
   "translationsAvailable": [
     "nb",
-    "en"
+    "dk",
+    "en",
+    "de",
+    "nl",
+    "ro",
+    "bg",
+    "es",
+    "af",
+    "hu"
   ]
 }

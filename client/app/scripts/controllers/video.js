@@ -3,24 +3,25 @@
 angular.module('bmmApp')
   .controller('VideoCtrl', function (
     $scope,
-    $timeout,
     $window,
-    bmmApi,
-    bmmFormatterTrack,
-    bmmFormatterAlbum,
-    init,
-    draggable
+    _api,
+    _track,
+    _album,
+    _init,
+    _draggable
   ) {
 
     $(window).off('scrollBottom');
 
     // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function(event) {
+    $scope.$on('$viewContentLoaded', function() {
       $window.ga('send', 'pageview', {
         'page': '/video',
         'title': 'Video'
       });
     });
+
+    $scope.load = true;
 
     var albumFrom = 3, loading=true;
 
@@ -28,30 +29,34 @@ angular.module('bmmApp')
 
       if (!loading) {
 
-        $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
+        //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
 
         loading = true;
+        $scope.$apply(function() {
+          $scope.load = true;
+        });
 
         //ALBUMS
-        bmmApi.albumLatest({
+        _api.albumLatest({
           from: albumFrom,
           size: 20,
           'content-type': ['video']
-        }, init.mediaLanguage).done(function(data) {
+        }, _init.contentLanguage).done(function(data) {
 
           $.each(data, function() {
 
-            $scope.latestAlbums.push(bmmFormatterAlbum.resolve(this));
+            $scope.latestAlbums.push(_album.resolve(this));
 
             albumFrom++;
 
           });
 
           $scope.$apply(function() {
-            draggable.makeDraggable($scope);
+            _draggable.makeDraggable($scope);
+            $scope.load = false;
           });
 
-          $('.bmm-loading').remove();
+          //$('.bmm-loading').remove();
           loading = false;
 
         });
@@ -61,21 +66,21 @@ angular.module('bmmApp')
     });
 
     //VIDEOS
-    bmmApi.trackLatest({
+    _api.trackLatest({
       size: 9,
       'content-type': ['video']
-    }, init.mediaLanguage).done(function(data) {
+    }, _init.contentLanguage).done(function(data) {
 
       var left = [], right = [], largeOnly = [];
 
       $.each(data, function(index) {
 
         if (index<3) {
-          left.push(bmmFormatterTrack.resolve(this));
+          left.push(_track.resolve(this));
         } else if (index<6) {
-          right.push(bmmFormatterTrack.resolve(this));
+          right.push(_track.resolve(this));
         } else {
-          largeOnly.push(bmmFormatterTrack.resolve(this));
+          largeOnly.push(_track.resolve(this));
         }
 
       });
@@ -84,22 +89,22 @@ angular.module('bmmApp')
         $scope.latestVideoLeft = left;
         $scope.latestVideoRight = right;
         $scope.latestLargeOnly = largeOnly;
-        draggable.makeDraggable($scope);
+        _draggable.makeDraggable($scope);
       });
 
     });
 
     //ALBUMS
-    bmmApi.albumLatest({
+    _api.albumLatest({
       size: 20,
       'content-type': ['video']
-    }, init.mediaLanguage).done(function(data) {
+    }, _init.contentLanguage).done(function(data) {
 
       var album = [];
 
       $.each(data, function() {
 
-        album.push(bmmFormatterAlbum.resolve(this));
+        album.push(_album.resolve(this));
 
         albumFrom++;
 
@@ -107,10 +112,11 @@ angular.module('bmmApp')
 
       $scope.$apply(function() {
         $scope.latestAlbums = album;
-        draggable.makeDraggable($scope);
+        _draggable.makeDraggable($scope);
       });
 
       loading = false;
+      $scope.load = false;
 
     });
 

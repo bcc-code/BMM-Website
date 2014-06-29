@@ -2,15 +2,15 @@
 <div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="trackToPlaylist.id=false">
 
                 <div class="exit" ng-click="trackToPlaylist.id=false"></div>
 
-                <b>{{translation.options.choosePlaylist}}</b>
+                <b>{{init.translation.options.choosePlaylist}}</b>
                 <br><br>
 
                 <ul class="playlist">
-                    <li ng-repeat="collection in user.track_collections"
+                    <li ng-repeat="collection in init.user.track_collections"
                         ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
                               trackToPlaylist.id=false;">
                         {{collection.name}}
@@ -26,15 +26,15 @@
 <div class="popup" ng-if="tracksToPlaylist.length>0">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="tracksToPlaylist.length=0">
 
                 <div class="exit" ng-click="tracksToPlaylist.length=0"></div>
 
-                <b>{{translation.options.choosePlaylist}}</b>
+                <b>{{init.translation.options.choosePlaylist}}</b>
                 <br><br>
 
                 <ul class="playlist">
-                    <li ng-repeat="collection in user.track_collections"
+                    <li ng-repeat="collection in init.user.track_collections"
                         ng-click="addTracksToPlaylist(collection.id, tracksToPlaylist); tracksToPlaylist.length=0">
                         {{collection.name}}
                     </li>
@@ -49,55 +49,55 @@
 <div class="popup" ng-hide="newPodcast.show==undefined||newPodcast.show!=true">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="newPodcast.show=false">
 
                 <div class="exit" ng-click="newPodcast.show=false"></div>
 
-                <b>{{translation.options.podcast}}</b>
+                <b>{{init.translation.options.podcast}}</b>
                 <br><br>
-                {{translation.options.setupPodcast}}
+                {{init.translation.options.setupPodcast}}
                 <br><br>
 
                 <div style="width: 47%; float: left;">
-                    <b>{{translation.options.chooseLanguage}}</b>
+                    <b>{{init.translation.options.chooseLanguage}}</b>
                     <div class="dropdown"
                          style="float: none; margin: 0; display: inline-block">
                         <a class="dropdown-toggle" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
-                            <div class="flags-{{podcastLanguage}}"></div>
-                            {{podcastLanguage | bmmLanguage}}</a>
+                            <div class="flags-{{init.podcastLanguage}}"></div>
+                            {{init.podcastLanguage | _languageCode}}</a>
                         <ul class="dropdown-menu" style="margin-left: 0!important">
-                            <li ng-repeat="lang in root.languages">
+                            <li ng-repeat="lang in init.root.languages">
                                 <a class="flags-{{lang}}"
-                                   ng-click="$parent.podcastLanguage=lang">{{lang | bmmLanguage}}</a>
+                                   ng-click="$parent.init.podcastLanguage=lang">{{lang | _languageCode}}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div style="width: 47%; float: right;">
-                    <b>{{translation.options.includeLatest}}</b>
+                    <b>{{init.translation.options.includeLatest}}</b>
                     <select ng-model="fileRestriction" ng-init="fileRestriction=20">
-                        <option value="10">10 {{translation.options.tracks}}</option>
-                        <option value="20" selected>20 {{translation.options.tracks}}</option>
-                        <option value="50">50 {{translation.options.tracks}}</option>
-                        <option value="100">100 {{translation.options.tracks}}</option>
-                        <option value="250">250 {{translation.options.tracks}}</option>
-                        <option value="500">500 {{translation.options.tracks}}</option>
-                        <option value="1000">1000 {{translation.options.tracks}}</option>
+                        <option value="10">10 {{init.translation.options.tracks}}</option>
+                        <option value="20" selected>20 {{init.translation.options.tracks}}</option>
+                        <option value="50">50 {{init.translation.options.tracks}}</option>
+                        <option value="100">100 {{init.translation.options.tracks}}</option>
+                        <option value="250">250 {{init.translation.options.tracks}}</option>
+                        <option value="500">500 {{init.translation.options.tracks}}</option>
+                        <option value="1000">1000 {{init.translation.options.tracks}}</option>
                     </select>
                 </div>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
                     <span ng-click="allLanguages=!allLanguages;">
-                        <b>{{translation.playlist.allLanguages}}</b>
+                        <b>{{init.translation.playlist.allLanguages}}</b>
                     </span><br>
                     <input type="checkbox" ng-model="allLanguages">
                 </div>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
-                    <b>{{translation.options.copyUrl}}</b>
+                    <b>{{init.translation.options.copyUrl}}</b>
                     <input style="width: 100%; border: .1em solid gray;padding: .5em;"
-                           type="text" value="{{newPodcast.link}}language={{allLanguages ? '' : podcastLanguage}}&size={{fileRestriction}}">
+                           type="text" value="{{newPodcast.link}}language={{allLanguages ? '' : init.podcastLanguage}}&size={{fileRestriction}}">
                 </div>
 
             </div>
@@ -109,14 +109,14 @@
 <div class="popup" ng-hide="share.show==undefined||share.show!=true">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="share.show=false">
 
                 <div class="exit" ng-click="share.show=false"></div>
 
-                <b>{{translation.options.share}}</b>
+                <b>{{init.translation.options.share}}</b>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
-                    <b>{{translation.options.copyLink}}</b>
+                    <b>{{init.translation.options.copyLink}}</b>
                     <input style="width: 100%; border: .1em solid gray;padding: .5em;"
                            type="text" value="{{share.link}}">
                 </div>
@@ -130,7 +130,7 @@
 <div class="popup" ng-hide="pushMessage.show==undefined||pushMessage.show!=true">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="pushMessage.show=false">
 
                 <div class="exit" ng-click="pushMessage.show=false"></div>
 
@@ -149,37 +149,37 @@
 <div class="popup" ng-hide="settings.show==undefined||settings.show==false">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="settings.show=false">
 
                 <div class="exit" ng-click="settings.show=false"></div>
 
-                <b style="float: left; width: 100%;">{{translation.general.settings}}</b>
+                <b style="float: left; width: 100%;">{{init.translation.general.settings}}</b>
 
                 <div style="width: 47%; float: left; margin-top: 1em;">
-                    <b>{{translation.options.websiteLanguage}}</b>
+                    <b>{{init.translation.options.websiteLanguage}}</b>
                     <div class="dropdown">
                         <a class="dropdown-toggle">
-                            <div class="flags-{{websiteLanguage}}"></div>
-                            {{websiteLanguage | bmmLanguage}}</a>
+                            <div class="flags-{{init.websiteLanguage}}"></div>
+                            {{init.websiteLanguage | _languageCode}}</a>
                         <ul class="dropdown-menu">
-                            <li ng-repeat="lang in translations.available">
-                                <a class="flags-{{lang}}"
-                                   ng-click="setWebsiteLanguage(lang);">{{lang | bmmLanguage}}</a>
+                            <li ng-repeat="lang in init.translations.available"
+                                ng-click="setWebsiteLanguage(lang);">
+                                <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div style="width: 47%; float: right; margin-top: 1em;">
-                    <b>{{translation.options.preferredContentLanguage}}</b>
+                    <b>{{init.translation.options.preferredContentLanguage}}</b>
                     <div class="dropdown">
                         <a class="dropdown-toggle">
-                            <div class="flags-{{mediaLanguage}}"></div>
-                            {{mediaLanguage | bmmLanguage}}</a>
+                            <div class="flags-{{init.contentLanguage}}"></div>
+                            {{init.contentLanguage | _languageCode}}</a>
                         <ul class="dropdown-menu">
-                            <li ng-repeat="lang in root.languages">
-                                <a class="flags-{{lang}}"
-                                   ng-click="setMediaLanguage(lang);">{{lang | bmmLanguage}}</a>
+                            <li ng-repeat="lang in init.root.languages"
+                                ng-click="setContentLanguage(lang);">
+                                <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
                             </li>
                         </ul>
                     </div>
@@ -194,49 +194,49 @@
 <div class="popup" ng-hide="trackInfo.show==undefined||trackInfo.show==false">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container">
+            <div class="container" click-elsewhere="trackInfo.show=false">
 
                 <div class="exit" ng-click="trackInfo.show=false"></div>
 
                 <b style="float: left; width: 100%;">{{trackInfo.track.title}}</b><br><br>
 
-                <b>{{translation.track.recordedDate}}</b><br>
-                    {{trackInfo.track.date | locals:translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
+                <b>{{init.translation.track.recordedDate}}</b><br>
+                    {{trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
 
-                <b>{{translation.track.duration}}</b><br>
+                <b>{{init.translation.track.duration}}</b><br>
                     <span>
-                        {{trackInfo.track.duration | bmmTime}}
+                        {{trackInfo.track.duration | _time}}
                     </span><br><br>
 
-                <b>{{translation.track.album}}</b><br>
+                <b>{{init.translation.track.album}}</b><br>
                     <span class="link"
                           ng-click="go('/album/'+trackInfo.track.raw.parent_id); trackInfo.show=false;">
                         {{trackInfo.track.albumTitle}}
                     </span><br><br>
 
-                <b>{{translation.track.artist}}</b><br>
+                <b>{{init.translation.track.artist}}</b><br>
                     <span class="link"
                           ng-repeat="artist in trackInfo.track.interprets"
                        ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); trackInfo.show=false;">
                         {{artist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
-                <b>{{translation.track.lyricist}}</b><br>
+                <b>{{init.translation.track.lyricist}}</b><br>
                     <span class="link"
                           ng-repeat="lyricist in trackInfo.track.lyricists"
                           ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); trackInfo.show=false;">
                         {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
-                <b>{{translation.track.composer}}</b><br>
+                <b>{{init.translation.track.composer}}</b><br>
                     <span class="link"
                           ng-repeat="composer in trackInfo.track.composers"
                           ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
                         {{composer.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                <b>{{translation.track.bibleVerse}}</b><br>
+                <b>{{init.translation.track.bibleVerse}}</b><br>
                     <span class="link"
-                          title="{{reference.timestamp | bmmTime}}"
+                          title="{{reference.timestamp | _time}}"
                           ng-click="play([trackInfo.track], 0, reference.timestamp, reference.name);"
                           ng-repeat="reference in trackInfo.track.bible">
                         {{reference.name}}<em ng-hide="$last">,&nbsp</em>

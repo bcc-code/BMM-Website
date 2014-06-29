@@ -18,16 +18,16 @@
                     <form ng-submit="go('/playlist/search/'+bmm.term);">
                         <input ng-model="bmm.term"
                                type="text"
-                               placeholder="{{translation.general.search}}">
+                               placeholder="{{init.translation.general.search}}">
                         <input type="submit" value="">
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches">{{translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music">{{translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video">{{translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks">{{translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive">{{translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches">{{init.translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music">{{init.translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video">{{init.translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks">{{init.translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive">{{init.translation.menu.main.archive}}</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <ul>
                 <li ng-repeat="message in pushMessages">
                     <span>{{message.title}}</span>
-                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;">{{translation.general.readMore}}</button>
+                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;">{{init.translation.general.readMore}}</button>
                     <div class="exit" ng-click="removePushMessage($index)"></div>
                 </li>
             </ul>
@@ -82,17 +82,21 @@
                  ng-show="player.video&&!player.showVideo"></div>
 
             <div class="scroller">
-                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | bmmLanguage}} </span>
+                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | _languageCode}} </span>
             </div>
 
             <div class="about">
-                <img ng-src="{{player.cover | bmmCover:'song'}}"/>
+                <img ng-click="go('/album/'+player.raw._meta.root_parent_id)"
+                     style="cursor:pointer"
+                     title="{{player.formatted.albumTitle}}"
+                     ng-src="{{player.cover | _cover:'song'}}"/>
                 <h3>{{player.title}}</h3>
                 <div>{{player.subtitle}}</div>
-                <div>{{player.language | bmmLanguage}}</div>
+                <div>{{player.language | _languageCode}}</div>
             </div>
 
             <div class="options"
+                    title="Options"
                     ng-init="flags=false; downloads=false;"
                     ng-model="playerOptions"
                     click-elsewhere="playerOptions=false">
@@ -103,34 +107,37 @@
                 <div class="arrow" ng-show="playerOptions"></div>
 
                 <ul ng-show="playerOptions&&!flags&&!downloads">
-                    <li ng-click="trackInfo.track=player.formatted; trackInfo.show=true;">
-                        <div class="icon details"></div>
-                        <span>{{translation.track.details}}</span></li>
+
                     <li ng-click="trackToPlaylist.id=player.id; trackToPlaylist.language=player.language">
                         <div class="icon playlist"></div>
-                        <span>{{translation.options.addToPlaylist}}</span>
+                        <span>{{init.translation.options.addToPlaylist}}</span>
+                    </li>
+                    <li ng-click="downloads=!downloads"
+                        ng-show="!player.formatted.directDownload.exist&&!init.isIOS">
+                        <div class="icon download"></div>
+                        <span>{{init.translation.options.download}} ({{player.formatted.audios.length+player.formatted.videos.length+player.formatted.unknowns.length}})</span>
+                    </li>
+                    <li ng-show="!init.isIOS&&player.formatted.directDownload.exist">
+                        <div class="icon download"></div>
+                        <a download ng-href="{{player.formatted.directDownload.file}}">
+                            <span>{{init.translation.options.download}} (1)</span>
+                        </a>
                     </li>
                     <li ng-click="share.link=player.formatted.path; share.show=true">
                         <div class="icon no-flag share"></div>
-                        <span>{{translation.options.share}}</span>
+                        <span>{{init.translation.options.share}}</span>
                     </li>
                     <li ng-click="go('/album/'+player.raw._meta.root_parent_id)">
                         <div class="icon album"></div>
-                        <span>{{translation.options.goToAlbum}}</span></li>
-                    <li ng-click="downloads=!downloads"
-                        ng-show="!player.formatted.directDownload.exist&&!ios">
-                        <div class="icon download"></div>
-                        <span>{{translation.options.download}}</span>
-                    </li>
-                    <li ng-show="!ios&&player.formatted.directDownload.exist">
-                        <div class="icon download"></div>
-                        <a download ng-href="{{player.formatted.directDownload.file}}">
-                            <span>{{translation.options.download}}</span>
-                        </a>
+                        <span>{{init.translation.options.goToAlbum}}</span></li>
+
+                    <li ng-click="trackInfo.track=player.formatted; trackInfo.show=true;">
+                        <div class="icon details"></div>
+                        <span>{{init.translation.track.details}}</span>
                     </li>
                     <li ng-click="flags=!flags">
                         <div class="icon settings"></div>
-                        <span>{{translation.options.changeLanguage}}</span>
+                        <span>{{init.translation.options.changeLanguage}}</span>
                     </li>
                 </ul>
 
@@ -138,12 +145,12 @@
                     <li ng-repeat="language in player.raw.languages"
                         ng-click="player.changeLanguage(language);">
                         <div class="flags-{{language}}"
-                             style="width: 2em; height: 1.5em; margin-left: .6em; display: inline-block;">
+                             style="width: 1.6em; height: 1.1em; margin-left: .6em; display: inline-block;">
                         </div>
-                        <span>{{language | bmmLanguage}}</span>
+                        <span>{{language | _languageCode}}</span>
                     </li>
                     <li ng-click="flags=!flags"><div class="icon go-back"></div>
-                        <span>{{translation.options.goBack}}</span>
+                        <span>{{init.translation.options.goBack}}</span>
                     </li>
                 </ul>
 
@@ -167,7 +174,7 @@
                         </a>
                     </li>
                     <li ng-click="downloads=!downloads"><div class="icon go-back"></div>
-                        <span>{{translation.options.goBack}}</span>
+                        <span>{{init.translation.options.goBack}}</span>
                     </li>
                 </ul>
 
@@ -178,18 +185,18 @@
                 <div class="mute"
                      ng-class="{'active': player.muted}"
                      ng-click="player.setMute();"
-                     ng-hide="ios"></div>
+                     ng-hide="init.isIOS"></div>
                 <div class="max"
                      ng-click="player.setVolume(1);"
-                     ng-hide="ios"></div>
-                <div class="volume" ng-hide="ios"></div>
+                     ng-hide="init.isIOS"></div>
+                <div class="volume" ng-hide="init.isIOS"></div>
 
             </div>
 
             <div class="mainControllers">
 
-                <div class="current">{{player.currentTime | bmmTime}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div>
+                <div class="current">{{player.currentTime | _time}}</div>
+                <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div>
 
                 <div class="centered">
                     <div class="shuffle"
@@ -209,8 +216,8 @@
 
                 </div>
 
-                <!--div class="current">{{player.currentTime | bmmTime}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | bmmTime}}</div-->
+                <!--div class="current">{{player.currentTime | _time}}</div>
+                <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div-->
                 <div class="slider"><div class="target"></div></div>
 
             </div>
@@ -239,32 +246,32 @@
                     <form ng-submit="go('/playlist/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
                                     type="text"
-                                    placeholder="{{translation.general.search}}"></div>
+                                    placeholder="{{init.translation.general.search}}"></div>
                         <input type="submit" value="">
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches" ng-click="visible=false">{{translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music" ng-click="visible=false">{{translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video" ng-click="visible=false">{{translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks" ng-click="visible=false">{{translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive" ng-click="visible=false">{{translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches" ng-click="visible=false">{{init.translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music" ng-click="visible=false">{{init.translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video" ng-click="visible=false">{{init.translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks" ng-click="visible=false">{{init.translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive" ng-click="visible=false">{{init.translation.menu.main.archive}}</a></li>
                 </ul>
             </div>
 
             <!--PLAYLIST ETC. -->
-            <h2>{{translation.menu.secondary.playlists}}</h2>
+            <h2>{{init.translation.menu.secondary.playlists}}</h2>
 
             <ul class="playlists-generated">
-                <li><a ng-href="#playlist/latest" ng-click="visible=false">{{translation.menu.secondary.latestTracks}}</a></li>
-                <li><a ng-href="#playlist/mp3kilden" ng-click="visible=false">{{translation.page.music.mp3Source}}</a></li>
-                <li><a ng-href="#playlist/barnasmp3" ng-click="visible=false">{{translation.page.music.childrensMp3Source}}</a></li>
-                <li><a ng-href="#playlist/instrumental" ng-click="visible=false">{{translation.page.music.instrumental}}</a></li>
-                <li><span ng-click="getCurrent()" ng-click="visible=false">{{translation.menu.secondary.current}}</span></li>
+                <li><a ng-href="#playlist/latest" ng-click="visible=false">{{init.translation.menu.secondary.latestTracks}}</a></li>
+                <li><a ng-href="#playlist/mp3kilden" ng-click="visible=false">{{init.translation.page.music.mp3Source}}</a></li>
+                <li><a ng-href="#playlist/barnasmp3" ng-click="visible=false">{{init.translation.page.music.childrensMp3Source}}</a></li>
+                <li><a ng-href="#playlist/instrumental" ng-click="visible=false">{{init.translation.page.music.instrumental}}</a></li>
+                <li><span ng-click="getCurrent()" ng-click="visible=false">{{init.translation.menu.secondary.current}}</span></li>
             </ul>
 
             <button class="playlists-add" ng-click="bmmPlaylistAdd=!bmmPlaylistAdd">
-                <span>{{translation.menu.secondary.newPlaylist}}</span>
+                <span>{{init.translation.menu.secondary.newPlaylist}}</span>
             </button>
 
             <ul class="playlists-private">
@@ -272,7 +279,7 @@
                     <form>
                         <input ng-model="newPlaylist"
                                type="text"
-                               placeholder="{{translation.menu.secondary.nameOnPlaylist}}">
+                               placeholder="{{init.translation.menu.secondary.nameOnPlaylist}}">
                         <input type="submit"
                                value=""
                                ng-click="addPLaylist(newPlaylist);">
@@ -282,7 +289,7 @@
                 <li class="bmm-playlist-private"
                     ng-class="{'edited': collection.edit}"
                     id="{{collection.id}}"
-                    ng-repeat="collection in user.track_collections">
+                    ng-repeat="collection in init.user.track_collections">
                     <a ng-hide="collection.edit == true"
                        ng-click="$parent.visible=false"
                        ng-href="#playlist/private/{{collection.id}}">
@@ -300,15 +307,10 @@
 
 
             <button class="settings"
-                    ng-click="settings.show=true">{{translation.general.settings}}</button>
+                    ng-click="settings.show=true">{{init.translation.general.settings}}</button>
 
-            <a href="mailto:project-bmm@derhub.de"
-               style="  margin-top: 1em;
-                        color: black;
-                        opacity: .7;
-                        float: left;
-                        font-size: .8em;">
-                {{translation.general.suport}}</a>
+            <a class="settings suport" href="mailto:project-bmm@derhub.de">
+                {{init.translation.general.suport}}</a>
 
             <a href="#/copyright"
                style="  margin: 1em 0;
@@ -317,18 +319,14 @@
                         width: 100%;
                         float: left;
                         font-size: .8em;">
-                © {{translation.copyright}} {{now | date : 'yyyy'}}, <br>
-                &nbsp&nbsp {{translation.copyrightBy}}</a>
+                © {{init.translation.copyright}} {{now | date : 'yyyy'}}, <br>
+                &nbsp&nbsp {{init.translation.copyrightBy}}</a>
 
         </div>
 
     </div>
 
     <div ng-include="'views/pages/popup.html'"></div>
-
-    <!--BACKGROUND-->
-    <div class="background-left"></div>
-    <div class="background-right"></div>
 
     <!--SIZE DETECTOR-->
     <div id="size-detector"></div>

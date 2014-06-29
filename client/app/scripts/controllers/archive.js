@@ -3,21 +3,20 @@
 angular.module('bmmApp')
   .controller('ArchiveCtrl', function (
     $scope,
-    $timeout,
     $location,
     $window,
-    bmmApi,
-    init,
-    bmmFormatterTrack,
-    bmmFormatterAlbum,
-    bmmPlay,
-    draggable
+    _api,
+    _init,
+    _track,
+    _album,
+    _play,
+    _draggable
   ) {
 
     $(window).off('scrollBottom');
 
     // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function(event) {
+    $scope.$on('$viewContentLoaded', function() {
       $window.ga('send', 'pageview', {
         'page': '/archive',
         'title': 'Archive'
@@ -25,7 +24,7 @@ angular.module('bmmApp')
     });
 
     //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
-    bmmApi.facetsTrackRecordedYears().done(function(data) {
+    _api.facetsTrackRecordedYears().done(function(data) {
 
       $scope.roleList = [];
 
@@ -58,12 +57,12 @@ angular.module('bmmApp')
 
         } else if ($scope.tree.currentNode.group==='track') {
 
-          bmmApi.trackGet(
+          _api.trackGet(
             $scope.tree.currentNode.roleId,
-            init.mediaLanguage).done(function(track) {
+            _init.contentLanguage).done(function(track) {
 
-              track = bmmFormatterTrack.resolve(track);
-              bmmPlay.setPlay([track], 0);
+              track = _track.resolve(track);
+              _play.setPlay([track], 0);
 
             });
 
@@ -79,12 +78,12 @@ angular.module('bmmApp')
       if( $scope.tree && angular.isObject($scope.tree.expandedNode) ) {
 
         if ($scope.tree.expandedNode.group==='track') {
-          bmmApi.trackGet(
+          _api.trackGet(
             $scope.tree.expandedNode.roleId,
-            init.mediaLanguage).done(function(track) {
+            _init.contentLanguage).done(function(track) {
 
-              track = bmmFormatterTrack.resolve(track);
-              bmmPlay.setPlay([track], 0);
+              track = _track.resolve(track);
+              _play.setPlay([track], 0);
 
             });
 
@@ -95,8 +94,8 @@ angular.module('bmmApp')
           //IF A YEAR IS OPENED, DISPLAY ALBUMS FOR THE WHOLE YEAR
           if ($scope.tree.expandedNode.group==='year') {
 
-            bmmApi.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {},
-              init.mediaLanguage).done(function(data) {
+            _api.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {},
+              _init.contentLanguage).done(function(data) {
 
               $scope.tree.expandedNode.children = [];
               $.each(data, function() {
@@ -113,7 +112,7 @@ angular.module('bmmApp')
               });
 
               $scope.$apply();
-              draggable.makeDraggable($scope);
+              _draggable.makeDraggable($scope);
 
             });
 
@@ -122,8 +121,8 @@ angular.module('bmmApp')
           //IF AN ALBUM IS OPENED, DISPLAY SUB ALBUMS AND TRACKS
           if ($scope.tree.expandedNode.group==='album') {
 
-            bmmApi.albumGet(
-              $scope.tree.expandedNode.roleId, init.mediaLanguage
+            _api.albumGet(
+              $scope.tree.expandedNode.roleId, _init.contentLanguage
             ).done(function(data) {
 
               var albums = [], tracks = [];
@@ -132,9 +131,9 @@ angular.module('bmmApp')
 
                 if (typeof this.type!=='undefined') {
                   if (this.type==='album') {
-                    albums.push(bmmFormatterAlbum.resolve(this));
+                    albums.push(_album.resolve(this));
                   } else if (this.type==='track') {
-                    tracks.push(bmmFormatterTrack.resolve(this));
+                    tracks.push(_track.resolve(this));
                   }
                 }
 
@@ -169,7 +168,7 @@ angular.module('bmmApp')
               });
 
               $scope.$apply();
-              draggable.makeDraggable($scope);
+              _draggable.makeDraggable($scope);
 
             });
 

@@ -5,9 +5,10 @@ angular.module('bmmApp')
     $scope,
     $location,
     $routeParams,
-    bmmApi,
-    bmmFormatterTrack,
-    bmmPlay
+    _api,
+    _track,
+    _play,
+    _init
   ) {
 
     var language;
@@ -15,17 +16,17 @@ angular.module('bmmApp')
     if (typeof $routeParams.language!=='undefined') {
       language = $routeParams.language;
     } else {
-      language = init.mediaLanguage;
+      language = _init.contentLanguage;
     }
 
-    bmmApi.trackGet(
+    _api.trackGet(
       $routeParams.id,
       language
     ).done(function(track) {
 
-      var _track = bmmFormatterTrack.resolve(track);
+      var _track_ = _track.resolve(track);
       $scope.$apply(function() {
-        bmmPlay.setPlay([_track], 0);
+        _play.setPlay([_track_], 0);
         $location.path('/album/'+track.parent_id);
       });
 

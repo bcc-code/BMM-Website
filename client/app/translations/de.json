@@ -1,0 +1,138 @@
+{
+  "language":"Deutsch",
+  "general":{
+    "search":"Suchen ...",
+    "searchResultsFor":"Suchergebnisse für:",
+    "loading":"wird geladen...",
+    "waysOfTheLord":"Wege des Herrn",
+    "almondBlossom":"Mandelblüte",
+    "noTitle":"ohne Titel",
+    "settings":"Einstellungen",
+    "feedback":"Feedback",
+    "suport":"HIlfe",
+    "readMore":"Lies mehr"
+  },
+  "options":{
+    "addToPlaylist":"Zur Wiedergabenliste hinzufügen",
+    "download":"Download",
+    "downloadAudio":"Audio herunterladen",
+    "downloadVideo":"Video herunterladen",
+    "goToAlbum":"Zum Album",
+    "podcast":"Podcast",
+    "removeFilter":"Filter entfernen",
+    "changeLanguage":"Sprache",
+    "goBack":"zurück",
+    "addToFavorites":"Zu Favoriten hinzufügen",
+    "moreInfo":"Mehr Info",
+    "choosePlaylist":"Wähle die Wiedergabeliste",
+    "setupPodcast":"Um den Podcast zu abonnieren, kopiere den unten stehenden Link und füge ihn in Deine Podcast-Software ein.",
+    "chooseLanguage":"Sprache wählen",
+    "includeLatest":"Die Neusten enthalten",
+    "websiteLanguage":"Sprache",
+    "preferredContentLanguage":"Bevorzugte Sprache",
+    "tracks":"Titel",
+    "filterByLanguage":"Nach Sprache filtern",
+    "copyUrl":"URL kopieren",
+    "copyLink":"Link kopieren",
+    "delete":"Löschen\n",
+    "remove":"Entfernen",
+    "playPlaylist":"Playlist wiedergeben",
+    "share":"Teilen"
+  },
+  "menu":{
+    "main":{
+      "music":"Musik",
+      "speeches":"Reden",
+      "video":"Videos",
+      "archive":"Archiv",
+      "audiobooks":"Hörbücher"
+    },
+    "secondary":{
+      "playlists":"Wiedergabelisten",
+      "latestTracks":"Neue Titel",
+      "lastPlayed":"Zuletzt gespielt",
+      "mostPlayed":"Am häufigsten gespielt",
+      "favorites":"Favoriten",
+      "current":"Aktuell",
+      "newPlaylist":"Neue Wiedergabeliste",
+      "nameOnPlaylist":"Name der Wiedergabeliste"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Neueste Reden",
+      "latestVideos":"Neueste Videos",
+      "latestMusic":"Neueste Musik",
+      "latestAlbums":"Neueste Alben"
+    },
+    "music":{
+      "latestMusic":"Neueste Musik",
+      "artists":"Interpreten",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barnas MP3-Kilden",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Neueste Reden",
+      "recommended":"Empfohlen"
+    },
+    "videos":{
+      "latestVideos":"Neueste Videos"
+    },
+    "archive":{
+      "archive":"Archiv"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Neueste Hörbücher"
+    },
+    "search":{
+      "searchResults":"Suchergebnisse",
+      "content":"Inhalt",
+      "bibleVerse":"Bibelvers",
+      "album":"Album",
+      "artist":"Künstler",
+      "lyricist":"Verfasser",
+      "composer":"Komponist",
+      "contributor":"Mitwirkender",
+      "interprets":"Interpreten"
+    }
+  },
+  "track":{
+    "duration":"Dauer",
+    "details":"Details",
+    "unknown":"Unbekannt",
+    "dragMeToPlaylist":"Zieh mich in deine Playlist",
+    "exegesis":"Auslegung",
+    "recordedDate":"Aufnahmedatum",
+    "artist":"Interpret",
+    "lyricist":"Verfasser",
+    "composer":"Komponist",
+    "album":"Album",
+    "bibleVerse":"Bibelvers"
+  },
+  "album":{
+    "tracks":"Titel",
+    "childAlbums":"Kinder  Alben",
+    "relatedAlbums":"Ähnliche Alben"
+  },
+  "playlist":{
+    "content":"Inhalt",
+    "tracks":"Titel",
+    "albums":"Alben",
+    "totalDuration":"Gesamtdauer",
+    "duration":"Dauer",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Zu iTunes hinzufügen",
+    "copyPodcastLink":"Podcast-Link kopieren",
+    "language":"Sprache",
+    "allLanguages":"Alle Sprachen",
+    "feedSize":"Größe des Podcast",
+    "confirmPlaylistDeletion":"Bist Du sicher, dass Du diese Wiedergabeliste löschen möchtest?",
+    "latestTracks":"Neuste Titel",
+    "instrumental":"Instrumental"
+  },
+  "copyright":"Copyright",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Worldwide Copyright Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norway. All speeches, songs, music and movies at bmm.brunstadworld.org is only for internal and private usage for those who consider themselves as a part of Den Kristelige Menighet, hereinafter called ”DKM” and \/ or Brunstad Christian Church, N-3168 Stokke, Norway, hereinafter called ”BCC”, worldwide. Forwarding, copying or any other form for distribution than own usage, private usage is not permitted, no matter in what format or form this happens. If there are any questions surrounding the use of the content on bmm.brunstad.org or something that is published by Stiftelsen Skjulte Skatters Forlag, hereinafter called 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, hereinafter called 'BMM' or those international subsidiaries, departments, branches, associations and \/ or foundations, it must be written contact with BMM or SSSF. All other usage than personal purposes for those who consider themselves as a part of DKM \/ BCC worldwide, is not permitted without written permission from SSSF \/ BMM. SSSF or SSSF's respective subsidiaries, departments, branches, associations and \/ or foundations has copyright for all content submitted to and all work performed for SSSF \/ BMM or their international subsidiaries, departments, branches, organizations and \/ or foundations, regardless of the place of publication or language. This includes speeches, songs and performances by the BCC, or in one of DKM's local churches or conference locations worldwide. All moral rights is revoked. SSSF or SSSF's respective subsidiaries, divisions, affiliates, associations and \/ or foundations holds, the international copyright to the listed and \/ or material received, regardless of the release medium or whether the material is published or not. You must otherwise make yourself familiar with and follow the guidelines and the information sent in a letter dated August 2004 from Sigurd J. Bratlie and Carl Hahne."
+}

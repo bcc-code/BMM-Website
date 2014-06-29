@@ -3,19 +3,20 @@
 angular.module('bmmApp')
   .controller('SpeechesCtrl', function (
     $scope,
-    $timeout,
     $window,
-    bmmApi,
-    bmmFormatterTrack,
-    bmmFormatterAlbum,
-    init,
-    draggable
+    _api,
+    _track,
+    _album,
+    _init,
+    _draggable
   ) {
 
     $(window).off('scrollBottom');
 
+    $scope.load = true;
+
     // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function(event) {
+    $scope.$on('$viewContentLoaded', function() {
       $window.ga('send', 'pageview', {
         'page': '/speeches',
         'title': 'Speeches'
@@ -28,32 +29,37 @@ angular.module('bmmApp')
 
       if (!loading&&!end) {
 
-        $('[ng-view]').append('<div class="bmm-loading">'+init.translation.general.loading+'</div>');
+        //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
 
         loading = true;
+        $scope.$apply(function() {
+          $scope.load = true;
+        });
 
         //LATEST SPEECH ALBUMS
-        bmmApi.albumLatest({
+        _api.albumLatest({
           from: albumFrom,
           size: loadAmount,
           'content-type': ['speech'],
           'media-type': ['audio']
-        }, init.mediaLanguage).done(function(data) {
+        }, _init.contentLanguage).done(function(data) {
 
           var cnt=0;
 
           $.each(data, function() {
 
-            $scope.latestAlbums.push(bmmFormatterAlbum.resolve(this));
+            $scope.latestAlbums.push(_album.resolve(this));
             albumFrom++;
             cnt++;
 
           });
 
-          $scope.$apply();
+          $scope.$apply(function() {
+            $scope.load = false;
+          });
 
           loading = false;
-          $('.bmm-loading').remove();
+          //$('.bmm-loading').remove();
           if (cnt<loadAmount) { end = true; }
 
         });
@@ -65,7 +71,7 @@ angular.module('bmmApp')
     //AUTOCOMPLETION
     $scope.$watch('contributor', function(name) {
       if (name!==''&&typeof name!=='undefined') {
-        bmmApi.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors = data;
           });
@@ -76,22 +82,22 @@ angular.module('bmmApp')
     });
 
     //LATEST SPEECHS
-    bmmApi.trackLatest({
+    _api.trackLatest({
       size: 15,
       'content-type': ['speech'],
       'media-type': ['audio']
-    }, init.mediaLanguage).done(function(data) {
+    }, _init.contentLanguage).done(function(data) {
 
       var left = [], right = [], largeOnly = [];
 
       $.each(data, function(index) {
 
         if (index<5) {
-          left.push(bmmFormatterTrack.resolve(this));
+          left.push(_track.resolve(this));
         } else if (index<10) {
-          right.push(bmmFormatterTrack.resolve(this));
+          right.push(_track.resolve(this));
         } else {
-          largeOnly.push(bmmFormatterTrack.resolve(this));
+          largeOnly.push(_track.resolve(this));
         }
 
       });
@@ -100,30 +106,31 @@ angular.module('bmmApp')
         $scope.latestSpeechLeft = left;
         $scope.latestSpeechRight = right;
         $scope.latestSpeechLargeOnly = largeOnly;
-        draggable.makeDraggable($scope);
+        _draggable.makeDraggable($scope);
       });
 
     });
 
     //LATEST SPEECH ALBUMS
-    bmmApi.albumLatest({
+    _api.albumLatest({
       from: albumFrom,
       size: loadAmount,
       'content-type': ['speech'],
       'media-type': ['audio']
-    }, init.mediaLanguage).done(function(data) {
+    }, _init.contentLanguage).done(function(data) {
 
       var albums=[];
 
       $.each(data, function() {
 
-        albums.push(bmmFormatterAlbum.resolve(this));
+        albums.push(_album.resolve(this));
         albumFrom++;
 
       });
 
       $scope.$apply(function() {
         $scope.latestAlbums = albums;
+        $scope.load = false;
       });
 
       loading = false;
@@ -134,7 +141,7 @@ angular.module('bmmApp')
     $scope.randomBrothers = [];
 
     //Kåre J. Smith
-    bmmApi.contributorIdGet(36491).done(function(data) {
+    _api.contributorIdGet(36491).done(function(data) {
 
       $scope.randomBrothers.push(data);
 
@@ -161,10 +168,10 @@ angular.module('bmmApp')
       //Catch 3 contributors
       randomBrothers = shuffle(randomBrothers);
       $.each(randomBrothers, function(index) {
-        bmmApi.contributorIdGet(this).done(function(data) {
+        _api.contributorIdGet(this).done(function(data) {
 
           if (data.cover!==null) {
-            data.cover = bmmApi.secureImage(data.cover);
+            data.cover = _api.secureImage(data.cover);
           }
 
           $scope.randomBrothers.push(data);

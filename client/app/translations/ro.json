@@ -1,0 +1,138 @@
+{
+  "language":"Română",
+  "general":{
+    "search":"Căutaţi...",
+    "searchResultsFor":"Rezultatele căutării pentru:",
+    "loading":"Se încarcă...",
+    "waysOfTheLord":"Căile Domnului",
+    "almondBlossom":"Almond Blossom",
+    "noTitle":"Fără titlu",
+    "settings":"Setări",
+    "feedback":"Feedback",
+    "suport":"Suport",
+    "readMore":"Citește mai mult"
+  },
+  "options":{
+    "addToPlaylist":"Adaugă în play-list",
+    "download":"Descarcă",
+    "downloadAudio":"Descarcă audio",
+    "downloadVideo":"Descarcă video",
+    "goToAlbum":"Mergi la album",
+    "podcast":"Podcast",
+    "removeFilter":"Eliminaţi filtrul",
+    "changeLanguage":"Schimbă limba",
+    "goBack":"Înapoi",
+    "addToFavorites":"Adaugă la favorite",
+    "moreInfo":"Mai multe informaţii",
+    "choosePlaylist":"Alege play-list",
+    "setupPodcast":"Pentru a seta podcast-ul trebuie să copiaţi link-ul de mai jos şi să-l introduceți în programul dumneavoastră preferat de podcast-uri.",
+    "chooseLanguage":"Alege limba",
+    "includeLatest":"Include cele mai recente",
+    "websiteLanguage":"Limba site-ului",
+    "preferredContentLanguage":"Conţinut de limbă preferat",
+    "tracks":"piese",
+    "filterByLanguage":"Filtru de limbă",
+    "copyUrl":"Copiază URL-ul",
+    "copyLink":"Copiază link",
+    "delete":"Șterge",
+    "remove":"Elimină",
+    "playPlaylist":"Play play-list",
+    "share":"Împărtășește"
+  },
+  "menu":{
+    "main":{
+      "music":"Muzică",
+      "speeches":"Vorbiri",
+      "video":"Videoclipuri",
+      "archive":"Arhivă",
+      "audiobooks":"Cărți audio"
+    },
+    "secondary":{
+      "playlists":"Play-list-uri",
+      "latestTracks":"Piese noi",
+      "lastPlayed":"Ultimele redate",
+      "mostPlayed":"Cele mai redate",
+      "favorites":"Favorite",
+      "current":"Se redă acum",
+      "newPlaylist":"Play-list nou",
+      "nameOnPlaylist":"Titlul play-list-ului"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Ultimele vorbiri",
+      "latestVideos":"Ultimele videoclipuri",
+      "latestMusic":"Ultimele melodii",
+      "latestAlbums":"Ultimele albume"
+    },
+    "music":{
+      "latestMusic":"Ultimele melodii",
+      "artists":"Artiști",
+      "mp3Source":"Sursă-MP3",
+      "childrensMp3Source":"Sursă-MP3 pentru copii",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Ultimele vorbiri",
+      "recommended":"Recomandate"
+    },
+    "videos":{
+      "latestVideos":"Ultimele videoclipuri"
+    },
+    "archive":{
+      "archive":"Arhivă"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Cele mai recente cărți audio"
+    },
+    "search":{
+      "searchResults":"Rezultatele căutării",
+      "content":"Conţinut",
+      "bibleVerse":"Verset biblic",
+      "album":"Album",
+      "artist":"Artist",
+      "lyricist":"Textier",
+      "composer":"Compozitor",
+      "contributor":"Contribuitor",
+      "interprets":"Interpreți"
+    }
+  },
+  "track":{
+    "duration":"Durată",
+    "details":"Detalii",
+    "unknown":"Anonim",
+    "dragMeToPlaylist":"Trageţi-mă în play-list",
+    "exegesis":"Tălmăcire",
+    "recordedDate":"Dată de înregistrare",
+    "artist":"Artist",
+    "lyricist":"Textier",
+    "composer":"Compozitor",
+    "album":"Album",
+    "bibleVerse":"Verset biblic"
+  },
+  "album":{
+    "tracks":"Piese",
+    "childAlbums":"Albume pentru copii",
+    "relatedAlbums":"Albume asemănătoare"
+  },
+  "playlist":{
+    "content":"Conţinut",
+    "tracks":"Piese",
+    "albums":"Album(e)",
+    "totalDuration":"Durata totală",
+    "duration":"Durată",
+    "nr":"Nr.",
+    "title":"Titlu",
+    "addToItunes":"Adaugă în iTunes",
+    "copyPodcastLink":"Copiază linkul podcast-ului",
+    "language":"Limbă",
+    "allLanguages":"Toate limbile",
+    "feedSize":"Dimensiune feed",
+    "confirmPlaylistDeletion":"Sunteţi sigur că doriţi să ştergeţi acest play-list?",
+    "latestTracks":"Ultimele piese",
+    "instrumental":"Instrumental"
+  },
+  "copyright":"Drepturi de autor",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Drepturi de autor la nivel mondial Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norvegia. Toate vorbirile, melodiile, muzica şi filmele de la bmm.brunstadworld.org sunt doar pentru utilizarea internă şi privată pentru cei care se consideră ca o parte din Den Kristelige Menighet (Biserica Creștină), denumit în continuare \"DKM\" şi \/ sau Brunstad Christian Church (Biserica Creștină Brunstad), N-3168 Stokke, Norvegia, denumit în continuare \"BCC\", în întreaga lume. Transmiterea, copierea sau orice altă formă de distribuţie decât propria utilizare - utilizare privată - nu este permisă, indiferent în ce format sau formă se întâmplă acest lucru. Dacă există orice fel de întrebare privind utilizarea conţinutului de pe bmm.brunstad.org sau ceva care este publicat de Stiftelsen Skjulte Skatters Forlag, denumit în continuare \"SSSF\", BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, denumit în continuare 'BMM' sau aceste filiale internaţionale, departamente, sucursale, asociaţii şi \/ sau fundaţii, aceasta trebuie să fie adresată lui BMM sau SSSF. Toate celelalte utilizări decât în scopuri personale pentru cei care se consideră ca o parte din DKM \/ BCC din întreaga lume, este interzisă fără permisiunea scrisă de la SSSF \/ BMM. SSSF sau filialele, departamentele, sucursalele, asociaţiile şi \/ sau fundaţiile corespunzătoare pentru SSSF au drepturi de autor pentru tot conţinutul publicat şi toate lucrările efectuate pentru SSSF \/ BMM sau filialele, departamentele, ramurile, organizaţiile şi \/ sau fundaţiile internaţionale, indiferent de locul de publicare sau limbă. Aceasta include vorbiri, cântece şi interpretări de către BCC, sau de una dintre bisericile locale sau locații de conferinţă din întreaga lume care aparțin de DKM. Se revocă toate drepturile morale. SSSF sau sucursalele, diviziunile, filialele, asociaţiile şi \/ sau fundaţiile corespunzătoare pentru SSSF deţin, drepturile de autor internaţionale pentru cele enumerate şi \/ sau materialele primite, indiferent de mediul de eliberare sau dacă materialul este publicat sau nu. În sens contrar trebuie să vă familiarizaţi şi să urmaţi orientările şi informaţiile trimise într-o scrisoare din August 2004 de către Sigurd J. Bratlie şi Carl Hahne."
+}

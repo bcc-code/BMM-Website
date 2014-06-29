@@ -1,0 +1,138 @@
+{
+  "language":"Dutch",
+  "general":{
+    "search":"Zoeken...",
+    "searchResultsFor":"Zoekresultaten voor:",
+    "loading":"Laden...",
+    "waysOfTheLord":"Wegen van de Heer",
+    "almondBlossom":"Amandelbloesem",
+    "noTitle":"Geen titel",
+    "settings":"Instellingen",
+    "feedback":"Feedback",
+    "suport":"Support",
+    "readMore":"Meer lezen"
+  },
+  "options":{
+    "addToPlaylist":"Toevoegen aan afspeellijst",
+    "download":"Download",
+    "downloadAudio":"Download geluid",
+    "downloadVideo":"Download video",
+    "goToAlbum":"Ga naar album",
+    "podcast":"Podcast",
+    "removeFilter":"Filter verwijderen",
+    "changeLanguage":"Taal veranderen",
+    "goBack":"Ga terug",
+    "addToFavorites":"Toevoegen aan favorieten",
+    "moreInfo":"Meer informatie",
+    "choosePlaylist":"Kies afspeellijst",
+    "setupPodcast":"Om de podcast in te stellen moet je de link hieronder kopiëren en daarna plakken in de door jou gekozen software.",
+    "chooseLanguage":"Kies een taal",
+    "includeLatest":"Laatste toevoegen",
+    "websiteLanguage":"Website taal",
+    "preferredContentLanguage":"Voorkeur content taal",
+    "tracks":"Nummers",
+    "filterByLanguage":"Filteren op taal",
+    "copyUrl":"Kopieër URL",
+    "copyLink":"Link kopiëren",
+    "delete":"Verwijderen",
+    "remove":"Verwijderen",
+    "playPlaylist":"Speel Afspeellijst",
+    "share":"Delen"
+  },
+  "menu":{
+    "main":{
+      "music":"Muziek",
+      "speeches":"Toespraken",
+      "video":"Video's",
+      "archive":"Archief",
+      "audiobooks":"Audioboeken"
+    },
+    "secondary":{
+      "playlists":"Afspeellijsten",
+      "latestTracks":"Nieuwe nummers",
+      "lastPlayed":"Laatst afgespeeld",
+      "mostPlayed":"Meest afgespeeld",
+      "favorites":"Favorieten",
+      "current":"Huidige",
+      "newPlaylist":"Nieuwe afspeellijst",
+      "nameOnPlaylist":"Afspeellijst titel"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Nieuwste toespraken",
+      "latestVideos":"Nieuwste video's",
+      "latestMusic":"Nieuwste muziek",
+      "latestAlbums":"Nieuwste albums"
+    },
+    "music":{
+      "latestMusic":"Nieuwste muziek",
+      "artists":"Artiesten",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barnas MP3-favoritter",
+      "instrumental":"Instrumentaal"
+    },
+    "speeches":{
+      "latestSpeeches":"Nieuwste toespraken",
+      "recommended":"Aanbevolen"
+    },
+    "videos":{
+      "latestVideos":"Nieuwste video's"
+    },
+    "archive":{
+      "archive":"Archief"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Nieuwste audioboeken"
+    },
+    "search":{
+      "searchResults":"Zoekresultaten",
+      "content":"Inhoud",
+      "bibleVerse":"Bijbel vers",
+      "album":"Album",
+      "artist":"Artiest",
+      "lyricist":"Schrijver",
+      "composer":"Componist",
+      "contributor":"Bijdrager",
+      "interprets":"Interpretaties"
+    }
+  },
+  "track":{
+    "duration":"Afspeelduur",
+    "details":"Details",
+    "unknown":"Onbekend",
+    "dragMeToPlaylist":"Sleep mij naar de afspeellijst",
+    "exegesis":"Exegese",
+    "recordedDate":"Datum opgenomen",
+    "artist":"Artiest",
+    "lyricist":"Tekstschrijver",
+    "composer":"Componist",
+    "album":"Album",
+    "bibleVerse":"Bijbel vers"
+  },
+  "album":{
+    "tracks":"Nummer(s)",
+    "childAlbums":"Albums voor kinderen",
+    "relatedAlbums":"Gerelateerde Albums"
+  },
+  "playlist":{
+    "content":"Inhoud",
+    "tracks":"Nummer(s)",
+    "albums":"Album(s)",
+    "totalDuration":"Totale afspeelduur",
+    "duration":"Afspeelduur",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Voeg toe aan iTunes",
+    "copyPodcastLink":"Podcast link kopiëren",
+    "language":"Taal",
+    "allLanguages":"Alle talen",
+    "feedSize":"Feed lengte",
+    "confirmPlaylistDeletion":"Weet je zeker dat je deze afspeellijst wilt verwijderen?",
+    "latestTracks":"Laatste nummers",
+    "instrumental":"Instrumentaal"
+  },
+  "copyright":"Copyright",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Wereldwijd Copyright Stichting Skjulte Skatters Forlag, N-3168 Melsomvik, Noorwegen. Alle toespraken, liederen, muziek en films op bmm.brunstadworld.org is alleen voor intern en particulier gebruik voor degenen die zichzelf beschouwen als een deel van Den Kristelige Menighet, hierna te noemen \"DKM\" en \/ of Brunstad Christian Church, N-3168 Stokke, Noorwegen, hierna genoemd \"BCC\", wereldwijd. Doorsturen, kopiëren of enige andere vorm voor distributie dan eigen gebruik, prive gebruik is niet toegestaan, ongeacht in welke indeling of vorm dit gebeurt. Als er vragen zijn rond het gebruik van de inhoud op bmm.brunstad.org of iets anders dat wordt uitgegeven door Stichting Skjulte Skatters Forlag, hierna genaamd 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, hierna te noemen 'BMM' of die internationale dochterondernemingen, afdelingen, filialen, verenigingen en \/ of stichtingen, moet er contact met BMM of SSSF worden gelegt. Alle het ander gebruik dan voor persoonlijke doeleinden voor degenen die zichzelf als een onderdeel van DKM beschouwen \/ BCC wereldwijd, is niet toegestaan zonder voorafgaande schriftelijke toestemming van SSSF \/ BMM. SSSF of SSSFs respectieve dochterondernemingen, afdelingen, filialen, verenigingen en \/ of stichtingen is copyright voor alle inhoud naar verzonden en alle werkzaamheden uitgevoerd voor SSSF \/ BMM of hun internationale dochterondernemingen, afdelingen, filialen, organisaties en \/ of stichtingen, ongeacht de plaats van publicatie of taal. Dit omvat toespraken, nummers en optredens door de BCC, of in één van de lokale kerken DKMs of conferentie locaties wereldwijd. Alle rechten wordt voorbehouden. SSSF of SSSFs respectieve dochterondernemingen, divisies, filialen, verenigingen en \/ of stichtingen houdt, de internationale auteursrechten op het materiaal, ongeacht het medium release of of het materiaal al dan niet gepubliceerd is. Ook moet je jezelf vertrouwd maken met de geldende richtlijnen en de informatie die wordt verzonden in de brief van augustus 2004 van Sigurd J. Bratlie en Carl Hahne."
+}

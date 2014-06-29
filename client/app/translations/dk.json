@@ -1,0 +1,138 @@
+{
+  "language":"Dansk",
+  "general":{
+    "search":"Søg...",
+    "searchResultsFor":"Søgeresultater for:",
+    "loading":"Indlæser...",
+    "waysOfTheLord":"Herrens veje",
+    "almondBlossom":"Mandelblomsten",
+    "noTitle":"Ingen titel",
+    "settings":"Indstillinger",
+    "feedback":"Feedback",
+    "suport":"Hjælp",
+    "readMore":"Læs mere"
+  },
+  "options":{
+    "addToPlaylist":"Tilføj til spilleliste",
+    "download":"Download",
+    "downloadAudio":"Download lyd",
+    "downloadVideo":"Download video",
+    "goToAlbum":"Gå til album",
+    "podcast":"Podcast",
+    "removeFilter":"Fjern filter",
+    "changeLanguage":"Ændre sprog",
+    "goBack":"Tilbage",
+    "addToFavorites":"Føj til favoritter",
+    "moreInfo":"Mere info",
+    "choosePlaylist":"Vælg spilleliste",
+    "setupPodcast":"Kopier nedenstående link og sæt det ind i dit foretrukne podcast-program for at opsætte podcast.",
+    "chooseLanguage":"Vælg sprog",
+    "includeLatest":"Inkludér de seneste",
+    "websiteLanguage":"Hjemmesidesprog",
+    "preferredContentLanguage":"Foretrukne indholdsprog",
+    "tracks":"sange og taler",
+    "filterByLanguage":"Filtrér efter sprog",
+    "copyUrl":"Kopier URL",
+    "copyLink":"Kopier link",
+    "delete":"Slet",
+    "remove":"Slet",
+    "playPlaylist":"Afspil spillelisten",
+    "share":"Del"
+  },
+  "menu":{
+    "main":{
+      "music":"Musik",
+      "speeches":"Beskeder",
+      "video":"Videoer",
+      "archive":"Arkiv",
+      "audiobooks":"Lydbøger"
+    },
+    "secondary":{
+      "playlists":"Spillelister",
+      "latestTracks":"Nye sange",
+      "lastPlayed":"Sidst afspillet",
+      "mostPlayed":"Mest afspillet",
+      "favorites":"Favoritter",
+      "current":"Nuværende",
+      "newPlaylist":"Ny spilleliste",
+      "nameOnPlaylist":"Navn på spilleliste"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Nyeste beskeder",
+      "latestVideos":"Nyeste videoer",
+      "latestMusic":"Nyeste musik",
+      "latestAlbums":"Nyeste albums"
+    },
+    "music":{
+      "latestMusic":"Nyeste musik\n",
+      "artists":"Artister",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Børnenes MP3-Kilde",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Nyeste Beskeder",
+      "recommended":"Anbefalede"
+    },
+    "videos":{
+      "latestVideos":"Nyeste videoer"
+    },
+    "archive":{
+      "archive":"Arkiv"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Nyeste lydbøger"
+    },
+    "search":{
+      "searchResults":"Søgeresultater",
+      "content":"Indhold",
+      "bibleVerse":"Bibelvers",
+      "album":"Album",
+      "artist":"Artist",
+      "lyricist":"Forfatter",
+      "composer":"Komponist",
+      "contributor":"Medvirkende",
+      "interprets":"Oversættelser"
+    }
+  },
+  "track":{
+    "duration":"Længde",
+    "details":"Detaljer",
+    "unknown":"Ukendt",
+    "dragMeToPlaylist":"Træk til spilleliste",
+    "exegesis":"Tydning",
+    "recordedDate":"Registrerede dato",
+    "artist":"Artist",
+    "lyricist":"Forfatter",
+    "composer":"Komponist",
+    "album":"Album",
+    "bibleVerse":"Bibelvers"
+  },
+  "album":{
+    "tracks":"Spor",
+    "childAlbums":"Børnealbums",
+    "relatedAlbums":"Lignende albums"
+  },
+  "playlist":{
+    "content":"Indhold",
+    "tracks":"Spor",
+    "albums":"Album(s)",
+    "totalDuration":"Fuld længde",
+    "duration":"Længde",
+    "nr":"Nr.",
+    "title":"Titel",
+    "addToItunes":"Tilføj til iTunes",
+    "copyPodcastLink":"Kopier podcast-link",
+    "language":"Sprog",
+    "allLanguages":"Alle sprog",
+    "feedSize":"Feed størrelse",
+    "confirmPlaylistDeletion":"Er du sikker på at du vil slette denne spilleliste?",
+    "latestTracks":"Seneste sange og taler",
+    "instrumental":"Instrumental"
+  },
+  "copyright":"Rettigheder",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Worldwide Copyright Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norge. Alle taler, sange, musik og film på bmm.brunstadworld.org er kun for intern og privat brug, for dem der betragter sig selv som en del af Den Kristelige Menighet, benævnt \"DKM\" og \/ eller Brunstad Christian Church, N-3168 Stokke, Norge, herefter benævnt \"BCC\", på verdensplan. Videresendelse, kopiering eller enhver anden form for distribution end egen brug er ikke tilladt, uanset i hvilket format eller form dette sker. Hvis der er spørgsmål omkring brugen af indholdet på bmm.brunstad.org, eller andet der er udgivet af Stiftelsen Skjulte Skatters Forlag, benævnt 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, herefter benævnt \"BMM\" eller de internationale datterselskaber, afdelinger, sammenslutninger og \/ eller stiftelser, skal der være skriftlig kontakt med BMM eller SSSF. Alt andet brug end personlige formål, for dem der betragter sig selv som en del af DKM \/ BCC på verdensplan, er ikke tilladt uden skriftlig tilladelse fra SSSF \/ BMM. SSSF eller SSSFs respektive datterselskaber, afdelinger, sammenslutninger og \/ eller stiftelser har copyright til alt indhold indsendt til og alt arbejde udført for SSSF \/ BMM eller deres internationale datterselskaber, afdelinger,  organisationer og \/ eller stiftelser, uanset publikationen sted eller sprog. Dette omfatter taler, sange og forestillinger af BCC eller i en af DKMs lokale kirker eller konference over hele verden. Alle moralske rettigheder er tilbagekaldt. SSSF eller SSSFs respektive datterselskaber, divisioner, datterselskaber, foreninger og \/ eller stiftelser forbeholder sig international ophavsret til det modtagede materiale, uanset publiceringsmedie eller om materialet er offentliggjort eller ikke. Ellers skal du gøre dig bekendt med og følge retningslinjerne og de oplysninger, der sendes i et brev dateret August 2004 fra Sigurd J. Bratlie og Carl Hahne."
+}
