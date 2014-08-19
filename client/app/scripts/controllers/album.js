@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('AlbumCtrl', function (
     $scope,
     $routeParams,
+    $filter,
     $location,
     $window,
     _api,
@@ -27,16 +28,15 @@ angular.module('bmmApp')
     $scope.load = true;
     $scope.tracks = 0;
     $scope.playlist = [];
-    $scope.duration = 0;
     $scope.playlists = [];
+    $scope.duration = 0;
     $scope.mainAlbum = [];
     $scope.zip = {};
     $scope.zip.url = _api.secureDownload(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true);
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};
-    $scope.podcast.link = 'https://'+_init.user.username+':'+
-      _init.user.token+'@'+
+    $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
       _api.getserverUrli().replace('https://','')+
       'podcast/album/'+$routeParams.id+'/track/?';
 
@@ -176,6 +176,10 @@ angular.module('bmmApp')
               });
 
               if (ct===0) {
+                $scope.$apply(function() {
+                  $scope.playlist = $filter('orderBy')($scope.playlist, 'raw.published_at');
+                  $scope.playlist.reverse();
+                });
                 $('.bmm-playlist').trigger('dragdrop');
                 findPlayingTrack();
                 $scope.load = false;
@@ -188,6 +192,10 @@ angular.module('bmmApp')
         }
 
         if (ct===0) {
+          $scope.$apply(function() {
+            $scope.playlist = $filter('orderBy')($scope.playlist, 'raw.published_at');
+            $scope.playlist.reverse();
+          });
           $('.bmm-playlist').trigger('dragdrop');
           findPlayingTrack();
           $scope.load = false;
