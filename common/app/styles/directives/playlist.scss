@@ -1,5 +1,5 @@
 //Playlist
-.bmm-playlist {
+[playlist] {
   width: 100%;
   margin-top: 1.5em;
   .ui-sortable-helper {
@@ -155,37 +155,37 @@
 
 }
 
-.bmm-playlist table {
+[playlist] table {
   width: 100%;
 }
 
-.bmm-playlist table td>* {
+[playlist] table td>* {
   float: left;
 }
 
-.bmm-playlist table tbody td:last-child .bmm-track-download {
+[playlist] table tbody td:last-child .bmm-track-download {
   margin: .3em .2em;
 }
 
-.bmm-playlist table thead {
+[playlist] table thead {
   color: $colorPlaceholder;
 }
 
-.bmm-playlist table thead th {
+[playlist] table thead th {
   font-weight: bold;
   padding: .5em 0 .5em .5em;
 }
 
-.bmm-playlist table thead th:first-child {
+[playlist] table thead th:first-child {
   padding: 0;
 }
 
-.bmm-playlist table tbody td {
+[playlist] table tbody td {
   padding: 0 0 0 .5em;
   min-height: 3.8em;
   background-position-x: center;
 }
-.bmm-playlist table tbody td:first-child {
+[playlist] table tbody td:first-child {
   position: relative;
   min-width: 2em;
   padding: 0;
@@ -207,10 +207,10 @@
     height: 2em;
   }
 }
-.bmm-playlist table tbody td:second-child {
+[playlist] table tbody td:second-child {
   padding: 0;
 }
-.bmm-playlist table tbody td.sort:hover {
+[playlist] table tbody td.sort:hover {
   .sort_handle {
     display: inline-block;
   }
@@ -218,26 +218,26 @@
     display: none;
   }
 }
-.bmm-playlist table tbody td:last-child {
+[playlist] table tbody td:last-child {
   float: right;
 }
 
-.bmm-playlist table tbody td.sort_handle {
+[playlist] table tbody td.sort_handle {
   width: 100%;
   height: 100%;
 }
 
-.bmm-playlist table tbody tr:hover {
+[playlist] table tbody tr:hover {
   background-color: $colorHover;
   cursor: pointer;
 }
 
-.bmm-playlist table thead tr {
+[playlist] table thead tr {
   border-bottom: .1em solid $colorBorderLight;
   border-top: .1em solid $colorBorderLight;
 }
 
-.bmm-playlist table tbody tr {
+[playlist] table tbody tr {
   border-bottom: .1em solid $colorBorderLight;
 }
 
