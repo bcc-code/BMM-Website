@@ -35,7 +35,7 @@ angular.module('bmmLibApp')
   //Doesnt need to be secured
   factory.secureDownload = function(download, force) {
     if (typeof force!=='undefined'&&force) {
-      return factory.secureFile(download);
+      return download;//factory.secureFile(download);
     } else {
       return download;
     }
@@ -52,7 +52,7 @@ angular.module('bmmLibApp')
     if (credentialsSuported==='unresolved') {
       var el = document.createElement('img');
       try {
-        el.src = factory.getserverUrli().replace('://','://'+factory.getCredentials()+'@');
+        el.src = factory.getserverUrli().replace('://','://'+encodeURIComponent(factory.getCredentials())+'@');
         if (el.src) {
           credentialsSuported = true;
           //Logout session (cookies not needed)
@@ -69,7 +69,7 @@ angular.module('bmmLibApp')
     }
 
     if (credentialsSuported) {
-      return file.replace('://','://'+factory.getCredentials()+'@');
+      return file.replace('://','://'+encodeURIComponent(factory.getCredentials())+'@');
     } else {
       return file;
     }
@@ -398,9 +398,6 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'login/authentication',
       data: JSON.stringify(options),
       contentType: 'application/json',
@@ -556,6 +553,7 @@ angular.module('bmmLibApp')
      *    media-type                Array(String)   audio|video
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      *    tags                      Array(String)
+     *    test credentials: steffan:f6f6f772748de54501aae49edcbd489a
      */
 
     return $.ajax({
@@ -829,7 +827,7 @@ angular.module('bmmLibApp')
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      url: serverUrl+'user/'+username,
+      url: serverUrl+'user/'+encodeURIComponent(username),
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -851,7 +849,7 @@ angular.module('bmmLibApp')
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      url: serverUrl+'user/'+username,
+      url: serverUrl+'user/'+encodeURIComponent(username),
       data: JSON.stringify(options),
       contentType: 'application/json',
       dataType: 'json',
@@ -873,7 +871,7 @@ angular.module('bmmLibApp')
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      url: serverUrl+'user/'+username,
+      url: serverUrl+'user/'+encodeURIComponent(username),
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -1026,7 +1024,7 @@ angular.module('bmmLibApp')
 
   };
 
-  /** Get a list of contributors **/
+  /** Get a list of contributors @todo - Why isnt this used anywhere? **/
   factory.contributorGet = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
