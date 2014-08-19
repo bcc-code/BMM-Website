@@ -1,4 +1,3 @@
-
 WELCOME AS DEVELOPER FOR THE BMM 2.0 PROJECT
 ============================================
 
@@ -10,7 +9,7 @@ The website consist of 3 separate projects
 
     * client - The page available for users
     * admin  - The page available for administrators
-    * common - The common functions/stylesheet used in client and admin
+    * common - The common functions and stylesheet used in client and admin
 
 
 Basic techniques used for the project
