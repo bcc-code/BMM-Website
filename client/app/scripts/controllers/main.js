@@ -22,19 +22,7 @@ angular.module('bmmApp')
       $scope.init = _init;
       $scope.now = function() { return new Date(); };
 
-      $scope.pushMessages = [{
-          title: 'Velkommen til ny BMM side',
-          message: 'BMM har nå fått en ny look, med flere funksjoner som gjør det enklere '+
-                   'å finne frem til taler, sanger og videoer som er tilgjengelig på BMM. '+
-                   'Siden støtter følgende nettlesere: Opera, Chrome, Safari, Firefox og IE10+. '+
-                   'Dine spillelister er nå synkronisert med BMM appen som du finner på '+
-                   'Apple Store og Google Play. '+
-                   'Sanger fra Herrens Veier kan du finne ved å søke slik: "hv 250". '+
-                   'Om feil oppdages kan det rapporteres ved support knappen nede i venstre meny. '+
-                   'Vi håper nettsiden faller i god smak og takker for alle tilbakemeldinger som '+
-                   'hjelper oss å gjøre siden bedre. Hilsen BMM Teamet'
-        }
-      ];
+      $scope.pushMessages = [];
 
       $scope.removePushMessage = function(index) {
         $scope.pushMessages.splice(index,1);
