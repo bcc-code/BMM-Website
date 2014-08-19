@@ -5,6 +5,8 @@ angular.module('bmmLibApp')
     return {
       link: function postLink(scope, element) {
 
+        //@todo - Not good coded, should be changed with an external slider library or recoded
+
         element.addClass('bmm-slider-album');
         element.append('<div class="bmm-slider-album-leftLap"></div>');
         element.append('<div class="bmm-slider-album-rightLap"></div>');
