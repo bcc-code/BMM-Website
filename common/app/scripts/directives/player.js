@@ -6,6 +6,12 @@ angular.module('bmmLibApp')
     return {
       link: function postLink(scope, element) {
 
+        /**
+         * Mainly created for custom styling to divs initialized by jPlayer and jQuery
+         * If divs are included in clean HTML, jQuery and jPlayer will remove it.
+         * Here custom styling is appended after initialization.
+         */
+
         _player.initialize('.video-target');
         scope.player = _player;
         scope.playlist = _playlist;
@@ -116,7 +122,7 @@ angular.module('bmmLibApp')
           element.find('.fullscreen-toggle').addClass('unvisible');
           element.find('.fullscreen-controllers').addClass('unvisible');
           $('body').css('cursor', 'none');
-        },4000);
+        }, 4000);
 
         $(window).on('mousemove click', function() {
           element.find('.fullscreen-toggle').removeClass('unvisible');
@@ -127,7 +133,7 @@ angular.module('bmmLibApp')
             element.find('.fullscreen-toggle').addClass('unvisible');
             element.find('.fullscreen-controllers').addClass('unvisible');
             $('body').css('cursor', 'none');
-          },4000);
+          }, 4000);
         });
         element.find('.fullscreen-toggle').click(function() {
           _player.setFullscreen();
