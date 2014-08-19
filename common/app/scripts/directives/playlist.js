@@ -6,9 +6,7 @@ angular.module('bmmLibApp')
       link: function postLink(scope, element) {
 
         scope.sortableOptions = {
-          update: function() {
-            scope.$apply('playlist');
-          },
+          update: makeDraggable,
           handle: '.sort_handle',
           axis: 'y',
           helper: function(e, ui) {
@@ -22,18 +20,12 @@ angular.module('bmmLibApp')
               $(this).width('');
             });
           }
-
         };
 
-        element.addClass('bmm-playlist');
-
-        $('.bmm-playlist').on('dragdrop', function() {
+        element.on('dragdrop', makeDraggable);
+        var makeDraggable = function() {
           _draggable.playlist(element, scope);
-        });
-
-        scope.$watch('playlist', function() {
-          _draggable.playlist(element, scope);
-        });
+        };
 
       }
     };
