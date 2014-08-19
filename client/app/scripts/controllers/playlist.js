@@ -239,8 +239,7 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_init.user.username+':'+
-                                _init.user.token+'@'+
+          $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
                                 _api.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=mp3-kilden&';
           $scope.showPodcast = true;
@@ -293,8 +292,7 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_init.user.username+':'+
-                                _init.user.token+'@'+
+          $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
                                 _api.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=child-favorites&';
           $scope.showPodcast = true;
@@ -347,8 +345,7 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_init.user.username+':'+
-                                _init.user.token+'@'+
+          $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
                                 _api.getserverUrli().replace('https://','')+
                                 'podcast/track/?tags[]=instrumental&';
           $scope.showPodcast = true;
@@ -399,8 +396,7 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_init.user.username+':'+
-                                _init.user.token+'@'+
+          $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
                                 _api.getserverUrli().replace('https://','')+
                                 'podcast/contributor/'+$routeParams.id+'/track/?';
           $scope.showPodcast = true;
