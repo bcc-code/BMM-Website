@@ -5,6 +5,8 @@ angular.module('bmmLibApp')
     return {
       link: function postLink(scope, element) {
 
+        //@todo - Works ok, but needs some fixes for ie++. Should be considered to switch with an external library
+
         element.addClass('bmm-slider-video');
         element.append('<div class="bmm-slider-video-prev"></div>');
         element.append('<div class="bmm-slider-video-next"></div>');
