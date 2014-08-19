@@ -5,7 +5,8 @@ angular.module('bmmApp')
       $scope,
       $filter,
       $timeout,
-      _api
+      _api,
+      _init
     ) {
 
     var unknownRelations = [], loaded = false;
@@ -218,7 +219,7 @@ angular.module('bmmApp')
 
           ii = 0;
           if (i!==0) { raw += ' | '; } //Defines a new book
-          raw += book;
+          raw += _init.bible.shortcodes[book];
           i++;
 
           //Each chapter
@@ -226,8 +227,6 @@ angular.module('bmmApp')
 
             if (ii!==0) {
               raw += ' &'; //Defines a new chapter
-            } else {
-
             }
 
             raw += ' '+chapter;
