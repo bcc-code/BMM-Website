@@ -6,7 +6,6 @@
   ⓒ 2013 AHN JAE-HA http://github.com/eu81273/angular.treeview
   License: MIT
 
-
   [TREE attribute]
   angular-treeview: the treeview directive
   tree-id : each tree's unique id.
@@ -25,6 +24,10 @@
     data-node-children="children" >
   </div>
 */
+
+/**
+ * @todo - This directive is now temporary. Archive should be redesigned
+ */
 
 'use strict';
 angular.module('bmmLibApp')
