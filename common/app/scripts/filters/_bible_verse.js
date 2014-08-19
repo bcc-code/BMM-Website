@@ -4,10 +4,14 @@ angular.module('bmmLibApp')
   .filter('_bibleVerse', ['_init', function (_init) {
     return function (input) {
 
+      //**
+      
+      // This filter works as expected
+
       var output=[];
       if (typeof input!=='undefined'&&input!=='') {
 
-        //Comparable removes unnesesary characters for better comparision
+        //Comparable removes unecessary characters for better comparision
         var comparableShortcodes={}, comparableBooks={};
 
         //Make the comparable shortcodes
