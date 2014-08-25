@@ -45,8 +45,10 @@ angular.module('bmmApp')
             $scope.pushMessages = model.pushMessages;
           }
           _player.videoFirst = model.videoFirst;
+
           $scope.init.contentLanguage = _init.contentLanguage = model.contentLanguage;
-          if (_init.translations[model.websiteLanguage]!=='undefined') {
+
+          if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
             $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
             $scope.init.translation = _init.translation = _init.translations[model.websiteLanguage];
           }
