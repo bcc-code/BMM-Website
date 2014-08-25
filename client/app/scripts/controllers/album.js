@@ -36,7 +36,7 @@ angular.module('bmmApp')
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};
-    $scope.podcast.link = 'https://'+encodeURIComponent(_api.getCredentials())+'@'+
+    $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
       _api.getserverUrli().replace('https://','')+
       'podcast/album/'+$routeParams.id+'/track/?';
 

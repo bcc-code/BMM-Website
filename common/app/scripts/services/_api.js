@@ -4,7 +4,7 @@ angular.module('bmmLibApp')
   .factory('_api', [ '$timeout', function ($timeout) {
   
   var factory = {},
-      credentials,
+      credentials = {},
       credentialsSuported = 'unresolved',
       imageCredentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
@@ -52,7 +52,7 @@ angular.module('bmmLibApp')
     if (credentialsSuported==='unresolved') {
       var el = document.createElement('img');
       try {
-        el.src = factory.getserverUrli().replace('://','://'+encodeURIComponent(factory.getCredentials())+'@');
+        el.src = factory.getserverUrli().replace('://','://'+factory.getCredentials(true)+'@');
         if (el.src) {
           credentialsSuported = true;
           //Logout session (cookies not needed)
@@ -69,19 +69,26 @@ angular.module('bmmLibApp')
     }
 
     if (credentialsSuported) {
-      return file.replace('://','://'+encodeURIComponent(factory.getCredentials())+'@');
+      return file.replace('://','://'+factory.getCredentials(true)+'@');
     } else {
       return file;
     }
 
   };
 
-  factory.setCredentials = function(username, password) {
-    credentials = username+':'+password;
+  factory.setCredentials = function(user, pass) {
+    credentials = {
+      username: user,
+      password: pass
+    };
   }
 
-  factory.getCredentials = function() {
-    return credentials;
+  factory.getCredentials = function(encoded) {
+    if (typeof encoded!=='undefined'&&encoded) {
+      return encodeURIComponent(credentials.username)+':'+encodeURIComponent(credentials.password);
+    } else {
+      return credentials.username+':'+credentials.password;
+    }
   }
 
   factory.getserverUrli = function() {
