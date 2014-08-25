@@ -75,34 +75,46 @@ angular.module('bmmApp')
           if (!loading&&!end) {
 
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
             $scope.$apply(function() {
               $scope.load = true;
             });
 
-            _api.search($routeParams.id, {
-              from: size,
-              size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            search($routeParams.id, size);
 
-              $('.bmm-loading').remove();
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
+            if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
+              search('hv '+$routeParams.id, size);
+              search('mb '+$routeParams.id, size);
+            }
 
           }
 
         });
 
-        _api.search($routeParams.id, {
-          size: loadAmount
-        }, _init.contentLanguage).done(function(data) {
+        var search = function(term, _from) {
+          if (typeof from === 'undefined') {
+            _from = 0;
+          }
+          _api.search(term, {
+            from: _from,
+            size: loadAmount
+          }, _init.contentLanguage).done(function(data) {
 
-          resolveTracks(data);
-          size+=loadAmount;
+            resolveTracks(data);
+            size+=loadAmount;
 
-        });
+          });
+        };
+
+        search($routeParams.id);
+        var isInt = function(n) {
+          n = parseInt(n);
+          return isFinite(n) && n%1===0;
+        };
+
+        if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
+          search('hv '+$routeParams.id);
+          search('mb '+$routeParams.id);
+        }
 
         break;
       case 'latest':
@@ -121,7 +133,6 @@ angular.module('bmmApp')
           if (!loading&&!end) {
 
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
             $scope.$apply(function() {
               $scope.load = true;
             });
@@ -131,7 +142,6 @@ angular.module('bmmApp')
               size: loadAmount
             }, _init.contentLanguage).done(function(data) {
 
-              $('.bmm-loading').remove();
               resolveTracks(data);
               size+=loadAmount;
 
@@ -207,7 +217,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
+
             $scope.$apply(function() {
               $scope.load = true;
             });
@@ -218,7 +228,6 @@ angular.module('bmmApp')
               size: loadAmount
             }, _init.contentLanguage).done(function(data) {
 
-              $('.bmm-loading').remove();
               resolveTracks(data);
               size+=loadAmount;
 
@@ -260,7 +269,6 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
             $scope.$apply(function() {
               $scope.load = true;
             });
@@ -271,7 +279,6 @@ angular.module('bmmApp')
               size: loadAmount
             }, _init.contentLanguage).done(function(data) {
 
-              $('.bmm-loading').remove();
               resolveTracks(data);
               size+=loadAmount;
 
@@ -313,7 +320,6 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
             $scope.$apply(function() {
               $scope.load = true;
             });
@@ -324,7 +330,6 @@ angular.module('bmmApp')
               size: loadAmount
             }, _init.contentLanguage).done(function(data) {
 
-              $('.bmm-loading').remove();
               resolveTracks(data);
               size+=loadAmount;
 
@@ -366,7 +371,6 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
             $scope.$apply(function() {
               $scope.load = true;
             });
@@ -376,7 +380,6 @@ angular.module('bmmApp')
               size: loadAmount
             }, _init.contentLanguage).done(function(data) {
 
-              $('.bmm-loading').remove();
               resolveTracks(data);
               size+=loadAmount;
 
@@ -451,7 +454,11 @@ angular.module('bmmApp')
         });
 
         findPlayingTrack();
-        if (cnt<loadAmount) { end = true; }
+        if (cnt<loadAmount) { end = true; } else {
+          //If multiple requests is sendt and one request isnt finished, then end is false
+          //A timeout here will make sure that 'end = false' is choosen if any is request isnt finished.
+          $timeout(function() { end = false; }, 500);
+        }
 
       });
 
