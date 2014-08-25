@@ -12,6 +12,8 @@ angular.module('bmmLibApp')
         cs: 'Čeština',
         de: 'Deutsch',
         en: 'English',
+        et: 'eesti',
+        el: 'ελληνικά',
         es: 'Español',
         fi: 'Suomi',
         fr: 'Français',
