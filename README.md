@@ -93,13 +93,19 @@ ____________________________________________
 DEBUG AND TEST RUN 'client' OR 'admin'
 --------------------------------------
 
-    1. Run your default browser with --disable-web-security
-        Ex. linux: google-chrome --disable-web-security
-    2. CD into client or admin folder (the folder you want to debug)
-    3. Run command: grunt serve
-        ... A new browser window should now open
-    4. Allow the unauthorized certificate to run with https
+**1. Run your default browser with --disable-web-security**
+    Chrome users can turn this on and off with an [extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
 
+**2. CD into client or admin folder (the folder you want to debug)**
+
+3. Run command
+```
+#!cmd
+grunt serve
+```
+... A new browser window should now open
+
+4. Allow the unauthorized certificate to run with https
 
 ____________________________________________
 
