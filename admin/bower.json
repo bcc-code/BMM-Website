@@ -2,6 +2,7 @@
   "name": "bmm",
   "version": "1.0.0",
   "dependencies": {
+    "angular-ui-bootstrap-bower": "*",
     "angular": "1.2.6",
     "jquery": "~1.10.2",
     "jqueryui": "~1.10.3",
@@ -12,6 +13,7 @@
     "angular-route": "1.2.6",
     "jplayer": "~2.6.0",
     "angular-touch": "~1.2.14",
+    "angular-ui-sortable": "0.12.8",
     "fastclick": "~1.0.1",
     "jquery.ui.touch-punch.dk": "~0.3.3",
     "angular-file-upload": "~0.5.6",
