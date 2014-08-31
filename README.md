@@ -67,23 +67,23 @@ gem install compass
 **8. CD into 'common' via terminal/CMD and run the following commands**
 ```
 #!cmd
-npm install
-bower install
+sudo npm update
+bower update
 grunt build --force
 ```
 
 **9. CD into 'admin' and run the following commands**
 ```
 #!cmd
-npm install
-bower install
+sudo npm update
+bower update
 ```
 
 **10. CD into 'client' and run the following commands**
 ```
 #!cmd
-npm install
-bower install
+sudo npm update
+bower update
 ```
 
 Setup should now be completed
