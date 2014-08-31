@@ -21,8 +21,7 @@ Basic techniques used for the project
 
 
 Before developing, you should specially get known to the yeoman workflow and angular framework.
-We apologize the lack of documentation, the code is temporary a bit hard to get into.
-Anyway, we are happy for all contributions, so feel free to help us with the project :D
+We are glad for all contributions, feel free to help us with the project
 ____________________________________________
 
 
@@ -34,35 +33,79 @@ NOTE:
 SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 
-    1. Install the following components
-        * yeoman with all its dependencies @see yeoman.io
-        * phantomJS
-    2. Get a copy of this repository (unless you already have one)
-    3. CD first into 'common' folder via terminal/CMD and run the following in order:
+**1. Install [NodeJS](http://nodejs.org/) and open Terminal / CMD**
 
-        npm install
-        bower install
-        grunt build
+**2. Install Yeoman**
+```
+#!cmd
+sudo npm install -g yo
+```
 
-    4. Now CD into admin and client, then run the following commands in both folders:
+**3. Install Bower**
+```
+#!cmd
+sudo npm install -g grunt-cli bower
+```
 
-        npm install
-        bower install
+**4. Install Yeoman generator**
+```
+#!cmd
+sudo npm install --global generator-webapp
+```
 
-Congrats, your setup is now complete ;)
+**5. Install [Ruby](https://www.ruby-lang.org/en/downloads/)**
+
+**6. Install Compass**
+```
+#!cmd
+gem update --system
+gem install compass
+```
+
+**7. Get a copy of this repository**
+
+**8. CD into 'common' via terminal/CMD and run the following commands**
+```
+#!cmd
+sudo npm update
+bower update
+grunt build --force
+```
+
+**9. CD into 'admin' and run the following commands**
+```
+#!cmd
+sudo npm update
+bower update
+```
+
+**10. CD into 'client' and run the following commands**
+```
+#!cmd
+sudo npm update
+bower update
+```
+
+Setup should now be completed
 ____________________________________________
 
 
 DEBUG AND TEST RUN 'client' OR 'admin'
 --------------------------------------
 
-    1. Run your default browser with --disable-web-security
-        Ex. linux: google-chrome --disable-web-security
-    2. CD into client or admin folder (the folder you want to debug)
-    3. Run command: grunt serve
-        ... A new browser window should now open
-    4. Allow the unauthorized certificate to run with https
+**1. Run your default browser with --disable-web-security**
+    Chrome users can turn this on and off with an [extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
 
+**2. CD into client or admin folder (the folder you want to debug)**
+
+3. Run command
+```
+#!cmd
+grunt serve
+```
+... A new browser window should now open
+
+4. Allow the unauthorized certificate to run with https
 
 ____________________________________________
 
