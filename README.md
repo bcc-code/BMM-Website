@@ -21,8 +21,7 @@ Basic techniques used for the project
 
 
 Before developing, you should specially get known to the yeoman workflow and angular framework.
-We apologize the lack of documentation, the code is temporary a bit hard to get into.
-Anyway, we are happy for all contributions, so feel free to help us with the project :D
+We are glad for all contributions, feel free to help us with the project
 ____________________________________________
 
 
