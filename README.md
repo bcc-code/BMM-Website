@@ -34,22 +34,39 @@ NOTE:
 SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 
-    1. Install the following components
-        * yeoman with all its dependencies @see yeoman.io
-        * phantomJS
-    2. Get a copy of this repository (unless you already have one)
-    3. CD first into 'common' folder via terminal/CMD and run the following in order:
+**1. Install [NodeJS](http://nodejs.org/) and open Terminal / CMD**
 
-        npm install
-        bower install
-        grunt build
+**2. Install Yeoman**
+npm install -g yo
 
-    4. Now CD into admin and client, then run the following commands in both folders:
+**3. Install Bower**
+sudo npm install -g grunt-cli bower
 
-        npm install
-        bower install
+**4. Install Yeoman generator**
+sudo npm install --global generator-webapp
 
-Congrats, your setup is now complete ;)
+**5. Install [Ruby](https://www.ruby-lang.org/en/downloads/)**
+
+**6. Install Compass**
+gem update --system
+gem install compass
+
+**7. Get a copy of this repository**
+
+**8. CD into 'common' via terminal/CMD and run the following commands**
+npm install
+bower install
+grunt build
+
+**9. CD into 'admin' and run the following commands**
+npm install
+bower install
+
+**10. CD into 'client' and run the following commands**
+npm install
+bower install
+
+Setup should now be completed
 ____________________________________________
 
 
