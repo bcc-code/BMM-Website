@@ -69,7 +69,7 @@ gem install compass
 #!cmd
 npm install
 bower install
-grunt build
+grunt build --force
 ```
 
 **9. CD into 'admin' and run the following commands**
