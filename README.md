@@ -38,7 +38,7 @@ SETUP DEVELOPER ENVIRONMENT
 **2. Install Yeoman**
 ```
 #!cmd
-npm install -g yo
+sudo npm install -g yo
 ```
 
 **3. Install Bower**
