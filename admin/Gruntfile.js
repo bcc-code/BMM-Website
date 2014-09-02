@@ -236,7 +236,8 @@ module.exports = function (grunt) {
       options: {
         plugins: [
           { removeUnknownsAndDefaults: false },
-          { removeUselessStrokeAndFill: false }
+          { removeUselessStrokeAndFill: false },
+          { convertPathData: false }
         ]
       },
       dist: {

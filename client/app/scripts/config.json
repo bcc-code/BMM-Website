@@ -9,7 +9,7 @@
   "developerPort": 9001,
   "protocol": "https",
   "localsPath": "translations/locals/",
-  "keepAlive": 36000,
+  "keepAlive": 5,
   "translationFolder": "translations/",
   "translationsAvailable": [
     "nb",

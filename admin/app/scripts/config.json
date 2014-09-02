@@ -11,7 +11,7 @@
   "localsPath": "translations/locals/",
   "biblePath": "translations/bible/",
   "titlesAlbum": "translations/titles/album.json",
-  "keepAlive": 36000,
+  "keepAlive": 5,
   "translationFolder": "translations/",
   "translationsAvailable": [
     "en",

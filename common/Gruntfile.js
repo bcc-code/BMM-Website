@@ -232,8 +232,41 @@ module.exports = function (grunt) {
     svgmin: {
       options: {
         plugins: [
+        //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
           { removeUnknownsAndDefaults: false },
-          { removeUselessStrokeAndFill: false }
+          { removeUselessStrokeAndFill: false },
+          { convertPathData: false }
+        //{ cleanupAttrs: false },
+        //{ cleanupEnableBackground: false },
+        //{ cleanupIDs: false },
+        //{ cleanupNumericValues: false },
+        //{ collapseGroups: false },
+        //{ convertColors: false },
+        //{ convertShapeToPath: false },
+        //{ convertStyleToAttrs: false },
+        //{ convertTransform: false },
+        //{ mergePaths: false },
+        //{ moveElemsAttrsToGroup: false },
+        //{ moveGroupAttrsToElems: false },
+        //{ removeComments: false },
+        //{ removeDoctype: false },
+        //{ removeEditorsNSData: false },
+        //{ removeEmptyAttrs: false },
+        //{ removeEmptyContainers: false },
+        //{ removeEmptyText: false },
+        //{ removeHiddenElems: false },
+        //{ removeMetadata: false },
+        //{ removeNonInheritableGroupAttrs: false },
+        //{ removeRasterImages: false },
+        //{ removeTitle: false },
+        //{ removeUnkownsAndDefaults: false },
+        //{ removeUnusedNS: false },
+        //{ removeUselessStrokeAndFill: false },
+        //{ removeViewBox: false },
+        //{ removeXMLProcInst: false },
+        //{ sortAttrs: false },
+        //{ transformsWithOnePath: false }
+
         ]
       },
       dist: {
@@ -264,7 +297,7 @@ module.exports = function (grunt) {
 
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: [{
           expand: true,
@@ -424,7 +457,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     //'copy:dist',
     'copy:generated',
     'cdnify',
