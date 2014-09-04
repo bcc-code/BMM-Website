@@ -1,23 +1,16 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <!-- stylesheet link (common for all widgets) -->
-      <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" />
-    <!-- end stylesheet link -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <base href="/">
     <title>bmm admin</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/jqueryui/themes/eggplant/jquery-ui.css" />
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css" />
     <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
     <!-- endbower -->
     <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
@@ -27,7 +20,9 @@
     <link rel="stylesheet" href="common/styles/bmm.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <base href="/admin">
+      <!-- stylesheet link (common for all widgets) -->
+      <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" />
+      <!-- end stylesheet link -->
   </head>
   <body ng-app="bmmApp">
 
@@ -80,6 +75,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/jquery.ui.touch-punch.dk/jquery.ui.touch-punch.dk.js"></script>
     <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>

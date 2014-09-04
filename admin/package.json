@@ -21,6 +21,7 @@
     "grunt-contrib-watch": "~0.5.2",
     "grunt-google-cdn": "~0.2.0",
     "grunt-newer": "~0.5.4",
+    "grunt-text-replace": "0.3.12",
 
     "ngmin": "git+https://github.com/werk85/ngmin.git",
     "astral-angular-annotate": "git+https://github.com/werk85/astral-angular-annotate.git",

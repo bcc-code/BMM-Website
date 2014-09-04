@@ -385,6 +385,17 @@ module.exports = function (grunt) {
       }
     },
 
+    replace: {
+      another_example: {
+        src: ['<%= yeoman.dist %>/index.html'],
+        overwrite: true,                 // overwrite matched source files
+        replacements: [{
+          from: '<base href="/">',
+          to: '<base href="/admin/">'
+        }]
+      }
+    },
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
@@ -478,6 +489,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
+    'replace',
     'htmlmin',
     'copy:vendor'
   ]);
