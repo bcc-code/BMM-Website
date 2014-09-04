@@ -22,7 +22,7 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider', function ($routeProvider) {
+  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 
     $routeProvider
       .when('/dashboard', {
@@ -82,5 +82,7 @@ angular.module('bmmApp', [
       .otherwise({
         redirectTo: '/dashboard'
       });
+
+    $locationProvider.html5Mode(true);
     
   }]);

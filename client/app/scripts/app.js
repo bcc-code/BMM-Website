@@ -21,7 +21,7 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider', function ($routeProvider) {
+  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 
     $routeProvider
       .when('/welcome', {
@@ -91,5 +91,7 @@ angular.module('bmmApp', [
       .otherwise({
         redirectTo: '/welcome'
       });
+
+    $locationProvider.html5Mode(true);
     
   }]);
