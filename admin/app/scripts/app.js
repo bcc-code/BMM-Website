@@ -12,8 +12,8 @@ angular.module('bmmApp', [
 ]).run(['$route', '$location', function($route, $location)  {
 
     //Removes unwanted urlchange done by topbar while developing
-    if ($location.url().indexOf('&topbarInitialized=true')>-1) {
-      $location.url($location.url().replace('&topbarInitialized=true',''));
+    if ($location.url().indexOf('#topbarInitialized=true')>-1) {
+      $location.url($location.url().replace('#topbarInitialized=true',''));
     }
 
     //Fastclick attempts to kill some touch delay for IPAD/IPHONE
