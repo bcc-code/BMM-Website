@@ -1,0 +1,37 @@
+<div class="wizard">
+    <ul class="navigator">
+
+        <!-- 5 Levels is needed for the wizard -->
+        <!-- @todo - Write into directive, looks a bit better -->
+        <li ng-repeat="step in steps">
+            <span ng-class="[content.active == step.name ? 'active': '', step.locked ? 'locked': '']"
+                  ng-click=" loadTemplate(step); ">{{step.name}}</span>
+            <ul><li ng-repeat="step in step.children">
+                    <span ng-class="[content.active == step.name ? 'active': '', step.locked ? 'locked': '']"
+                          ng-click=" loadTemplate(step); ">{{step.name}}</span>
+                    <ul><li ng-repeat="step in step.children">
+                            <span ng-class="[content.active == step.name ? 'active': '', step.locked ? 'locked': '']"
+                                  ng-click=" loadTemplate(step); ">{{step.name}}</span>
+                            <ul><li ng-repeat="step in step.children">
+                                    <span ng-class="[content.active == step.name ? 'active': '', step.locked ? 'locked': '']"
+                                          ng-click=" loadTemplate(step); ">{{step.name}}</span>
+                                    <ul><li ng-repeat="step in step.children">
+                                            <span ng-class="[content.active == step.name ? 'active': '', step.locked ? 'locked': '']"
+                                                  ng-click=" loadTemplate(step); ">{{step.name}}</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <div class="window">
+
+        <div ng-include="content.template"></div>
+
+    </div>
+</div>

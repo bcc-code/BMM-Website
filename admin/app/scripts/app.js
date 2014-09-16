@@ -79,6 +79,11 @@ angular.module('bmmApp', [
         controller: 'UsersCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/wizard', {
+        templateUrl: 'views/pages/wizard.html',
+        controller: 'WizardCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .otherwise({
         redirectTo: '/dashboard'
       });

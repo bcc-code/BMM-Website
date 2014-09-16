@@ -10,3 +10,61 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 body {
   padding: 0 !important;
 }
+
+/*
+  group, active, locked
+
+*/
+.wizard {
+  ul.navigator {
+    float: left;
+    margin: .5em;
+    padding: .5em;
+    background: #333;
+    color: white;
+
+    li ul li::before {
+      font-weight: bold;
+      color: #999;
+      content: '>';
+    }
+    li ul li ul li::before {
+      font-weight: bold;
+      color: #999;
+      content: '> >';
+    }
+    li {
+      margin-bottom: .1em;
+    }
+    li span {
+      border: 1px solid #bbb;
+      width:11em;
+      padding: .5em 1em;
+      cursor: pointer;
+      display: inline-block;
+    }
+    li span:hover {
+      background: #ddd;
+      color: #555;
+    }
+
+    li span.active {
+      background: #aaa;
+      color: #333;
+    }
+
+    li span.locked {
+      background: #777;
+      color: #555;
+      cursor: default;
+    }
+
+  }
+  .window {
+    float: right;
+    margin: .5em;
+    padding: .5em;
+    background: #333;
+    color: white;
+  }
+}
