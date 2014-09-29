@@ -2,3 +2,20 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 //@import 'sass-bootstrap/lib/bootstrap';
 @import url("https://fonts.googleapis.com/css?family=Lato");
+
+@media screen and (max-width: 935px) {
+
+  .menu li.facebook-icon,
+  .menu li.instagram-icon,
+  .menu li.twitter-icon {
+    display: none;
+  }
+
+  .menu li.facebook-icon a,
+  .menu li.instagram-icon a,
+  .menu li.twitter-icon a {
+    padding: .85em;
+    background-size: 1em 1em;
+  }
+
+}

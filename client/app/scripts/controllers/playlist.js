@@ -81,11 +81,6 @@ angular.module('bmmApp')
 
             search($routeParams.id, size);
 
-            if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
-              search('hv '+$routeParams.id, size);
-              search('mb '+$routeParams.id, size);
-            }
-
           }
 
         });
