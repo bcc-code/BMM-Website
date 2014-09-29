@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="020_Album" sketch:type="MSArtboardGroup" transform="translate(-973.000000, -34.000000)" fill="#3B5998">
+            <g id="Navigation" sketch:type="MSLayerGroup">
+                <g id="Social" transform="translate(885.000000, 25.000000)" sketch:type="MSShapeGroup">
+                    <path d="M90,9 L99,9 C100.248744,9 101,9.75074592 101,11 L101,20 C101,21.2492541 100.248744,22 99,22 L90,22 C88.7507459,22 88,21.2492541 88,20 L88,11 C88,9.75074592 88.7507459,9 90,9 L90,9 L90,9 Z M97.6666667,11 C97.199536,11 97,11.2048432 97,11.6666667 L97,12.3333333 C97,12.7951568 97.199536,13 97.6666667,13 L98.3333333,13 C98.8008507,13 99,12.7951568 99,12.3333333 L99,11.6666667 C99,11.2048432 98.8008507,11 98.3333333,11 L97.6666667,11 L97.6666667,11 Z M98.1,15 C98.0755452,15.2939178 98.1274604,15.6056745 98.1,15.8333333 C98.1274604,17.7276589 96.51308,18.9991043 94.5,18.9791417 C92.5306381,18.9991043 90.9,17.7469959 90.9,16.0141478 C90.9,15.7863098 90.9686282,15.2939178 90.9,15 L90,15 L90,19.1666667 C90,19.8063201 90.2072054,20 90.9,20 L98.1,20 C98.7923392,20 99,19.8063201 99,19.1666667 L99,15 L98.1,15 L98.1,15 Z M93,15.5 C93,16.4 93.6,17 94.5,17 C95.4,17 96,16.4 96,15.5 C96,14.7797576 95.3778285,14.2516445 94.8584239,14.0694159 C94.7287912,14.0239354 94.6055599,14 94.5,14 C93.6,14 93,14.6 93,15.5 L93,15.5 Z" id="Instagram"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

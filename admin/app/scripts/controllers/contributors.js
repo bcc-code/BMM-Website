@@ -104,7 +104,9 @@ angular.module('bmmApp')
           cover_upload: null
         }).always(function() {
           $timeout(function() {
-            _api.contributorSuggesterCompletionGet($scope.contributor).done(function(data) {
+            _api.contributorSuggesterCompletionGet($scope.contributor, {
+              size: 1000
+            }).done(function(data) {
               $scope.$apply(function() {
                 $scope.contributors = data;
               });
@@ -116,7 +118,9 @@ angular.module('bmmApp')
 
     $scope.$watch('contributor', function(name) {
       if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSuggesterCompletionGet(name, {
+          size: 1000
+        }).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors = data;
           });

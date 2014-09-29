@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="15px" viewBox="0 0 8 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="020_Album" sketch:type="MSArtboardGroup" transform="translate(-896.000000, -32.000000)" fill="#3B5998">
+            <g id="Navigation" sketch:type="MSLayerGroup">
+                <g id="Social" transform="translate(885.000000, 25.000000)" sketch:type="MSShapeGroup">
+                    <path d="M16,15 L19,15 L19,12 L16,12 L16,11 C16.1926676,10.016762 16.4128105,10.4906657 18,10 L19,10 L19,7 C18.7490588,7.07262207 17.8883393,7 17,7 C14.796072,7 13.364667,8.24265173 13,11 L13,12 L11,12 L11,15 L13,15 L13,22 L16,22 L16,15 Z" id="Facebook"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

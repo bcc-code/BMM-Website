@@ -1102,7 +1102,9 @@ angular.module('bmmLibApp')
   };
 
   /** Contributor autocompletion search **/
-  factory.contributorSuggesterCompletionGet = function(term) {
+  factory.contributorSuggesterCompletionGet = function(term, options) {
+
+    if (typeof options === 'undefined') { options = {}; }
 
     return $.ajax({
       method: 'GET',
@@ -1110,6 +1112,7 @@ angular.module('bmmLibApp')
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
+      data: $.param(options),
       dataType: 'json',
       xhrFields: {
         'withCredentials': true

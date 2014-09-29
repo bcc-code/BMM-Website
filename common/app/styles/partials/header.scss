@@ -1,13 +1,3 @@
-header {
-  width: 100%;
-  background-color: #fff;//$colorMain;
-  box-shadow: 0 0 .5em rgba(31, 31, 31, .7);
-  z-index: 5;
-  .wrapper {
-    margin-top: 2.3em;
-  }
-}
-
 .sub-header {
   width: 100%;
   z-index: 4;
@@ -18,7 +8,13 @@ header {
   position: absolute;
   top: $topbarHeight;
   height: $headerHeight;
-
+  width: 100%;
+  background-color: #fff;//$colorMain;
+  box-shadow: 0 0 .5em rgba(31, 31, 31, .7);
+  z-index: 5;
+  .wrapper {
+    margin-top: 2.3em;
+  }
   .page-positioning {
     position: relative;
     .menu {
@@ -139,31 +135,84 @@ header {
   margin: 0;
   padding: 0;
   margin-top: .5em;
+
+
 }
 
-.menu li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-.menu li a {
-  @include bmm-transition(all, .2s);
-  padding: .3em .8em;
-  color: #000;//$colorForeground;
-  border-radius: .2em;
-  border-radius: 1em;
-  border: .15em solid transparent;
-}
-
-.menu li a:hover {
-  color: #03d67f;
-}
-
-.menu li a.active {
-  border-color: #03d67f;
-  color: #03d67f;
+.menu {
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    a {
+      @include bmm-transition(all, .2s);
+      padding: .3em .65em;
+      color: #000;//$colorForeground;
+      border-radius: .2em;
+      border-radius: 1em;
+      border: .15em solid transparent;
+    }
+    a:hover {
+      color: #03d67f;
+    }
+    a.active {
+      border-color: #03d67f;
+      color: #03d67f;
+    }
+  }
+  li.facebook-icon {
+    margin-left: 3.2em;
+    width: 2.2em;
+    a {
+      position: absolute;
+      display: inline-block;
+      background-image: url(../images/svg/v3/facebook.svg);
+      background-size: 1.3em 1.4em;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 1.4em;
+      height: 1.4em;
+      border: 1px solid gray;
+      border-radius: 50%;
+      padding: 1em;
+      margin: -1.45em;
+    }
+  }
+  li.twitter-icon {
+    width: 2.2em;
+    a {
+      position: absolute;
+      display: inline-block;
+      background-image: url(../images/svg/v3/twitter.svg);
+      background-size: 1.3em 1.4em;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 1.4em;
+      height: 1.4em;
+      border: 1px solid gray;
+      border-radius: 50%;
+      padding: 1em;
+      margin: -1.45em;
+    }
+  }
+  li.instagram-icon {
+    width: 2.2em;
+    a {
+      position: absolute;
+      display: inline-block;
+      background-image: url(../images/svg/v3/instagram.svg);
+      background-size: 1.3em 1.4em;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 1.4em;
+      height: 1.4em;
+      border: 1px solid gray;
+      border-radius: 50%;
+      padding: 1em;
+      margin: -1.45em;
+    }
+  }
 }
 
 .logo {
