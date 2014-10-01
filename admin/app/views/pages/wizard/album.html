@@ -1,0 +1,26 @@
+<form>
+  <input bs-datepicker data-autoclose="1" type="text"
+         data-date-format="dd.MM.yyyy"
+         min-view="date"
+         ng-model="search.from"
+         placeholder="From Date"
+    >
+  <input bs-datepicker data-autoclose="1" type="text"
+         data-date-format="dd.MM.yyyy"
+         min-view="date"
+         ng-model="search.to"
+         placeholder="To Date"
+    >
+  <input type="text" ng-model="search.term" placeholder="Search Term" />
+  <input type="submit" ng-click="console.log('test'); search.album(search.from, search.to, search.term);">
+</form>
+
+  <table>
+    <tr ng-repeat="album in albums" ng-click="select.album(album.id);">
+      <td>{{album.id}}</td>
+      <td>{{album.title}}</td>
+      <td>{{album.bmm_id}}</td>
+      <td>{{album.language}}</td>
+      <td><span ng-repeat="tag in album.tags">{{tag+','}}</span></td>
+    </tr>
+  </table>

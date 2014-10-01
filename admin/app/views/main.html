@@ -57,6 +57,11 @@
                             {{init.translation.menu.main.users}}
                         </a>
                     </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/wizard')}" ng-href="#wizard">
+                            Wizard (Demo)
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -168,7 +173,7 @@
                         <input type="submit" value="">
                     </form>
                 </div>
-                <ul class="menu">kypesky
+                <ul class="menu">
                     <li>
                         <a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">
                             {{init.translation.s.main.waitings}}
@@ -182,6 +187,11 @@
                     <li>
                         <a ng-class="{ active: isActive('/users')}" ng-href="#users">
                             {{init.translation.menu.main.users}}
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-class="{ active: isActive('/wizard')}" ng-href="#wizard">
+                            Wizard (Beta)
                         </a>
                     </li>
                 </ul>
