@@ -106,10 +106,10 @@ angular.module('bmmApp')
           return isFinite(n) && n%1===0;
         };
 
-        if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
+        /*if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
           search('hv '+$routeParams.id);
           search('mb '+$routeParams.id);
-        }
+        }*/
 
         break;
       case 'latest':
