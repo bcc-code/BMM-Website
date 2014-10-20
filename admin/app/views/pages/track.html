@@ -207,6 +207,7 @@
                         <span>{{file.mime_type}}</span>
                         <span><b>{{init.translation.page.editor.duration}}:</b> {{file.duration}}</span>
                         <span><b>{{init.translation.page.editor.size}}:</b> {{file.size}}</span>
+                        <span><b>Path:</b> {{file.path}}</span>
                         <button ng-click="deleteFile(edited.media, $parent.$index, $index)">{{init.translation.page.editor.delete}}</button>
                         <button ng-click="play(file, media.type)">{{init.translation.page.editor.play}}</button>
                         <button ng-click="download(file.path)">{{init.translation.page.editor.download}}</button>
