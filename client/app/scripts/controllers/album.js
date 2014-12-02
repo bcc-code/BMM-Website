@@ -89,6 +89,7 @@ angular.module('bmmApp')
 
             ct--;
 
+            /* Find cover */
             if (typeof this.cover==='undefined'||this.cover===null) {
               if (typeof mainAlbum.cover!=='undefined'&&mainAlbum.cover!==null) {
                 this.cover = mainAlbum.cover;
@@ -105,6 +106,8 @@ angular.module('bmmApp')
 
             track = _track.resolve(this);
             track.albumTitle = formattedAlbum.title;
+            track.albumId = formattedAlbum.id;
+            track.albumDate = mainAlbum.published_at;
 
             if (track.type==='video') {
               track.video = true;
@@ -158,6 +161,8 @@ angular.module('bmmApp')
 
                   track = _track.resolve(this);
                   track.albumTitle = formattedAlbum.title;
+                  track.albumId = formattedAlbum.id;
+                  track.albumDate = album.published_at;
 
                   if (track.type==='video') {
                     track.video = true;
@@ -175,10 +180,12 @@ angular.module('bmmApp')
 
               });
 
+              /*album recorded at, album id, order id*/
+
               if (ct===0) {
                 $scope.$apply(function() {
-                  $scope.playlist = $filter('orderBy')($scope.playlist, 'raw.published_at');
-                  $scope.playlist.reverse();
+                  $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
+                  //$scope.playlist.reverse();
                 });
                 $('.bmm-playlist').trigger('dragdrop');
                 findPlayingTrack();
