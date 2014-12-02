@@ -41,7 +41,7 @@ angular.module('bmmLibApp')
           factory.volume = e.jPlayer.options.volume;
         },
         swfPath: 'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
-        supplied: 'm4v, mp3',
+        supplied: 'webmv, m4v, oga, mp3', //oga suports opus
         seeking: function() {
           //Seeking
         },
