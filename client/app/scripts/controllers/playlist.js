@@ -356,7 +356,7 @@ angular.module('bmmApp')
 
         // @analytics - Report page view to google analytics
         $window.ga('send', 'pageview', {
-          'page': '/playlist/contributor/'+$routeParams.name,
+          'page': '/playlist/contributor/'+$routeParams.id,
           'title': $routeParams.name
         });
 
