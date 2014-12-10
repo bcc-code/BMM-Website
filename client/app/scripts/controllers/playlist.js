@@ -443,7 +443,7 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $('.bmm-playlist').trigger('dragdrop');
+          $('.draggable-playlist').trigger('dragdrop');
           loading = false;
           $scope.load = false;
         });

@@ -128,7 +128,7 @@ angular.module('bmmApp')
               $timeout(function() {
                 $scope.$apply(function() {
                   //For playlists
-                  $('.bmm-playlist').trigger('dragdrop');
+                  $('.draggable-playlist').trigger('dragdrop');
                   //Other _draggables
                   _draggable.makeDraggable($scope);
                 });

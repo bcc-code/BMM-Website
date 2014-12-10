@@ -66,19 +66,16 @@
 
 <div playlist ng-hide="tracks<1">
 	<table>
-
-		<thead>
-			<tr>
-				<th colspan="2">{{init.translation.playlist.title}}</th>
-                <th>{{init.translation.page.search.artist}}</th>
-				<th class="bmm-large-only">{{init.translation.page.search.album}}</th>
-				<th>{{init.translation.playlist.duration}}</th>
-				<th class="bmm-large-only"></th>
-				<th></th>
-			</tr>
-		</thead>
 		<tbody ui-sortable="sortableOptions" ng-model="playlist">
-			<tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
+      <tr class="head">
+        <th colspan="2">{{init.translation.playlist.title}}</th>
+        <th>{{init.translation.page.search.artist}}</th>
+        <th class="bmm-large-only">{{init.translation.page.search.album}}</th>
+        <th>{{init.translation.playlist.duration}}</th>
+        <th class="bmm-large-only"></th>
+        <th></th>
+      </tr>
+      <tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
 				<td ng-class="{'sort': private}">
                     <div ng-show="private" class="sort_handle"></div>

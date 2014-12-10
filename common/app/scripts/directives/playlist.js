@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('playlist', ['$rootScope', '_draggable', function ($rootScope, _draggable) {
+  .directive('playlist', ['$rootScope', '$timeout', '_draggable', function ($rootScope, $timeout, _draggable) {
     return {
       link: function postLink(scope, element) {
+
+        element.addClass('draggable-playlist');
 
         scope.sortableOptions = {
           update: makeDraggable,
@@ -22,10 +24,13 @@ angular.module('bmmLibApp')
           }
         };
 
-        element.on('dragdrop', makeDraggable);
         var makeDraggable = function() {
           _draggable.playlist(element, scope);
         };
+
+        element.on('dragdrop', function() {
+          makeDraggable();
+        });
 
       }
     };

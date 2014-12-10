@@ -167,16 +167,39 @@
   margin: .3em .2em;
 }
 
-[playlist] table thead {
+[playlist] table tr.head {
   color: $colorPlaceholder;
 }
 
-[playlist] table thead th {
+[playlist] table thead tr th.title {
+  cursor: pointer;
+  background-image: url(../images/svg/v3/Icon_plus.svg);
+  background-size: .7em .7em;
+  background-repeat: no-repeat;
+  background-position: right center;
+  height: 1.6em;
+}
+
+[playlist] table thead tr th.title h4 {
+  font-weight: normal;
+}
+
+[playlist] table thead tr th.title:hover {
+  background-color: #F5F8FA;
+  cursor: pointer;
+}
+
+[playlist] table tbody tr.head:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+[playlist] table tr.head th {
   font-weight: bold;
   padding: .5em 0 .5em .5em;
 }
 
-[playlist] table thead th:first-child {
+[playlist] table tr.head th:first-child {
   padding: 0;
 }
 
@@ -232,7 +255,7 @@
   cursor: pointer;
 }
 
-[playlist] table thead tr {
+[playlist] table tr.head {
   border-bottom: .1em solid $colorBorderLight;
   border-top: .1em solid $colorBorderLight;
 }

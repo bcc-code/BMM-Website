@@ -22,8 +22,10 @@ angular.module('bmmApp')
     $scope.lock = {};
     $scope.lock.album = true;
     $scope.lock.track = true;
+    $scope.lock.waitings = true;
     $scope.lock.subalbum = true;
     $scope.lock.subtrack = true;
+    $scope.lock.subwaitings = true;
 
     $scope.steps = [
       {
@@ -181,8 +183,20 @@ angular.module('bmmApp')
                     children: []
                   }
                 ]
+              },
+              {
+                name: 'New files available',
+                group: 'subwaitings',
+                template: 'views/pages/wizard/step3.html',
+                children: []
               }
             ]
+          },
+          {
+            name: 'New files available',
+            group: 'waitings',
+            template: 'views/pages/wizard/step3.html',
+            children: []
           }
         ]
       }

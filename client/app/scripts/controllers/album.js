@@ -26,6 +26,7 @@ angular.module('bmmApp')
     });
 
     $scope.load = true;
+    $scope.parentAlbum = { found: false };
     $scope.tracks = 0;
     $scope.playlist = [];
     $scope.playlists = [];
@@ -40,9 +41,9 @@ angular.module('bmmApp')
       _api.getserverUrli().replace('https://','')+
       'podcast/album/'+$routeParams.id+'/track/?';
 
-    $scope.getPlaylistCopy = function(filter) {
+    $scope.getPlaylistCopy = function(filter, playlist) {
       var array = [];
-      $.each($scope.playlist, function() {
+      $.each(playlist, function() {
         if (typeof filter!=='undefined'&&filter!=='') {
           if (this.language===filter) {
             array.push(this);
@@ -64,6 +65,7 @@ angular.module('bmmApp')
         description: formattedAlbum.description,
         id: formattedAlbum.id,
         cover: formattedAlbum.cover,
+        date: mainAlbum.published_at,
         duration: 0,
         tracks: [],
         count: 0
@@ -74,10 +76,24 @@ angular.module('bmmApp')
         description: formattedAlbum.description,
         id: formattedAlbum.id,
         cover: formattedAlbum.cover,
+        date: mainAlbum.published_at,
         duration: 0,
         tracks: [],
         count: 0
       });
+
+      if (mainAlbum.parent_id!==null) {
+        _api.albumGet(mainAlbum.parent_id, _init.contentLanguage).done(function(album) {
+
+          $scope.$apply(function() {
+
+            $scope.parentAlbum = album;
+            $scope.parentAlbum.found = true;
+
+          });
+
+        });
+      }
 
       var ct = mainAlbum.children.length;
 
@@ -115,7 +131,6 @@ angular.module('bmmApp')
 
             $scope.$apply(function() {
               $scope.playlists[0].tracks.push(track);
-              $scope.playlist.push(track);
               $scope.playlists[0].duration+=track.duration;
               $scope.playlists[0].count++;
               $scope.tracks++;
@@ -135,6 +150,7 @@ angular.module('bmmApp')
                   description: formattedAlbum.description,
                   id: formattedAlbum.id,
                   cover: formattedAlbum.cover,
+                  date: album.published_at,
                   duration: 0,
                   tracks: [],
                   count: 0
@@ -170,7 +186,6 @@ angular.module('bmmApp')
 
                   $scope.$apply(function() {
                     $scope.playlists[l].tracks.push(track);
-                    $scope.playlist.push(track);
                     $scope.playlists[l].duration+=track.duration;
                     $scope.playlists[l].count++;
                     $scope.tracks++;
@@ -183,13 +198,7 @@ angular.module('bmmApp')
               /*album recorded at, album id, order id*/
 
               if (ct===0) {
-                $scope.$apply(function() {
-                  $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
-                  //$scope.playlist.reverse();
-                });
-                $('.bmm-playlist').trigger('dragdrop');
-                findPlayingTrack();
-                $scope.load = false;
+                resolveAlbums();
               }
 
             });
@@ -199,13 +208,7 @@ angular.module('bmmApp')
         }
 
         if (ct===0) {
-          $scope.$apply(function() {
-            $scope.playlist = $filter('orderBy')($scope.playlist, 'raw.published_at');
-            $scope.playlist.reverse();
-          });
-          $('.bmm-playlist').trigger('dragdrop');
-          findPlayingTrack();
-          $scope.load = false;
+          resolveAlbums();
         }
 
       });
@@ -216,9 +219,29 @@ angular.module('bmmApp')
 
     });
 
+    var resolveAlbums = function() {
+      $scope.playlist = $scope.playlists[0].tracks;
+      $scope.$apply(function() {
+        $scope.playlists = $filter('orderBy')($scope.playlists, ('date'));
+        $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
+        $scope.load = false;
+      });
+
+      $('.draggable-playlist').trigger('dragdrop');
+
+      findPlayingTrack();
+    };
+
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
-        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
+
+        $.each($scope.playlists, function() {
+          $.each(this.tracks, function() {
+            this.playing = false;
+          });
+        });
+
+        $.each($scope.getPlaylistCopy($scope.languageFilter, $scope.playlist), function(index) {
           if (index===_playlist.index) {
             this.playing = true;
           } else {
