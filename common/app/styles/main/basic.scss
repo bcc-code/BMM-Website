@@ -56,3 +56,26 @@
     }
   }
 }
+
+.breadcrumb {
+  color: #ececec;
+  padding: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.main-title {
+  width: auto;
+}
+.main-title a {
+  color: #03d67f;
+}
+.main-title a:hover {
+ color: #0AB66F;
+}
+.divider {
+  height: .14em;
+  width: 100%;
+  background-color: #ECECEC;
+  margin: .5em 0;
+}

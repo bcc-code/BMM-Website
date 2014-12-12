@@ -10,7 +10,7 @@ header {
   height: $headerHeight;
   width: 100%;
   background-color: #fff;//$colorMain;
-  box-shadow: 0 0 .5em rgba(31, 31, 31, .7);
+  box-shadow: 0 0 .3em rgba(31,31,31,.2);
   z-index: 5;
   .wrapper {
     margin-top: 2.3em;
@@ -168,15 +168,15 @@ header {
       position: absolute;
       display: inline-block;
       background-image: url(../images/svg/v3/facebook.svg);
-      background-size: .8em 1.4em;
-      background-position: center center;
+      background-size: 1em 1em;
+      background-position: .25em .3em;
       background-repeat: no-repeat;
       width: 1.4em;
       height: 1.4em;
-      border: 1px solid gray;
+      border: 1px solid #ECECEC;
       border-radius: 50%;
-      padding: 1em;
-      margin: -1.45em;
+      padding: 10px;
+      margin: -1.25em;
     }
   }
   li.twitter-icon {
@@ -185,15 +185,15 @@ header {
       position: absolute;
       display: inline-block;
       background-image: url(../images/svg/v3/twitter.svg);
-      background-size: 1.2em 1.2em;
-      background-position: .5em .5em;
+      background-size: 1em 1em;
+      background-position: .3em .3em;
       background-repeat: no-repeat;
       width: 1.4em;
       height: 1.4em;
-      border: 1px solid gray;
+      border: 1px solid #ECECEC;
       border-radius: 50%;
-      padding: 1em;
-      margin: -1.45em;
+      padding: 10px;
+      margin: -1.25em;
     }
   }
   li.instagram-icon {
@@ -202,16 +202,22 @@ header {
       position: absolute;
       display: inline-block;
       background-image: url(../images/svg/v3/instagram.svg);
-      background-size: 1.2em 1.2em;
-      background-position: center center;
+      background-size: .9em .9em;
+      background-position: .38em .37em;
       background-repeat: no-repeat;
       width: 1.4em;
       height: 1.4em;
-      border: 1px solid gray;
+      border: 1px solid #ECECEC;
       border-radius: 50%;
-      padding: 1em;
-      margin: -1.45em;
+      padding: 10px;
+      margin: -1.25em;
     }
+  }
+  li.facebook-icon a:hover,
+  li.twitter-icon a:hover,
+  li.instagram-icon a:hover{
+    background-color: #ECECEC;
+    border-color: transparent;
   }
 }
 

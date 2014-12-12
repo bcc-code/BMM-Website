@@ -171,20 +171,24 @@
   color: $colorPlaceholder;
 }
 
-[playlist] table thead tr th.title {
+[playlist] table thead tr.title {
   cursor: pointer;
-  background-image: url(../images/svg/v3/Icon_plus.svg);
-  background-size: .7em .7em;
-  background-repeat: no-repeat;
-  background-position: right center;
-  height: 1.6em;
+  height: 3.8em;
 }
 
-[playlist] table thead tr th.title h4 {
+[playlist] table thead tr.title th:last-child {
+  background-image: url(../images/svg/v3/Icon_Playlist_Plus.svg);
+  background-size: 2em 2em;
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 2em;
+}
+
+[playlist] table thead tr.title th h4 {
   font-weight: normal;
 }
 
-[playlist] table thead tr th.title:hover {
+[playlist] table thead tr.title:hover {
   background-color: #F5F8FA;
   cursor: pointer;
 }
