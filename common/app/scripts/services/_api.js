@@ -100,12 +100,10 @@ angular.module('bmmLibApp')
 
     return $.ajax({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      crossDomain: true,
       url: serverUrl,
-      dataType: 'json'
+      dataType: 'json',
+      cache: false,
+      crossDomain: true
     }).fail( function(xhr) {
       factory.exceptionHandler(xhr);
     });
