@@ -10,6 +10,10 @@ angular.module('bmmLibApp')
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/'; //Fallback
 
+  $.ajaxSetup({
+    timeout: 5000 //Time in milliseconds
+  });
+
   factory.serverUrl = function(url) {
     serverUrl = url;
   };
