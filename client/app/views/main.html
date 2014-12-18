@@ -61,11 +61,12 @@
         <div class="videoscreen" ng-show="player.showVideo">
             <div class="page-positioning">
                 <div class="videoClose"
+                     title="{{init.translation.notify.hideVideo}}"
                      ng-click="player.showVideo=false"
                      ng-hide="player.video&&!player.showVideo"></div>
 
                 <div class="display">
-                    <div class="fullscreen-toggle"></div>
+                    <div class="fullscreen-toggle" title="{{init.translation.notify.showFullscreen}}"></div>
                     <div class="video-target">
                         <div style="position: absolute;
                                     bottom: 0;
@@ -81,6 +82,7 @@
         <div class="page-positioning">
 
             <div class="videoOpen"
+                 title="{{init.translation.notify.showVideo}}"
                  ng-click="player.showVideo=true"
                  ng-show="player.video&&!player.showVideo"></div>
 
@@ -91,7 +93,7 @@
             <div class="about">
                 <img ng-click="go('/album/'+player.raw._meta.root_parent_id)"
                      style="cursor:pointer"
-                     title="{{player.formatted.albumTitle}}"
+                     title="{{init.translation.notify.goToAlbum}}: {{player.formatted.albumTitle}}"
                      ng-src="{{player.cover | _cover:'song'}}"/>
                 <h3>{{player.title}}</h3>
                 <div>{{player.subtitle}}</div>
@@ -99,7 +101,7 @@
             </div>
 
             <div class="options"
-                    title="Options"
+                    title="{{init.translation.notify.options}}"
                     ng-init="flags=false; downloads=false;"
                     ng-model="playerOptions"
                     click-elsewhere="playerOptions=false">
@@ -186,10 +188,12 @@
             <div class="volumeControllers">
 
                 <div class="mute"
+                     title="{{init.translation.notify.mute}}"
                      ng-class="{'active': player.muted}"
                      ng-click="player.setMute();"
                      ng-hide="init.isIOS"></div>
                 <div class="max"
+                     title="{{init.translation.notify.maxVolume}}"
                      ng-click="player.setVolume(1);"
                      ng-hide="init.isIOS"></div>
                 <div class="volume" ng-hide="init.isIOS"></div>
@@ -203,17 +207,21 @@
 
                 <div class="centered">
                     <div class="shuffle"
+                         title="{{init.translation.notify.shufflePlaylist}}"
                          ng-class="{'active': playlist.shuffle}"
                          ng-click="playlist.setShuffle();"></div>
-                    <div class="previous" ng-click="player.setPrevious();"></div>
+                    <div class="previous" title="{{init.translation.notify.previous}}" ng-click="player.setPrevious();"></div>
                     <div class="play"
+                         title="{{init.translation.notify.play}}"
                          ng-class="{'pause': player.playing}"
                          ng-click="player.togglePlay();"></div>
-                    <div class="next" ng-click="player.setNext();"></div>
+                    <div class="next" title="{{init.translation.notify.next}}" ng-click="player.setNext();"></div>
                     <div class="repeat"
+                         title="{{init.translation.notify.loopPlaylist}}"
                          ng-class="{'active': playlist.repeat}"
                          ng-click="playlist.setRepeat();"></div>
                     <div class="videoFirst"
+                         title="{{init.translation.notify.activateVideo}}"
                          ng-class="{'active': player.videoFirst}"
                          ng-click="player.toggleVideoFirst(); saveSession();"></div>
 

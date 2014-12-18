@@ -19,15 +19,15 @@ angular.module('bmmLibApp')
         //Fullscreen controllers HTML
         element.find('.video-target').append($compile(
           '<div class="fullscreen-controllers" ng-show="player.fullscreen">' +
-            '<div class="previous" ng-click="player.setPrevious();"></div>' +
-            '<div class="play" ng-class="{\'pause\': player.playing}" ng-click="togglePlay();"></div>' +
-            '<div class="next" ng-click="player.setNext();"></div>' +
+            '<div class="previous" title="{{init.translation.notify.previous}}" ng-click="player.setPrevious();"></div>' +
+            '<div class="play" title="{{init.translation.notify.play}}" ng-class="{\'pause\': player.playing}" ng-click="togglePlay();"></div>' +
+            '<div class="next" title="{{init.translation.notify.next}}" ng-click="player.setNext();"></div>' +
             '<div class="duration">' +
               '{{player.currentTime | _time}} / ' +
               '{{(player.getDuration()-player.currentTime) | _time}}' +
             '</div>' +
-            '<div class="fullscreen-toggle"></div>' +
-            '<div class="mute" ng-hide="init.isIOS" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
+            '<div class="fullscreen-toggle" title="{{init.translation.notify.closeFullscreen}}"></div>' +
+            '<div class="mute" title="{{init.translation.notify.mute}}" ng-hide="init.isIOS" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
             '<div class="volume" ng-hide="init.isIOS"></div>' +
             '<div class="slider"><div class="target"></div></div>' +
           '</div>')
