@@ -28,7 +28,7 @@ angular.module('bmmApp')
           $scope.uploadUrl = _api.getserverUrli()+'contributor/'+model.id+'/cover';
         });
 
-        _api.contributorTracksGet(model.name, {
+        _api.contributorTracksGet(model.id, {
           size: 100
         }, _init.contentLanguage).done(function(data) {
 

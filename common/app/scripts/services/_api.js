@@ -1033,29 +1033,6 @@ angular.module('bmmLibApp')
 
   };
 
-  /** Get a list of contributors @todo - Why isnt this used anywhere? **/
-  factory.contributorGet = function(options) {
-
-    if (typeof options === 'undefined') { options = {}; }
-
-    return $.ajax({
-      method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'contributor/',
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
-    });
-
-  };
-
   /** Insert a contributor **/
   factory.contributorPost = function(options) {
 
