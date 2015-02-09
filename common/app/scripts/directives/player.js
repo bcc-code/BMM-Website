@@ -20,7 +20,7 @@ angular.module('bmmLibApp')
         element.find('.video-target').append($compile(
           '<div class="fullscreen-controllers" ng-show="player.fullscreen">' +
             '<div class="previous" title="{{init.translation.notify.previous}}" ng-click="player.setPrevious();"></div>' +
-            '<div class="play" title="{{init.translation.notify.play}}" ng-class="{\'pause\': player.playing}" ng-click="togglePlay();"></div>' +
+            '<div class="play" title="{{init.translation.notify.play}}" ng-class="{\'pause\': player.playing}" ng-click="player.togglePlay();"></div>' +
             '<div class="next" title="{{init.translation.notify.next}}" ng-click="player.setNext();"></div>' +
             '<div class="duration">' +
               '{{player.currentTime | _time}} / ' +
