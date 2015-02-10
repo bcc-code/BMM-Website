@@ -3,6 +3,7 @@
 angular.module('bmmApp')
   .controller('AlbumCtrl', function (
     $scope,
+    $rootScope,
     $routeParams,
     $filter,
     $location,
@@ -37,9 +38,8 @@ angular.module('bmmApp')
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};
-    $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
-      _api.getserverUrli().replace('https://','')+
-      'podcast/album/'+$routeParams.id+'/track/?';
+    $rootScope.podcastHash = _api.getPodcastHash('/podcast/album/'+$routeParams.id+'/track/');
+    $scope.podcast.link = _api.getserverUrli()+'podcast/album/'+$routeParams.id+'/track/?';
 
     $scope.getPlaylistCopy = function(filter, playlist) {
       var array = [];

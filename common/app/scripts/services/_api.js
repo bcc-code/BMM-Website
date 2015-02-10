@@ -50,6 +50,13 @@ angular.module('bmmLibApp')
     return image;
   };
 
+  factory.getPodcastHash = function(path) {
+
+    var md5 = $.md5(credentials.username+'\n'+path).substring(0,10);
+    return encodeURIComponent(credentials.username+'|'+credentials.password+'|'+md5);
+
+  };
+
   factory.secureFile = function(file) {
 
     //Is credentials supported by browser? Else cookies is automatically used

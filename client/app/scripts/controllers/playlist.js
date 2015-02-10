@@ -3,6 +3,7 @@
 angular.module('bmmApp')
   .controller('PlaylistCtrl', function (
     $scope,
+    $rootScope,
     $routeParams,
     $timeout,
     $location,
@@ -243,9 +244,8 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
-                                _api.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=mp3-kilden&';
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=mp3-kilden&';
           $scope.showPodcast = true;
         },1500);
 
@@ -294,9 +294,8 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
-                                _api.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=child-favorites&';
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=child-favorites&';
           $scope.showPodcast = true;
         },1500);
 
@@ -345,9 +344,8 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
-                                _api.getserverUrli().replace('https://','')+
-                                'podcast/track/?tags[]=instrumental&';
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=instrumental&';
           $scope.showPodcast = true;
         },1500);
 
@@ -394,9 +392,8 @@ angular.module('bmmApp')
         });
 
         $timeout(function() {
-          $scope.podcast.link = 'https://'+_api.getCredentials(true)+'@'+
-                                _api.getserverUrli().replace('https://','')+
-                                'podcast/contributor/'+$routeParams.id+'/track/?';
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/contributor/'+$routeParams.id+'/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/contributor/'+$routeParams.id+'/track/?';
           $scope.showPodcast = true;
         },1500);
 
