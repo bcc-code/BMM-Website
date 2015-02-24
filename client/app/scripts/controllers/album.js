@@ -43,14 +43,16 @@ angular.module('bmmApp')
 
     $scope.getPlaylistCopy = function(filter, playlist) {
       var array = [];
-      $.each(playlist, function() {
-        if (typeof filter!=='undefined'&&filter!=='') {
-          if (this.language===filter) {
+      $.each($scope.playlists, function() {
+        $.each(this.tracks, function() {
+          if (typeof filter !== 'undefined' && filter !== '') {
+            if (this.language === filter) {
+              array.push(this);
+            }
+          } else {
             array.push(this);
           }
-        } else {
-          array.push(this);
-        }
+        });
       });
       return array;
     };
