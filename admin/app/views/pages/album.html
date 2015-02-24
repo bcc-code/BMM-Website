@@ -35,7 +35,7 @@
             <i>{{init.translation.page.editor.setNewParentAlbum}}</i>
             <select ng-change="parentAlbums = []; findParentAlbums(albumParentYear);"
                     ng-model="albumParentYear"
-                    ng-options="year for year in years"
+                    ng-options="year for year in quickMenu.years"
                     style="display: block">
             </select>
 
