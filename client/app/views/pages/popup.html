@@ -149,7 +149,7 @@
 <div class="popup" ng-hide="settings.show==undefined||settings.show==false">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="settings.show=false">
+            <div class="container" always click-elsewhere="settings.show=false;setContentLangConditional();">
 
                 <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="settings.show=false;setContentLangConditional();"></div>
 
