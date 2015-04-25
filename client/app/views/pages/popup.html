@@ -171,7 +171,7 @@
                             </div>
                         </div>
                     </tab>
-                    <tab heading="{{init.translation.options.preferredContentLanguage}}">
+                    <tab heading="{{init.translation.options.contentLanguages}}">
                         <div style="width: 100%; margin-top: 1em;">
                             <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
                               <li ng-repeat="language in init.contentLanguages" class="language_element">
@@ -192,7 +192,7 @@
                             </li>
                             </ul>
                             <div ng-click="addLanguage()" class="languages-add">
-                                Legg til språk
+                                {{init.translation.options.addLanguage}}
                             </div>
                         </div>
                     </tab>
