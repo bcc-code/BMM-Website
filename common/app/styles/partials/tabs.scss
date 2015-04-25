@@ -1,0 +1,58 @@
+$active-color: #03d67f;
+$hover-color: #84e0ba;
+
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+}
+
+.tabbable > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable > .nav-tabs > li.open, .tabbable > .nav-tabs > li:hover {
+  border-bottom: 4px solid $hover-color;
+}
+.tabbable > .nav-tabs > li.open > a, .tabbable > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable > .nav-tabs > li.open > a > i, .tabbable > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable > .nav-tabs > li.open .dropdown-menu, .tabbable > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable > .nav-tabs > li.active {
+  border-bottom: 4px solid $active-color;
+  position: relative;
+}
+.tabbable > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable > .tab-content {
+  padding-bottom: 0;
+}
