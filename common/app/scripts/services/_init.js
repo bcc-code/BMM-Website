@@ -26,6 +26,8 @@ angular.module('bmmLibApp')
       complete: $q.defer()
     };
 
+    _api.setContentLanguages(factory.contentLanguages);
+
     factory.promise = function(admin) {
       if (typeof admin==='undefined') { admin = false; }
       factory.authorize(admin);

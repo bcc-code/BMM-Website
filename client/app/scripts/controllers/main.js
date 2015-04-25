@@ -107,6 +107,8 @@ angular.module('bmmApp')
         //The first language is the 'primary' content language
         $scope.init.contentLanguage = _init.originalLanguage = _init.contentLanguage = langs[0];
         $scope.init.contentLanguages = _init.originalLanguages = _init.contentLanguages = langs;
+        _api.setContentLanguages(langs);
+        _api.setContentLanguage(langs[0]);
         $scope.saveSession();
         $route.reload();
       };
