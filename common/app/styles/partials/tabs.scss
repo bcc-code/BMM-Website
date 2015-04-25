@@ -41,7 +41,8 @@ $hover-color: #84e0ba;
 }
 .tabbable > .nav-tabs > li.active > a {
   border: 0;
-  color: #333333;
+  font-style: bold;
+  color: $active-color;
 }
 .tabbable > .nav-tabs > li.active > a > i {
   color: #404040;
@@ -51,7 +52,7 @@ $hover-color: #84e0ba;
   background-color: #fff;
   border: 0;
   border-top: 1px solid #eee;
-  padding: 15px 0;
+  padding: .2em 0;
 }
 .portlet .tabbable > .tab-content {
   padding-bottom: 0;

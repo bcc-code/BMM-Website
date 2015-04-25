@@ -172,7 +172,8 @@
                         </div>
                     </tab>
                     <tab heading="{{init.translation.options.contentLanguages}}">
-                        <div style="width: 100%; margin-top: 1em;">
+                        <div style="width: 100%;">
+                            <b class="choose-language">{{init.translation.options.chooseLanguages}}</b>
                             <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
                               <li ng-repeat="language in init.contentLanguages" class="language_element">
                                 <div ng-init="index = $index" style="width:70%" class="dropdown">
