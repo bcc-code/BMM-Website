@@ -151,11 +151,54 @@
         <div class="verticalCenter">
             <div class="container" always click-elsewhere="settings.show=false">
 
-                <div class="exit" ng-click="settings.show=false"></div>
+                <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="settings.show=false;setContentLangConditional();"></div>
 
                 <b style="float: left; width: 100%;">{{init.translation.general.settings}}</b>
 
-                <div style="width: 47%; float: left; margin-top: 1em;">
+                 <tabset>
+                    <tab heading="{{init.translation.options.websiteLanguage}}">
+                        <div style="width: 100%;float: left; margin-top: 1em;">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle">
+                                    <div class="flags-{{init.websiteLanguage}}"></div>
+                                    {{init.websiteLanguage | _languageCode}}</a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="lang in init.translations.available"
+                                        ng-click="setWebsiteLanguage(lang);">
+                                        <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab heading="{{init.translation.options.preferredContentLanguage}}">
+                        <div style="width: 100%; margin-top: 1em;">
+                            <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
+                              <li ng-repeat="language in init.contentLanguages" class="language_element">
+                                <div ng-init="index = $index" style="width:70%" class="dropdown">
+                                    <a class="dropdown-toggle">
+                                        <div class="flags-{{language}}"></div>
+                                        {{language | _languageCode}}</a>
+                                    <ul class="dropdown-menu">
+                                        <li ng-repeat="lang in init.root.languages | filter : exceptSelected"
+                                            ng-click="init.contentLanguages[init.contentLanguages.indexOf(language)] = lang;
+                                            setLanguageChanged();">
+                                            <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="init.contentLanguages.splice($index, 1)"><span class="glyphicon glyphicon-remove"></span></a>
+                                <a class="btn_sort sort_handle"><span class="glyphicon glyphicon-sort"></span></a>
+                            </li>
+                            </ul>
+                            <div ng-click="addLanguage()" class="languages-add">
+                                Legg til språk
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+
+                <!--<div style="width: 47%; float: left; margin-top: 1em;">
                     <b>{{init.translation.options.websiteLanguage}}</b>
                     <div class="dropdown">
                         <a class="dropdown-toggle">
@@ -183,7 +226,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
 
             </div>
         </div>

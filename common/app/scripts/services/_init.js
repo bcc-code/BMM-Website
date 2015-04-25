@@ -14,6 +14,7 @@ angular.module('bmmLibApp')
     factory.translations = {}; //Object with actual translations
     factory.translations.available = []; //Array with translations available
     factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguage = 'nb'; //Fallback
+    factory.contentLanguages = [factory.contentLanguage, 'de'];
     factory.isIOS = false;
     factory.config = {};
     factory.bible = {};

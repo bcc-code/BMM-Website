@@ -26,7 +26,7 @@
       > .container {
         position: relative;
         margin: auto;
-        max-width: 35em;
+        max-width: 27em;
         min-height: 3em;
         border-radius: .3em;
         padding: 1em 1.5em;
@@ -63,9 +63,43 @@
           }
         }
 
+        .language_element {
+          padding-bottom: .5em;
+          padding-top: .5em;
+          border-bottom: .1em solid #ECECEC;
+          height: 3.5em;
+          background-color: white;
+        };
+
+        .language_element:first-child {
+          border-top: .1em solid #ECECEC;
+        };
+
+        .languages-add {
+          margin-top: 1em;
+          margin-right: .5em;
+          background-color: #03d67f;
+          background-image: url(../images/svg/v3/bb329266.Icon_plus.svg);
+          background-size: .8em .8em;
+          background-position: .8em .7em;
+          background-repeat: no-repeat;
+          display: inline-block;
+          padding: .25em 1em .2em 2.1em;
+          border-radius: .5em;
+          cursor: pointer;
+          color: #fff;//$colorForeground;
+          border: .2em solid transparent;
+          white-space: nowrap;
+        };
+
+        .languages-add:hover {
+          background-color: #0AB66F;
+        };
+
+
         .dropdown {
           float: left;
-          width: 100%;
+          width: 70%;
           > a {
             > div {
               display: inline-block;
@@ -96,11 +130,32 @@
             cursor: pointer;
           }
           .dropdown-menu {
-            //position: relative;
             float: none;
             width: 100%;
             overflow: hidden;
           }
+          .dropdown-toggle {
+            background-color: white;
+          }
+        }
+
+        .btn_sort {
+          margin-left: .4em;
+          margin-right: .4em;
+          float:right;
+          font-size: 1.5em;
+          color: #c4c4c4;
+        }
+
+        .invisible {
+          visibility: hidden;
+        }
+
+        .btn_remove {
+          @extend .btn_sort;
+          color: red;
+          font-size: 1.7em;
+          margin-right: .7em;
         }
 
         select {

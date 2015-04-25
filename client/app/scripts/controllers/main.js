@@ -32,6 +32,7 @@ angular.module('bmmApp')
       $scope.saveSession = function() {
         localStorage[_init.user.username] = angular.toJson({
           contentLanguage: $scope.init.contentLanguage,
+          contentLanguages: $scope.init.contentLanguages,
           websiteLanguage: $scope.init.websiteLanguage,
           videoFirst: _player.videoFirst,
           pushMessages: $scope.pushMessages
@@ -66,8 +67,46 @@ angular.module('bmmApp')
         $location.path( _playlist.getUrl() );
       };
 
-      $scope.setContentLanguage = function(lang) {
-        $scope.init.contentLanguage = _init.originalLanguage = _init.contentLanguage = lang;
+      $scope.setLanguageChanged = function() {
+        $scope.contentLangChanged = true;
+      };
+
+      $scope.sortableOptions = {
+        handle: '.sort_handle',
+        update: function() {
+          $scope.setLanguageChanged();
+        },
+        axis: 'y' 
+      };
+
+      //This filter functions filters out the languages
+      //that are already selected. Prevents duplicates.
+      $scope.exceptSelected = function(item) {
+        return $scope.init.contentLanguages.indexOf(item) === -1;
+      };
+
+      $scope.addLanguage = function() {
+        var langs = $scope.init.root.languages;
+        for(var i = 0; i < langs.length; i++) {
+          var lang = langs[i];
+          if($scope.exceptSelected(lang)) {
+            $scope.init.contentLanguages.push(lang);
+            return;
+          }
+        };
+      };
+
+      $scope.setContentLangConditional = function() {
+        if($scope.contentLangChanged) {
+          $scope.setContentLanguages($scope.init.contentLanguages);
+          $scope.contentLangChanged = false;
+        };
+      };
+
+      $scope.setContentLanguages = function(langs) {
+        //The first language is the 'primary' content language
+        $scope.init.contentLanguage = _init.originalLanguage = _init.contentLanguage = langs[0];
+        $scope.init.contentLanguages = _init.originalLanguages = _init.contentLanguages = langs;
         $scope.saveSession();
         $route.reload();
       };
