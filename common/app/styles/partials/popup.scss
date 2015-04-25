@@ -140,11 +140,16 @@
         }
 
         .btn_sort {
+          margin-top: .2em;
           margin-left: .4em;
           margin-right: .4em;
           float:right;
-          font-size: 1.5em;
+          font-size: 1.4em;
           color: #c4c4c4;
+        }
+
+        .btn_sort:hover {
+          color: #a5a5a5;
         }
 
         .invisible {
@@ -153,9 +158,14 @@
 
         .btn_remove {
           @extend .btn_sort;
-          color: red;
+          margin-top: .1em;
+          color: #ff4242;
           font-size: 1.7em;
           margin-right: .7em;
+        }
+
+        .btn_remove:hover {
+          color: red;
         }
 
         select {
