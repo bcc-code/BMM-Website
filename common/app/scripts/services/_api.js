@@ -102,31 +102,6 @@ angular.module('bmmLibApp')
     }
   }
 
-  factory.getserverUrli = function() {
-    return serverUrl;
-  };
-
-  factory.setContentLanguage = function(lang) {
-    factory.contentLanguage = lang;
-  };
-
-  factory.setContentLanguages = function(langs) {
-    factory.contentLanguages = langs;
-  };
-
-  factory.addLanguagesHeader = function(xhr) {
-    var newApi = true;
-    if(factory.contentLanguages && newApi) {
-      xhr.setRequestHeader('Accept-Language', factory.contentLanguages);
-    };
-  };
-
-  factory.addLanguageHeader = function(xhr) {
-    if(factory.contentLanguage) {
-      xhr.setRequestHeader('Accept-Language', factory.contentLanguages);
-    }
-  }
-
   /** Get the basic information about the API **/
   factory.root = function() {
 
@@ -179,7 +154,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -213,7 +187,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -247,7 +220,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -294,7 +266,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -385,7 +356,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       url: serverUrl+'facets/album_published/years',
       data: $.param(options),
       dataType: 'json',
@@ -507,7 +477,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -548,7 +517,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
@@ -607,7 +575,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -641,7 +608,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -671,7 +637,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       data: $.param(options),
       dataType: 'json',
       xhrFields: {
@@ -1199,7 +1164,6 @@ angular.module('bmmLibApp')
         'Accept-Language': languages,
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
-      beforeSend: factory.addLanguagesHeader,
       dataType: 'json',
       xhrFields: {
         'withCredentials': true
