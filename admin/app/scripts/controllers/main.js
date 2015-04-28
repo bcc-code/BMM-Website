@@ -20,8 +20,8 @@ angular.module('bmmApp')
 
       $scope.go = function (path) { $location.path(path); };
 
-      $scope.setContentLanguage = function(language) {
-        _init.contentLanguage = language;
+      $scope.setContentLanguages = function(languages) {
+        _init.contentLanguages = languages;
         $route.reload();
       };
 

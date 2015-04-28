@@ -8,7 +8,8 @@ angular.module('bmmLibApp')
       credentialsSuported = 'unresolved',
       imageCredentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'https://localhost/'; //Fallback
+      serverUrl = 'https://localhost/', //Fallback
+      contentLanguages = [];
 
   $.ajaxSetup({
     timeout: 5000 //Time in milliseconds
@@ -17,6 +18,10 @@ angular.module('bmmLibApp')
   factory.serverUrl = function(url) {
     serverUrl = url;
   };
+
+  factory.getserverUrli = function() {
+    return serverUrl;
+  }
 
   factory.setKeepAliveTime = function(time) {
     keepAliveTime = time;
@@ -102,6 +107,14 @@ angular.module('bmmLibApp')
     }
   }
 
+  factory.setContentLanguages = function(languages) {
+    contentLanguages = languages;
+  };
+
+  factory.getContentLanguages = function() {
+    return contentLanguages || '';
+  };
+
   /** Get the basic information about the API **/
   factory.root = function() {
 
@@ -142,16 +155,15 @@ angular.module('bmmLibApp')
   };
 
   /** Get the latest albums of a specific type (Default is all types) **/
-  factory.albumLatest = function(options, languages) {
+  factory.albumLatest = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     return $.ajax({
       method: 'GET',
       url: serverUrl+'album/',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -167,10 +179,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get all albums in a year **/
-  factory.albumPublishedYear = function(year, options, languages) {
+  factory.albumPublishedYear = function(year, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    size                      Integer         \d+
@@ -184,7 +195,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/published/'+year+'/',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -200,10 +211,9 @@ angular.module('bmmLibApp')
   };
 
     /** Get all albums in a year **/
-  factory.albumTracksRecordedYear = function(year, options, languages) {
+  factory.albumTracksRecordedYear = function(year, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    size                      Integer         \d+
@@ -217,7 +227,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/tracks_recorded/'+year+'/',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -233,10 +243,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of an album **/
-  factory.albumGet = function(id, languages, options) {
+  factory.albumGet = function(id, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    raw                       Boolean         Role: ROLE_ALBUM_MANAGER
@@ -263,7 +272,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/'+id,
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -339,10 +348,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of years with albums for the archive (published sorting) **/
-  factory.facetsAlbumPublishedYears = function(options, languages) {
+  factory.facetsAlbumPublishedYears = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    content-type              Array(String)   song|speech|audiobook|singsong|video
@@ -353,7 +361,7 @@ angular.module('bmmLibApp')
     return $.ajax({
       method: 'GET',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       url: serverUrl+'facets/album_published/years',
@@ -456,10 +464,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of the data **/
-  factory.search = function(term, options, languages) {
+  factory.search = function(term, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    size                      Integer         \d+ Def = 20
@@ -474,7 +481,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'search/'+term,
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -506,15 +513,13 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of suggestions based on a given term **/
-  factory.suggest = function(term, languages) {
-
-    if (typeof languages === 'undefined') { languages = ''; }
+  factory.suggest = function(term) {
 
     return $.ajax({
       method: 'GET',
       url: serverUrl+'suggest/'+term,
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       dataType: 'json',
@@ -553,10 +558,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of the latest tracks in the library **/
-  factory.trackLatest = function(options, languages) {
+  factory.trackLatest = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    size                      Integer         \d+ Def = 20
@@ -572,7 +576,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -588,10 +592,9 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of tracks related to what you asked for **/
-  factory.trackRel = function(key, options, languages) {
+  factory.trackRel = function(key, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     /** OPTIONS (Stars = Required)
      *    size                      Integer         \d+ Def = 20
@@ -605,7 +608,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/rel/'+key+'/',
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -621,9 +624,8 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of a track **/
-  factory.trackGet = function(id, languages, options) {
+  factory.trackGet = function(id, options) {
 
-    if (typeof languages === 'undefined') { languages = ''; }
     if (typeof options === 'undefined') { options = {}; }
 
     /** RETURNS
@@ -634,7 +636,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/'+id,
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -926,7 +928,7 @@ angular.module('bmmLibApp')
   };
 
   /** Add a track, and PUT it again **/
-  factory.userTrackCollectionLink = function(playlist, tracks, languages) {
+  factory.userTrackCollectionLink = function(playlist, tracks) {
 
     if (typeof tracks === 'undefined') { tracks = {}; }
 
@@ -1151,17 +1153,16 @@ angular.module('bmmLibApp')
   };
 
   /** Get a list of tracks from contributor **/
-  factory.contributorTracksGet = function(id, options, languages) {
+  factory.contributorTracksGet = function(id, options) {
 
     if (typeof options === 'undefined') { options = {}; }
-    if (typeof languages === 'undefined') { languages = ''; }
 
     return $.ajax({
       method: 'GET',
       url: serverUrl+'contributor/'+id+'/track/',
       data: $.param(options),
       headers: {
-        'Accept-Language': languages,
+        'Accept-Language': factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       dataType: 'json',

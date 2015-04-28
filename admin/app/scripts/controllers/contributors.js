@@ -30,7 +30,7 @@ angular.module('bmmApp')
 
         _api.contributorTracksGet(model.id, {
           size: 100
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           $scope.$apply(function() {
 

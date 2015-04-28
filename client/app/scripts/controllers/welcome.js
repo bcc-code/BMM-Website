@@ -26,7 +26,7 @@ angular.module('bmmApp')
     _api.trackLatest({
       size: 9,
       'content-type': ['speech']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var left = [], right = [], largeScreen = [], track;
 
@@ -57,7 +57,7 @@ angular.module('bmmApp')
     _api.trackLatest({
       size: 10,
       'content-type': ['video']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var videos = [], track;
 
@@ -79,7 +79,7 @@ angular.module('bmmApp')
     _api.trackLatest({
       size: 12,
       'content-type': ['song']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var left = [], right = [], largeOnly = [], track;
 
@@ -109,7 +109,7 @@ angular.module('bmmApp')
     //LATEST ALBUMS
     _api.albumLatest({
       size: 20
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var albums=[], album;
 

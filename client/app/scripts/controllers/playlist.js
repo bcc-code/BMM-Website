@@ -93,7 +93,7 @@ angular.module('bmmApp')
           _api.search(term, {
             from: _from,
             size: loadAmount
-          }, _init.contentLanguage).done(function(data) {
+          }).done(function(data) {
 
             resolveTracks(data);
             size+=loadAmount;
@@ -136,7 +136,7 @@ angular.module('bmmApp')
             _api.trackLatest({
               from: size,
               size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            }).done(function(data) {
 
               resolveTracks(data);
               size+=loadAmount;
@@ -149,7 +149,7 @@ angular.module('bmmApp')
 
         _api.trackLatest({
           size: loadAmount
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           resolveTracks(data);
           size+=loadAmount;
@@ -222,7 +222,7 @@ angular.module('bmmApp')
               from: size,
               tags: ['mp3-kilden'],
               size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            }).done(function(data) {
 
               resolveTracks(data);
               size+=loadAmount;
@@ -236,7 +236,7 @@ angular.module('bmmApp')
         _api.trackLatest({
           size: loadAmount,
           tags: ['mp3-kilden']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           resolveTracks(data);
           size+=loadAmount;
@@ -272,7 +272,7 @@ angular.module('bmmApp')
               from: size,
               tags: ['child-favorites'],
               size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            }).done(function(data) {
 
               resolveTracks(data);
               size+=loadAmount;
@@ -286,7 +286,7 @@ angular.module('bmmApp')
         _api.trackLatest({
           size: loadAmount,
           tags: ['child-favorites']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           resolveTracks(data);
           size+=loadAmount;
@@ -322,7 +322,7 @@ angular.module('bmmApp')
               from: size,
               tags: ['instrumental'],
               size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            }).done(function(data) {
 
               resolveTracks(data);
               size+=loadAmount;
@@ -336,7 +336,7 @@ angular.module('bmmApp')
         _api.trackLatest({
           size: loadAmount,
           tags: ['instrumental']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           resolveTracks(data);
           size+=loadAmount;
@@ -371,7 +371,7 @@ angular.module('bmmApp')
             _api.contributorTracksGet($routeParams.id, {
               from: size,
               size: loadAmount
-            }, _init.contentLanguage).done(function(data) {
+            }).done(function(data) {
 
               resolveTracks(data);
               size+=loadAmount;
@@ -384,7 +384,7 @@ angular.module('bmmApp')
 
         _api.contributorTracksGet($routeParams.id, {
           size: loadAmount
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           resolveTracks(data);
           size+=loadAmount;

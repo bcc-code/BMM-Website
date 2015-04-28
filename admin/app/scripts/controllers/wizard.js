@@ -220,7 +220,7 @@ angular.module('bmmApp')
           'datetime-to': to,
           'resource-type': ['album'],
           'unpublished': ['show']
-        }, _init.contentLanguage).done(function(albums) {
+        }).done(function(albums) {
 
           var rootAlbums = [];
 

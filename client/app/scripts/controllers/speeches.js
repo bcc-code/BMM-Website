@@ -42,7 +42,7 @@ angular.module('bmmApp')
           size: loadAmount,
           'content-type': ['speech'],
           'media-type': ['audio']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           var cnt=0;
 
@@ -86,7 +86,7 @@ angular.module('bmmApp')
       size: 15,
       'content-type': ['speech'],
       'media-type': ['audio']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var left = [], right = [], largeOnly = [];
 
@@ -117,7 +117,7 @@ angular.module('bmmApp')
       size: loadAmount,
       'content-type': ['speech'],
       'media-type': ['audio']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var albums=[];
 
