@@ -37,7 +37,7 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.trackGet($routeParams.id, '', { raw: true });
+          return _api.trackGet($routeParams.id, { raw: true });
         } else {
           return _api.trackGet($routeParams.id, {
             unpublished: 'show'
