@@ -624,7 +624,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of a track **/
-  factory.trackGet = function(id, options) {
+  factory.trackGet = function(id, options, language) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -636,7 +636,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/'+id,
       headers: {
-        'Accept-Language': factory.getContentLanguages(),
+        'Accept-Language': language || factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
