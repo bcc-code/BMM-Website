@@ -928,7 +928,7 @@ angular.module('bmmLibApp')
   };
 
   /** Add a track, and PUT it again **/
-  factory.userTrackCollectionLink = function(playlist, tracks) {
+  factory.userTrackCollectionLink = function(playlist, tracks, language) {
 
     if (typeof tracks === 'undefined') { tracks = {}; }
 
@@ -942,7 +942,7 @@ angular.module('bmmLibApp')
       method: 'POST',
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
-        'Accept-Language': factory.getContentLanguages(),
+        'Accept-Language': language || factory.getContentLanguages(),
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
       url: serverUrl+'track_collection/'+playlist,

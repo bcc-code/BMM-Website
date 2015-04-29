@@ -89,7 +89,7 @@ angular.module('bmmLibApp')
 
             _api.userTrackCollectionLink($(this).attr('id'), [
               ui.draggable.attr('id')
-            ]);
+            ], ui.draggable.attr('language'));
 
           }
         });
@@ -151,7 +151,7 @@ angular.module('bmmLibApp')
 
             _api.userTrackCollectionLink($(this).attr('id'), [
                 ui.draggable.attr('id') //@todo - make possible for multiple ids
-              ]).fail(function() {
+              ], ui.draggable.attr('language')).fail(function() {
 
               $rootScope.$apply();
 
