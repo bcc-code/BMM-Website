@@ -942,6 +942,7 @@ angular.module('bmmLibApp')
       method: 'POST',
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'Accept-Language': factory.getContentLanguages(),
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
       url: serverUrl+'track_collection/'+playlist,
@@ -951,7 +952,6 @@ angular.module('bmmLibApp')
           links+='<'+serverUrl+'track/'+this+'>,';
         });
         xhr.setRequestHeader('Link', links);
-        xhr.setRequestHeader('Accept-Language', languages);
       },
       dataType: 'json',
       xhrFields: {
