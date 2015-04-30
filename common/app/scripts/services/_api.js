@@ -8,11 +8,8 @@ angular.module('bmmLibApp')
       credentialsSuported = 'unresolved',
       imageCredentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'https://localhost/'; //Fallback
-
-  $.ajaxSetup({
-    timeout: 5000 //Time in milliseconds
-  });
+      serverUrl = 'https://localhost/', //Fallback
+      requestTimeout;
 
   factory.serverUrl = function(url) {
     serverUrl = url;
@@ -20,6 +17,13 @@ angular.module('bmmLibApp')
 
   factory.setKeepAliveTime = function(time) {
     keepAliveTime = time;
+  };
+
+  factory.setRequestTimeout = function(time) {
+    requestTimeout = time;
+    $.ajaxSetup({
+      timeout: requestTimeout //Time in milliseconds
+    });
   };
 
   factory.exceptionHandler = function(xhr) {
