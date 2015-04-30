@@ -11,13 +11,6 @@ angular.module('bmmLibApp')
       serverUrl = 'https://localhost/', //Fallback
       requestTimeout;
 
-  factory.setDefaults = function() {
-    $.ajaxSetup({
-      timeout: requestTimeout //Time in milliseconds
-    });
-  };
-  factory.setDefaults();
-
   factory.serverUrl = function(url) {
     serverUrl = url;
   };
@@ -28,7 +21,9 @@ angular.module('bmmLibApp')
 
   factory.setRequestTimeout = function(time) {
     requestTimeout = time;
-    factory.setDefaults();
+    $.ajaxSetup({
+      timeout: requestTimeout //Time in milliseconds
+    });
   };
 
   factory.exceptionHandler = function(xhr) {
