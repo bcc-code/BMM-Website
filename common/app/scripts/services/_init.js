@@ -56,7 +56,9 @@ angular.module('bmmLibApp')
         factory.config = config;
         _api.serverUrl(config.serverUrl);
         _api.setKeepAliveTime(config.keepAlive*100*60);
-        _api.setRequestTimeout(config.requestTimeout*1000);
+        if(config.requestTimeout) {
+          _api.setRequestTimeout(config.requestTimeout*1000);
+        }
 
         // -- Secure that the correct protocol given by configuration is used
         if ($location.protocol()!==config.protocol&&
