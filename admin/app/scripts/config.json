@@ -12,6 +12,7 @@
   "biblePath": "translations/bible/",
   "titlesAlbum": "translations/titles/album.json",
   "keepAlive": 5,
+  "requestTimeout": null,
   "translationFolder": "translations/",
   "translationsAvailable": [
     "en",
