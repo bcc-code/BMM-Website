@@ -72,19 +72,19 @@
         .language_element {
           padding-bottom: .5em;
           padding-top: .5em;
-          border-bottom: .1em solid #ECECEC;
+          border-bottom: .1em solid $colorBorderLight;
           height: 3.5em;
           background-color: white;
         };
 
         .language_element:first-child {
-          border-top: .1em solid #ECECEC;
+          border-top: .1em solid $colorBorderLight;
         };
 
         .languages-add {
           margin-top: 1em;
           margin-right: .5em;
-          background-color: #03d67f;
+          background-color: $colorLightGreen;
           background-image: url(../images/svg/v3/Icon_plus.svg);
           background-size: .8em .8em;
           background-position: .8em .7em;
@@ -93,7 +93,7 @@
           padding: .25em 1em .2em 2.1em;
           border-radius: .5em;
           cursor: pointer;
-          color: #fff;//$colorForeground;
+          color: #fff;
           border: .2em solid transparent;
           white-space: nowrap;
         };
