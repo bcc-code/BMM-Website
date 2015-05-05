@@ -50,7 +50,7 @@ angular.module('bmmApp')
       _api.search($routeParams.term, {
         from: _from,
         size: loadAmount
-      }, _init.contentLanguage).done(function(data) {
+      }).done(function(data) {
 
         var track,
           type,

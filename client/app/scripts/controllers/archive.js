@@ -58,8 +58,7 @@ angular.module('bmmApp')
         } else if ($scope.tree.currentNode.group==='track') {
 
           _api.trackGet(
-            $scope.tree.currentNode.roleId,
-            _init.contentLanguage).done(function(track) {
+            $scope.tree.currentNode.roleId).done(function(track) {
 
               track = _track.resolve(track);
               _play.setPlay([track], 0);
@@ -79,8 +78,7 @@ angular.module('bmmApp')
 
         if ($scope.tree.expandedNode.group==='track') {
           _api.trackGet(
-            $scope.tree.expandedNode.roleId,
-            _init.contentLanguage).done(function(track) {
+            $scope.tree.expandedNode.roleId).done(function(track) {
 
               track = _track.resolve(track);
               _play.setPlay([track], 0);
@@ -94,8 +92,7 @@ angular.module('bmmApp')
           //IF A YEAR IS OPENED, DISPLAY ALBUMS FOR THE WHOLE YEAR
           if ($scope.tree.expandedNode.group==='year') {
 
-            _api.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {},
-              _init.contentLanguage).done(function(data) {
+            _api.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {}).done(function(data) {
 
               $scope.tree.expandedNode.children = [];
               $.each(data, function() {
@@ -122,7 +119,7 @@ angular.module('bmmApp')
           if ($scope.tree.expandedNode.group==='album') {
 
             _api.albumGet(
-              $scope.tree.expandedNode.roleId, _init.contentLanguage
+              $scope.tree.expandedNode.roleId
             ).done(function(data) {
 
               var albums = [], tracks = [];

@@ -43,7 +43,7 @@ angular.module('bmmApp')
           size: loadAmount,
           'content-type': ['song'],
           'media-type': ['audio']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           $.each(data, function() {
 
@@ -86,7 +86,7 @@ angular.module('bmmApp')
       size: 15,
       'content-type': ['song'],
       'media-type': ['audio']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var left = [], right = [], largeOnly = [];
 
@@ -116,7 +116,7 @@ angular.module('bmmApp')
       size: loadAmount,
       'content-type': ['song'],
       'media-type': ['audio']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var albums=[];
 

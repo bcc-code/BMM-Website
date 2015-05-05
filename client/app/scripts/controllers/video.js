@@ -41,7 +41,7 @@ angular.module('bmmApp')
           from: albumFrom,
           size: 20,
           'content-type': ['video']
-        }, _init.contentLanguage).done(function(data) {
+        }).done(function(data) {
 
           $.each(data, function() {
 
@@ -69,7 +69,7 @@ angular.module('bmmApp')
     _api.trackLatest({
       size: 9,
       'content-type': ['video']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var left = [], right = [], largeOnly = [];
 
@@ -98,7 +98,7 @@ angular.module('bmmApp')
     _api.albumLatest({
       size: 20,
       'content-type': ['video']
-    }, _init.contentLanguage).done(function(data) {
+    }).done(function(data) {
 
       var album = [];
 

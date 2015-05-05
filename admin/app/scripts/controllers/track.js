@@ -37,9 +37,9 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.trackGet($routeParams.id, '', { raw: true });
+          return _api.trackGet($routeParams.id, { raw: true });
         } else {
-          return _api.trackGet($routeParams.id, _init.contentLanguage, {
+          return _api.trackGet($routeParams.id, {
             unpublished: 'show'
           });
         }
@@ -50,7 +50,7 @@ angular.module('bmmApp')
         }
 
         if (typeof $routeParams.language==='undefined') {
-          $routeParams.language = _init.contentLanguage;
+          $routeParams.language = _init.contentLanguages[0];
         }
 
         if (typeof $routeParams.date==='undefined') {
@@ -365,7 +365,7 @@ angular.module('bmmApp')
       }
 
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
-        _api.albumGet(model.parent_id, _init.contentLanguage, {
+        _api.albumGet(model.parent_id, {
           unpublished: 'show'
         }).done(function(album) {
           $scope.$apply(function() {
@@ -373,7 +373,7 @@ angular.module('bmmApp')
             if (album.parent_id!==null) {
 
               $scope.findParentSubAlbums(album.parent_id, album.id);
-              _api.albumGet(album.parent_id, _init.contentLanguage, {
+              _api.albumGet(album.parent_id, {
                 unpublished: 'show'
               }).done(function(album) {
                 $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
@@ -461,7 +461,7 @@ angular.module('bmmApp')
     $scope.findParentAlbums = function(year, _album_) {
       _api.albumPublishedYear(year, {
         unpublished: 'show'
-      }, _init.contentLanguage).done(function(albums) {
+      }).done(function(albums) {
 
         $scope.$apply(function() {
           $.each(albums, function() {
@@ -485,7 +485,7 @@ angular.module('bmmApp')
 
     $scope.parentSubAlbums = [];
     $scope.findParentSubAlbums = function(id, sub_id) {
-      _api.albumGet(id, _init.contentLanguage, {
+      _api.albumGet(id, {
         unpublished: 'show'
       }).done(function(data) {
 

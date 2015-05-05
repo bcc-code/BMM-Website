@@ -30,7 +30,7 @@ angular.module('bmmApp')
         if (typeof _raw==='undefined'||_raw) {
           return _api.albumGet($routeParams.id, '', { raw: true });
         } else {
-          return _api.albumGet($routeParams.id, _init.contentLanguage, {
+          return _api.albumGet($routeParams.id, {
             unpublished: 'show'
           });
         }
@@ -41,7 +41,7 @@ angular.module('bmmApp')
         }
 
         if (typeof $routeParams.language==='undefined') {
-          $routeParams.language = _init.contentLanguage;
+          $routeParams.language = _init.contentLanguages[0];
         }
 
         if (typeof $routeParams.date==='undefined') {

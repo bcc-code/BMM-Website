@@ -316,6 +316,18 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      //copies the unminified script file.
+      scriptRaw: {
+        src:'./.tmp/concat/bmm.js',
+        dest: './dist/bmm.js'
+      },
+      //This task is run instead of the imagemin and svgmin, for faster dev builds.
+      images: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/images',
+        src: '**/*.{svg,png,jpg,jpeg,gif}',
+        dest: '<%= yeoman.dist %>/images'
+      },
       dist: {
         files: [{
           expand: true,
@@ -465,6 +477,28 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
+    'copy:client',
+    'copy:admin'
+  ]);
+
+    grunt.registerTask('dev', [
+    'clean:dist',
+    'bower-install',
+    'useminPrepare',
+    'compass:dist',
+    'copy:images',
+    'autoprefixer',
+    'concat',
+    'ngAnnotate',//
+    //'copy:dist',
+    'copy:generated',
+    'cdnify',
+    'cssmin',//
+    'uglify',//
+    //'rev',
+    'usemin',//
+    'htmlmin',//
+    'copy:scriptRaw',
     'copy:client',
     'copy:admin'
   ]);

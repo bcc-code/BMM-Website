@@ -15,12 +15,11 @@ angular.module('bmmApp')
 
     if (typeof $routeParams.language!=='undefined') {
       language = $routeParams.language;
-    } else {
-      language = _init.contentLanguage;
-    }
+    };
 
     _api.trackGet(
       $routeParams.id,
+      undefined,
       language
     ).done(function(track) {
 

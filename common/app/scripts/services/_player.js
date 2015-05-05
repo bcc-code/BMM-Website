@@ -290,7 +290,7 @@ angular.module('bmmLibApp')
       playOnLoad = true;
     };
 
-    _api.trackGet(factory.id, lang).done(function(track) {
+    _api.trackGet(factory.id, undefined, lang).done(function(track) {
 
       track = _track.resolve(track);
 
