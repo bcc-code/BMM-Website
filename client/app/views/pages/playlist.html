@@ -88,7 +88,7 @@
                 <td title="{{track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.performers | _min:20}}</td>
 				<td class="drag bmm-large-only" title="{{track.albumTitle}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.albumTitle | _min:40}}</td>
 				<td class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.duration | _time}}</td>
-				<td class="bmm-large-only" ng-click="play(getPlaylistCopy(languageFilter), $index);"><div class="bmm-flag" ng-class="{'flags-{{track.language}}': track.language!=init.contentLanguage}"></div></td>
+				<td class="bmm-large-only" ng-click="play(getPlaylistCopy(languageFilter), $index);"><div class="bmm-flag flags-{{track.language}}"></div></td>
                 <td>
 
                     <div class="options"

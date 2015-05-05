@@ -26,7 +26,7 @@
       > .container {
         position: relative;
         margin: auto;
-        max-width: 35em;
+        max-width: 27em;
         min-height: 3em;
         border-radius: .3em;
         padding: 1em 1.5em;
@@ -63,9 +63,49 @@
           }
         }
 
+        .choose-language {
+          padding-top: .5em;
+          padding-bottom: .5em;
+          display: block;
+        }
+
+        .language_element {
+          padding-bottom: .5em;
+          padding-top: .5em;
+          border-bottom: .1em solid $colorBorderLight;
+          height: 3.5em;
+          background-color: white;
+        };
+
+        .language_element:first-child {
+          border-top: .1em solid $colorBorderLight;
+        };
+
+        .languages-add {
+          margin-top: 1em;
+          margin-right: .5em;
+          background-color: $colorLightGreen;
+          background-image: url(../images/svg/v3/Icon_plus.svg);
+          background-size: .8em .8em;
+          background-position: .8em .7em;
+          background-repeat: no-repeat;
+          display: inline-block;
+          padding: .25em 1em .2em 2.1em;
+          border-radius: .5em;
+          cursor: pointer;
+          color: #fff;
+          border: .2em solid transparent;
+          white-space: nowrap;
+        };
+
+        .languages-add:hover {
+          background-color: #0AB66F;
+        };
+
+
         .dropdown {
           float: left;
-          width: 100%;
+          width: 70%;
           > a {
             > div {
               display: inline-block;
@@ -96,11 +136,42 @@
             cursor: pointer;
           }
           .dropdown-menu {
-            //position: relative;
             float: none;
             width: 100%;
             overflow: hidden;
           }
+          .dropdown-toggle {
+            background-color: white;
+          }
+        }
+
+        .btn_sort {
+          margin-top: .2em;
+          margin-left: .4em;
+          margin-right: .4em;
+          float:right;
+          font-size: 1.4em;
+          color: #c4c4c4;
+        }
+
+        .btn_sort:hover {
+          color: #a5a5a5;
+        }
+
+        .invisible {
+          visibility: hidden;
+        }
+
+        .btn_remove {
+          @extend .btn_sort;
+          margin-top: .1em;
+          color: #ff4242;
+          font-size: 1.7em;
+          margin-right: .7em;
+        }
+
+        .btn_remove:hover {
+          color: red;
         }
 
         select {

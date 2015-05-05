@@ -57,7 +57,7 @@ angular.module('bmmApp')
       return array;
     };
 
-    _api.albumGet($routeParams.id, _init.contentLanguage).done(function(mainAlbum) {
+    _api.albumGet($routeParams.id).done(function(mainAlbum) {
 
       var track;
       var formattedAlbum = _album.resolve(mainAlbum);
@@ -85,7 +85,7 @@ angular.module('bmmApp')
       });
 
       if (mainAlbum.parent_id!==null) {
-        _api.albumGet(mainAlbum.parent_id, _init.contentLanguage).done(function(album) {
+        _api.albumGet(mainAlbum.parent_id).done(function(album) {
 
           $scope.$apply(function() {
 
@@ -140,7 +140,7 @@ angular.module('bmmApp')
 
           } else if (this.type === 'album') {
 
-            _api.albumGet(this.id, _init.contentLanguage).done(function(album) {
+            _api.albumGet(this.id).done(function(album) {
 
               ct--;
 

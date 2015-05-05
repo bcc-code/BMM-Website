@@ -91,7 +91,7 @@ angular.module('bmmLibApp')
     factory.findAlbums = function(year, options) {
       _api.albumPublishedYear(year, {
         unpublished: 'show'
-      }, _init.contentLanguage).done(function(albums) {
+      }).done(function(albums) {
 
         factory.albums = [];
         factory.tracks = [];
@@ -115,7 +115,7 @@ angular.module('bmmLibApp')
     //FETCH TRACKS
     factory.tracks = [];
     factory.findTracks = function(id) {
-      _api.albumGet(id, _init.contentLanguage, {
+      _api.albumGet(id, {
         unpublished: 'show'
       }).done(function(data) {
 
@@ -135,7 +135,7 @@ angular.module('bmmLibApp')
     //FETCH CHILD-ALBUMS
     factory.childAlbums = [];
     factory.findChildAlbums = function(id, options) {
-      _api.albumGet(id, _init.contentLanguage, {
+      _api.albumGet(id, {
         unpublished: 'show'
       }).done(function(data) {
 
@@ -162,7 +162,7 @@ angular.module('bmmLibApp')
     //FETCH CHILD-TRACKS
     factory.childTracks = [];
     factory.findChildTracks = function(id) {
-      _api.albumGet(id, _init.contentLanguage, {
+      _api.albumGet(id, {
         unpublished: 'show'
       }).done(function(data) {
 

@@ -31,7 +31,7 @@ angular.module('bmmApp')
 
       $scope.saveSession = function() {
         localStorage[_init.user.username] = angular.toJson({
-          contentLanguage: $scope.init.contentLanguage,
+          contentLanguages: $scope.init.contentLanguages,
           websiteLanguage: $scope.init.websiteLanguage,
           videoFirst: _player.videoFirst,
           pushMessages: $scope.pushMessages
@@ -46,7 +46,17 @@ angular.module('bmmApp')
           }
           _player.videoFirst = model.videoFirst;
 
-          $scope.init.contentLanguage = _init.contentLanguage = model.contentLanguage;
+          //This is just so that users that still only have 1 language in their
+          //localStorage, prepend their language to the contentLanguages.
+          if(model.contentLanguage) {
+            _init.prependLanguage(model.contentLanguage);
+            delete model.contentLanguage;
+          }
+
+          if(model.contentLanguages) {
+            _api.setContentLanguages(model.contentLanguages);
+            $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
+          };
 
           if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
             $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
@@ -56,8 +66,8 @@ angular.module('bmmApp')
       };
       $scope.restoreSession();
 
-      $scope.$parent.$watch('init.contentLanguage', function(lang) {
-        if (typeof contentLanguage!=='undefined') {
+      $scope.$parent.$watch('init.contentLanguages[0]', function(lang) {
+        if (typeof lang!=='undefined') {
           $scope.init.podcastLanguage = lang;
         }
       });
@@ -66,8 +76,44 @@ angular.module('bmmApp')
         $location.path( _playlist.getUrl() );
       };
 
-      $scope.setContentLanguage = function(lang) {
-        $scope.init.contentLanguage = _init.originalLanguage = _init.contentLanguage = lang;
+      $scope.setLanguagesChanged = function() {
+        $scope.contentLangsChanged = true;
+      };
+
+      $scope.sortableOptions = {
+        handle: '.sort_handle',
+        update: function() {
+          $scope.setLanguagesChanged();
+        },
+        axis: 'y' 
+      };
+
+      //This filter functions filters out the languages
+      //that are already selected. Prevents duplicates.
+      $scope.exceptSelected = function(item) {
+        return $scope.init.contentLanguages.indexOf(item) === -1;
+      };
+
+      $scope.addLanguage = function() {
+        var langs = $scope.init.root.languages;
+        for(var i = 0; i < langs.length; i++) {
+          var lang = langs[i];
+          if($scope.exceptSelected(lang)) {
+            _init.appendLanguage(lang);
+            return;
+          }
+        };
+      };
+
+      $scope.setContentLangConditional = function() {
+        if($scope.contentLangsChanged) {
+          $scope.setContentLanguages($scope.init.contentLanguages);
+          $scope.contentLangsChanged = false;
+        };
+      };
+
+      $scope.setContentLanguages = function(langs) {
+        //The first language is the 'primary' content language
         $scope.saveSession();
         $route.reload();
       };
@@ -103,7 +149,7 @@ angular.module('bmmApp')
         $.each(tracks, function() {
           ids.push(this.id);
         });
-        _api.userTrackCollectionLink(playlistId, ids, _init.contentLanguage);
+        _api.userTrackCollectionLink(playlistId, ids);
       };
 
       $scope.addPLaylist = function(newPlaylist) {

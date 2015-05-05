@@ -16,7 +16,7 @@
                 <div class="bmm-latest-about">{{init.translation.track.duration}}: {{track.duration | _time}}</div>
             </div>
             <div ng-include="'views/pages/options.html'"></div>
-            <div ng-hide="track.language==init.contentLanguage" class="flag flags-{{track.language}}"></div>
+            <div class="flag flags-{{track.language}}"></div>
         </li>
     </ul>
 
@@ -36,7 +36,7 @@
                 <div class="bmm-latest-about">{{init.translation.track.duration}}: {{track.duration | _time}}</div>
             </div>
             <div ng-include="'views/pages/options.html'"></div>
-            <div ng-hide="track.language==init.contentLanguage" class="flag flags-{{track.language}}"></div>
+            <div class="flag flags-{{track.language}}"></div>
         </li>
     </ul>
 
@@ -56,7 +56,7 @@
                 <div class="bmm-latest-about">{{init.translation.track.duration}}: {{track.duration | _time}}</div>
             </div>
             <div ng-include="'views/pages/options.html'"></div>
-            <div ng-hide="track.language==init.contentLanguage" class="flag flags-{{track.language}}"></div>
+            <div class="flag flags-{{track.language}}"></div>
         </li>
     </ul>
 </div>
@@ -67,7 +67,7 @@
 	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
         <img class="album-latest-image" ng-src="{{album.cover}}" width="9em" height="9.3em"/>
 		<div class="album-latest-title">{{album.title}}</div>
-        <div ng-hide="album.raw.language==init.contentLanguage" class="flag flags-{{album.raw.language}}"></div>
+        <div class="flag flags-{{album.raw.language}}"></div>
 	</div>
 </div>
 

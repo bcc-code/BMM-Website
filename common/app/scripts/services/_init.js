@@ -13,7 +13,7 @@ angular.module('bmmLibApp')
     factory.translation = {};
     factory.translations = {}; //Object with actual translations
     factory.translations.available = []; //Array with translations available
-    factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguage = 'nb'; //Fallback
+    factory.contentLanguages = ['nb', 'en']; //Fallback
     factory.isIOS = false;
     factory.config = {};
     factory.bible = {};
@@ -23,6 +23,30 @@ angular.module('bmmLibApp')
       status: '',
       loaded: false,
       complete: $q.defer()
+    };
+
+    _api.setContentLanguages(factory.contentLanguages);//Fallback
+
+    factory.appendLanguage = function(lang) {
+      var langs = factory.contentLanguages;
+      //No duplicates, only the first occurance counts.
+      //Therefore don't insert, as the language already is there with a higher priority.
+      if(langs.indexOf(lang) === -1) {
+        factory.contentLanguages.push(lang);
+      }
+    };
+
+    factory.prependLanguage = function(lang) {
+      var langs = factory.contentLanguages;
+      //If the language already exists, then remove
+      //the other occurence of it, because the new
+      //one to be inserted has higher priority.
+      var index = langs.indexOf(lang);
+      if(index !== -1) {
+        langs.splice(index, 1);
+      };
+      
+      langs.splice(0, 0, lang);
     };
 
     factory.promise = function(admin) {
@@ -54,7 +78,7 @@ angular.module('bmmLibApp')
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
-        _api.serverUrl(config.serverUrl);
+        _api.serverUrl(config.alternativeUrls[2]);
         _api.setKeepAliveTime(config.keepAlive*100*60);
         if(config.requestTimeout) {
           _api.setRequestTimeout(config.requestTimeout*1000);
@@ -122,7 +146,7 @@ angular.module('bmmLibApp')
             factory.load.percent+=20;
 
             // -- contentLanguage
-            findcontentLanguage(user.languages,0, contentLanguageLoaded);
+            findcontentLanguages(user.languages,0, contentLanguageLoaded);
 
             // -- Translation
             findTranslation(user.languages,0, translationLoaded);
@@ -202,19 +226,25 @@ angular.module('bmmLibApp')
       return isAdmin;
     }
 
-    var findcontentLanguage = function(lang, index, promise) {
+    var findcontentLanguages = function(langs, index, promise) {
 
       factory.load.status = 'Find contentLanguage';
 
-      if (typeof lang[index]==='undefined') {
-        promise.resolve(); //Using fallback
-      } else if ($.inArray(lang[index],factory.root.languages)!==-1) {
-        factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguage = lang[index];
-        promise.resolve();
-        factory.load.percent+=20;
-      } else {
-        findcontentLanguage(lang, index+1, promise);
-      }
+      //Iterate backwards so that the first item is added last.
+      //And thus comes first in the contentLanguages Array;
+      for(var i = langs.length-1; i > -1; i--) {
+        var lang = langs[i];
+        if (typeof lang === 'undefined') {
+          promise.resolve(); //Using fallback
+        } else if (factory.root.languages.indexOf(lang) !== -1) {
+          factory.prependLanguage(lang);
+        };
+      };
+
+      //Use the top language as website language and podcastLanguage
+      factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguages[0];
+      promise.resolve();
+      factory.load.percent+=20;
     };
 
     var findTranslation = function(lang, index, promise) {
