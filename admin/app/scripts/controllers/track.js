@@ -96,8 +96,9 @@ angular.module('bmmApp')
     };
 
     $scope.refreshModel = function() {
+      var promise;
       try {
-        $scope.fetchModel().done(function(model) {
+        promise = $scope.fetchModel().done(function(model) {
           $scope.$apply(function() {
             $scope.model = model;
             findAvailableTranslations();
@@ -105,7 +106,7 @@ angular.module('bmmApp')
           });
           modelLoaded = true;
         });
-        $scope.fetchModel(false).done(function(model) {
+        promise = $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
             $scope.standardModel = model;
             $scope.formattedModel = _track.resolve(model);
@@ -122,6 +123,7 @@ angular.module('bmmApp')
           findAvailableTags();
         });
       }
+      return promise
     };
     $scope.refreshModel();
 
@@ -553,6 +555,17 @@ angular.module('bmmApp')
         $scope.waitings.splice(index, 1);
         $scope.refreshModel();
         $scope.status = _init.translation.states.noChanges;
+      });
+    };
+
+    /* Changes the language of the media file, not the selected language */
+    $scope.changeLanguage = function(toLanguage) {
+      saveModel().then(function() {
+        return _api.changeTrackLanguagePost($scope.model.id, $scope.edited.language, toLanguage);
+      }).then(function() {
+        return $scope.refreshModel();
+      }).then(function() {
+        $scope.switchLanguage(toLanguage);
       });
     };
 
