@@ -247,7 +247,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of an album **/
-  factory.albumGet = function(id, options) {
+  factory.albumGet = function(id, options, language) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -276,7 +276,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/'+id,
       headers: {
-        'Accept-Language': factory.getContentLanguages(),
+        'Accept-Language': language || factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
