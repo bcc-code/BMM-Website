@@ -55,6 +55,7 @@
       "description":"Description",
       "selectedLanguage":"Selected language",
       "originalLanguage":"Original language",
+      "changeLanguage": "Change language",
       "publish":"Publish",
       "unpublish":"Unpublish",
       "missingTitle":"Please fill in title first",

@@ -1180,6 +1180,25 @@ angular.module('bmmLibApp')
 
   };
 
+  /** Move a language within a track **/
+  factory.changeTrackLanguagePost = function(id, fromLanguage, toLanguage) {
+
+    return $.ajax({
+      method: 'POST',
+      url: serverUrl+'track/'+id+'/'+fromLanguage+'/changeTo/'+toLanguage,
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
+      },
+      dataType: 'text',
+      xhrFields: {
+        'withCredentials': true
+      },
+      crossDomain: true
+    }).fail( function(xhr) {
+      factory.exceptionHandler(xhr);
+    });
+  };
+
   return factory;
 
 }]);

@@ -179,6 +179,9 @@
                 <span ng-show="edited.is_visible">{{init.translation.page.editor.unpublish}}</span>
                 <span ng-hide="edited.is_visible">{{init.translation.page.editor.publish}}</span>
             </button>
+            <b>{{init.translation.page.editor.changeLanguage}}</b>
+            <select style="width:10em;" ng-change="changeLanguage(lang)" ng-model="lang" ng-options="lang | _languageCode for lang in availableLanguages">
+            </select>
             <br>
             {{init.translation.page.editor.title}}
             <br>
