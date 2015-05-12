@@ -28,7 +28,7 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newAlbum) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.albumGet($routeParams.id, '', { raw: true });
+          return _api.albumGet($routeParams.id, { raw: true });
         } else {
           return _api.albumGet($routeParams.id, {
             unpublished: 'show'
@@ -302,7 +302,7 @@ angular.module('bmmApp')
       }
 
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
-        _api.albumGet(model.parent_id, _init.contentLanguage, {
+        _api.albumGet(model.parent_id,{
           unpublished: 'show'
         }).done(function(album) {
           $scope.$apply(function() {
