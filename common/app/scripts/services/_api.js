@@ -247,7 +247,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of an album **/
-  factory.albumGet = function(id, options, language) {
+  factory.albumGet = function(id, options, languages) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -276,7 +276,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'album/'+id,
       headers: {
-        'Accept-Language': language || factory.getContentLanguages(),
+        'Accept-Language': languages || factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
@@ -628,7 +628,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of a track **/
-  factory.trackGet = function(id, options, language) {
+  factory.trackGet = function(id, options, languages) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -640,7 +640,7 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'track/'+id,
       headers: {
-        'Accept-Language': language || factory.getContentLanguages(),
+        'Accept-Language': languages || factory.getContentLanguages(),
         'Authorization': 'Basic '+window.btoa(factory.getCredentials())
       },
       data: $.param(options),
