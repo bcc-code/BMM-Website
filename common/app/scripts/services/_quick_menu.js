@@ -117,7 +117,7 @@ angular.module('bmmLibApp')
     factory.findTracks = function(id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }).done(function(data) {
+      }, _init.root.languages.concat(['ar'])).done(function(data) {
 
         factory.track = [];
         factory.tracks = [];
@@ -137,7 +137,7 @@ angular.module('bmmLibApp')
     factory.findChildAlbums = function(id, options) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }).done(function(data) {
+      }, _init.root.languages.concat(['ar'])).done(function(data) {
 
         factory.childAlbum = [];
         factory.childAlbums = [];
@@ -164,7 +164,7 @@ angular.module('bmmLibApp')
     factory.findChildTracks = function(id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }).done(function(data) {
+      }, _init.root.languages.concat(['ar'])).done(function(data) {
 
         factory.childTrack = [];
         factory.childTracks = [];
