@@ -37,11 +37,11 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.trackGet($routeParams.id, { raw: true });
+          return _api.trackGet($routeParams.id, { raw: true }, _init.root.languages.concat(['ar']));
         } else {
           return _api.trackGet($routeParams.id, {
             unpublished: 'show'
-          });
+          }, _init.root.languages.concat(['ar']));
         }
       } else {
 
@@ -369,7 +369,7 @@ angular.module('bmmApp')
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
         _api.albumGet(model.parent_id, {
           unpublished: 'show'
-        }).done(function(album) {
+        }, _init.root.languages.concat(['ar'])).done(function(album) {
           $scope.$apply(function() {
 
             if (album.parent_id!==null) {
@@ -377,7 +377,7 @@ angular.module('bmmApp')
               $scope.findParentSubAlbums(album.parent_id, album.id);
               _api.albumGet(album.parent_id, {
                 unpublished: 'show'
-              }).done(function(album) {
+              }, _init.root.languages.concat(['ar'])).done(function(album) {
                 $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
                 if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
                   $scope.findParentAlbums($scope.albumParentYear, album);
@@ -489,7 +489,7 @@ angular.module('bmmApp')
     $scope.findParentSubAlbums = function(id, sub_id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }).done(function(data) {
+      }, _init.root.languages.concat(['ar'])).done(function(data) {
 
         $scope.$apply(function() {
           $.each(data.children, function() {
