@@ -26,6 +26,7 @@ angular.module('bmmLibApp')
     };
 
     _api.setContentLanguages(factory.contentLanguages);//Fallback
+    _api.appendUnknownLanguage = true;
 
     factory.appendLanguage = function(lang) {
       var langs = factory.contentLanguages;
