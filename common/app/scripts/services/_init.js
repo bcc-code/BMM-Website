@@ -126,7 +126,7 @@ angular.module('bmmLibApp')
 
             //Temporary remove arabic (@todo - remove later)
             $.each(root.languages, function(index) {
-              if (this==='ar') {
+              if (this==='ar' || this==='zxx') {
                 root.languages.splice(index,1);
                 return false;
               }
