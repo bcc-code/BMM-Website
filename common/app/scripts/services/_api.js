@@ -27,11 +27,12 @@ angular.module('bmmLibApp')
    * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
    */
   factory.sendXHR = function(customXhrOptions, errorHandler) {
+    var xhrOptions, defaultXhrOptions, supportedMethods;
     //use the exception handler as the default fallback handler.
     errorHandler = errorHandler || factory.exceptionHandler;
 
     //The default options for every request
-    var xhrOptions = {
+    defaultXhrOptions = {
       crossDomain: true,
       dataType: 'json',
       timeout: requestTimeout,
@@ -47,9 +48,32 @@ angular.module('bmmLibApp')
       }
     };
 
+    function merge(obj1,obj2){ // Custom merge function
+        var result = {}; // return result
+        for(var i in obj1){      // for every property in obj1 
+            if((i in obj2) && (typeof obj1[i] === "object") && (i !== null) && !$.isArray(obj1[i])){
+
+              //Arrays are not merged, they're treated like any other primitive property.
+              //This is because of the Accept-Languages property.
+
+                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge   
+            } else {
+               result[i] = obj1[i]; // add it to result
+            }
+        }
+        for(i in obj2){ // add the remaining properties from object 2
+            if(i in result){ //conflict
+                continue; //obj1 has higher priority, therefore skip.
+            }
+            result[i] = obj2[i];
+        }
+        return result;
+    };
+
+
     //copy all the properties from the customXhrOptions to the xhrOptions
     //So that the xhrOptions object acts as a default/fallback
-    $.extend(true ,xhrOptions, customXhrOptions);
+    xhrOptions = merge(customXhrOptions, defaultXhrOptions);
 
     //require an url
     if(typeof xhrOptions.url !== 'string') {
@@ -59,7 +83,7 @@ angular.module('bmmLibApp')
     //link is not supported by Firefox, so not adding it here.
     //Firefox issue with LINK is fixed, and the method is therefore supported.
     //Only the methods needed by the BMM-API are supported...
-    var supportedMethods = ['GET', 'POST', 'PUT', 'DELETE', 'LINK'];
+    supportedMethods = ['GET', 'POST', 'PUT', 'DELETE', 'LINK'];
 
     //require a method, don't default to GET.
     //This should be supplied with every request.
