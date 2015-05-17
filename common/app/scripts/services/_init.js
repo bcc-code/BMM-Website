@@ -23,6 +23,9 @@ angular.module('bmmLibApp')
       status: '',
       loaded: false,
       complete: $q.defer()
+    },
+    factory.blockingLoad = {
+      loading: false 
     };
 
     _api.setContentLanguages(factory.contentLanguages);//Fallback
