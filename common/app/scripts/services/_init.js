@@ -124,13 +124,17 @@ angular.module('bmmLibApp')
 
             factory.load.status = 'Root loaded';
 
-            //Temporary remove arabic (@todo - remove later)
-            $.each(root.languages, function(index) {
-              if (this==='ar' || this==='zxx') {
-                root.languages.splice(index,1);
-                return false;
-              }
-            });
+            //Temporary remove arabic and unknown (@todo - remove later)
+            var hiddenLanguages = ['ar', 'zxx'];
+
+            //iterate backwards because we're deleting elements.
+            for(var i = root.languages.length -1; i >= 0 ; i--){
+              var language = root.languages[i];
+                if(hiddenLanguages.indexOf(language) !== -1) {
+                    root.languages.splice(i, 1);
+                }
+            };
+
             //Load all translations (Loads in background, not time dependent)
             $.each(factory.config.translationsAvailable, function() {
               var lang = this;
