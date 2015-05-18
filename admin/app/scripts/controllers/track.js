@@ -567,6 +567,9 @@ angular.module('bmmApp')
         return $scope.refreshModel();
       }).then(function() {
         _init.blockingLoad.loading = false;
+        $timeout(function() {
+          $scope.switchLanguage(toLanguage);
+        }, 0);
       });
     };
 
