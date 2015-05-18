@@ -25,7 +25,6 @@ angular.module('bmmApp')
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
     $scope.status = _init.translation.states.noChanges;
-    $scope.changingLanguage = false;
     $scope.possibleSubtypes = [
       'song',
       'speech',
@@ -561,15 +560,12 @@ angular.module('bmmApp')
 
     /* Changes the language of the media file, not the selected language */
     $scope.changeLanguage = function(toLanguage) {
-      $scope.changingLanguage = true;
       _init.blockingLoad.loading = true;
       saveModel().then(function() {
         return _api.changeTrackLanguagePost($scope.model.id, $scope.edited.language, toLanguage);
       }).then(function() {
         return $scope.refreshModel();
       }).then(function() {
-        $scope.switchLanguage(toLanguage);
-        $scope.changingLanguage = false;
         _init.blockingLoad.loading = false;
       });
     };
