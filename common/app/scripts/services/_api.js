@@ -646,7 +646,7 @@ angular.module('bmmLibApp')
     return factory.sendXHR({
       method: 'POST',
       headers: {
-        'Link': '<'+serverUrl+'track/'+id+'>',
+        'Link': '</track/'+id+'>',
         'Accept-Language': lang,
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
@@ -756,7 +756,7 @@ angular.module('bmmLibApp')
       beforeSend: function (xhr) {
         var links = '';
         $.each(tracks, function() {
-          links+='<'+serverUrl+'track/'+this+'>,';
+          links+='</track/'+this+'>,';
         });
         xhr.setRequestHeader('Link', links);
       }
