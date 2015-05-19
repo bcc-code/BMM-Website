@@ -87,7 +87,7 @@ angular.module('bmmLibApp')
 
     //require a method, don't default to GET.
     //This should be supplied with every request.
-    if(typeof xhrOptions.method !== 'string' && supportedMethods.indexOf(xhrOptions.method) !== -1) {
+    if(typeof xhrOptions.method !== 'string' || supportedMethods.indexOf(xhrOptions.method) === -1) {
       throw new Error('The HTTP method: ' + xhrOptions.method + ' is not supported');
     };
     
