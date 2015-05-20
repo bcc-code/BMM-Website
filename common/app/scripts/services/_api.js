@@ -95,6 +95,11 @@ angular.module('bmmLibApp')
     return xhrOptions;
   };
 
+  factory.addToQueue = function(customXhrOptions) {
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
+    return _api_queue.addRequest(xhrOptions);
+  };
+
   /**
    * Send an XHR request with some special defined defaults and requirements.
    * @param  {object} customXhrOptions        And Object with custom properties that override the default. Same object as jQuery ajax
@@ -103,7 +108,7 @@ angular.module('bmmLibApp')
    */
   factory.sendXHR = function(customXhrOptions, errorHandler) {
     
-    var xhrOptions = prepareRequest(customXhrOptions);
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
 
     errorHandler = errorHandler || factory.exceptionHandler;
 

@@ -15,6 +15,12 @@ angular.module('bmmLibApp')
   	factory.executeRequest = function(requestOptions) {
   		var request = factory.requestExecutor(requestOptions);
   		factory.pendingRequests.push(request);
+  		//when the request is done/failed. Inform the other promise that is
+  		//used for queues.
+  		if(requestOptions.promise) {
+  			request.then(requestOptions.promise.resolve, requestOptions.promise.reject);
+  		}
+
   		request.always(function() {
   			//When a request is done (or failed) remove it from the pendingRequests queue.
   			var index = factory.pendingRequests.indexOf(request);
@@ -54,7 +60,7 @@ angular.module('bmmLibApp')
 
 		handleNextRequest();
 
-  		return q.Promise();
+  		return q.promise();
   	};
 
   	/**
@@ -71,36 +77,43 @@ angular.module('bmmLibApp')
   	};
 
   	factory.addModifyingRequest = function(requestOptions) {
-  		if(factory.status >= factory.STATUS_SWITCHING) {
-  			factory.awaitingModifying.push(requestOptions);
-  		} else {
+  		requestOptions.promise = $.Deferred();
+  		factory.awaitingModifying.push(requestOptions);
+  		if(factory.status === factory.STATUS_GET) {
   			factory.status = factory.STATUS_SWITCHING;
   			$.when(factory.pendingRequests).always(function() {
   				factory.status = factory.STATUS_MODIFYING;
   				factory.runRequestsSequentially(factory.awaitingModifying)
   				.always(function() {
   					factory.status = factory.STATUS_GET;
+  					factory.runRequests(factory.awaitingGet);
   				});
   			});
   		};
+
+  		return requestOptions.promise;
   	};
 
   	factory.addGetRequest = function(requestOptions) {
   		if(factory.status == factory.STATUS_GET) {
-  			factory.executeRequest(requestOptions);
+  			return factory.executeRequest(requestOptions);
   		} else {
   			factory.awaitingGet.push(requestOptions);
+  			requestOptions.promise = $.Deferred();
+  			return requestOptions.promise;
   		}
   	};
 
   	//the requestOptions object should have been run through _api.prepareRequest or
   	//something equivalent.
   	factory.addRequest = function(requestOptions) {
-  		if(requestOptions.modifying == true) {
-  			factory.addModifyingRequest(requestOptions);
+  		if(requestOptions.method === "GET") {
+  			return factory.addGetRequest(requestOptions);
   		} else {
-  			factory.addGetRequest(requestOptions);
+  			return factory.addModifyingRequest(requestOptions);
   		};
   	};
+
+  	return factory;
 
   }]);
