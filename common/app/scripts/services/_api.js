@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', [ '$timeout', function ($timeout) {
+  .factory('_api', [ '$timeout', '_api_queue', function ($timeout, _api_queue) {
   
   var factory = {},
       credentials = {},
@@ -20,16 +20,8 @@ angular.module('bmmLibApp')
     serverUrl = url;
   };
 
-  /**
-   * Send an XHR request with some special defined defaults and requirements.
-   * @param  {object} customXhrOptions        And Object with custom properties that override the default. Same object as jQuery ajax
-   * @param  {function|boolean} errorHandler  Either a boolean (false) indicating that there should be no errorHeandler
-   * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
-   */
-  factory.sendXHR = function(customXhrOptions, errorHandler) {
+  factory.prepareRequest = function(customXhrOptions) {
     var xhrOptions, defaultXhrOptions, supportedMethods;
-    //use the exception handler as the default fallback handler.
-    errorHandler = errorHandler || factory.exceptionHandler;
 
     //The default options for every request
     defaultXhrOptions = {
@@ -100,6 +92,26 @@ angular.module('bmmLibApp')
       }
     }
 
+    return xhrOptions;
+  };
+
+  factory.addToQueue = function(customXhrOptions) {
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
+    return _api_queue.addRequest(xhrOptions);
+  };
+
+  /**
+   * Send an XHR request with some special defined defaults and requirements.
+   * @param  {object} customXhrOptions        And Object with custom properties that override the default. Same object as jQuery ajax
+   * @param  {function|boolean} errorHandler  Either a boolean (false) indicating that there should be no errorHeandler
+   * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
+   */
+  factory.sendXHR = function(customXhrOptions, errorHandler) {
+    
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
+
+    errorHandler = errorHandler || factory.exceptionHandler;
+
     var promise = $.ajax(xhrOptions);
     //If errorHandler == false or anything but a function, no errorHandler should be used.
     if(typeof errorHandler === 'function') {
@@ -108,6 +120,10 @@ angular.module('bmmLibApp')
 
     return promise;
   };
+
+  //decorate requestExecutor of the _api_queue with
+  //the factory.sendXHR method.
+  _api_queue.requestExecutor = factory.sendXHR;
 
   factory.getserverUrli = function() {
     return serverUrl;
@@ -212,7 +228,7 @@ angular.module('bmmLibApp')
   /** Get the basic information about the API **/
   factory.root = function() {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl,
       cache: false,
@@ -227,7 +243,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'album/',
       data: JSON.stringify(options),
@@ -241,7 +257,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'album/',
       data: $.param(options)
@@ -262,7 +278,7 @@ angular.module('bmmLibApp')
      *    unpublished               string          hide|show|only
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'album/published/'+year+'/',
       data: $.param(options)
@@ -283,7 +299,7 @@ angular.module('bmmLibApp')
      *    unpublished               string          hide|show|only
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'album/tracks_recorded/'+year+'/',
       data: $.param(options)
@@ -317,7 +333,7 @@ angular.module('bmmLibApp')
      *    show_in_library *         Boolean
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'album/'+id,
       data: $.param(options),
@@ -349,7 +365,7 @@ angular.module('bmmLibApp')
      *    description               String
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'PUT',
       url: serverUrl+'album/'+id,
       data: JSON.stringify(options),
@@ -361,7 +377,7 @@ angular.module('bmmLibApp')
   /** Delete an album **/
   factory.albumDelete = function(id) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'DELETE',
       url: serverUrl+'album/'+id
     });
@@ -379,7 +395,7 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'facets/album_published/years',
       data: $.param(options)
@@ -398,7 +414,7 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'facets/track_recorded/years',
       data: $.param(options)
@@ -416,7 +432,7 @@ angular.module('bmmLibApp')
      *    password *                String
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'login/authentication',
       data: JSON.stringify(options),
@@ -470,7 +486,7 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'search/'+term,
       data: $.param(options)
@@ -481,7 +497,7 @@ angular.module('bmmLibApp')
   /** Logout cookie session **/
   factory.logout = function() {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'logout',
       dataType: 'text'
@@ -492,7 +508,7 @@ angular.module('bmmLibApp')
   /** Get a list of suggestions based on a given term **/
   factory.suggest = function(term) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'suggest/'+term
     });
@@ -504,7 +520,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'track/',
       data: JSON.stringify(options),
@@ -528,7 +544,7 @@ angular.module('bmmLibApp')
      *    test credentials: steffan:f6f6f772748de54501aae49edcbd489a
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'track/',
       data: $.param(options)
@@ -549,7 +565,7 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'track/rel/'+key+'/',
       data: $.param(options)
@@ -566,7 +582,7 @@ angular.module('bmmLibApp')
      *    Absolute file path
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'track/'+id,
       data: $.param(options),
@@ -582,7 +598,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'PUT',
 
       url: serverUrl+'track/'+id,
@@ -595,7 +611,7 @@ angular.module('bmmLibApp')
   /** Delete a track **/
   factory.trackDelete = function(id) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'DELETE',
       url: serverUrl+'track/'+id
     });
@@ -605,7 +621,7 @@ angular.module('bmmLibApp')
   /** Add a file to a track **/
   factory.trackFiles = function(id, type, file) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'track/'+id+'/files/',
       file: file,
@@ -631,7 +647,7 @@ angular.module('bmmLibApp')
   /** Accept track guessed for file, when file is uploaded through FTP **/
   factory.fileUploadedGuessTracksGet = function() {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'file/uploaded/guess_tracks'
     });
@@ -643,7 +659,7 @@ angular.module('bmmLibApp')
 
     if (typeof lang === 'undefined') { return false; }
     //Here was ajaxq used instead of ajax before, not totally sure why :/ May cause bugs!
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       headers: {
         'Link': '</track/'+id+'>',
@@ -660,7 +676,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'user/',
       data: $.param(options)
@@ -673,7 +689,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'user/suggester/completion/'+term,
       data: $.param(options)
@@ -684,7 +700,7 @@ angular.module('bmmLibApp')
   /** Get a user profile **/
   factory.userUsernameGet = function(username) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'user/'+encodeURIComponent(username)
     });
@@ -696,7 +712,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'PUT',
       url: serverUrl+'user/'+encodeURIComponent(username),
       data: JSON.stringify(options),
@@ -708,7 +724,7 @@ angular.module('bmmLibApp')
   /** Delete a user profile **/
   factory.userUsernameDelete = function(username) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'DELETE',
       url: serverUrl+'user/'+encodeURIComponent(username)
     });
@@ -726,7 +742,7 @@ angular.module('bmmLibApp')
      *    'Link':                   <url2> <- last will be used
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'track_collection/',
       data: JSON.stringify(options),
@@ -746,7 +762,7 @@ angular.module('bmmLibApp')
      *    'Link':                   <url2> <- last will be used
      */
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       headers: {
         'Accept-Language': language,
@@ -767,7 +783,7 @@ angular.module('bmmLibApp')
   /** Get a collection **/
   factory.userTrackCollectionGet = function(id) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'track_collection/'+id
     });
@@ -789,7 +805,7 @@ angular.module('bmmLibApp')
 
     options.type = 'track_collection';
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'PUT',
       url: serverUrl+'track_collection/'+id,
       data: JSON.stringify(options),
@@ -801,7 +817,7 @@ angular.module('bmmLibApp')
   /** Delete a collection **/
   factory.userTrackCollectionDelete = function(id) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'DELETE',
       url: serverUrl+'track_collection/'+id
     });
@@ -813,7 +829,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'contributor/',
       data: JSON.stringify(options),
@@ -827,7 +843,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'contributor/'+id
     });
@@ -839,7 +855,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'contributor/suggester/completion/'+term,
       data: $.param(options)
@@ -852,7 +868,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'PUT',
       url: serverUrl+'contributor/'+id,
       data: JSON.stringify(options),
@@ -864,7 +880,7 @@ angular.module('bmmLibApp')
   /** Delete a contributor **/
   factory.contributorIdDelete = function(id) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'DELETE',
       url: serverUrl+'contributor/'+id
     });
@@ -876,7 +892,7 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl+'contributor/'+id+'/track/',
       data: $.param(options)
@@ -887,7 +903,7 @@ angular.module('bmmLibApp')
   /** Move a language within a track **/
   factory.changeTrackLanguagePost = function(id, fromLanguage, toLanguage) {
 
-    return factory.sendXHR({
+    return _api_queue.addRequest({
       method: 'POST',
       url: serverUrl+'track/'+id+'/'+fromLanguage+'/changeTo/'+toLanguage
     });
