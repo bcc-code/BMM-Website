@@ -1,3 +1,4 @@
+'use strict';
 angular.module('bmmLibApp')
   .factory('_api_queue', [function () {
   	var factory = {};
@@ -15,13 +16,20 @@ angular.module('bmmLibApp')
   	factory.executeRequest = function(requestOptions) {
   		var request = factory.requestExecutor(requestOptions);
   		factory.pendingRequests.push(request);
-  		//when the request is done/failed. Inform the other promise that is
-  		//used for queues.
-  		if(requestOptions.promise) {
-  			request.then(requestOptions.promise.resolve, requestOptions.promise.reject);
-  		}
 
   		request.always(function() {
+  			if(requestOptions.promise) {
+          //This is another promise that is used because the promise
+          //is created before the request. Just resolve/reject the earlier
+          //promise when the newer promise is resolved/rejected
+          if(requestOptions.isResolved()) {
+            //If resolved call the resolve method.
+  				  requestOptions.promise.resolve.apply(requestOptions.promise, arguments);
+          } else {
+            //If the request was rejected, call the reject method
+            requestOptions.promise.reject.apply(requestOptions.promise, arguments);
+          }
+  			}
   			//When a request is done (or failed) remove it from the pendingRequests queue.
   			var index = factory.pendingRequests.indexOf(request);
   			factory.pendingRequests.splice(index, 1);
@@ -55,7 +63,7 @@ angular.module('bmmLibApp')
 				factory.executeRequest(request).always(handleNextRequest);
 			} else {
 				q.resolve();
-			};
+			}
 		};
 
 		handleNextRequest();
@@ -68,7 +76,7 @@ angular.module('bmmLibApp')
   	 */
   	factory.runRequests = function(requests) {
   		requests.forEach(function(request) {
-  			facotory.executeRequest(request);	
+  			factory.executeRequest(request);
 		});
 
   		while(requests.length) {
@@ -89,13 +97,13 @@ angular.module('bmmLibApp')
   					factory.runRequests(factory.awaitingGet);
   				});
   			});
-  		};
+  		}
 
   		return requestOptions.promise;
   	};
 
   	factory.addGetRequest = function(requestOptions) {
-  		if(factory.status == factory.STATUS_GET) {
+  		if(factory.status === factory.STATUS_GET) {
   			return factory.executeRequest(requestOptions);
   		} else {
   			factory.awaitingGet.push(requestOptions);
@@ -107,11 +115,11 @@ angular.module('bmmLibApp')
   	//the requestOptions object should have been run through _api.prepareRequest or
   	//something equivalent.
   	factory.addRequest = function(requestOptions) {
-  		if(requestOptions.method === "GET") {
+  		if(requestOptions.method === 'GET') {
   			return factory.addGetRequest(requestOptions);
   		} else {
   			return factory.addModifyingRequest(requestOptions);
-  		};
+  		}
   	};
 
   	return factory;

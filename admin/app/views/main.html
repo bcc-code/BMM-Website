@@ -25,12 +25,13 @@
 
     <!--BLOCKING LOAD SCREEN WITHOUT PROGRESS BAR-->
 
-    <!--This is for use when something has to load and all interaction
-    with the page should be disabled while loading that one thing 
-    currently used when changing the language of a track, as it may
-    corrupt the database, to do other things while changing the track -->
+    <!--This is for use when something has to load and all
+    interaction with the page should be disabled while loading.
+    This is currently enabled for all modifying requests, as
+    it may corrupt the database to interact with the website
+    while modifying requests are being sent. -->
 
-    <div class="loadscreen" ng-show="init.blockingLoad.loading">
+    <div class="loadscreen" ng-show="api_queue.status == api_queue.STATUS_MODIFYING">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
         <div style="margin-top: 2em; position: relative; margin: 3em auto; width: 50px">
             <img ng-src="fallback_images/gif/load.gif">

@@ -106,7 +106,7 @@ angular.module('bmmApp')
           });
           modelLoaded = true;
         });
-        promise = $scope.fetchModel(false).done(function(model) {
+        $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
             $scope.standardModel = model;
             $scope.formattedModel = _track.resolve(model);
@@ -560,13 +560,11 @@ angular.module('bmmApp')
 
     /* Changes the language of the media file, not the selected language */
     $scope.changeLanguage = function(toLanguage) {
-      _init.blockingLoad.loading = true;
       saveModel().then(function() {
         return _api.changeTrackLanguagePost($scope.model.id, $scope.edited.language, toLanguage);
       }).then(function() {
         return $scope.refreshModel();
       }).then(function() {
-        _init.blockingLoad.loading = false;
         $timeout(function() {
           $scope.switchLanguage(toLanguage);
         }, 0);
