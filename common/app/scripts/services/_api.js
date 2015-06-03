@@ -6,7 +6,6 @@ angular.module('bmmLibApp')
   var factory = {},
       credentials = {},
       credentialsSuported = 'unresolved',
-      //imageCredentialsSupported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/', //Fallback
       requestTimeout,
