@@ -22,7 +22,7 @@ angular.module('bmmLibApp')
           //This is another promise that is used because the promise
           //is created before the request. Just resolve/reject the earlier
           //promise when the newer promise is resolved/rejected
-          if(requestOptions.isResolved()) {
+          if(request.state() === 'resolved') {
             //If resolved call the resolve method.
             requestOptions.promise.resolve.apply(requestOptions.promise, arguments);
           } else {
