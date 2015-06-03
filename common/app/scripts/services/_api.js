@@ -658,7 +658,6 @@ angular.module('bmmLibApp')
   factory.fileUploadedNameLink = function(link, id, lang) {
 
     if (typeof lang === 'undefined') { return false; }
-    //Here was ajaxq used instead of ajax before, not totally sure why :/ May cause bugs!
     return factory.addToQueue({
       method: 'POST',
       headers: {
