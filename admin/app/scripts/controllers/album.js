@@ -28,11 +28,11 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newAlbum) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.albumGet($routeParams.id, { raw: true }, _init.root.languages.concat(['ar']));
+          return _api.albumGet($routeParams.id, { raw: true }, _init.root.languages);
         } else {
           return _api.albumGet($routeParams.id, {
             unpublished: 'show'
-          }, _init.root.languages.concat(['ar']));
+          }, _init.root.languages);
         }
       } else {
 
@@ -304,7 +304,7 @@ angular.module('bmmApp')
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
         _api.albumGet(model.parent_id,{
           unpublished: 'show'
-        }, _init.root.languages.concat(['ar'])).done(function(album) {
+        }, _init.root.languages).done(function(album) {
           $scope.$apply(function() {
             $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
             if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {

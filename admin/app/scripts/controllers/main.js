@@ -11,10 +11,12 @@ angular.module('bmmApp')
     $route,
     _init,
     _play,
-    _quickMenu
+    _quickMenu,
+    _api_queue
   ) {
 
     $scope.init = _init;
+    $scope.api_queue = _api_queue;
 
     _init.load.complete.promise.then(function() {
 
