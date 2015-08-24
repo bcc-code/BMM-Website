@@ -13,10 +13,10 @@ angular.module('bmmLibApp')
 
         var promises = [];
         var expectedResponses = root.languages.length;
-        var results = 1;
+        var results = 2;
 
         $.each(root.languages, function() {
-          if (this!=='ar') {
+          if (this !== 'ar' && this !== 'zxx') {
             promises.push($http.get(url+this+'.json')
               .success(function(file) {
                 if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {

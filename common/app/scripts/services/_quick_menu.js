@@ -117,7 +117,7 @@ angular.module('bmmLibApp')
     factory.findTracks = function(id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages.concat(['ar'])).done(function(data) {
+      }, _init.root.languages).done(function(data) {
 
         factory.track = [];
         factory.tracks = [];

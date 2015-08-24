@@ -30,6 +30,15 @@ NOTE:
     API and replace server link in client/app/scripts/app.js with your own.
     Same in admin/app/scripts/app.js
 
+CODING STLE
+-----------
+
+If you want to contribute to this project you should follow a specific coding style, this is:
+
+* Use 2 spaces for identation
+* Use '' (single quotes) and **not** "" (double quotes) for JS strings
+* Always use the [inline array annotation](https://docs.angularjs.org/guide/di#inline-array-annotation) for dependecy injection
+
 SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 

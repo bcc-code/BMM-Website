@@ -1,24 +1,132 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', [ '$timeout', function ($timeout) {
+  .factory('_api', [ '$timeout', '_api_queue', function ($timeout, _api_queue) {
   
   var factory = {},
       credentials = {},
       credentialsSuported = 'unresolved',
-      imageCredentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/', //Fallback
       requestTimeout,
       contentLanguages = [];
 
+  //This variable indicates whether the "unknown" language ("zxx", used for non-lingual content)
+  //should be appended with every request by default.
+  factory.appendUnknownLanguage = false; //Fallback to false
+
   factory.serverUrl = function(url) {
     serverUrl = url;
   };
 
+  factory.prepareRequest = function(customXhrOptions) {
+    var xhrOptions, defaultXhrOptions, supportedMethods;
+
+    //The default options for every request
+    defaultXhrOptions = {
+      crossDomain: true,
+      dataType: 'json',
+      timeout: requestTimeout,
+      headers: {
+        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        //Add this to all requests, because if we don't add this header, the browser will
+        //add one with it's own languages. It will not harm to leave it here for all the requests,
+        //even though it's not required.
+        'Accept-Language': contentLanguages
+      },
+      xhrFields: {
+        'withCredentials': true
+      }
+    };
+
+    function merge(obj1,obj2){ // Custom merge function
+        var result = {}; // return result
+        for(var i in obj1){      // for every property in obj1 
+            if((i in obj2) && (typeof obj1[i] === 'object') && (i !== null) && !$.isArray(obj1[i])){
+
+              //Arrays are not merged, they're treated like any other primitive property.
+              //This is because of the Accept-Languages property.
+
+                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge   
+            } else {
+               result[i] = obj1[i]; // add it to result
+            }
+        }
+        for(i in obj2){ // add the remaining properties from object 2
+            if(i in result){ //conflict
+                continue; //obj1 has higher priority, therefore skip.
+            }
+            result[i] = obj2[i];
+        }
+        return result;
+    }
+
+
+    //copy all the properties from the customXhrOptions to the xhrOptions
+    //So that the xhrOptions object acts as a default/fallback
+    xhrOptions = merge(customXhrOptions, defaultXhrOptions);
+
+    //require an url
+    if(typeof xhrOptions.url !== 'string') {
+      throw new Error('Cannot create a request without an URL');
+    }
+
+    //link is not supported by Firefox, so not adding it here.
+    //Firefox issue with LINK is fixed, and the method is therefore supported.
+    //Only the methods needed by the BMM-API are supported...
+    supportedMethods = ['GET', 'POST', 'PUT', 'DELETE', 'LINK'];
+
+    //require a method, don't default to GET.
+    //This should be supplied with every request.
+    if(typeof xhrOptions.method !== 'string' || supportedMethods.indexOf(xhrOptions.method) === -1) {
+      throw new Error('The HTTP method: ' + xhrOptions.method + ' is not supported');
+    }
+    
+    //Check if the language code for non-lingual content should be appended to the languages array.
+    if(factory.appendUnknownLanguage && xhrOptions.headers) {
+      var languages = xhrOptions.headers['Accept-Language'];
+      //Only append the language if the languages is an array.
+      if($.isArray(languages)) {
+        xhrOptions.headers['Accept-Language'] = languages.concat(['zxx', 'ar']);
+      }
+    }
+
+    return xhrOptions;
+  };
+
+  factory.addToQueue = function(customXhrOptions) {
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
+    return _api_queue.addRequest(xhrOptions);
+  };
+
+  /**
+   * Send an XHR request with some special defined defaults and requirements.
+   * @param  {object} customXhrOptions        And Object with custom properties that override the default. Same object as jQuery ajax
+   * @param  {function|boolean} errorHandler  Either a boolean (false) indicating that there should be no errorHeandler
+   * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
+   */
+  factory.sendXHR = function(customXhrOptions, errorHandler) {
+    
+    var xhrOptions = factory.prepareRequest(customXhrOptions);
+
+    errorHandler = errorHandler || factory.exceptionHandler;
+
+    var promise = $.ajax(xhrOptions);
+    //If errorHandler == false or anything but a function, no errorHandler should be used.
+    if(typeof errorHandler === 'function') {
+      promise.fail(errorHandler);
+    }
+
+    return promise;
+  };
+
+  //decorate requestExecutor of the _api_queue with
+  //the factory.sendXHR method.
+  _api_queue.requestExecutor = factory.sendXHR;
+
   factory.getserverUrli = function() {
     return serverUrl;
-  }
+  };
 
   factory.setKeepAliveTime = function(time) {
     keepAliveTime = time;
@@ -26,9 +134,6 @@ angular.module('bmmLibApp')
 
   factory.setRequestTimeout = function(time) {
     requestTimeout = time;
-    $.ajaxSetup({
-      timeout: requestTimeout //Time in milliseconds
-    });
   };
 
   factory.exceptionHandler = function(xhr) {
@@ -101,7 +206,7 @@ angular.module('bmmLibApp')
       username: user,
       password: pass
     };
-  }
+  };
 
   factory.getCredentials = function(encoded) {
     if (typeof encoded!=='undefined'&&encoded) {
@@ -109,7 +214,7 @@ angular.module('bmmLibApp')
     } else {
       return credentials.username+':'+credentials.password;
     }
-  }
+  };
 
   factory.setContentLanguages = function(languages) {
     contentLanguages = languages;
@@ -122,14 +227,12 @@ angular.module('bmmLibApp')
   /** Get the basic information about the API **/
   factory.root = function() {
 
-    return $.ajax({
+    return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl,
-      dataType: 'json',
       cache: false,
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      //No xhrFields, override default
+      xhrFields: {}
     });
 
   };
@@ -139,21 +242,11 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'album/',
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -163,21 +256,10 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -195,21 +277,10 @@ angular.module('bmmLibApp')
      *    unpublished               string          hide|show|only
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/published/'+year+'/',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -227,21 +298,10 @@ angular.module('bmmLibApp')
      *    unpublished               string          hide|show|only
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/tracks_recorded/'+year+'/',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -272,21 +332,13 @@ angular.module('bmmLibApp')
      *    show_in_library *         Boolean
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/'+id,
-      headers: {
-        'Accept-Language': languages || factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      headers: {
+        'Accept-Language': languages,
+      }
     });
 
   };
@@ -312,21 +364,11 @@ angular.module('bmmLibApp')
      *    description               String
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'PUT',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'album/'+id,
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -334,19 +376,9 @@ angular.module('bmmLibApp')
   /** Delete an album **/
   factory.albumDelete = function(id) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'DELETE',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'album/'+id,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'album/'+id
     });
 
   };
@@ -362,21 +394,10 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'facets/album_published/years',
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -392,20 +413,10 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'facets/track_recorded/years',
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -420,18 +431,11 @@ angular.module('bmmLibApp')
      *    password *                String
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
       url: serverUrl+'login/authentication',
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -481,21 +485,10 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'search/'+term,
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -503,15 +496,10 @@ angular.module('bmmLibApp')
   /** Logout cookie session **/
   factory.logout = function() {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
       url: serverUrl+'logout',
-      crossDomain: true,
-      xhrFields: {
-        'withCredentials': true
-      }
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      dataType: 'text'
     });
 
   };
@@ -519,20 +507,9 @@ angular.module('bmmLibApp')
   /** Get a list of suggestions based on a given term **/
   factory.suggest = function(term) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'suggest/'+term,
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'suggest/'+term
     });
 
   };
@@ -542,21 +519,11 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'track/',
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -576,21 +543,10 @@ angular.module('bmmLibApp')
      *    test credentials: steffan:f6f6f772748de54501aae49edcbd489a
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'track/',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -608,21 +564,10 @@ angular.module('bmmLibApp')
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'track/rel/'+key+'/',
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -636,21 +581,13 @@ angular.module('bmmLibApp')
      *    Absolute file path
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'track/'+id,
-      headers: {
-        'Accept-Language': languages || factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      headers: {
+        'Accept-Language': languages
+      }
     });
 
   };
@@ -660,21 +597,12 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'PUT',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
+
       url: serverUrl+'track/'+id,
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -682,19 +610,9 @@ angular.module('bmmLibApp')
   /** Delete a track **/
   factory.trackDelete = function(id) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'DELETE',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'track/'+id,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'track/'+id
     });
 
   };
@@ -702,24 +620,14 @@ angular.module('bmmLibApp')
   /** Add a file to a track **/
   factory.trackFiles = function(id, type, file) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'track/'+id+'/files/',
       file: file,
-      dataType: 'json',
       data: JSON.stringify({
         type: type
       }),
-      contentType: 'application/json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -727,39 +635,20 @@ angular.module('bmmLibApp')
   /** Get the users profile **/
   factory.loginUser = function() {
 
-    return $.ajax({
+    return factory.sendXHR({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'login/user',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      //factory.exceptionHandler(xhr); (Is handeled by the initializator)
-    });
+      url: serverUrl+'login/user'
+    }, false);
+    //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
 
   };
 
   /** Accept track guessed for file, when file is uploaded through FTP **/
   factory.fileUploadedGuessTracksGet = function() {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'file/uploaded/guess_tracks',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'file/uploaded/guess_tracks'
     });
 
   };
@@ -768,25 +657,14 @@ angular.module('bmmLibApp')
   factory.fileUploadedNameLink = function(link, id, lang) {
 
     if (typeof lang === 'undefined') { return false; }
-
-    return $.ajaxq('linking', {
+    return factory.addToQueue({
       method: 'POST',
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'Link': '</track/'+id+'>',
+        'Accept-Language': lang,
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
-      url: serverUrl+'file/uploaded/'+link,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Link', '<'+serverUrl+'track/'+id+'>');
-        xhr.setRequestHeader('Accept-Language', lang);
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'file/uploaded/'+link
     });
 
   };
@@ -796,20 +674,10 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'user/',
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -819,20 +687,10 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'user/suggester/completion/'+term,
-      data: $.param(options),
-      dataType: 'json',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -840,19 +698,9 @@ angular.module('bmmLibApp')
   /** Get a user profile **/
   factory.userUsernameGet = function(username) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'user/'+encodeURIComponent(username),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'user/'+encodeURIComponent(username)
     });
 
   };
@@ -862,21 +710,11 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'PUT',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'user/'+encodeURIComponent(username),
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -884,19 +722,9 @@ angular.module('bmmLibApp')
   /** Delete a user profile **/
   factory.userUsernameDelete = function(username) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'DELETE',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'user/'+encodeURIComponent(username),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'user/'+encodeURIComponent(username)
     });
 
   };
@@ -912,21 +740,11 @@ angular.module('bmmLibApp')
      *    'Link':                   <url2> <- last will be used
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
       url: serverUrl+'track_collection/',
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -942,28 +760,20 @@ angular.module('bmmLibApp')
      *    'Link':                   <url2> <- last will be used
      */
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
-        'Accept-Language': language || factory.getContentLanguages(),
+        'Accept-Language': language,
         'X-HTTP-METHOD-OVERRIDE': 'LINK'
       },
       url: serverUrl+'track_collection/'+playlist,
       beforeSend: function (xhr) {
         var links = '';
         $.each(tracks, function() {
-          links+='<'+serverUrl+'track/'+this+'>,';
+          links+='</track/'+this+'>,';
         });
         xhr.setRequestHeader('Link', links);
-      },
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      }
     });
 
   };
@@ -971,19 +781,9 @@ angular.module('bmmLibApp')
   /** Get a collection **/
   factory.userTrackCollectionGet = function(id) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'track_collection/'+id,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'track_collection/'+id
     });
 
   };
@@ -1003,21 +803,11 @@ angular.module('bmmLibApp')
 
     options.type = 'track_collection';
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'PUT',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'track_collection/'+id,
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -1025,19 +815,9 @@ angular.module('bmmLibApp')
   /** Delete a collection **/
   factory.userTrackCollectionDelete = function(id) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'DELETE',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'track_collection/'+id,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'track_collection/'+id
     });
 
   };
@@ -1047,21 +827,11 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'contributor/',
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -1071,20 +841,9 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'contributor/'+id,
-      xhrFields: {
-        'withCredentials': true
-      },
-      data: $.param(options),
-      dataType: 'json',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'contributor/'+id
     });
 
   };
@@ -1094,20 +853,10 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'contributor/suggester/completion/'+term,
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      data: $.param(options),
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -1117,21 +866,11 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'PUT',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
       url: serverUrl+'contributor/'+id,
       data: JSON.stringify(options),
-      contentType: 'application/json',
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      contentType: 'application/json'
     });
 
   };
@@ -1139,19 +878,9 @@ angular.module('bmmLibApp')
   /** Delete a contributor **/
   factory.contributorIdDelete = function(id) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'DELETE',
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      url: serverUrl+'contributor/'+id,
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'contributor/'+id
     });
 
   };
@@ -1161,21 +890,10 @@ angular.module('bmmLibApp')
 
     if (typeof options === 'undefined') { options = {}; }
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'contributor/'+id+'/track/',
-      data: $.param(options),
-      headers: {
-        'Accept-Language': factory.getContentLanguages(),
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      dataType: 'json',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      data: $.param(options)
     });
 
   };
@@ -1183,21 +901,13 @@ angular.module('bmmLibApp')
   /** Move a language within a track **/
   factory.changeTrackLanguagePost = function(id, fromLanguage, toLanguage) {
 
-    return $.ajax({
+    return factory.addToQueue({
       method: 'POST',
-      url: serverUrl+'track/'+id+'/'+fromLanguage+'/changeTo/'+toLanguage,
-      headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials())
-      },
-      dataType: 'text',
-      xhrFields: {
-        'withCredentials': true
-      },
-      crossDomain: true
-    }).fail( function(xhr) {
-      factory.exceptionHandler(xhr);
+      url: serverUrl+'track/'+id+'/'+fromLanguage+'/changeTo/'+toLanguage
     });
   };
+
+
 
   return factory;
 
