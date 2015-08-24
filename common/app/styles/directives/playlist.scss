@@ -72,12 +72,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url(../images/svg/v3/Lists_Options.svg);
+      background-image: url(../images/common/svg/v3/Lists_Options.svg);
       background-size: contain;
       background-repeat: no-repeat;
     }
     .optionsToggl:hover {
-      background-image: url(../images/svg/v3/Lists_Options_Hover.svg);
+      background-image: url(../images/common/svg/v3/Lists_Options_Hover.svg);
     }
     .arrow {
       position: absolute;
@@ -122,13 +122,13 @@
           width: 1.5em;
           margin: 0 .2em 0 .6em
         }
-        .icon.playlist { background-image: url('../images/svg/v3/Icon_Options-Playlist.svg'); }
-        .icon.download { background-image: url('../images/svg/v3/Icon_Options-Download.svg'); }
-        .icon.album { background-image: url('../images/svg/v3/Icon_Options-Album.svg'); }
-        .icon.podcast { background-image: url('../images/svg/v3/Icon_Options-Podcast.svg'); }
-        .icon.settings { background-image: url('../images/svg/v3/Icon_Options-Settings.svg'); }
+        .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
+        .icon.download { background-image: url('../images/common/svg/v3/Icon_Options-Download.svg'); }
+        .icon.album { background-image: url('../images/common/svg/v3/Icon_Options-Album.svg'); }
+        .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Options-Podcast.svg'); }
+        .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
         .icon.delete {
-          background-image: url('../images/svg/v3/Icon_Delete.svg');
+          background-image: url('../images/common/svg/v3/Icon_Delete.svg');
           background-position: .25em 0;
         }
         span {
@@ -177,7 +177,7 @@
 }
 
 [playlist] table thead tr.title th:last-child {
-  background-image: url(../images/svg/v3/Icon_Playlist_Plus.svg);
+  background-image: url(../images/common/svg/v3/Icon_Playlist_Plus.svg);
   background-size: 2em 2em;
   background-repeat: no-repeat;
   background-position: right center;
@@ -219,7 +219,7 @@
   .sort_handle {
     display: none;
     position: absolute;
-    background-image: url('../images/svg/v3/Drag_Handle.svg');
+    background-image: url('../images/common/svg/v3/Drag_Handle.svg');
     background-repeat: no-repeat;
     background-size: 2em 2em;
     top: .9em;
@@ -288,13 +288,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/svg/v3/Icon_Options.svg);
+    background-image: url(../images/common/svg/v3/Icon_Options.svg);
     background-size: .3em 1.3em;
     background-position: center center;
     background-repeat: no-repeat;
   }
   .optionsToggl:hover {
-    background-image: url(../images/svg/v3/Icon_Options_Hover.svg);
+    background-image: url(../images/common/svg/v3/Icon_Options_Hover.svg);
   }
   .arrow {
     position: absolute;
@@ -342,10 +342,10 @@
          background-size: contain;
          background-repeat: no-repeat;
        }
-      .icon.share { background-image: url('../images/svg/v3/Icon_Options_Share.svg'); }
-      .icon.playlist { background-image: url('../images/svg/v3/Icon_Options-Playlist.svg'); }
-      .icon.podcast { background-image: url('../images/svg/v3/Icon_Podcast.svg'); }
-      .icon.settings { background-image: url('../images/svg/v3/Icon_Options-Settings.svg'); }
+      .icon.share { background-image: url('../images/common/svg/v3/Icon_Options_Share.svg'); }
+      .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
+      .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Podcast.svg'); }
+      .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
       span {
         font-size: .9em;
         bottom: .4em;

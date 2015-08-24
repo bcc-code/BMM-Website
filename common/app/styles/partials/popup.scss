@@ -39,7 +39,7 @@
           height: 1.2em;
           background-repeat: no-repeat;
           background-size: contain;
-          background-image: url(../images/svg/v3/Cross_green.svg);
+          background-image: url(../images/common/svg/v3/Cross_green.svg);
           opacity: .6;
           cursor: pointer;
         }
@@ -50,7 +50,7 @@
         ul.playlist {
           li {
             position: relative;
-            background-image: url(../images/svg/v3/Icon_Playlist.svg);
+            background-image: url(../images/common/svg/v3/Icon_Playlist.svg);
             background-size: 2em 2em;
             background-position: .4em .4em;
             background-repeat: no-repeat;
@@ -85,7 +85,7 @@
           margin-top: 1em;
           margin-right: .5em;
           background-color: $colorLightGreen;
-          background-image: url(../images/svg/v3/Icon_plus.svg);
+          background-image: url(../images/common/svg/v3/Icon_plus.svg);
           background-size: .8em .8em;
           background-position: .8em .7em;
           background-repeat: no-repeat;

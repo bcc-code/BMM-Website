@@ -17,10 +17,7 @@
     <link rel="stylesheet" href="bower_components/jplayer/skin/pink.flag/jplayer.pink.flag.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="common/styles/bmm.css" />
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
     <!-- stylesheet link (common for all widgets) -->
     <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" />
     <!-- end stylesheet link -->
@@ -81,24 +78,14 @@
     <script src="bower_components/jqueryui/jquery-ui.js"></script>
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
     <!-- endbower -->
+    <script src="bower_components/jquery-md5/jquery.md5.js"></script>
     <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/jquery.ui.touch-punch.dk/jquery.ui.touch-punch.dk.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="common/bmm.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/welcome.js"></script>
-        <script src="scripts/controllers/music.js"></script>
-        <script src="scripts/controllers/speeches.js"></script>
-        <script src="scripts/controllers/video.js"></script>
-        <script src="scripts/controllers/audiobooks.js"></script>
-        <script src="scripts/controllers/archive.js"></script>
-        <script src="scripts/controllers/playlist.js"></script>
-        <script src="scripts/controllers/album.js"></script>
-        <script src="scripts/controllers/track.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- include: "type": "js", "files": "scripts/**/*.js" -->
+    <!-- endbuild -->
 
     <!-- topbar widget -->
         <script src="https://widgets.brunstad.org/TopBar/js?mode=optional" ></script>

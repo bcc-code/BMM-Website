@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          protocol: 'https',
+          protocol: 'http',
           livereload: true
         }
       },
@@ -58,19 +58,36 @@ module.exports = function (grunt) {
       }
     },
 
+    includeSource: {
+      options: {
+        basePath: 'app',
+        baseUrl: '/',
+      },
+      server: {
+        files: {
+          '.tmp/index.html': '<%= yeoman.app %>/index.html'
+        }
+      },
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
+        }
+      }
+    },
+
     // The actual grunt server settings
     connect: {
       options: {
         port: 9001,
         // Change this to '0.0.0.0' to access the server from outside.
-        //hostname: '0.0.0.0',
-        protocol: 'https',
+        hostname: '0.0.0.0',
+        protocol: 'http',
         livereload: 35729
       },
       livereload: {
         options: {
           open: true,
-          protocol: 'https',
+          protocol: 'http',
           base: [
             '.tmp',
             '<%= yeoman.app %>'
@@ -84,8 +101,8 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9003,
-          protocol: 'https',
+          port: 9002,
+          protocol: 'http',
           base: [
             '.tmp',
             'test',
@@ -229,53 +246,48 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
-        },{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          src: '**/*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
     svgmin: {
-      options: {
-        plugins: [
-          //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
-          { removeUnknownsAndDefaults: false },
-          { convertPathData: false },/*
-           { cleanupAttrs: false },
-           { cleanupEnableBackground: false },
-           { cleanupIDs: false },
-           { cleanupNumericValues: false },
-           { collapseGroups: false },
-           { convertColors: false },
-           { convertShapeToPath: false },
-           { convertStyleToAttrs: false },*/
-          { convertTransform: false },/*
-           { mergePaths: false },
-           { moveElemsAttrsToGroup: false },/*
-           { moveGroupAttrsToElems: false },
-           { removeComments: false },
-           { removeDoctype: false },
-           { removeEditorsNSData: false },
-           { removeEmptyAttrs: false },
-           { removeEmptyContainers: false },
-           { removeEmptyText: false },
-           { removeHiddenElems: false },
-           { removeMetadata: false },
-           { removeNonInheritableGroupAttrs: false },
-           { removeRasterImages: false },
-           { removeTitle: false },
-           { removeUnkownsAndDefaults: false },
-           { removeUnusedNS: false },*/
-          { removeUselessStrokeAndFill: false }/*
-           { removeViewBox: false },
-           { removeXMLProcInst: false },
-           { sortAttrs: false },
-           { transformsWithOnePath: false }*/
-        ]
-      },
       dist: {
+        options: {
+          plugins: [
+            //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
+            { removeUnknownsAndDefaults: false },
+            { convertPathData: false },/*
+             { cleanupAttrs: false },
+             { cleanupEnableBackground: false },
+             { cleanupIDs: false },
+             { cleanupNumericValues: false },
+             { collapseGroups: false },
+             { convertColors: false },
+             { convertShapeToPath: false },
+             { convertStyleToAttrs: false },*/
+            { convertTransform: false },/*
+             { mergePaths: false },
+             { moveElemsAttrsToGroup: false },/*
+             { moveGroupAttrsToElems: false },
+             { removeComments: false },
+             { removeDoctype: false },
+             { removeEditorsNSData: false },
+             { removeEmptyAttrs: false },
+             { removeEmptyContainers: false },
+             { removeEmptyText: false },
+             { removeHiddenElems: false },
+             { removeMetadata: false },
+             { removeNonInheritableGroupAttrs: false },
+             { removeRasterImages: false },
+             { removeTitle: false },
+             { removeUnkownsAndDefaults: false },
+             { removeUnusedNS: false },*/
+            { removeUselessStrokeAndFill: false }/*
+             { removeViewBox: false },
+             { removeXMLProcInst: false },
+             { sortAttrs: false },
+             { transformsWithOnePath: false }*/
+        ]
+        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
@@ -353,6 +365,12 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts',
           dest: '<%= yeoman.dist %>/scripts',
           src: ['config.json']
+        }, 
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/sass-bootstrap/dist',
+          dest: '<%= yeoman.dist %>',
+          src: ['fonts/*']
         }]
       },
       styles: {
@@ -362,19 +380,14 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       },
       vendor: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: '**/*'
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/bower_components/hub.bmm/dist/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: '{,*/}*'
-        }, {
+        files: [//{
+        //   expand: true,
+        //   dot: true,
+        //   cwd: '<%= yeoman.app %>/common/images',
+        //   dest: '<%= yeoman.dist %>/images',
+        //   src: '**/*'
+        // },
+        {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
@@ -386,17 +399,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/fallback_images',
           dest: '<%= yeoman.dist %>/fallback_images',
           src: '{,*/}*'
-        }]
-      }
-    },
-
-    replace: {
-      another_example: {
-        src: ['<%= yeoman.dist %>/index.html'],
-        overwrite: true,                 // overwrite matched source files
-        replacements: [{
-          from: '<base href="/">',
-          to: '<base href="/admin/">'
         }]
       }
     },
@@ -459,7 +461,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'bower-install',
+      //'bower-install',
+      'includeSource:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -482,7 +485,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'bower-install',
+    //'bower-install',
+    'includeSource:dist',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -494,7 +498,6 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'replace',
     'htmlmin',
     'copy:vendor'
   ]);

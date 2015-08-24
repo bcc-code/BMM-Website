@@ -28,31 +28,31 @@ div[data-treeview] li {
 
 div[data-treeview] li .expanded {
   padding: 1px 10px;
-  background-image: url("../images/treeview/folder.png");
+  background-image: url("../images/common/treeview/folder.png");
   background-repeat: no-repeat;
 }
 
 div[data-treeview] li .collapsed {
   padding: 1px 10px;
-  background-image: url("../images/treeview/folder-closed.png");
+  background-image: url("../images/common/treeview/folder-closed.png");
   background-repeat: no-repeat;
 }
 
 div[data-treeview] li .new-album {
   padding: 1px 0 0 20px;
-  background-image: url("../images/treeview/folder-new-album.png");
+  background-image: url("../images/common/treeview/folder-new-album.png");
   background-repeat: no-repeat;
 }
 
 div[data-treeview] li .new-track {
   padding: 1px 10px 0 20px;
-  background-image: url("../images/treeview/folder-new-track.png");
+  background-image: url("../images/common/treeview/folder-new-track.png");
   background-repeat: no-repeat;
 }
 
 div[data-treeview] li .normal {
   padding: 1px 10px;
-  background-image: url("../images/treeview/file.png");
+  background-image: url("../images/common/treeview/file.png");
   background-repeat: no-repeat;
 }
 

@@ -58,6 +58,23 @@ module.exports = function (grunt) {
       }
     },
 
+    includeSource: {
+      options: {
+        basePath: 'app',
+        baseUrl: '/',
+      },
+      server: {
+        files: {
+          '.tmp/index.html': '<%= yeoman.app %>/index.html'
+        }
+      },
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
+        }
+      }
+    },
+
     // The actual grunt server settings
     connect: {
       options: {
@@ -229,11 +246,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
-        },{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
@@ -368,13 +380,14 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       },
       vendor: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: '**/*'
-        }, {
+        files: [//{
+        //   expand: true,
+        //   dot: true,
+        //   cwd: '<%= yeoman.app %>/common/images',
+        //   dest: '<%= yeoman.dist %>/images',
+        //   src: '**/*'
+        // },
+        {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
@@ -448,7 +461,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'bower-install',
+      //'bower-install',
+      'includeSource:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -471,7 +485,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'bower-install',
+    //'bower-install',
+    'includeSource:dist',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

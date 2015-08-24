@@ -14,7 +14,7 @@ $animation-video-type: ease;
     top: 86%;
     width: 45%;
     height: 8%;
-    //background-image: url(../images/svg/videoshadow.svg);
+    //background-image: url(../images/common/svg/videoshadow.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -29,7 +29,7 @@ $animation-video-type: ease;
   }
 
   > div.bmm-slider-video-next {
-    background-image: url(../images/svg/v3/Icon_Next.svg);
+    background-image: url(../images/common/svg/v3/Icon_Next.svg);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.7;
@@ -42,7 +42,7 @@ $animation-video-type: ease;
   }
 
   > div.bmm-slider-video-prev {
-    background-image: url(../images/svg/v3/Icon_Prev.svg);
+    background-image: url(../images/common/svg/v3/Icon_Prev.svg);
     background-size: contain;
     background-repeat: no-repeat;
     top: 50%;
@@ -65,7 +65,7 @@ $animation-video-type: ease;
 
   > div.bmm-videos > div:hover {
     > div .bmm-slider-video-play {
-      background-image: url(../images/svg/v3/Video_Play_Hover.svg);
+      background-image: url(../images/common/svg/v3/Video_Play_Hover.svg);
     }
     cursor: pointer;
   }
@@ -117,7 +117,7 @@ $animation-video-type: ease;
           top: 50%;
           width: 5em;
           height: 5em;
-          background-image: url(../images/svg/v3/Video_Play.svg);
+          background-image: url(../images/common/svg/v3/Video_Play.svg);
           background-size: contain;
           background-repeat: no-repeat;
         }
