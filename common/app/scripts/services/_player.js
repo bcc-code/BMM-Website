@@ -412,4 +412,4 @@ angular.module('bmmLibApp')
 
   return factory;
 
-}]);
+});
