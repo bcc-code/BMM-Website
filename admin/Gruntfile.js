@@ -58,23 +58,6 @@ module.exports = function (grunt) {
       }
     },
 
-    includeSource: {
-      options: {
-        basePath: 'app',
-        baseUrl: '/',
-      },
-      server: {
-        files: {
-          '.tmp/index.html': '<%= yeoman.app %>/index.html'
-        }
-      },
-      dist: {
-        files: {
-          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
-        }
-      }
-    },
-
     // The actual grunt server settings
     connect: {
       options: {
@@ -373,20 +356,9 @@ module.exports = function (grunt) {
           src: ['fonts/*']
         }]
       },
-      styles: {
-        expand: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
-      },
+
       vendor: {
-        files: [//{
-        //   expand: true,
-        //   dot: true,
-        //   cwd: '<%= yeoman.app %>/common/images',
-        //   dest: '<%= yeoman.dist %>/images',
-        //   src: '**/*'
-        // },
+        files: [
         {
           expand: true,
           dot: true,
@@ -418,31 +390,21 @@ module.exports = function (grunt) {
       ]
     },
 
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    concat: {
+      options: {
+        sourceMap: true
+      }
+    },
+
+    uglify: {
+      options: {
+        //sourceMap: true,
+        //sourceMapIncludeSources: true,
+        /*sourceMapIn: function(uglifySource) {
+          return uglifySource + '.map';
+        }*/
+      }
+    },
 
     // Test settings
     karma: {
@@ -461,8 +423,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      //'bower-install',
-      'includeSource:server',
+      'bower-install',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -485,8 +446,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    //'bower-install',
-    'includeSource:dist',
+    'bower-install',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
