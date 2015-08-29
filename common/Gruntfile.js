@@ -124,5 +124,5 @@ module.exports = function (grunt) {
     'copy:admin'
   ]);
 
-  grunt.registerTask('default', ['updateCommonFiles']);
+  grunt.registerTask('default', ['updateCommonFiles', 'watch']);
 };
