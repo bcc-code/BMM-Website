@@ -1,4 +1,12 @@
 // Core variables and mixins
+// Use this file if you want to use only some of the bootstrap
+// things, but not the entire library.
+// 
+// This file is disabled for now, using the dist/bootstrap.css
+// precompiled file. To reactivate remoce the reference to
+// the compiled bootstrap.css file and import this file in main.scss
+
+
 @import "sass-bootstrap/lib/variables";
 @import "sass-bootstrap/lib/mixins";
 

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('bmmLibApp')
-  .factory('_api_queue', [function () {
+  .factory('_api_queue', function () {
     var factory = {};
 
 
@@ -124,4 +124,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

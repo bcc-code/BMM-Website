@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_track', ['$location', '_api', '_init', function ($location, _api, _init) {
+  .factory('_track', function ($location, _api, _init) {
     
     var factory = {};
 
@@ -365,4 +365,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

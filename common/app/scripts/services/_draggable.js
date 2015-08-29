@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_draggable', [ '$timeout', '_api', function ($timeout, _api) {
+  .factory('_draggable', function ($timeout, _api) {
 
     var factory = {};
 
@@ -163,4 +163,4 @@ angular.module('bmmLibApp')
     }
 
     return factory;
-  }]);
+  });
