@@ -4,8 +4,7 @@
     "https://bmm-api.brunstad.org/",
     "https://127.0.0.1/bmm/api/web/app_dev.php/",
     "https://devapibmm.brunstad.org/",
-    "https://api.bmm/",
-    "https://bmm-api-eu.cloudapp.net/"
+    "https://api.bmm/"
   ],
   "serverUrlIndex": 0,
   "developerPort": 9001,
