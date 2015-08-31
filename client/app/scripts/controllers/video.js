@@ -13,14 +13,6 @@ angular.module('bmmApp')
 
     $(window).off('scrollBottom');
 
-    // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function() {
-      $window.ga('send', 'pageview', {
-        'page': '/video',
-        'title': 'Video'
-      });
-    });
-
     $scope.load = true;
 
     var albumFrom = 3, loading=true;
