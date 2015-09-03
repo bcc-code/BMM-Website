@@ -9,7 +9,7 @@ angular.module('bmmApp', [
   'ui.sortable',
   'ngTouch',
   'angulartics',
-  'angulartics.google.analytics'
+  'angular-google-analytics'
 ]).run(['$route', '$location', function($route, $location)  {
 
     //Removes unwanted urlchange done by topbar while developing
@@ -23,7 +23,7 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider,$locationProvider, $analyticsProvider) {
+  .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider, $locationProvider, $analyticsProvider) {
 
     $analyticsProvider.virtualPageviews(true);
 

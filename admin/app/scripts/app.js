@@ -24,7 +24,9 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
+  .config(['$routeProvider','$locationProvider', '$analyticsProvider', 'AnalyticsProvider', function ($routeProvider, $locationProvider, $analyticsProvider) {
+
+    $analyticsProvider.virtualPageviews(true);
 
     $routeProvider
       .when('/dashboard', {
