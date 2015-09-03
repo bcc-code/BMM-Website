@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('navigator', ['$timeout', function ($timeout) {
+  .directive('navigator', function ($timeout) {
     return {
       link: function postLink(scope, element) {
 
@@ -59,4 +59,4 @@ angular.module('bmmLibApp')
 
       }
     };
-  }]);
+  });

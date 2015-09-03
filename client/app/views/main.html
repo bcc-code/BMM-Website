@@ -13,7 +13,7 @@
     <header>
         <div class="page-positioning">
             <div class="wrapper">
-                <a ng-href="#" class="logo"></a>
+                <a ng-href="" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/playlist/search/'+bmm.term);">
                         <input ng-model="bmm.term"
@@ -23,11 +23,11 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches">{{init.translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music">{{init.translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video">{{init.translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks">{{init.translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive">{{init.translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches">{{init.translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music">{{init.translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video">{{init.translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks">{{init.translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive">{{init.translation.menu.main.archive}}</a></li>
                     <li class="facebook-icon"><a ng-href="https://facebook.com/bmmbrunstad" target="_blank"></a></li>
                     <li class="twitter-icon"><a ng-href="https://twitter.com/bmmbrunstad" target="_blank"></a></li>
                     <li class="instagram-icon"><a ng-href="https://instagram.com/bmmbrunstad" target="_blank"></a></li>
@@ -252,7 +252,7 @@
 
             <!--SUB-HEADER-->
             <div class="sub-header" ng-class="{'visible': fixed}">
-                <a ng-href="#" class="logo"></a>
+                <a ng-href="" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/playlist/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
@@ -262,11 +262,11 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="#speeches" ng-click="visible=false">{{init.translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="#music" ng-click="visible=false">{{init.translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="#video" ng-click="visible=false">{{init.translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="#audiobooks" ng-click="visible=false">{{init.translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="#archive" ng-click="visible=false">{{init.translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches" ng-click="visible=false">{{init.translation.menu.main.speeches}}</a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music" ng-click="visible=false">{{init.translation.menu.main.music}}</a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video" ng-click="visible=false">{{init.translation.menu.main.video}}</a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks" ng-click="visible=false">{{init.translation.menu.main.audiobooks}}</a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive" ng-click="visible=false">{{init.translation.menu.main.archive}}</a></li>
                 </ul>
             </div>
 
@@ -274,13 +274,13 @@
             <h2>{{init.translation.menu.secondary.playlists}}</h2>
 
             <ul class="playlists-generated">
-                <li><a ng-href="#playlist/latest" ng-click="visible=false">{{init.translation.menu.secondary.latestTracks}}</a></li>
-                <li><a ng-href="#playlist/mp3kilden" ng-click="visible=false">{{init.translation.page.music.mp3Source}}</a></li>
-                <li><a ng-href="#playlist/barnasmp3" ng-click="visible=false">{{init.translation.page.music.childrensMp3Source}}</a></li>
-                <li><a ng-href="#playlist/instrumental" ng-click="visible=false">{{init.translation.page.music.instrumental}}</a></li>
+                <li><a ng-href="playlist/latest" ng-click="visible=false">{{init.translation.menu.secondary.latestTracks}}</a></li>
+                <li><a ng-href="playlist/mp3kilden" ng-click="visible=false">{{init.translation.page.music.mp3Source}}</a></li>
+                <li><a ng-href="playlist/barnasmp3" ng-click="visible=false">{{init.translation.page.music.childrensMp3Source}}</a></li>
+                <li><a ng-href="playlist/instrumental" ng-click="visible=false">{{init.translation.page.music.instrumental}}</a></li>
                 <li><span ng-click="getCurrent()" ng-click="visible=false">{{init.translation.menu.secondary.current}}</span></li>
-                <li><a ng-href="#album/90223" ng-click="visible=false">BCCpåskecamp 2015 - Spesial</a></li>
-                <li><a ng-href="#album/90224" ng-click="visible=false">Påskestevne 2015 - Spesial</a></li>
+                <li><a ng-href="album/90223" ng-click="visible=false">BCCpåskecamp 2015 - Spesial</a></li>
+                <li><a ng-href="album/90224" ng-click="visible=false">Påskestevne 2015 - Spesial</a></li>
             </ul>
 
             <button class="playlists-add" ng-click="bmmPlaylistAdd=!bmmPlaylistAdd">
@@ -305,7 +305,7 @@
                     ng-repeat="collection in init.user.track_collections">
                     <a ng-hide="collection.edit == true"
                        ng-click="$parent.visible=false"
-                       ng-href="#playlist/private/{{collection.id}}">
+                       ng-href="playlist/private/{{collection.id}}">
                         {{collection.name}}</a>
                     <form ng-show="collection.edit == true">
                         <input type="text" ng-model="collection.newName" ng-init="collection.newName=collection.name"/>
