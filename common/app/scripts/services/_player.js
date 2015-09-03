@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_player', ['$timeout', '$rootScope', '$filter', '$window', '_api', '_playlist', '_track',
-    function ($timeout, $rootScope, $filter, $window, _api, _playlist,  _track) {
+  .factory('_player', function ($timeout, $rootScope, $filter, $window, _api, _playlist,  _track) {
   
   var factory = {},
       videoTarget,
@@ -413,4 +412,4 @@ angular.module('bmmLibApp')
 
   return factory;
 
-}]);
+});

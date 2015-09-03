@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', [ '$timeout', '_api_queue', function ($timeout, _api_queue) {
+  .factory('_api', function ($timeout, _api_queue) {
   
   var factory = {},
       credentials = {},
@@ -911,4 +911,4 @@ angular.module('bmmLibApp')
 
   return factory;
 
-}]);
+});

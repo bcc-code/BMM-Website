@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_locals', [ '$http', '$q', '_api', function ($http, $q, _api) {
+  .factory('_locals', function ($http, $q, _api) {
     var factory = {},
         locals = {};
     locals.date = {};
@@ -48,4 +48,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

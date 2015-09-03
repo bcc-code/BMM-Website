@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('_protectedURL', ['_api', function (_api) {
+  .filter('_protectedURL', function (_api) {
     return function (path) {
 
       if (path.substring(0,4)!=='http') {
@@ -10,4 +10,4 @@ angular.module('bmmLibApp')
 
       return path;
     };
-  }]);
+  });

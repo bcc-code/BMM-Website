@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_init', ['$http', '$q', '$location', '_api', '_locals', function ($http, $q, $location, _api, _locals) {
+  .factory('_init', function ($http, $q, $location, _api, _locals) {
 
     var factory = {},
         loginAttempts = 3;
@@ -304,4 +304,4 @@ angular.module('bmmLibApp')
     };
 
     return factory;
-  }]);
+  });

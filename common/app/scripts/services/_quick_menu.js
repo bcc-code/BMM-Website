@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', '_init', function ($rootScope, $timeout, _api, _track, _album, _init) {
+  .factory('_quickMenu', function ($rootScope, $timeout, _api, _track, _album, _init) {
 
     var factory = {};
 
@@ -226,4 +226,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

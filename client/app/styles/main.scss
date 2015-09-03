@@ -1,4 +1,6 @@
-@import "_bootstrap";
+//Disabling the sass version of bootstrap
+//using the precompiled version instead.
+//@import "_bootstrap";
 @import "common/_main";
 
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";

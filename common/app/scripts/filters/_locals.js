@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('_locals', ['_locals', '$filter', function (_locals, $filter) {
+  .filter('_locals', function (_locals, $filter) {
     return function (date, lang, out) {
 
       if (typeof date!=='undefined') {
@@ -67,4 +67,4 @@ angular.module('bmmLibApp')
 
       return out;
     };
-  }]);
+  });

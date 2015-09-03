@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_play', ['_playlist', '_player', '$location', '$filter', '_api',
-    function (_playlist, _player, $location, $filter,  _api) {
+  .factory('_play', function (_playlist, _player, $location, $filter,  _api) {
     
     var factory = {};
 
@@ -61,4 +60,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });
