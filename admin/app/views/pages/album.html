@@ -172,27 +172,6 @@
         </ul>
     </div>
 </div>
-
-<div playlist class="foldbox">
-    <div class="header"
-         ng-click="showTracks=!showTracks">
-        <h3>{{init.translation.page.editor.tracks}}</h3>
-    </div>
-    <div class="body" ng-class="{'visible': showTracks}">
-        <table>
-            <tbody>
-                <tr class="head">
-                    <th colspan="2">{{init.translation.page.search.artist}}</th>
-                    <th>{{init.translation.track.duration}}</th>
-                </tr>
-                <tr ng-repeat="track in model.children">
-                    <td>{{track._meta.artist}}</td>
-                    <td>{{10}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 </div>
 
 <div class="controlbar">
