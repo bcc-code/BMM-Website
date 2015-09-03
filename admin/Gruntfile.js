@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          protocol: 'http',
+          protocol: 'https',
           livereload: true
         }
       },
