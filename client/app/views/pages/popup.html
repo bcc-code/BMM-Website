@@ -1,8 +1,8 @@
 <!--ADD TRACK TO PLAYLIST-->
-<div class="popup" ng-hide="trackToPlaylist.id==undefined||trackToPlaylist.id==false">
+<div class="popup" ng-if="trackToPlaylist.id">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="trackToPlaylist.id=false">
+            <div class="container" always click-outside="trackToPlaylist.id=false">
 
                 <div class="exit" ng-click="trackToPlaylist.id=false"></div>
 
@@ -26,7 +26,7 @@
 <div class="popup" ng-if="tracksToPlaylist.length>0">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="tracksToPlaylist.length=0">
+            <div class="container" always click-outside="tracksToPlaylist.length=0">
 
                 <div class="exit" ng-click="tracksToPlaylist.length=0"></div>
 
@@ -46,10 +46,10 @@
 </div>
 
 <!--PODCAST-->
-<div class="popup" ng-hide="newPodcast.show==undefined||newPodcast.show!=true">
+<div class="popup" ng-if="newPodcast.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="newPodcast.show=false">
+            <div class="container" always click-outside="newPodcast.show=false">
 
                 <div class="exit" ng-click="newPodcast.show=false"></div>
 
@@ -106,10 +106,10 @@
 </div>
 
 <!--SHARE-->
-<div class="popup" ng-hide="share.show==undefined||share.show==false">
+<div class="popup" ng-if="share.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="share.show=false">
+            <div class="container" always click-outside="share.show=false">
 
                 <div class="exit" ng-click="share.show=false"></div>
 
@@ -127,10 +127,10 @@
 </div>
 
 <!--PUSH MESSAGE-->
-<div class="popup" ng-hide="pushMessage.show==undefined||pushMessage.show==false">
+<div class="popup" ng-if="pushMessage.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="pushMessage.show=false">
+            <div class="container" click-outside="pushMessage.show=false">
 
                 <div class="exit" ng-click="pushMessage.show=false"></div>
 
@@ -146,10 +146,10 @@
 </div>
 
 <!--SETTINGS-->
-<div class="popup" ng-hide="settings.show==undefined||settings.show==false">
+<div class="popup" ng-if="settings.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="settings.show=false;setContentLangConditional();">
+            <div class="container" id="languageSettings" click-outside="settings.show=false;setContentLangConditional();">
 
                 <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="settings.show=false;setContentLangConditional();"></div>
 
@@ -203,10 +203,10 @@
 </div>
 
 <!--MORE INFO FOR A TRACK-->
-<div class="popup" ng-hide="trackInfo.show==undefined||trackInfo.show==false">
+<div class="popup" ng-if="trackInfo.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-elsewhere="trackInfo.show=false">
+            <div class="container" click-outside="trackInfo.show=false">
 
                 <div class="exit" ng-click="trackInfo.show=false"></div>
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_player', function ($timeout, $rootScope, $filter, $window, $analytics, _api, _playlist,  _track) {
+  .factory('_player', function ($timeout, $rootScope, $filter, $window, $injector, _api, _playlist,  _track) {
   
   var factory = {},
       videoTarget,
@@ -61,11 +61,13 @@ angular.module('bmmLibApp')
         },
         ended: function() {
           //End of track
-          $analytics.eventTrack('play end', {
-            category: 'tracks',
-            label: factory.title,
-            value: factory.id
-          });
+          if($injector.has('$analytics')) {
+            $injector.get('$analytics').eventTrack('play end', {
+              category: 'tracks',
+              label: factory.title,
+              value: factory.id
+            });
+          }
 
           factory.setNext(true);
         },
@@ -254,12 +256,13 @@ angular.module('bmmLibApp')
           time = 0;
         }
       }
-
-      $analytics.eventTrack('play start', {
-        category: 'tracks',
-        label: factory.title,
-        value: factory.id
-      });
+      if($injector.has('$analytics')) {
+        $injector.get('$analytics').eventTrack('play start', {
+          category: 'tracks',
+          label: factory.title,
+          value: factory.id
+        });
+      }
 
       //You should use this
       factory.source = source;
