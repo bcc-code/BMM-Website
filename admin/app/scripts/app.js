@@ -8,7 +8,9 @@ angular.module('bmmApp', [
   'ui.bootstrap',
   'ui.sortable',
   'angularFileUpload',
-  'mgcrea.ngStrap'
+  'mgcrea.ngStrap',
+  'angulartics',
+  'angulartics.google.analytics'
 ]).run(['$route', '$location', function($route, $location)  {
 
     //Removes unwanted urlchange done by topbar while developing
@@ -22,7 +24,9 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
+  .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider, $locationProvider, $analyticsProvider) {
+
+    $analyticsProvider.virtualPageviews(true);
 
     $routeProvider
       .when('/dashboard', {

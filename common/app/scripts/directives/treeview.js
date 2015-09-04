@@ -31,7 +31,7 @@
 
 'use strict';
 angular.module('bmmLibApp')
-  .directive( 'treeview', ['$compile', function( $compile ) {
+  .directive('treeview', function($compile) {
     return {
       restrict: 'A',
       link: function ( scope, element, attrs ) {
@@ -123,4 +123,4 @@ angular.module('bmmLibApp')
         }
       }
     };
-  }]);
+  });

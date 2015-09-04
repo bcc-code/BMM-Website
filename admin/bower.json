@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js",
-    "angular": "1.2.6",
+    "angular": "1.4.5",
     "angular-file-upload": "~0.5.6",
     "angular-resource": "1.2.6",
     "angular-route": "1.2.6",
@@ -12,6 +12,8 @@
     "angular-touch": "~1.2.14",
     "angular-ui-bootstrap-bower": "*",
     "angular-ui-sortable": "0.12.8",
+    "angulartics": "~0.20.0",
+    "angulartics-google-analytics": "~0.1.1",
     "fastclick": "~1.0.1",
     "jplayer": "~2.6.0",
     "jquery": "~1.10.2",
@@ -25,6 +27,6 @@
     "angular-scenario": "1.2.6"
   },
   "resolutions": {
-    "angular": "1.2.6"
+    "angular": "1.4.5"
   }
 }

@@ -11,16 +11,13 @@ angular.module('bmmApp')
     _init,
     _draggable
   ) {
+    //The number of latest music tracks that should be in one column.
+    $scope.latestMusicColHeight = 4;
+
+    //The number of latest speeches that should be in one column.
+    $scope.latestSpeechesColHeight = 3;
 
     $(window).off('scrollBottom');
-
-    // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function() {
-      $window.ga('send', 'pageview', {
-        'page': '/welcome',
-        'title': 'Welcome'
-      });
-    });
 
     //LATEST SPEECHS
     _api.trackLatest({
@@ -28,26 +25,11 @@ angular.module('bmmApp')
       'content-type': ['speech']
     }).done(function(data) {
 
-      var left = [], right = [], largeScreen = [], track;
-
-      $.each(data, function(index) {
-
-        track = _track.resolve(this);
-
-        if (index<3) {
-          left.push(track);
-        } else if (index<6) {
-          right.push(track);
-        } else {
-          largeScreen.push(track);
-        }
-
-      });
-
       $scope.$apply(function() {
-        $scope.latestSpeaksLeft = left;
-        $scope.latestSpeaksRight = right;
-        $scope.latestSpeaksLargeScreen = largeScreen;
+        $scope.latestSpeeches = data.map(function(trackData) {
+          return _track.resolve(trackData);
+        });
+
         _draggable.makeDraggable($scope);
       });
 
@@ -80,30 +62,14 @@ angular.module('bmmApp')
       size: 12,
       'content-type': ['song']
     }).done(function(data) {
-
-      var left = [], right = [], largeOnly = [], track;
-
-      $.each(data, function(index) {
-
-        track = _track.resolve(this);
-
-        if (index<4) {
-          left.push(track);
-        } else if (index<8) {
-          right.push(track);
-        } else {
-          largeOnly.push(track);
-        }
-
-      });
-
       $scope.$apply(function() {
-        $scope.latestMusicLeft = left;
-        $scope.latestMusicRight = right;
-        $scope.latestMusicLargeOnly = largeOnly;
+
+        $scope.latestMusic = data.map(function(trackData) {
+          return _track.resolve(trackData);
+        });
+
         _draggable.makeDraggable($scope);
       });
-
     });
 
     //LATEST ALBUMS

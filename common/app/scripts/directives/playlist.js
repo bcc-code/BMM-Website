@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('playlist', ['$rootScope', '$timeout', '_draggable', function ($rootScope, $timeout, _draggable) {
+  .directive('playlist', function ($rootScope, $timeout, _draggable) {
     return {
       link: function postLink(scope, element) {
 
@@ -34,4 +34,4 @@ angular.module('bmmLibApp')
 
       }
     };
-  }]);
+  });

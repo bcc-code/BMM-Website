@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .directive('player', [ '$timeout', '$compile', '_player', '_playlist',
-  function ($timeout, $compile, _player, _playlist) {
+  .directive('player', function ($timeout, $compile, _player, _playlist) {
     return {
       link: function postLink(scope, element) {
 
@@ -141,4 +140,4 @@ angular.module('bmmLibApp')
 
       }
     };
-  }]);
+  });

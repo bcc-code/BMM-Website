@@ -128,13 +128,11 @@ angular.module('bmmApp')
         $location.path( path );
       };
 
+      //deprecated - to be removed.
+      //
+      //use _play.setPlay directly instead
       $scope.play = function(playlist, index, timestamp, verse) {
-
-        if (typeof verse!=='undefined') {
-          $window.ga('send', 'event', 'bible verse', 'play', verse);
-        }
-
-        _play.setPlay(playlist, index, true, timestamp);
+        _play.setPlay(playlist, index, true, timestamp, verse);
       };
 
       //Deprecated

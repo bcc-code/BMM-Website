@@ -1,11 +1,18 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_play', function (_playlist, _player, $location, $filter,  _api) {
+  .factory('_play', function (_playlist, _player, $location, $filter, $analytics, _api) {
     
     var factory = {};
 
-    factory.setPlay = function(playlist, index, play, timestamp) {
+    factory.setPlay = function(playlist, index, play, timestamp, verse) {
+      if(verse) {
+        $analytics.eventTrack('play', {
+          category: 'bible verse',
+          label: verse
+        });
+      }
+
       if (typeof index==='undefined') {
         index = 0;
       }

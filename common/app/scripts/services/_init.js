@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_init', function ($http, $q, $location, _api, _locals) {
+  .factory('_init', function ($http, $q, $location, _api, _locals, $analytics) {
 
     var factory = {},
         loginAttempts = 3;
@@ -112,6 +112,9 @@ angular.module('bmmLibApp')
 
           // -- Credentials
           _api.setCredentials(user.username, user.token);
+
+          //Set the username for the angulartics reports:
+          $analytics.setUsername(user.username);
 
           // -- Root & contentLanguage (Depends on root)
           var rootLoaded = $q.defer(),
