@@ -27,8 +27,7 @@ ____________________________________________
 
 NOTE:
     If you want to test run the admin page, you should also install the
-    API and replace server link in client/app/scripts/app.js with your own.
-    Same in admin/app/scripts/app.js
+    API and replace serverUrls and serverUrlIndex in the scripts/config.json
 
 CODING STLE
 -----------
@@ -37,58 +36,45 @@ If you want to contribute to this project you should follow a specific coding st
 
 * Use 2 spaces for identation
 * Use '' (single quotes) and **not** "" (double quotes) for JS strings
-* Always use the [inline array annotation](https://docs.angularjs.org/guide/di#inline-array-annotation) for dependecy injection
+* Do *NOT* use the [inline array annotation](https://docs.angularjs.org/guide/di#inline-array-annotation) for dependecy injection, instead rely on the name of the argument
 
 SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 
 **1. Install [NodeJS](http://nodejs.org/) and open Terminal / CMD**
 
-**2. Install Yeoman**
+**2. Install Yeoman, Bower and Yeoman generator**
 ```
 #!cmd
-sudo npm install -g yo
+sudo npm install -g yo grunt-cli bower generator-webapp
 ```
 
-**3. Install Bower**
-```
-#!cmd
-sudo npm install -g grunt-cli bower
-```
+**3. Install [Ruby](https://www.ruby-lang.org/en/downloads/)**
 
-**4. Install Yeoman generator**
-```
-#!cmd
-sudo npm install --global generator-webapp
-```
-
-**5. Install [Ruby](https://www.ruby-lang.org/en/downloads/)**
-
-**6. Install Compass**
+**4. Install Compass**
 ```
 #!cmd
 gem update --system
 gem install compass
 ```
 
-**7. Get a copy of this repository**
+**5. Get a copy of this repository**
 
-**8. CD into 'common' via terminal/CMD and run the following commands**
+**6. CD into 'common' via terminal/CMD and run the following commands**
+```
+#!cmd
+sudo npm update
+grunt --force
+```
+
+**7. CD into 'admin' and run the following commands**
 ```
 #!cmd
 sudo npm update
 bower update
-grunt build --force
 ```
 
-**9. CD into 'admin' and run the following commands**
-```
-#!cmd
-sudo npm update
-bower update
-```
-
-**10. CD into 'client' and run the following commands**
+**8. CD into 'client' and run the following commands**
 ```
 #!cmd
 sudo npm update
@@ -123,8 +109,15 @@ MAKE STANDALONE BUILDS
 ----------------------
 
     1. Run command: grunt build
-        The standalone is build into the dist folder
+        The standalone is built into the dist folder
 
 IMPORTANT NOTE:
-    By running this command in the common folder, you automatically update the common files
-    in both admin and client.
+    You should never edit the files located in the following folders:
+    {admin/client}/scripts/common
+    {admin/client}/styles/common
+    {admin/client}/views/common
+    {admin/client}/images/common
+
+    Instead you should use the common folder in the root of the project. Inside common/app, a respective folder for each of these directories can be found inside common/app/{scripts/styles/views/images}
+
+    By running the ```grunt --force``` command in the common folder, it updates the common files in both admin and client, and continues to watch for changes, and automatically updates once changes are detected. It is recommended to always have watching enabled while developing. It may be smart to setup your system to run the command automatically on startup, so it isn't forgotten later.

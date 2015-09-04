@@ -61,16 +61,16 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9001,
+        port: 9003,
         // Change this to '0.0.0.0' to access the server from outside.
-        //hostname: '0.0.0.0',
-        protocol: 'https',
+        hostname: '0.0.0.0',
+        protocol: 'http',
         livereload: 35729
       },
       livereload: {
         options: {
           open: true,
-          protocol: 'https',
+          protocol: 'http',
           base: [
             '.tmp',
             '<%= yeoman.app %>'
@@ -84,8 +84,8 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9003,
-          protocol: 'https',
+          port: 9004,
+          protocol: 'http',
           base: [
             '.tmp',
             'test',
@@ -162,6 +162,8 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
+        outputStyle: 'expanded',
+        sourcemap: true,
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
         generatedImagesDir: '.tmp/images/generated',
@@ -229,53 +231,48 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
-        },{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          src: '**/*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
     svgmin: {
-      options: {
-        plugins: [
-          //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
-          { removeUnknownsAndDefaults: false },
-          { convertPathData: false },/*
-           { cleanupAttrs: false },
-           { cleanupEnableBackground: false },
-           { cleanupIDs: false },
-           { cleanupNumericValues: false },
-           { collapseGroups: false },
-           { convertColors: false },
-           { convertShapeToPath: false },
-           { convertStyleToAttrs: false },*/
-          { convertTransform: false },/*
-           { mergePaths: false },
-           { moveElemsAttrsToGroup: false },/*
-           { moveGroupAttrsToElems: false },
-           { removeComments: false },
-           { removeDoctype: false },
-           { removeEditorsNSData: false },
-           { removeEmptyAttrs: false },
-           { removeEmptyContainers: false },
-           { removeEmptyText: false },
-           { removeHiddenElems: false },
-           { removeMetadata: false },
-           { removeNonInheritableGroupAttrs: false },
-           { removeRasterImages: false },
-           { removeTitle: false },
-           { removeUnkownsAndDefaults: false },
-           { removeUnusedNS: false },*/
-          { removeUselessStrokeAndFill: false }/*
-           { removeViewBox: false },
-           { removeXMLProcInst: false },
-           { sortAttrs: false },
-           { transformsWithOnePath: false }*/
-        ]
-      },
       dist: {
+        options: {
+          plugins: [
+            //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
+            { removeUnknownsAndDefaults: false },
+            { convertPathData: false },/*
+             { cleanupAttrs: false },
+             { cleanupEnableBackground: false },
+             { cleanupIDs: false },
+             { cleanupNumericValues: false },
+             { collapseGroups: false },
+             { convertColors: false },
+             { convertShapeToPath: false },
+             { convertStyleToAttrs: false },*/
+            { convertTransform: false },/*
+             { mergePaths: false },
+             { moveElemsAttrsToGroup: false },/*
+             { moveGroupAttrsToElems: false },
+             { removeComments: false },
+             { removeDoctype: false },
+             { removeEditorsNSData: false },
+             { removeEmptyAttrs: false },
+             { removeEmptyContainers: false },
+             { removeEmptyText: false },
+             { removeHiddenElems: false },
+             { removeMetadata: false },
+             { removeNonInheritableGroupAttrs: false },
+             { removeRasterImages: false },
+             { removeTitle: false },
+             { removeUnkownsAndDefaults: false },
+             { removeUnusedNS: false },*/
+            { removeUselessStrokeAndFill: false }/*
+             { removeViewBox: false },
+             { removeXMLProcInst: false },
+             { sortAttrs: false },
+             { transformsWithOnePath: false }*/
+        ]
+        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
@@ -353,28 +350,27 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts',
           dest: '<%= yeoman.dist %>/scripts',
           src: ['config.json']
+        }, 
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/sass-bootstrap/dist',
+          dest: '<%= yeoman.dist %>',
+          src: ['fonts/*']
+        }, 
+        //This is to copy the raw css files generated by
+        //compass, so we can have the sourcemap working
+        //properly.
+        {
+          expand: true,
+          cwd: '.tmp',
+          src: 'styles/**/*',
+          dest: '<%= yeoman.dist %>'
         }]
       },
-      styles: {
-        expand: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
-      },
+
       vendor: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/common/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: '**/*'
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/bower_components/hub.bmm/dist/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: '{,*/}*'
-        }, {
+        files: [
+        {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
@@ -386,17 +382,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/fallback_images',
           dest: '<%= yeoman.dist %>/fallback_images',
           src: '{,*/}*'
-        }]
-      }
-    },
-
-    replace: {
-      another_example: {
-        src: ['<%= yeoman.dist %>/index.html'],
-        overwrite: true,                 // overwrite matched source files
-        replacements: [{
-          from: '<base href="/">',
-          to: '<base href="/admin/">'
         }]
       }
     },
@@ -416,31 +401,27 @@ module.exports = function (grunt) {
       ]
     },
 
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    concat: {
+      options: {
+        sourceMap: true,
+        sourceMapStyle: 'link'
+      }
+    },
+
+    uglify: {
+      options: {
+        sourceMap: true,
+        //Don't include the source code in the sourceMap,
+        //the developer has to map his local sourceFiles
+        //with the browser in order to debug.
+        //
+        //Activating this also increases build-time noticeably
+        sourceMapIncludeSources: false,
+        sourceMapIn: function(uglifySource) {
+          return uglifySource + '.map';
+        }
+      }
+    },
 
     // Test settings
     karma: {
@@ -494,7 +475,6 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'replace',
     'htmlmin',
     'copy:vendor'
   ]);

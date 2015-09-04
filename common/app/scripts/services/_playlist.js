@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_playlist', [ function () {
+  .factory('_playlist', function () {
     
     var factory = {},
         url='',
@@ -135,4 +135,4 @@ angular.module('bmmLibApp')
 
     return factory;
     
-  }]);
+  });

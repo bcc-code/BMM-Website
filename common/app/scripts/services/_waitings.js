@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_waitings', [ '_track', function (_track) {
+  .factory('_waitings', function (_track) {
 
     var factory = {};
 
@@ -157,4 +157,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

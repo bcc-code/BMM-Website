@@ -53,12 +53,6 @@ angular.module('bmmApp')
     switch($routeParams.playlist) {
       case 'search':
 
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/search/?q='+$routeParams.id,
-          'title': $routeParams.id
-        });
-
         //Ensure search field has the term
         $scope.$parent.bmm = {};
         $scope.$parent.bmm.term = $routeParams.id;
@@ -115,12 +109,6 @@ angular.module('bmmApp')
         break;
       case 'latest':
 
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/playlist/latest',
-          'title': 'Latest tracks'
-        });
-
         $scope.title = _init.translation.playlist.latestTracks;
         size = 0;
 
@@ -164,12 +152,6 @@ angular.module('bmmApp')
         $scope.private = true;
         _api.userTrackCollectionGet($routeParams.id).done(function(data) {
 
-          // @analytics - Report page view to google analytics
-          $window.ga('send', 'pageview', {
-            'page': '/playlist/private/'+$routeParams.id,
-            'title': data.name
-          });
-
           $scope.title = data.name;
           resolveTracks(data.tracks);
 
@@ -200,12 +182,6 @@ angular.module('bmmApp')
 
         break;
       case 'mp3kilden':
-
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/playlist/mp3kilden',
-          'title': 'Mp3-Kilden'
-        });
 
         size = 0;
         $scope.title = _init.translation.page.music.mp3Source;
@@ -252,12 +228,6 @@ angular.module('bmmApp')
         break;
       case 'barnasmp3':
 
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/playlist/barnasmp3',
-          'title': 'Barnas Mp3-Kilde'
-        });
-
         size = 0;
         $scope.title = _init.translation.page.music.childrensMp3Source;
         $(window).on('scrollBottom', function() {
@@ -302,12 +272,6 @@ angular.module('bmmApp')
         break;
       case 'instrumental':
 
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/playlist/instrumental',
-          'title': 'Instrumental'
-        });
-
         size = 0;
         $scope.title = _init.translation.playlist.instrumental;
         $(window).on('scrollBottom', function() {
@@ -351,12 +315,6 @@ angular.module('bmmApp')
 
         break;
       case 'contributor':
-
-        // @analytics - Report page view to google analytics
-        $window.ga('send', 'pageview', {
-          'page': '/playlist/contributor/'+$routeParams.id,
-          'title': $routeParams.name
-        });
 
         size = 0;
         $scope.title = $routeParams.name;

@@ -2,28 +2,31 @@
   "name": "bmm",
   "version": "1.0.0",
   "dependencies": {
-    "angular-ui-bootstrap-bower": "*",
-    "angular": "1.2.6",
-    "jquery": "~1.10.2",
-    "jqueryui": "~1.10.3",
-    "angular-strap": "latest",
-    "sass-bootstrap": "~3.0.2",
-    "angular-resource": "1.2.6",
-    "angular-sanitize": "1.2.6",
-    "angular-route": "1.2.6",
-    "jplayer": "~2.6.0",
-    "angular-touch": "~1.2.14",
-    "angular-ui-sortable": "0.12.8",
-    "fastclick": "~1.0.1",
-    "jquery.ui.touch-punch.dk": "~0.3.3",
+    "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js",
+    "angular": "1.4.5",
     "angular-file-upload": "~0.5.6",
-    "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js"
+    "angular-resource": "1.2.6",
+    "angular-route": "1.2.6",
+    "angular-sanitize": "1.2.6",
+    "angular-strap": "latest",
+    "angular-touch": "~1.2.14",
+    "angular-ui-bootstrap-bower": "*",
+    "angular-ui-sortable": "0.12.8",
+    "angulartics": "~0.20.0",
+    "angulartics-google-analytics": "~0.1.1",
+    "fastclick": "~1.0.1",
+    "jplayer": "~2.6.0",
+    "jquery": "~1.10.2",
+    "jquery-md5": "*",
+    "jquery.ui.touch-punch.dk": "~0.3.3",
+    "jqueryui": "~1.10.3",
+    "sass-bootstrap": "~3.0.2"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6"
   },
   "resolutions": {
-    "angular": "1.2.6"
+    "angular": "1.4.5"
   }
 }

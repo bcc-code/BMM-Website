@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('_cover', [ '_api', function (_api) {
+  .filter('_cover', function (_api) {
     return function (cover, type, id, antiCache) {
 
       if (typeof cover==='undefined' || cover===null || cover==='') {
@@ -44,4 +44,4 @@ angular.module('bmmLibApp')
 
       return cover;
     };
-  }]);
+  });

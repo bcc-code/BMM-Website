@@ -4,3 +4,7 @@
 /dist/
 /app/testmedia/
 /node_modules/
+app/scripts/common/
+app/styles/common/
+app/images/common/
+app/views/common/

@@ -18,14 +18,6 @@ angular.module('bmmApp')
 
     $(window).off('scrollBottom');
 
-    // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function() {
-      $window.ga('send', 'pageview', {
-        'page': '/album',
-        'title': 'Album'
-      });
-    });
-
     $scope.load = true;
     $scope.parentAlbum = { found: false };
     $scope.tracks = 0;

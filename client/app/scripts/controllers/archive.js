@@ -15,14 +15,6 @@ angular.module('bmmApp')
 
     $(window).off('scrollBottom');
 
-    // @analytics - Report page view to google analytics
-    $scope.$on('$viewContentLoaded', function() {
-      $window.ga('send', 'pageview', {
-        'page': '/archive',
-        'title': 'Archive'
-      });
-    });
-
     //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
     _api.facetsTrackRecordedYears().done(function(data) {
 

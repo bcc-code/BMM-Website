@@ -6,7 +6,8 @@
     "https://devapibmm.brunstad.org/",
     "https://api.bmm/"
   ],
-  "developerPort": 9001,
+  "serverUrlIndex": 0,
+  "developerPort": 9003,
   "protocol": "https",
   "localsPath": "translations/locals/",
   "biblePath": "translations/bible/",

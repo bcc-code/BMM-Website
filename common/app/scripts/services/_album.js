@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_album', ['_api', '_init', function (_api, _init) {
+  .factory('_album', function (_api, _init) {
     
     var factory = {};
 
@@ -45,4 +45,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  });

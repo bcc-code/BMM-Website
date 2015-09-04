@@ -21,7 +21,7 @@
     text-align: left;
     padding: .6em;
     background-color: transparent;
-    background-image: url(../images/svg/v3/Icon_Settings.svg);
+    background-image: url(../images/common/svg/v3/Icon_Settings.svg);
     background-position: right .2em top .4em;
     background-size: 1.7em 1.7em;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@
   }
   .suport {
     line-height: normal!important;
-    background-image: url(../images/svg/v3/Icon_Support.svg);
+    background-image: url(../images/common/svg/v3/Icon_Support.svg);
     color: black!important;
     background-size: 1.6em 1.6em;
     background-position: right .25em top .4em;
@@ -55,7 +55,7 @@
   margin-top: $headerHeight + .5em;
   width: 1.6em;
   height: 2em;
-  background-image: url(../images/svg/toggle.svg);
+  background-image: url(../images/common/svg/toggle.svg);
   background-position: .6em .43em;
   background-size: 0.29em 1.17em;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@
   }
   li {
     @include bmm-transition(all, .2s);
-    background-image: url(../images/svg/v3/Icon_Playlist.svg);
+    background-image: url(../images/common/svg/v3/Icon_Playlist.svg);
     background-size: 2em 2em;
     background-position: 0 .45em;
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@
     @include bmm-transition(all, .2s);
     font-weight: bold;
     background-color: #03d67f;
-    background-image: url(../images/svg/v3/Icon_plus.svg);
+    background-image: url(../images/common/svg/v3/Icon_plus.svg);
     background-size: .8em .8em;
     background-position: .75em .8em;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@
   }
   li {
     position: relative;
-    background-image: url(../images/svg/v3/Icon_Playlist.svg);
+    background-image: url(../images/common/svg/v3/Icon_Playlist.svg);
     background-size: 2em 2em;
     background-position: 0 .45em;
     background-repeat: no-repeat;
@@ -148,7 +148,7 @@
       bottom: 0;
       height: 1.5em;;
       width: 1.5em;
-      background-image: url(../images/svg/v3/Icon_Edit.svg);
+      background-image: url(../images/common/svg/v3/Icon_Edit.svg);
       background-position: center center;
       background-size: 1.2em 1.2em;
       background-repeat: no-repeat;
@@ -161,7 +161,7 @@
       top: .7em;
       height: 1.4em;
       width: 1.1em;
-      background-image: url(../images/svg/v3/Icon_Delete.svg);
+      background-image: url(../images/common/svg/v3/Icon_Delete.svg);
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 0;
@@ -180,14 +180,14 @@
       padding: 0;
       display: inline-block;
       background-color: transparent;
-      background-image: url(../images/svg/v3/Icon_Playlist-Accept.svg);
+      background-image: url(../images/common/svg/v3/Icon_Playlist-Accept.svg);
       background-position: center center;
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 1;
     }
     input:nth-child(2):hover {
-      background-image: url(../images/svg/v3/Icon_Playlist-Accept_hover.svg);
+      background-image: url(../images/common/svg/v3/Icon_Playlist-Accept_hover.svg);
     }
     button {
      background-color: transparent;
@@ -353,11 +353,11 @@ screen and (max-height: $maxHeight) and (max-width: $mobileWidth) {
   .nav-toggle {
     display: inline-block;
     background-color: $colorBackground;
-    background-image: url(../images/svg/toggle_closed.svg);
+    background-image: url(../images/common/svg/toggle_closed.svg);
     margin-left: $navigationMinWidth;
   }
   .nav-toggle.visible {
-    background-image: url(../images/svg/toggle.svg);
+    background-image: url(../images/common/svg/toggle.svg);
     margin-left: $navigationWidth;
   }
 }

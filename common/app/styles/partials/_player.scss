@@ -50,7 +50,7 @@
         height: 1.2em;
         background-repeat: no-repeat;
         background-size: contain;
-        background-image: url(../images/svg/v3/Player_Cross_green.svg);
+        background-image: url(../images/common/svg/v3/Player_Cross_green.svg);
         opacity: .8;
         cursor: pointer;
       }
@@ -74,7 +74,7 @@
           @include transition(opacity, .5s);
           position: absolute;
           bottom: .7em;
-          background-image: url(../images/svg/v3/Icon_Fullscreen.svg);
+          background-image: url(../images/common/svg/v3/Icon_Fullscreen.svg);
           background-size: contain;
           background-repeat: no-repeat;
           width: 2em;
@@ -108,7 +108,7 @@
             opacity: .7;
           }
           .fullscreen-toggle {
-            background-image: url(../images/svg/v3/Icon_Close_Fullscreen.svg);
+            background-image: url(../images/common/svg/v3/Icon_Close_Fullscreen.svg);
             position: relative;
             float: right;
             right: auto;
@@ -116,44 +116,44 @@
             margin: .3em .5em .5em;
           }
           .previous:hover {
-            background-image: url(../images/svg/v3/Player_Prev_Hover.svg);
+            background-image: url(../images/common/svg/v3/Player_Prev_Hover.svg);
           }
           .previous {
             cursor: pointer;
             margin: .6em .8em 0 0;
             width: 1.6em;
             height: 1em;
-            background-image: url(../images/svg/v3/Player_Prev.svg);
+            background-image: url(../images/common/svg/v3/Player_Prev.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
           .play:hover {
-            background-image: url(../images/svg/v3/Player_Play_Hover.svg);
+            background-image: url(../images/common/svg/v3/Player_Play_Hover.svg);
           }
           .play {
             cursor: pointer;
             width: 1.3em;
             height: 1.5em;
             margin-top: .3em;
-            background-image: url(../images/svg/v3/Player_Play.svg);
+            background-image: url(../images/common/svg/v3/Player_Play.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
           .play.pause {
-            background-image: url(../images/svg/v3/Icon_Pause.svg);
+            background-image: url(../images/common/svg/v3/Icon_Pause.svg);
           }
           .play.pause:hover {
-            background-image: url(../images/svg/v3/Icon_Pause_Hover.svg);
+            background-image: url(../images/common/svg/v3/Icon_Pause_Hover.svg);
           }
           .next:hover {
-            background-image: url(../images/svg/v3/Player_Next_Hover.svg);
+            background-image: url(../images/common/svg/v3/Player_Next_Hover.svg);
           }
           .next {
             cursor: pointer;
             margin: .6em 0 0 .8em;
             width: 1.59em;
             height: 1em;
-            background-image: url(../images/svg/v3/Player_Next.svg);
+            background-image: url(../images/common/svg/v3/Player_Next.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
@@ -167,12 +167,12 @@
             width: 1.3em;
             height: 1.4em;
             margin: .4em .6em 0 0;
-            background-image: url(../images/svg/v3/Icon-No-Audio.svg);
+            background-image: url(../images/common/svg/v3/Icon-No-Audio.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
           .mute.active {
-            background-image: url(../images/svg/v3/Icon-Mute.svg);
+            background-image: url(../images/common/svg/v3/Icon-Mute.svg);
           }
           .volume {
             margin: .9em;
@@ -189,7 +189,7 @@
             height: 1.35em;
             margin: .2em .4em .2em 0;
             opacity: .6;
-            background-image: url(../images/svg/video.svg);
+            background-image: url(../images/common/svg/video.svg);
             background-size: contain;
             background-repeat: no-repeat;
           }
@@ -255,12 +255,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url(../images/svg/v3/Player_Options.svg);
+      background-image: url(../images/common/svg/v3/Player_Options.svg);
       background-size: contain;
       background-repeat: no-repeat;
     }
     .optionsToggl:hover {
-      background-image: url(../images/svg/v3/Player_Options_Hover.svg);
+      background-image: url(../images/common/svg/v3/Player_Options_Hover.svg);
     }
     .arrow {
       position: absolute;
@@ -309,12 +309,12 @@
           width: 1.5em;
           margin: 0 .4em 0 .6em
         }
-        .icon.share { background-image: url('../images/svg/v3/Icon_Options_Share.svg'); }
-        .icon.playlist { background-image: url('../images/svg/v3/Icon_Options-Playlist.svg'); }
-        .icon.download { background-image: url('../images/svg/v3/Icon_Options-Download.svg'); }
-        .icon.album { background-image: url('../images/svg/v3/Icon_Options-Album.svg'); }
-        .icon.pocast { background-image: url('../images/svg/v3/Icon_Options-Podcast.svg'); }
-        .icon.settings { background-image: url('../images/svg/v3/Icon_Options-Settings.svg'); }
+        .icon.share { background-image: url('../images/common/svg/v3/Icon_Options_Share.svg'); }
+        .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
+        .icon.download { background-image: url('../images/common/svg/v3/Icon_Options-Download.svg'); }
+        .icon.album { background-image: url('../images/common/svg/v3/Icon_Options-Album.svg'); }
+        .icon.pocast { background-image: url('../images/common/svg/v3/Icon_Options-Podcast.svg'); }
+        .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
         span {
           font-size: .9em;
           bottom: .4em;
@@ -353,13 +353,13 @@
       width: 1.3em;
       height: 1.4em;
       margin: 1.1em 0 0;
-      background-image: url(../images/svg/v3/Icon-No-Audio.svg);
+      background-image: url(../images/common/svg/v3/Icon-No-Audio.svg);
       background-size: contain;
       background-repeat: no-repeat;
     }
     .mute.active {
       margin-left: -.2em;
-      background-image: url(../images/svg/v3/Icon-Mute.svg);
+      background-image: url(../images/common/svg/v3/Icon-Mute.svg);
     }
     .mute:hover {
       opacity: 1;
@@ -371,12 +371,12 @@
       width: 1.6em;
       height: 1.4em;
       margin: 1.1em 0 0;
-      background-image: url(../images/svg/v3/Icon_Audio.svg);
+      background-image: url(../images/common/svg/v3/Icon_Audio.svg);
       background-size: contain;
       background-repeat: no-repeat;
     }
     .max:hover {
-      background-image: url(../images/svg/v3/Icon_Audio_Hover.svg);
+      background-image: url(../images/common/svg/v3/Icon_Audio_Hover.svg);
     }
   }
   .videoOpen:hover {
@@ -390,7 +390,7 @@
     height: 1.5em;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(../images/svg/v3/Icon_Arrow_up.svg);
+    background-image: url(../images/common/svg/v3/Icon_Arrow_up.svg);
     opacity: .8;
     cursor: pointer;
   }
@@ -417,7 +417,7 @@
         float: lefT;
       }
       .repeat.active {
-        background-image: url(../images/svg/v3/Icon_Repeat_Active.svg);
+        background-image: url(../images/common/svg/v3/Icon_Repeat_Active.svg);
       }
       .repeat:hover, .repeat.active:hover {
         opacity: 1;
@@ -430,53 +430,53 @@
         width: 1.7em;
         height: 1.5em;
         margin: 0 .7em 0 8.6em;
-        background-image: url(../images/svg/v3/Icon_Repeat.svg);
+        background-image: url(../images/common/svg/v3/Icon_Repeat.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .previous:hover {
-        background-image: url(../images/svg/v3/Player_Prev_Hover.svg);
+        background-image: url(../images/common/svg/v3/Player_Prev_Hover.svg);
       }
       .previous {
         cursor: pointer;
         margin: .3em 1.5em 0 0;
         width: 1.6em;
         height: 1em;
-        background-image: url(../images/svg/v3/Player_Prev.svg);
+        background-image: url(../images/common/svg/v3/Player_Prev.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .play:hover {
-        background-image: url(../images/svg/v3/Player_Play_Hover.svg);
+        background-image: url(../images/common/svg/v3/Player_Play_Hover.svg);
       }
       .play {
         cursor: pointer;
         width: 1.3em;
         height: 1.5em;
-        background-image: url(../images/svg/v3/Player_Play.svg);
+        background-image: url(../images/common/svg/v3/Player_Play.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .play.pause {
-        background-image: url(../images/svg/v3/Icon_Pause.svg);
+        background-image: url(../images/common/svg/v3/Icon_Pause.svg);
       }
       .play.pause:hover {
-        background-image: url(../images/svg/v3/Icon_Pause_Hover.svg);
+        background-image: url(../images/common/svg/v3/Icon_Pause_Hover.svg);
       }
       .next:hover {
-        background-image: url(../images/svg/v3/Player_Next_Hover.svg);
+        background-image: url(../images/common/svg/v3/Player_Next_Hover.svg);
       }
       .next {
         cursor: pointer;
         margin: .3em 0 0 1.2em;
         width: 1.59em;
         height: 1em;
-        background-image: url(../images/svg/v3/Player_Next.svg);
+        background-image: url(../images/common/svg/v3/Player_Next.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .shuffle.active {
-        background-image: url(../images/svg/v3/Icon_Shuffle_Active.svg);
+        background-image: url(../images/common/svg/v3/Icon_Shuffle_Active.svg);
       }
       .shuffle:hover, .shuffle.active:hover {
         opacity: 1;
@@ -489,12 +489,12 @@
         width: 1.5em;
         height: 1.5em;
         margin: 0 0 0 -2.8em;
-        background-image: url(../images/svg/v3/Icon_Shuffle.svg);
+        background-image: url(../images/common/svg/v3/Icon_Shuffle.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .videoFirst.active {
-        background-image: url(../images/svg/v3/Icon_Video_Active.svg);
+        background-image: url(../images/common/svg/v3/Icon_Video_Active.svg);
       }
       .videoFirst:hover, .videoFirst.active:hover {
         opacity: 1;
@@ -507,7 +507,7 @@
         width: 1.7em;
         height: 1.22em;
         margin: .2em 0 0 11em;
-        background-image: url(../images/svg/v3/Icon_Video.svg);
+        background-image: url(../images/common/svg/v3/Icon_Video.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }

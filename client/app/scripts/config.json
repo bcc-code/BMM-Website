@@ -6,6 +6,7 @@
     "https://devapibmm.brunstad.org/",
     "https://api.bmm/"
   ],
+  "serverUrlIndex": 2,
   "developerPort": 9001,
   "protocol": "https",
   "localsPath": "translations/locals/",

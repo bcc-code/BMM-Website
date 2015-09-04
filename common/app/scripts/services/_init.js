@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_init', ['$http', '$q', '$location', '_api', '_locals', function ($http, $q, $location, _api, _locals) {
+  .factory('_init', function ($http, $q, $location, _api, _locals, $analytics) {
 
     var factory = {},
         loginAttempts = 3;
@@ -82,7 +82,7 @@ angular.module('bmmLibApp')
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
-        _api.serverUrl(config.alternativeUrls[2]);
+        _api.serverUrl(config.alternativeUrls[config.serverUrlIndex]);
         _api.setKeepAliveTime(config.keepAlive*100*60);
         if(config.requestTimeout) {
           _api.setRequestTimeout(config.requestTimeout*1000);
@@ -112,6 +112,9 @@ angular.module('bmmLibApp')
 
           // -- Credentials
           _api.setCredentials(user.username, user.token);
+
+          //Set the username for the angulartics reports:
+          $analytics.setUsername(user.username);
 
           // -- Root & contentLanguage (Depends on root)
           var rootLoaded = $q.defer(),
@@ -304,4 +307,4 @@ angular.module('bmmLibApp')
     };
 
     return factory;
-  }]);
+  });
