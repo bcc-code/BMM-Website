@@ -1,62 +1,12 @@
 <div>
-<h2>{{init.translation.page.audiobooks.latestAudiobooks}}</h2>
+    <h2>{{init.translation.page.audiobooks.latestAudiobooks}}</h2>
 
-    <ul class="bmm-latest-list">
-        <li ng-repeat="track in latestAudiobookLeft"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestAudiobookLeft, $index);">
-                <div class="bmm-latest-bullet">{{$index+1}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'audiobook'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.title}}</div>
-                <div class="bmm-latest-interprets">{{track.performers}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list track-type="song" tracks="latestAudiobook" list-length="latestAudiobookColHeight" ></bmm-latest-list>
 
-    <ul class="bmm-latest-list">
-        <li ng-repeat="track in latestAudiobookRight"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestAudiobookRight, $index);">
-                <div class="bmm-latest-bullet">{{$index+6}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'audiobook'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.title}}</div>
-                <div class="bmm-latest-interprets">{{track.performers}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
 
-    <ul class="bmm-latest-list largeOnly">
-        <li ng-repeat="track in latestAudiobookLargeOnly"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestAudiobookLargeOnly, $index);">
-                <div class="bmm-latest-bullet">{{$index+11}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'audiobook'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.title}}</div>
-                <div class="bmm-latest-interprets">{{track.performers}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list track-type="song" start-index="latestAudiobookColHeight" tracks="latestAudiobook" list-length="latestAudiobookColHeight" ></bmm-latest-list>
+
+    <bmm-latest-list class="largeOnly" track-type="song" start-index="latestAudiobookColHeight*2" tracks="latestAudiobook" list-length="latestAudiobookColHeight" ></bmm-latest-list>
 
 </div>
 

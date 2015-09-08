@@ -1,65 +1,11 @@
 <div>
-<h2>{{init.translation.page.speeches.latestSpeeches}}</h2>
+    <h2>{{init.translation.page.speeches.latestSpeeches}}</h2>
 
-    <ul class="bmm-latest-list small">
-        <li ng-repeat="track in latestSpeechLeft"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechLeft, $index);">
-                <div class="bmm-latest-bullet">{{$index+1}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" track-type="speech" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
-    <ul class="bmm-latest-list small">
-        <li ng-repeat="track in latestSpeechRight"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechRight, $index);">
-                <div class="bmm-latest-bullet">{{$index+6}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" track-type="speech" start-index="latestSpeechesColHeight" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
-    <ul class="bmm-latest-list largeOnly small">
-        <li ng-repeat="track in latestSpeechLargeOnly"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechLargeOnly, $index);">
-                <div class="bmm-latest-bullet">{{$index+11}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" class="largeOnly" track-type="speech" start-index="latestSpeechesColHeight*2" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 </div>
 
 <div style="width: 14em; margin-left: 1em;">

@@ -1,62 +1,12 @@
 <div>
-<h2>{{init.translation.page.music.latestMusic}}</h2>
+    <h2>{{init.translation.page.music.latestMusic}}</h2>
 
-<ul class="bmm-latest-list small">
-	<li ng-repeat="track in latestMusicLeft"
-        class="draggable latest"
-        id="{{track.id}}"
-        language="{{track.language}}"
-        title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestMusicLeft, $index);">
-			<div class="bmm-latest-bullet">{{$index+1}}</div>
-			<div>
-				<img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'song'}}"/>
-			</div>
-			<div class="bmm-latest-title">{{track.title}}</div>
-			<div class="bmm-latest-interprets">{{track.performers}}</div>
-		</div>
-        <div ng-include="'views/pages/options.html'"></div>
-        <div class="flag flags-{{track.language}}"></div>
-	</li>
-</ul>
+    <bmm-latest-list size="small" track-type="song" tracks="latestMusic" list-length="latestMusicColHeight" ></bmm-latest-list>
 
-<ul class="bmm-latest-list small">
-	<li ng-repeat="track in latestMusicRight"
-        class="draggable latest"
-        id="{{track.id}}"
-        language="{{track.language}}"
-        title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play(latestMusicRight, $index);">
-			<div class="bmm-latest-bullet">{{$index+6}}</div>
-			<div>
-                <img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'song'}}"/>
-			</div>
-			<div class="bmm-latest-title">{{track.title}}</div>
-			<div class="bmm-latest-interprets">{{track.performers}}</div>
-		</div>
-        <div ng-include="'views/pages/options.html'"></div>
-        <div class="flag flags-{{track.language}}"></div>
-	</li>
-</ul>
 
-    <ul class="bmm-latest-list small largeOnly">
-        <li ng-repeat="track in latestLargeOnly"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestLargeOnly, $index);">
-                <div class="bmm-latest-bullet">{{$index+11}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover:'song'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.title}}</div>
-                <div class="bmm-latest-interprets">{{track.performers}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" track-type="song" start-index="latestMusicColHeight" tracks="latestMusic" list-length="latestMusicColHeight" ></bmm-latest-list>
+
+    <bmm-latest-list size="small" class="largeOnly" track-type="song" start-index="latestMusicColHeight*2" tracks="latestMusic" list-length="latestMusicColHeight" ></bmm-latest-list>
 </div>
 
 <div style="width: 14em; margin-left: 1em;">

@@ -11,6 +11,10 @@ angular.module('bmmApp')
     _draggable
   ) {
 
+    $scope.latestMusic = [];
+
+    $scope.latestMusicColHeight = 5;
+
     $(window).off('scrollBottom');
 
     $scope.load = true;
@@ -79,28 +83,13 @@ angular.module('bmmApp')
       'content-type': ['song'],
       'media-type': ['audio']
     }).done(function(data) {
-
-      var left = [], right = [], largeOnly = [];
-
-      $.each(data, function(index) {
-
-        if (index<5) {
-          left.push(_track.resolve(this));
-        } else if (index<10) {
-          right.push(_track.resolve(this));
-        } else {
-          largeOnly.push(_track.resolve(this));
-        }
-
-      });
-
       $scope.$apply(function() {
-        $scope.latestMusicLeft = left;
-        $scope.latestMusicRight = right;
-        $scope.latestLargeOnly = largeOnly;
+        $scope.latestMusic = data.map(function(trackData) {
+          return _track.resolve(trackData);
+        });
+        
         _draggable.makeDraggable($scope);
       });
-
     });
 
     //LATEST AUDIO ALBUMS

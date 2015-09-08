@@ -15,6 +15,7 @@ angular.module('bmmApp')
         'tracks': '=',
         'listLength': '=',
         'startIndex': '=',
+        'size': '@',
         'trackType': '@'
       }
     };
