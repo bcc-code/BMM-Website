@@ -4,15 +4,7 @@
 		id="{{track.id}}"
 		language="{{track.language}}"
 		title="{{track.albumTitle}}">
-		<div class="bmm-latest" ng-click="play($index);">
-			<div class="bmm-latest-bullet">{{getIndex($index)+1}}</div>
-			<div>
-				<img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover: trackType}}"/>
-			</div>
-			<div class="bmm-latest-title">{{track[displays[trackType].title]}}</div>
-			<div class="bmm-latest-interprets">{{track[displays[trackType].interprets]}}</div>
-		</div>
-		<div ng-include="'views/pages/options.html'"></div>
-		<div class="flag flags-{{track.language}}"></div>
+
+		<bmm-latest-track track-number="getIndex($index)" track="track" type="{{trackType}}" ng-click="play($index)"></bmm-latest-track>
 	</li>
 </ul>
