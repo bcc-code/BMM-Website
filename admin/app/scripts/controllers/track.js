@@ -344,23 +344,6 @@ angular.module('bmmApp')
       });
     };
 
-    $scope.$watch('edited', function(newEdit, oldEdit) {
-
-      if (typeof newEdit!=='undefined'&&
-          (typeof newEdit.media==='undefined'||newEdit.media===null||newEdit.media.length<1)) {
-        newEdit.is_visible = false;
-
-        if (typeof oldEdit!=='undefined'&&
-          newEdit.is_visible===oldEdit.is_visible&&
-          newEdit.language===oldEdit.language&&
-          newEdit.title===oldEdit.title) {
-          $scope.status = _init.translation.page.editor.missingFile;
-        }
-
-      }
-
-    }, true);
-
     $scope.$watch('model', function(model) {
       if (modelLoaded) {
         $scope.status = _init.translation.states.changesPerformed;
