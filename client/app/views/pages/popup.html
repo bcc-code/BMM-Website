@@ -149,9 +149,9 @@
 <div class="popup" ng-if="settings.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" id="languageSettings" click-outside="settings.show=false;setContentLangConditional();">
+            <div class="container" id="languageSettings" click-outside="closeLanguageSettingsPopup()">
 
-                <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="settings.show=false;setContentLangConditional();"></div>
+                <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="closeLanguageSettingsPopup()"></div>
 
                  <tabset>
                     <tab heading="{{init.translation.options.websiteLanguage}}">
@@ -181,13 +181,12 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li ng-repeat="lang in init.root.languages | filter : exceptSelected"
-                                            ng-click="init.contentLanguages[init.contentLanguages.indexOf(language)] = lang;
-                                            setLanguagesChanged();">
+                                            ng-click="updateContentLanguage(lang, language, $event)">
                                             <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="init.contentLanguages.splice($index, 1);setLanguagesChanged();"><span class="glyphicon glyphicon-remove"></span></a>
+                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="removeContentLanguage($index, $event)"><span class="glyphicon glyphicon-remove"></span></a>
                                 <a class="btn_sort sort_handle"><span class="glyphicon glyphicon-sort"></span></a>
                             </li>
                             </ul>
