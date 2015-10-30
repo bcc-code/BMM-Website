@@ -332,15 +332,18 @@ angular.module('bmmLibApp')
      *    show_in_library *         Boolean
      */
 
+    var headers = {};
+    if (typeof languages !== "undefined")
+    {
+      headers['Accept-Language'] = languages;
+    }
+
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/'+id,
       data: $.param(options),
-      headers: {
-        'Accept-Language': languages,
-      }
+      headers: headers
     });
-
   };
 
   /** Save an album **/

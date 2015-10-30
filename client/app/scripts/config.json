@@ -24,5 +24,6 @@
     "es",
     "af",
     "hu"
-  ]
+  ],
+  "includeAllContentLanguages": false
 }
