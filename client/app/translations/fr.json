@@ -1,0 +1,159 @@
+{
+  "language":"Anglais",
+  "general":{
+    "search":"Recherche...",
+    "searchResultsFor":"Résultats de la recherche pour :",
+    "loading":"Chargement...",
+    "waysOfTheLord":"Les Voies du Seigneur",
+    "almondBlossom":"La Branche d'Amandier",
+    "noTitle":"Sans titre",
+    "settings":"Paramètres",
+    "feedback":"Commentaires",
+    "suport":"Support",
+    "readMore":"Lire la suite"
+  },
+  "options":{
+    "addToPlaylist":"Ajouter à la liste de lecture",
+    "download":"Télécharger",
+    "downloadAudio":"Télécharger l'audio",
+    "downloadVideo":"Télécharger la vidéo",
+    "goToAlbum":"Aller à l'album",
+    "podcast":"Podcast",
+    "removeFilter":"Enlever le filtre",
+    "changeLanguage":"Changer la langue",
+    "goBack":"Retour",
+    "addToFavorites":"Ajouter aux favoris",
+    "moreInfo":"Plus d'informations",
+    "choosePlaylist":"Choisir la liste de lecture",
+    "setupPodcast":"Pour parametrer un podcast, vous devez copier le lien ci-dessous et le coller dans votre application de lecture podcast, préférée.",
+    "chooseLanguages":"Choisir les langues",
+    "addLanguage":"Ajouter une langue",
+    "includeLatest":"Inclure le plus récent",
+    "websiteLanguage":"Langue du site Web",
+    "contentLanguages":"Langue du contenu",
+    "preferredContentLanguage":"Langue du contenu préférée",
+    "tracks":"Pistes",
+    "filterByLanguage":"Filtrer par langue",
+    "copyUrl":"Copier l'URL",
+    "copyLink":"Copier le lien",
+    "delete":"Supprimer",
+    "remove":"Enlever",
+    "playPlaylist":"Jouer la liste de lecture",
+    "share":"Partager"
+  },
+  "menu":{
+    "main":{
+      "music":"Musique",
+      "speeches":"Messages",
+      "video":"Vidéos",
+      "archive":"Archive",
+      "audiobooks":"Livres audio"
+    },
+    "secondary":{
+      "playlists":"Listes de lecture",
+      "latestTracks":"Nouvelles pistes",
+      "lastPlayed":"Dernier écouté",
+      "mostPlayed":"Le plus écouté",
+      "favorites":"Favoris",
+      "current":"En cours de lecture",
+      "newPlaylist":"Nouvelle liste de lecture",
+      "nameOnPlaylist":"Titre de la liste de lecture"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Derniers Messages",
+      "latestVideos":"Dernières vidéos",
+      "latestMusic":"Dernières musiques",
+      "latestAlbums":"Derniers Albums"
+    },
+    "music":{
+      "latestMusic":"Dernières musiques",
+      "artists":"Artistes",
+      "mp3Source":"MP3-Kilden",
+      "childrensMp3Source":"Barna's MP3 Kilden",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Derniers Messages",
+      "recommended":"Recommandé"
+    },
+    "videos":{
+      "latestVideos":"Dernières vidéos"
+    },
+    "archive":{
+      "archive":"Archive"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Derniers livres audio"
+    },
+    "search":{
+      "searchResults":"Résultats de la recherche",
+      "content":"Contenu",
+      "bibleVerse":"Verset de la Bible",
+      "album":"Album",
+      "artist":"Artiste",
+      "lyricist":"Auteur",
+      "composer":"Compositeur",
+      "contributor":"Contributeur",
+      "interprets":"Interprètes"
+    }
+  },
+  "track":{
+    "duration":"Durée",
+    "details":"Détails",
+    "unknown":"Inconnu",
+    "dragMeToPlaylist":"M'ajouter à la liste de lecture actuelle",
+    "exegesis":"Exégèse",
+    "recordedDate":"Date de l'enregistrement",
+    "artist":"Artiste",
+    "lyricist":"Auteur",
+    "composer":"Compositeur",
+    "album":"Album",
+    "bibleVerse":"Verset de la Bible"
+  },
+  "album":{
+    "tracks":"Piste(s)",
+    "childAlbums":"Albums d'enfants",
+    "relatedAlbums":"Albums liés"
+  },
+  "playlist":{
+    "content":"Contenu",
+    "tracks":"Piste(s)",
+    "albums":"Album (s)",
+    "totalDuration":"Durée totale",
+    "duration":"Durée",
+    "nr":"Nr.",
+    "title":"Titre",
+    "addToItunes":"Ajouter à iTunes",
+    "copyPodcastLink":"Copier le lien podcast",
+    "language":"Langue",
+    "allLanguages":"Toutes les langues",
+    "feedSize":"Taille du flux",
+    "confirmPlaylistDeletion":"Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
+    "latestTracks":"Dernières pistes",
+    "instrumental":"Instrumental"
+  },
+  "notify":{
+    "play":"Lire",
+    "pause":"Pause",
+    "next":"Suivant",
+    "previous":"Précédent",
+    "shufflePlaylist":"Lecture aléatoire de la liste",
+    "loopPlaylist":"Activer la répétition",
+    "mute":"Muet",
+    "unmute":"Son",
+    "maxVolume":"Volume max",
+    "options":"Options",
+    "activateVideo":"Activer la vidéo",
+    "goToAlbum":"Aller à l'album",
+    "showFullscreen":"Afficher plein écran",
+    "closeFullscreen":"Quitter plein écran",
+    "hideVideo":"Masquer vidéo",
+    "showVideo":"Afficher vidéo",
+    "resizeVideoScreen":"Redimensionner écran vidéo"
+  },
+  "copyright":"Droits d'auteur",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Worldwide Copyright Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norge. All tale, sang, musikk og film på bmm.brunstad.org er kun til internt og privat bruk for slike som regner seg som med i Den Kristelige Menighet, heretter kalt ”DKM” og\/eller Brunstad Christian Church, N-3168 Stokke, Norge, heretter kalt ”BCC”, worldwide. Videresending, kopiering eller annen form for distribusjon enn til eget, privat bruk er ikke tillatt, uansett i hvilket format eller form dette skjer. Dersom det er spørsmål rundt bruk av innholdet på bmm.brunstadworld.org eller noe som er publisert av Stiftelsen Skjulte Skatters Forlag, heretter kalt 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, heretter kalt 'BMM' eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, må det skriftlig tas kontakt med BMM eller SSSF. All annen bruk enn til eget personlig formål for slike som regner seg som med i DKM\/BCC worldwide, er ikke tillatt uten skriftlig tillatelse fra SSSF\/BMM. SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser har opphavsrett til alt materiale sendt inn til og alt arbeid utført for SSSF\/BMM eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, uavhengig av utgivelsessted eller -språk. Dette gjelder også taler, sang og fremføringer hos BCC, eller i en av DKMs lokalmenigheter eller stevnesteder worldwide. Alle moralske rettigheter frafalles.SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser innehar derfor den globale opphavsrett til det oppførte og\/eller tilsendte materiale, uavhengig av utgivelsesmedium eller av hvorvidt materialet er publisert eller ikke. Du må for øvrig gjøre deg godt kjent med, og følge de retningslinjer og den informasjon som er sendt i brev, datert august 2004 fra Sigurd J. Bratlie og Carl Hahne."
+}

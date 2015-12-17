@@ -1,0 +1,159 @@
+{
+  "language":"англійська\n",
+  "general":{
+    "search":"Пошук...",
+    "searchResultsFor":"Результати пошуку для:",
+    "loading":"Завантаження...",
+    "waysOfTheLord":"Шляхи Господні",
+    "almondBlossom":"Цвіт мигдаля",
+    "noTitle":"Без назви",
+    "settings":"Налаштування",
+    "feedback":"Відгук",
+    "suport":"Підтримка",
+    "readMore":"Читати далі"
+  },
+  "options":{
+    "addToPlaylist":"Додати до списку відтворення",
+    "download":"Завантажити",
+    "downloadAudio":"Завантажити аудіо",
+    "downloadVideo":"Завантажити відео",
+    "goToAlbum":"Перейти до альбому",
+    "podcast":"Підкаст",
+    "removeFilter":"видалити фільтр",
+    "changeLanguage":"Змінити мову",
+    "goBack":"Повернутися",
+    "addToFavorites":"Додати в обране",
+    "moreInfo":"Детальніше",
+    "choosePlaylist":"Виберіть список відтворення",
+    "setupPodcast":"Щоб настроїти подкаст, вам доведеться скопіювати посилання нижче і вставте його в ваш бажаний подкаст програмного забезпечення.",
+    "chooseLanguages":"Вибрати мову",
+    "addLanguage":"Додати мову",
+    "includeLatest":"Включають в себе останні",
+    "websiteLanguage":"Мова сайту",
+    "contentLanguages":"Мови контенту",
+    "preferredContentLanguage":"Бажаний зміст мови",
+    "tracks":"треки",
+    "filterByLanguage":"Фільтр по мові",
+    "copyUrl":"Скопіюйте URL",
+    "copyLink":"копіювати посилання",
+    "delete":"Видалити",
+    "remove":"видаляти",
+    "playPlaylist":"грати плейлист",
+    "share":"Частка"
+  },
+  "menu":{
+    "main":{
+      "music":"Музика",
+      "speeches":"Повідомлення",
+      "video":"Відео\n",
+      "archive":"Архів",
+      "audiobooks":"Аудіокниги"
+    },
+    "secondary":{
+      "playlists":"Списки відтворення",
+      "latestTracks":"Нові треки",
+      "lastPlayed":"Останнього відтворення",
+      "mostPlayed":"Найбільш грав",
+      "favorites":"Уподобання",
+      "current":"Струм",
+      "newPlaylist":"Новий список\n",
+      "nameOnPlaylist":"Заголовок списку відтворення"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Останні повідомлення",
+      "latestVideos":"Останні відео",
+      "latestMusic":"Останніх музики",
+      "latestAlbums":"Останніх альбомів"
+    },
+    "music":{
+      "latestMusic":"Останніх музики",
+      "artists":"артист\n",
+      "mp3Source":"MP3-джерело",
+      "childrensMp3Source":"Діти MP3-джерело",
+      "instrumental":"Інструментальні"
+    },
+    "speeches":{
+      "latestSpeeches":"Останні повідомлення",
+      "recommended":"Рекомендується"
+    },
+    "videos":{
+      "latestVideos":"Останні відео"
+    },
+    "archive":{
+      "archive":"Архів"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Останній аудіокниги"
+    },
+    "search":{
+      "searchResults":"Результати пошуку",
+      "content":"Зміст",
+      "bibleVerse":"Біблійний вірш",
+      "album":"Альбом",
+      "artist":"Виконавець",
+      "lyricist":"Автор текстів",
+      "composer":"Композитор",
+      "contributor":"Автори та перекладачі",
+      "interprets":"артист"
+    }
+  },
+  "track":{
+    "duration":"Тривалість",
+    "details":"подробиці",
+    "unknown":"Невідомо",
+    "dragMeToPlaylist":"Перетягнути мене до списку відтворення",
+    "exegesis":"Переклад",
+    "recordedDate":"Дата запису",
+    "artist":"Виконавець",
+    "lyricist":"Автор текстів",
+    "composer":"Композитор",
+    "album":"Альбом",
+    "bibleVerse":"Біблійний вірш"
+  },
+  "album":{
+    "tracks":"Треки",
+    "childAlbums":"Дитина альбоми",
+    "relatedAlbums":"Подібні Альбом"
+  },
+  "playlist":{
+    "content":"Зміст",
+    "tracks":"Треки",
+    "albums":"Альбом",
+    "totalDuration":"Загальна тривалість",
+    "duration":"Тривалість",
+    "nr":"Н. р.",
+    "title":"Назва",
+    "addToItunes":"Додати до iTunes",
+    "copyPodcastLink":"Копіювати посилання подкаст",
+    "language":"Мова",
+    "allLanguages":"Всі мови",
+    "feedSize":"Розмір завантаження",
+    "confirmPlaylistDeletion":"Ви дійсно бажаєте видалити цей список відтворення?",
+    "latestTracks":"Новітні треки",
+    "instrumental":"Інструментальні"
+  },
+  "notify":{
+    "play":"Грати",
+    "pause":"Пауза",
+    "next":"наступний",
+    "previous":"Попередній",
+    "shufflePlaylist":"перемішати плейлист",
+    "loopPlaylist":"цикл плейлист",
+    "mute":"беззвучний",
+    "unmute":"включити",
+    "maxVolume":"Макс обсяг",
+    "options":"Параметри",
+    "activateVideo":"активуйте відео",
+    "goToAlbum":"Перейти до альбому",
+    "showFullscreen":"Показати повний екран",
+    "closeFullscreen":"Закрити повний екран\n",
+    "hideVideo":"приховати відео",
+    "showVideo":"Показати відео",
+    "resizeVideoScreen":"розмір екрану відео"
+  },
+  "copyright":"Авторське право",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Worldwide Copyright Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norge. All tale, sang, musikk og film på bmm.brunstad.org er kun til internt og privat bruk for slike som regner seg som med i Den Kristelige Menighet, heretter kalt ”DKM” og\/eller Brunstad Christian Church, N-3168 Stokke, Norge, heretter kalt ”BCC”, worldwide. Videresending, kopiering eller annen form for distribusjon enn til eget, privat bruk er ikke tillatt, uansett i hvilket format eller form dette skjer. Dersom det er spørsmål rundt bruk av innholdet på bmm.brunstadworld.org eller noe som er publisert av Stiftelsen Skjulte Skatters Forlag, heretter kalt 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, heretter kalt 'BMM' eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, må det skriftlig tas kontakt med BMM eller SSSF. All annen bruk enn til eget personlig formål for slike som regner seg som med i DKM\/BCC worldwide, er ikke tillatt uten skriftlig tillatelse fra SSSF\/BMM. SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser har opphavsrett til alt materiale sendt inn til og alt arbeid utført for SSSF\/BMM eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, uavhengig av utgivelsessted eller -språk. Dette gjelder også taler, sang og fremføringer hos BCC, eller i en av DKMs lokalmenigheter eller stevnesteder worldwide. Alle moralske rettigheter frafalles.SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser innehar derfor den globale opphavsrett til det oppførte og\/eller tilsendte materiale, uavhengig av utgivelsesmedium eller av hvorvidt materialet er publisert eller ikke. Du må for øvrig gjøre deg godt kjent med, og følge de retningslinjer og den informasjon som er sendt i brev, datert august 2004 fra Sigurd J. Bratlie og Carl Hahne."
+}

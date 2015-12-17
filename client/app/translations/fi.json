@@ -1,0 +1,159 @@
+{
+  "language":"Suomi",
+  "general":{
+    "search":"Etsi...",
+    "searchResultsFor":"Tulokset haulla:",
+    "loading":"Lataa...",
+    "waysOfTheLord":"Herran Tiet",
+    "almondBlossom":"Mantelinkukka",
+    "noTitle":"Ei otsikkoa",
+    "settings":"Asetukset",
+    "feedback":"Palaute",
+    "suport":"Tuki",
+    "readMore":"Lue lisää"
+  },
+  "options":{
+    "addToPlaylist":"Lisää soittolistaan",
+    "download":"Lataa",
+    "downloadAudio":"Lataa äänitiedosto",
+    "downloadVideo":"Lataa video",
+    "goToAlbum":"Siirry albumiin",
+    "podcast":"Podcast",
+    "removeFilter":"Poista suodatin",
+    "changeLanguage":"Vaihda kieli",
+    "goBack":"Takaisin",
+    "addToFavorites":"Lisää suosikkeihin",
+    "moreInfo":"Lisätietoja",
+    "choosePlaylist":"Valitse soittolista",
+    "setupPodcast":"Ottaaksesi podcastin käyttöön kopioi allaoleva linkki ja liitä se haluamaasi podcast-sovellukseen.",
+    "chooseLanguages":"Valitse kielet",
+    "addLanguage":"Lisää kieli",
+    "includeLatest":"Sisällytä uusimmat",
+    "websiteLanguage":"Sivuston kieli",
+    "contentLanguages":"Sisällön kieli",
+    "preferredContentLanguage":"Ensisijainen sisällön kieli",
+    "tracks":"kappaleet",
+    "filterByLanguage":"Suodata kielen mukaan",
+    "copyUrl":"Kopioi URL",
+    "copyLink":"Kopioi linkki",
+    "delete":"Poista",
+    "remove":"Poista",
+    "playPlaylist":"Toista soittolista",
+    "share":"Jaa"
+  },
+  "menu":{
+    "main":{
+      "music":"Musiikki",
+      "speeches":"Puheet",
+      "video":"Videot",
+      "archive":"Arkisto",
+      "audiobooks":"Äänikirjat"
+    },
+    "secondary":{
+      "playlists":"Soittolistat",
+      "latestTracks":"Uudet kappaleet",
+      "lastPlayed":"Viimeksi kuunnellut",
+      "mostPlayed":"Eniten kuunnellut",
+      "favorites":"Suosikit",
+      "current":"Nykyinen",
+      "newPlaylist":"Uusi soittolista",
+      "nameOnPlaylist":"Soittolistan nimi"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Uusimmat puheet",
+      "latestVideos":"Uusimmat videot",
+      "latestMusic":"Uusimmat kappaleet",
+      "latestAlbums":"Uusimmat albumit"
+    },
+    "music":{
+      "latestMusic":"Uusimmat kappaleet",
+      "artists":"Artistit",
+      "mp3Source":"MP3-Lähde",
+      "childrensMp3Source":"Lasten MP3-lähde",
+      "instrumental":"Instrumentaali"
+    },
+    "speeches":{
+      "latestSpeeches":"Uusimmat puheet",
+      "recommended":"Suositellut"
+    },
+    "videos":{
+      "latestVideos":"Uusimmat videot"
+    },
+    "archive":{
+      "archive":"Arkisto"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Uusimmat äänikirjat"
+    },
+    "search":{
+      "searchResults":"Hakutulokset",
+      "content":"Sisältö",
+      "bibleVerse":"Raamatun jae",
+      "album":"Albumi",
+      "artist":"Artisti",
+      "lyricist":"Sanoittaja",
+      "composer":"Säveltäjä",
+      "contributor":"Tekijä",
+      "interprets":"Käännökset"
+    }
+  },
+  "track":{
+    "duration":"Kesto",
+    "details":"Tiedot",
+    "unknown":"Tuntematon",
+    "dragMeToPlaylist":"Vedä minut soittolistalle",
+    "exegesis":"Eksegeesi",
+    "recordedDate":"Nauhoitus päivämäärä",
+    "artist":"Artisti",
+    "lyricist":"Sanoittaja",
+    "composer":"Säveltäjä",
+    "album":"Albumi",
+    "bibleVerse":"Raamatun jae"
+  },
+  "album":{
+    "tracks":"Kappale(et)",
+    "childAlbums":"Lasten albumit",
+    "relatedAlbums":"Samankaltaiset albumit"
+  },
+  "playlist":{
+    "content":"Sisältö",
+    "tracks":"Kappale(et)",
+    "albums":"Albumi(t)",
+    "totalDuration":"Kokonaiskesto",
+    "duration":"Kesto",
+    "nr":"Nro.",
+    "title":"Otsikko",
+    "addToItunes":"Lisää iTunesiin",
+    "copyPodcastLink":"Kopioi podcast linkki",
+    "language":"Kieli",
+    "allLanguages":"Kaikki kielet",
+    "feedSize":"Syötteen koko",
+    "confirmPlaylistDeletion":"Oletko varma, että haluat poistaa tämän soittolistan?",
+    "latestTracks":"Uusimmat kappaleet",
+    "instrumental":"Instrumentaali"
+  },
+  "notify":{
+    "play":"Toista",
+    "pause":"Tauko",
+    "next":"Seuraava",
+    "previous":"Edellinen",
+    "shufflePlaylist":"Sekoita soittolista",
+    "loopPlaylist":"Toista jatkuvasti",
+    "mute":"Mykistä",
+    "unmute":"Poista mykistys",
+    "maxVolume":"Maks. äänenvoimakkuus",
+    "options":"Asetukset",
+    "activateVideo":"Aktivoi video",
+    "goToAlbum":"Siirry albumiin",
+    "showFullscreen":"Näytä koko näytöllä",
+    "closeFullscreen":"Sulje koko näytön tila",
+    "hideVideo":"Piilota video",
+    "showVideo":"Näytä video",
+    "resizeVideoScreen":"Muuta videon kokoa"
+  },
+  "copyright":"Copyright",
+  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
+  "copyrightText":"© Worldwide Copyright Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Norge. All tale, sang, musikk og film på bmm.brunstad.org er kun til internt og privat bruk for slike som regner seg som med i Den Kristelige Menighet, heretter kalt ”DKM” og\/eller Brunstad Christian Church, N-3168 Stokke, Norge, heretter kalt ”BCC”, worldwide. Videresending, kopiering eller annen form for distribusjon enn til eget, privat bruk er ikke tillatt, uansett i hvilket format eller form dette skjer. Dersom det er spørsmål rundt bruk av innholdet på bmm.brunstadworld.org eller noe som er publisert av Stiftelsen Skjulte Skatters Forlag, heretter kalt 'SSSF', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, heretter kalt 'BMM' eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, må det skriftlig tas kontakt med BMM eller SSSF. All annen bruk enn til eget personlig formål for slike som regner seg som med i DKM\/BCC worldwide, er ikke tillatt uten skriftlig tillatelse fra SSSF\/BMM. SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser har opphavsrett til alt materiale sendt inn til og alt arbeid utført for SSSF\/BMM eller disses internasjonale datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser, uavhengig av utgivelsessted eller -språk. Dette gjelder også taler, sang og fremføringer hos BCC, eller i en av DKMs lokalmenigheter eller stevnesteder worldwide. Alle moralske rettigheter frafalles.SSSF eller SSSFs respektive datterselskaper, avdelinger, filialer, foreninger og\/eller stiftelser innehar derfor den globale opphavsrett til det oppførte og\/eller tilsendte materiale, uavhengig av utgivelsesmedium eller av hvorvidt materialet er publisert eller ikke. Du må for øvrig gjøre deg godt kjent med, og følge de retningslinjer og den informasjon som er sendt i brev, datert august 2004 fra Sigurd J. Bratlie og Carl Hahne."
+}

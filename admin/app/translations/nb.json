@@ -55,10 +55,11 @@
       "description":"Beskrivelse",
       "selectedLanguage":"Valgt språk",
       "originalLanguage":"Originalspråk",
+      "changeLanguage":"Endre språk",
       "publish":"Publiser",
       "unpublish":"Skjul",
       "missingTitle":"Vennligst fyll ut tittel først",
-      "missingFile":"Legg en fil først",
+      "missingFile":"Legg til en fil først",
       "album":"Album",
       "type":"Type",
       "parentAlbum":"Overordnet album",
@@ -95,7 +96,7 @@
       "wrongId":"Feil BMM-ID"
     },
     "waitings":{
-      "link":"Kobling",
+      "link":"Koble spor",
       "conflict":"Konflikt",
       "conflicts":"Konflikter (dublikater)",
       "openTrack":"Åpne sporet",
