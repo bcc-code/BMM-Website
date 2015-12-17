@@ -211,6 +211,9 @@ angular.module('bmmApp')
         $scope.playlists.splice(0,1);
       }
 
+      if (ct===0) {
+        $scope.load = false;
+      }
     });
 
     var resolveAlbums = function() {

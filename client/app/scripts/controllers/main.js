@@ -76,6 +76,22 @@ angular.module('bmmApp')
         $location.path( _playlist.getUrl() );
       };
 
+      $scope.closeLanguageSettingsPopup = function()
+      {
+        $scope.settings.show=false;
+        $scope.setContentLangConditional();
+      };
+
+      $scope.removeContentLanguage = function(index, $event) {
+        $scope.init.contentLanguages.splice(index, 1);
+        $scope.setLanguagesChanged();
+      };
+
+      $scope.updateContentLanguage = function(lang, language, $event) {
+        $scope.init.contentLanguages[$scope.init.contentLanguages.indexOf(language)] = lang;
+        $scope.setLanguagesChanged();
+      };
+
       $scope.setLanguagesChanged = function() {
         $scope.contentLangsChanged = true;
       };

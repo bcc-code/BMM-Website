@@ -37,6 +37,11 @@ angular.module('bmmLibApp')
             return;
           }
 
+          // @ssc Don't trigger if the element isn't in the DOM
+          if (!this.contains(e.target)) {
+            return;
+          }
+
           // loop through the available elements, looking for classes in the class list that might match and so will eat
           for (element = e.target; element; element = element.parentNode) {
             var id = element.id,
