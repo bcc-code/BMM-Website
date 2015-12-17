@@ -54,7 +54,7 @@ sudo npm install -g yo grunt-cli bower generator-webapp
 **4. Install Compass**
 ```
 #!cmd
-gem update --system
+gem updgrate --system
 gem install compass
 ```
 
@@ -64,7 +64,7 @@ gem install compass
 ```
 #!cmd
 sudo npm update
-grunt --force
+grunt updateCommonFiles
 ```
 
 **7. CD into 'admin' and run the following commands**
