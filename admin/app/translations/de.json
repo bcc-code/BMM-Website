@@ -19,6 +19,7 @@
       "year":"Jahr",
       "album":"Album",
       "childAlbums":"Unteralben",
+      "recordingList": "Aufnahmeliste",
       "tracks":"Titel",
       "childTracks":"Tracks",
       "open":"Öffnen"
@@ -89,6 +90,9 @@
       "createNewContributor":"Neuen Mitwirkenden anlegen",
       "number":"Nummer",
       "timestamp":"Zeitpunkt",
+      "comment":"Kommentar",
+      "audio":"Audio",
+      "video":"Video",
       "sortOrder":"Sortierung",
       "waitingsReady":"Dateien bereit zum Verknüpfen",
       "missingTrack":"Fehlender Track",

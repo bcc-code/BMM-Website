@@ -19,6 +19,7 @@
       "year":"Year",
       "album":"Album",
       "childAlbums":"Child albums",
+      "recordingList": "Recording list",
       "tracks":"Tracks",
       "childTracks":"Child tracks",
       "open":"open"
@@ -89,6 +90,9 @@
       "createNewContributor":"Create new contributor",
       "number":"Number",
       "timestamp":"Timestamp",
+      "comment":"Comment",
+      "audio":"Audio",
+      "video":"Video",
       "sortOrder":"Sort order",
       "waitingsReady":"Waitings ready",
       "missingTrack":"Missing track",
