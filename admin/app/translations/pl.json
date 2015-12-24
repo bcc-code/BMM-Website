@@ -19,6 +19,7 @@
       "year":"Rok",
       "album":"Album",
       "childAlbums":"Album dla dzieci",
+      "recordingList":"",
       "tracks":"Utwory",
       "childTracks":"Utwory dla dzieci",
       "open":"otwarte"
@@ -89,6 +90,9 @@
       "createNewContributor":"Utwórz nowego autora",
       "number":"Numer",
       "timestamp":"Znacznik czasu",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Sortowanie",
       "waitingsReady":"Oczekujące pliki",
       "missingTrack":"Brakujący utwór",

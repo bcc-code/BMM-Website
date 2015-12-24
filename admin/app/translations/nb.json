@@ -19,6 +19,7 @@
       "year":"År",
       "album":"Album",
       "childAlbums":"Tilhørende Album",
+      "recordingList":"",
       "tracks":"Spor",
       "childTracks":"Tilhørende spor",
       "open":"Åpne"
@@ -89,6 +90,9 @@
       "createNewContributor":"Opprett ny bidragsyter",
       "number":"Nummer",
       "timestamp":"Tidsstempel",
+      "comment":"Kommentar",
+      "audio":"Lyd",
+      "video":"Video",
       "sortOrder":"Sorteringsrekkefølge",
       "waitingsReady":"Waitings klare",
       "missingTrack":"Mangler spor",

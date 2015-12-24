@@ -19,6 +19,7 @@
       "year":"Év",
       "album":"Album",
       "childAlbums":"Alárendelt albumok",
+      "recordingList":"",
       "tracks":"Számok",
       "childTracks":"Alárendelt számok",
       "open":"Megnyitás"
@@ -89,6 +90,9 @@
       "createNewContributor":"Új közreműködő létrehozása",
       "number":"Szám",
       "timestamp":"Idő",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Rendezési mód",
       "waitingsReady":"Az adatok készen állnak a feldolgozásra",
       "missingTrack":"Hiányzó szám",

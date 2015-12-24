@@ -2,7 +2,7 @@
   "language":"Slovenščina",
   "general":{
     "search":"Išči...",
-    "searchResultsFor":"Išči rezultate za:",
+    "searchResultsFor":"Rezultati za:",
     "loading":"Nalaganje...",
     "waysOfTheLord":"Gospodove poti",
     "almondBlossom":"Mandljev cvet",
@@ -14,9 +14,9 @@
   },
   "options":{
     "addToPlaylist":"Dodaj na seznam predvajanja",
-    "download":"Naloži",
-    "downloadAudio":"Naloži zvočni posnetek",
-    "downloadVideo":"Naloži video posnetek",
+    "download":"Prenesi",
+    "downloadAudio":"Prenesi zvočni posnetek",
+    "downloadVideo":"Prenesi video posnetek",
     "goToAlbum":"Pojdi na album",
     "podcast":"Podcast",
     "removeFilter":"Odstrani filter",
@@ -25,11 +25,11 @@
     "addToFavorites":"Dodaj med priljubljene",
     "moreInfo":"Več informacij",
     "choosePlaylist":"Izberite seznam predvajanja",
-    "setupPodcast":"Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na vašo priljubljeno programsko opremo.",
+    "setupPodcast":"Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
     "chooseLanguages":"Izberite jezike",
     "addLanguage":"Dodajte jezik",
     "includeLatest":"Vključi najnovejše",
-    "websiteLanguage":"Jezik spleta",
+    "websiteLanguage":"Jezik spletne strani",
     "contentLanguages":"Jezik vsebine",
     "preferredContentLanguage":"Prednostni jezik vsebine",
     "tracks":"skladbe",
@@ -70,9 +70,9 @@
     "music":{
       "latestMusic":"Najnovejša glasba",
       "artists":"Izvajalci",
-      "mp3Source":"MP3-izvir",
-      "childrensMp3Source":"Otroški MP3-izvir",
-      "instrumental":"Instrumentalno"
+      "mp3Source":"MP3-Izvir",
+      "childrensMp3Source":"Otroški MP3-Izvir",
+      "instrumental":"Instrumentalna glasba"
     },
     "speeches":{
       "latestSpeeches":"Najnovejša sporočila",
@@ -145,7 +145,7 @@
     "unmute":"Vklopi zvok",
     "maxVolume":"Najvišja glasnost",
     "options":"Možnosti",
-    "activateVideo":"Vključite video",
+    "activateVideo":"Aktiviraj video",
     "goToAlbum":"Pojdi na album",
     "showFullscreen":"Prikaži celoten zaslon",
     "closeFullscreen":"Zapri celozaslonski način",

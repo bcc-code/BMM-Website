@@ -19,7 +19,7 @@
       "year":"Year",
       "album":"Album",
       "childAlbums":"Child albums",
-      "recordingList": "Recording list",
+      "recordingList":"",
       "tracks":"Tracks",
       "childTracks":"Child tracks",
       "open":"open"

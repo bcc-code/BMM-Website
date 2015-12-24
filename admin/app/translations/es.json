@@ -19,6 +19,7 @@
       "year":"Año",
       "album":"Álbum",
       "childAlbums":"Álbumes para niños",
+      "recordingList":"",
       "tracks":"Pistas",
       "childTracks":"Pistas para niños",
       "open":"abrir"
@@ -89,6 +90,9 @@
       "createNewContributor":"Crear nuevo colaborador",
       "number":"Número",
       "timestamp":"Fecha y hora",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Orden de clasificación",
       "waitingsReady":"Listas de esperas",
       "missingTrack":"Pista que falta",

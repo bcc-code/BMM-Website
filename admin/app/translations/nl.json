@@ -19,6 +19,7 @@
       "year":"Jaar",
       "album":"Album",
       "childAlbums":"Albums voor kinderen",
+      "recordingList":"",
       "tracks":"Nummers",
       "childTracks":"Nummers voor kinderen",
       "open":"Openen"
@@ -89,6 +90,9 @@
       "createNewContributor":"Nieuwe medewerker maken",
       "number":"Nummer",
       "timestamp":"Tijdstip",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Sorteervolgorde",
       "waitingsReady":"Wachtrij goedgekeurd",
       "missingTrack":"Ontbrekend nummer",

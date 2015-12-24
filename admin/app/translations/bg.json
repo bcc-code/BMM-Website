@@ -19,6 +19,7 @@
       "year":"Година",
       "album":"Албум",
       "childAlbums":"Придружаващи албуми",
+      "recordingList":"",
       "tracks":"Песни и речи",
       "childTracks":"Придружаващи песни\/речи",
       "open":"отвори"
@@ -89,6 +90,9 @@
       "createNewContributor":"Създай нов сътрудник",
       "number":"Номер",
       "timestamp":"Индикатор на време",
+      "comment":"Коментар",
+      "audio":"Звук",
+      "video":"Видео клип",
       "sortOrder":"Ред на сортиране",
       "waitingsReady":"Изчакване готово",
       "missingTrack":"Липсваща песен\/реч",

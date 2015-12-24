@@ -19,6 +19,7 @@
       "year":"Vuosi",
       "album":"Albumi",
       "childAlbums":"Alihakemistot",
+      "recordingList":"",
       "tracks":"Kappaleet",
       "childTracks":"Aliraidat",
       "open":"Avaa"
@@ -89,6 +90,9 @@
       "createNewContributor":"Luo uusi avustaja",
       "number":"Numero",
       "timestamp":"Aikaleima",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Lajittelujärjestys",
       "waitingsReady":"Waitings valmis",
       "missingTrack":"Puuttuvat kappale",

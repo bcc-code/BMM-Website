@@ -19,6 +19,7 @@
       "year":"An",
       "album":"Album",
       "childAlbums":"Albume pentru copii",
+      "recordingList":"",
       "tracks":"Piese",
       "childTracks":"Piese pentru copii",
       "open":"deschide"
@@ -89,6 +90,9 @@
       "createNewContributor":"Creează un nou contribuitor",
       "number":"Număr",
       "timestamp":"Marcaj de timp",
+      "comment":"Comentariu",
+      "audio":"Audio",
+      "video":"Video",
       "sortOrder":"Ordine de sortare",
       "waitingsReady":"Listă de așteptare gata",
       "missingTrack":"Piesă lipsă",

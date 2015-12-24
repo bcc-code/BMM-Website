@@ -19,6 +19,7 @@
       "year":"Jaar",
       "album":"Album",
       "childAlbums":"Kinder Albums",
+      "recordingList":"",
       "tracks":"Snede",
       "childTracks":"Kinder snitte",
       "open":"open"
@@ -89,6 +90,9 @@
       "createNewContributor":"Skep nuwe bydraer",
       "number":"Nommer",
       "timestamp":"Tyd stempel",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"sorteervolgorde",
       "waitingsReady":"verwagtinge gereed",
       "missingTrack":"Vermiste spoor",

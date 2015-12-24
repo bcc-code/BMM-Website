@@ -19,6 +19,7 @@
       "year":"År",
       "album":"Album",
       "childAlbums":"Børnealbums",
+      "recordingList":"",
       "tracks":"Sange og taler",
       "childTracks":"Børnesange",
       "open":"åben"
@@ -89,6 +90,9 @@
       "createNewContributor":"Opret nye bidragyder",
       "number":"Nummer",
       "timestamp":"Oprettet",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Sorteringsrækkefølge",
       "waitingsReady":"Klar",
       "missingTrack":"Mangler spor",

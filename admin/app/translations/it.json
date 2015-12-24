@@ -19,6 +19,7 @@
       "year":"Anno",
       "album":"Album",
       "childAlbums":"Album per bambini",
+      "recordingList":"",
       "tracks":"Tracce",
       "childTracks":"Tracce per bambini",
       "open":"apri"
@@ -89,6 +90,9 @@
       "createNewContributor":"Crea un nuovo contributore",
       "number":"Numero",
       "timestamp":"Timestamp",
+      "comment":"Commento",
+      "audio":"Audio",
+      "video":"Video",
       "sortOrder":"Ordinamento",
       "waitingsReady":"File in attesa",
       "missingTrack":"Traccia mancante",

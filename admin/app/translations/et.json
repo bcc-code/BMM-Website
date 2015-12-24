@@ -19,6 +19,7 @@
       "year":"Aasta",
       "album":"Album",
       "childAlbums":"Laste albumid",
+      "recordingList":"",
       "tracks":"Muusikapalad",
       "childTracks":"Laste muusikapalad",
       "open":"ava"
@@ -89,6 +90,9 @@
       "createNewContributor":"Loo uus kaastegija",
       "number":"Number",
       "timestamp":"Ajatempel",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Sortimis järjestus",
       "waitingsReady":"Ootamised valmis",
       "missingTrack":"Puuduv muusikapala",

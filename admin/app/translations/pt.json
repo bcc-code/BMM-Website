@@ -19,6 +19,7 @@
       "year":"Ano",
       "album":"Álbum",
       "childAlbums":"Álbum infantil",
+      "recordingList":"",
       "tracks":"Faixa",
       "childTracks":"Faixa Infantil",
       "open":"abrir"
@@ -89,6 +90,9 @@
       "createNewContributor":"Criar novo colaborador",
       "number":"Número",
       "timestamp":"Timestamp",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Ordem de classificação",
       "waitingsReady":"Esperas prontas",
       "missingTrack":"Faixa faltante",

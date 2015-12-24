@@ -19,6 +19,7 @@
       "year":"Рік",
       "album":"Альбом",
       "childAlbums":"Дитячі альбоми",
+      "recordingList":"",
       "tracks":"Треки",
       "childTracks":"Дитячі пісні",
       "open":"відкрити"
@@ -89,6 +90,9 @@
       "createNewContributor":"Створити новий вклад",
       "number":"Номер",
       "timestamp":"Відрізок часу",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Порядок сортування",
       "waitingsReady":"Чекань готовий",
       "missingTrack":"Відсутній трек",

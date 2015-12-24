@@ -19,6 +19,7 @@
       "year":"Год",
       "album":"Альбом",
       "childAlbums":"Альбомы для детей",
+      "recordingList":"",
       "tracks":"Треки",
       "childTracks":"Треки для детей",
       "open":"открыть"
@@ -89,6 +90,9 @@
       "createNewContributor":"Создать нового исполнителя",
       "number":"Номер",
       "timestamp":"Метка времени",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Порядок сортировки",
       "waitingsReady":"Проверено",
       "missingTrack":"Трек отсутствует",
