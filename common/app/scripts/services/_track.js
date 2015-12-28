@@ -116,13 +116,12 @@ angular.module('bmmLibApp')
           //In media there can currently be 'audio' and 'video'
           $.each( data.media, function() {
 
-            //Get duration from first file available
-            //If audio and video exist it will be overwritten one time
-            resolvedData.duration = Number(this.files[0].duration);
-
             var _type = this.type;
 
             $.each(this.files, function() {
+              //Get duration from a file available
+              resolvedData.duration = Number(this.duration);
+
               if (_type==='video') {
                 resolvedData.video = true;
                 resolvedData.videos.push({
