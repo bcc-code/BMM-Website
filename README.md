@@ -27,7 +27,7 @@ ____________________________________________
 
 NOTE:
     If you want to test run the admin page, you should also install the
-    API and replace serverUrls and serverUrlIndex in the scripts/config.json
+    API and replace one of the `knownServerUrls` in the file scripts/config.json.
 
 CODING STLE
 -----------

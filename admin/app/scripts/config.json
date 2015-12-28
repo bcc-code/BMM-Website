@@ -1,6 +1,5 @@
 {
-  "serverUrl": "https://bmm-api.brunstad.org/",
-  "alternativeUrls": [
+  "knownServerUrls": [
     "https://bmm-api.brunstad.org/",
     "https://127.0.0.1/bmm/api/web/app_dev.php/",
     "https://devapibmm.brunstad.org/",

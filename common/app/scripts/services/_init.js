@@ -82,7 +82,7 @@ angular.module('bmmLibApp')
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
-        _api.serverUrl(config.alternativeUrls[config.serverUrlIndex]);
+        _api.serverUrl(config.knownServerUrls[config.serverUrlIndex]);
         _api.setKeepAliveTime(config.keepAlive*100*60);
         if(config.requestTimeout) {
           _api.setRequestTimeout(config.requestTimeout*1000);
@@ -216,7 +216,7 @@ angular.module('bmmLibApp')
         }).fail(function() {
 
           if (attempt>=loginAttempts) {
-            window.location = config.serverUrl+'login/redirect?redirect_to='+window.location;
+            window.location = _api.getserverUrli()+'login/redirect?redirect_to='+window.location;
           }
 
           _api.loginRedirect({
