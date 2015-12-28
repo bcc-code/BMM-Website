@@ -136,25 +136,6 @@ angular.module('bmmApp')
 
       $.each(toApi.translations, function() {
         delete this._meta;
-
-        //@todo - remove when new developer data is added
-        if (typeof this.media!=='undefined'&&this.media!==null) {
-          $.each(this.media, function() {
-            if (typeof this.files!=='undefined'&&this.files!==null) {
-              $.each(this.files, function() {
-                if (typeof this.length!=='undefined') {
-                  this.duration = this.length;
-                  delete this.length;
-                }
-              });
-            } else {
-              this.files = [];
-            }
-          });
-        } else {
-          this.media = [];
-        }
-
       });
 
       if (newTrack) {
