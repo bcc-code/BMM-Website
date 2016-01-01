@@ -29,6 +29,6 @@ angular.module('bmmApp')
     };
 
     $scope.getIndex = function(index) {
-      return $scope.startIndex + index;
+      return $scope.startIndex + index + 1;
     };
   });
