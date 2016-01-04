@@ -135,7 +135,6 @@ angular.module('bmmApp')
         36562, //Gershon Twilley
         36501, //Bernt Stadven
         49489, //Elias Aslaksen
-        //36529, //Thorbjørn Vedvik
         36522, //Harald Kronstad
         36519  //Trond Eriksen
       ];
