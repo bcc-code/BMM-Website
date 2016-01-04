@@ -241,7 +241,7 @@ angular.module('bmmApp')
     $scope.select = {
 
       album: function(id) {
-        _api.albumGet(id, '', { raw: true }, init.root.languages.concat(['ar'])).done(function(album) {
+        _api.albumGet(id, '', { raw: true }).done(function(album) {
           $scope.$apply(function() {
             $scope.album = album;
             $scope.lock.album = false;

@@ -1,0 +1,157 @@
+{
+  "language":"Inglise keel",
+  "general":{
+    "search":"Otsi...",
+    "searchResultsFor":"Otsingu tulemused:",
+    "loading":"Laeb...",
+    "waysOfTheLord":"Issanda Teed",
+    "almondBlossom":"Mandliõis",
+    "noTitle":"Pealkirjata",
+    "settings":"Seaded",
+    "feedback":"Tagasiside",
+    "suport":"Abi",
+    "readMore":"Loe edasi"
+  },
+  "options":{
+    "addToPlaylist":"Lisa esitlusloendisse",
+    "download":"Lae alla",
+    "downloadAudio":"Heli allalaadimine",
+    "downloadVideo":"Video allalaadimine",
+    "goToAlbum":"Mine albumisse",
+    "podcast":"Podcast",
+    "removeFilter":"Eemalda filter",
+    "changeLanguage":"Keele muutmine",
+    "goBack":"Tagasi",
+    "addToFavorites":"Lisa lemmikutesse",
+    "moreInfo":"Rohkem infot",
+    "choosePlaylist":"Valige esitusloend",
+    "setupPodcast":"Podcasti seadistamiseks peate kopeerima alloleva lingi ja kleepima selle oma eelistatud podcasti mängijasse.",
+    "chooseLanguages":"Vali keeled",
+    "addLanguage":"Lisa keel",
+    "includeLatest":"Võta uusimad",
+    "websiteLanguage":"Veebilehe keel",
+    "contentLanguages":"Sisu keel",
+    "preferredContentLanguage":"Eelistatud sisukeel",
+    "tracks":"lood",
+    "filterByLanguage":"Filter: keel",
+    "copyUrl":"Kopeeri URL",
+    "copyLink":"Kopeeri link",
+    "delete":"Kustuta",
+    "remove":"Eemalda",
+    "playPlaylist":"Esita esitlusloend",
+    "share":"Jaga"
+  },
+  "menu":{
+    "main":{
+      "music":"Muusika",
+      "speeches":"Sõnumid",
+      "video":"Videod",
+      "archive":"Arhiiv",
+      "audiobooks":"Audioraamatud"
+    },
+    "secondary":{
+      "playlists":"Esitusloendid",
+      "latestTracks":"Uued lood",
+      "lastPlayed":"Viimati esitatud",
+      "mostPlayed":"Enim esitatud",
+      "favorites":"Lemmikud",
+      "current":"Praegune",
+      "newPlaylist":"Uus esitusloend",
+      "nameOnPlaylist":"Esitusloendi pealkiri"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Viimased sõnumid",
+      "latestVideos":"Uued videod",
+      "latestMusic":"Uued lood",
+      "latestAlbums":"Uued albumid"
+    },
+    "music":{
+      "latestMusic":"Uued lood",
+      "artists":"Esitajad",
+      "mp3Source":"MP3-allikas",
+      "childrensMp3Source":"Laste MP3-allikas",
+      "instrumental":"Instrumentaalmuusika"
+    },
+    "speeches":{
+      "latestSpeeches":"Uued sõnumid",
+      "recommended":"Soovitatud"
+    },
+    "videos":{
+      "latestVideos":"Uued videod"
+    },
+    "archive":{
+      "archive":"Arhiiv"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Uued audioramatud"
+    },
+    "search":{
+      "searchResults":"Otsingu tulemused",
+      "content":"Sisu",
+      "bibleVerse":"Piibli salm",
+      "album":"Album",
+      "artist":"Esitaja",
+      "lyricist":"Sõnade autor",
+      "composer":"Helilooja",
+      "contributor":"Kaastegija",
+      "interprets":"Ettekandjad"
+    }
+  },
+  "track":{
+    "duration":"Kestus",
+    "details":"Üksikasjad",
+    "unknown":"Tundmatu",
+    "dragMeToPlaylist":"Lohista mind esitlusloendisse",
+    "exegesis":"Exegesis",
+    "recordedDate":"Salvestamise kuupäev",
+    "artist":"Esitaja",
+    "lyricist":"Sõnade autor",
+    "composer":"Helilooja",
+    "album":"Album",
+    "bibleVerse":"Piibli salm"
+  },
+  "album":{
+    "tracks":"Muusikapala(d)",
+    "childAlbums":"Laste albumid",
+    "relatedAlbums":"Seotud albumid"
+  },
+  "playlist":{
+    "content":"Sisu",
+    "tracks":"Muusikapala(d)",
+    "albums":"Albumi(d)",
+    "totalDuration":"Kogu kestus",
+    "duration":"Kestus",
+    "nr":"Nr.",
+    "title":"Pealkiri",
+    "addToItunes":"Lisa iTunes'i",
+    "copyPodcastLink":"Kopeeri podcasti link",
+    "language":"Keel",
+    "allLanguages":"Kõik keeled",
+    "feedSize":"Voo suurus",
+    "confirmPlaylistDeletion":"Kas soovite kindlasti selle esitlusloendi kustutada?",
+    "latestTracks":"Uued laulud",
+    "instrumental":"Instrumentaalmuusika"
+  },
+  "notify":{
+    "play":"Esita",
+    "pause":"Pausi",
+    "next":"Järgmine",
+    "previous":"Eelmine",
+    "shufflePlaylist":"Juhuslikus järjekorras esitlusloend",
+    "loopPlaylist":"Korda esitlusloendit",
+    "mute":"Vaigista",
+    "unmute":"Vaigistus maha",
+    "maxVolume":"Maksimaalne valjus",
+    "options":"Seaded",
+    "activateVideo":"Aktiveeri video",
+    "goToAlbum":"Mine albumisse",
+    "showFullscreen":"Näita täisekraanil",
+    "closeFullscreen":"Sule täisekraan",
+    "hideVideo":"Peida video",
+    "showVideo":"Näita videot",
+    "resizeVideoScreen":"muudaVideoEkraani"
+  },
+  "copyright":"Autoriõigused"
+}

@@ -9,6 +9,8 @@ angular.module('bmmApp', [
   'ui.sortable',
   'angularFileUpload',
   'mgcrea.ngStrap',
+  'monospaced.elastic',
+  'angular-duration-format',
   'angulartics',
   'angulartics.google.analytics'
 ]).run(['$route', '$location', function($route, $location)  {
@@ -46,6 +48,11 @@ angular.module('bmmApp', [
       .when('/album/:id', {
         templateUrl: 'views/pages/album.html',
         controller: 'AlbumCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
+      .when('/album/:id/recording-list', {
+        templateUrl: 'views/pages/album-recording-list.html',
+        controller: 'AlbumRecordingListCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
       .when('/album/:id/:add', {

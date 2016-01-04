@@ -19,6 +19,7 @@
       "year":"Año",
       "album":"Álbum",
       "childAlbums":"Álbumes para niños",
+      "recordingList":"",
       "tracks":"Pistas",
       "childTracks":"Pistas para niños",
       "open":"abrir"
@@ -55,6 +56,7 @@
       "description":"Descripción",
       "selectedLanguage":"Idioma seleccionado",
       "originalLanguage":"Idioma original",
+      "changeLanguage":"Cambiar idioma",
       "publish":"Publicar",
       "unpublish":"Anular la publicación",
       "missingTitle":"Por favor rellene título primero",
@@ -88,6 +90,9 @@
       "createNewContributor":"Crear nuevo colaborador",
       "number":"Número",
       "timestamp":"Fecha y hora",
+      "comment":"",
+      "audio":"",
+      "video":"",
       "sortOrder":"Orden de clasificación",
       "waitingsReady":"Listas de esperas",
       "missingTrack":"Pista que falta",
@@ -154,7 +159,5 @@
     "dragMeToPlaylist":"llevame a la lista de reproducción",
     "exegesis":"interpretación"
   },
-  "copyright":"Derechos de autor",
-  "copyrightBy":"Stiftelsen Skjulte Skatters Forlag",
-  "copyrightText":"© Derechos de autor en todo el mundo Stiftelsen Skjulte Skatters Forlag, N-3168 Melsomvik, Noruega. Todos los discursos, canciones, música y películas en bmm.brunstadworld.org es sólo para el uso interno y privado para aquellos que se consideran a sí mismos como parte de Den Kristelige Menighet, en adelante denominado \"DKM\" y \/ o Brunstad la Iglesia Cristiana, N-3168 Stokke , Noruega, en adelante denominado \"BCC\", en todo el mundo. Por lo tanto, copia o cualquier otra forma de distribución de uso propio, no se permite el uso privado, no importa en qué formato o forma que esto suceda. Si hay alguna pregunta que rodean el uso de los contenidos de bmm.brunstad.org o algo que se publica por Stiftelsen Skjulte Skatters Forlag, en adelante denominado «SSSF ', BMM MultiMedia Service GmbH, D-32602 Vlotho-Exter, en adelante denominado« BMM \"o las subsidiarias internacionales, departamentos, sucursales, asociaciones y \/ o fundaciones, debe escribirse contacto con BMM o SSSF. Cualquier otra utilización de los propósitos personales de los que se consideran como parte de DKM \/ BCC en todo el mundo, no está permitida sin el permiso escrito de SSSF \/ BMM. SSSF o IUPE respectivas subsidiarias, departamentos, sucursales, asociaciones y \/ o fundaciones tiene los derechos de autor de todo el contenido presentado y todo el trabajo realizado para SSSF \/ BMM o sus subsidiarias, departamentos, sucursales, organizaciones y \/ o fundaciones internacionales, independientemente del lugar de publicación o idioma. Esto incluye discursos, canciones y actuaciones de la BCC, o en una de las iglesias locales o localizaciones DKMS conferencias en todo el mundo. Todos los derechos morales son revocados. SSSF o IUPE respectivas subsidiarias, divisiones, filiales, asociaciones y \/ o fundaciones sostiene, los derechos de autor internacional para el material cotizada y \/ o recibido, sin importar el medio de liberación o si el material se publica o no. De lo contrario, debe hacerse conocer y seguir las directrices y la información enviada en una carta con fecha de agosto de 2004 de Sigurd J. Bratlie y Carl Hahne."
+  "copyright":"Derechos de autor"
 }

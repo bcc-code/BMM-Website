@@ -1,0 +1,157 @@
+{
+  "language":"Italiano",
+  "general":{
+    "search":"Cerca...",
+    "searchResultsFor":"Risultati ricerca per:",
+    "loading":"Caricamento...",
+    "waysOfTheLord":"Le Vie del Signore",
+    "almondBlossom":"Fiore di mandorlo",
+    "noTitle":"Nessun titolo",
+    "settings":"Impostazioni",
+    "feedback":"Commenti",
+    "suport":"Supporto",
+    "readMore":"Continua"
+  },
+  "options":{
+    "addToPlaylist":"Aggiungi a playlist",
+    "download":"Scarica",
+    "downloadAudio":"Scarica audio",
+    "downloadVideo":"Scarica video",
+    "goToAlbum":"Vai all'album",
+    "podcast":"Podcast",
+    "removeFilter":"Rimuovi filtro",
+    "changeLanguage":"Cambia lingua",
+    "goBack":"Indietro",
+    "addToFavorites":"Aggiungi a preferiti",
+    "moreInfo":"Altre informazioni",
+    "choosePlaylist":"Seleziona playlist",
+    "setupPodcast":"Per impostare il podcast, copia il collegamento qui sotto e incollalo nel tuo software podcast preferito.",
+    "chooseLanguages":"Scegli la lingua",
+    "addLanguage":"Aggiungi una lingua",
+    "includeLatest":"Includi i più recenti",
+    "websiteLanguage":"Lingua del sito web",
+    "contentLanguages":"Lingua contenuti",
+    "preferredContentLanguage":"Lingua preferita contenuti",
+    "tracks":"tracce",
+    "filterByLanguage":"Filtra per lingua",
+    "copyUrl":"Copia URL",
+    "copyLink":"Copia collegamento",
+    "delete":"Elimina",
+    "remove":"Rimuovi",
+    "playPlaylist":"Riproduci playlist",
+    "share":"Condividi"
+  },
+  "menu":{
+    "main":{
+      "music":"Musica",
+      "speeches":"Messaggi",
+      "video":"Video",
+      "archive":"Archivio",
+      "audiobooks":"Audiolibri"
+    },
+    "secondary":{
+      "playlists":"Playlist",
+      "latestTracks":"Nuovi brani",
+      "lastPlayed":"Ultimo ascoltato",
+      "mostPlayed":"I più ascoltati",
+      "favorites":"Preferiti",
+      "current":"Corrente",
+      "newPlaylist":"Nuova playlist",
+      "nameOnPlaylist":"Titolo della playlist"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Ultimi messaggi",
+      "latestVideos":"Ultimi video",
+      "latestMusic":"Ultima musica",
+      "latestAlbums":"Album più recenti"
+    },
+    "music":{
+      "latestMusic":"Ultima musica",
+      "artists":"Artisti",
+      "mp3Source":"Sorgente-MP3",
+      "childrensMp3Source":"Sorgente-MP3 bambini",
+      "instrumental":"Strumentale"
+    },
+    "speeches":{
+      "latestSpeeches":"Ultimi messaggi",
+      "recommended":"Consigliato"
+    },
+    "videos":{
+      "latestVideos":"Ultimi video"
+    },
+    "archive":{
+      "archive":"Archivio"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Ultimi audiolibri"
+    },
+    "search":{
+      "searchResults":"Risultati della ricerca",
+      "content":"Contenuto",
+      "bibleVerse":"Versetto della Bibbia",
+      "album":"Album",
+      "artist":"Artista",
+      "lyricist":"Autore",
+      "composer":"Compositore",
+      "contributor":"Collaboratore",
+      "interprets":"Artisti"
+    }
+  },
+  "track":{
+    "duration":"Durata",
+    "details":"Dettagli",
+    "unknown":"Sconosciuto",
+    "dragMeToPlaylist":"Trascinare nella playlist",
+    "exegesis":"Interpretazione",
+    "recordedDate":"Data di registrazione",
+    "artist":"Artista",
+    "lyricist":"Autore",
+    "composer":"Compositore",
+    "album":"Album",
+    "bibleVerse":"Versetto della Bibbia"
+  },
+  "album":{
+    "tracks":"Traccia(e)",
+    "childAlbums":"Album per bambini",
+    "relatedAlbums":"Album collegati"
+  },
+  "playlist":{
+    "content":"Contenuto",
+    "tracks":"Traccia(e)",
+    "albums":"Album",
+    "totalDuration":"Durata totale",
+    "duration":"Durata",
+    "nr":"Nr.",
+    "title":"Titolo",
+    "addToItunes":"Aggiungi a iTunes",
+    "copyPodcastLink":"Copia collegamento podcast",
+    "language":"Lingua",
+    "allLanguages":"Tutte le lingue",
+    "feedSize":"Dimensione feed",
+    "confirmPlaylistDeletion":"Sei sicuro di voler eliminare questa playlist?",
+    "latestTracks":"Ultimi brani",
+    "instrumental":"Strumentale"
+  },
+  "notify":{
+    "play":"Riproduci",
+    "pause":"Pausa",
+    "next":"Successivo",
+    "previous":"Precedente",
+    "shufflePlaylist":"Playlist casuale",
+    "loopPlaylist":"Ripeti la playlist",
+    "mute":"Muto",
+    "unmute":"Riattiva l'audio",
+    "maxVolume":"Volume massimo",
+    "options":"Opzioni",
+    "activateVideo":"Attiva video",
+    "goToAlbum":"Vai all'album",
+    "showFullscreen":"Visualizza a schermo intero",
+    "closeFullscreen":"Chiudere schermo intero",
+    "hideVideo":"Nascondi video",
+    "showVideo":"Visualizza video",
+    "resizeVideoScreen":"ridimensiona schermo video"
+  },
+  "copyright":"Copyright"
+}

@@ -105,7 +105,7 @@ angular.module('bmmLibApp')
 
         if (typeof options!=='undefined') {
           options.done();
-        };
+        }
 
         factory.refresh();
 
@@ -117,7 +117,7 @@ angular.module('bmmLibApp')
     factory.findTracks = function(id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages).done(function(data) {
+      }).done(function(data) {
 
         factory.track = [];
         factory.tracks = [];
@@ -137,7 +137,7 @@ angular.module('bmmLibApp')
     factory.findChildAlbums = function(id, options) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages).done(function(data) {
+      }).done(function(data) {
 
         factory.childAlbum = [];
         factory.childAlbums = [];
@@ -152,7 +152,7 @@ angular.module('bmmLibApp')
 
         if (typeof options!=='undefined') {
           options.done();
-        };
+        }
 
         factory.refresh();
 
@@ -164,7 +164,7 @@ angular.module('bmmLibApp')
     factory.findChildTracks = function(id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages).done(function(data) {
+      }).done(function(data) {
 
         factory.childTrack = [];
         factory.childTracks = [];
@@ -182,7 +182,7 @@ angular.module('bmmLibApp')
     //AUTOOPEN QUICK MENU
     factory.autoOpen = function(year, albumRootId, albumParentId) {
 
-      factory.year = year
+      factory.year = year;
 
       factory.findAlbums(year, {
         done: function() {

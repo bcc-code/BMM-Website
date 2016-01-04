@@ -14,7 +14,7 @@ angular.module('bmmApp')
       var uploader = $fileUploader.create({
         method: 'POST',
         scope: $scope, //to automatically update the html
-        url: options.url, //_api.getserverUrli()+'track/'+$routeParams.id+'/cover?_method=PUT',
+        url: options.url,
         withCredentials: true,
         removeAfterUpload: true,
         headers: {

@@ -238,6 +238,9 @@
                         </button>
                         <button ng-click="go('/album/'+quickMenu.album.id);">
                             {{init.translation.menu.secondary.open}}
+                        </button>
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/recording-list');">
+                            {{init.translation.menu.secondary.recordingList}}
                         </button><br><br>
                     </div>
 
@@ -262,6 +265,9 @@
                         </button>
                         <button ng-click="go('/album/'+quickMenu.albumChild.id);">
                             {{init.translation.menu.secondary.open}}
+                        </button>
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/recording-list');">
+                            {{init.translation.menu.secondary.recordingList}}
                         </button><br><br>
                     </div>
 

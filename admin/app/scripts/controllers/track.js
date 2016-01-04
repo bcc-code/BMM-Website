@@ -37,11 +37,11 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.trackGet($routeParams.id, { raw: true }, _init.root.languages);
+          return _api.trackGet($routeParams.id, { raw: true });
         } else {
           return _api.trackGet($routeParams.id, {
             unpublished: 'show'
-          }, _init.root.languages);
+          });
         }
       } else {
 
@@ -136,25 +136,6 @@ angular.module('bmmApp')
 
       $.each(toApi.translations, function() {
         delete this._meta;
-
-        //@todo - remove when new developer data is added
-        if (typeof this.media!=='undefined'&&this.media!==null) {
-          $.each(this.media, function() {
-            if (typeof this.files!=='undefined'&&this.files!==null) {
-              $.each(this.files, function() {
-                if (typeof this.length!=='undefined') {
-                  this.duration = this.length;
-                  delete this.length;
-                }
-              });
-            } else {
-              this.files = [];
-            }
-          });
-        } else {
-          this.media = [];
-        }
-
       });
 
       if (newTrack) {
@@ -344,23 +325,6 @@ angular.module('bmmApp')
       });
     };
 
-    $scope.$watch('edited', function(newEdit, oldEdit) {
-
-      if (typeof newEdit!=='undefined'&&
-          (typeof newEdit.media==='undefined'||newEdit.media===null||newEdit.media.length<1)) {
-        newEdit.is_visible = false;
-
-        if (typeof oldEdit!=='undefined'&&
-          newEdit.is_visible===oldEdit.is_visible&&
-          newEdit.language===oldEdit.language&&
-          newEdit.title===oldEdit.title) {
-          $scope.status = _init.translation.page.editor.missingFile;
-        }
-
-      }
-
-    }, true);
-
     $scope.$watch('model', function(model) {
       if (modelLoaded) {
         $scope.status = _init.translation.states.changesPerformed;
@@ -369,7 +333,7 @@ angular.module('bmmApp')
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
         _api.albumGet(model.parent_id, {
           unpublished: 'show'
-        }, _init.root.languages).done(function(album) {
+        }).done(function(album) {
           $scope.$apply(function() {
 
             if (album.parent_id!==null) {
@@ -377,7 +341,7 @@ angular.module('bmmApp')
               $scope.findParentSubAlbums(album.parent_id, album.id);
               _api.albumGet(album.parent_id, {
                 unpublished: 'show'
-              }, _init.root.languages).done(function(album) {
+              }).done(function(album) {
                 $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
                 if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
                   $scope.findParentAlbums($scope.albumParentYear, album);
@@ -489,7 +453,7 @@ angular.module('bmmApp')
     $scope.findParentSubAlbums = function(id, sub_id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages).done(function(data) {
+      }).done(function(data) {
 
         $scope.$apply(function() {
           $.each(data.children, function() {

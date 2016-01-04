@@ -82,7 +82,7 @@ angular.module('bmmLibApp')
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
-        _api.serverUrl(config.alternativeUrls[config.serverUrlIndex]);
+        _api.serverUrl(config.knownServerUrls[config.serverUrlIndex]);
         _api.setKeepAliveTime(config.keepAlive*100*60);
         if(config.requestTimeout) {
           _api.setRequestTimeout(config.requestTimeout*1000);
@@ -139,7 +139,7 @@ angular.module('bmmLibApp')
                 if(hiddenLanguages.indexOf(language) !== -1) {
                     root.languages.splice(i, 1);
                 }
-            };
+            }
 
             //Load all translations (Loads in background, not time dependent)
             $.each(factory.config.translationsAvailable, function() {
@@ -157,6 +157,13 @@ angular.module('bmmLibApp')
             factory.load.percent+=20;
 
             // -- contentLanguage
+            if (factory.config.includeAllContentLanguages)
+            {
+              root.languages.forEach(function(el) {
+                factory.appendLanguage(el);
+              });
+            }
+
             findcontentLanguages(user.languages,0, contentLanguageLoaded);
 
             // -- Translation
@@ -209,7 +216,7 @@ angular.module('bmmLibApp')
         }).fail(function() {
 
           if (attempt>=loginAttempts) {
-            window.location = config.serverUrl+'login/redirect?redirect_to='+window.location;
+            window.location = _api.getserverUrli()+'login/redirect?redirect_to='+window.location;
           }
 
           _api.loginRedirect({
@@ -244,13 +251,8 @@ angular.module('bmmLibApp')
       //Iterate backwards so that the first item is added last.
       //And thus comes first in the contentLanguages Array;
       for(var i = langs.length-1; i > -1; i--) {
-        var lang = langs[i];
-        if (typeof lang === 'undefined') {
-          promise.resolve(); //Using fallback
-        } else if (factory.root.languages.indexOf(lang) !== -1) {
-          factory.prependLanguage(lang);
-        };
-      };
+        factory.prependLanguage(langs[i]);
+      }
 
       //Use the top language as website language and podcastLanguage
       factory.podcastLanguage = factory.websiteLanguage = factory.contentLanguages[0];

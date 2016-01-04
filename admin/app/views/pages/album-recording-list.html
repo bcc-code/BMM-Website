@@ -1,0 +1,257 @@
+<style>
+    #album-select-list {
+        max-width: 100%;
+    }
+
+    #album-select-list .row .track > div:first-child {
+        border-left: none;
+    }
+
+    #album-select-list > .foldbox {
+        overflow: scroll;
+        border: none;
+        margin: 1.5em 0;
+    }
+
+    #album-select-list table {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: nowrap;
+    }
+
+    #album-select-list td.spacer {
+        display: none;
+    }
+
+    #album-select-list th,
+    #album-select-list td {
+        vertical-align: top;
+        border: 1px solid #ddd;
+        padding: .75em;
+    }
+
+    #album-select-list th label {
+        height: 20px;
+        width: 20px;
+        border-radius: .25em;
+        background-color: #f0f0f0;
+    }
+
+    #album-select-list td.album {
+        border: none;
+        padding: 0;
+    }
+
+    #album-select-list td.enabled-false {
+        color: rgba(0, 0, 0, .5);
+        font-style: italic;
+    }
+
+    #album-select-list table button {
+        height: auto;
+        float: right;
+    }
+
+    #album-select-list .audio-enabled,
+    #album-select-list .video-enabled {
+        white-space: nowrap;
+    }
+
+    #album-select-list .audio-enabled button,
+    #album-select-list .video-enabled button {
+        float: none;
+    }
+
+    label.all-enabled,
+    input:checked ~ label.enabled-true {
+        background: url(images/common/svg/v3/Icon_Playlist-Accept_hover.svg) no-repeat center center;
+        background-size: 66%;
+    }
+
+    label {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+
+        border: 1px solid rgba(0,0,0,.8);
+        border-radius: .5em;
+        padding: .25em;
+        vertical-align: middle;
+    }
+
+    label.enabled-false {
+        background: grey;
+        cursor: not-allowed;
+    }
+
+    #album-select-list input[type=checkbox] {
+        display: none;
+    }
+
+    #album-select-list textarea {
+        border: none;
+        width: 100%;
+        -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+        -moz-box-sizing: border-box; /* FF1+ */
+        box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+    }
+</style>
+
+<script>
+    $('.foldbox > table')
+            .on('click', 'th label', function(obj) {
+                var elements = $('td.'+$(obj.currentTarget).attr('class')+' input[type=checkbox]', $(obj.currentTarget).parents('table').first());
+                if (elements.not(':checked').length > 0) {
+                    elements.not(':checked').siblings('label').click();
+                } else {
+                    elements.filter(':checked').siblings('label').click();
+                }
+            });
+</script>
+
+<div class="controlbar" ng-show="model == false">
+    <i>{{init.translation.general.loading}}</i>
+</div>
+
+<div id="album-select-list" ng-hide="model == false">
+    <div class="controlbar" >
+        <h4>{{translatedModel.title}}</h4>
+    </div>
+
+    <div class="controlbar">
+        <b>{{init.translation.page.editor.status}}</b>: {{status}}
+        <button ng-if="can_save" ng-click="save();" style="margin-left: .5em">{{init.translation.page.editor.save}}</button>
+    </div>
+
+    <div class="foldbox">
+        <table>
+            <tr class="track" ng-if="translatedModel.children[0].type == 'track'">
+                <th></th>
+                <th>
+                    {{init.translation.page.editor.audio}}
+                    <label class="audio-enabled"></label>
+                </th>
+                <th>
+                    {{init.translation.page.editor.video}}
+                    <label class="video-enabled"></label>
+                </th>
+                <th>{{init.translation.page.editor.type}}</th>
+                <th>{{init.translation.page.editor.interprets}}</th>
+                <th>{{init.translation.page.editor.title}}</th>
+                <th>{{init.translation.page.editor.comment}}</th>
+                <th>{{init.translation.page.editor.duration}}</th>
+                <th>{{init.translation.page.editor.bibleReferences}}</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="child in translatedModel.children" ng-include="'albumTemplate'"></tr>
+        </table>
+    </div>
+
+    <div class="controlbar">
+        <b>{{init.translation.page.editor.status}}</b>: {{status}}
+        <button ng-if="can_save" ng-click="save();" style="margin-left: .5em">{{init.translation.page.editor.save}}</button>
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="albumTemplate">
+    <td class="spacer" ng-init="c = children[child.type + child.id]"></td>
+
+    <td colspan="9" class="album enabled-{{c.translated['_meta'].is_visible}}" ng-if="c.translated.type == 'album'">
+        <h2>
+            <span class="header"
+                 ng-click="main=!main"
+                 ng-init="main=true"><span ng-show="main">-</span><span ng-hide="main">+</span></span>
+            {{c.translated.title}}
+        </h2>
+
+
+        <div class="body" ng-class="{'visible': main}">
+            <table>
+                <tr class="track" ng-if="c.translated.children[0].type == 'track'">
+                    <th></th>
+                    <th>
+                        {{init.translation.page.editor.audio}}
+                        <label class="audio-enabled"></label>
+                    </th>
+                    <th>
+                        {{init.translation.page.editor.video}}
+                        <label class="video-enabled"></label>
+                    </th>
+                    <th>{{init.translation.page.editor.type}}</th>
+                    <th>{{init.translation.page.editor.interprets}}</th>
+                    <th>{{init.translation.page.editor.title}}</th>
+                    <th>{{init.translation.page.editor.comment}}</th>
+                    <th>{{init.translation.page.editor.duration}}</th>
+                    <th>{{init.translation.page.editor.bibleReferences}}</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="child in c.translated.children" ng-include="'albumTemplate'"></tr>
+            </table>
+        </div>
+    </td>
+
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} order" width="1">{{c.raw.order}}</td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} audio-enabled" width="1">
+        <input ng-if="trackHasAudio(c.raw)" type="checkbox" ng-checked="trackHasAudioEnabled(c.raw)" />
+        <label ng-click="toggleHasAudioEnabled(c.raw)" class="enabled-{{trackHasAudio(c.raw)}}"></label>
+        <button ng-hide="!trackHasAudio(c.raw)" ng-click="play(c, 'audio')">&#9654;</button>
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} video-enabled" width="1">
+        <input ng-if="trackHasVideo(c.raw)" type="checkbox" ng-checked="trackHasVideoEnabled(c.raw)" />
+        <label ng-click="toggleHasVideoEnabled(c.raw)" class="enabled-{{trackHasVideo(c.raw)}}"></label>
+        <button ng-hide="!trackHasVideo(c.raw)" ng-click="play(c, 'video')">&#9654;</button>
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} type">
+        {{c.translated.subtype}}
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} interpret">
+        <span ng-repeat="interpret in c.relations.interpret">{{interpret.name}}{{$last ? '' : ', '}}</span>
+
+        <span ng-if="c.relations.interpret.length > 0 && c.relations.songbook.length > 0"> - </span>
+
+        <span ng-repeat="songbook in c.relations.songbook">{{songbook.name}} {{songbook.id}}{{$last ? '' : ', '}}</span>
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} title">
+        <button ng-init="c.show_translated_titles=false" ng-click="c.show_translated_titles = !c.show_translated_titles">
+            <span ng-hide="c.show_translated_titles">+</span><span ng-show="c.show_translated_titles">-</span></button>
+
+        {{c.original_translation.title}}
+        <table ng-show="c.show_translated_titles">
+            <tr ng-repeat="translation in c.raw.translations">
+                <td width="1">
+                    <div class="flags-{{translation.language}}"
+                         style="margin-top: .3em; width: 22px; height: 1.1em; display: inline-block;"></div>
+                </td>
+                <td>
+                    <div ng-init="tmp_translation_title=translation.title" ng-if="tmp_translation_title">{{translation.title}}</div>
+                    <input type="text" ng-model="translation.title" />
+                </td>
+            </tr>
+        </table>
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} comment"><textarea ng-model="c.raw.comment" msd-elastic="\n"></textarea></td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} duration" width="1">{{c.original_translation.media[0].files[0].duration * 1000 | duration:'mm:ss'}}</td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} verses">
+        <div ng-if="c.relations.bible.length > 0">
+            <button ng-init="c.relations.bibleIsVisible=false" ng-click="c.relations.bibleIsVisible = !c.relations.bibleIsVisible">
+                <span ng-hide="c.relations.bibleIsVisible">+</span><span ng-show="c.relations.bibleIsVisible">-</span></button>
+            <table ng-show="c.relations.bibleIsVisible">
+                <tr>
+                    <th>{{init.translation.page.editor.timestamp}}</th>
+                    <th>{{init.translation.page.editor.bibleReferences}}</th>
+                    <th>{{init.translation.page.editor.comment}}</th>
+                </tr>
+                <tr ng-repeat="bibleRelation in c.relations.bible">
+                    <td>{{bibleRelation.timestamp * 1000 | duration:'mm:ss'}}</td>
+                    <td>{{bibleRelation.translated_book}} {{bibleRelation.chapter}},{{bibleRelation.verse}}</td>
+                    <td><textarea ng-model="bibleRelation.comment" msd-elastic="\n"></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} language" width="1">
+        <div class="flags-{{c.original_translation.language}}"
+             style="margin-top: .3em; width: 22px; height: 1.1em; display: inline-block;"></div>
+    </td>
+</script>
