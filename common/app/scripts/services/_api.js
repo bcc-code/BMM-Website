@@ -87,7 +87,7 @@ angular.module('bmmLibApp')
       var languages = xhrOptions.headers['Accept-Language'];
       //Only append the language if the languages is an array.
       if($.isArray(languages)) {
-        xhrOptions.headers['Accept-Language'] = languages.concat(['zxx', 'ar']);
+        xhrOptions.headers['Accept-Language'] = languages.concat(['zxx']);
       }
     }
 

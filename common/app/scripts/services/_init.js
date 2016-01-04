@@ -130,8 +130,8 @@ angular.module('bmmLibApp')
 
             factory.load.status = 'Root loaded';
 
-            //Temporary remove arabic and unknown (@todo - remove later)
-            var hiddenLanguages = ['ar', 'zxx'];
+            //Temporary remove zxx because it's for multilingual content (@todo - remove later)
+            var hiddenLanguages = ['zxx'];
 
             //iterate backwards because we're deleting elements.
             for(var i = root.languages.length -1; i >= 0 ; i--){
