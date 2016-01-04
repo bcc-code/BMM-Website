@@ -307,7 +307,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of an album **/
-  factory.albumGet = function(id, options, languages) {
+  factory.albumGet = function(id, options) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -332,17 +332,10 @@ angular.module('bmmLibApp')
      *    show_in_library *         Boolean
      */
 
-    var headers = {};
-    if (typeof languages !== "undefined")
-    {
-      headers['Accept-Language'] = languages;
-    }
-
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/'+id,
-      data: $.param(options),
-      headers: headers
+      data: $.param(options)
     });
   };
 
@@ -584,13 +577,16 @@ angular.module('bmmLibApp')
      *    Absolute file path
      */
 
+    var headers = {};
+    if (typeof languages !== 'undefined') {
+      headers['Accept-Language'] = languages;
+    }
+
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'track/'+id,
       data: $.param(options),
-      headers: {
-        'Accept-Language': languages
-      }
+      headers: headers
     });
 
   };
@@ -736,12 +732,6 @@ angular.module('bmmLibApp')
   factory.userTrackCollectionPost = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
-
-    /** headers
-     *    'Accept-Language':        String          ISO 639-1 || ISO 639-3
-     *    'Link':                   <url1> <- Currently not working with multiple
-     *    'Link':                   <url2> <- last will be used
-     */
 
     return factory.addToQueue({
       method: 'POST',
