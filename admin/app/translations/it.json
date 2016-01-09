@@ -19,7 +19,7 @@
       "year":"Anno",
       "album":"Album",
       "childAlbums":"Album per bambini",
-      "recordingList":"",
+      "recordingList":"Elenco di registrazione",
       "tracks":"Tracce",
       "childTracks":"Tracce per bambini",
       "open":"apri"
@@ -104,7 +104,7 @@
       "conflict":"Conflitto",
       "conflicts":"Conflitti (duplicati)",
       "openTrack":"Traccia aperta",
-      "linkAllTracks":"Collega tutti i brani"
+      "linkAllTracks":"Collega tutte le tracce"
     },
     "contributors":{
       "name":"Nome",
@@ -129,11 +129,11 @@
     "couldNotCreateTrack":"Non è stato possibile creare la traccia",
     "errorCode":"Codice di errore",
     "attemptToSave":"Sto tentando di salvare. Attendere prego...",
-    "savingContributor":"Sto salvando contributore. Attendere prego...",
+    "savingContributor":"Sto salvando il contributore. Attendere prego...",
     "savingChanges":"Sto salvando le modifiche. Attendere prego...",
     "saveSucceedFetchingNewData":"Salvataggio riuscito. Recupero di nuovi dati",
-    "couldNotFetchData":"Non è stato possibile recuperare i nuovi dati. Verifica la tua connessione internet",
-    "couldNotSave":"Non è stato possibile salvare. Verifica la tua connessione internet",
+    "couldNotFetchData":"Non è stato possibile recuperare i nuovi dati. Verifica la tua connessione internet...",
+    "couldNotSave":"Non è stato possibile salvare. Verifica la tua connessione internet...",
     "saved":"Salvato",
     "loadingContributor":"Caricamento contributori...",
     "loadingTracks":"Caricamento tracce...",
@@ -148,7 +148,7 @@
     "attemptToLinkTracks":"Tentativo di collegamento tracce all'album. Attendere prego..."
   },
   "warnings":{
-    "confirmAlbumDeletion":"Sei sicuro di voler eliminare l'album con tuttei suoi sotto-album e le sue tracce?",
+    "confirmAlbumDeletion":"Sei sicuro di voler eliminare l'album con tutti i suoi sotto-album e le sue tracce?",
     "confirmTrackDeletion":"Sei sicuro di voler eliminare la traccia con tutto il suo contenuto?",
     "confirmTranslatedDeletion":"La lingua ha dei contenuti. Conferma l'eliminazione",
     "confirmContributorDeletion":"SEI DAVVERO SICURO DI VOLER ELIMINARE QUESTO CONTRIBUTORE? TUTTE LE TRACCE COLLEGATE SARANNO ELIMINATE!"

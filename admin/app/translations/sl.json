@@ -19,7 +19,7 @@
       "year":"Leto",
       "album":"Album",
       "childAlbums":"Otroški albumi",
-      "recordingList":"",
+      "recordingList":"Seznam posnetkov",
       "tracks":"Skladbe",
       "childTracks":"Otroške skladbe",
       "open":"odpri"
@@ -38,7 +38,7 @@
       "interprets":"Izvajalci"
     },
     "editor":{
-      "mainSettings":"Glavne nastavitve",
+      "mainSettings":"Osnovne nastavitve",
       "bmmId":"BMM-ID",
       "publishDate":"Datum objave",
       "recordDate":"Datum snemanja",
@@ -104,7 +104,7 @@
       "conflict":"Konflikt",
       "conflicts":"Konflikt (dvojniki)",
       "openTrack":"Odpri skladbo",
-      "linkAllTracks":"Združi vse skladbe"
+      "linkAllTracks":"Poveži vse skladbe"
     },
     "contributors":{
       "name":"Ime",
@@ -114,8 +114,8 @@
     },
     "users":{
       "adminUsers":"Administratorji",
-      "albumManager":"Menedžer albumov",
-      "trackManager":"Menedžer skladb",
+      "albumManager":"Oskrbnik albumov",
+      "trackManager":"Oskrbnik skladb",
       "contributorManager":"Menedžer sodelavcev",
       "allRights":"Vse pravice",
       "refreshList":"Osveži seznam"
@@ -136,7 +136,7 @@
     "couldNotSave":"Ni bilo mogoče shraniti. Prosim preverite internetno povezavo",
     "saved":"Shranjeno",
     "loadingContributor":"Nalaganje prispevka...",
-    "loadingTracks":"Nalaganje skladb...",
+    "loadingTracks":"Nalagam skladbe...",
     "loadingUsers":"Nalaganje uporabnikov...",
     "loadingFiles":"Nalaganje datotek, prosim počakajte...",
     "filesLoaded":"Datoteke uspešno naložene",
@@ -145,10 +145,10 @@
     "deletingContributor":"Brisanje prispevka, prosim počakajte...",
     "trackDeleted":"Skladba izbrisana",
     "notSet":"Ni nastavljeno",
-    "attemptToLinkTracks":"Poskušam združiti skladbe na albumu. Prosim počakajte..."
+    "attemptToLinkTracks":"Poskušam povezati skladbe v albumu. Prosim počakajte..."
   },
   "warnings":{
-    "confirmAlbumDeletion":"Ali ste prepričani, da želite izbrisati album z vsemi svojimi pod-albumi in pesmimi?",
+    "confirmAlbumDeletion":"Ali ste prepričani, da želite izbrisati album z vsemi pod-albumi in pesmimi?",
     "confirmTrackDeletion":"Ali ste prepričani, da želite izbrisati skladbo z vso njeno vsebino?",
     "confirmTranslatedDeletion":"Jezik ima vsebino. Potrdite brisanje",
     "confirmContributorDeletion":"ALI STE PREPRIČANI, DA ŽELITE IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
