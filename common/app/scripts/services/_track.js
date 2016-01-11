@@ -126,7 +126,7 @@ angular.module('bmmLibApp')
                 resolvedData.video = true;
                 resolvedData.videos.push({
                   file: _api.secureFile(this.url),
-                  downloadLink: _api.secureDownload(this.url)+'&download=1',
+                  downloadLink: this.url+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -135,7 +135,7 @@ angular.module('bmmLibApp')
                 resolvedData.audio = true;
                 resolvedData.audios.push({
                   file: _api.secureFile(this.url),
-                  downloadLink: _api.secureDownload(this.url)+'&download=1',
+                  downloadLink: this.url+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -157,7 +157,7 @@ angular.module('bmmLibApp')
           resolvedData[(data.link.type+'s')] = [];
           resolvedData[(data.link.type+'s')].push({
             file: _api.secureFile(_file),
-            downloadLink: _api.secureDownload(_file)+'&download=1',
+            downloadLink: _file+'&download=1',
             type: data.link.mime_type,
             name: renameMimeType(data.link.mime_type),
             duration: data.link.duration

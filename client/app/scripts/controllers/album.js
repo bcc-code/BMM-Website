@@ -26,7 +26,7 @@ angular.module('bmmApp')
     $scope.duration = 0;
     $scope.mainAlbum = [];
     $scope.zip = {};
-    $scope.zip.url = _api.secureDownload(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true);
+    $scope.zip.url = _api.addLanguagesToDownloadUrl(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true);
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};

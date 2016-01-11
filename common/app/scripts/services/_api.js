@@ -150,13 +150,8 @@ angular.module('bmmLibApp')
     }, keepAliveTime);
   };
 
-  //Doesnt need to be secured
-  factory.secureDownload = function(download, force) {
-    if (typeof force!=='undefined'&&force) {
-      return download;//factory.secureFile(download);
-    } else {
-      return download;
-    }
+  factory.addLanguagesToDownloadUrl = function(downloadUrl) {
+    return downloadUrl + '?languages[]=' + contentLanguages.join('&languages[]=');
   };
 
   //Doesnt need to be secured
