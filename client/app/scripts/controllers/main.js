@@ -3,6 +3,7 @@
 angular.module('bmmApp')
   .controller('MainCtrl', function (
     $scope,
+    $rootScope,
     $timeout,
     $location,
     $route,
@@ -19,7 +20,7 @@ angular.module('bmmApp')
 
     _init.load.complete.promise.then(function() {
 
-      $scope.init = _init;
+      $rootScope.init = $scope.init = _init;
       $scope.now = function() { return new Date(); };
 
       $scope.pushMessages = [];
@@ -140,7 +141,7 @@ angular.module('bmmApp')
         $scope.saveSession();
       };
 
-      $scope.go = function ( path ) {
+      $rootScope.go = $scope.go = function ( path ) {
         $location.path( path );
       };
 

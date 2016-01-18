@@ -5,6 +5,6 @@
 		language="{{track.language}}"
 		title="{{track.albumTitle}}">
 
-		<bmm-latest-track track-number="getIndex($index)" track="track" type="{{trackType}}" ng-click="play($index)"></bmm-latest-track>
+		<bmm-latest-track on-play="play($index)" track-number="getIndex($index) + 1" track="track" type="{{trackType}}"></bmm-latest-track>
 	</li>
 </ul>

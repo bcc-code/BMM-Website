@@ -106,19 +106,19 @@
 </div>
 
 <!--SHARE-->
-<div class="popup" ng-if="share.show">
+<div class="popup" ng-if="$root.share.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="share.show=false">
+            <div class="container" always click-outside="$root.share.show=false">
 
-                <div class="exit" ng-click="share.show=false"></div>
+                <div class="exit" ng-click="$root.share.show=false"></div>
 
-                <b>{{init.translation.options.share}}</b>
+                <b>{{$root.init.translation.options.share}}</b>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
-                    <b>{{init.translation.options.copyLink}}</b>
+                    <b>{{$root.init.translation.options.copyLink}}</b>
                     <input style="width: 100%; border: .1em solid gray;padding: .5em;"
-                           type="text" value="{{share.link}}">
+                           type="text" value="{{$root.share.link}}">
                 </div>
 
             </div>
@@ -202,54 +202,54 @@
 </div>
 
 <!--MORE INFO FOR A TRACK-->
-<div class="popup" ng-if="trackInfo.show">
+<div class="popup" ng-if="$root.trackInfo.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" click-outside="trackInfo.show=false">
+            <div class="container" click-outside="$root.trackInfo.show=false">
 
-                <div class="exit" ng-click="trackInfo.show=false"></div>
+                <div class="exit" ng-click="$root.trackInfo.show=false"></div>
 
-                <b style="float: left; width: 100%;">{{trackInfo.track.title}}</b><br><br>
+                <b style="float: left; width: 100%;">{{$root.trackInfo.track.title}}</b><br><br>
 
                 <b>{{init.translation.track.recordedDate}}</b><br>
-                    {{trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
+                    {{$root.trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
 
                 <b>{{init.translation.track.duration}}</b><br>
                     <span>
-                        {{trackInfo.track.duration | _time}}
+                        {{$root.trackInfo.track.duration | _time}}
                     </span><br><br>
 
                 <b>{{init.translation.track.album}}</b><br>
                     <span class="link"
-                          ng-click="go('/album/'+trackInfo.track.raw.parent_id); trackInfo.show=false;">
-                        {{trackInfo.track.albumTitle}}
+                          ng-click="go('/album/'+$root.trackInfo.track.raw.parent_id); $root.trackInfo.show=false;">
+                        {{$root.trackInfo.track.albumTitle}}
                     </span><br><br>
 
                 <b>{{init.translation.track.artist}}</b><br>
                     <span class="link"
-                          ng-repeat="artist in trackInfo.track.interprets"
-                       ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); trackInfo.show=false;">
+                          ng-repeat="artist in $root.trackInfo.track.interprets"
+                       ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); $root.trackInfo.show=false;">
                         {{artist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
                 <b>{{init.translation.track.lyricist}}</b><br>
                     <span class="link"
-                          ng-repeat="lyricist in trackInfo.track.lyricists"
-                          ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); trackInfo.show=false;">
+                          ng-repeat="lyricist in $root.trackInfo.track.lyricists"
+                          ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); $root.trackInfo.show=false;">
                         {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
                 <b>{{init.translation.track.composer}}</b><br>
                     <span class="link"
-                          ng-repeat="composer in trackInfo.track.composers"
-                          ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
+                          ng-repeat="composer in $root.trackInfo.track.composers"
+                          ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); $root.trackInfo.show=false;">
                         {{composer.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
                 <b>{{init.translation.track.bibleVerse}}</b><br>
                     <span class="link"
                           title="{{reference.timestamp | _time}}"
-                          ng-click="play([trackInfo.track], 0, reference.timestamp, reference.name);"
-                          ng-repeat="reference in trackInfo.track.bible">
+                          ng-click="play([$root.trackInfo.track], 0, reference.timestamp, reference.name);"
+                          ng-repeat="reference in $root.trackInfo.track.bible">
                         {{reference.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 

@@ -14,7 +14,8 @@ angular.module('bmmApp')
       scope: {
         'track': '=',
         'type': '@',
-        'trackNumber': '='
+        'trackNumber': '=',
+        'onPlay': '&'
       }
     };
   });
