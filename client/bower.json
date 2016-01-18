@@ -9,7 +9,7 @@
     "angular-touch": "~1.2.14",
     "angular-ui-bootstrap-bower": "0.10.0",
     "angular-ui-sortable": "0.12.8",
-    "angulartics": "~0.20.0",
+    "angulartics": "~1.0.0",
     "angulartics-google-analytics": "~0.1.1",
     "fastclick": "~1.0.1",
     "jplayer": "~2.6.0",
