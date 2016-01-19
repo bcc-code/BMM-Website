@@ -1,7 +1,7 @@
-<div class="bmm-latest" ng-click="onPlay();">
+<div class="bmm-latest" ng-class="{'bmm-latest-video': track.subtype == 'video'}" ng-click="onPlay();">
 	<div class="bmm-latest-bullet">{{trackNumber}}</div>
 	<div>
-		<img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover: type}}"/>
+		<img class="bmm-latest-thumbnail" ng-src="{{track.cover | _cover: track.subtype}}"/>
 	</div>
 	<span ng-switch="track.subtype">
 		<span ng-switch-when="song">
@@ -15,6 +15,17 @@
 		<span ng-switch-when="audiobook">
 			<div class="bmm-latest-title">{{track.title}}</div>
 			<div class="bmm-latest-interprets">{{track.albumTitle}}</div>
+		</span>
+		<span ng-switch-when="video">
+			<div class="bmm-latest-title">
+				{{track.title}}
+			</div>
+			<div class="bmm-latest-interprets">
+				{{track.performers}}	
+			</div>
+			<div class="bmm-latest-about">
+				{{$root.init.translation.track.duration}}: {{track.duration | _time}}
+			</div>
 		</span>
 	</span>
 </div>

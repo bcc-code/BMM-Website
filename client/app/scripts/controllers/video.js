@@ -11,6 +11,10 @@ angular.module('bmmApp')
     _draggable
   ) {
 
+    $scope.latestVideo = [];
+
+    $scope.latestVideoColHeight = 3;
+
     $(window).off('scrollBottom');
 
     $scope.load = true;
@@ -62,25 +66,11 @@ angular.module('bmmApp')
       size: 9,
       'content-type': ['video']
     }).done(function(data) {
-
-      var left = [], right = [], largeOnly = [];
-
-      $.each(data, function(index) {
-
-        if (index<3) {
-          left.push(_track.resolve(this));
-        } else if (index<6) {
-          right.push(_track.resolve(this));
-        } else {
-          largeOnly.push(_track.resolve(this));
-        }
-
-      });
-
       $scope.$apply(function() {
-        $scope.latestVideoLeft = left;
-        $scope.latestVideoRight = right;
-        $scope.latestLargeOnly = largeOnly;
+        $scope.latestVideo = data.map(function(track) {
+          return _track.resolve(track);
+        });
+
         _draggable.makeDraggable($scope);
       });
 
