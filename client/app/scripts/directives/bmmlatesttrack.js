@@ -13,7 +13,6 @@ angular.module('bmmApp')
       restrict: 'E',
       scope: {
         'track': '=',
-        'type': '@',
         'trackNumber': '=',
         'onPlay': '&'
       }
