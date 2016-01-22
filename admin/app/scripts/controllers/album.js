@@ -128,6 +128,11 @@ angular.module('bmmApp')
       delete toApi._meta;
       delete toApi.id;
       delete toApi.show_in_listing;
+
+      $.each(toApi.translations, function() {
+        delete this._meta;
+      });
+
       if (newAlbum) {
         _api.albumPost(toApi).always(function(xhr) {
           if (xhr.status===201) {
