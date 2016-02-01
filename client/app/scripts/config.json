@@ -10,7 +10,7 @@
   "protocol": "https",
   "localsPath": "translations/locals/",
   "keepAlive": 5,
-  "requestTimeout":5,
+  "requestTimeout": false,
   "translationFolder": "translations/",
   "translationsAvailable": [
     "nb",
