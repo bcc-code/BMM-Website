@@ -8,7 +8,7 @@ $hover-color: #84e0ba;
 
 .tabbable > .nav-tabs {
   border: none;
-  margin: 0px;
+  margin: 0;
 }
 .tabbable > .nav-tabs > li {
   margin-right: 2px;
@@ -33,7 +33,7 @@ $hover-color: #84e0ba;
   color: #a6a6a6;
 }
 .tabbable > .nav-tabs > li.open .dropdown-menu, .tabbable > .nav-tabs > li:hover .dropdown-menu {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .tabbable > .nav-tabs > li.active {
   border-bottom: 4px solid $active-color;

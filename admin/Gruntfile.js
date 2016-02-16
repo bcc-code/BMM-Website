@@ -36,11 +36,11 @@ module.exports = function (grunt) {
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/spec/**/*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         port: 9003,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
-        protocol: 'http',
+        protocol: 'https',
         livereload: 35729
       },
       livereload: {
@@ -276,11 +276,6 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '**/*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        },{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common',
           src: '**/*.svg',
           dest: '<%= yeoman.dist %>/images'
         }]

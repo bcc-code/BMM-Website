@@ -31,12 +31,12 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          protocol: 'http',
+          protocol: 'https',
           livereload: true
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/spec/**/*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
@@ -276,11 +276,6 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '**/*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        },{
-          expand: true,
-          cwd: '<%= yeoman.app %>/common',
           src: '**/*.svg',
           dest: '<%= yeoman.dist %>/images'
         }]

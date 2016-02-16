@@ -214,7 +214,6 @@
 }
 
 .bmm-latest-title {
-  max-width: 30em;
   overflow: hidden;
   max-width: 70%;
   white-space: nowrap;
@@ -273,7 +272,7 @@
   border: .2em solid #CCD1CF;
   color: #03D67F;
   border-radius: 3em;
-  background-image: url(../images/common/svg/v3/Icon_Download-small.svg);;
+  background-image: url(../images/common/svg/v3/Icon_Download-small.svg);
   background-size: .5em .8em;
   background-repeat: no-repeat;
   background-position: 1em .75em;
@@ -365,7 +364,6 @@
   .flag {
     width: 1.6em;
     height: 1.1em;
-    border-radius: .2em;
     right: .3em;
     position: absolute;
     top: .3em;
@@ -419,18 +417,6 @@
 .bmm-hover:hover {
   cursor: pointer;
   opacity: 1;
-}
-
-.bmm-kilden {
-  background-image: url(../images/common/svg/mp3kilden.svg);
-}
-
-.bmm-barnas {
-  background-image: url(../images/common/svg/barnasmp3.svg);
-}
-
-.bmm-instrumental {
-  background-image: url(../images/common/svg/instrumental.svg);
 }
 
 //Video

@@ -242,7 +242,6 @@
   .options {
     position: relative;
     float: right;
-    width: 2em;
     height: 1.9em;
     width: .7em;
     margin: 1.5em 1em 0 0;
@@ -425,7 +424,6 @@
       .repeat {
         opacity: .8;
         position: absolute;
-        repeat: no-repeat;
         cursor: pointer;
         width: 1.7em;
         height: 1.5em;
@@ -484,7 +482,6 @@
       .shuffle {
         opacity: .8;
         position: absolute;
-        repeat: no-repeat;
         cursor: pointer;
         width: 1.5em;
         height: 1.5em;
@@ -502,7 +499,6 @@
       .videoFirst {
         opacity: .8;
         position: absolute;
-        repeat: no-repeat;
         cursor: pointer;
         width: 1.7em;
         height: 1.22em;
