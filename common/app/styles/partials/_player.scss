@@ -179,20 +179,6 @@
             width: 5em;
             float: right;
           }
-          .videoToggle:hover {
-            opacity: 1;
-          }
-          .videoToggle {
-            cursor: pointer;
-            float: right;
-            width: 1.8em;
-            height: 1.35em;
-            margin: .2em .4em .2em 0;
-            opacity: .6;
-            background-image: url(../images/common/svg/video.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
         }
       }
     }
@@ -201,7 +187,6 @@
   .about:hover {
     width: auto;
     div {
-      text-overflow: none;
       overflow: visible;
     }
   }
@@ -240,98 +225,24 @@
     }
   }
   .options {
-    position: relative;
     float: right;
-    height: 1.9em;
-    width: .7em;
     margin: 1.5em 1em 0 0;
-    background: none;
-    text-align: left;
-    .optionsToggl {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(../images/common/svg/v3/Player_Options.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .optionsToggl:hover {
-      background-image: url(../images/common/svg/v3/Player_Options_Hover.svg);
-    }
     .arrow {
-      position: absolute;
-      width: .5em;
-      height: .5em;
       background: #FFF;
       top: auto;
       margin-top: auto;
       bottom: 100%;
       margin-bottom: .25em;
       right: .15em;
-      -webkit-transform: rotate(45deg);
-      -ms-transform:rotate(45deg);
-      transform:rotate(45deg);
-      border-radius: .2em;
       z-index: 6;
     }
     ul {
-      background: $colorPopup;
       bottom: 100%;
       top: auto;
       margin-top: auto;
       margin-bottom: .5em;
-      right: -.5em;
-      position: absolute;
-      border: .1em solid $colorBorders;
-      border-radius: .3em;
-      color: #000;
-      li {
-        cursor: pointer;
-        height: 2.3em;
-        padding: .5em 0;
-        border-bottom: .1em solid $colorBorders;
-        white-space: nowrap;
-        a {
-          width: 100%;
-          height: 100%;
-          color: #000;
-          display: inline-block;
-        }
-        .icon {
-          display: inline-block;
-          background-size: contain;
-          background-repeat: no-repeat;
-          height: 1.5em;
-          width: 1.5em;
-          margin: 0 .4em 0 .6em
-        }
-        .icon.share { background-image: url('../images/common/svg/v3/Icon_Options_Share.svg'); }
-        .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
-        .icon.download { background-image: url('../images/common/svg/v3/Icon_Options-Download.svg'); }
-        .icon.album { background-image: url('../images/common/svg/v3/Icon_Options-Album.svg'); }
-        .icon.pocast { background-image: url('../images/common/svg/v3/Icon_Options-Podcast.svg'); }
-        .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
-        span {
-          font-size: .9em;
-          bottom: .4em;
-          position: relative;
-          margin-right: .8em;
-        }
-      }
-      li:hover {
-        background-color: $colorPopupHover;
-      }
-      li:first-child {
-        border-top-left-radius: .3em;
-        border-top-right-radius: .3em;
-      }
-      li:last-child {
-        border-bottom-left-radius: .3em;
-        border-bottom-right-radius: .3em;
-        border-bottom: none;
+      li span {
+        bottom: .4em;
       }
     }
   }

@@ -57,98 +57,10 @@
   }
 
   .options {
-    position: relative;
     float: right;
-    height: 1.9em;
-    width: .7em;
-    margin: .8em 0 0 .5em;
-    background: none;
-    text-align: left;
-    .optionsToggl {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(../images/common/svg/v3/Lists_Options.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .optionsToggl:hover {
-      background-image: url(../images/common/svg/v3/Lists_Options_Hover.svg);
-    }
-    .arrow {
-      position: absolute;
-      width: .5em;
-      height: .5em;
-      background: #ECECEC;
-      top: 100%;
-      margin-top: .25em;
-      right: .15em;
-      -webkit-transform: rotate(45deg);
-      -ms-transform:rotate(45deg);
-      transform:rotate(45deg);
-      border-radius: .2em;
-    }
-    ul {
-      background: $colorPopup;
-      top: 100%;
-      margin-top: .5em;
-      right: -.5em;
-      position: absolute;
-      border: .1em solid $colorBorders;
-      border-radius: .3em;
-      color: #000;
-      z-index: 5;
-      li {
-        cursor: pointer;
-        height: 2.3em;
-        padding: .5em 0;
-        border-bottom: .1em solid $colorBorders;
-        white-space: nowrap;
-        a {
-          width: 100%;
-          height: 100%;
-          color: #000;
-          display: inline-block;
-        }
-        .icon {
-          display: inline-block;
-          background-size: contain;
-          background-repeat: no-repeat;
-          height: 1.4em;
-          width: 1.5em;
-          margin: 0 .2em 0 .6em
-        }
-        .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
-        .icon.download { background-image: url('../images/common/svg/v3/Icon_Options-Download.svg'); }
-        .icon.album { background-image: url('../images/common/svg/v3/Icon_Options-Album.svg'); }
-        .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Options-Podcast.svg'); }
-        .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
-        .icon.delete {
-          background-image: url('../images/common/svg/v3/Icon_Delete.svg');
-          background-position: .25em 0;
-        }
-        span {
-          font-size: .9em;
-          bottom: .4em;
-          position: relative;
-          margin-right: .8em;
-        }
-      }
-      li:hover {
-        background-color: $colorPopupHover;
-      }
-      li:first-child {
-        border-top-left-radius: .3em;
-        border-top-right-radius: .3em;
-      }
-      li:last-child {
-        border-bottom-left-radius: .3em;
-        border-bottom-right-radius: .3em;
-        border-bottom: none;
-      }
+    margin-right: 0;
+    ul li span {
+      bottom: .4em;
     }
   }
 
@@ -271,95 +183,33 @@
   width: 2em;
   height: 2.5em;
   margin: 1em .5em 0 .5em;
-  background: none;
-  text-align: left;
   border: .2em solid #CCD1CF;
   border-radius: 50%;
   padding: .7em 1.1em;
   font-size: 1em;
   .optionsToggl {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/common/svg/v3/Icon_Options.svg);
     background-size: .3em 1.3em;
     background-position: center center;
-    background-repeat: no-repeat;
   }
   .optionsToggl:hover {
     background-image: url(../images/common/svg/v3/Icon_Options_Hover.svg);
   }
-  .arrow {
-    position: absolute;
-    width: .5em;
-    height: .5em;
-    background: #ECECEC;
-    top: 100%;
-    margin-top: .25em;
-    right: .15em;
-    -webkit-transform: rotate(45deg);
-    -ms-transform:rotate(45deg);
-    transform:rotate(45deg);
-    border-radius: .2em;
-  }
   ul {
-    background: $colorPopup;
-    top: 100%;
-    margin-top: .5em;
     right: -4.5em;
-    position: absolute;
-    border: .1em solid $colorBorders;
-    border-radius: .3em;
-    color: #000;
     font-size: 1em;
-    z-index: 5;
     li {
-      cursor: pointer;
-      height: 2.3em;
-      padding: .5em 0;
-      border-bottom: .1em solid $colorBorders;
-      white-space: nowrap;
-      a {
-        width: 100%;
-        height: 100%;
-        color: #000;
-        display: inline-block;
-      }
       .icon {
-        display: inline-block;
-        height: 1.5em;
         width: 1.5em;
-        margin: 0 .4em 0 .6em
       }
        .icon.no-flag {
          background-size: contain;
          background-repeat: no-repeat;
        }
-      .icon.share { background-image: url('../images/common/svg/v3/Icon_Options_Share.svg'); }
-      .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
       .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Podcast.svg'); }
-      .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
       span {
-        font-size: .9em;
         bottom: .4em;
-        position: relative;
-        margin-right: .8em;
       }
-    }
-    li:hover {
-      background-color: $colorPopupHover;
-    }
-    li:first-child {
-      border-top-left-radius: .3em;
-      border-top-right-radius: .3em;
-    }
-    li:last-child {
-      border-bottom-left-radius: .3em;
-      border-bottom-right-radius: .3em;
-      border-bottom: none;
     }
   }
 }
