@@ -349,14 +349,25 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          //collapseWhitespace: true, - Had problems when htmlmin removed spaces around usemin-comments (see: https://github.com/yeoman/grunt-usemin/issues/44#issuecomment-16415863)
           collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeCommentsFromCDATA: true
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
+          src: ['*.html', 'views/**/*.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
+      deploy: {
+        options: {
+          collapseWhitespace: true,
+          removeOptionalTags: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
           src: ['*.html', 'views/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
@@ -543,6 +554,9 @@ module.exports = function (grunt) {
 
     // Update all paths in the CSS, JS and HTML files
     'usemin',
+
+    // Finish HTML minification because some usemin-commands need the whitespaces ...
+    'htmlmin:dist',
 
     'clean:tmp'
   ]);
