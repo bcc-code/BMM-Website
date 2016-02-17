@@ -249,6 +249,10 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/views'
         ],
         patterns: {
+          html: [
+            [/ng-src=['"]([^'"]+)['"]/gm, 'All the Angular rules to (img) src'],
+            [/ng-include=['"]{2}([^'"]+)['"]{2}/gm, 'All the Angular rules to ng-include']
+          ],
           // While usemin won't have full support for revved files we have to put all references manually here
           js: [
             [/(bower_components\/[a-zA-Z0-9\/\.]+\.swf)/gm, 'Update the JS to reference our revved swf file'],
@@ -559,7 +563,7 @@ module.exports = function (grunt) {
     'usemin',
 
     // Finish HTML minification because some usemin-commands need the whitespaces ...
-    'htmlmin:dist',
+    'htmlmin:deploy',
 
     'clean:tmp'
   ]);
