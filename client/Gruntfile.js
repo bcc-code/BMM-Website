@@ -28,7 +28,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.{js,json}'],
         tasks: ['newer:jshint:all'],
         options: {
           protocol: 'https',
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['compass:server', 'postcss:server']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -53,7 +53,9 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/**/*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= yeoman.app %>/translations/**/*.json',
+          '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/fallback_images/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -75,10 +77,15 @@ module.exports = function (grunt) {
             '.tmp',
             '<%= yeoman.app %>'
           ],
-          middleware: function (connect, options) {
-            var optBase = (typeof options.base === 'string') ? [options.base] : options.base;
-            return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(
-              optBase.map(function(path){ return connect.static(path); }));
+          // http://danburzo.ro/grunt/chapters/server/
+          middleware: function(connect, options, middlewares) {
+
+            // 1. mod-rewrite behavior
+            var rules = [
+              '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+            ];
+            middlewares.unshift(require('connect-modrewrite')(rules));
+            return middlewares;
           }
         }
       },
@@ -148,6 +155,19 @@ module.exports = function (grunt) {
           cwd: '.tmp/styles',
           src: '**/*.css',
           dest: '<%= yeoman.dist %>/styles'
+        }]
+      },
+      server: {
+        options: {
+          processors: [
+            require('autoprefixer')({browsers: ['last 1 version']})
+          ]
+        },
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles',
+          src: '**/*.css',
+          dest: '.tmp/styles'
         }]
       }
     },
