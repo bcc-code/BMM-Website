@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', '_init', function ($rootScope, $timeout, _api, _track, _album, _init) {
+  .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', function ($rootScope, $timeout, _api, _track, _album) {
 
     var factory = {};
 
@@ -29,14 +29,14 @@ angular.module('bmmLibApp')
               albumRootId: _albumRootId,
               albumParentId: _albumParentId,
               reRender: factory.menu.reRender
-            }
+            };
           } else {
             factory.menu = {
               year: _year,
               albumRootId: _albumRootId,
               albumParentId: false,
               reRender: factory.menu.reRender
-            }
+            };
           }
         } else {
           factory.menu = {
@@ -44,7 +44,7 @@ angular.module('bmmLibApp')
             albumRootId: false,
             albumParentId: false,
             reRender: factory.menu.reRender
-          }
+          };
         }
       }
 
@@ -220,7 +220,7 @@ angular.module('bmmLibApp')
           factory.refresh();
 
         }
-      })
+      });
 
     };
 

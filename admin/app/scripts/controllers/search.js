@@ -16,18 +16,6 @@ angular.module('bmmApp')
 
     var searchFrom = 0, loading=true, end=false, loadAmount=80;
 
-    $(window).on('scrollBottom', function() {
-
-      if (!loading&&!end) {
-
-        $('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
-        loading = true;
-        search(searchFrom);
-
-      }
-
-    });
-
     //Ensure search field has the term
     $scope.$parent.bmm = {};
     $scope.$parent.bmm.term = $routeParams.term;
@@ -173,6 +161,18 @@ angular.module('bmmApp')
       });
 
     };
+
+    $(window).on('scrollBottom', function() {
+
+      if (!loading&&!end) {
+
+        $('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
+        loading = true;
+        search(searchFrom);
+
+      }
+
+    });
 
     search();
 

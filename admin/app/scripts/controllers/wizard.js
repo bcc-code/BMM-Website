@@ -9,11 +9,7 @@ angular.module('bmmApp')
     $timeout,
     _waitings,
     _play,
-    _api,
-    _init,
-    _track,
-    _album,
-    _quickMenu
+    _api
     ) {
 
     $scope.model = {};

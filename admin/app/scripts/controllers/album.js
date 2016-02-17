@@ -71,6 +71,46 @@ angular.module('bmmApp')
       }
     };
 
+    var findAvailableTranslations = function() {
+      $scope.availableLanguages = [];
+      _api.root().done(function(root) {
+        $scope.$apply(function() {
+          $.each(root.languages, function() {
+            var available = this, found=false;
+            $.each($scope.model.translations, function() {
+              if (this.language===available) {
+                found = true;
+              }
+            });
+            if (!found) {
+              $scope.availableLanguages.push(available);
+            }
+          });
+          if (typeof $scope.edited==='undefined') {
+            $scope.switchLanguage($scope.model.original_language);
+          } else {
+            $scope.switchLanguage($scope.edited.language);
+          }
+        });
+      });
+    };
+
+    var findAvailableTags = function() {
+
+      $scope.availableTags = [];
+      $.each(_init.titles.album, function(key) {
+        var available = key, found=false;
+        $.each($scope.model.tags, function() {
+          if (this===available) {
+            found = true;
+          }
+        });
+        if (!found) {
+          $scope.availableTags.push(available);
+        }
+      });
+    };
+
     $scope.refreshModel = function() {
       try {
         $scope.fetchModel().done(function(model) {
@@ -214,30 +254,6 @@ angular.module('bmmApp')
       }
     };
 
-    var findAvailableTranslations = function() {
-      $scope.availableLanguages = [];
-      _api.root().done(function(root) {
-        $scope.$apply(function() {
-          $.each(root.languages, function() {
-            var available = this, found=false;
-            $.each($scope.model.translations, function() {
-              if (this.language===available) {
-                found = true;
-              }
-            });
-            if (!found) {
-              $scope.availableLanguages.push(available);
-            }
-          });
-          if (typeof $scope.edited==='undefined') {
-            $scope.switchLanguage($scope.model.original_language);
-          } else {
-            $scope.switchLanguage($scope.edited.language);
-          }
-        });
-      });
-    };
-
     $scope.addLanguage = function(lang) {
       $scope.model.translations.push({
         is_visible: false,
@@ -331,22 +347,6 @@ angular.module('bmmApp')
         });
       }
     });
-
-    var findAvailableTags = function() {
-
-      $scope.availableTags = [];
-      $.each(_init.titles.album, function(key) {
-        var available = key, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
-        }
-      });
-    };
 
     $scope.addTag = function(tag) {
       $.each($scope.availableTags, function(index) {

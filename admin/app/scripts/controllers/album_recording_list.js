@@ -1,5 +1,7 @@
 'use strict';
 
+/*jshint -W083 */
+
 angular.module('bmmApp')
     .controller('AlbumRecordingListCtrl', function ($scope, $filter, $route, $routeParams, _api, _quickMenu, _play, _init) {
 
@@ -9,7 +11,7 @@ angular.module('bmmApp')
 
         $scope.fetchDocument = function (id, type, isRaw) {
             switch (type) {
-                case "album":
+                case 'album':
                     if (isRaw) {
                         return _api.albumGet(id, {raw: true});
                     } else {
@@ -17,8 +19,9 @@ angular.module('bmmApp')
                             unpublished: 'show'
                         });
                     }
+                    break;
 
-                case "track":
+                case 'track':
                     if (isRaw) {
                         return _api.trackGet(id, {raw: true});
                     } else {
@@ -26,6 +29,7 @@ angular.module('bmmApp')
                             unpublished: 'show'
                         });
                     }
+                    break;
             }
         };
 
@@ -37,7 +41,7 @@ angular.module('bmmApp')
                     (function () {
                         var child = $scope.children[key].raw;
 
-                        if (child.type == "track") {
+                        if (child.type === 'track') {
 
                             var isAudioEnabled = $scope.trackHasAudioEnabled(child);
                             var isVideoEnabled = $scope.trackHasVideoEnabled(child);
@@ -61,11 +65,11 @@ angular.module('bmmApp')
                                             if (translation.media.hasOwnProperty(j)) {
                                                 var media = translation.media[j];
 
-                                                if (media.type == "audio" && media.is_visible != isAudioEnabled) {
+                                                if (media.type === 'audio' && media.is_visible !== isAudioEnabled) {
                                                     somethingHasChanged = true;
                                                     media.is_visible = isAudioEnabled;
                                                 }
-                                                else if (media.type == "video" && media.is_visible != isVideoEnabled) {
+                                                else if (media.type === 'video' && media.is_visible !== isVideoEnabled) {
                                                     somethingHasChanged = true;
                                                     media.is_visible = isVideoEnabled;
                                                 }
@@ -75,13 +79,13 @@ angular.module('bmmApp')
                                         // Updating the titles
                                         var newTranslation = null;
                                         child.translations.some(function (t) {
-                                            if (t.language == translation.language) {
+                                            if (t.language === translation.language) {
                                                 newTranslation = t;
                                                 return true;
                                             }
                                         });
 
-                                        if (newTranslation != null && translation.title != newTranslation.title) {
+                                        if (newTranslation !== null && translation.title !== newTranslation.title) {
                                             somethingHasChanged = true;
                                             translation.title = newTranslation.title;
                                         }
@@ -89,7 +93,7 @@ angular.module('bmmApp')
                                 }
 
                                 // Check if the comments for the track have changed
-                                if (toApi.comment != child.comment) {
+                                if (toApi.comment !== child.comment) {
                                     somethingHasChanged = true;
                                     toApi.comment = child.comment;
                                 }
@@ -113,9 +117,9 @@ angular.module('bmmApp')
                                             }
                                         });
 
-                                        if (found && rel.comment != rel2.comment) {
+                                        if (found && rel.comment !== rel2.comment) {
                                             somethingHasChanged = true;
-                                            rel.comment = rel2.comment
+                                            rel.comment = rel2.comment;
                                         }
                                     }
                                 }
@@ -148,7 +152,7 @@ angular.module('bmmApp')
             var file = null;
             if (bundle.original_translation.media) {
                 bundle.original_translation.media.some(function (media) {
-                    if (media.type == mediaType) {
+                    if (media.type === mediaType) {
                         return media.files.some(function (f) {
                             file = f;
                             return true;
@@ -175,11 +179,11 @@ angular.module('bmmApp')
         };
 
         $scope.trackHasAudio = function (rawTrack) {
-            return $scope.trackHasMedia(rawTrack, "audio");
+            return $scope.trackHasMedia(rawTrack, 'audio');
         };
 
         $scope.trackHasVideo = function (rawTrack) {
-            return $scope.trackHasMedia(rawTrack, "video");
+            return $scope.trackHasMedia(rawTrack, 'video');
         };
 
         $scope.trackHasMedia = function (rawTrack, mediaType) {
@@ -187,7 +191,7 @@ angular.module('bmmApp')
                 return rawTrack.translations.some(function (translation) {
                     if (translation.media) {
                         return translation.media.some(function (media) {
-                            return media.type == mediaType;
+                            return media.type === mediaType;
                         });
                     }
                 });
@@ -195,11 +199,11 @@ angular.module('bmmApp')
         };
 
         $scope.trackHasAudioEnabled = function (rawTrack) {
-            return $scope.trackHasMediaEnabled(rawTrack, "audio");
+            return $scope.trackHasMediaEnabled(rawTrack, 'audio');
         };
 
         $scope.trackHasVideoEnabled = function (rawTrack) {
-            return $scope.trackHasMediaEnabled(rawTrack, "video");
+            return $scope.trackHasMediaEnabled(rawTrack, 'video');
         };
 
         $scope.trackHasMediaEnabled = function (rawTrack, mediaType) {
@@ -209,7 +213,7 @@ angular.module('bmmApp')
                         // Check if media is hidden somewhere and negate the result.
                         // This will return TRUE on languages not having this media. New media is visible by default.
                         return !translation.media.some(function (media) {
-                            if (media.type == mediaType) {
+                            if (media.type === mediaType) {
                                 return !media.is_visible;
                             }
                         });
@@ -219,11 +223,11 @@ angular.module('bmmApp')
         };
 
         $scope.toggleHasAudioEnabled = function(rawTrack) {
-            $scope.toggleHasMediaEnabled(rawTrack, "audio");
+            $scope.toggleHasMediaEnabled(rawTrack, 'audio');
         };
 
         $scope.toggleHasVideoEnabled = function(rawTrack) {
-            $scope.toggleHasMediaEnabled(rawTrack, "video");
+            $scope.toggleHasMediaEnabled(rawTrack, 'video');
         };
 
         $scope.toggleHasMediaEnabled = function(rawTrack, mediaType) {
@@ -233,8 +237,9 @@ angular.module('bmmApp')
                 rawTrack.translations.forEach(function (translation) {
                     if (translation.media) {
                         translation.media.forEach(function (media) {
-                            if (media.type == mediaType)
+                            if (media.type === mediaType) {
                                 media.is_visible = newValue;
+                            }
                         });
                     }
                 });
@@ -242,8 +247,8 @@ angular.module('bmmApp')
         };
 
         $scope.loadModel = function() {
-            var d1 = $scope.fetchDocument($routeParams.id, "album", true);
-            var d2 = $scope.fetchDocument($routeParams.id, "album", false);
+            var d1 = $scope.fetchDocument($routeParams.id, 'album', true);
+            var d2 = $scope.fetchDocument($routeParams.id, 'album', false);
 
             $.when(d1, d2)
                 .done(function (model, translatedModel) {
@@ -251,40 +256,22 @@ angular.module('bmmApp')
                     var list = [];
                     var children = {};
 
-                    var fetchChildren = function (parent) {
-                        parent.children.forEach(function (child) {
-                            list.push($scope.fetchDocument(child.id, child.type, true).done(function (model) {
-                                addDocument(model, true);
-                            }));
-
-                            // If it's a track, there's no need to re-fetch the translated track, as we have it in the album already.
-                            if (child.type != "track") {
-                                list.push($scope.fetchDocument(child.id, child.type, false).done(function (model) {
-                                    addDocument(model, false);
-
-                                    fetchChildren(model);
-                                }));
-                            } else {
-                                addDocument(child, false);
-                            }
-                        });
-                    };
-
                     var addDocument = function (model, isRaw) {
-                        if (typeof children[model.type + model.id] == "undefined")
+                        if (typeof children[model.type + model.id] === 'undefined') {
                             children[model.type + model.id] = {};
+                        }
 
                         if (isRaw) {
                             children[model.type + model.id].raw = model;
 
                             model.translations.some(function (translation) {
-                                if (translation.language == model.original_language) {
+                                if (translation.language === model.original_language) {
                                     children[model.type + model.id].original_translation = translation;
                                     return true;
                                 }
                             });
 
-                            if (model.type == "track") {
+                            if (model.type === 'track') {
                                 children[model.type + model.id].relations = {
                                     bible: [],
                                     composer: [],
@@ -293,9 +280,9 @@ angular.module('bmmApp')
                                     songbook: []
                                 };
                                 model.rel.forEach(function (relation) {
-                                    if (relation.type == "bible") {
+                                    if (relation.type === 'bible') {
                                         relation.translated_book = _init.bible.books[relation.book];
-                                    } else if (relation.type == "songbook") {
+                                    } else if (relation.type === 'songbook') {
                                         if (relation.name === 'herrens_veier') {
                                             relation.name = 'HV';
                                         } else {
@@ -306,8 +293,28 @@ angular.module('bmmApp')
                                     children[model.type + model.id].relations[relation.type].push(relation);
                                 });
                             }
-                        } else
+                        } else {
                             children[model.type + model.id].translated = model;
+                        }
+                    };
+
+                    var fetchChildren = function (parent) {
+                        parent.children.forEach(function (child) {
+                            list.push($scope.fetchDocument(child.id, child.type, true).done(function (model) {
+                                addDocument(model, true);
+                            }));
+
+                            // If it's a track, there's no need to re-fetch the translated track, as we have it in the album already.
+                            if (child.type !== 'track') {
+                                list.push($scope.fetchDocument(child.id, child.type, false).done(function (model) {
+                                    addDocument(model, false);
+
+                                    fetchChildren(model);
+                                }));
+                            } else {
+                                addDocument(child, false);
+                            }
+                        });
                     };
 
                     fetchChildren(translatedModel[0]);

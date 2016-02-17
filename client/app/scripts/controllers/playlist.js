@@ -50,6 +50,92 @@ angular.module('bmmApp')
     $scope.playlist = [];
     $scope.private = false;
 
+    var findPlayingTrack = function() {
+      if ($location.path()===_playlist.getUrl()) {
+
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
+          this.playing = (index === _playlist.index);
+        });
+
+      }
+    };
+
+    var resolveTracks = function(data) {
+
+      var track, cnt=0;
+
+      $scope.$apply(function() {
+
+        $.each(data, function(index) {
+
+          if (this.type==='album') {
+            $scope.albums.push(_album.resolve(this));
+            $scope.albumCount++;
+            cnt++;
+          } else {
+
+            track = _track.resolve(this);
+
+            if ($routeParams.playlist!=='private') {
+              track.order = track.date;
+            } else {
+              track.order = index;
+            }
+
+            if (track.type==='video') {
+              track.video = true;
+            }
+
+            $scope.playlist.push(track);
+
+            if (typeof track.duration!=='undefined'&&
+                $.isNumeric(track.duration)) {
+              $scope.duration+=track.duration;
+            }
+            $scope.tracks++;
+            cnt++;
+
+          }
+
+        });
+
+        $timeout(function() {
+          $('.draggable-playlist').trigger('dragdrop');
+          loading = false;
+          $scope.load = false;
+        });
+
+        findPlayingTrack();
+        if (cnt<loadAmount) { end = true; } else {
+          //If multiple requests is sendt and one request isnt finished, then end is false
+          //A timeout here will make sure that 'end = false' is choosen if any is request isnt finished.
+          $timeout(function() { end = false; }, 500);
+        }
+
+      });
+
+    };
+
+    var save = function() {
+
+      var playlist = [];
+
+      $.each($scope.playlist, function() {
+        playlist.push({
+          id: this.id,
+          language: this.language
+        });
+      });
+
+      _api.userTrackCollectionPut($routeParams.id ,{
+        type: 'track_collection',
+        track_references: playlist,
+        access: [_init.user.username],
+        name: $scope.title
+      });
+
+    };
+
     switch($routeParams.playlist) {
       case 'search':
 
@@ -64,21 +150,6 @@ angular.module('bmmApp')
         $scope.searchResults = true;
         $scope.title = $routeParams.id;
         size = 0;
-
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            search($routeParams.id, size);
-
-          }
-
-        });
 
         var search = function(term, _from) {
           if (typeof from === 'undefined') {
@@ -95,17 +166,22 @@ angular.module('bmmApp')
           });
         };
 
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+
+            loading = true;
+            $scope.$apply(function() {
+              $scope.load = true;
+            });
+
+            search($routeParams.id, size);
+
+          }
+
+        });
+
         search($routeParams.id);
-        var isInt = function(n) {
-          n = parseInt(n);
-          return isFinite(n) && n%1===0;
-        };
-
-        /*if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
-          search('hv '+$routeParams.id);
-          search('mb '+$routeParams.id);
-        }*/
-
         break;
       case 'latest':
 
@@ -358,101 +434,11 @@ angular.module('bmmApp')
         break;
     }
 
-    var resolveTracks = function(data) {
-
-      var track, cnt=0;
-
-      $scope.$apply(function() {
-
-        $.each(data, function(index) {
-
-          if (this.type==='album') {
-            $scope.albums.push(_album.resolve(this));
-            $scope.albumCount++;
-            cnt++;
-          } else {
-
-            track = _track.resolve(this);
-
-            if ($routeParams.playlist!=='private') {
-              track.order = track.date;
-            } else {
-              track.order = index;
-            }
-
-            if (track.type==='video') {
-              track.video = true;
-            }
-
-            $scope.playlist.push(track);
-
-            if (typeof track.duration!=='undefined'&&
-                $.isNumeric(track.duration)) {
-              $scope.duration+=track.duration;
-            }
-            $scope.tracks++;
-            cnt++;
-
-          }
-
-        });
-
-        $timeout(function() {
-          $('.draggable-playlist').trigger('dragdrop');
-          loading = false;
-          $scope.load = false;
-        });
-
-        findPlayingTrack();
-        if (cnt<loadAmount) { end = true; } else {
-          //If multiple requests is sendt and one request isnt finished, then end is false
-          //A timeout here will make sure that 'end = false' is choosen if any is request isnt finished.
-          $timeout(function() { end = false; }, 500);
-        }
-
-      });
-
-    };
-
     $scope.remove = function(index) {
       if (typeof index!=='undefined') {
         $scope.playlist.splice(index,1);
       }
       save();
-    };
-
-    var save = function() {
-
-      var playlist = [];
-
-      $.each($scope.playlist, function() {
-        playlist.push({
-          id: this.id,
-          language: this.language
-        });
-      });
-
-      _api.userTrackCollectionPut($routeParams.id ,{
-        type: 'track_collection',
-        track_references: playlist,
-        access: [_init.user.username],
-        name: $scope.title
-      });
-
-    };
-
-    var findPlayingTrack = function() {
-      if ($location.path()===_playlist.getUrl()) {
-
-        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
-          if (index===_playlist.index) {
-            this.playing = true;
-          } else {
-            this.playing = false;
-          }
-        });
-
-      }
     };
 
     //When new track is set

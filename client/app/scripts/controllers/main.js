@@ -57,7 +57,7 @@ angular.module('bmmApp')
           if(model.contentLanguages) {
             _api.setContentLanguages(model.contentLanguages);
             $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
-          };
+          }
 
           if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
             $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
@@ -83,12 +83,12 @@ angular.module('bmmApp')
         $scope.setContentLangConditional();
       };
 
-      $scope.removeContentLanguage = function(index, $event) {
+      $scope.removeContentLanguage = function(index) {
         $scope.init.contentLanguages.splice(index, 1);
         $scope.setLanguagesChanged();
       };
 
-      $scope.updateContentLanguage = function(lang, language, $event) {
+      $scope.updateContentLanguage = function(lang, language) {
         $scope.init.contentLanguages[$scope.init.contentLanguages.indexOf(language)] = lang;
         $scope.setLanguagesChanged();
       };
@@ -119,17 +119,17 @@ angular.module('bmmApp')
             _init.appendLanguage(lang);
             return;
           }
-        };
+        }
       };
 
       $scope.setContentLangConditional = function() {
         if($scope.contentLangsChanged) {
           $scope.setContentLanguages($scope.init.contentLanguages);
           $scope.contentLangsChanged = false;
-        };
+        }
       };
 
-      $scope.setContentLanguages = function(langs) {
+      $scope.setContentLanguages = function() {
         //The first language is the 'primary' content language
         $scope.saveSession();
         $route.reload();

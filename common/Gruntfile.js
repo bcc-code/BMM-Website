@@ -31,10 +31,6 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/**/*'],
         tasks: ['updateCommonFiles']
       },
-      jsTest: {
-        files: ['test/spec/**/*.js'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -97,14 +93,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
 
   grunt.registerTask('updateCommonFiles', [
     'clean:dist',

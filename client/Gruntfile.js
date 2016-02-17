@@ -130,34 +130,27 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      tmp: '.tmp'
     },
 
-    // Add vendor prefixed styles
-    autoprefixer: {
+    // Add vendor prefixed styles and minify the CSS
+    postcss: {
       options: {
-        browsers: ['last 1 version']
+        processors: [
+          require('autoprefixer')({browsers: ['last 1 version']}),
+          require('cssnano')()
+        ]
       },
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          cwd: '.tmp/styles',
+          src: '**/*.css',
+          dest: '<%= yeoman.dist %>/styles'
         }]
       }
     },
-
-    // Automatically inject Bower components into the app
-    'bower-install': {
-      app: {
-        html: '<%= yeoman.app %>/index.html',
-        ignorePath: '<%= yeoman.app %>/'
-      }
-    },
-
-
-
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -178,11 +171,7 @@ module.exports = function (grunt) {
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
-      },
+      dist: {},
       server: {
         options: {
           debugInfo: true
@@ -195,10 +184,13 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
+            '<%= yeoman.dist %>/bower_components/**/*.swf',
+            '<%= yeoman.dist %>/scripts/{,*/}*.{js,map,json}',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/styles/fonts/*'
+            '<%= yeoman.dist %>/fallback_images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= yeoman.dist %>/fonts/*.*',
+            '<%= yeoman.dist %>/views/**/*.html'
           ]
         }
       }
@@ -210,7 +202,15 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
-        dest: '<%= yeoman.dist %>'
+        flow: {
+          html: {
+            steps: {
+              css: [ 'concat' ],
+              js: [ 'concat' ]
+            }
+          }
+        },
+        dest: '.tmp'
       }
     },
 
@@ -218,8 +218,26 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/fonts',
+          '<%= yeoman.dist %>/fallback_images',
+          '<%= yeoman.dist %>/images',
+          '<%= yeoman.dist %>/scripts',
+          '<%= yeoman.dist %>/views'
+        ],
+        patterns: {
+          // While usemin won't have full support for revved files we have to put all references manually here
+          js: [
+            [/(bower_components\/[a-zA-Z0-9\/\.]+\.swf)/gm, 'Update the JS to reference our revved swf file'],
+            [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images'],
+            [/(views\/[a-zA-Z0-9\/\.]+\.html)/gm, 'Update the JS to reference our revved views'],
+            [/([a-zA-Z0-9\/\.]+\.js.map)/gm, 'Update the JS to reference our revved js-maps'],
+            [/(config\.json)/gm, 'Replacing reference to our config file']
+          ]
+        }
       }
     },
 
@@ -234,51 +252,77 @@ module.exports = function (grunt) {
             '!**/flags/*'
           ],
           dest: '<%= yeoman.dist %>/images'
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/fallback_images',
+          src: '**/*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/fallback_images'
+        }]
+      },
+      tmp: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/images',
+          src: '**/*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
     svgmin: {
-      dist: {
-        options: {
-          plugins: [
-            //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
-            { removeUnknownsAndDefaults: false },
-            { convertPathData: false },/*
-             { cleanupAttrs: false },
-             { cleanupEnableBackground: false },
-             { cleanupIDs: false },
-             { cleanupNumericValues: false },
-             { collapseGroups: false },
-             { convertColors: false },
-             { convertShapeToPath: false },
-             { convertStyleToAttrs: false },*/
-            { convertTransform: false },/*
-             { mergePaths: false },
-             { moveElemsAttrsToGroup: false },/*
-             { moveGroupAttrsToElems: false },
-             { removeComments: false },
-             { removeDoctype: false },
-             { removeEditorsNSData: false },
-             { removeEmptyAttrs: false },
-             { removeEmptyContainers: false },
-             { removeEmptyText: false },
-             { removeHiddenElems: false },
-             { removeMetadata: false },
-             { removeNonInheritableGroupAttrs: false },
-             { removeRasterImages: false },
-             { removeTitle: false },
-             { removeUnkownsAndDefaults: false },
-             { removeUnusedNS: false },*/
-            { removeUselessStrokeAndFill: false }/*
-             { removeViewBox: false },
-             { removeXMLProcInst: false },
-             { sortAttrs: false },
-             { transformsWithOnePath: false }*/
+      options: {
+        plugins: [
+          //See full list of plugins @ https://github.com/svg/svgo/tree/master/plugins
+          { removeUnknownsAndDefaults: false },
+          { convertPathData: false },/*
+           { cleanupAttrs: false },
+           { cleanupEnableBackground: false },
+           { cleanupIDs: false },
+           { cleanupNumericValues: false },
+           { collapseGroups: false },
+           { convertColors: false },
+           { convertShapeToPath: false },
+           { convertStyleToAttrs: false },*/
+          { convertTransform: false },/*
+           { mergePaths: false },
+           { moveElemsAttrsToGroup: false },/*
+           { moveGroupAttrsToElems: false },
+           { removeComments: false },
+           { removeDoctype: false },
+           { removeEditorsNSData: false },
+           { removeEmptyAttrs: false },
+           { removeEmptyContainers: false },
+           { removeEmptyText: false },
+           { removeHiddenElems: false },
+           { removeMetadata: false },
+           { removeNonInheritableGroupAttrs: false },
+           { removeRasterImages: false },
+           { removeTitle: false },
+           { removeUnkownsAndDefaults: false },
+           { removeUnusedNS: false },*/
+          { removeUselessStrokeAndFill: false }/*
+           { removeViewBox: false },
+           { removeXMLProcInst: false },
+           { sortAttrs: false },
+           { transformsWithOnePath: false }*/
         ]
-        },
+      },
+      dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
+          src: '**/*.svg',
+          dest: '<%= yeoman.dist %>/images'
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/fallback_images',
+          src: '**/*.svg',
+          dest: '<%= yeoman.dist %>/fallback_images'
+        }]
+      },
+      tmp: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/images',
           src: '**/*.svg',
           dest: '<%= yeoman.dist %>/images'
         }]
@@ -294,7 +338,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>',
+          cwd: '<%= yeoman.app %>',
           src: ['*.html', 'views/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
@@ -307,17 +351,10 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
+          cwd: '.tmp/scripts',
           src: '*.js',
-          dest: '.tmp/concat/scripts'
+          dest: '.tmp/scripts'
         }]
-      }
-    },
-
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
       }
     },
 
@@ -330,19 +367,9 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/**/*.html',
-            'bower_components/**/*',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
+            'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
+            '*.{ico,png,txt}'
           ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
         }, {
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
@@ -354,31 +381,16 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/bower_components/sass-bootstrap/dist',
           dest: '<%= yeoman.dist %>',
           src: ['fonts/*']
-        }, 
-        //This is to copy the raw css files generated by
-        //compass, so we can have the sourcemap working
-        //properly.
-        {
-          expand: true,
-          cwd: '.tmp',
-          src: 'styles/**/*',
-          dest: '<%= yeoman.dist %>'
         }]
       },
 
-      vendor: {
+      translation: {
         files: [
         {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
           dest: '<%= yeoman.dist %>/translations',
-          src: '{,*/}*'
-        }, {
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/fallback_images',
-          dest: '<%= yeoman.dist %>/fallback_images',
           src: '{,*/}*'
         }]
       }
@@ -392,17 +404,30 @@ module.exports = function (grunt) {
       test: [
         'compass'
       ],
-      dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
+      compileAndMinify: [
+        'compileCssAndJs',
+
+        // Minify and copy image files
+        'imagemin:dist',
+        'svgmin:dist',
+
+        // Minify and copy Index and template files
+        'htmlmin:dist'
+      ],
+      minify: [
+        // Minify and copy the already concatenated (S)CSS and JS files
+        'postcss',
+        'uglify',
+
+        // Minify and copy image files
+        'imagemin:tmp',
+        'svgmin:tmp'
       ]
     },
 
     concat: {
       options: {
-        sourceMap: true,
-        sourceMapStyle: 'link'
+        sourceMap: true
       }
     },
 
@@ -414,10 +439,24 @@ module.exports = function (grunt) {
         //with the browser in order to debug.
         //
         //Activating this also increases build-time noticeably
-        sourceMapIncludeSources: false,
+        sourceMapIncludeSources: true,
         sourceMapIn: function(uglifySource) {
           return uglifySource + '.map';
         }
+      },
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/scripts/main.js': [ '.tmp/scripts/main.js' ],
+          '<%= yeoman.dist %>/scripts/vendor.js': [ '.tmp/scripts/vendor.js' ]
+        }
+      }
+    },
+
+    wiredep: {
+      task: {
+        src: [
+          'app/*.html'
+        ]
       }
     },
 
@@ -438,47 +477,62 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'bower-install',
       'concurrent:server',
-      'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
   });
 
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
-  });
-
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
-    'autoprefixer',
     'connect:test',
     'karma'
   ]);
 
+  grunt.registerTask('compileCssAndJs', [
+    // Generate configuration for 'concat'
+    'useminPrepare',
+
+    // Concatenate all JS and vendor-CSS files
+    'concat',
+
+    // Compile SCSS to CSS
+    'compass:dist',
+
+    // Must run before minification of JS files (see: https://docs.angularjs.org/guide/di#implicit-annotation)
+    'ngAnnotate',
+
+    // Minify and copy all the sprites
+    'concurrent:minify'
+  ]);
+
+  /**
+   * # Ensure all dependencies are in place
+   * # Concat and compile (S)CSS and JS
+   * #
+   */
   grunt.registerTask('build', [
     'clean:dist',
-    'bower-install',
-    'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
-    'concat',
-    'ngAnnotate',
+
     'copy:dist',
-    'cdnify',
-    'cssmin',
-    'uglify',
+    'copy:translation',
+
+    // Generates concatenated JS, CSS files and sprites
+    'concurrent:compileAndMinify',
+
+    // Prefix file-names by a hash
     'rev',
+
+    // Update all paths in the CSS, JS and HTML files
     'usemin',
-    'htmlmin',
-    'copy:vendor'
+
+    'clean:tmp'
   ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
+    'wiredep',
     'test',
     'build'
   ]);

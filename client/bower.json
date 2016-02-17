@@ -1,6 +1,6 @@
 {
-  "name": "bmm",
-  "version": "1.0.0",
+  "name": "bmm-client",
+  "version": "0.0.0",
   "dependencies": {
     "angular": "1.4.5",
     "angular-resource": "1.2.6",

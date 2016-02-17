@@ -1,6 +1,6 @@
 {
-  "name": "bmmLib",
-  "version": "2.1.0",
+  "name": "bmm-common",
+  "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
     "angular-mocks": "1.2.6",

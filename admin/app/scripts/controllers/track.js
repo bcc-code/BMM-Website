@@ -34,6 +34,12 @@ angular.module('bmmApp')
       'video'
     ];
 
+    var suggestedTags = [
+      'child-favorites',
+      'instrumental',
+      'mp3-kilden'
+    ];
+
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
@@ -95,6 +101,45 @@ angular.module('bmmApp')
       }
     };
 
+    var findAvailableTranslations = function() {
+      $scope.availableLanguages = [];
+      _api.root().done(function(root) {
+        $scope.$apply(function() {
+          $.each(root.languages, function() {
+            var available = this, found=false;
+            $.each($scope.model.translations, function() {
+              if (this.language===available) {
+                found = true;
+              }
+            });
+            if (!found) {
+              $scope.availableLanguages.push(available);
+            }
+          });
+          if (typeof $scope.edited==='undefined') {
+            $scope.switchLanguage($scope.model.original_language);
+          } else {
+            $scope.switchLanguage($scope.edited.language);
+          }
+        });
+      });
+    };
+
+    var findAvailableTags = function() {
+      $scope.availableTags = [];
+      $.each(suggestedTags, function() {
+        var available = this, found=false;
+        $.each($scope.model.tags, function() {
+          if (this===available) {
+            found = true;
+          }
+        });
+        if (!found) {
+          $scope.availableTags.push(available);
+        }
+      });
+    };
+
     $scope.refreshModel = function() {
       var promise;
       try {
@@ -123,7 +168,7 @@ angular.module('bmmApp')
           findAvailableTags();
         });
       }
-      return promise
+      return promise;
     };
     $scope.refreshModel();
 
@@ -180,6 +225,36 @@ angular.module('bmmApp')
 
     $scope.playLinked = function(track) {
       _play.setPlay([track], 0);
+    };
+
+    var getWaitings = function() {
+      _api.fileUploadedGuessTracksGet().done(function(waitings) {
+
+        waitings = _waitings.resolve(waitings);
+
+        $scope.$apply(function() {
+
+          $scope.waitings = [];
+          $.each(waitings.ready, function() {
+
+            $.each(this.tracks, function() {
+
+              $.each(this.files, function() {
+
+                //When track with connection to current track is found
+                if (this.track.id===$scope.model.id) {
+                  $scope.waitings.push(this.track);
+                }
+
+              });
+
+            });
+
+          });
+
+        });
+
+      });
     };
 
     $scope.save = function(options) {
@@ -248,30 +323,6 @@ angular.module('bmmApp')
     $scope.deleteFromArray = function(array, index) {
       $.each(array, function() {
         array.splice(index,1);
-      });
-    };
-
-    var findAvailableTranslations = function() {
-      $scope.availableLanguages = [];
-      _api.root().done(function(root) {
-        $scope.$apply(function() {
-          $.each(root.languages, function() {
-            var available = this, found=false;
-            $.each($scope.model.translations, function() {
-              if (this.language===available) {
-                found = true;
-              }
-            });
-            if (!found) {
-              $scope.availableLanguages.push(available);
-            }
-          });
-          if (typeof $scope.edited==='undefined') {
-            $scope.switchLanguage($scope.model.original_language);
-          } else {
-            $scope.switchLanguage($scope.edited.language);
-          }
-        });
       });
     };
 
@@ -371,27 +422,6 @@ angular.module('bmmApp')
       }
     });
 
-    var suggestedTags = [
-      'child-favorites',
-      'instrumental',
-      'mp3-kilden'
-    ];
-
-    var findAvailableTags = function() {
-      $scope.availableTags = [];
-      $.each(suggestedTags, function() {
-        var available = this, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
-        }
-      });
-    };
-
     $scope.addTag = function(tag) {
       $.each($scope.availableTags, function(index) {
         if (this===tag) {
@@ -482,35 +512,6 @@ angular.module('bmmApp')
       $scope.parentAlbumCurrent = album.title;
     };
 
-    var getWaitings = function() {
-      _api.fileUploadedGuessTracksGet().done(function(waitings) {
-
-        waitings = _waitings.resolve(waitings);
-
-        $scope.$apply(function() {
-
-          $scope.waitings = [];
-          $.each(waitings.ready, function() {
-
-            $.each(this.tracks, function() {
-
-              $.each(this.files, function() {
-
-                //When track with connection to current track is found
-                if (this.track.id===$scope.model.id) {
-                  $scope.waitings.push(this.track);
-                }
-
-              });
-
-            });
-
-          });
-
-        });
-
-      });
-    };
     getWaitings();
 
     $scope.linkWaiting = function(link, id, lang, index) {

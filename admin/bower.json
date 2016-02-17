@@ -1,6 +1,6 @@
 {
-  "name": "bmm",
-  "version": "1.0.0",
+  "name": "bmm-admin",
+  "version": "0.0.0",
   "dependencies": {
     "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js",
     "angular": "1.4.5",

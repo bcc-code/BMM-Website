@@ -181,12 +181,12 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li ng-repeat="lang in init.root.languages | filter : exceptSelected"
-                                            ng-click="updateContentLanguage(lang, language, $event)">
+                                            ng-click="updateContentLanguage(lang, language)">
                                             <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="removeContentLanguage($index, $event)"><span class="glyphicon glyphicon-remove"></span></a>
+                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="removeContentLanguage($index)"><span class="glyphicon glyphicon-remove"></span></a>
                                 <a class="btn_sort sort_handle"><span class="glyphicon glyphicon-sort"></span></a>
                             </li>
                             </ul>
