@@ -128,7 +128,7 @@
                             <span>{{init.translation.options.download}} (1)</span>
                         </a>
                     </li>
-                    <li ng-click="share.link=player.formatted.path; share.show=true">
+                    <li ng-click="$root.share.link=player.formatted.path; $root.share.show=true">
                         <div class="icon no-flag share"></div>
                         <span>{{init.translation.options.share}}</span>
                     </li>
@@ -136,7 +136,7 @@
                         <div class="icon album"></div>
                         <span>{{init.translation.options.goToAlbum}}</span></li>
 
-                    <li ng-click="trackInfo.track=player.formatted; trackInfo.show=true;">
+                    <li ng-click="$root.trackInfo.track=player.formatted; $root.trackInfo.show=true;">
                         <div class="icon details"></div>
                         <span>{{init.translation.track.details}}</span>
                     </li>
