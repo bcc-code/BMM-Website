@@ -2,7 +2,7 @@
 <div class="popup" ng-if="trackToPlaylist.id">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="trackToPlaylist.id=false">
+            <div id="popup-track-to-playlist" class="container" always click-outside="trackToPlaylist.id=false">
 
                 <div class="exit" ng-click="trackToPlaylist.id=false"></div>
 
@@ -26,7 +26,7 @@
 <div class="popup" ng-if="tracksToPlaylist.length>0">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="tracksToPlaylist.length=0">
+            <div id="popup-tracks-to-playlist" class="container" always click-outside="tracksToPlaylist.length=0">
 
                 <div class="exit" ng-click="tracksToPlaylist.length=0"></div>
 
@@ -49,7 +49,7 @@
 <div class="popup" ng-if="newPodcast.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="newPodcast.show=false">
+            <div id="popup-new-podcast" class="container" always click-outside="newPodcast.show=false">
 
                 <div class="exit" ng-click="newPodcast.show=false"></div>
 
@@ -109,7 +109,7 @@
 <div class="popup" ng-if="$root.share.show">
     <div class="container">
         <div class="verticalCenter">
-            <div id="root-share" class="container" always click-outside="$root.share.show=false">
+            <div id="popup-share" class="container" always click-outside="$root.share.show=false">
 
                 <div class="exit" ng-click="$root.share.show=false"></div>
 
@@ -130,7 +130,7 @@
 <div class="popup" ng-if="pushMessage.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" click-outside="pushMessage.show=false">
+            <div id="popup-push-message" class="container" click-outside="pushMessage.show=false">
 
                 <div class="exit" ng-click="pushMessage.show=false"></div>
 
@@ -149,7 +149,7 @@
 <div class="popup" ng-if="settings.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" id="languageSettings" click-outside="closeLanguageSettingsPopup()">
+            <div id="popup-settings" class="container" click-outside="closeLanguageSettingsPopup()">
 
                 <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="closeLanguageSettingsPopup()"></div>
 
@@ -205,7 +205,7 @@
 <div class="popup" ng-if="$root.trackInfo.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" click-outside="$root.trackInfo.show=false">
+            <div id="popup-track-info" class="container" click-outside="$root.trackInfo.show=false">
 
                 <div class="exit" ng-click="$root.trackInfo.show=false"></div>
 
