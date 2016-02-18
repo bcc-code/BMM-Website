@@ -199,13 +199,6 @@
     right: -4.5em;
     font-size: 1em;
     li {
-      .icon {
-        width: 1.5em;
-      }
-       .icon.no-flag {
-         background-size: contain;
-         background-repeat: no-repeat;
-       }
       .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Podcast.svg'); }
       span {
         bottom: .4em;

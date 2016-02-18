@@ -227,6 +227,12 @@
   .options {
     float: right;
     margin: 1.5em 1em 0 0;
+    .optionsToggl {
+      background-image: url(../images/common/svg/v3/Player_Options.svg);
+    }
+    .optionsToggl:hover {
+      background-image: url(../images/common/svg/v3/Player_Options_Hover.svg);
+    }
     .arrow {
       background: #FFF;
       top: auto;
