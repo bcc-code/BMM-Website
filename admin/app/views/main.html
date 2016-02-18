@@ -33,7 +33,7 @@
 
     <div class="loadscreen" ng-show="api_queue.status == api_queue.STATUS_MODIFYING">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
-        <div style="margin-top: 2em; position: relative; margin: 3em auto; width: 50px">
+        <div style="position: relative; margin: 3em auto; width: 50px">
             <img ng-src="fallback_images/gif/load.gif">
         </div>
     </div>
@@ -42,7 +42,7 @@
     <header>
         <div class="page-positioning">
             <div class="wrapper">
-                <a ng-href="" class="logo"></a>
+                <a ng-href="/" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term);">
                         <input ng-model="bmm.term"
