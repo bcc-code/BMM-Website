@@ -254,7 +254,7 @@ module.exports = function (grunt) {
           ],
           // While usemin won't have full support for revved files we have to put all references manually here
           js: [
-            [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images'],
+            [/((?:fallback_)?images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images'],
             [/(views\/[a-zA-Z0-9\/\.]+\.html)/gm, 'Update the JS to reference our revved views'],
             [/([a-zA-Z0-9\/\.]+\.js.map)/gm, 'Update the JS to reference our revved js-maps'],
             [/(config\.json)/gm, 'Replacing reference to our config file']
