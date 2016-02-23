@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, _api_queue) {
+  .factory('_api', function ($timeout, _api_queue, $analytics) {
   
   var factory = {},
       credentials = {},
@@ -111,7 +111,41 @@ angular.module('bmmLibApp')
 
     errorHandler = errorHandler || factory.exceptionHandler;
 
+    var time = Date.now();
+
     var promise = $.ajax(xhrOptions);
+
+    promise.done(function(data, textStatus, XMLHttpRequest) {
+      $analytics.userTimings({
+        timingCategory: 'api',
+        timingVar: XMLHttpRequest.status + " - " + this.url,
+        timingValue: Date.now() - time
+      });
+    });
+    promise.fail(function (XMLHttpRequest) {
+      if (XMLHttpRequest.readyState == 4) {
+        $analytics.userTimings({
+          timingCategory: 'api',
+          timingVar: XMLHttpRequest.status + " - " + this.url,
+          timingValue: Date.now() - time
+        });
+        // HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
+      }
+      else if (XMLHttpRequest.readyState == 0) {
+        ga('send', 'exception', {
+          'exDescription': "_api.sendXHR: " + XMLHttpRequest.status + " - " + XMLHttpRequest.url,
+          'exFatal': false
+        });
+        // Network error (i.e. connection refused, access denied due to CORS, etc.)
+      }
+      else {
+        ga('send', 'exception', {
+          'exDescription': "_api.sendXHR: " + XMLHttpRequest.url,
+          'exFatal': false
+        });
+      }
+    });
+
     //If errorHandler == false or anything but a function, no errorHandler should be used.
     if(typeof errorHandler === 'function') {
       promise.fail(errorHandler);
