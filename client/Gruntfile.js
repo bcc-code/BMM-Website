@@ -490,7 +490,7 @@ module.exports = function (grunt) {
     wiredep: {
       task: {
         src: [
-          'app/*.html'
+          'app/index.html'
         ]
       }
     },
