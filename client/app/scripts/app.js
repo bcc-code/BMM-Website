@@ -23,7 +23,9 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider,$locationProvider, $analyticsProvider) {
+  .config(['$routeProvider','$locationProvider', '$analyticsProvider', '$compileProvider', function ($routeProvider, $locationProvider, $analyticsProvider, $compileProvider) {
+
+    $compileProvider.debugInfoEnabled(false);
 
     $analyticsProvider.virtualPageviews(true);
 

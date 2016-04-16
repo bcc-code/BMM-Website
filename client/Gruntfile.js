@@ -216,12 +216,35 @@ module.exports = function (grunt) {
       }
     },
 
+    preprocess: {
+      options: {
+        inline: true
+      },
+      dist: {
+        options: {
+          context: {
+            NODE_ENV: 'production'
+          }
+        },
+        src: '.tmp/index.html'
+      },
+      dev: {
+        options: {
+          context: {
+            NODE_ENV: 'development'
+          }
+        },
+        src: '.tmp/index.html'
+      }
+    },
+
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '.tmp/index.html',
       options: {
+        root: '<%= yeoman.app %>',
         flow: {
           html: {
             steps: {
@@ -236,7 +259,7 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/**/*.html'],
+      html: ['<%= yeoman.dist %>/**/*.html', '.tmp/index.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
       options: {
@@ -257,7 +280,7 @@ module.exports = function (grunt) {
           js: [
             [/(bower_components\/[a-zA-Z0-9\/\.]+\.swf)/gm, 'Update the JS to reference our revved swf file'],
             [/((?:fallback_)?images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images'],
-            [/(views\/[a-zA-Z0-9\/\.]+\.html)/gm, 'Update the JS to reference our revved views'],
+            [/(views\/[a-zA-Z0-9\/\.\-]+\.html)/gm, 'Update the JS to reference our revved views'],
             [/([a-zA-Z0-9\/\.]+\.js.map)/gm, 'Update the JS to reference our revved js-maps'],
             [/(config\.json)/gm, 'Replacing reference to our config file']
           ]
@@ -362,7 +385,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/**/*.html'],
+          src: ['views/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -416,6 +439,20 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/bower_components/sass-bootstrap/dist',
           dest: '<%= yeoman.dist %>',
           src: ['fonts/*']
+        }]
+      },
+
+      index_tmp: {
+        files: [{
+          src: '<%= yeoman.app %>/index.html',
+          dest: '.tmp/index.html'
+        }]
+      },
+
+      index_dist: {
+        files: [{
+          src: '.tmp/index.html',
+          dest: '<%= yeoman.dist %>/index.html'
         }]
       },
 
@@ -480,18 +517,14 @@ module.exports = function (grunt) {
         }
       },
       dist: {
-        files: {
-          '<%= yeoman.dist %>/scripts/main.js': [ '.tmp/scripts/main.js' ],
-          '<%= yeoman.dist %>/scripts/vendor.js': [ '.tmp/scripts/vendor.js' ]
-        }
-      }
-    },
-
-    wiredep: {
-      task: {
-        src: [
-          'app/index.html'
-        ]
+        files: [{
+          expand: true,
+          'cwd': '.tmp/scripts',
+          'src': '*.js',
+          'dest': '<%= yeoman.dist %>/scripts'
+          /*'<%= yeoman.dist %>/scripts/main.js': [ '.tmp/scripts/main.js' ],
+          '<%= yeoman.dist %>/scripts/vendor.js': [ '.tmp/scripts/vendor.js' ]*/
+        }]
       }
     },
 
@@ -512,6 +545,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'copy:index_tmp',
+      'preprocess:dist',
       'concurrent:server',
       'connect:livereload',
       'watch'
@@ -548,10 +583,14 @@ module.exports = function (grunt) {
    * #
    */
   grunt.registerTask('build', [
+    'clean:tmp',
     'clean:dist',
 
     'copy:dist',
     'copy:translation',
+
+    'copy:index_tmp',
+    'preprocess:dist',
 
     // Generates concatenated JS, CSS files and sprites
     'concurrent:compileAndMinify',
@@ -562,6 +601,8 @@ module.exports = function (grunt) {
     // Update all paths in the CSS, JS and HTML files
     'usemin',
 
+    'copy:index_dist',
+
     // Finish HTML minification because some usemin-commands need the whitespaces ...
     'htmlmin:deploy',
 
@@ -570,7 +611,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'wiredep',
     'test',
     'build'
   ]);

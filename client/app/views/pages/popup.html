@@ -62,7 +62,7 @@
                     <b>{{init.translation.options.chooseLanguage}}</b>
                     <div class="dropdown"
                          style="float: none; margin: 0; display: inline-block">
-                        <a class="dropdown-toggle" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
+                        <a class="dropdown-toggle" data-toggle="dropdown" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
                             <div class="flags-{{init.podcastLanguage}}"></div>
                             {{init.podcastLanguage | _languageCode}}</a>
                         <ul class="dropdown-menu" style="margin-left: 0!important">
@@ -153,11 +153,11 @@
 
                 <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="closeLanguageSettingsPopup()"></div>
 
-                 <tabset>
-                    <tab heading="{{init.translation.options.websiteLanguage}}">
+                 <uib-tabset class="tabbable">
+                    <uib-tab heading="{{init.translation.options.websiteLanguage}}">
                         <div style="width: 100%;float: left; margin-top: 1em;">
                             <div class="dropdown">
-                                <a class="dropdown-toggle">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
                                     <div class="flags-{{init.websiteLanguage}}"></div>
                                     {{init.websiteLanguage | _languageCode}}</a>
                                 <ul class="dropdown-menu">
@@ -168,14 +168,14 @@
                                 </ul>
                             </div>
                         </div>
-                    </tab>
-                    <tab heading="{{init.translation.options.contentLanguages}}">
+                    </uib-tab>
+                    <uib-tab heading="{{init.translation.options.contentLanguages}}">
                         <div style="width: 100%;">
                             <b class="choose-language">{{init.translation.options.chooseLanguages}}</b>
                             <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
                               <li ng-repeat="language in init.contentLanguages" class="language_element">
                                 <div style="width:70%" class="dropdown">
-                                    <a class="dropdown-toggle">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
                                         <div class="flags-{{language}}"></div>
                                         {{language | _languageCode}}
                                     </a>
@@ -194,8 +194,8 @@
                                 {{init.translation.options.addLanguage}}
                             </div>
                         </div>
-                    </tab>
-                </tabset>
+                    </uib-tab>
+                </uib-tabset>
             </div>
         </div>
     </div>
