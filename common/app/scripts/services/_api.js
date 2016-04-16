@@ -293,7 +293,6 @@ angular.module('bmmLibApp')
     return _api_queue.addRequest({
       method: 'GET',
       url: serverUrl,
-      cache: false,
       //No xhrFields, override default
       xhrFields: {}
     });
