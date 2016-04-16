@@ -5,6 +5,7 @@ angular.module('bmmApp')
     $scope,
     $timeout,
     $window,
+    $rootScope,
     _api,
     _track,
     _album,
@@ -24,15 +25,11 @@ angular.module('bmmApp')
       size: 9,
       'content-type': ['speech']
     }).done(function(data) {
-
-      $scope.$apply(function() {
-        $scope.latestSpeeches = data.map(function(trackData) {
-          return _track.resolve(trackData);
-        });
-
-        _draggable.makeDraggable($scope);
+      $scope.latestSpeeches = data.map(function(trackData) {
+        return _track.resolve(trackData);
       });
 
+      _draggable.makeDraggable($scope);
     });
 
     //LATEST VIDEO
@@ -50,10 +47,8 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestVideos = videos;
-        _draggable.makeDraggable($scope);
-      });
+      $scope.latestVideos = videos;
+      _draggable.makeDraggable($scope);
 
     });
 
@@ -62,14 +57,11 @@ angular.module('bmmApp')
       size: 12,
       'content-type': ['song']
     }).done(function(data) {
-      $scope.$apply(function() {
-
-        $scope.latestMusic = data.map(function(trackData) {
-          return _track.resolve(trackData);
-        });
-
-        _draggable.makeDraggable($scope);
+      $scope.latestMusic = data.map(function(trackData) {
+        return _track.resolve(trackData);
       });
+
+      _draggable.makeDraggable($scope);
     });
 
     //LATEST ALBUMS
@@ -86,11 +78,9 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = albums;
-        $timeout(function() {
-          $(window).trigger('resize');
-        });
+      $scope.latestAlbums = albums;
+      $timeout(function() {
+        $(window).trigger('resize');
       });
 
     });

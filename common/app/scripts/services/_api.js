@@ -9,11 +9,14 @@ angular.module('bmmLibApp')
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/', //Fallback
       requestTimeout,
+      responseCache = {},
       contentLanguages = [];
 
   //This variable indicates whether the "unknown" language ("zxx", used for non-lingual content)
   //should be appended with every request by default.
   factory.appendUnknownLanguage = false; //Fallback to false
+
+  factory.cachingEnabled = false;
 
   factory.serverUrl = function(url) {
     serverUrl = url;
@@ -96,8 +99,39 @@ angular.module('bmmLibApp')
 
   factory.addToQueue = function(customXhrOptions) {
     var xhrOptions = factory.prepareRequest(customXhrOptions);
-    return _api_queue.addRequest(xhrOptions);
+
+    if(factory.shouldBeCached(xhrOptions) && responseCache[getFullUrl(xhrOptions)]) {
+      return $.Deferred().resolve(responseCache[getFullUrl(xhrOptions)]).promise();
+    }
+
+    return _api_queue.addRequest(xhrOptions).done(function(data) {
+      if(factory.shouldBeCached(xhrOptions)) {
+        responseCache[getFullUrl(xhrOptions)] = data;
+      }
+
+      setTimeout(function() {
+        $rootScope.safeApply();
+      });
+    });
   };
+
+  factory.shouldBeCached = function(xhrOptions) {
+    if(!factory.cachingEnabled) return false;
+
+    //Don't cache playlists because the user often interacts with it and it may change.
+    if(getFullUrl(xhrOptions).match(/track_collection/)) return false;
+
+    if(xhrOptions.method !== 'GET') return false;
+
+    return true;
+  };
+
+  function getFullUrl(xhrOptions) {
+    if(!xhrOptions.data) return xhrOptions.url;
+
+    var params = typeof xhrOptions.data === 'string' ? xhrOptions.data : $.param(xhrOptions.data)
+    return xhrOptions.url + params;
+  }
 
   /**
    * Send an XHR request with some special defined defaults and requirements.

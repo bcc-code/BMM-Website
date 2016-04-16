@@ -23,10 +23,8 @@ angular.module('bmmApp')
     ).done(function(track) {
 
       var _track_ = _track.resolve(track);
-      $scope.$apply(function() {
-        _play.setPlay([_track_], 0);
-        $location.path('/album/'+track.parent_id);
-      });
+      _play.setPlay([_track_], 0);
+      $location.path('/album/'+track.parent_id);
 
     });
 

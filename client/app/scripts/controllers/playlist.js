@@ -64,7 +64,7 @@ angular.module('bmmApp')
 
       var track, cnt=0;
 
-      $scope.$apply(function() {
+      $rootScope.safeApply(function() {
 
         $.each(data, function(index) {
 
@@ -171,7 +171,7 @@ angular.module('bmmApp')
           if (!loading&&!end) {
 
             loading = true;
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
@@ -193,7 +193,7 @@ angular.module('bmmApp')
           if (!loading&&!end) {
 
             loading = true;
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
@@ -266,7 +266,7 @@ angular.module('bmmApp')
           if (!loading&&!end) {
             loading = true;
 
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
@@ -310,7 +310,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
@@ -354,7 +354,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
@@ -398,7 +398,7 @@ angular.module('bmmApp')
 
           if (!loading&&!end) {
             loading = true;
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.load = true;
             });
 

@@ -1,45 +1,45 @@
-<h2 class="speech">{{init.translation.page.welcome.latestSpeeches}}</h2>
+<h2 class="speech"><span ng-bind="init.translation.page.welcome.latestSpeeches"></span></h2>
 
 <bmm-latest-list tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 <bmm-latest-list tracks="latestSpeeches" start-index="latestSpeechesColHeight" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 <bmm-latest-list class="largeOnly" tracks="latestSpeeches" start-index="latestSpeechesColHeight*2" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
-<h2  class="video">{{init.translation.page.welcome.latestVideos}}</h2>
+<h2  class="video"><span ng-bind="init.translation.page.welcome.latestVideos"></span></h2>
 
 <div slider-video>
 	<div class="bmm-videos">
-		<div title="{{video.combinedTitle}}" ng-repeat="video in latestVideos">
+		<div title="{{::video.combinedTitle}}" ng-repeat="video in ::latestVideos">
 			<div ng-click="play(latestVideos, $index);"
 				 style="background-image: url({{video.cover | _cover:'video'}});"
 			>
 				<div class="bmm-slider-video-play"></div>
 			</div>
 			<p>
-				<a class="draggable bmm-move" id="{{video.id}}" language="{{video.language}}" ng-click="play(latestVideos, $index);">{{video.title}}</a>
+				<a class="draggable bmm-move" id="{{::video.id}}" language="{{::video.language}}" ng-click="play(latestVideos, $index);"><span ng-bind="::video.title"></span></a>
 			</p>
 		</div>
 	</div>
 </div>
 
-<h2  class="audio">{{init.translation.page.welcome.latestMusic}}</h2>
+<h2  class="audio"><span ng-bind="init.translation.page.welcome.latestMusic"></span></h2>
 
 <bmm-latest-list tracks="latestMusic" list-length="latestMusicColHeight" ></bmm-latest-list>
 <bmm-latest-list tracks="latestMusic" start-index="latestMusicColHeight" list-length="latestMusicColHeight" ></bmm-latest-list>
 <bmm-latest-list class="largeOnly" tracks="latestMusic" start-index="latestMusicColHeight*2" list-length="latestMusicColHeight" ></bmm-latest-list>
 
-<h2 class="album">{{init.translation.page.welcome.latestAlbums}}</h2>
+<h2 class="album"><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 
 <div slider-album>
 	<ul>
 		<li ng-click="go('/album/'+album.id);"
-			ng-repeat="album in latestAlbums"
-			title="{{album.title}}"
+			ng-repeat="album in ::latestAlbums"
+			title="{{::album.title}}"
 			style="
-				background-image: url({{album.cover}});
+				background-image: url({{::album.cover}});
 				background-size: contain"
 			class="bmm-hover">
 			<div class="title">
-				{{album.title}}
+				{{::album.title}}
 			</div>
 		</li>
 	</ul>

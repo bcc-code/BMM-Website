@@ -70,7 +70,7 @@ angular.module('bmmApp')
 
     var resolveAlbums = function() {
       $scope.playlist = $scope.playlists[0].tracks;
-      $scope.$apply(function() {
+      $rootScope.safeApply(function() {
         $scope.playlists = $filter('orderBy')($scope.playlists, ('date'));
         $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
         $scope.load = false;
@@ -110,14 +110,8 @@ angular.module('bmmApp')
 
       if (mainAlbum.parent_id!==null) {
         _api.albumGet(mainAlbum.parent_id).done(function(album) {
-
-          $scope.$apply(function() {
-
-            $scope.parentAlbum = album;
-            $scope.parentAlbum.found = true;
-
-          });
-
+          $scope.parentAlbum = album;
+          $scope.parentAlbum.found = true;
         });
       }
 
@@ -155,7 +149,7 @@ angular.module('bmmApp')
               track.video = true;
             }
 
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.playlists[0].tracks.push(track);
               $scope.playlists[0].duration+=track.duration;
               $scope.playlists[0].count++;
@@ -170,18 +164,16 @@ angular.module('bmmApp')
 
               var l = $scope.playlists.length, formattedAlbum = _album.resolve(album);
 
-              $scope.$apply(function() {
-                $scope.playlists[l] = {
-                  title: formattedAlbum.title,
-                  description: formattedAlbum.description,
-                  id: formattedAlbum.id,
-                  cover: formattedAlbum.cover,
-                  date: album.published_at,
-                  duration: 0,
-                  tracks: [],
-                  count: 0
-                };
-              });
+              $scope.playlists[l] = {
+                title: formattedAlbum.title,
+                description: formattedAlbum.description,
+                id: formattedAlbum.id,
+                cover: formattedAlbum.cover,
+                date: album.published_at,
+                duration: 0,
+                tracks: [],
+                count: 0
+              };
 
               $.each(album.children, function() {
 
@@ -210,7 +202,7 @@ angular.module('bmmApp')
                     track.video = true;
                   }
 
-                  $scope.$apply(function() {
+                  $rootScope.safeApply(function() {
                     $scope.playlists[l].tracks.push(track);
                     $scope.playlists[l].duration+=track.duration;
                     $scope.playlists[l].count++;

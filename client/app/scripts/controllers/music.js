@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('MusicCtrl', function (
     $scope,
     $window,
+    $rootScope,
     _api,
     _track,
     _album,
@@ -26,7 +27,7 @@ angular.module('bmmApp')
       if (!loading&&!end) {
 
         //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
-        $scope.$apply(function() {
+        $rootScope.safeApply(function() {
           $scope.load = true;
         });
 
@@ -49,9 +50,7 @@ angular.module('bmmApp')
 
           });
 
-          $scope.$apply(function() {
-            $scope.load = false;
-          });
+          $scope.load = false;
 
           loading = false;
           //$('.bmm-loading').remove();
@@ -68,9 +67,7 @@ angular.module('bmmApp')
     $scope.$watch('contributor', function(name) {
       if (name!==''&&typeof name!=='undefined') {
         _api.contributorSuggesterCompletionGet(name).done(function(data) {
-          $scope.$apply(function() {
-            $scope.contributors = data;
-          });
+          $scope.contributors = data;
         });
       } else {
         $scope.contributors = $scope.randomArtists;
@@ -83,13 +80,11 @@ angular.module('bmmApp')
       'content-type': ['song'],
       'media-type': ['audio']
     }).done(function(data) {
-      $scope.$apply(function() {
-        $scope.latestMusic = data.map(function(trackData) {
-          return _track.resolve(trackData);
-        });
-        
-        _draggable.makeDraggable($scope);
+      $scope.latestMusic = data.map(function(trackData) {
+        return _track.resolve(trackData);
       });
+      
+      _draggable.makeDraggable($scope);
     });
 
     //LATEST AUDIO ALBUMS
@@ -108,10 +103,8 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = albums;
-        $scope.load = false;
-      });
+      $scope.latestAlbums = albums;
+      $scope.load = false;
 
       loading=false;
 
@@ -160,7 +153,6 @@ angular.module('bmmApp')
         }
 
         $scope.randomArtists.push(data);
-        $scope.$apply();
         $scope.contributors = $scope.randomArtists;
       });
       if (index===3) {

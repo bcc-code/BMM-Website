@@ -4,6 +4,7 @@ angular.module('bmmApp')
   .controller('VideoCtrl', function (
     $scope,
     $window,
+    $rootScope,
     _api,
     _track,
     _album,
@@ -28,7 +29,7 @@ angular.module('bmmApp')
         //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
 
         loading = true;
-        $scope.$apply(function() {
+        $rootScope.safeApply(function() {
           $scope.load = true;
         });
 
@@ -47,10 +48,8 @@ angular.module('bmmApp')
 
           });
 
-          $scope.$apply(function() {
-            _draggable.makeDraggable($scope);
-            $scope.load = false;
-          });
+          _draggable.makeDraggable($scope);
+          $scope.load = false;
 
           //$('.bmm-loading').remove();
           loading = false;
@@ -66,14 +65,11 @@ angular.module('bmmApp')
       size: 9,
       'content-type': ['video']
     }).done(function(data) {
-      $scope.$apply(function() {
-        $scope.latestVideo = data.map(function(track) {
-          return _track.resolve(track);
-        });
-
-        _draggable.makeDraggable($scope);
+      $scope.latestVideo = data.map(function(track) {
+        return _track.resolve(track);
       });
 
+      _draggable.makeDraggable($scope);
     });
 
     //ALBUMS
@@ -92,10 +88,8 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = album;
-        _draggable.makeDraggable($scope);
-      });
+      $scope.latestAlbums = album;
+      _draggable.makeDraggable($scope);
 
       loading = false;
       $scope.load = false;

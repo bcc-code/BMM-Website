@@ -34,7 +34,6 @@ angular.module('bmmApp')
       });
 
       $scope.roleList.reverse();
-      $scope.$apply();
 
     });
 
@@ -99,8 +98,6 @@ angular.module('bmmApp')
                 });
 
               });
-
-              $scope.$apply();
               _draggable.makeDraggable($scope);
 
             });
@@ -156,7 +153,6 @@ angular.module('bmmApp')
 
               });
 
-              $scope.$apply();
               _draggable.makeDraggable($scope);
 
             });

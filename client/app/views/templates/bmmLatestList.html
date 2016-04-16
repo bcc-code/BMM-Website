@@ -1,10 +1,10 @@
 <ul ng-controller="BmmLatestListCtrl" ng-class="{'small': size == 'small'}" class="bmm-latest-list">
-	<li ng-repeat="track in tracks | limitTo:listLength:startIndex"
+	<li ng-repeat="track in tracks | limitTo:listLength:startIndex track by track.id"
 		class="draggable latest"
-		id="{{track.id}}"
-		language="{{track.language}}"
-		title="{{track.albumTitle}}">
+		id="{{::track.id}}"
+		language="{{::track.language}}"
+		title="{{::track.albumTitle}}">
 
-		<bmm-latest-track on-play="play($index)" track-number="getIndex($index) + 1" track="track" type="{{trackType}}"></bmm-latest-track>
+		<bmm-latest-track on-play="play($index)" track-number="getIndex($index) + 1" track="track" type="{{::trackType}}"></bmm-latest-track>
 	</li>
 </ul>

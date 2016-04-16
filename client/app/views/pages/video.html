@@ -1,16 +1,16 @@
 <div>
-    <h2>{{init.translation.page.videos.latestVideos}}</h2>
+    <h2><span ng-bind="init.translation.page.videos.latestVideos"></span></h2>
     <bmm-latest-list tracks="latestVideo" list-length="latestVideoColHeight" ></bmm-latest-list>
     <bmm-latest-list tracks="latestVideo" start-index="latestVideoColHeight" list-length="latestVideoColHeight" ></bmm-latest-list>
     <bmm-latest-list tracks="latestVideo" class="largeOnly" start-index="latestVideoColHeight*2" list-length="latestVideoColHeight" ></bmm-latest-list>
 
-<h2>{{init.translation.page.welcome.latestAlbums}}</h2>
+<h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 
 <div>
-	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
-        <img class="album-latest-image" ng-src="{{album.cover}}" width="9em" height="9.3em"/>
-		<div class="album-latest-title">{{album.title}}</div>
-        <div class="flag flags-{{album.raw.language}}"></div>
+	<div title="{{::album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
+        <img class="album-latest-image" ng-src="{{::album.cover}}" width="9em" height="9.3em"/>
+		<div class="album-latest-title"><span ng-bind="::album.title"></span></div>
+        <div class="flag flags-{{::album.raw.language}}"></div>
 	</div>
 </div>
 

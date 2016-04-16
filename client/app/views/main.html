@@ -23,11 +23,11 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches">{{init.translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music">{{init.translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video">{{init.translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks">{{init.translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive">{{init.translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches"><span ng-bind="init.translation.menu.main.speeches"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music"><span ng-bind="init.translation.menu.main.music"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video"><span ng-bind="init.translation.menu.main.video"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks"><span ng-bind="init.translation.menu.main.audiobooks"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive"><span ng-bind="init.translation.menu.main.archive"></span></a></li>
                     <li class="facebook-icon"><a ng-href="https://facebook.com/bmmbrunstad" target="_blank"></a></li>
                     <li class="twitter-icon"><a ng-href="https://twitter.com/bmmbrunstad" target="_blank"></a></li>
                     <li class="instagram-icon"><a ng-href="https://instagram.com/bmmbrunstad" target="_blank"></a></li>
@@ -42,8 +42,8 @@
         <div class="page-positioning" style="padding: 0 1em;">
             <ul>
                 <li ng-repeat="message in pushMessages">
-                    <span>{{message.title}}</span>
-                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;">{{init.translation.general.readMore}}</button>
+                    <span ng-bind="message.title"></span>
+                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;"><span ng-bind="init.translation.general.readMore"></span></button>
                     <div class="exit" ng-click="removePushMessage($index)"></div>
                 </li>
             </ul>
@@ -87,7 +87,7 @@
                  ng-show="player.video&&!player.showVideo"></div>
 
             <div class="scroller">
-                <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | _languageCode}} </span>
+                <span><b><span ng-bind="player.title"></span></b> {{player.subtitle}} {{player.extraTitle | _languageCode}} </span>
             </div>
 
             <div class="about">
@@ -95,9 +95,9 @@
                      style="cursor:pointer"
                      title="{{init.translation.notify.goToAlbum}}: {{player.formatted.albumTitle}}"
                      ng-src="{{player.cover | _cover:'song'}}"/>
-                <h3>{{player.title}}</h3>
-                <div>{{player.subtitle}}</div>
-                <div>{{player.language | _languageCode}}</div>
+                <h3><span ng-bind="player.title"></span></h3>
+                <div><span ng-bind="player.subtitle"></span></div>
+                <div><span ng-bind="player.language | _languageCode"></span></div>
             </div>
 
             <div class="options"
@@ -115,7 +115,7 @@
 
                     <li ng-click="trackToPlaylist.id=player.id; trackToPlaylist.language=player.language">
                         <div class="icon playlist"></div>
-                        <span>{{init.translation.options.addToPlaylist}}</span>
+                        <span ng-bind="init.translation.options.addToPlaylist"></span>
                     </li>
                     <li ng-click="downloads=!downloads"
                         ng-show="!player.formatted.directDownload.exist&&!init.isIOS">
@@ -130,32 +130,32 @@
                     </li>
                     <li ng-click="$root.share.link=player.formatted.path; $root.share.show=true">
                         <div class="icon no-flag share"></div>
-                        <span>{{init.translation.options.share}}</span>
+                        <span ng-bind="init.translation.options.share"></span>
                     </li>
                     <li ng-click="go('/album/'+player.raw._meta.root_parent_id)">
                         <div class="icon album"></div>
-                        <span>{{init.translation.options.goToAlbum}}</span></li>
+                        <span ng-bind="init.translation.options.goToAlbum"></span></li>
 
                     <li ng-click="$root.trackInfo.track=player.formatted; $root.trackInfo.show=true;">
                         <div class="icon details"></div>
-                        <span>{{init.translation.track.details}}</span>
+                        <span ng-bind="init.translation.track.details"></span>
                     </li>
                     <li ng-click="flags=!flags">
                         <div class="icon settings"></div>
-                        <span>{{init.translation.options.changeLanguage}}</span>
+                        <span ng-bind="init.translation.options.changeLanguage"></span>
                     </li>
                 </ul>
 
                 <ul ng-show="playerOptions&&flags">
                     <li ng-repeat="language in player.raw.languages"
                         ng-click="player.changeLanguage(language);">
-                        <div class="flags-{{language}}"
+                        <div class="flags-{{::language}}"
                              style="width: 1.6em; height: 1.1em; margin-left: .6em; display: inline-block;">
                         </div>
-                        <span>{{language | _languageCode}}</span>
+                        <span ng-bind="language | _languageCode"></span>
                     </li>
                     <li ng-click="flags=!flags"><div class="icon go-back"></div>
-                        <span>{{init.translation.options.goBack}}</span>
+                        <span ng-bind="init.translation.options.goBack"></span>
                     </li>
                 </ul>
 
@@ -163,23 +163,23 @@
                     <li ng-repeat="source in player.source.audios">
                         <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.name}}</span>
+                            <span ng-bind="source.name"></span>
                         </a>
                     </li>
                     <li ng-repeat="source in player.source.videos">
                         <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.name}}</span>
+                            <span ng-bind="source.name"></span>
                         </a>
                     </li>
                     <li ng-repeat="source in player.source.unknowns">
                         <a download ng-href="{{source.downloadLink}}">
                             <div class="icon download"></div>
-                            <span>{{source.name}}</span>
+                            <span ng-bind="source.name"></span>
                         </a>
                     </li>
                     <li ng-click="downloads=!downloads"><div class="icon go-back"></div>
-                        <span>{{init.translation.options.goBack}}</span>
+                        <span ng-bind="init.translation.options.goBack"></span>
                     </li>
                 </ul>
 
@@ -202,8 +202,8 @@
 
             <div class="mainControllers">
 
-                <div class="current">{{player.currentTime | _time}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div>
+                <div class="current"><span ng-bind="player.currentTime | _time"></span></div>
+                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTime) | _time"></span></div>
 
                 <div class="centered">
                     <div class="shuffle"
@@ -227,8 +227,8 @@
 
                 </div>
 
-                <!--div class="current">{{player.currentTime | _time}}</div>
-                <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div-->
+                <!--div class="current"><span ng-bind="player.currentTime | _time"></span></div>
+                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTime) | _time"></span></div-->
                 <div class="slider"><div class="target"></div></div>
 
             </div>
@@ -262,27 +262,27 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches" ng-click="visible=false">{{init.translation.menu.main.speeches}}</a></li>
-                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music" ng-click="visible=false">{{init.translation.menu.main.music}}</a></li>
-                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video" ng-click="visible=false">{{init.translation.menu.main.video}}</a></li>
-                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks" ng-click="visible=false">{{init.translation.menu.main.audiobooks}}</a></li>
-                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive" ng-click="visible=false">{{init.translation.menu.main.archive}}</a></li>
+                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches" ng-click="visible=false"><span ng-bind="init.translation.menu.main.speeches"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/music')}" ng-href="music" ng-click="visible=false"><span ng-bind="init.translation.menu.main.music"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/video')}" ng-href="video" ng-click="visible=false"><span ng-bind="init.translation.menu.main.video"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks" ng-click="visible=false"><span ng-bind="init.translation.menu.main.audiobooks"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive" ng-click="visible=false"><span ng-bind="init.translation.menu.main.archive"></span></a></li>
                 </ul>
             </div>
 
             <!--PLAYLIST ETC. -->
-            <h2>{{init.translation.menu.secondary.playlists}}</h2>
+            <h2><span ng-bind="init.translation.menu.secondary.playlists"></span></h2>
 
             <ul class="playlists-generated">
-                <li><a ng-href="playlist/latest" ng-click="visible=false">{{init.translation.menu.secondary.latestTracks}}</a></li>
-                <li><a ng-href="playlist/mp3kilden" ng-click="visible=false">{{init.translation.page.music.mp3Source}}</a></li>
-                <li><a ng-href="playlist/barnasmp3" ng-click="visible=false">{{init.translation.page.music.childrensMp3Source}}</a></li>
-                <li><a ng-href="playlist/instrumental" ng-click="visible=false">{{init.translation.page.music.instrumental}}</a></li>
-                <li><span ng-click="getCurrent()" ng-click="visible=false">{{init.translation.menu.secondary.current}}</span></li>
+                <li><a ng-href="playlist/latest" ng-click="visible=false"><span ng-bind="init.translation.menu.secondary.latestTracks"></span></a></li>
+                <li><a ng-href="playlist/mp3kilden" ng-click="visible=false"><span ng-bind="init.translation.page.music.mp3Source"></span></a></li>
+                <li><a ng-href="playlist/barnasmp3" ng-click="visible=false"><span ng-bind="init.translation.page.music.childrensMp3Source"></span></a></li>
+                <li><a ng-href="playlist/instrumental" ng-click="visible=false"><span ng-bind="init.translation.page.music.instrumental"></span></a></li>
+                <li><span ng-click="getCurrent()" ng-click="visible=false"><span ng-bind="init.translation.menu.secondary.current"></span></span></li>
             </ul>
 
             <button class="playlists-add" ng-click="bmmPlaylistAdd=!bmmPlaylistAdd">
-                <span>{{init.translation.menu.secondary.newPlaylist}}</span>
+                <span ng-bind="init.translation.menu.secondary.newPlaylist"></span>
             </button>
 
             <ul class="playlists-private">
@@ -299,18 +299,18 @@
                 </li>
                 <li class="bmm-playlist-private"
                     ng-class="{'edited': collection.edit}"
-                    id="{{collection.id}}"
+                    id="{{::collection.id}}"
                     ng-repeat="collection in init.user.track_collections">
                     <a ng-hide="collection.edit == true"
                        ng-click="$parent.visible=false"
-                       ng-href="playlist/private/{{collection.id}}">
-                        {{collection.name}}</a>
-                    <form ng-show="collection.edit == true">
+                       ng-href="playlist/private/{{::collection.id}}">
+                        <span ng-bind="collection.name"></span></a>
+                    <form ng-if="collection.edit == true">
                         <input type="text" ng-model="collection.newName" ng-init="collection.newName=collection.name"/>
                         <input type="submit" value="" ng-click="renamePlaylist(collection);">
                         <button ng-click="removePLaylist(collection.id);"></button>
                     </form>
-                    <div ng-hide="collection.edit == true"
+                    <div ng-if="!collection.edit"
                          class="edit"
                          ng-click="collection.edit = true"></div>
                 </li>
@@ -318,7 +318,7 @@
 
 
             <button class="settings"
-                    ng-click="settings.show=true">{{init.translation.general.settings}}</button>
+                    ng-click="settings.show=true"><span ng-bind="init.translation.general.settings"></span></button>
 
             <a class="settings suport" href="mailto:project-bmm@derhub.de">
                 {{init.translation.general.suport}}</a>
