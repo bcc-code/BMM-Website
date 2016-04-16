@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, _api_queue, $analytics) {
+  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics) {
   
   var factory = {},
       credentials = {},
@@ -101,18 +101,20 @@ angular.module('bmmLibApp')
     var xhrOptions = factory.prepareRequest(customXhrOptions);
 
     if(factory.shouldBeCached(xhrOptions) && responseCache[getFullUrl(xhrOptions)]) {
-      return $.Deferred().resolve(responseCache[getFullUrl(xhrOptions)]).promise();
+      return responseCache[getFullUrl(xhrOptions)];
     }
 
-    return _api_queue.addRequest(xhrOptions).done(function(data) {
-      if(factory.shouldBeCached(xhrOptions)) {
-        responseCache[getFullUrl(xhrOptions)] = data;
-      }
-
+    var promise = _api_queue.addRequest(xhrOptions).done(function(data) {
       setTimeout(function() {
         $rootScope.safeApply();
       });
     });
+
+    if(factory.shouldBeCached(xhrOptions)) {
+      responseCache[getFullUrl(xhrOptions)] = promise;
+    }
+
+    return promise;
   };
 
   factory.shouldBeCached = function(xhrOptions) {
@@ -290,7 +292,7 @@ angular.module('bmmLibApp')
   /** Get the basic information about the API **/
   factory.root = function() {
 
-    return _api_queue.addRequest({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl,
       //No xhrFields, override default

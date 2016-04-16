@@ -23,8 +23,6 @@ angular.module('bmmApp')
       $rootScope.init = $scope.init = _init;
       $scope.now = function() { return new Date(); };
 
-      _api.cachingEnabled = true;
-
       $scope.pushMessages = [];
 
       $scope.removePushMessage = function(index) {
