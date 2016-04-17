@@ -24,7 +24,7 @@
                 <li ng-if="track.directDownload.exist&&!$root.init.isIOS">
                     <div class="icon download"></div>
                     <a download ng-href="{{::track.directDownload.file}}">
-                        <span><span ng-bind="$root.init.translation.options.download"></span> (1)</span>
+                        <span>{{$root.init.translation.options.download}} (1)</span>
                     </a>
                 </li>
                 <li ng-click="$root.share.link=track.path; $root.share.show=true">
