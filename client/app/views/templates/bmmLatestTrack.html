@@ -6,10 +6,10 @@
 	<span ng-switch="::track.subtype">
 		<span ng-switch-when="song">
 			<div class="bmm-latest-title"><span ng-bind="::track.title"></span></div>
-			<div class="bmm-latest-interprets"><span ng-bind="::track.performers"></span></div>
+			<div class="bmm-latest-interprets"><span ng-if="track.performers"><span ng-bind="::track.performers"></span> - </span><span ng-bind="::track.albumTitle"></span></div>
 		</span>
 		<span ng-switch-when="speech">
-			<div class="bmm-latest-title"><span ng-bind="::track.performers"></span></div>
+			<div class="bmm-latest-title"><span ng-bind="::track.performers"></span><span ng-if="track.title && track.title != track.performers"> - <span ng-bind="::track.title"></span></span></div>
 			<div class="bmm-latest-interprets"><span ng-bind="::track.albumTitle"></span></div>
 		</span>
 		<span ng-switch-when="audiobook">
