@@ -546,7 +546,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'copy:index_tmp',
-      'preprocess:dev',
+      'preprocess:dist',
       'concurrent:server',
       'connect:livereload',
       'watch'
