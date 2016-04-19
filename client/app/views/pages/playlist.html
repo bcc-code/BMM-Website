@@ -77,7 +77,7 @@
       </tr>
     </tbody>
 		<tbody ui-sortable="sortableOptions" ng-model="playlist">
-      <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter} track by track.id"
+      <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
 				<td ng-class="{'sort': private}">
                     <div ng-show="private" class="sort_handle"></div>

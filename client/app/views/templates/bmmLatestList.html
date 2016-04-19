@@ -1,5 +1,5 @@
 <ul ng-controller="BmmLatestListCtrl" ng-class="{'small': size == 'small'}" class="bmm-latest-list">
-	<li ng-repeat="track in tracks | limitTo:listLength:startIndex track by track.id"
+	<li ng-repeat="track in tracks | limitTo:listLength:startIndex"
 		class="draggable latest"
 		id="{{::track.id}}"
 		language="{{::track.language}}"
