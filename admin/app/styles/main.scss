@@ -78,3 +78,104 @@ body {
     color: white;
   }
 }
+
+
+/**
+ * Album-Recording-List
+ */
+#album-select-list {
+  max-width: 100%;
+
+  .row .track > div:first-child {
+    border-left: none;
+  }
+
+  > .foldbox {
+    overflow: scroll;
+    border: none;
+    margin: 1.5em 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+  }
+
+  td.spacer {
+    display: none;
+  }
+
+  th,
+  td {
+    vertical-align: top;
+    border: 1px solid #ddd;
+    padding: .75em;
+  }
+
+  th label {
+    height: 20px;
+    width: 20px;
+    border-radius: .25em;
+    background-color: #f0f0f0;
+  }
+
+  td.album {
+    border: none;
+    padding: 0;
+  }
+
+  td.enabled-false {
+    color: rgba(0, 0, 0, .5);
+    font-style: italic;
+  }
+
+  table button {
+    height: auto;
+    float: right;
+  }
+
+  .audio-enabled,
+  .video-enabled {
+    white-space: nowrap;
+  }
+
+  .audio-enabled button,
+  .video-enabled button {
+    float: none;
+  }
+
+  label.all-enabled,
+  input:checked ~ label.enabled-true {
+    background: url(../images/common/svg/v3/Icon_Playlist-Accept_hover.svg) no-repeat center center;
+    background-size: 66%;
+  }
+
+  label {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+
+    border: 1px solid rgba(0, 0, 0, .8);
+    border-radius: .5em;
+    padding: .25em;
+    vertical-align: middle;
+  }
+
+  label.enabled-false {
+    background: grey;
+    cursor: not-allowed;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  textarea {
+    border: none;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+    -moz-box-sizing: border-box; /* FF1+ */
+    box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+  }
+}

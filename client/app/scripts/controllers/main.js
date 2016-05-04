@@ -3,6 +3,7 @@
 angular.module('bmmApp')
   .controller('MainCtrl', function (
     $scope,
+    $rootScope,
     $timeout,
     $location,
     $route,
@@ -19,7 +20,7 @@ angular.module('bmmApp')
 
     _init.load.complete.promise.then(function() {
 
-      $scope.init = _init;
+      $rootScope.init = $scope.init = _init;
       $scope.now = function() { return new Date(); };
 
       $scope.pushMessages = [];
@@ -56,7 +57,7 @@ angular.module('bmmApp')
           if(model.contentLanguages) {
             _api.setContentLanguages(model.contentLanguages);
             $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
-          };
+          }
 
           if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
             $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
@@ -74,6 +75,22 @@ angular.module('bmmApp')
 
       $scope.getCurrent = function() {
         $location.path( _playlist.getUrl() );
+      };
+
+      $scope.closeLanguageSettingsPopup = function()
+      {
+        $scope.settings.show=false;
+        $scope.setContentLangConditional();
+      };
+
+      $scope.removeContentLanguage = function(index) {
+        $scope.init.contentLanguages.splice(index, 1);
+        $scope.setLanguagesChanged();
+      };
+
+      $scope.updateContentLanguage = function(lang, language) {
+        $scope.init.contentLanguages[$scope.init.contentLanguages.indexOf(language)] = lang;
+        $scope.setLanguagesChanged();
       };
 
       $scope.setLanguagesChanged = function() {
@@ -102,17 +119,17 @@ angular.module('bmmApp')
             _init.appendLanguage(lang);
             return;
           }
-        };
+        }
       };
 
       $scope.setContentLangConditional = function() {
         if($scope.contentLangsChanged) {
           $scope.setContentLanguages($scope.init.contentLanguages);
           $scope.contentLangsChanged = false;
-        };
+        }
       };
 
-      $scope.setContentLanguages = function(langs) {
+      $scope.setContentLanguages = function() {
         //The first language is the 'primary' content language
         $scope.saveSession();
         $route.reload();
@@ -124,7 +141,7 @@ angular.module('bmmApp')
         $scope.saveSession();
       };
 
-      $scope.go = function ( path ) {
+      $rootScope.go = $scope.go = function ( path ) {
         $location.path( path );
       };
 
@@ -159,25 +176,11 @@ angular.module('bmmApp')
         }).always(function(xhr) {
 
           if (xhr.status===201) {
-
-            $scope.$apply(function() {
-
-              $scope._playlistAdd = false;
-              $scope.newPlaylist = '';
-              $scope.init.user.track_collections.splice(0,0, {
-                id: xhr.getResponseHeader('X-Document-Id'),
-                name: newPlaylist
-              });
-
-              $timeout(function() {
-                $scope.$apply(function() {
-                  //For playlists
-                  $('.draggable-playlist').trigger('dragdrop');
-                  //Other _draggables
-                  _draggable.makeDraggable($scope);
-                });
-              });
-
+            $scope._playlistAdd = false;
+            $scope.newPlaylist = '';
+            $scope.init.user.track_collections.splice(0,0, {
+              id: xhr.getResponseHeader('X-Document-Id'),
+              name: newPlaylist
             });
           }
 
@@ -191,9 +194,7 @@ angular.module('bmmApp')
             if (xhr.status<300) {
               $.each($scope.init.user.track_collections, function(index) {
                 if (this.id===playlist) {
-                  $scope.$apply(function() {
-                    $scope.init.user.track_collections.splice(index,1);
-                  });
+                  $scope.init.user.track_collections.splice(index,1);
                   return false;
                 }
               });
@@ -203,6 +204,9 @@ angular.module('bmmApp')
       };
 
       $scope.renamePlaylist = function(_collection) {
+
+        _collection.edit = false;
+        _collection.name = _collection.newName;
 
         _api.userTrackCollectionGet(_collection.id).done(function(collection) {
 
@@ -222,13 +226,6 @@ angular.module('bmmApp')
             type: 'track_collection',
             track_references: makeReferences(collection.tracks),
             access: collection.access
-          }).always(function() {
-
-            $scope.$apply(function() {
-              _collection.edit = false;
-              _collection.name = _collection.newName;
-            });
-
           });
 
         });

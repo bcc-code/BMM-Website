@@ -1,0 +1,33 @@
+<div class="bmm-latest" ng-class="{'bmm-latest-video': track.subtype == 'video'}" ng-click="onPlay();">
+	<div class="bmm-latest-bullet"><span ng-bind="::trackNumber"></span></div>
+	<div>
+		<img class="bmm-latest-thumbnail" ng-src="{{::track.cover | _cover: track.subtype}}"/>
+	</div>
+	<span ng-switch="::track.subtype">
+		<span ng-switch-when="song">
+			<div class="bmm-latest-title"><span ng-bind="::track.title"></span></div>
+			<div class="bmm-latest-interprets"><span ng-if="track.performers"><span ng-bind="::track.performers"></span> -</span> <span ng-bind="::track.albumTitle"></span></div>
+		</span>
+		<span ng-switch-when="speech">
+			<div class="bmm-latest-title"><span ng-bind="::track.performers"></span> <span ng-if="track.title && track.title != track.performers">- <span ng-bind="::track.title"></span></span></div>
+			<div class="bmm-latest-interprets"><span ng-bind="::track.albumTitle"></span></div>
+		</span>
+		<span ng-switch-when="audiobook">
+			<div class="bmm-latest-title"><span ng-bind="::track.title"></span></div>
+			<div class="bmm-latest-interprets"><span ng-bind="::track.albumTitle"></span></div>
+		</span>
+		<span ng-switch-when="video">
+			<div class="bmm-latest-title">
+				<span ng-bind="::track.title"></span>
+			</div>
+			<div class="bmm-latest-interprets">
+				<span ng-bind="::track.performers"></span>
+			</div>
+			<div class="bmm-latest-about">
+				<span ng-bind="$root.init.translation.track.duration"></span>: <span ng-bind="::track.duration | _time"></span>
+			</div>
+		</span>
+	</span>
+</div>
+<div ng-include="'views/pages/options.html'"></div>
+<div class="flag flags-{{::track.language}}"></div>

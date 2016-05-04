@@ -9,11 +9,7 @@ angular.module('bmmApp')
     $timeout,
     _waitings,
     _play,
-    _api,
-    _init,
-    _track,
-    _album,
-    _quickMenu
+    _api
     ) {
 
     $scope.model = {};
@@ -241,7 +237,7 @@ angular.module('bmmApp')
     $scope.select = {
 
       album: function(id) {
-        _api.albumGet(id, '', { raw: true }, init.root.languages.concat(['ar'])).done(function(album) {
+        _api.albumGet(id, { raw: true }).done(function(album) {
           $scope.$apply(function() {
             $scope.album = album;
             $scope.lock.album = false;

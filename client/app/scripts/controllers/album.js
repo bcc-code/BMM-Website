@@ -26,14 +26,14 @@ angular.module('bmmApp')
     $scope.duration = 0;
     $scope.mainAlbum = [];
     $scope.zip = {};
-    $scope.zip.url = _api.secureDownload(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true);
+    $scope.zip.url = _api.addLanguagesToDownloadUrl(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true);
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};
     $rootScope.podcastHash = _api.getPodcastHash('/podcast/album/'+$routeParams.id+'/track/');
     $scope.podcast.link = _api.getserverUrli()+'podcast/album/'+$routeParams.id+'/track/?';
 
-    $scope.getPlaylistCopy = function(filter, playlist) {
+    $scope.getPlaylistCopy = function(filter) {
       var array = [];
       $.each($scope.playlists, function() {
         $.each(this.tracks, function() {
@@ -47,6 +47,38 @@ angular.module('bmmApp')
         });
       });
       return array;
+    };
+
+    var findPlayingTrack = function() {
+      if ($location.path()===_playlist.getUrl()) {
+
+        $.each($scope.playlists, function() {
+          $.each(this.tracks, function() {
+            this.playing = false;
+          });
+        });
+
+        $.each($scope.getPlaylistCopy($scope.languageFilter, $scope.playlist), function(index) {
+          if (index===_playlist.index) {
+            this.playing = true;
+          } else {
+            this.playing = false;
+          }
+        });
+      }
+    };
+
+    var resolveAlbums = function() {
+      $scope.playlist = $scope.playlists[0].tracks;
+      $rootScope.safeApply(function() {
+        $scope.playlists = $filter('orderBy')($scope.playlists, ('date'));
+        $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
+        $scope.load = false;
+      });
+
+      $('.draggable-playlist').trigger('dragdrop');
+
+      findPlayingTrack();
     };
 
     _api.albumGet($routeParams.id).done(function(mainAlbum) {
@@ -78,14 +110,8 @@ angular.module('bmmApp')
 
       if (mainAlbum.parent_id!==null) {
         _api.albumGet(mainAlbum.parent_id).done(function(album) {
-
-          $scope.$apply(function() {
-
-            $scope.parentAlbum = album;
-            $scope.parentAlbum.found = true;
-
-          });
-
+          $scope.parentAlbum = album;
+          $scope.parentAlbum.found = true;
         });
       }
 
@@ -123,7 +149,7 @@ angular.module('bmmApp')
               track.video = true;
             }
 
-            $scope.$apply(function() {
+            $rootScope.safeApply(function() {
               $scope.playlists[0].tracks.push(track);
               $scope.playlists[0].duration+=track.duration;
               $scope.playlists[0].count++;
@@ -138,18 +164,16 @@ angular.module('bmmApp')
 
               var l = $scope.playlists.length, formattedAlbum = _album.resolve(album);
 
-              $scope.$apply(function() {
-                $scope.playlists[l] = {
-                  title: formattedAlbum.title,
-                  description: formattedAlbum.description,
-                  id: formattedAlbum.id,
-                  cover: formattedAlbum.cover,
-                  date: album.published_at,
-                  duration: 0,
-                  tracks: [],
-                  count: 0
-                };
-              });
+              $scope.playlists[l] = {
+                title: formattedAlbum.title,
+                description: formattedAlbum.description,
+                id: formattedAlbum.id,
+                cover: formattedAlbum.cover,
+                date: album.published_at,
+                duration: 0,
+                tracks: [],
+                count: 0
+              };
 
               $.each(album.children, function() {
 
@@ -178,7 +202,7 @@ angular.module('bmmApp')
                     track.video = true;
                   }
 
-                  $scope.$apply(function() {
+                  $rootScope.safeApply(function() {
                     $scope.playlists[l].tracks.push(track);
                     $scope.playlists[l].duration+=track.duration;
                     $scope.playlists[l].count++;
@@ -211,39 +235,10 @@ angular.module('bmmApp')
         $scope.playlists.splice(0,1);
       }
 
-    });
-
-    var resolveAlbums = function() {
-      $scope.playlist = $scope.playlists[0].tracks;
-      $scope.$apply(function() {
-        $scope.playlists = $filter('orderBy')($scope.playlists, ('date'));
-        $scope.playlist = $filter('orderBy')($scope.playlist, ('albumId', 'albumDate', 'raw.order'));
+      if (ct===0) {
         $scope.load = false;
-      });
-
-      $('.draggable-playlist').trigger('dragdrop');
-
-      findPlayingTrack();
-    };
-
-    var findPlayingTrack = function() {
-      if ($location.path()===_playlist.getUrl()) {
-
-        $.each($scope.playlists, function() {
-          $.each(this.tracks, function() {
-            this.playing = false;
-          });
-        });
-
-        $.each($scope.getPlaylistCopy($scope.languageFilter, $scope.playlist), function(index) {
-          if (index===_playlist.index) {
-            this.playing = true;
-          } else {
-            this.playing = false;
-          }
-        });
       }
-    };
+    });
 
     //When new track is set
     $scope.player = _player;

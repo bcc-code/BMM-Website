@@ -33,7 +33,7 @@
 
     <div class="loadscreen" ng-show="api_queue.status == api_queue.STATUS_MODIFYING">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
-        <div style="margin-top: 2em; position: relative; margin: 3em auto; width: 50px">
+        <div style="position: relative; margin: 3em auto; width: 50px">
             <img ng-src="fallback_images/gif/load.gif">
         </div>
     </div>
@@ -42,7 +42,7 @@
     <header>
         <div class="page-positioning">
             <div class="wrapper">
-                <a ng-href="#" class="logo"></a>
+                <a ng-href="./" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term);">
                         <input ng-model="bmm.term"
@@ -53,27 +53,27 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="#dashboard">
+                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="dashboard">
                             {{init.translation.menu.main.dashboard}}
                         </a>
                     </li>
                     <li>
-                        <a ng-class="{ active: isActive('/waitings')}" ng-href="#waitings">
+                        <a ng-class="{ active: isActive('/waitings')}" ng-href="waitings">
                             {{init.translation.menu.main.waitings}}
                         </a>
                     </li>
                     <li>
-                        <a ng-class="{ active: isActive('/contributors')}" ng-href="#contributors">
+                        <a ng-class="{ active: isActive('/contributors')}" ng-href="contributors">
                             {{init.translation.menu.main.contributors}}
                         </a>
                     </li>
                     <li>
-                        <a ng-class="{ active: isActive('/users')}" ng-href="#users">
+                        <a ng-class="{ active: isActive('/users')}" ng-href="users">
                             {{init.translation.menu.main.users}}
                         </a>
                     </li>
                     <li ng-hide="true">
-                        <a ng-class="{ active: isActive('/wizard')}" ng-href="#wizard">
+                        <a ng-class="{ active: isActive('/wizard')}" ng-href="wizard">
                             Wizard (Demo)
                         </a>
                     </li>
@@ -179,7 +179,7 @@
 
             <!--SUB-HEADER-->
             <div class="sub-header" ng-class="{'visible': fixed}">
-                <a ng-href="#" class="logo"></a>
+                <a ng-href="" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term); visible=false;">
                         <div><input ng-model="bmm.term"
@@ -238,6 +238,9 @@
                         </button>
                         <button ng-click="go('/album/'+quickMenu.album.id);">
                             {{init.translation.menu.secondary.open}}
+                        </button>
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/recording-list');">
+                            {{init.translation.menu.secondary.recordingList}}
                         </button><br><br>
                     </div>
 
@@ -262,6 +265,9 @@
                         </button>
                         <button ng-click="go('/album/'+quickMenu.albumChild.id);">
                             {{init.translation.menu.secondary.open}}
+                        </button>
+                        <button ng-click="go('/album/'+quickMenu.album.id+'/recording-list');">
+                            {{init.translation.menu.secondary.recordingList}}
                         </button><br><br>
                     </div>
 

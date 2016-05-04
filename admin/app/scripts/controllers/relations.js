@@ -54,132 +54,6 @@ angular.module('bmmApp')
     //type: interpret
     //name:
 
-    $scope.$watch('$parent.model', function(model) {
-      if (typeof model.rel!=='undefined'&&!loaded) {
-        getRelations();
-        loaded=true;
-      }
-    }, true);
-
-    var getRelations = function() {
-      unknownRelations = [];
-
-      //Important note: objects is defined as: $scope.[type + 's']
-      var bibles = [];
-      $scope.rel.songbooks = [];
-      $scope.rel.composers = [];
-      $scope.rel.lyricists = [];
-      $scope.rel.interprets = [];
-      $scope.rel.bibles = [];
-
-      $.each($scope.$parent.model.rel, function() {
-        if (typeof $scope.rel[this.type+'s']==='undefined') {
-          unknownRelations.push(this);
-        } else {
-          if (this.type==='bible') {
-            bibles.push(this);
-          } else {
-            if (this.type==='songbook') {
-              this.timestamp = $filter('_time')(this.timestamp);
-            }
-            $scope.rel[this.type+'s'].push(this);
-          }
-        }
-      });
-
-      $scope.rel.bibles = groupBibles(bibles);
-    };
-
-    var setRelations = function(rel) {
-
-      var relations = [];
-
-      $.each(ungroupBibles(rel.bibles), function() { relations.push(this); });
-      $.each(unfilterTime(rel.songbooks), function() { relations.push(this); });
-      $.each(rel.composers, function() { relations.push(this); });
-      $.each(rel.lyricists, function() { relations.push(this); });
-      $.each(rel.interprets, function() { relations.push(this); });
-      $.each(unknownRelations, function() { relations.push(this); });
-
-      $scope.$parent.model.rel = relations;
-
-    };
-
-    var unfilterTime = function(array) {
-      var newArray = [];
-      $.each(array, function() {
-        newArray.push({
-          type: 'songbook',
-          id: this.id,
-          name: this.name,
-          timestamp: convertTime(this.timestamp)
-        });
-      });
-      return newArray;
-    };
-
-    $scope.addContributor = function(contributor) {
-      if (contributor!=='') {
-        _api.contributorPost({
-          type: 'contributor',
-          is_visible: true,
-          name: contributor,
-          cover_upload: null
-        }).always(function() {
-          $timeout(function() {
-            _api.contributorSuggesterCompletionGet(contributor).done(function(data) {
-              $scope.$apply(function() {
-                $scope.contributors.interprets = data;
-                $scope.contributors.lyricists = data;
-                $scope.contributors.composers = data;
-              });
-            });
-          }, 1000);
-        });
-      }
-    };
-
-    $scope.contributors = {};
-    $scope.$watch('contributors.interpret', function(name) {
-      if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
-          $scope.$apply(function() {
-            $scope.contributors.interprets = data;
-          });
-        });
-      } else {
-        $scope.contributors.interprets = [];
-      }
-    });
-    $scope.$watch('contributors.lyricist', function(name) {
-      if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
-          $scope.$apply(function() {
-            $scope.contributors.lyricists = data;
-          });
-        });
-      } else {
-        $scope.contributors.lyricists = [];
-      }
-    });
-    $scope.$watch('contributors.composer', function(name) {
-      if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
-          $scope.$apply(function() {
-            $scope.contributors.composers = data;
-          });
-        });
-      } else {
-        $scope.contributors.composers = [];
-      }
-    });
-
-    $scope.$watch('rel', function(rel) {
-      if (loaded) {
-        setRelations(rel);
-      }
-    }, true);
-
     var groupBibles = function(array) {
       //Group by timestamp
       var timestamps = {}, bibles = [];
@@ -254,6 +128,42 @@ angular.module('bmmApp')
       return bibles;
     };
 
+    var getRelations = function() {
+      unknownRelations = [];
+
+      //Important note: objects is defined as: $scope.[type + 's']
+      var bibles = [];
+      $scope.rel.songbooks = [];
+      $scope.rel.composers = [];
+      $scope.rel.lyricists = [];
+      $scope.rel.interprets = [];
+      $scope.rel.bibles = [];
+
+      $.each($scope.$parent.model.rel, function() {
+        if (typeof $scope.rel[this.type+'s']==='undefined') {
+          unknownRelations.push(this);
+        } else {
+          if (this.type==='bible') {
+            bibles.push(this);
+          } else {
+            if (this.type==='songbook') {
+              this.timestamp = $filter('_time')(this.timestamp);
+            }
+            $scope.rel[this.type+'s'].push(this);
+          }
+        }
+      });
+
+      $scope.rel.bibles = groupBibles(bibles);
+    };
+
+    $scope.$watch('$parent.model', function(model) {
+      if (typeof model.rel!=='undefined'&&!loaded) {
+        getRelations();
+        loaded=true;
+      }
+    }, true);
+
     var convertTime = function(time) {
       time = time.split(':');
       if (time.length===3) {
@@ -297,6 +207,96 @@ angular.module('bmmApp')
 
       return relations;
     };
+
+    var unfilterTime = function(array) {
+      var newArray = [];
+      $.each(array, function() {
+        newArray.push({
+          type: 'songbook',
+          id: this.id,
+          name: this.name,
+          timestamp: convertTime(this.timestamp)
+        });
+      });
+      return newArray;
+    };
+
+    var setRelations = function(rel) {
+
+      var relations = [];
+
+      $.each(ungroupBibles(rel.bibles), function() { relations.push(this); });
+      $.each(unfilterTime(rel.songbooks), function() { relations.push(this); });
+      $.each(rel.composers, function() { relations.push(this); });
+      $.each(rel.lyricists, function() { relations.push(this); });
+      $.each(rel.interprets, function() { relations.push(this); });
+      $.each(unknownRelations, function() { relations.push(this); });
+
+      $scope.$parent.model.rel = relations;
+
+    };
+
+    $scope.addContributor = function(contributor) {
+      if (contributor!=='') {
+        _api.contributorPost({
+          type: 'contributor',
+          is_visible: true,
+          name: contributor,
+          cover_upload: null
+        }).always(function() {
+          $timeout(function() {
+            _api.contributorSuggesterCompletionGet(contributor).done(function(data) {
+              $scope.$apply(function() {
+                $scope.contributors.interprets = data;
+                $scope.contributors.lyricists = data;
+                $scope.contributors.composers = data;
+              });
+            });
+          }, 1000);
+        });
+      }
+    };
+
+    $scope.contributors = {};
+    $scope.$watch('contributors.interpret', function(name) {
+      if (name!=='') {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors.interprets = data;
+          });
+        });
+      } else {
+        $scope.contributors.interprets = [];
+      }
+    });
+    $scope.$watch('contributors.lyricist', function(name) {
+      if (name!=='') {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors.lyricists = data;
+          });
+        });
+      } else {
+        $scope.contributors.lyricists = [];
+      }
+    });
+    $scope.$watch('contributors.composer', function(name) {
+      if (name!=='') {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors.composers = data;
+          });
+        });
+      } else {
+        $scope.contributors.composers = [];
+      }
+    });
+
+    $scope.$watch('rel', function(rel) {
+      if (loaded) {
+        setRelations(rel);
+      }
+    }, true);
 
     $scope.addBibleReference = function() {
       $scope.rel.bibles.splice(0,0, {

@@ -50,319 +50,21 @@ angular.module('bmmApp')
     $scope.playlist = [];
     $scope.private = false;
 
-    switch($routeParams.playlist) {
-      case 'search':
+    var findPlayingTrack = function() {
+      if ($location.path()===_playlist.getUrl()) {
 
-        //Ensure search field has the term
-        $scope.$parent.bmm = {};
-        $scope.$parent.bmm.term = $routeParams.id;
-        //Reset search field on leave
-        $scope.$on('$destroy', function() {
-          $scope.$parent.bmm.term = '';
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
+          this.playing = (index === _playlist.index);
         });
 
-        $scope.searchResults = true;
-        $scope.title = $routeParams.id;
-        size = 0;
-
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            search($routeParams.id, size);
-
-          }
-
-        });
-
-        var search = function(term, _from) {
-          if (typeof from === 'undefined') {
-            _from = 0;
-          }
-          _api.search(term, {
-            from: _from,
-            size: loadAmount
-          }).done(function(data) {
-
-            resolveTracks(data);
-            size+=loadAmount;
-
-          });
-        };
-
-        search($routeParams.id);
-        var isInt = function(n) {
-          n = parseInt(n);
-          return isFinite(n) && n%1===0;
-        };
-
-        /*if (isInt($routeParams.id)&&$routeParams.id.length>0&&$routeParams.id.length<4) {
-          search('hv '+$routeParams.id);
-          search('mb '+$routeParams.id);
-        }*/
-
-        break;
-      case 'latest':
-
-        $scope.title = _init.translation.playlist.latestTracks;
-        size = 0;
-
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        break;
-      case 'private':
-
-        $scope.zip.url = _api.secureDownload(_api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download', true);
-        $scope.zip.show = true;
-        $scope.private = true;
-        _api.userTrackCollectionGet($routeParams.id).done(function(data) {
-
-          $scope.title = data.name;
-          resolveTracks(data.tracks);
-
-          $scope.sortableOptions = {
-            update: function() {
-              //Set timeout, so $scope.playlist get updated
-              $timeout(function() {
-                save();
-
-                if ($location.path()===_playlist.getUrl()) {
-
-                  var i = 0;
-                  $.each($scope.playlist, function(index) {
-                    if (this.playing) {
-                      i = index;
-                      return;
-                    }
-                  });
-
-                  _play.setPlay($scope.playlist, i, false);
-
-                }
-              });
-            }
-          };
-
-        });
-
-        break;
-      case 'mp3kilden':
-
-        size = 0;
-        $scope.title = _init.translation.page.music.mp3Source;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['mp3-kilden'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['mp3-kilden']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        $timeout(function() {
-          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
-          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=mp3-kilden&';
-          $scope.showPodcast = true;
-        },1500);
-
-        break;
-      case 'barnasmp3':
-
-        size = 0;
-        $scope.title = _init.translation.page.music.childrensMp3Source;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['child-favorites'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['child-favorites']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        $timeout(function() {
-          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
-          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=child-favorites&';
-          $scope.showPodcast = true;
-        },1500);
-
-        break;
-      case 'instrumental':
-
-        size = 0;
-        $scope.title = _init.translation.playlist.instrumental;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['instrumental'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['instrumental']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        $timeout(function() {
-          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
-          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=instrumental&';
-          $scope.showPodcast = true;
-        },1500);
-
-        break;
-      case 'contributor':
-
-        size = 0;
-        $scope.title = $routeParams.name;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-            $scope.$apply(function() {
-              $scope.load = true;
-            });
-
-            _api.contributorTracksGet($routeParams.id, {
-              from: size,
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.contributorTracksGet($routeParams.id, {
-          size: loadAmount
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        $timeout(function() {
-          $rootScope.podcastHash = _api.getPodcastHash('/podcast/contributor/'+$routeParams.id+'/track/');
-          $scope.podcast.link = _api.getserverUrli()+'podcast/contributor/'+$routeParams.id+'/track/?';
-          $scope.showPodcast = true;
-        },1500);
-
-        break;
-    }
+      }
+    };
 
     var resolveTracks = function(data) {
 
       var track, cnt=0;
 
-      $scope.$apply(function() {
+      $rootScope.safeApply(function() {
 
         $.each(data, function(index) {
 
@@ -414,13 +116,6 @@ angular.module('bmmApp')
 
     };
 
-    $scope.remove = function(index) {
-      if (typeof index!=='undefined') {
-        $scope.playlist.splice(index,1);
-      }
-      save();
-    };
-
     var save = function() {
 
       var playlist = [];
@@ -441,18 +136,309 @@ angular.module('bmmApp')
 
     };
 
-    var findPlayingTrack = function() {
-      if ($location.path()===_playlist.getUrl()) {
+    switch($routeParams.playlist) {
+      case 'search':
 
-        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
-          if (index===_playlist.index) {
-            this.playing = true;
-          } else {
-            this.playing = false;
-          }
+        //Ensure search field has the term
+        $scope.$parent.bmm = {};
+        $scope.$parent.bmm.term = $routeParams.id;
+        //Reset search field on leave
+        $scope.$on('$destroy', function() {
+          $scope.$parent.bmm.term = '';
         });
 
+        $scope.searchResults = true;
+        $scope.title = $routeParams.id;
+        size = 0;
+
+        var search = function(term, _from) {
+          if (typeof from === 'undefined') {
+            _from = 0;
+          }
+          _api.search(term, {
+            from: _from,
+            size: loadAmount
+          }).done(function(data) {
+
+            resolveTracks(data);
+            size+=loadAmount;
+
+          });
+        };
+
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            search($routeParams.id, size);
+
+          }
+
+        });
+
+        search($routeParams.id);
+        break;
+      case 'latest':
+
+        $scope.title = _init.translation.playlist.latestTracks;
+        size = 0;
+
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.trackLatest({
+              from: size,
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.trackLatest({
+          size: loadAmount
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        break;
+      case 'private':
+
+        $scope.zip.url = _api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download';
+        $scope.zip.show = true;
+        $scope.private = true;
+        _api.userTrackCollectionGet($routeParams.id).done(function(data) {
+
+          $scope.title = data.name;
+          resolveTracks(data.tracks);
+
+          $scope.sortableOptions = {
+            update: function() {
+              //Set timeout, so $scope.playlist get updated
+              $timeout(function() {
+                save();
+
+                if ($location.path()===_playlist.getUrl()) {
+
+                  var i = 0;
+                  $.each($scope.playlist, function(index) {
+                    if (this.playing) {
+                      i = index;
+                      return;
+                    }
+                  });
+
+                  _play.setPlay($scope.playlist, i, false);
+
+                }
+              });
+            }
+          };
+
+        });
+
+        break;
+      case 'mp3kilden':
+
+        size = 0;
+        $scope.title = _init.translation.page.music.mp3Source;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.trackLatest({
+              from: size,
+              tags: ['mp3-kilden'],
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.trackLatest({
+          size: loadAmount,
+          tags: ['mp3-kilden']
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        $timeout(function() {
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=mp3-kilden&';
+          $scope.showPodcast = true;
+        },1500);
+
+        break;
+      case 'barnasmp3':
+
+        size = 0;
+        $scope.title = _init.translation.page.music.childrensMp3Source;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.trackLatest({
+              from: size,
+              tags: ['child-favorites'],
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.trackLatest({
+          size: loadAmount,
+          tags: ['child-favorites']
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        $timeout(function() {
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=child-favorites&';
+          $scope.showPodcast = true;
+        },1500);
+
+        break;
+      case 'instrumental':
+
+        size = 0;
+        $scope.title = _init.translation.playlist.instrumental;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.trackLatest({
+              from: size,
+              tags: ['instrumental'],
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.trackLatest({
+          size: loadAmount,
+          tags: ['instrumental']
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        $timeout(function() {
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=instrumental&';
+          $scope.showPodcast = true;
+        },1500);
+
+        break;
+      case 'contributor':
+
+        size = 0;
+        $scope.title = $routeParams.name;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.contributorTracksGet($routeParams.id, {
+              from: size,
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.contributorTracksGet($routeParams.id, {
+          size: loadAmount
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        $timeout(function() {
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/contributor/'+$routeParams.id+'/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/contributor/'+$routeParams.id+'/track/?';
+          $scope.showPodcast = true;
+        },1500);
+
+        break;
+    }
+
+    $scope.remove = function(index) {
+      if (typeof index!=='undefined') {
+        $scope.playlist.splice(index,1);
       }
+      save();
     };
 
     //When new track is set

@@ -204,8 +204,15 @@
             <span ng-hide="model.id==undefined">
                 <b>{{init.translation.page.editor.mediaFiles}}</b> ({{edited.language | _languageCode}})
             </span>
-            <ul ng-hide="model.id==undefined" class="files">
-                <div ng-repeat="media in edited.media">
+            <div ng-repeat="media in edited.media">
+                <h5>
+                    {{media.type}}
+                    <button ng-click="media.is_visible=!media.is_visible;">
+                        <span ng-hide="media.is_visible">{{init.translation.page.editor.publish}}</span>
+                        <span ng-show="media.is_visible">{{init.translation.page.editor.unpublish}}</span>
+                    </button>
+                </h5>
+                <ul ng-hide="model.id==undefined" class="files">
                     <li ng-repeat="file in media.files">
                         <span>{{file.mime_type}}</span>
                         <span><b>{{init.translation.page.editor.duration}}:</b> {{file.duration}}</span>
@@ -215,9 +222,8 @@
                         <button ng-click="play(file, media.type)">{{init.translation.page.editor.play}}</button>
                         <button ng-click="download(file.path)">{{init.translation.page.editor.download}}</button>
                     </li>
-                </div>
-            </ul>
-
+                </ul>
+            </div>
         </div>
     </div>
 </div>

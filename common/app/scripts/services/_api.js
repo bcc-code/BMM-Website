@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, _api_queue) {
+  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics) {
   
   var factory = {},
       credentials = {},
@@ -9,11 +9,14 @@ angular.module('bmmLibApp')
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/', //Fallback
       requestTimeout,
+      responseCache = {},
       contentLanguages = [];
 
   //This variable indicates whether the "unknown" language ("zxx", used for non-lingual content)
   //should be appended with every request by default.
   factory.appendUnknownLanguage = false; //Fallback to false
+
+  factory.cachingEnabled = false;
 
   factory.serverUrl = function(url) {
     serverUrl = url;
@@ -87,7 +90,7 @@ angular.module('bmmLibApp')
       var languages = xhrOptions.headers['Accept-Language'];
       //Only append the language if the languages is an array.
       if($.isArray(languages)) {
-        xhrOptions.headers['Accept-Language'] = languages.concat(['zxx', 'ar']);
+        xhrOptions.headers['Accept-Language'] = languages.concat(['zxx']);
       }
     }
 
@@ -96,8 +99,41 @@ angular.module('bmmLibApp')
 
   factory.addToQueue = function(customXhrOptions) {
     var xhrOptions = factory.prepareRequest(customXhrOptions);
-    return _api_queue.addRequest(xhrOptions);
+
+    if(factory.shouldBeCached(xhrOptions) && responseCache[getFullUrl(xhrOptions)]) {
+      return responseCache[getFullUrl(xhrOptions)];
+    }
+
+    var promise = _api_queue.addRequest(xhrOptions).done(function(data) {
+      setTimeout(function() {
+        $rootScope.safeApply();
+      });
+    });
+
+    if(factory.shouldBeCached(xhrOptions)) {
+      responseCache[getFullUrl(xhrOptions)] = promise;
+    }
+
+    return promise;
   };
+
+  factory.shouldBeCached = function(xhrOptions) {
+    if(!factory.cachingEnabled) return false;
+
+    //Don't cache playlists because the user often interacts with it and it may change.
+    if(getFullUrl(xhrOptions).match(/track_collection/)) return false;
+
+    if(xhrOptions.method !== 'GET') return false;
+
+    return true;
+  };
+
+  function getFullUrl(xhrOptions) {
+    if(!xhrOptions.data) return xhrOptions.url;
+
+    var params = typeof xhrOptions.data === 'string' ? xhrOptions.data : $.param(xhrOptions.data)
+    return xhrOptions.url + params;
+  }
 
   /**
    * Send an XHR request with some special defined defaults and requirements.
@@ -111,7 +147,41 @@ angular.module('bmmLibApp')
 
     errorHandler = errorHandler || factory.exceptionHandler;
 
+    var time = Date.now();
+
     var promise = $.ajax(xhrOptions);
+
+    promise.done(function(data, textStatus, XMLHttpRequest) {
+      $analytics.userTimings({
+        timingCategory: 'api',
+        timingVar: XMLHttpRequest.status + " - " + this.url,
+        timingValue: Date.now() - time
+      });
+    });
+    promise.fail(function (XMLHttpRequest) {
+      if (XMLHttpRequest.readyState == 4) {
+        $analytics.userTimings({
+          timingCategory: 'api',
+          timingVar: XMLHttpRequest.status + " - " + this.url,
+          timingValue: Date.now() - time
+        });
+        // HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
+      }
+      else if (XMLHttpRequest.readyState == 0) {
+        ga('send', 'exception', {
+          'exDescription': "_api.sendXHR: " + XMLHttpRequest.status + " - " + XMLHttpRequest.url,
+          'exFatal': false
+        });
+        // Network error (i.e. connection refused, access denied due to CORS, etc.)
+      }
+      else {
+        ga('send', 'exception', {
+          'exDescription': "_api.sendXHR: " + XMLHttpRequest.url,
+          'exFatal': false
+        });
+      }
+    });
+
     //If errorHandler == false or anything but a function, no errorHandler should be used.
     if(typeof errorHandler === 'function') {
       promise.fail(errorHandler);
@@ -150,13 +220,8 @@ angular.module('bmmLibApp')
     }, keepAliveTime);
   };
 
-  //Doesnt need to be secured
-  factory.secureDownload = function(download, force) {
-    if (typeof force!=='undefined'&&force) {
-      return download;//factory.secureFile(download);
-    } else {
-      return download;
-    }
+  factory.addLanguagesToDownloadUrl = function(downloadUrl) {
+    return downloadUrl + '?languages[]=' + contentLanguages.join('&languages[]=');
   };
 
   //Doesnt need to be secured
@@ -227,10 +292,9 @@ angular.module('bmmLibApp')
   /** Get the basic information about the API **/
   factory.root = function() {
 
-    return _api_queue.addRequest({
+    return factory.addToQueue({
       method: 'GET',
       url: serverUrl,
-      cache: false,
       //No xhrFields, override default
       xhrFields: {}
     });
@@ -307,7 +371,7 @@ angular.module('bmmLibApp')
   };
 
   /** Get a translated version of an album **/
-  factory.albumGet = function(id, options, languages) {
+  factory.albumGet = function(id, options) {
 
     if (typeof options === 'undefined') { options = {}; }
 
@@ -335,12 +399,8 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'album/'+id,
-      data: $.param(options),
-      headers: {
-        'Accept-Language': languages,
-      }
+      data: $.param(options)
     });
-
   };
 
   /** Save an album **/
@@ -581,13 +641,16 @@ angular.module('bmmLibApp')
      *    Absolute file path
      */
 
+    var headers = {};
+    if (typeof languages !== 'undefined') {
+      headers['Accept-Language'] = languages;
+    }
+
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'track/'+id,
       data: $.param(options),
-      headers: {
-        'Accept-Language': languages
-      }
+      headers: headers
     });
 
   };
@@ -733,12 +796,6 @@ angular.module('bmmLibApp')
   factory.userTrackCollectionPost = function(options) {
 
     if (typeof options === 'undefined') { options = {}; }
-
-    /** headers
-     *    'Accept-Language':        String          ISO 639-1 || ISO 639-3
-     *    'Link':                   <url1> <- Currently not working with multiple
-     *    'Link':                   <url2> <- last will be used
-     */
 
     return factory.addToQueue({
       method: 'POST',

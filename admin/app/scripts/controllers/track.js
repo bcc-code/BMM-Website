@@ -34,14 +34,20 @@ angular.module('bmmApp')
       'video'
     ];
 
+    var suggestedTags = [
+      'child-favorites',
+      'instrumental',
+      'mp3-kilden'
+    ];
+
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.trackGet($routeParams.id, { raw: true }, _init.root.languages);
+          return _api.trackGet($routeParams.id, { raw: true });
         } else {
           return _api.trackGet($routeParams.id, {
             unpublished: 'show'
-          }, _init.root.languages);
+          });
         }
       } else {
 
@@ -95,6 +101,45 @@ angular.module('bmmApp')
       }
     };
 
+    var findAvailableTranslations = function() {
+      $scope.availableLanguages = [];
+      _api.root().done(function(root) {
+        $scope.$apply(function() {
+          $.each(root.languages, function() {
+            var available = this, found=false;
+            $.each($scope.model.translations, function() {
+              if (this.language===available) {
+                found = true;
+              }
+            });
+            if (!found) {
+              $scope.availableLanguages.push(available);
+            }
+          });
+          if (typeof $scope.edited==='undefined') {
+            $scope.switchLanguage($scope.model.original_language);
+          } else {
+            $scope.switchLanguage($scope.edited.language);
+          }
+        });
+      });
+    };
+
+    var findAvailableTags = function() {
+      $scope.availableTags = [];
+      $.each(suggestedTags, function() {
+        var available = this, found=false;
+        $.each($scope.model.tags, function() {
+          if (this===available) {
+            found = true;
+          }
+        });
+        if (!found) {
+          $scope.availableTags.push(available);
+        }
+      });
+    };
+
     $scope.refreshModel = function() {
       var promise;
       try {
@@ -123,7 +168,7 @@ angular.module('bmmApp')
           findAvailableTags();
         });
       }
-      return promise
+      return promise;
     };
     $scope.refreshModel();
 
@@ -136,25 +181,6 @@ angular.module('bmmApp')
 
       $.each(toApi.translations, function() {
         delete this._meta;
-
-        //@todo - remove when new developer data is added
-        if (typeof this.media!=='undefined'&&this.media!==null) {
-          $.each(this.media, function() {
-            if (typeof this.files!=='undefined'&&this.files!==null) {
-              $.each(this.files, function() {
-                if (typeof this.length!=='undefined') {
-                  this.duration = this.length;
-                  delete this.length;
-                }
-              });
-            } else {
-              this.files = [];
-            }
-          });
-        } else {
-          this.media = [];
-        }
-
       });
 
       if (newTrack) {
@@ -199,6 +225,36 @@ angular.module('bmmApp')
 
     $scope.playLinked = function(track) {
       _play.setPlay([track], 0);
+    };
+
+    var getWaitings = function() {
+      _api.fileUploadedGuessTracksGet().done(function(waitings) {
+
+        waitings = _waitings.resolve(waitings);
+
+        $scope.$apply(function() {
+
+          $scope.waitings = [];
+          $.each(waitings.ready, function() {
+
+            $.each(this.tracks, function() {
+
+              $.each(this.files, function() {
+
+                //When track with connection to current track is found
+                if (this.track.id===$scope.model.id) {
+                  $scope.waitings.push(this.track);
+                }
+
+              });
+
+            });
+
+          });
+
+        });
+
+      });
     };
 
     $scope.save = function(options) {
@@ -270,30 +326,6 @@ angular.module('bmmApp')
       });
     };
 
-    var findAvailableTranslations = function() {
-      $scope.availableLanguages = [];
-      _api.root().done(function(root) {
-        $scope.$apply(function() {
-          $.each(root.languages, function() {
-            var available = this, found=false;
-            $.each($scope.model.translations, function() {
-              if (this.language===available) {
-                found = true;
-              }
-            });
-            if (!found) {
-              $scope.availableLanguages.push(available);
-            }
-          });
-          if (typeof $scope.edited==='undefined') {
-            $scope.switchLanguage($scope.model.original_language);
-          } else {
-            $scope.switchLanguage($scope.edited.language);
-          }
-        });
-      });
-    };
-
     $scope.addLanguage = function(lang) {
       $scope.model.translations.push({
         is_visible: false,
@@ -344,23 +376,6 @@ angular.module('bmmApp')
       });
     };
 
-    $scope.$watch('edited', function(newEdit, oldEdit) {
-
-      if (typeof newEdit!=='undefined'&&
-          (typeof newEdit.media==='undefined'||newEdit.media===null||newEdit.media.length<1)) {
-        newEdit.is_visible = false;
-
-        if (typeof oldEdit!=='undefined'&&
-          newEdit.is_visible===oldEdit.is_visible&&
-          newEdit.language===oldEdit.language&&
-          newEdit.title===oldEdit.title) {
-          $scope.status = _init.translation.page.editor.missingFile;
-        }
-
-      }
-
-    }, true);
-
     $scope.$watch('model', function(model) {
       if (modelLoaded) {
         $scope.status = _init.translation.states.changesPerformed;
@@ -369,7 +384,7 @@ angular.module('bmmApp')
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
         _api.albumGet(model.parent_id, {
           unpublished: 'show'
-        }, _init.root.languages).done(function(album) {
+        }).done(function(album) {
           $scope.$apply(function() {
 
             if (album.parent_id!==null) {
@@ -377,7 +392,7 @@ angular.module('bmmApp')
               $scope.findParentSubAlbums(album.parent_id, album.id);
               _api.albumGet(album.parent_id, {
                 unpublished: 'show'
-              }, _init.root.languages).done(function(album) {
+              }).done(function(album) {
                 $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
                 if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
                   $scope.findParentAlbums($scope.albumParentYear, album);
@@ -406,27 +421,6 @@ angular.module('bmmApp')
         });
       }
     });
-
-    var suggestedTags = [
-      'child-favorites',
-      'instrumental',
-      'mp3-kilden'
-    ];
-
-    var findAvailableTags = function() {
-      $scope.availableTags = [];
-      $.each(suggestedTags, function() {
-        var available = this, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
-        }
-      });
-    };
 
     $scope.addTag = function(tag) {
       $.each($scope.availableTags, function(index) {
@@ -489,7 +483,7 @@ angular.module('bmmApp')
     $scope.findParentSubAlbums = function(id, sub_id) {
       _api.albumGet(id, {
         unpublished: 'show'
-      }, _init.root.languages).done(function(data) {
+      }).done(function(data) {
 
         $scope.$apply(function() {
           $.each(data.children, function() {
@@ -518,35 +512,6 @@ angular.module('bmmApp')
       $scope.parentAlbumCurrent = album.title;
     };
 
-    var getWaitings = function() {
-      _api.fileUploadedGuessTracksGet().done(function(waitings) {
-
-        waitings = _waitings.resolve(waitings);
-
-        $scope.$apply(function() {
-
-          $scope.waitings = [];
-          $.each(waitings.ready, function() {
-
-            $.each(this.tracks, function() {
-
-              $.each(this.files, function() {
-
-                //When track with connection to current track is found
-                if (this.track.id===$scope.model.id) {
-                  $scope.waitings.push(this.track);
-                }
-
-              });
-
-            });
-
-          });
-
-        });
-
-      });
-    };
     getWaitings();
 
     $scope.linkWaiting = function(link, id, lang, index) {

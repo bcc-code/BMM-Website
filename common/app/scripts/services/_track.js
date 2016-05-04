@@ -116,18 +116,17 @@ angular.module('bmmLibApp')
           //In media there can currently be 'audio' and 'video'
           $.each( data.media, function() {
 
-            //Get duration from first file available
-            //If audio and video exist it will be overwritten one time
-            resolvedData.duration = Number(this.files[0].duration);
-
             var _type = this.type;
 
             $.each(this.files, function() {
+              //Get duration from a file available
+              resolvedData.duration = Number(this.duration);
+
               if (_type==='video') {
                 resolvedData.video = true;
                 resolvedData.videos.push({
                   file: _api.secureFile(this.url),
-                  downloadLink: _api.secureDownload(this.url)+'&download=1',
+                  downloadLink: this.url+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -136,7 +135,7 @@ angular.module('bmmLibApp')
                 resolvedData.audio = true;
                 resolvedData.audios.push({
                   file: _api.secureFile(this.url),
-                  downloadLink: _api.secureDownload(this.url)+'&download=1',
+                  downloadLink: this.url+'&download=1',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -158,7 +157,7 @@ angular.module('bmmLibApp')
           resolvedData[(data.link.type+'s')] = [];
           resolvedData[(data.link.type+'s')].push({
             file: _api.secureFile(_file),
-            downloadLink: _api.secureDownload(_file)+'&download=1',
+            downloadLink: _file+'&download=1',
             type: data.link.mime_type,
             name: renameMimeType(data.link.mime_type),
             duration: data.link.duration

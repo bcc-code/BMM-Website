@@ -4,12 +4,17 @@ angular.module('bmmApp')
   .controller('VideoCtrl', function (
     $scope,
     $window,
+    $rootScope,
     _api,
     _track,
     _album,
     _init,
     _draggable
   ) {
+
+    $scope.latestVideo = [];
+
+    $scope.latestVideoColHeight = 3;
 
     $(window).off('scrollBottom');
 
@@ -24,7 +29,7 @@ angular.module('bmmApp')
         //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
 
         loading = true;
-        $scope.$apply(function() {
+        $rootScope.safeApply(function() {
           $scope.load = true;
         });
 
@@ -43,10 +48,8 @@ angular.module('bmmApp')
 
           });
 
-          $scope.$apply(function() {
-            _draggable.makeDraggable($scope);
-            $scope.load = false;
-          });
+          _draggable.makeDraggable($scope);
+          $scope.load = false;
 
           //$('.bmm-loading').remove();
           loading = false;
@@ -62,28 +65,11 @@ angular.module('bmmApp')
       size: 9,
       'content-type': ['video']
     }).done(function(data) {
-
-      var left = [], right = [], largeOnly = [];
-
-      $.each(data, function(index) {
-
-        if (index<3) {
-          left.push(_track.resolve(this));
-        } else if (index<6) {
-          right.push(_track.resolve(this));
-        } else {
-          largeOnly.push(_track.resolve(this));
-        }
-
+      $scope.latestVideo = data.map(function(track) {
+        return _track.resolve(track);
       });
 
-      $scope.$apply(function() {
-        $scope.latestVideoLeft = left;
-        $scope.latestVideoRight = right;
-        $scope.latestLargeOnly = largeOnly;
-        _draggable.makeDraggable($scope);
-      });
-
+      _draggable.makeDraggable($scope);
     });
 
     //ALBUMS
@@ -102,10 +88,8 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = album;
-        _draggable.makeDraggable($scope);
-      });
+      $scope.latestAlbums = album;
+      _draggable.makeDraggable($scope);
 
       loading = false;
       $scope.load = false;

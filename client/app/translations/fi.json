@@ -1,0 +1,157 @@
+{
+  "language":"Suomi",
+  "general":{
+    "search":"Etsi...",
+    "searchResultsFor":"Tulokset haulla:",
+    "loading":"Lataa...",
+    "waysOfTheLord":"Herran Tiet",
+    "almondBlossom":"Mantelinkukka",
+    "noTitle":"Ei otsikkoa",
+    "settings":"Asetukset",
+    "feedback":"Palaute",
+    "suport":"Tuki",
+    "readMore":"Lue lisää"
+  },
+  "options":{
+    "addToPlaylist":"Lisää soittolistaan",
+    "download":"Lataa",
+    "downloadAudio":"Lataa äänitiedosto",
+    "downloadVideo":"Lataa video",
+    "goToAlbum":"Siirry albumiin",
+    "podcast":"Podcast",
+    "removeFilter":"Poista suodatin",
+    "changeLanguage":"Vaihda kieli",
+    "goBack":"Takaisin",
+    "addToFavorites":"Lisää suosikkeihin",
+    "moreInfo":"Lisätietoja",
+    "choosePlaylist":"Valitse soittolista",
+    "setupPodcast":"Ottaaksesi podcastin käyttöön kopioi allaoleva linkki ja liitä se haluamaasi podcast-sovellukseen.",
+    "chooseLanguages":"Valitse kielet",
+    "addLanguage":"Lisää kieli",
+    "includeLatest":"Sisällytä uusimmat",
+    "websiteLanguage":"Sivuston kieli",
+    "contentLanguages":"Sisällön kieli",
+    "preferredContentLanguage":"Ensisijainen sisällön kieli",
+    "tracks":"kappaleet",
+    "filterByLanguage":"Suodata kielen mukaan",
+    "copyUrl":"Kopioi URL",
+    "copyLink":"Kopioi linkki",
+    "delete":"Poista",
+    "remove":"Poista",
+    "playPlaylist":"Toista soittolista",
+    "share":"Jaa"
+  },
+  "menu":{
+    "main":{
+      "music":"Musiikki",
+      "speeches":"Puheet",
+      "video":"Videot",
+      "archive":"Arkisto",
+      "audiobooks":"Äänikirjat"
+    },
+    "secondary":{
+      "playlists":"Soittolistat",
+      "latestTracks":"Uudet kappaleet",
+      "lastPlayed":"Viimeksi kuunnellut",
+      "mostPlayed":"Eniten kuunnellut",
+      "favorites":"Suosikit",
+      "current":"Nykyinen",
+      "newPlaylist":"Uusi soittolista",
+      "nameOnPlaylist":"Soittolistan nimi"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Uusimmat puheet",
+      "latestVideos":"Uusimmat videot",
+      "latestMusic":"Uusimmat kappaleet",
+      "latestAlbums":"Uusimmat albumit"
+    },
+    "music":{
+      "latestMusic":"Uusimmat kappaleet",
+      "artists":"Artistit",
+      "mp3Source":"MP3-Lähde",
+      "childrensMp3Source":"Lasten MP3-lähde",
+      "instrumental":"Instrumentaali"
+    },
+    "speeches":{
+      "latestSpeeches":"Uusimmat puheet",
+      "recommended":"Suositellut"
+    },
+    "videos":{
+      "latestVideos":"Uusimmat videot"
+    },
+    "archive":{
+      "archive":"Arkisto"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Uusimmat äänikirjat"
+    },
+    "search":{
+      "searchResults":"Hakutulokset",
+      "content":"Sisältö",
+      "bibleVerse":"Raamatun jae",
+      "album":"Albumi",
+      "artist":"Artisti",
+      "lyricist":"Sanoittaja",
+      "composer":"Säveltäjä",
+      "contributor":"Tekijä",
+      "interprets":"Käännökset"
+    }
+  },
+  "track":{
+    "duration":"Kesto",
+    "details":"Tiedot",
+    "unknown":"Tuntematon",
+    "dragMeToPlaylist":"Vedä minut soittolistalle",
+    "exegesis":"Eksegeesi",
+    "recordedDate":"Nauhoitus päivämäärä",
+    "artist":"Artisti",
+    "lyricist":"Sanoittaja",
+    "composer":"Säveltäjä",
+    "album":"Albumi",
+    "bibleVerse":"Raamatun jae"
+  },
+  "album":{
+    "tracks":"Kappale(et)",
+    "childAlbums":"Lasten albumit",
+    "relatedAlbums":"Samankaltaiset albumit"
+  },
+  "playlist":{
+    "content":"Sisältö",
+    "tracks":"Kappale(et)",
+    "albums":"Albumi(t)",
+    "totalDuration":"Kokonaiskesto",
+    "duration":"Kesto",
+    "nr":"Nro.",
+    "title":"Otsikko",
+    "addToItunes":"Lisää iTunesiin",
+    "copyPodcastLink":"Kopioi podcast linkki",
+    "language":"Kieli",
+    "allLanguages":"Kaikki kielet",
+    "feedSize":"Syötteen koko",
+    "confirmPlaylistDeletion":"Oletko varma, että haluat poistaa tämän soittolistan?",
+    "latestTracks":"Uusimmat kappaleet",
+    "instrumental":"Instrumentaali"
+  },
+  "notify":{
+    "play":"Toista",
+    "pause":"Tauko",
+    "next":"Seuraava",
+    "previous":"Edellinen",
+    "shufflePlaylist":"Sekoita soittolista",
+    "loopPlaylist":"Toista jatkuvasti",
+    "mute":"Mykistä",
+    "unmute":"Poista mykistys",
+    "maxVolume":"Maks. äänenvoimakkuus",
+    "options":"Asetukset",
+    "activateVideo":"Aktivoi video",
+    "goToAlbum":"Siirry albumiin",
+    "showFullscreen":"Näytä koko näytöllä",
+    "closeFullscreen":"Sulje koko näytön tila",
+    "hideVideo":"Piilota video",
+    "showVideo":"Näytä video",
+    "resizeVideoScreen":"Muuta videon kokoa"
+  },
+  "copyright":"Copyright"
+}

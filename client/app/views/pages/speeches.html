@@ -1,69 +1,15 @@
 <div>
-<h2>{{init.translation.page.speeches.latestSpeeches}}</h2>
+    <h2><span ng-bind="init.translation.page.speeches.latestSpeeches"></span></h2>
 
-    <ul class="bmm-latest-list small">
-        <li ng-repeat="track in latestSpeechLeft"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechLeft, $index);">
-                <div class="bmm-latest-bullet">{{$index+1}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
-    <ul class="bmm-latest-list small">
-        <li ng-repeat="track in latestSpeechRight"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechRight, $index);">
-                <div class="bmm-latest-bullet">{{$index+6}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" start-index="latestSpeechesColHeight" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
-    <ul class="bmm-latest-list largeOnly small">
-        <li ng-repeat="track in latestSpeechLargeOnly"
-            class="draggable latest"
-            id="{{track.id}}"
-            language="{{track.language}}"
-            title="{{track.albumTitle}}">
-            <div class="bmm-latest" ng-click="play(latestSpeechLargeOnly, $index);">
-                <div class="bmm-latest-bullet">{{$index+11}}</div>
-                <div>
-                    <img class="bmm-latest-thumbnail"
-                         ng-src="{{track.cover | _cover:'speech'}}"/>
-                </div>
-                <div class="bmm-latest-title">{{track.performers}}</div>
-                <div class="bmm-latest-interprets">{{track.albumTitle}}</div>
-            </div>
-            <div ng-include="'views/pages/options.html'"></div>
-            <div class="flag flags-{{track.language}}"></div>
-        </li>
-    </ul>
+    <bmm-latest-list size="small" class="largeOnly" start-index="latestSpeechesColHeight*2" tracks="latestSpeeches" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 </div>
 
 <div style="width: 14em; margin-left: 1em;">
-    <h2 class="interprets">{{init.translation.page.speeches.recommended}}</h2>
+    <h2 class="interprets"><span ng-bind="init.translation.page.speeches.recommended"></span></h2>
         <input type="text"
                style="width: 100%; height: 2em;"
                placeholder="{{init.translation.general.search}}"
@@ -75,19 +21,19 @@
                  ng-click="go('/playlist/contributor/'+contributor.id+'/'+contributor.name);"
                  title="{{contributor.name}}">
                 <img class="bmm-interpret-thumbnail" ng-src="{{contributor.cover | _cover:'contributor'}}">
-                <div class="bmm-interpret-title">{{contributor.name}}</div>
+                <div class="bmm-interpret-title"><span ng-bind="contributor.name"></span></div>
             </div>
         </li>
     </ul>
 </div>
 
-<h2>{{init.translation.page.welcome.latestAlbums}}</h2>
+<h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 
 <div>
-	<div title="{{album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
-		<img class="album-latest-image" ng-src="{{album.cover}}"/>
-		<div class="album-latest-title">{{album.title}}</div>
-        <div class="flag flags-{{album.raw.language}}"></div>
+	<div title="{{::album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
+		<img class="album-latest-image" ng-src="{{::album.cover}}"/>
+		<div class="album-latest-title"><span ng-bind="::album.title"></span></div>
+        <div class="flag flags-{{::album.raw.language}}"></div>
 	</div>
 </div>
 

@@ -10,12 +10,14 @@ angular.module('bmmApp', [
   'ngTouch',
   'angulartics',
   'angulartics.google.analytics'
-]).run(['$route', '$location', function($route, $location)  {
+]).run(['$route', '$location', '_api', function($route, $location, _api)  {
 
     //Removes unwanted urlchange done by topbar while developing
     if ($location.url().indexOf('#topbarInitialized=true')>-1) {
       $location.url($location.url().replace('#topbarInitialized=true',''));
     }
+
+    _api.cachingEnabled = true;
 
     //Fastclick attempts to kill some touch delay for IPAD/IPHONE
     $(function() {
@@ -23,7 +25,9 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider,$locationProvider, $analyticsProvider) {
+  .config(['$routeProvider','$locationProvider', '$analyticsProvider', '$compileProvider', function ($routeProvider, $locationProvider, $analyticsProvider, $compileProvider) {
+
+    $compileProvider.debugInfoEnabled(false);
 
     $analyticsProvider.virtualPageviews(true);
 

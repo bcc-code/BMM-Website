@@ -15,7 +15,6 @@
   node-children: each node's children
 
   <div
-    data-admin="false"
     data-angular-treeview="true"
     data-tree-id="tree"
     data-tree-model="roleList"
@@ -38,9 +37,6 @@ angular.module('bmmLibApp')
         //tree id
         var treeId = attrs.treeId;
 
-        //tree id
-        var admin = attrs.admin;
-      
         //tree model
         var treeview = attrs.treeview;
 
@@ -56,26 +52,8 @@ angular.module('bmmLibApp')
         //tree template
         var template =
           '<ul>' +
-            '<li ng-show="{{admin}}">'+
-              '<i class="new-track" ng-hide="node.group==\'year\'||node.group==undefined" ng-click="node.newTrack=true;node.newAlbum=false;">Ny Track</i>' +
-              '<i class="new-album" ng-hide="node.group==\'year\'" ng-click="node.newAlbum=true;node.newTrack=false;">Nytt album</i>' +
-              '<form ng-show="node.newTrack" ng-submit="addTrack(node);">'+
-                '<input placeholder="Track tittel" ng-model="node.title" type="text">'+
-                '<input type="submit" value="" class="bmm-confirm">'+
-                '<div class="bmm-remove" ng-click="node.newTrack = false"></div>'+
-              '</form>'+
-              '<form ng-show="node.newAlbum" ng-submit="addAlbum(node);">'+
-                '<input placeholder="Album tittel" ng-model="node.title" type="text">'+
-                '<input type="submit" value="" class="bmm-confirm">'+
-                '<div class="bmm-remove" ng-click="node.newAlbum = false"></div>'+
-              '</form>'+
-            '</li>'+
             '<li data-ng-repeat="node in ' + treeview + '"'+
-                 'id="{{node.roleId}}" language="{{node.language}}" type="{{node.group}}"'+
-                 'ng-class="{draggable: node.group==\'track\''+
-                 ', \'admin-draggable\': ((node.group==\'album\'||node.group==\'track\')&&admin)'+ //&&admin
-                 ', \'admin-droppable\': (node.group!=\'track\'&&admin)'+
-                 '}">'+
+                 'id="{{node.roleId}}" language="{{node.language}}" type="{{node.group}}">'+
               '<i class="collapsed" data-ng-show="(node.group==\'album\'||node.group==\'year\') && node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node)"></i>' +
               '<i class="expanded" data-ng-show="(node.group==\'album\'||node.group==\'year\') && !node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node)"></i>' +
               '<i class="normal" data-ng-hide="(node.group==\'album\'||node.group==\'year\')"></i> ' +
@@ -88,8 +66,6 @@ angular.module('bmmLibApp')
         if( treeId && treeview ) {
           //root node
           if( attrs.bmmLibApp ) {
-          
-            scope.admin = admin || false;
 
             //create tree object if not exists
             scope[treeId] = scope[treeId] || {};

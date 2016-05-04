@@ -28,11 +28,11 @@ angular.module('bmmApp')
     $scope.fetchModel = function(_raw) {
       if (!newAlbum) {
         if (typeof _raw==='undefined'||_raw) {
-          return _api.albumGet($routeParams.id, { raw: true }, _init.root.languages);
+          return _api.albumGet($routeParams.id, { raw: true });
         } else {
           return _api.albumGet($routeParams.id, {
             unpublished: 'show'
-          }, _init.root.languages);
+          });
         }
       } else {
 
@@ -69,6 +69,46 @@ angular.module('bmmApp')
         };
         return;
       }
+    };
+
+    var findAvailableTranslations = function() {
+      $scope.availableLanguages = [];
+      _api.root().done(function(root) {
+        $scope.$apply(function() {
+          $.each(root.languages, function() {
+            var available = this, found=false;
+            $.each($scope.model.translations, function() {
+              if (this.language===available) {
+                found = true;
+              }
+            });
+            if (!found) {
+              $scope.availableLanguages.push(available);
+            }
+          });
+          if (typeof $scope.edited==='undefined') {
+            $scope.switchLanguage($scope.model.original_language);
+          } else {
+            $scope.switchLanguage($scope.edited.language);
+          }
+        });
+      });
+    };
+
+    var findAvailableTags = function() {
+
+      $scope.availableTags = [];
+      $.each(_init.titles.album, function(key) {
+        var available = key, found=false;
+        $.each($scope.model.tags, function() {
+          if (this===available) {
+            found = true;
+          }
+        });
+        if (!found) {
+          $scope.availableTags.push(available);
+        }
+      });
     };
 
     $scope.refreshModel = function() {
@@ -128,6 +168,11 @@ angular.module('bmmApp')
       delete toApi._meta;
       delete toApi.id;
       delete toApi.show_in_listing;
+
+      $.each(toApi.translations, function() {
+        delete this._meta;
+      });
+
       if (newAlbum) {
         _api.albumPost(toApi).always(function(xhr) {
           if (xhr.status===201) {
@@ -209,30 +254,6 @@ angular.module('bmmApp')
       }
     };
 
-    var findAvailableTranslations = function() {
-      $scope.availableLanguages = [];
-      _api.root().done(function(root) {
-        $scope.$apply(function() {
-          $.each(root.languages, function() {
-            var available = this, found=false;
-            $.each($scope.model.translations, function() {
-              if (this.language===available) {
-                found = true;
-              }
-            });
-            if (!found) {
-              $scope.availableLanguages.push(available);
-            }
-          });
-          if (typeof $scope.edited==='undefined') {
-            $scope.switchLanguage($scope.model.original_language);
-          } else {
-            $scope.switchLanguage($scope.edited.language);
-          }
-        });
-      });
-    };
-
     $scope.addLanguage = function(lang) {
       $scope.model.translations.push({
         is_visible: false,
@@ -304,7 +325,7 @@ angular.module('bmmApp')
       if (typeof model.parent_id!=='undefined'&&model.parent_id!==null) {
         _api.albumGet(model.parent_id,{
           unpublished: 'show'
-        }, _init.root.languages).done(function(album) {
+        }).done(function(album) {
           $scope.$apply(function() {
             $scope.albumParentYear = parseInt(album.published_at.substring(0,4),10);
             if (typeof $scope.parentAlbums==='undefined'||$scope.parentAlbums.length<=0) {
@@ -326,22 +347,6 @@ angular.module('bmmApp')
         });
       }
     });
-
-    var findAvailableTags = function() {
-
-      $scope.availableTags = [];
-      $.each(_init.titles.album, function(key) {
-        var available = key, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
-        }
-      });
-    };
 
     $scope.addTag = function(tag) {
       $.each($scope.availableTags, function(index) {

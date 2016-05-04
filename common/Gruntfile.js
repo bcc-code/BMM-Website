@@ -31,10 +31,6 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/**/*'],
         tasks: ['updateCommonFiles']
       },
-      jsTest: {
-        files: ['test/spec/**/*.js'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -54,11 +50,9 @@ module.exports = function (grunt) {
             '!<%= yeoman.dist %>/.git*',
             '../client/app/styles/common/**/*',
             '../client/app/scripts/common/**/*',
-            '../client/app/views/common/**/*',
             '../client/app/images/common/**/*',
             '../admin/app/styles/common/**/*',
             '../admin/app/scripts/common/**/*',
-            '../admin/app/views/common/**/*',
             '../admin/app/images/common/**/*',
           ]
         }]
@@ -71,12 +65,6 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>/scripts',
         dest: '<%= yeoman.dist %>/scripts/common',
-        src: '**/*'
-      },
-      views: {
-        expand: true,
-        cwd: '<%= yeoman.app %>/views',
-        dest: '<%= yeoman.dist %>/views/common',
         src: '**/*'
       },
       images: {
@@ -106,20 +94,11 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
-
   grunt.registerTask('updateCommonFiles', [
     'clean:dist',
     'copy:scripts',
     'copy:images',
     'copy:styles',
-    'copy:views',
     'copy:client',
     'copy:admin'
   ]);

@@ -4,12 +4,17 @@ angular.module('bmmApp')
   .controller('AudiobooksCtrl', function (
     $scope,
     $window,
+    $rootScope,
     _api,
     _track,
     _album,
     _init,
     _draggable
   ) {
+
+    $scope.latestAudiobook = [];
+
+    $scope.latestAudiobookColHeight = 5;
 
     $(window).off('scrollBottom');
 
@@ -22,7 +27,7 @@ angular.module('bmmApp')
       if (!loading&&!end) {
 
         //$('[ng-view]').append('<div class="bmm-loading">'+_init.translation.general.loading+'</div>');
-        $scope.$apply(function() {
+        $rootScope.safeApply(function() {
           $scope.load = true;
         });
 
@@ -45,9 +50,7 @@ angular.module('bmmApp')
 
           });
 
-          $scope.$apply(function() {
-            $scope.load = false;
-          });
+          $scope.load = false;
 
           loading = false;
           //$('.bmm-loading').remove();
@@ -65,28 +68,11 @@ angular.module('bmmApp')
       'content-type': ['audiobook'],
       'media-type': ['audio']
     }).done(function(data) {
-
-      var left = [], right = [], largeOnly = [];
-
-      $.each(data, function(index) {
-
-        if (index<5) {
-          left.push(_track.resolve(this));
-        } else if (index<10) {
-          right.push(_track.resolve(this));
-        } else {
-          largeOnly.push(_track.resolve(this));
-        }
-
+      $scope.latestAudiobook = data.map(function(trackData) {
+        return _track.resolve(trackData);
       });
 
-      $scope.$apply(function() {
-        $scope.latestAudiobookLeft = left;
-        $scope.latestAudiobookRight = right;
-        $scope.latestAudiobookLargeOnly = largeOnly;
-        _draggable.makeDraggable($scope);
-      });
-
+      _draggable.makeDraggable($scope);
     });
 
     //LATEST SPEECH ALBUMS
@@ -105,10 +91,8 @@ angular.module('bmmApp')
 
       });
 
-      $scope.$apply(function() {
-        $scope.latestAlbums = albums;
-        $scope.load = false;
-      });
+      $scope.latestAlbums = albums;
+      $scope.load = false;
 
       loading = false;
 

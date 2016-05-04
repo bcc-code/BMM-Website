@@ -8,7 +8,8 @@
  * Controller of the bmmApp
  */
 angular.module('bmmApp')
-  .controller('BmmLatestListCtrl', function ($scope, _play) {
+  .controller('BmmLatestListCtrl', function ($scope, _play, _init) {
+    $scope.init = _init;
 
     $scope.displays = {
       speech: {

@@ -2,11 +2,11 @@
 <div class="popup" ng-if="trackToPlaylist.id">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="trackToPlaylist.id=false">
+            <div id="popup-track-to-playlist" class="container" always click-outside="trackToPlaylist.id=false">
 
                 <div class="exit" ng-click="trackToPlaylist.id=false"></div>
 
-                <b>{{init.translation.options.choosePlaylist}}</b>
+                <b><span ng-bind="init.translation.options.choosePlaylist"></span></b>
                 <br><br>
 
                 <ul class="playlist">
@@ -26,11 +26,11 @@
 <div class="popup" ng-if="tracksToPlaylist.length>0">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="tracksToPlaylist.length=0">
+            <div id="popup-tracks-to-playlist" class="container" always click-outside="tracksToPlaylist.length=0">
 
                 <div class="exit" ng-click="tracksToPlaylist.length=0"></div>
 
-                <b>{{init.translation.options.choosePlaylist}}</b>
+                <b><span ng-bind="init.translation.options.choosePlaylist"></span></b>
                 <br><br>
 
                 <ul class="playlist">
@@ -49,33 +49,33 @@
 <div class="popup" ng-if="newPodcast.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="newPodcast.show=false">
+            <div id="popup-new-podcast" class="container" always click-outside="newPodcast.show=false">
 
                 <div class="exit" ng-click="newPodcast.show=false"></div>
 
-                <b>{{init.translation.options.podcast}}</b>
+                <b><span ng-bind="init.translation.options.podcast"></span></b>
                 <br><br>
                 {{init.translation.options.setupPodcast}}
                 <br><br>
 
                 <div style="width: 47%; float: left;">
-                    <b>{{init.translation.options.chooseLanguage}}</b>
+                    <b><span ng-bind="init.translation.options.chooseLanguage"></span></b>
                     <div class="dropdown"
                          style="float: none; margin: 0; display: inline-block">
-                        <a class="dropdown-toggle" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
+                        <a class="dropdown-toggle" data-toggle="dropdown" ng-style="{opacity: allLanguages ? '0.3' : '1' }">
                             <div class="flags-{{init.podcastLanguage}}"></div>
                             {{init.podcastLanguage | _languageCode}}</a>
                         <ul class="dropdown-menu" style="margin-left: 0!important">
                             <li ng-repeat="lang in init.root.languages">
                                 <a class="flags-{{lang}}"
-                                   ng-click="$parent.init.podcastLanguage=lang">{{lang | _languageCode}}</a>
+                                   ng-click="$parent.init.podcastLanguage=lang"><span ng-bind="lang | _languageCode"></span></a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div style="width: 47%; float: right;">
-                    <b>{{init.translation.options.includeLatest}}</b>
+                    <b><span ng-bind="init.translation.options.includeLatest"></span></b>
                     <select ng-model="fileRestriction" ng-init="fileRestriction=20">
                         <option value="10">10 {{init.translation.options.tracks}}</option>
                         <option value="20" selected>20 {{init.translation.options.tracks}}</option>
@@ -89,13 +89,13 @@
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
                     <span ng-click="allLanguages=!allLanguages;">
-                        <b>{{init.translation.playlist.allLanguages}}</b>
+                        <b><span ng-bind="init.translation.playlist.allLanguages"></span></b>
                     </span><br>
                     <input type="checkbox" ng-model="allLanguages">
                 </div>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
-                    <b>{{init.translation.options.copyUrl}}</b>
+                    <b><span ng-bind="init.translation.options.copyUrl"></span></b>
                     <input style="width: 100%; border: .1em solid gray;padding: .5em;"
                            type="text" value="{{newPodcast.link}}language={{allLanguages ? '' : init.podcastLanguage}}&size={{fileRestriction}}&hash={{podcastHash}}">
                 </div>
@@ -106,19 +106,19 @@
 </div>
 
 <!--SHARE-->
-<div class="popup" ng-if="share.show">
+<div class="popup" ng-if="$root.share.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" always click-outside="share.show=false">
+            <div id="popup-share" class="container" always click-outside="$root.share.show=false">
 
-                <div class="exit" ng-click="share.show=false"></div>
+                <div class="exit" ng-click="$root.share.show=false"></div>
 
-                <b>{{init.translation.options.share}}</b>
+                <b><span ng-bind="$root.init.translation.options.share"></span></b>
 
                 <div style="width: 100%; margin-top: 1em; float: left;">
-                    <b>{{init.translation.options.copyLink}}</b>
+                    <b><span ng-bind="$root.init.translation.options.copyLink"></span></b>
                     <input style="width: 100%; border: .1em solid gray;padding: .5em;"
-                           type="text" value="{{share.link}}">
+                           type="text" value="{{$root.share.link}}">
                 </div>
 
             </div>
@@ -130,11 +130,11 @@
 <div class="popup" ng-if="pushMessage.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" click-outside="pushMessage.show=false">
+            <div id="popup-push-message" class="container" click-outside="pushMessage.show=false">
 
                 <div class="exit" ng-click="pushMessage.show=false"></div>
 
-                <b>{{pushMessage.message.title}}</b>
+                <b><span ng-bind="pushMessage.message.title"></span></b>
 
                 <p>
                     {{pushMessage.message.message}}
@@ -149,45 +149,44 @@
 <div class="popup" ng-if="settings.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" id="languageSettings" click-outside="settings.show=false;setContentLangConditional();">
+            <div id="popup-settings" class="container" click-outside="closeLanguageSettingsPopup()">
 
-                <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="settings.show=false;setContentLangConditional();"></div>
+                <div ng-init="contentLanguagesChanged = false" class="exit" ng-click="closeLanguageSettingsPopup()"></div>
 
-                 <tabset>
-                    <tab heading="{{init.translation.options.websiteLanguage}}">
+                 <uib-tabset class="tabbable">
+                    <uib-tab heading="{{init.translation.options.websiteLanguage}}">
                         <div style="width: 100%;float: left; margin-top: 1em;">
                             <div class="dropdown">
-                                <a class="dropdown-toggle">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
                                     <div class="flags-{{init.websiteLanguage}}"></div>
                                     {{init.websiteLanguage | _languageCode}}</a>
                                 <ul class="dropdown-menu">
                                     <li ng-repeat="lang in init.translations.available"
                                         ng-click="setWebsiteLanguage(lang);">
-                                        <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
+                                        <a class="flags-{{lang}}"><span ng-bind="lang | _languageCode"></span></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                    </tab>
-                    <tab heading="{{init.translation.options.contentLanguages}}">
+                    </uib-tab>
+                    <uib-tab heading="{{init.translation.options.contentLanguages}}">
                         <div style="width: 100%;">
-                            <b class="choose-language">{{init.translation.options.chooseLanguages}}</b>
+                            <b class="choose-language"><span ng-bind="init.translation.options.chooseLanguages"></span></b>
                             <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
                               <li ng-repeat="language in init.contentLanguages" class="language_element">
                                 <div style="width:70%" class="dropdown">
-                                    <a class="dropdown-toggle">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
                                         <div class="flags-{{language}}"></div>
                                         {{language | _languageCode}}
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li ng-repeat="lang in init.root.languages | filter : exceptSelected"
-                                            ng-click="init.contentLanguages[init.contentLanguages.indexOf(language)] = lang;
-                                            setLanguagesChanged();">
-                                            <a class="flags-{{lang}}">{{lang | _languageCode}}</a>
+                                            ng-click="updateContentLanguage(lang, language)">
+                                            <a class="flags-{{lang}}"><span ng-bind="lang | _languageCode"></span></a>
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="init.contentLanguages.splice($index, 1);setLanguagesChanged();"><span class="glyphicon glyphicon-remove"></span></a>
+                                <a class="btn_remove" ng-class="{invisible: $index == 0}" ng-click="removeContentLanguage($index)"><span class="glyphicon glyphicon-remove"></span></a>
                                 <a class="btn_sort sort_handle"><span class="glyphicon glyphicon-sort"></span></a>
                             </li>
                             </ul>
@@ -195,62 +194,62 @@
                                 {{init.translation.options.addLanguage}}
                             </div>
                         </div>
-                    </tab>
-                </tabset>
+                    </uib-tab>
+                </uib-tabset>
             </div>
         </div>
     </div>
 </div>
 
 <!--MORE INFO FOR A TRACK-->
-<div class="popup" ng-if="trackInfo.show">
+<div class="popup" ng-if="$root.trackInfo.show">
     <div class="container">
         <div class="verticalCenter">
-            <div class="container" click-outside="trackInfo.show=false">
+            <div id="popup-track-info" class="container" click-outside="$root.trackInfo.show=false">
 
-                <div class="exit" ng-click="trackInfo.show=false"></div>
+                <div class="exit" ng-click="$root.trackInfo.show=false"></div>
 
-                <b style="float: left; width: 100%;">{{trackInfo.track.title}}</b><br><br>
+                <b style="float: left; width: 100%;"><span ng-bind="$root.trackInfo.track.title"></span></b><br><br>
 
-                <b>{{init.translation.track.recordedDate}}</b><br>
-                    {{trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
+                <b><span ng-bind="init.translation.track.recordedDate"></span></b><br>
+                    {{$root.trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
 
-                <b>{{init.translation.track.duration}}</b><br>
+                <b><span ng-bind="init.translation.track.duration"></span></b><br>
                     <span>
-                        {{trackInfo.track.duration | _time}}
+                        {{$root.trackInfo.track.duration | _time}}
                     </span><br><br>
 
-                <b>{{init.translation.track.album}}</b><br>
+                <b><span ng-bind="init.translation.track.album"></span></b><br>
                     <span class="link"
-                          ng-click="go('/album/'+trackInfo.track.raw.parent_id); trackInfo.show=false;">
-                        {{trackInfo.track.albumTitle}}
+                          ng-click="go('/album/'+$root.trackInfo.track.raw.parent_id); $root.trackInfo.show=false;">
+                        {{$root.trackInfo.track.albumTitle}}
                     </span><br><br>
 
-                <b>{{init.translation.track.artist}}</b><br>
+                <b><span ng-bind="init.translation.track.artist"></span></b><br>
                     <span class="link"
-                          ng-repeat="artist in trackInfo.track.interprets"
-                       ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); trackInfo.show=false;">
+                          ng-repeat="artist in $root.trackInfo.track.interprets"
+                       ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); $root.trackInfo.show=false;">
                         {{artist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
-                <b>{{init.translation.track.lyricist}}</b><br>
+                <b><span ng-bind="init.translation.track.lyricist"></span></b><br>
                     <span class="link"
-                          ng-repeat="lyricist in trackInfo.track.lyricists"
-                          ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); trackInfo.show=false;">
+                          ng-repeat="lyricist in $root.trackInfo.track.lyricists"
+                          ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); $root.trackInfo.show=false;">
                         {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
-                <b>{{init.translation.track.composer}}</b><br>
+                <b><span ng-bind="init.translation.track.composer"></span></b><br>
                     <span class="link"
-                          ng-repeat="composer in trackInfo.track.composers"
-                          ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); trackInfo.show=false;">
+                          ng-repeat="composer in $root.trackInfo.track.composers"
+                          ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); $root.trackInfo.show=false;">
                         {{composer.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                <b>{{init.translation.track.bibleVerse}}</b><br>
+                <b><span ng-bind="init.translation.track.bibleVerse"></span></b><br>
                     <span class="link"
                           title="{{reference.timestamp | _time}}"
-                          ng-click="play([trackInfo.track], 0, reference.timestamp, reference.name);"
-                          ng-repeat="reference in trackInfo.track.bible">
+                          ng-click="play([$root.trackInfo.track], 0, reference.timestamp, reference.name);"
+                          ng-repeat="reference in $root.trackInfo.track.bible">
                         {{reference.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 

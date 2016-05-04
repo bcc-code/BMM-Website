@@ -16,7 +16,7 @@ angular.module('bmmLibApp')
         var results = 2;
 
         $.each(root.languages, function() {
-          if (this !== 'ar' && this !== 'zxx') {
+          if (this !== 'zxx') {
             promises.push($http.get(url+this+'.json')
               .success(function(file) {
                 if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {

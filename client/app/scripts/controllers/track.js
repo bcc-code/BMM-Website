@@ -7,15 +7,14 @@ angular.module('bmmApp')
     $routeParams,
     _api,
     _track,
-    _play,
-    _init
+    _play
   ) {
 
     var language;
 
     if (typeof $routeParams.language!=='undefined') {
       language = $routeParams.language;
-    };
+    }
 
     _api.trackGet(
       $routeParams.id,
@@ -24,10 +23,8 @@ angular.module('bmmApp')
     ).done(function(track) {
 
       var _track_ = _track.resolve(track);
-      $scope.$apply(function() {
-        _play.setPlay([_track_], 0);
-        $location.path('/album/'+track.parent_id);
-      });
+      _play.setPlay([_track_], 0);
+      $location.path('/album/'+track.parent_id);
 
     });
 

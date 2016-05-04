@@ -1,10 +1,10 @@
 <div ng-show="searchResults"><br>
-    <b>{{init.translation.general.searchResultsFor}}</b>
+    <b><span ng-bind="init.translation.general.searchResultsFor"></span></b>
 </div>
-<h3>{{title}}</h3>
-<span ng-hide="tracks<1">{{tracks}} {{init.translation.playlist.tracks}}</span>
+<h3><span ng-bind="::title"></span></h3>
+<span ng-hide="tracks<1"><span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span></span>
 <br ng-show="tracks>0&&albumCount>0">
-<span ng-hide="albumCount<1">{{albumCount}} {{init.translation.playlist.albums}}</span>
+<span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>
 <br>
 <div class="play-playlist"
      ng-click="play(getPlaylistCopy(languageFilter), 0);">
@@ -29,36 +29,36 @@
     <ul ng-show="albumOptions&&!languageFilterShow">
         <li ng-click="$parent.tracksToPlaylist=getPlaylistCopy(languageFilter)">
             <div class="icon playlist"></div>
-            <span>{{init.translation.options.addToPlaylist}}</span>
+            <span ng-bind="init.translation.options.addToPlaylist"></span>
         </li>
         <li ng-show="showPodcast"
             ng-click="$parent.newPodcast.link=podcast.link; $parent.newPodcast.show=true">
             <div class="icon no-flag podcast"></div>
-            <span>{{init.translation.options.podcast}}</span>
+            <span ng-bind="init.translation.options.podcast"></span>
         </li>
         <li ng-click="$parent.share.link=path; $parent.share.show=true">
             <div class="icon no-flag share"></div>
-            <span>{{init.translation.options.share}}</span>
+            <span ng-bind="init.translation.options.share"></span>
         </li>
         <li ng-click="languageFilterShow=true">
             <div class="icon no-flag settings"></div>
-            <span>{{init.translation.options.filterByLanguage}}</span>
+            <span ng-bind="init.translation.options.filterByLanguage"></span>
         </li>
     </ul>
 
     <ul ng-show="albumOptions&&languageFilterShow">
         <li ng-click="languageFilterShow=false">
             <div class="icon go-back"></div>
-            <span>{{init.translation.options.goBack}}</span>
+            <span ng-bind="init.translation.options.goBack"></span>
         </li>
         <li ng-click="languageFilter=''">
             <div class="icon"></div>
-            <span>{{init.translation.options.removeFilter}}</span>
+            <span ng-bind="init.translation.options.removeFilter"></span>
         </li>
         <li ng-repeat="lang in init.root.languages"
             ng-click="$parent.languageFilter=lang">
-            <div class="icon-flag flags-{{lang}}"></div>
-            <span>{{lang | _languageCode}}</span>
+            <div class="icon-flag flags-{{::lang}}"></div>
+            <span ng-bind="::lang | _languageCode"></span>
         </li>
     </ul>
 
@@ -68,98 +68,29 @@
 	<table>
     <tbody>
       <tr class="head">
-        <th colspan="2">{{init.translation.playlist.title}}</th>
-        <th>{{init.translation.page.search.artist}}</th>
-        <th class="bmm-large-only">{{init.translation.page.search.album}}</th>
-        <th>{{init.translation.playlist.duration}}</th>
+        <th colspan="2"><span ng-bind="init.translation.playlist.title"></span></th>
+        <th><span ng-bind="init.translation.page.search.artist"></span></th>
+        <th class="bmm-large-only"><span ng-bind="init.translation.page.search.album"></span></th>
+        <th><span ng-bind="init.translation.playlist.duration"></span></th>
         <th class="bmm-large-only"></th>
         <th></th>
       </tr>
     </tbody>
 		<tbody ui-sortable="sortableOptions" ng-model="playlist">
-      <tr id="{{track.id}}" language="{{track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
+      <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
 				<td ng-class="{'sort': private}">
                     <div ng-show="private" class="sort_handle"></div>
-                    <img ng-hide="track.playing" ng-src="{{track.subtype | _icon}}">
-                    <img ng-show="track.playing" ng-src="{{'playing'| _icon}}">
+                    <img ng-hide="track.playing" ng-src="{{::track.subtype | _icon}}">
+                    <img ng-show="track.playing" ng-src="{{::'playing'| _icon}}">
                 </td>
-                <td title="{{track.title}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.title | _min:40}}</td>
-                <td title="{{track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.performers | _min:20}}</td>
-				<td class="drag bmm-large-only" title="{{track.albumTitle}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.albumTitle | _min:40}}</td>
-				<td class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);">{{track.duration | _time}}</td>
-				<td class="bmm-large-only" ng-click="play(getPlaylistCopy(languageFilter), $index);"><div class="bmm-flag flags-{{track.language}}"></div></td>
+                <td title="{{::track.title}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.title | _min:40"></span></td>
+                <td title="{{::track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.performers | _min:20"></span></td>
+				<td class="drag bmm-large-only" title="{{::track.albumTitle}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.albumTitle | _min:40"></span></td>
+				<td class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.duration | _time"></span></td>
+				<td class="bmm-large-only" ng-click="play(getPlaylistCopy(languageFilter), $index);"><div class="bmm-flag flags-{{::track.language}}"></div></td>
                 <td>
-
-                    <div class="options"
-                            ng-model="trackOptions"
-                            title="Options"
-                            click-elsewhere="trackOptions=false">
-
-                        <div class="optionsToggl" ng-click="trackOptions=!trackOptions;"></div>
-
-                        <div class="arrow" ng-show="trackOptions"></div>
-
-                        <ul ng-show="trackOptions&&!downloads">
-                            <li ng-click="$parent.$parent.trackToPlaylist.id=track.id; $parent.$parent.trackToPlaylist.language=track.language">
-                                <div class="icon playlist"></div>
-                                <span>{{init.translation.options.addToPlaylist}}</span>
-                            </li>
-                            <li ng-click="downloads=!downloads"
-                                ng-show="!track.directDownload.exist&&!init.isIOS">
-                                <div class="icon download"></div>
-                                <span>{{init.translation.options.download}} ({{track.audios.length+track.videos.length+track.unknowns.length}})</span>
-                            </li>
-                            <li ng-show="!init.isIOS&&track.directDownload.exist">
-                                <div class="icon download"></div>
-                                <a download ng-href="{{track.directDownload.file}}">
-                                    <span>{{init.translation.options.download}} (1)</span>
-                                </a>
-                            </li>
-                            <li ng-click="$parent.$parent.share.link=track.path; share.show=true">
-                                <div class="icon no-flag share"></div>
-                                <span>{{init.translation.options.share}}</span>
-                            </li>
-                            <li ng-click="go('/album/'+track.raw.parent_id)">
-                                <div class="icon album"></div>
-                                <span>{{init.translation.options.goToAlbum}}</span>
-                            </li>
-                            <li ng-click="$parent.$parent.trackInfo.track=track; trackInfo.show=true;">
-                                <div class="icon details"></div>
-                                <span>{{init.translation.track.details}}</span>
-                            </li>
-                            <li ng-show="private" ng-click="remove($index)">
-                                <div class="icon delete"></div>
-                                <span>{{init.translation.options.remove}}</span>
-                            </li>
-                        </ul>
-
-                        <ul ng-show="trackOptions&&downloads">
-                            <li ng-repeat="source in track.audios">
-                                <a download ng-href="{{source.downloadLink}}">
-                                    <div class="icon download"></div>
-                                    <span>{{source.name}}</span>
-                                </a>
-                            </li>
-                            <li ng-repeat="source in track.videos">
-                                <a download ng-href="{{source.downloadLink}}">
-                                    <div class="icon download"></div>
-                                    <span>{{source.name}}</span>
-                                </a>
-                            </li>
-                            <li ng-repeat="source in track.unknowns">
-                                <a download ng-href="{{source.downloadLink}}">
-                                    <div class="icon download"></div>
-                                    <span>{{source.name}}</span>
-                                </a>
-                            </li>
-                            <li ng-click="downloads=!downloads"><div class="icon go-back"></div>
-                                <span>{{init.translation.options.goBack}}</span>
-                            </li>
-                        </ul>
-
-                    </div>
-
+                    <div ng-include="'views/pages/options.html'"></div>
                 </td>
 			</tr>
 		</tbody>
@@ -168,9 +99,9 @@
 </div>
 
 <div style="margin-top: 2em; width: 100%;">
-    <div title="{{album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in albums">
-        <img class="album-latest-image" ng-src="{{album.cover}}"/>
-        <div class="album-latest-title">{{album.title}}</div>
+    <div title="{{::album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in albums">
+        <img class="album-latest-image" ng-src="{{::album.cover}}"/>
+        <div class="album-latest-title"><span ng-bind="album.title"></span></div>
         <div class="album-latest-about"></div>
     </div>
 </div>
