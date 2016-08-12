@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Dashboard",
+      "notifications": "Notifications",
       "waitings":"Awaiting approval",
       "contributors":"Contributors",
       "users":"Users"
@@ -117,6 +118,7 @@
       "albumManager":"Album manager",
       "trackManager":"Track manager",
       "contributorManager":"Contributor manager",
+      "notificationManager":"Notification manager",
       "allRights":"All rights",
       "refreshList":"Refresh list"
     }

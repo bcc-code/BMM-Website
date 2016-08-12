@@ -40,6 +40,10 @@ angular.module('bmmApp', [
         controller: 'WaitingsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/notifications', {
+        templateUrl: 'views/pages/notifications.html',
+        controller: 'NotificationsCtrl'
+      })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
         controller: 'SearchCtrl',

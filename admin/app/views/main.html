@@ -1,18 +1,5 @@
 <div ng-controller="MainCtrl" class="admin">
 
-    <!--ACCESS-->
-    <div ng-show="!init.admin&&init.load.loaded"
-         style="position: fixed;
-                left: 0;
-                top: 0;
-                background-color: white;
-                z-index: 99999;
-                text-align: center;
-                width: 100%;
-                height:100%;">
-        <h2>You have currently no administration rights for BMM</h2>
-    </div>
-
     <!--LOADINGSCREEN-->
     <div class="loadscreen" ng-hide="init.load.loaded">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
@@ -57,19 +44,24 @@
                             {{init.translation.menu.main.dashboard}}
                         </a>
                     </li>
-                    <li>
+                    <li ng-show="userIs('ROLE_TRACK_MANAGER')">
                         <a ng-class="{ active: isActive('/waitings')}" ng-href="waitings">
                             {{init.translation.menu.main.waitings}}
                         </a>
                     </li>
-                    <li>
+                    <li ng-show="userIs('ROLE_CONTRIBUTOR_MANAGER')">
                         <a ng-class="{ active: isActive('/contributors')}" ng-href="contributors">
                             {{init.translation.menu.main.contributors}}
                         </a>
                     </li>
-                    <li>
+                    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
                         <a ng-class="{ active: isActive('/users')}" ng-href="users">
                             {{init.translation.menu.main.users}}
+                        </a>
+                    </li>
+                    <li ng-show="userIs('ROLE_NOTIFICATION_MANAGER')">
+                        <a ng-class="{ active: isActive('/notifications')}" ng-href="notifications">
+                            {{init.translation.menu.main.notifications}}
                         </a>
                     </li>
                     <li ng-hide="true">
@@ -213,10 +205,11 @@
             </div>
 
             <!--QUICK MENU -->
-            <h2>{{init.translation.menu.secondary.quickMenu}}</h2>
-            <div class="quick-menu">
-                <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
-                <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
+            <div ng-show="userIs('ROLE_CONTRIBUTOR_MANAGER') && userIs('ROLE_TRACK_MANAGER') && userIs('ROLE_ALBUM_MANAGER')">
+                <h2>{{init.translation.menu.secondary.quickMenu}}</h2>
+                <div class="quick-menu">
+                    <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
+                    <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
 
                     <span>{{init.translation.menu.secondary.year}}</span>
                     <select ng-change="quickMenu.findAlbums(quickMenu.year);"
@@ -280,9 +273,8 @@
                             <span class="order">{{childTrack.raw.order}}</span>
                         </div>
                     </div>
-
+                </div>
             </div>
-
         </div>
 
     </div>
