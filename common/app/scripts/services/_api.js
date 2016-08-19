@@ -964,7 +964,13 @@ angular.module('bmmLibApp')
     });
   };
 
-
+  factory.sendNotification = function(notification) {
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + 'notifications/send',
+      data: angular.fromJson(notification)
+    });
+  };
 
   return factory;
 

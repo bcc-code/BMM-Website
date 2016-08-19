@@ -20,6 +20,14 @@ angular.module('bmmApp')
 
     _init.load.complete.promise.then(function() {
 
+      $scope.userIs = function(role) {
+        if(_init.user.roles.indexOf('ROLE_ADMINISTRATOR') !== -1) {
+          return true;
+        }
+
+        return _init.user.roles.indexOf(role) !== -1;
+      }
+
       $scope.go = function (path) { $location.path(path); };
 
       $scope.setContentLanguages = function(languages) {
