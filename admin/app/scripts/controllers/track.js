@@ -37,7 +37,8 @@ angular.module('bmmApp')
     var suggestedTags = [
       'child-favorites',
       'instrumental',
-      'mp3-kilden'
+      'mp3-kilden',
+      'kaares-podcast'
     ];
 
     $scope.fetchModel = function(_raw) {

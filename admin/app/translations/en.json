@@ -121,6 +121,11 @@
       "notificationManager":"Notification manager",
       "allRights":"All rights",
       "refreshList":"Refresh list"
+    },
+    "notifications": {
+      "message": "Message",
+      "addNotificationTranslation": "Add notification translation",
+      "sendPushNotification": "Send push-notification"
     }
   },
   "states":{
