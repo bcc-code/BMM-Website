@@ -125,7 +125,9 @@
     "notifications": {
       "message": "Message",
       "addNotificationTranslation": "Add notification translation",
-      "sendPushNotification": "Send push-notification"
+      "sendPushNotification": "Send push-notification",
+      "sent": "Sent",
+      "failed": "Failed"
     }
   },
   "states":{

@@ -9,14 +9,26 @@ angular.module('bmmApp')
 
     $scope.init = _init;
 
-    $scope.languageToAdd = _init.root.languages[0];
+    function reset() {
+      $scope.notificationTranslations = [{
+        language: 'nb'
+      }];
+
+      $scope.languageToAdd = _init.root.languages[0];
+    }
+
+    reset();
 
     $scope.sendNotification = function() {
       var notification = {
         translations: $scope.notificationTranslations
       }
 
-      _api.sendNotification(notification);
+      _api.sendNotification(notification).then(function(result) {
+        reset();
+        alert(_init.translation.page.notifications.sent + ': ' + result.success + '\n'
+          + _init.translation.page.notifications.failed + ': ' + result.failure);
+      });
     };
 
     $scope.removeTranslation = function(translation) {
@@ -47,13 +59,11 @@ angular.module('bmmApp')
       return true;
     };
 
-    $scope.notificationTranslations = [{
-      language: 'nb'
-    }];
     $scope.availableLanguages = _init.root.languages;
 
     $scope.sortableOptions = {
       axis: 'y',
+      handle: '.sort_handle',
       'ui-floating': false
     };
   });

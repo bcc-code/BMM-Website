@@ -968,7 +968,8 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'POST',
       url: serverUrl + 'notifications/send',
-      data: angular.fromJson(notification)
+      data: angular.toJson(notification),
+      contentType: 'application/json'
     });
   };
 
