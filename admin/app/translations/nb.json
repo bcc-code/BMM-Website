@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Kontrollpanel",
+      "notifications":"Meldinger",
       "waitings":"På vent",
       "contributors":"Bidragsytere",
       "users":"Brukere"
@@ -117,8 +118,16 @@
       "albumManager":"Album manager",
       "trackManager":"Spor manager",
       "contributorManager":"Bidragsyter manager",
+      "notificationManager":"Meldings manager",
       "allRights":"Alle rettigheter",
       "refreshList":"Oppdater listen"
+    },
+    "notifications":{
+      "message":"Melding",
+      "addNotificationTranslation":"Legg til oversettelse",
+      "sendPushNotification":"Send push-varsel",
+      "sent":"Sendt",
+      "failed":"Feilet"
     }
   },
   "states":{
