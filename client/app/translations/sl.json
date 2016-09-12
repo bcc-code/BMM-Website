@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Najnovejša glasba",
       "artists":"Izvajalci",
+      "fromKaare":"Od Kåre-ja",
       "mp3Source":"MP3-Izvir",
       "childrensMp3Source":"Otroški MP3-Izvir",
       "instrumental":"Instrumentalna glasba"
@@ -95,7 +96,7 @@
       "artist":"Izvajalec",
       "lyricist":"Avtor besedila",
       "composer":"Skladatelj",
-      "contributor":"Sodelavec",
+      "contributor":"Ustvarjalec",
       "interprets":"Izvajalci"
     }
   },

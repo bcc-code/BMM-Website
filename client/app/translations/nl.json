@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Nieuwste muziek",
       "artists":"Artiesten",
+      "fromKaare":"Van Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barnas MP3-favoritter",
       "instrumental":"Instrumentaal"
