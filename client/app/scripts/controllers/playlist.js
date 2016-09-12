@@ -302,6 +302,51 @@ angular.module('bmmApp')
         },1500);
 
         break;
+      case 'frakaare':
+
+        size = 0;
+        $scope.title = _init.translation.page.music.fromKaare;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.trackLatest({
+              from: size,
+              tags: ['fra-kaare'],
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.trackLatest({
+          size: loadAmount,
+          tags: ['fra-kaare']
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        $timeout(function() {
+          $rootScope.podcastHash = _api.getPodcastHash('/podcast/track/');
+          $scope.podcast.link = _api.getserverUrli()+'podcast/track/?tags[]=fra-kaare&';
+          $scope.showPodcast = true;
+        },1500);
+
+        break;
       case 'barnasmp3':
 
         size = 0;
