@@ -18,14 +18,14 @@
     "downloadAudio":"Heli allalaadimine",
     "downloadVideo":"Video allalaadimine",
     "goToAlbum":"Mine albumisse",
-    "podcast":"Podcast",
+    "podcast":"Taskuhääling",
     "removeFilter":"Eemalda filter",
-    "changeLanguage":"Keele muutmine",
-    "goBack":"Tagasi",
+    "changeLanguage":"Muuda keel",
+    "goBack":"Mine tagasi",
     "addToFavorites":"Lisa lemmikutesse",
     "moreInfo":"Rohkem infot",
     "choosePlaylist":"Valige esitusloend",
-    "setupPodcast":"Podcasti seadistamiseks peate kopeerima alloleva lingi ja kleepima selle oma eelistatud podcasti mängijasse.",
+    "setupPodcast":"Taskuhäälingu seadistamiseks kopeeri allolev link ja kleebi see oma eelistatud taskuhäälingu mängijasse.",
     "chooseLanguages":"Vali keeled",
     "addLanguage":"Lisa keel",
     "includeLatest":"Võta uusimad",
@@ -33,7 +33,7 @@
     "contentLanguages":"Sisu keel",
     "preferredContentLanguage":"Eelistatud sisukeel",
     "tracks":"lood",
-    "filterByLanguage":"Filter: keel",
+    "filterByLanguage":"Filtreeri keele alusel",
     "copyUrl":"Kopeeri URL",
     "copyLink":"Kopeeri link",
     "delete":"Kustuta",
@@ -62,30 +62,31 @@
   },
   "page":{
     "welcome":{
-      "latestSpeeches":"Viimased sõnumid",
-      "latestVideos":"Uued videod",
-      "latestMusic":"Uued lood",
-      "latestAlbums":"Uued albumid"
+      "latestSpeeches":"Hiljutised sõnumid",
+      "latestVideos":"Hiljutised videod",
+      "latestMusic":"Hiljutised lood",
+      "latestAlbums":"Hiljutised albumid"
     },
     "music":{
-      "latestMusic":"Uued lood",
+      "latestMusic":"Hiljutised lood",
       "artists":"Esitajad",
+      "fromKaare":"Kårelt",
       "mp3Source":"MP3-allikas",
       "childrensMp3Source":"Laste MP3-allikas",
       "instrumental":"Instrumentaalmuusika"
     },
     "speeches":{
-      "latestSpeeches":"Uued sõnumid",
+      "latestSpeeches":"Hiljutised sõnumid",
       "recommended":"Soovitatud"
     },
     "videos":{
-      "latestVideos":"Uued videod"
+      "latestVideos":"Hiljutised videod"
     },
     "archive":{
       "archive":"Arhiiv"
     },
     "audiobooks":{
-      "latestAudiobooks":"Uued audioramatud"
+      "latestAudiobooks":"Hiljutised audioramatud"
     },
     "search":{
       "searchResults":"Otsingu tulemused",
@@ -96,7 +97,7 @@
       "lyricist":"Sõnade autor",
       "composer":"Helilooja",
       "contributor":"Kaastegija",
-      "interprets":"Ettekandjad"
+      "interprets":"Esitajad"
     }
   },
   "track":{
@@ -104,7 +105,7 @@
     "details":"Üksikasjad",
     "unknown":"Tundmatu",
     "dragMeToPlaylist":"Lohista mind esitlusloendisse",
-    "exegesis":"Exegesis",
+    "exegesis":"Tõlgendus",
     "recordedDate":"Salvestamise kuupäev",
     "artist":"Esitaja",
     "lyricist":"Sõnade autor",
@@ -126,20 +127,20 @@
     "nr":"Nr.",
     "title":"Pealkiri",
     "addToItunes":"Lisa iTunes'i",
-    "copyPodcastLink":"Kopeeri podcasti link",
+    "copyPodcastLink":"Kopeeri taskuhäälingu link",
     "language":"Keel",
     "allLanguages":"Kõik keeled",
     "feedSize":"Voo suurus",
     "confirmPlaylistDeletion":"Kas soovite kindlasti selle esitlusloendi kustutada?",
-    "latestTracks":"Uued laulud",
+    "latestTracks":"Hiljutised laulud",
     "instrumental":"Instrumentaalmuusika"
   },
   "notify":{
     "play":"Esita",
-    "pause":"Pausi",
+    "pause":"Paus",
     "next":"Järgmine",
     "previous":"Eelmine",
-    "shufflePlaylist":"Juhuslikus järjekorras esitlusloend",
+    "shufflePlaylist":"Juhuesitus",
     "loopPlaylist":"Korda esitlusloendit",
     "mute":"Vaigista",
     "unmute":"Vaigistus maha",
