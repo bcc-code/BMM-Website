@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Siste Musikk",
       "artists":"Artister",
+      "fromKaare":"Fra Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barnas MP3-Kilden",
       "instrumental":"Instrumental"
