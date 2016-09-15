@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Panou de control",
+      "notifications":"Notificări",
       "waitings":"În așteptare",
       "contributors":"Contribuitori",
       "users":"Utilizatori"
@@ -117,8 +118,16 @@
       "albumManager":"Manager album",
       "trackManager":"Administrator de piese",
       "contributorManager":"Administrator contribuitor",
+      "notificationManager":"Administrare notificări",
       "allRights":"Toate drepturile",
       "refreshList":"Reîmprospătează lista"
+    },
+    "notifications":{
+      "message":"Mesaj",
+      "addNotificationTranslation":"Adaugă traducere",
+      "sendPushNotification":"Trimite notificare push",
+      "sent":"Trimis",
+      "failed":"Eroare"
     }
   },
   "states":{

@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Paneelbord",
+      "notifications":"Notifications",
       "waitings":"wag vir goedkeuring",
       "contributors":"bydraers",
       "users":"Gebruikers"
@@ -117,8 +118,16 @@
       "albumManager":"Album bestuurder",
       "trackManager":"Snit bestuurder",
       "contributorManager":"Bydraer bestuurder",
+      "notificationManager":"Notification manager",
       "allRights":"Alle regte",
       "refreshList":"Herlaai Lys"
+    },
+    "notifications":{
+      "message":"Message",
+      "addNotificationTranslation":"Add notification translation",
+      "sendPushNotification":"Send push-notification",
+      "sent":"Sent",
+      "failed":"Failed"
     }
   },
   "states":{

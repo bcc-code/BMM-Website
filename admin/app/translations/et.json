@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Juhtpaneel",
+      "notifications":"Teavitused",
       "waitings":"Ootel",
       "contributors":"Kaastegijad",
       "users":"Kasutajad"
@@ -117,8 +118,16 @@
       "albumManager":"Albumi manageerimine",
       "trackManager":"Muusikapalade manageerimine",
       "contributorManager":"Kaastegijate manageerimine",
+      "notificationManager":"Teavituste haldus",
       "allRights":"Kõik õigused",
       "refreshList":"Värskenda nimekirja"
+    },
+    "notifications":{
+      "message":"Sõnum",
+      "addNotificationTranslation":"Lisa teavituse tõlge",
+      "sendPushNotification":"Saada push-teavitus",
+      "sent":"Saadetud",
+      "failed":"Ebaõnnestus"
     }
   },
   "states":{

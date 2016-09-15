@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Nyeste musik\n",
       "artists":"Artister",
+      "fromKaare":"From Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Børnenes MP3-Kilde",
       "instrumental":"Instrumental"

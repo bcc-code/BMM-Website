@@ -26,6 +26,7 @@ angular.module('bmmLibApp')
         ro: 'Română',
         ru: 'Русский язык',
         tr: 'Türkçe',
+        uk: 'англійська',
         zh: '中文',
         he: 'עברית',
         sl: 'slovenščina',

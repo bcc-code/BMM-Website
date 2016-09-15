@@ -1,0 +1,158 @@
+{
+  "language":"İngilizce",
+  "general":{
+    "search":"Ara...",
+    "searchResultsFor":"Bu Sonuçları Ara:",
+    "loading":"Yükleniyor...",
+    "waysOfTheLord":"Rab'bin Yolları",
+    "almondBlossom":"Badem Çiçeği",
+    "noTitle":"Başlık Yok",
+    "settings":"Ayarlar",
+    "feedback":"Geribildirim",
+    "suport":"Destek",
+    "readMore":"Devamını Oku"
+  },
+  "options":{
+    "addToPlaylist":"Çalma listesine ekle",
+    "download":"İndir",
+    "downloadAudio":"Sesli İndir",
+    "downloadVideo":"Video İndir",
+    "goToAlbum":"Albüm' e Git",
+    "podcast":"Podcast",
+    "removeFilter":"Filtreyi Kaldır",
+    "changeLanguage":"Dili değiştir",
+    "goBack":"Geri",
+    "addToFavorites":"Favorilere Ekle",
+    "moreInfo":"Daha fazla bilgi",
+    "choosePlaylist":"Çalma listesi seç",
+    "setupPodcast":"Podcast'ı kullanmak için, aşağıdaki link'i kopyala ve tercih ettiğin Podcast yazılım programına yapıştır.",
+    "chooseLanguages":"Dil Seç",
+    "addLanguage":"Dil Ekle",
+    "includeLatest":"Sonuncuyu Ekle",
+    "websiteLanguage":"Web sitesi dili",
+    "contentLanguages":"İçerik Dili",
+    "preferredContentLanguage":"Tercih edilen içerik dili",
+    "tracks":"parçalar",
+    "filterByLanguage":"Dile göre Filtre",
+    "copyUrl":"URL Kopya",
+    "copyLink":"Link'i kopyala",
+    "delete":"Sil",
+    "remove":"Kaldır",
+    "playPlaylist":"Çalma Listesini Çal",
+    "share":"Paylaş"
+  },
+  "menu":{
+    "main":{
+      "music":"Müzik",
+      "speeches":"Mesajlar",
+      "video":"Videolar",
+      "archive":"Arşiv",
+      "audiobooks":"Sesli Kitaplar"
+    },
+    "secondary":{
+      "playlists":"Çalma Listesi",
+      "latestTracks":"Yeni Parçalar",
+      "lastPlayed":"Son Çalan",
+      "mostPlayed":"En Çok Çalan",
+      "favorites":"Favoriler",
+      "current":"Şimdi",
+      "newPlaylist":"Yeni çalma listesi",
+      "nameOnPlaylist":"Çalma Listesi Başlığı"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Yeni Mesajlar",
+      "latestVideos":"Yeni Videolar",
+      "latestMusic":"Yeni Müzik",
+      "latestAlbums":"Yeni Albümler"
+    },
+    "music":{
+      "latestMusic":"Yeni Müzik",
+      "artists":"Sanatçılar",
+      "fromKaare":"From Kåre",
+      "mp3Source":"MP3-Kaynağı",
+      "childrensMp3Source":"Çocuklar için MP3-Kaynağı",
+      "instrumental":"Enstrümental"
+    },
+    "speeches":{
+      "latestSpeeches":"Yeni Mesajlar",
+      "recommended":"Önerilen"
+    },
+    "videos":{
+      "latestVideos":"Yeni Videolar"
+    },
+    "archive":{
+      "archive":"Arşiv"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Yeni Sesli Kitaplar"
+    },
+    "search":{
+      "searchResults":"Arama Sonuçları",
+      "content":"İçerik",
+      "bibleVerse":"Kutsal Kitap Ayeti",
+      "album":"Albüm",
+      "artist":"Sanatçı",
+      "lyricist":"Söz Yazarı",
+      "composer":"Besteci",
+      "contributor":"Katılımcı",
+      "interprets":"Sanatçılar"
+    }
+  },
+  "track":{
+    "duration":"Süre",
+    "details":"Detaylar",
+    "unknown":"Belirsiz",
+    "dragMeToPlaylist":"Çalma Listesine Ekle",
+    "exegesis":"Yorum",
+    "recordedDate":"Kaydedilen Tarih",
+    "artist":"Sanatçı",
+    "lyricist":"Söz Yazarı",
+    "composer":"Besteci",
+    "album":"Albüm",
+    "bibleVerse":"Kutsal Kitap Ayet"
+  },
+  "album":{
+    "tracks":"Parça(lar)",
+    "childAlbums":"Çocuklar Albümü",
+    "relatedAlbums":"İlgili Albümler"
+  },
+  "playlist":{
+    "content":"İçerik",
+    "tracks":"Parça(lar)",
+    "albums":"Albüm(ler)",
+    "totalDuration":"Toplam Süre",
+    "duration":"Süre",
+    "nr":"Hayır.",
+    "title":"Başlık",
+    "addToItunes":"ITunes' a Ekle",
+    "copyPodcastLink":"Podcast Link'ini Kopyala",
+    "language":"Dil",
+    "allLanguages":"Tüm Diller",
+    "feedSize":"Besleme Hattı",
+    "confirmPlaylistDeletion":"Çalma Listesini silmeye emin misin?",
+    "latestTracks":"En yeni Parçalar",
+    "instrumental":"Enstrümental"
+  },
+  "notify":{
+    "play":"Oynat",
+    "pause":"Dur",
+    "next":"Sonraki",
+    "previous":"Önceki",
+    "shufflePlaylist":"Karışık Çalma Listesi",
+    "loopPlaylist":"Tekrarlı Çalma Listesi",
+    "mute":"Sessiz",
+    "unmute":"Devam",
+    "maxVolume":"Maximum Ses",
+    "options":"Seçenekler",
+    "activateVideo":"Aktif Video",
+    "goToAlbum":"Albüm' e Git",
+    "showFullscreen":"Tam Ekran Göster",
+    "closeFullscreen":"Tam Ekran Kapat",
+    "hideVideo":"Video Gizle",
+    "showVideo":"Video Göster",
+    "resizeVideoScreen":"video Ekranın Ayarla"
+  },
+  "copyright":"Telif Hakkı"
+}

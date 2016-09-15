@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Останніх музики",
       "artists":"артист\n",
+      "fromKaare":"From Kåre",
       "mp3Source":"MP3-джерело",
       "childrensMp3Source":"Діти MP3-джерело",
       "instrumental":"Інструментальні"

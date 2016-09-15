@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Dashboard",
+      "notifications":"Notifications",
       "waitings":"Aguardando aprovação",
       "contributors":"Colaboradores",
       "users":"Usuários"
@@ -117,8 +118,16 @@
       "albumManager":"Gerenciador de álbum",
       "trackManager":"Gerente de pista",
       "contributorManager":"Gerente de contribuinte",
+      "notificationManager":"Notification manager",
       "allRights":"Todos os direitos",
       "refreshList":"Atualizar lista"
+    },
+    "notifications":{
+      "message":"Message",
+      "addNotificationTranslation":"Add notification translation",
+      "sendPushNotification":"Send push-notification",
+      "sent":"Sent",
+      "failed":"Failed"
     }
   },
   "states":{

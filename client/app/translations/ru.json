@@ -1,0 +1,158 @@
+{
+  "language":"английский",
+  "general":{
+    "search":"Поиск...",
+    "searchResultsFor":"Результаты поиска:",
+    "loading":"Загрузка...",
+    "waysOfTheLord":"Пути Господни",
+    "almondBlossom":"Цвет миндаля",
+    "noTitle":"Без названия",
+    "settings":"Параметры",
+    "feedback":"Отзыв",
+    "suport":"Поддержка",
+    "readMore":"Читать далее"
+  },
+  "options":{
+    "addToPlaylist":"Добавить в плейлист",
+    "download":"Скачать",
+    "downloadAudio":"Скачать аудио",
+    "downloadVideo":"Скачать видео",
+    "goToAlbum":"Перейти в альбом",
+    "podcast":"Подкаст",
+    "removeFilter":"Удалить фильтр",
+    "changeLanguage":"Изменить язык",
+    "goBack":"Вернуться",
+    "addToFavorites":"Добавить в избранное",
+    "moreInfo":"Подробнее...",
+    "choosePlaylist":"Выберите плейлист",
+    "setupPodcast":"Чтобы настроить подкаст, скопируйте ссылку ниже и вставьте её в предпочитаемую программу для подкастов.",
+    "chooseLanguages":"Выберите язык",
+    "addLanguage":"Добавить язык",
+    "includeLatest":"Include the latest",
+    "websiteLanguage":"Website language",
+    "contentLanguages":"Content language",
+    "preferredContentLanguage":"Preferred content language",
+    "tracks":"tracks",
+    "filterByLanguage":"Filter by language",
+    "copyUrl":"Copy URL",
+    "copyLink":"Copy link",
+    "delete":"Delete",
+    "remove":"Remove",
+    "playPlaylist":"Play playlist",
+    "share":"Share"
+  },
+  "menu":{
+    "main":{
+      "music":"Музыка",
+      "speeches":"Сообщения",
+      "video":"Видео",
+      "archive":"Архив",
+      "audiobooks":"Аудиокниги"
+    },
+    "secondary":{
+      "playlists":"Списки воспроизведения",
+      "latestTracks":"Новые треки",
+      "lastPlayed":"Последний играл",
+      "mostPlayed":"Самые популярные",
+      "favorites":"Избранное",
+      "current":"Текущий",
+      "newPlaylist":"Новый плейлист",
+      "nameOnPlaylist":"плейлиста"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Последние сообщения",
+      "latestVideos":"Последние видео",
+      "latestMusic":"Последняя музыка",
+      "latestAlbums":"Последние альбомы"
+    },
+    "music":{
+      "latestMusic":"Последняя музыка",
+      "artists":"артист",
+      "fromKaare":"From Kåre",
+      "mp3Source":"MP3-источник",
+      "childrensMp3Source":"Детская MP3-Источник",
+      "instrumental":"Инструментальная музыка"
+    },
+    "speeches":{
+      "latestSpeeches":"Последние сообщения",
+      "recommended":"Рекомендуется"
+    },
+    "videos":{
+      "latestVideos":"Последние видео"
+    },
+    "archive":{
+      "archive":"Архив"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Последние аудиокниги"
+    },
+    "search":{
+      "searchResults":"Результаты поиска",
+      "content":"Content",
+      "bibleVerse":"Bible verse",
+      "album":"Album",
+      "artist":"Artist",
+      "lyricist":"Lyricist",
+      "composer":"Composer",
+      "contributor":"Contributor",
+      "interprets":"Artists"
+    }
+  },
+  "track":{
+    "duration":"Продолжительность",
+    "details":"Details",
+    "unknown":"Неизвестно",
+    "dragMeToPlaylist":"Затащи меня в список воспроизведения",
+    "exegesis":"Interpretation",
+    "recordedDate":"Recorded date",
+    "artist":"Artist",
+    "lyricist":"Lyricist",
+    "composer":"Composer",
+    "album":"Album",
+    "bibleVerse":"Bible verse"
+  },
+  "album":{
+    "tracks":"Track(s)",
+    "childAlbums":"Альбомы для детей",
+    "relatedAlbums":"Связанные Albumes"
+  },
+  "playlist":{
+    "content":"Содержание",
+    "tracks":"Track(s)",
+    "albums":"Album(s)",
+    "totalDuration":"Общая продолжительность",
+    "duration":"Продолжительность",
+    "nr":"число",
+    "title":"Название",
+    "addToItunes":"Добавить в iTunes",
+    "copyPodcastLink":"Копировать подкаст ссылку",
+    "language":"Language",
+    "allLanguages":"All languages",
+    "feedSize":"Feed size",
+    "confirmPlaylistDeletion":"Are you sure you want to delete this playlist?",
+    "latestTracks":"Latest tracks",
+    "instrumental":"Instrumental"
+  },
+  "notify":{
+    "play":"Play",
+    "pause":"Pause",
+    "next":"Next",
+    "previous":"Previous",
+    "shufflePlaylist":"Shuffle playlist",
+    "loopPlaylist":"Repeat playlist",
+    "mute":"Mute",
+    "unmute":"Unmute",
+    "maxVolume":"Maximum volume",
+    "options":"Options",
+    "activateVideo":"Activate video",
+    "goToAlbum":"Go to album",
+    "showFullscreen":"Show fullscreen",
+    "closeFullscreen":"Close fullscreen",
+    "hideVideo":"Hide video",
+    "showVideo":"Show video",
+    "resizeVideoScreen":"resizeVideoScreen"
+  },
+  "copyright":"Copyright"
+}

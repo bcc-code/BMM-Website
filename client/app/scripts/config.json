@@ -18,11 +18,24 @@
     "en",
     "de",
     "nl",
+    "et",
     "ro",
+    "fi",
+    "hr",
+    "it",
+    "fr",
+    "pt",
+    "ru",
+    "cs",
+    "el",
+    "sl",
+    "tr",
+    "uk",
     "bg",
     "es",
     "af",
-    "hu"
+    "hu",
+    "zh"
   ],
   "includeAllContentLanguages": false
 }

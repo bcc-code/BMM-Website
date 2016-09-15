@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Табло за управление",
+      "notifications":"Notifications",
       "waitings":"Изчакване",
       "contributors":"Сътрудници",
       "users":"Потребители"
@@ -117,8 +118,16 @@
       "albumManager":"Управител албум",
       "trackManager":"Управител песни\/речи",
       "contributorManager":"Сътрудник управител",
+      "notificationManager":"Notification manager",
       "allRights":"Всички права",
       "refreshList":"Обнови списък"
+    },
+    "notifications":{
+      "message":"Message",
+      "addNotificationTranslation":"Add notification translation",
+      "sendPushNotification":"Send push-notification",
+      "sent":"Sent",
+      "failed":"Failed"
     }
   },
   "states":{

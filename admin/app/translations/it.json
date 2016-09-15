@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Pannello di controllo",
+      "notifications":"Notifications",
       "waitings":"In attesa di approvazione",
       "contributors":"Contributori",
       "users":"Utenti"
@@ -117,8 +118,16 @@
       "albumManager":"Gestione album",
       "trackManager":"Gestore tracce",
       "contributorManager":"Gestore contributori",
+      "notificationManager":"Notification manager",
       "allRights":"Tutti i diritti",
       "refreshList":"Aggiorna elenco"
+    },
+    "notifications":{
+      "message":"Message",
+      "addNotificationTranslation":"Add notification translation",
+      "sendPushNotification":"Send push-notification",
+      "sent":"Sent",
+      "failed":"Failed"
     }
   },
   "states":{
