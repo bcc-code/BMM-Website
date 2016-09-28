@@ -4,8 +4,7 @@
     <div class="loadscreen" ng-hide="init.load.loaded">
         <div class="logo" style="position: relative; margin: 3em auto;"></div>
         <div class="progress">
-            <div class="buffer"
-                 style="width: {{init.load.percent}}%"></div><br>
+            <div class="buffer" style="width: {{init.load.percent}}%"></div><br>
             <span>{{init.load.status}}</span>
         </div>
     </div>
@@ -32,9 +31,7 @@
                 <a ng-href="./" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term);">
-                        <input ng-model="bmm.term"
-                               type="text"
-                               placeholder="{{init.translation.general.search}}">
+                        <input ng-model="bmm.term" type="text" placeholder="{{init.translation.general.search}}">
                         <input type="submit" value="">
                     </form>
                 </div>
@@ -69,6 +66,11 @@
                             Wizard (Demo)
                         </a>
                     </li>
+                    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
+                        <a ng-class="{ active: isActive('/statistic')}" ng-href="statistic">
+                            {{init.translation.menu.main.statistic}}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -84,9 +86,7 @@
 
         <div class="videoscreen" ng-show="player.showVideo">
             <div class="page-positioning">
-                <div class="videoClose"
-                     ng-click="player.showVideo=false"
-                     ng-hide="player.video&&!player.showVideo"></div>
+                <div class="videoClose" ng-click="player.showVideo=false" ng-hide="player.video&&!player.showVideo"></div>
 
                 <div class="display">
                     <div class="fullscreen-toggle"></div>
@@ -104,16 +104,14 @@
 
         <div class="page-positioning">
 
-            <div class="videoOpen"
-                 ng-click="player.showVideo=true"
-                 ng-show="player.video&&!player.showVideo"></div>
+            <div class="videoOpen" ng-click="player.showVideo=true" ng-show="player.video&&!player.showVideo"></div>
 
             <div class="scroller">
                 <span><b>{{player.title}}</b> {{player.subtitle}} {{player.extraTitle | _languageCode}} </span>
             </div>
 
             <div class="about">
-                <img ng-src="{{player.cover | _cover:'song'}}"/>
+                <img ng-src="{{player.cover | _cover:'song'}}" />
                 <h3>{{player.title}}</h3>
                 <div>{{player.subtitle}}</div>
                 <div>{{player.language | _languageCode}}</div>
@@ -121,13 +119,8 @@
 
             <div class="volumeControllers">
 
-                <div class="mute"
-                     ng-class="{'active': player.muted}"
-                     ng-click="player.setMute();"
-                     ng-hide="init.isIOS"></div>
-                <div class="max"
-                     ng-click="player.setVolume(1);"
-                     ng-hide="init.isIOS"></div>
+                <div class="mute" ng-class="{'active': player.muted}" ng-click="player.setMute();" ng-hide="init.isIOS"></div>
+                <div class="max" ng-click="player.setVolume(1);" ng-hide="init.isIOS"></div>
                 <div class="volume" ng-hide="init.isIOS"></div>
 
             </div>
@@ -138,21 +131,17 @@
                 <div class="remaining">{{(player.getDuration()-player.currentTime) | _time}}</div>
 
                 <div class="centered">
-                    <div class="shuffle"
-                         ng-class="{'active': playlist.shuffle}"
-                         ng-click="playlist.setShuffle();"></div>
+                    <div class="shuffle" ng-class="{'active': playlist.shuffle}" ng-click="playlist.setShuffle();"></div>
                     <div class="previous" ng-click="player.setPrevious();"></div>
-                    <div class="play"
-                         ng-class="{'pause': player.playing}"
-                         ng-click="player.togglePlay();"></div>
+                    <div class="play" ng-class="{'pause': player.playing}" ng-click="player.togglePlay();"></div>
                     <div class="next" ng-click="player.setNext();"></div>
-                    <div class="repeat"
-                         ng-class="{'active': playlist.repeat}"
-                         ng-click="playlist.setRepeat();"></div>
+                    <div class="repeat" ng-class="{'active': playlist.repeat}" ng-click="playlist.setRepeat();"></div>
 
                 </div>
 
-                <div class="slider"><div class="target"></div></div>
+                <div class="slider">
+                    <div class="target"></div>
+                </div>
 
             </div>
 
@@ -162,10 +151,7 @@
     <!--NAVIGATOR-->
     <div class="page-positioning" style="z-index: 4;">
 
-        <div ng-click="visible=!visible;"
-             class="nav-toggle"
-             ng-class="{'fixedSmall':fixedSmall, 'fixed': fixed, 'absolute': absolute, 'visible': visible}"
-                ></div>
+        <div ng-click="visible=!visible;" class="nav-toggle" ng-class="{'fixedSmall':fixedSmall, 'fixed': fixed, 'absolute': absolute, 'visible': visible}"></div>
 
         <div navigator ng-class="{'fixedSmall':fixedSmall, 'fixed': fixed, 'absolute': absolute, 'visible': visible}">
 
@@ -174,9 +160,7 @@
                 <a ng-href="" class="logo"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term); visible=false;">
-                        <div><input ng-model="bmm.term"
-                                    type="text"
-                                    placeholder="{{init.translation.general.search}}"></div>
+                        <div><input ng-model="bmm.term" type="text" placeholder="{{init.translation.general.search}}"></div>
                         <input type="submit" value="">
                     </form>
                 </div>
@@ -212,16 +196,12 @@
                     <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
 
                     <span>{{init.translation.menu.secondary.year}}</span>
-                    <select ng-change="quickMenu.findAlbums(quickMenu.year);"
-                            ng-model="quickMenu.year"
-                            ng-options="year for year in quickMenu.years">
+                    <select ng-change="quickMenu.findAlbums(quickMenu.year);" ng-model="quickMenu.year" ng-options="year for year in quickMenu.years">
                     </select><br><br>
 
                     <div ng-hide="quickMenu.albums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.album}}</span>
-                        <select ng-change="go('/album/'+quickMenu.album.id);"
-                                ng-model="quickMenu.album"
-                                ng-options="album.title for album in quickMenu.albums">
+                        <select ng-change="go('/album/'+quickMenu.album.id);" ng-model="quickMenu.album" ng-options="album.title for album in quickMenu.albums">
                         </select>
                         <button ng-click="go('/album/'+quickMenu.album.id+'/album');">
                             {{init.translation.menu.secondary.newAlbum}}
@@ -239,9 +219,7 @@
 
                     <div ng-hide="quickMenu.tracks.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.tracks}}</span>
-                        <div class="track"
-                             ng-repeat="track in quickMenu.tracks"
-                             ng-click="go('/track/'+track.id);">
+                        <div class="track" ng-repeat="track in quickMenu.tracks" ng-click="go('/track/'+track.id);">
                             {{track.combinedTitle}}
                             <span class="order">{{track.raw.order}}</span>
                         </div><br><br>
@@ -249,9 +227,7 @@
 
                     <div ng-hide="quickMenu.childAlbums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.childAlbums}}</span>
-                        <select ng-change="go('/album/'+quickMenu.albumChild.id);"
-                                ng-model="quickMenu.albumChild"
-                                ng-options="childAlbum.title for childAlbum in quickMenu.childAlbums">
+                        <select ng-change="go('/album/'+quickMenu.albumChild.id);" ng-model="quickMenu.albumChild" ng-options="childAlbum.title for childAlbum in quickMenu.childAlbums">
                         </select>
                         <button ng-click="go('/album/'+quickMenu.albumChild.id+'/track');">
                             {{init.translation.menu.secondary.newTrack}}
@@ -266,9 +242,7 @@
 
                     <div ng-hide="quickMenu.childTracks.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.childTracks}}</span>
-                        <div class="track"
-                                ng-repeat="childTrack in quickMenu.childTracks"
-                                ng-click="go('/track/'+childTrack.id);">
+                        <div class="track" ng-repeat="childTrack in quickMenu.childTracks" ng-click="go('/track/'+childTrack.id);">
                             {{childTrack.combinedTitle}}
                             <span class="order">{{childTrack.raw.order}}</span>
                         </div>
