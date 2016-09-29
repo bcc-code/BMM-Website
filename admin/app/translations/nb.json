@@ -11,7 +11,8 @@
       "notifications":"Meldinger",
       "waitings":"På vent",
       "contributors":"Bidragsytere",
-      "users":"Brukere"
+      "users":"Brukere",
+      "statistic":"Statistikk"
     },
     "secondary":{
       "quickMenu":"Hurtigmeny",
@@ -20,7 +21,7 @@
       "year":"År",
       "album":"Album",
       "childAlbums":"Tilhørende Album",
-      "recordingList":"Opptak",
+      "recordingList":"Innspillingsliste",
       "tracks":"Spor",
       "childTracks":"Tilhørende spor",
       "open":"Åpne"
@@ -167,6 +168,15 @@
     "unknown":"Ukjent",
     "dragMeToPlaylist":"Dra meg til spilleliste",
     "exegesis":"Tydning"
+  },
+  "statistic":{
+    "chartByDateTitle":"Nye brukere per dag",
+    "chartByDayTitle":"Dag mest lyttet",
+    "chartMostListenedTitle":"Mest lyttede spor",
+    "fromKaare":"Fra Kåre",
+    "others":"Andre",
+    "clearChart":"Fjern diagram",
+    "add":"Legg til i diagram"
   },
   "copyright":"Opphavsrett"
 }

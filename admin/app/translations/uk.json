@@ -11,7 +11,8 @@
       "notifications":"Сповіщення",
       "waitings":"Очікування",
       "contributors":"Автори та перекладачі",
-      "users":"Користувачі"
+      "users":"Користувачі",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Швидке меню",
@@ -167,6 +168,15 @@
     "unknown":"Невідомо",
     "dragMeToPlaylist":"Перетягнути мене до списку відтворення",
     "exegesis":"Екзегеза"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Авторське право"
 }

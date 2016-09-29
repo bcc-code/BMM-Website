@@ -11,7 +11,8 @@
       "notifications":"Meldingen",
       "waitings":"Wachtrij",
       "contributors":"Bijdragers",
-      "users":"Gebruikers"
+      "users":"Gebruikers",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Snelmenu",
@@ -167,6 +168,15 @@
     "unknown":"Onbekend",
     "dragMeToPlaylist":"Sleep mij naar de afspeellijst",
     "exegesis":"Exegese"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Auteursrecht"
 }

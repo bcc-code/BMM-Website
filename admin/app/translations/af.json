@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"wag vir goedkeuring",
       "contributors":"bydraers",
-      "users":"Gebruikers"
+      "users":"Gebruikers",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Vinnige Kieslys",
@@ -167,6 +168,15 @@
     "unknown":"Onbekend",
     "dragMeToPlaylist":"Sleep my na speellys",
     "exegesis":"interpretasie"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Kopiereg"
 }

@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"Изчакване",
       "contributors":"Сътрудници",
-      "users":"Потребители"
+      "users":"Потребители",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Бързо меню",
@@ -167,6 +168,15 @@
     "unknown":"Неизвестен",
     "dragMeToPlaylist":"Плъзни ме до списъка",
     "exegesis":"Обяснение"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Авторско право"
 }

@@ -11,7 +11,8 @@
       "notifications":"Teavitused",
       "waitings":"Ootel",
       "contributors":"Kaastegijad",
-      "users":"Kasutajad"
+      "users":"Kasutajad",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Kiirmenüü",
@@ -167,6 +168,15 @@
     "unknown":"Tundmatu",
     "dragMeToPlaylist":"Lohista mind esitlusloendisse",
     "exegesis":"Exegesis"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Autoriõigused"
 }

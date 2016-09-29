@@ -11,7 +11,8 @@
       "notifications":"Benachrichtigungen",
       "waitings":"Wartende Dateien",
       "contributors":"Mitwirkende",
-      "users":"Benutzer"
+      "users":"Benutzer",
+      "statistic":"Statistiken"
     },
     "secondary":{
       "quickMenu":"Schnellauswahl",
@@ -167,6 +168,15 @@
     "unknown":"Unbekannt",
     "dragMeToPlaylist":"Zieh mich in deine Playlist",
     "exegesis":"Auslegung"
+  },
+  "statistic":{
+    "chartByDateTitle":"Neue Benutzer pro Tag",
+    "chartByDayTitle":"Tag am meisten gehört",
+    "chartMostListenedTitle":"Meistgehörter Track",
+    "fromKaare":"Von Kåre",
+    "others":"Andere",
+    "clearChart":"Diagramm entfernen",
+    "add":"Zu Diagramm hinzufügen"
   },
   "copyright":"Copyright"
 }

@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"Onay Bekliyor",
       "contributors":"Katkı Yapanlar",
-      "users":"Kullanıcılar"
+      "users":"Kullanıcılar",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Hızlı Menü",
@@ -167,6 +168,15 @@
     "unknown":"Belirsiz",
     "dragMeToPlaylist":"Çalma Listesine Ekle",
     "exegesis":"Yorum"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Telif Hakkı"
 }

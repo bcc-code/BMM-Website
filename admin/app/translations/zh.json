@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"Awaiting approval",
       "contributors":"Contributors",
-      "users":"用户"
+      "users":"用户",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"快捷菜单",
@@ -167,6 +168,15 @@
     "unknown":"Unknown",
     "dragMeToPlaylist":"Drag to playlist",
     "exegesis":"Interpretation"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Copyright"
 }

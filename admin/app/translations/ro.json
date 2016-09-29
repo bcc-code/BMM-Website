@@ -11,7 +11,8 @@
       "notifications":"Notificări",
       "waitings":"În așteptare",
       "contributors":"Contribuitori",
-      "users":"Utilizatori"
+      "users":"Utilizatori",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Meniu rapid",
@@ -167,6 +168,15 @@
     "unknown":"Anonim",
     "dragMeToPlaylist":"Trage-mă în play-list",
     "exegesis":"Tălmăcire"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Drepturi de autor"
 }

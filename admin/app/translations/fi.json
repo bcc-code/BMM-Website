@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"Odottaa hyväksyntää",
       "contributors":"Tekijät",
-      "users":"Käyttäjät"
+      "users":"Käyttäjät",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Pikavalikko",
@@ -167,6 +168,15 @@
     "unknown":"Tuntematon",
     "dragMeToPlaylist":"Vedä minut soittolistalle",
     "exegesis":"Eksegeesi"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Copyright"
 }

@@ -11,7 +11,8 @@
       "notifications":"Obvestila",
       "waitings":"Na čakanju",
       "contributors":"Ustvarjalci",
-      "users":"Uporabniki"
+      "users":"Uporabniki",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Hitri meni",
@@ -167,6 +168,15 @@
     "unknown":"Neznano",
     "dragMeToPlaylist":"Povlecite na seznam predvajanja",
     "exegesis":"Razlaga"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Avtorske pravice"
 }

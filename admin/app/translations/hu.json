@@ -11,7 +11,8 @@
       "notifications":"Értesítések",
       "waitings":"Jóváhagyásra vár",
       "contributors":"Közreműködők",
-      "users":"Felhasználók"
+      "users":"Felhasználók",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Gyorsmenü",
@@ -167,6 +168,15 @@
     "unknown":"Ismeretlen",
     "dragMeToPlaylist":"Húzd a lejátszási listához",
     "exegesis":"Értelmezés"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Szerzői jog"
 }

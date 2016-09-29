@@ -11,7 +11,8 @@
       "notifications":"Notifications",
       "waitings":"Venter",
       "contributors":"Bidragydere",
-      "users":"Brugere"
+      "users":"Brugere",
+      "statistic":"Statistics"
     },
     "secondary":{
       "quickMenu":"Quick Menu",
@@ -167,6 +168,15 @@
     "unknown":"Ukendt",
     "dragMeToPlaylist":"Træk til spilleliste",
     "exegesis":"Tydning"
+  },
+  "statistic":{
+    "chartByDateTitle":"New users per day",
+    "chartByDayTitle":"Day most listened",
+    "chartMostListenedTitle":"Most listened Track",
+    "fromKaare":"From Kåre",
+    "others":"Others",
+    "clearChart":"Clear Chart",
+    "add":"Add to Chart"
   },
   "copyright":"Rettigheder"
 }
