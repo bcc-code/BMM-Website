@@ -192,7 +192,7 @@ angular.module('bmmApp')
                     _statistic.getChartListFraKaare().then(function (chartList) {
                         this.drawChart_byDay(chartList, chart_byDate_ctx);
                         this.drawChart_byTrack(chartList, chart_listenByDay_ctx);
-                        this.drawChar_mostListend(chartList, chart_bestTrack_ctx);
+                        this.drawChar_mostListened(chartList, chart_bestTrack_ctx);
                     }.bind(this));
                 },
 
@@ -208,7 +208,7 @@ angular.module('bmmApp')
 
                     this.drawChart_byDay(chartList, chart_CustomByDate_ctx);
                     this.drawChart_byTrack(chartList, chart_CustomByTrack_ctx);
-                    this.drawChar_mostListend(chartList, chart_CustomListenByDate_ctx);
+                    this.drawChar_mostListened(chartList, chart_CustomListenByDate_ctx);
                 },
 
                 /**
@@ -279,12 +279,12 @@ angular.module('bmmApp')
                 },
 
                 /**
-                 * Draw Chart by the most listend tracks
+                 * Draw Chart by the most listened tracks
                  * 
                  * @param {any} list
                  * @param {any} ctx
                  */
-                drawChar_mostListend: function (list, ctx) {
+                drawChar_mostListened: function (list, ctx) {
                     var data = { labels: [], datasets: [] }, sum_val = [];
                     list.forEach(function (day, i) {
                         day.names.forEach(function (name, x) {
@@ -299,8 +299,7 @@ angular.module('bmmApp')
                     })
 
                     data.datasets.push(getDefaultChartDataObj("", sum_val, getColorArray(sum_val.length)));
-                    chart_bestTrack = drawChart(data, ctx, chart_bestTrack, true, "polarArea", "Users", _init.translation.statistic.chartMostListendTitle);
-
+                    chart_bestTrack = drawChart(data, ctx, chart_bestTrack, true, "polarArea", "Users", _init.translation.statistic.chartMostListenedTitle);
                 },
             }
         };
