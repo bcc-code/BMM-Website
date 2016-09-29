@@ -171,8 +171,8 @@
   },
   "statistic":{
     "chartByDateTitle": "New users per day",
-    "chartByDayTitle": "Day most listend",
-    "chartMostListendTitle": "Most listend Track",
+    "chartByDayTitle": "Day most listened",
+    "chartMostListenedTitle": "Most listened Track",
     "fromKaare": "From Kåre",
     "others": "Others",
     "clearChart": "clear Chart",
