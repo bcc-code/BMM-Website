@@ -14,7 +14,7 @@ angular.module('bmmLibApp')
         function getStatRequest(filename) {
             return {
                 type: 'GET',
-                url: '/statistic_data/' + filename,
+                url: 'statistic_data/' + filename,
                 dataType: 'json'
             }
         }
