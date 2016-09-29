@@ -69,6 +69,11 @@
                             Wizard (Demo)
                         </a>
                     </li>
+                    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
+                        <a ng-class="{ active: isActive('/statistic')}" ng-href="statistic">
+                            {{init.translation.menu.main.statistic}}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -199,11 +204,6 @@
                     <li>
                         <a ng-class="{ active: isActive('/wizard')}" ng-href="#wizard">
                             Wizard (Beta)
-                        </a>
-                    </li>
-		    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
-                        <a ng-class="{ active: isActive('/statistic')}" ng-href="statistic">
-                            {{init.translation.menu.main.statistic}}
                         </a>
                     </li>
                 </ul>
