@@ -52,8 +52,8 @@
     "secondary":{
       "playlists":"Spillelister",
       "latestTracks":"Nye spor",
-      "lastPlayed":"Sist spillte",
-      "mostPlayed":"Mest spillte",
+      "lastPlayed":"Sist spilte",
+      "mostPlayed":"Mest spilte",
       "favorites":"Favoritter",
       "current":"Spilles nå",
       "newPlaylist":"Ny spilleliste",

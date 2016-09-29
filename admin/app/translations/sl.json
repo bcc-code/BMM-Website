@@ -8,8 +8,9 @@
   "menu":{
     "main":{
       "dashboard":"Nadzorna plošča",
+      "notifications":"Obvestila",
       "waitings":"Na čakanju",
-      "contributors":"Sodelavci",
+      "contributors":"Ustvarjalci",
       "users":"Uporabniki"
     },
     "secondary":{
@@ -34,7 +35,7 @@
       "artist":"Izvajalec",
       "lyricist":"Avtor besedila",
       "composer":"Skladatelj",
-      "contributor":"Sodelavec",
+      "contributor":"Ustvarjalec",
       "interprets":"Izvajalci"
     },
     "editor":{
@@ -87,7 +88,7 @@
       "record":"Snemaj",
       "pause":"Premor",
       "resetTime":"Čas ponastavitve",
-      "createNewContributor":"Ustvari novega sodelavca",
+      "createNewContributor":"Ustvari novega ustvarjalca",
       "number":"Številka",
       "timestamp":"Časovni žig",
       "comment":"Komentar",
@@ -110,15 +111,23 @@
       "name":"Ime",
       "tracks":"Skladbe",
       "search":"Išči",
-      "contributors":"Sodelavci"
+      "contributors":"Ustvarjalci"
     },
     "users":{
       "adminUsers":"Administratorji",
       "albumManager":"Oskrbnik albumov",
       "trackManager":"Oskrbnik skladb",
-      "contributorManager":"Menedžer sodelavcev",
+      "contributorManager":"Menedžer ustvarjalcev",
+      "notificationManager":"Upravitelj obvestil",
       "allRights":"Vse pravice",
       "refreshList":"Osveži seznam"
+    },
+    "notifications":{
+      "message":"Sporočilo",
+      "addNotificationTranslation":"Dodaj prevod obvestila",
+      "sendPushNotification":"Pošlji potisno obvestilo",
+      "sent":"Poslano",
+      "failed":"Ni uspelo"
     }
   },
   "states":{

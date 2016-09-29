@@ -1,88 +1,89 @@
 {
-  "language":"Magyar",
+  "language":"Angol",
   "general":{
     "search":"Keresés...",
     "searchResultsFor":"Találatok erre:",
-    "loading":"Töltés...",
+    "loading":"Betöltés...",
     "waysOfTheLord":"Az Úr Útjai",
-    "almondBlossom":"Mandulavirágok",
+    "almondBlossom":"Mandulavirág",
     "noTitle":"Nincs cím",
     "settings":"Beállítások",
-    "feedback":"Visszajelzés",
+    "feedback":"Visszajelzések",
     "suport":"Támogatás",
     "readMore":"Tovább"
   },
   "options":{
-    "addToPlaylist":"Hozzáadás lejátszólistához",
+    "addToPlaylist":"Hozzáadás lejátszási listához",
     "download":"Letöltés",
     "downloadAudio":"Audió letöltése",
     "downloadVideo":"Videó letöltése",
     "goToAlbum":"Váltás erre az albumra",
     "podcast":"Podcast",
     "removeFilter":"Szűrő eltávolítása",
-    "changeLanguage":"Nyelv váltása",
+    "changeLanguage":"Nyelvváltás",
     "goBack":"Vissza",
     "addToFavorites":"Hozzáadás a kedvencekhez",
     "moreInfo":"További információ",
-    "choosePlaylist":"Válassz lejátszólistát",
-    "setupPodcast":"Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használd kliensszoftverbe.",
-    "chooseLanguages":"Válassz nyelvet",
-    "addLanguage":"A nyelv hozzáadása",
-    "includeLatest":"Tartalmazza az újdonságokat",
+    "choosePlaylist":"Lejátszási lista választás",
+    "setupPodcast":"Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használt szoftverbe.",
+    "chooseLanguages":"Nyelvek válsztása",
+    "addLanguage":"Nyelv hozzáadása",
+    "includeLatest":"Tartalmazza a legújabbat",
     "websiteLanguage":"Weboldal nyelve",
     "contentLanguages":"Tartalom nyelve",
-    "preferredContentLanguage":"Elsődleges tartalom nyelv",
+    "preferredContentLanguage":"Tartalom elsődleges nyelve",
     "tracks":"számok",
     "filterByLanguage":"Szűrés nyelv szerint",
     "copyUrl":"URL másolása",
     "copyLink":"Link másolása",
     "delete":"Törlés",
     "remove":"Eltávolítás",
-    "playPlaylist":"Lejátszólista indítása",
+    "playPlaylist":"Lejátszási lista indítása",
     "share":"Megosztás"
   },
   "menu":{
     "main":{
       "music":"Zene",
-      "speeches":"Beszédek",
+      "speeches":"Üzenetek",
       "video":"Videók",
-      "archive":"Archív",
+      "archive":"Archívum",
       "audiobooks":"Hangoskönyvek"
     },
     "secondary":{
-      "playlists":"Lejátszólisták",
+      "playlists":"Lejátszási listák",
       "latestTracks":"Új számok",
-      "lastPlayed":"Utoljára játszott",
+      "lastPlayed":"Utoljára lejátszott",
       "mostPlayed":"Legkedveltebb",
       "favorites":"Kedvencek",
       "current":"Aktuális",
-      "newPlaylist":"Új lejátszólista",
-      "nameOnPlaylist":"Lejátszólista címe"
+      "newPlaylist":"Új lejátszási lista",
+      "nameOnPlaylist":"Lejátszási lista címe"
     }
   },
   "page":{
     "welcome":{
-      "latestSpeeches":"Legújabb beszédek",
+      "latestSpeeches":"Legújabb üzenetek",
       "latestVideos":"Legújabb videók",
       "latestMusic":"Legújabb zenék",
       "latestAlbums":"Legújabb albumok"
     },
     "music":{
       "latestMusic":"Legújabb zenék",
-      "artists":"Művészek",
-      "mp3Source":"MP3 Kilden",
-      "childrensMp3Source":"Gyerek MP3 Kilden",
+      "artists":"Előadók",
+      "fromKaare":"From Kåre",
+      "mp3Source":"MP3-forrás",
+      "childrensMp3Source":"Gyermekek MP3-forrása",
       "instrumental":"Hangszeres"
     },
     "speeches":{
-      "latestSpeeches":"Legújabb beszédek",
+      "latestSpeeches":"Legújabb üzenetek",
       "recommended":"Ajánlott"
     },
     "videos":{
       "latestVideos":"Legújabb videók"
     },
     "archive":{
-      "archive":"Archív"
+      "archive":"Archívum"
     },
     "audiobooks":{
       "latestAudiobooks":"Legújabb hangoskönyvek"
@@ -92,7 +93,7 @@
       "content":"Tartalom",
       "bibleVerse":"Bibliavers",
       "album":"Album",
-      "artist":"Művész",
+      "artist":"Előadó",
       "lyricist":"Szövegíró",
       "composer":"Zeneszerző",
       "contributor":"Közreműködő",
@@ -103,10 +104,10 @@
     "duration":"Időtartam",
     "details":"Részletek",
     "unknown":"Ismeretlen",
-    "dragMeToPlaylist":"Húzd ezt az elemet a lejátszólistádhoz",
-    "exegesis":"Kijelentés",
+    "dragMeToPlaylist":"Húzd a lejátszási listához",
+    "exegesis":"Értelmezés",
     "recordedDate":"Felvétel dátuma",
-    "artist":"Művész",
+    "artist":"Előadó",
     "lyricist":"Szövegíró",
     "composer":"Zeneszerző",
     "album":"Album",
@@ -114,8 +115,8 @@
   },
   "album":{
     "tracks":"Szám(ok)",
-    "childAlbums":"Gyerek albumok",
-    "relatedAlbums":"Hasonló albumok"
+    "childAlbums":"Gyermek albumok",
+    "relatedAlbums":"Kapcsolódó albumok"
   },
   "playlist":{
     "content":"Tartalom",
@@ -123,14 +124,14 @@
     "albums":"Album(ok)",
     "totalDuration":"Teljes időtartam",
     "duration":"Időtartam",
-    "nr":"sz.",
+    "nr":"No.",
     "title":"Cím",
-    "addToItunes":"Hozzáadás az iTunes-hoz",
+    "addToItunes":"Hozzáadás iTunes-hoz",
     "copyPodcastLink":"Podcast link másolása",
     "language":"Nyelv",
     "allLanguages":"Minden nyelv",
     "feedSize":"Podcast mérete",
-    "confirmPlaylistDeletion":"Biztosan törlöd ezt a lejátszólistát?",
+    "confirmPlaylistDeletion":"Biztosan törölni kivánod ezt a lejátszási listát?",
     "latestTracks":"Legújabb számok",
     "instrumental":"Hangszeres"
   },
@@ -138,20 +139,20 @@
     "play":"Lejátszás",
     "pause":"Szünet",
     "next":"Következő",
-    "previous":"Korábbi",
+    "previous":"Előző",
     "shufflePlaylist":"Véletlenszerű lejátszási lista",
-    "loopPlaylist":"Hurok lejátszási lista",
+    "loopPlaylist":"Lejátszási lista ismétlése",
     "mute":"Némítás",
-    "unmute":"Némítás megszüntetése",
-    "maxVolume":"Max hangerő",
-    "options":"Beállítások",
-    "activateVideo":"Videóinak aktiválása",
+    "unmute":"Némítás feloldása",
+    "maxVolume":"Maximális hangerő",
+    "options":"Opciók",
+    "activateVideo":"Videó aktiválása",
     "goToAlbum":"Váltás erre az albumra",
-    "showFullscreen":"Teljes képernyős megjelenítése",
-    "closeFullscreen":"Közel teljes képernyős",
-    "hideVideo":"Videóinak elrejtése",
-    "showVideo":"Videó",
-    "resizeVideoScreen":"resizeVideoScreen"
+    "showFullscreen":"Teljes képernyő",
+    "closeFullscreen":"Teljes képernyő bezárása",
+    "hideVideo":"Videó elrejtése",
+    "showVideo":"Videó megjelenítése",
+    "resizeVideoScreen":"Videóméret módosítása"
   },
   "copyright":"Szerzői jog"
 }

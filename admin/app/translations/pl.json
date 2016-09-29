@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Panel",
+      "notifications":"Powiadomienia",
       "waitings":"W oczekiwaniu",
       "contributors":"Współpracownicy",
       "users":"Użytkownicy"
@@ -117,8 +118,16 @@
       "albumManager":"Menedżer albumu",
       "trackManager":"Menedżer utworów",
       "contributorManager":"Współautor Menedżera",
+      "notificationManager":"Menedżer powiadomień",
       "allRights":"Wszystkie prawa",
       "refreshList":"Odśwież listę"
+    },
+    "notifications":{
+      "message":"Przemowy",
+      "addNotificationTranslation":"Dodaj tłumaczenie powiadomień",
+      "sendPushNotification":"Wyślij powiadomienia typu Push",
+      "sent":"Wysłane",
+      "failed":"Nie powiodło się"
     }
   },
   "states":{

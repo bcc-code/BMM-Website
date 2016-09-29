@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Kontrolpanel",
+      "notifications":"Notifications",
       "waitings":"Venter",
       "contributors":"Bidragydere",
       "users":"Brugere"
@@ -117,8 +118,16 @@
       "albumManager":"Album-manager",
       "trackManager":"Spor-manager",
       "contributorManager":"Medvirkende-manager",
+      "notificationManager":"Notification manager",
       "allRights":"Alle rettigheder",
       "refreshList":"Opdater liste"
+    },
+    "notifications":{
+      "message":"Message",
+      "addNotificationTranslation":"Add notification translation",
+      "sendPushNotification":"Send push-notification",
+      "sent":"Sent",
+      "failed":"Failed"
     }
   },
   "states":{

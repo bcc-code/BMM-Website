@@ -8,6 +8,7 @@
   "menu":{
     "main":{
       "dashboard":"Dashboard",
+      "notifications":"Meldingen",
       "waitings":"Wachtrij",
       "contributors":"Bijdragers",
       "users":"Gebruikers"
@@ -117,8 +118,16 @@
       "albumManager":"Album manager",
       "trackManager":"Nummer manager",
       "contributorManager":"Inzender manager",
+      "notificationManager":"Meldingen beheren",
       "allRights":"Alle rechten",
       "refreshList":"Lijst vernieuwen"
+    },
+    "notifications":{
+      "message":"Bericht",
+      "addNotificationTranslation":"Melding vertaling toevoegen",
+      "sendPushNotification":"Push-bericht verzenden",
+      "sent":"Verzonden",
+      "failed":"Mislukt"
     }
   },
   "states":{

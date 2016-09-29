@@ -1,0 +1,158 @@
+{
+  "language":"English",
+  "general":{
+    "search":"Search...",
+    "searchResultsFor":"Search results for:",
+    "loading":"Loading...",
+    "waysOfTheLord":"Ways of the Lord",
+    "almondBlossom":"Almond Blossom",
+    "noTitle":"No title",
+    "settings":"Settings",
+    "feedback":"Feedback",
+    "suport":"Support",
+    "readMore":"Read more"
+  },
+  "options":{
+    "addToPlaylist":"Add to playlist",
+    "download":"Download",
+    "downloadAudio":"Download audio",
+    "downloadVideo":"Download video",
+    "goToAlbum":"Go to album",
+    "podcast":"Podcast",
+    "removeFilter":"Remove filter",
+    "changeLanguage":"Change language",
+    "goBack":"Go back",
+    "addToFavorites":"Add to favorites",
+    "moreInfo":"More info",
+    "choosePlaylist":"Choose playlist",
+    "setupPodcast":"To set up the podcast, copy the link below and paste it into your preferred podcast software.",
+    "chooseLanguages":"Choose languages",
+    "addLanguage":"Add a language",
+    "includeLatest":"Include the latest",
+    "websiteLanguage":"Website language",
+    "contentLanguages":"Content language",
+    "preferredContentLanguage":"Preferred content language",
+    "tracks":"tracks",
+    "filterByLanguage":"Filter by language",
+    "copyUrl":"Copy URL",
+    "copyLink":"Copy link",
+    "delete":"Delete",
+    "remove":"Remove",
+    "playPlaylist":"Play playlist",
+    "share":"Share"
+  },
+  "menu":{
+    "main":{
+      "music":"Music",
+      "speeches":"Messages",
+      "video":"Videos",
+      "archive":"Archive",
+      "audiobooks":"Audiobooks"
+    },
+    "secondary":{
+      "playlists":"Playlists",
+      "latestTracks":"New tracks",
+      "lastPlayed":"Last played",
+      "mostPlayed":"Most played",
+      "favorites":"Favorites",
+      "current":"Current",
+      "newPlaylist":"New playlist",
+      "nameOnPlaylist":"Playlist title"
+    }
+  },
+  "page":{
+    "welcome":{
+      "latestSpeeches":"Latest Messages",
+      "latestVideos":"Latest Videos",
+      "latestMusic":"Latest Music",
+      "latestAlbums":"Latest Albums"
+    },
+    "music":{
+      "latestMusic":"Latest Music",
+      "artists":"Artists",
+      "fromKaare":"From Kåre",
+      "mp3Source":"MP3-Fountain",
+      "childrensMp3Source":"Childen's MP3-Fountain",
+      "instrumental":"Instrumental"
+    },
+    "speeches":{
+      "latestSpeeches":"Latest Messages",
+      "recommended":"Recommended"
+    },
+    "videos":{
+      "latestVideos":"Latest Videos"
+    },
+    "archive":{
+      "archive":"Archive"
+    },
+    "audiobooks":{
+      "latestAudiobooks":"Latest Audiobooks"
+    },
+    "search":{
+      "searchResults":"Search Results",
+      "content":"Content",
+      "bibleVerse":"Bible verse",
+      "album":"Album",
+      "artist":"Artist",
+      "lyricist":"Lyricist",
+      "composer":"Composer",
+      "contributor":"Contributor",
+      "interprets":"Artists"
+    }
+  },
+  "track":{
+    "duration":"Duration",
+    "details":"Details",
+    "unknown":"Unknown",
+    "dragMeToPlaylist":"Drag to playlist",
+    "exegesis":"Interpretation",
+    "recordedDate":"Recorded date",
+    "artist":"Artist",
+    "lyricist":"Lyricist",
+    "composer":"Composer",
+    "album":"Album",
+    "bibleVerse":"Bible verse"
+  },
+  "album":{
+    "tracks":"Track(s)",
+    "childAlbums":"Children's Albums",
+    "relatedAlbums":"Related Albums"
+  },
+  "playlist":{
+    "content":"Content",
+    "tracks":"Track(s)",
+    "albums":"Album(s)",
+    "totalDuration":"Total Duration",
+    "duration":"Duration",
+    "nr":"No.",
+    "title":"Title",
+    "addToItunes":"Add to iTunes",
+    "copyPodcastLink":"Copy podcast link",
+    "language":"Language",
+    "allLanguages":"All languages",
+    "feedSize":"Feed size",
+    "confirmPlaylistDeletion":"Are you sure you want to delete this playlist?",
+    "latestTracks":"Latest tracks",
+    "instrumental":"Instrumental"
+  },
+  "notify":{
+    "play":"Play",
+    "pause":"Pause",
+    "next":"Next",
+    "previous":"Previous",
+    "shufflePlaylist":"Shuffle playlist",
+    "loopPlaylist":"Repeat playlist",
+    "mute":"Mute",
+    "unmute":"Unmute",
+    "maxVolume":"Maximum volume",
+    "options":"Options",
+    "activateVideo":"Activate video",
+    "goToAlbum":"Go to album",
+    "showFullscreen":"Show fullscreen",
+    "closeFullscreen":"Close fullscreen",
+    "hideVideo":"Hide video",
+    "showVideo":"Show video",
+    "resizeVideoScreen":"resizeVideoScreen"
+  },
+  "copyright":"Copyright"
+}

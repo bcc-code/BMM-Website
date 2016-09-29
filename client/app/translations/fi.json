@@ -70,6 +70,7 @@
     "music":{
       "latestMusic":"Uusimmat kappaleet",
       "artists":"Artistit",
+      "fromKaare":"From Kåre",
       "mp3Source":"MP3-Lähde",
       "childrensMp3Source":"Lasten MP3-lähde",
       "instrumental":"Instrumentaali"
