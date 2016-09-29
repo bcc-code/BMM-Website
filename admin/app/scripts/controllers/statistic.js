@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('bmmApp')
-    .controller('StatisticCtrl', ($scope, _api, _statistic, _init) => {
-        var _chart_byDate, _chart_bestTrack, _chart_listenByDay
-            , _chart_listenByDay_ctx = '#fraa_kaareList_listenByDay'
-            , _chart_CustomListenByDate_ctx = '#custom_listenByDay'
-            , _chart_bestTrack_ctx = '#fraa_kaareList_bestTracks'
-            , _chart_CustomByTrack_ctx = '#custom_bestTrack'
-            , _chart_byDate_ctx = '#fraa_kaareList_byDate'
-            , _chart_CustomByDate_ctx = '#custom_view'
-            , _background_colors = [];
+    .controller('StatisticCtrl', function ($scope, _api, _statistic, _init) {
+        var chart_byDate, chart_bestTrack, chart_listenByDay
+            , chart_listenByDay_ctx = '#fraa_kaareList_listenByDay'
+            , chart_CustomListenByDate_ctx = '#custom_listenByDay'
+            , chart_bestTrack_ctx = '#fraa_kaareList_bestTracks'
+            , chart_CustomByTrack_ctx = '#custom_bestTrack'
+            , chart_byDate_ctx = '#fraa_kaareList_byDate'
+            , chart_CustomByDate_ctx = '#custom_view'
+            , background_colors = [];
         $scope.isCustom = false;
 
         /**
@@ -37,13 +37,13 @@ angular.module('bmmApp')
          * @returns {Array of Strings} 
          */
         function getColorArray(size) {
-            if (_background_colors.length !== size) {
+            if (background_colors.length !== size) {
                 for (var i = 0; i < size; i++) {
                     var color = getRandColor();
-                    _background_colors.push(color);
+                    background_colors.push(color);
                 }
             }
-            return _background_colors;
+            return background_colors;
         }
 
         /**
@@ -58,9 +58,7 @@ angular.module('bmmApp')
             return "rgba(" + mixedrgb.join(",") + ", 0.5)";
         }
 
-        this.charts = () => {
-            var _trackList = [], _fraa_kaare_ByDay = {}, _fraa_kaare_ByTrack = {};
-
+        this.charts = function () {
             /**
              * Gets a default ChartData Object
              * 
@@ -100,7 +98,7 @@ angular.module('bmmApp')
                     type: type,
                     data: data,
                     options: {
-                        title:{
+                        title: {
                             display: true,
                             text: title ? title : ""
                         },
@@ -148,8 +146,8 @@ angular.module('bmmApp')
              * @param {any} data
              */
             function updateChartData(chart, data) {
-                data.datasets.forEach((set, i) => {
-                    set.data.forEach((val) => {
+                data.datasets.forEach(function (set, i) {
+                    set.data.forEach(function (val) {
                         if (chart.config.type === "pie") {
                             chart.data.datasets[i].data[i] += val;
                         } else {
@@ -161,7 +159,7 @@ angular.module('bmmApp')
                     })
 
                 });
-                data.labels.forEach((label) => {
+                data.labels.forEach(function (label) {
                     if (chart.config.type !== "pie" || $.inArray(chart.data.labels, label) !== -1) {
                         chart.data.labels.push(label);
                     }
@@ -179,7 +177,7 @@ angular.module('bmmApp')
              * @param {any} chart
              */
             function clearChart(chart) {
-                chart.data.datasets.forEach((set, i) => {
+                chart.data.datasets.forEach(function (set, i) {
                     set.data = [];
                 });
                 chart.data.labels = [];
@@ -190,14 +188,12 @@ angular.module('bmmApp')
                 /**
                  * Draws the Fra Kåre Charts
                  */
-                drawFraaKaareData: () => {
-
-                    _statistic.getChartListFraKaare().then((chartList) => {
-                        this.charts().drawChart_byDay(chartList, _chart_byDate_ctx);
-                        this.charts().drawChart_byTrack(chartList, _chart_listenByDay_ctx);
-                        this.charts().drawChar_mostListend(chartList, _chart_bestTrack_ctx);
-                    });
-
+                drawFraaKaareData: function () {
+                    _statistic.getChartListFraKaare().then(function (chartList) {
+                        this.drawChart_byDay(chartList, chart_byDate_ctx);
+                        this.drawChart_byTrack(chartList, chart_listenByDay_ctx);
+                        this.drawChar_mostListend(chartList, chart_bestTrack_ctx);
+                    }.bind(this));
                 },
 
                 /**
@@ -205,33 +201,30 @@ angular.module('bmmApp')
                  * 
                  * @param {Arry of TrackItems} chartList
                  */
-                drawCustomData: (chartList) => {
+                drawCustomData: function (chartList) {
                     if (!chartList) {
                         chartList = [];
                     }
 
-                    this.charts().drawChart_byDay(chartList, _chart_CustomByDate_ctx);
-                    this.charts().drawChart_byTrack(chartList, _chart_CustomByTrack_ctx);
-                    this.charts().drawChar_mostListend(chartList, _chart_CustomListenByDate_ctx);
+                    this.drawChart_byDay(chartList, chart_CustomByDate_ctx);
+                    this.drawChart_byTrack(chartList, chart_CustomByTrack_ctx);
+                    this.drawChar_mostListend(chartList, chart_CustomListenByDate_ctx);
                 },
 
                 /**
                  * Clear all Charts
                  */
-                clearCharts: () => {
-                    clearChart(_chart_bestTrack);
-                    clearChart(_chart_byDate);
-                    clearChart(_chart_listenByDay);
-                    this.charts().destroyCharts();
+                clearCharts: function () {
+                    clearChart(chart_bestTrack);
+                    clearChart(chart_byDate);
+                    clearChart(chart_listenByDay);
+                    this.destroyCharts();
                 },
 
-                destroyCharts: () => {
-                    // _chart_bestTrack.destroy();
-                    // _chart_byDate.destroy();
-                    // _chart_listenByDay.destroy();
-                    _chart_bestTrack = undefined;
-                    _chart_byDate = undefined;
-                    _chart_listenByDay = undefined;
+                destroyCharts: function () {
+                    chart_bestTrack = undefined;
+                    chart_byDate = undefined;
+                    chart_listenByDay = undefined;
                 },
 
                 /**
@@ -240,10 +233,10 @@ angular.module('bmmApp')
                  * @param {any} list
                  * @param {any} chart_ctx
                  */
-                drawChart_byDay: (list, chart_ctx) => {
+                drawChart_byDay: function (list, chart_ctx) {
                     var data = { labels: [], datasets: [] }, background_colors = [], setName, setNamePrefix;
-                    list.forEach((e, i) => {
-                        e.names.forEach((name, x) => {
+                    list.forEach(function (e, i) {
+                        e.names.forEach(function (name, x) {
                             if ($.inArray(name, data.labels) === -1) {
                                 data.labels.push(name);
                             }
@@ -256,7 +249,7 @@ angular.module('bmmApp')
 
                     });
 
-                    _chart_byDate = drawChart(data, chart_ctx, _chart_byDate, true, "bar", "New Users", _init.translation.statistic.chartByDateTitle);
+                    chart_byDate = drawChart(data, chart_ctx, chart_byDate, true, "bar", "New Users", _init.translation.statistic.chartByDateTitle);
                 },
 
                 /**
@@ -265,16 +258,16 @@ angular.module('bmmApp')
                  * @param {any} list
                  * @param {any} ctx
                  */
-                drawChart_byTrack: (list, ctx) => {
+                drawChart_byTrack: function (list, ctx) {
                     var data = { labels: [], datasets: [] }, days = [0, 0, 0, 0, 0, 0, 0], sums = [];
-                    list.forEach((day, i) => {
+                    list.forEach(function (day, i) {
                         if (i > 0) {
-                            day.values.forEach((value, x) => {
+                            day.values.forEach(function (value, x) {
                                 days[day.date.getDay()] += value;
                             });
                         }
                     });
-                    days.forEach((e, i) => {
+                    days.forEach(function (e, i) {
                         if (e > 0) {
                             data.labels.push(getDayByNumber(i));
                             sums.push(e);
@@ -282,7 +275,7 @@ angular.module('bmmApp')
                     });
 
                     data.datasets.push(getDefaultChartDataObj("", sums, getColorArray(1)));
-                    _chart_listenByDay = drawChart(data, ctx, _chart_listenByDay, false, "pie", "%", _init.translation.statistic.chartByDayTitle);
+                    chart_listenByDay = drawChart(data, ctx, chart_listenByDay, false, "pie", "%", _init.translation.statistic.chartByDayTitle);
                 },
 
                 /**
@@ -291,10 +284,10 @@ angular.module('bmmApp')
                  * @param {any} list
                  * @param {any} ctx
                  */
-                drawChar_mostListend: (list, ctx) => {
+                drawChar_mostListend: function (list, ctx) {
                     var data = { labels: [], datasets: [] }, sum_val = [];
-                    list.forEach((day, i) => {
-                        day.names.forEach((name, x) => {
+                    list.forEach(function (day, i) {
+                        day.names.forEach(function (name, x) {
                             if ($.inArray(name, data.labels) === -1) {
                                 data.labels.push(name);
                             }
@@ -306,7 +299,7 @@ angular.module('bmmApp')
                     })
 
                     data.datasets.push(getDefaultChartDataObj("", sum_val, getColorArray(sum_val.length)));
-                    _chart_bestTrack = drawChart(data, ctx, _chart_bestTrack, true, "polarArea", "Users", _init.translation.statistic.chartMostListendTitle);
+                    chart_bestTrack = drawChart(data, ctx, chart_bestTrack, true, "polarArea", "Users", _init.translation.statistic.chartMostListendTitle);
 
                 },
             }
@@ -342,9 +335,9 @@ angular.module('bmmApp')
           */
         $scope.updateChartData = function () {
             if ($scope.$$childTail.searchTerm && $scope.$$childTail.searchTerm.length > 1) {
-                _statistic.getChartListCustom($scope.$$childTail.searchTerm).then((chartList) => {
+                _statistic.getChartListCustom($scope.$$childTail.searchTerm).then(function (chartList) {
                     this.charts().drawCustomData(chartList);
-                });
+                }.bind(this));
             }
         }.bind(this);
 

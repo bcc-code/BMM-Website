@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-    .factory('_statistic', ['$q', '_api', ($q, _api) => {
+    .factory('_statistic', ['$q', '_api', function ($q, _api) {
 
         var _stats = [];
 
@@ -43,7 +43,7 @@ angular.module('bmmLibApp')
          * @returns sorted array of stats
          */
         function sortStatsByDate(stats) {
-            stats.sort((a, b) => {
+            stats.sort(function (a, b) {
                 var d1 = new Date(a.name), d2 = new Date(b.name);
                 return ((d1 < d2) ? -1 : ((d1 === d2) ? 0 : 1));
             });
@@ -62,7 +62,7 @@ angular.module('bmmLibApp')
             for (var x in kaareList.names)
                 list.push({ 'name': kaareList.names[x], 'order': kaareList.orders[x], 'value': kaareList.values[x], 'key': kaareList.keys[x] });
 
-            list.sort((a, b) => {
+            list.sort(function (a, b) {
                 return ((a.order < b.order) ? -1 : ((a.name == b.name) ? 0 : 1));
             });
 
@@ -88,7 +88,7 @@ angular.module('bmmLibApp')
             $.when(d1, d2).done(function (trackList, stats) {
                 stats = sortStatsByDate(stats);
                 var stats_tmp = stats, chartList = [];
-                stats.forEach((stat, day_index) => {
+                stats.forEach(function (stat, day_index) {
                     var singleTrack = trackList[0].title !== undefined;
                     chartList[day_index] = []
                     chartList[day_index].values = [];
@@ -97,7 +97,7 @@ angular.module('bmmLibApp')
                     chartList[day_index].orders = [];
                     chartList[day_index].date = new Date(stat.name);
 
-                    stat.rows.forEach((item, i) => {
+                    stat.rows.forEach(function (item, i) {
                         var key = item.key[0], index = -1;
                         if (key.indexOf("track") === -1) {
                             return;
@@ -124,12 +124,12 @@ angular.module('bmmLibApp')
                                 chartList[day_index].values.push(item.value);
                             } else {
                                 var tmpVal = 0, tmpItem;
-                                stats_tmp[day_index - 1].rows.forEach((el, ind) => {
-                                    if( el.key[0] === key){
+                                stats_tmp[day_index - 1].rows.forEach(function (el, ind) {
+                                    if (el.key[0] === key) {
                                         tmpItem = stats_tmp[day_index - 1].rows[ind];
                                     }
                                 });
-                                
+
                                 if (tmpItem && tmpItem.value > 0) {
                                     tmpVal = tmpItem.value;
                                 };
@@ -167,7 +167,7 @@ angular.module('bmmLibApp')
                         }
                     }.bind({ name: filename, index: i })));
                 }
-                $.when.apply(queue).done(() => {
+                $.when.apply(queue).done(function() {
                     _stats = stats;
                     deferred.resolve(stats);
                 });
