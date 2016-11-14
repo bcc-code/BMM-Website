@@ -23,4 +23,4 @@ foreach($nodes as $language)
     }
 }
 
-file_put_contents("admin/app/translations/titles/album.json", json_encode($translations));
+file_put_contents("admin/app/translations/titles/album.json", json_encode($translations, JSON_PRETTY_PRINT));
