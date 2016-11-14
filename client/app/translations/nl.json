@@ -8,22 +8,17 @@
     "almondBlossom":"Amandelbloesem",
     "noTitle":"Geen titel",
     "settings":"Instellingen",
-    "feedback":"Feedback",
     "suport":"Support",
     "readMore":"Meer lezen"
   },
   "options":{
     "addToPlaylist":"Toevoegen aan afspeellijst",
     "download":"Download",
-    "downloadAudio":"Download muziek",
-    "downloadVideo":"Download video",
     "goToAlbum":"Ga naar album",
     "podcast":"Podcast",
     "removeFilter":"Filter verwijderen",
     "changeLanguage":"Taal veranderen",
     "goBack":"Ga terug",
-    "addToFavorites":"Toevoegen aan favorieten",
-    "moreInfo":"Meer informatie",
     "choosePlaylist":"Kies afspeellijst",
     "setupPodcast":"Om de podcast in te stellen moet je de link hieronder kopiëren en daarna plakken in de door jou gekozen software.",
     "chooseLanguages":"Kies talen",
@@ -31,14 +26,12 @@
     "includeLatest":"Laatste toevoegen",
     "websiteLanguage":"Website taal",
     "contentLanguages":"Taal van de content",
-    "preferredContentLanguage":"Voorkeur content taal",
     "tracks":"Nummers",
     "filterByLanguage":"Filteren op taal",
     "copyUrl":"Kopieër URL",
     "copyLink":"Link kopiëren",
-    "delete":"Verwijderen",
     "remove":"Verwijderen",
-    "playPlaylist":"Speel Afspeellijst",
+    "playPlaylist":"Afspeellijst afspelen",
     "share":"Delen"
   },
   "menu":{
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Afspeellijsten",
       "latestTracks":"Nieuwe nummers",
-      "lastPlayed":"Laatst afgespeeld",
-      "mostPlayed":"Meest afgespeeld",
-      "favorites":"Favorieten",
       "current":"Huidige",
       "newPlaylist":"Nieuwe afspeellijst",
       "nameOnPlaylist":"Afspeellijst titel"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Nieuwste muziek",
       "artists":"Artiesten",
-      "fromKaare":"Van Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barnas MP3-favoritter",
       "instrumental":"Instrumentaal"
@@ -91,68 +80,48 @@
     "search":{
       "searchResults":"Zoekresultaten",
       "content":"Inhoud",
-      "bibleVerse":"Bijbel vers",
+      "bibleVerse":"Bijbelvers",
       "album":"Album",
       "artist":"Artiest",
-      "lyricist":"Schrijver",
-      "composer":"Componist",
-      "contributor":"Bijdrager",
       "interprets":"Interpretaties"
     }
   },
   "track":{
     "duration":"Afspeelduur",
     "details":"Details",
-    "unknown":"Onbekend",
-    "dragMeToPlaylist":"Sleep mij naar de afspeellijst",
-    "exegesis":"Exegese",
-    "recordedDate":"Datum opgenomen",
+    "exegesis":"Uitleg",
+    "recordedDate":"Opnamedatum",
     "artist":"Artiest",
     "lyricist":"Tekstschrijver",
     "composer":"Componist",
     "album":"Album",
     "bibleVerse":"Bijbel vers"
   },
-  "album":{
-    "tracks":"Nummer(s)",
-    "childAlbums":"Albums voor kinderen",
-    "relatedAlbums":"Gerelateerde Albums"
-  },
   "playlist":{
-    "content":"Inhoud",
     "tracks":"Nummer(s)",
     "albums":"Album(s)",
-    "totalDuration":"Totale afspeelduur",
     "duration":"Afspeelduur",
-    "nr":"Nr.",
     "title":"Titel",
-    "addToItunes":"Voeg toe aan iTunes",
-    "copyPodcastLink":"Podcast link kopiëren",
-    "language":"Taal",
     "allLanguages":"Alle talen",
-    "feedSize":"Feed lengte",
     "confirmPlaylistDeletion":"Weet je zeker dat je deze afspeellijst wilt verwijderen?",
     "latestTracks":"Laatste nummers",
     "instrumental":"Instrumentaal"
   },
   "notify":{
     "play":"Afspelen",
-    "pause":"Pauze",
     "next":"Volgende",
     "previous":"Vorige",
     "shufflePlaylist":"Shuffle afspeellijst",
     "loopPlaylist":"Herhaal afspeellijst",
     "mute":"Dempen",
-    "unmute":"Niet meer dempen",
     "maxVolume":"Maximum volume",
     "options":"Opties",
     "activateVideo":"Video activeren",
     "goToAlbum":"Ga naar album",
-    "showFullscreen":"Toon voledig scherm",
-    "closeFullscreen":"Voledig scherm sluiten",
+    "showFullscreen":"Toon volledig scherm",
+    "closeFullscreen":"Volledig scherm sluiten",
     "hideVideo":"Video verbergen",
-    "showVideo":"Video weergeven",
-    "resizeVideoScreen":"Video scherm schalen"
+    "showVideo":"Video weergeven"
   },
   "copyright":"Copyright"
 }

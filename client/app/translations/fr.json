@@ -1,5 +1,5 @@
 {
-  "language":"Anglais",
+  "language":"Française",
   "general":{
     "search":"Recherche...",
     "searchResultsFor":"Résultats de la recherche pour :",
@@ -8,22 +8,17 @@
     "almondBlossom":"La Branche d'Amandier",
     "noTitle":"Sans titre",
     "settings":"Paramètres",
-    "feedback":"Commentaires",
     "suport":"Support",
     "readMore":"Lire la suite"
   },
   "options":{
     "addToPlaylist":"Ajouter à la liste de lecture",
     "download":"Télécharger",
-    "downloadAudio":"Télécharger l'audio",
-    "downloadVideo":"Télécharger la vidéo",
     "goToAlbum":"Aller à l'album",
     "podcast":"Podcast",
     "removeFilter":"Enlever le filtre",
     "changeLanguage":"Changer la langue",
     "goBack":"Retour",
-    "addToFavorites":"Ajouter aux favoris",
-    "moreInfo":"Plus d'informations",
     "choosePlaylist":"Choisir la liste de lecture",
     "setupPodcast":"Pour parametrer un podcast, vous devez copier le lien ci-dessous et le coller dans votre application de lecture podcast, préférée.",
     "chooseLanguages":"Choisir les langues",
@@ -31,12 +26,10 @@
     "includeLatest":"Inclure le plus récent",
     "websiteLanguage":"Langue du site Web",
     "contentLanguages":"Langue du contenu",
-    "preferredContentLanguage":"Langue du contenu préférée",
     "tracks":"Pistes",
     "filterByLanguage":"Filtrer par langue",
     "copyUrl":"Copier l'URL",
     "copyLink":"Copier le lien",
-    "delete":"Supprimer",
     "remove":"Enlever",
     "playPlaylist":"Jouer la liste de lecture",
     "share":"Partager"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Listes de lecture",
       "latestTracks":"Nouvelles pistes",
-      "lastPlayed":"Dernier écouté",
-      "mostPlayed":"Le plus écouté",
-      "favorites":"Favoris",
       "current":"En cours de lecture",
       "newPlaylist":"Nouvelle liste de lecture",
       "nameOnPlaylist":"Titre de la liste de lecture"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Dernières musiques",
       "artists":"Artistes",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barna's MP3 Kilden",
       "instrumental":"Instrumental"
@@ -94,17 +83,12 @@
       "bibleVerse":"Verset de la Bible",
       "album":"Album",
       "artist":"Artiste",
-      "lyricist":"Auteur",
-      "composer":"Compositeur",
-      "contributor":"Contributeur",
       "interprets":"Interprètes"
     }
   },
   "track":{
     "duration":"Durée",
     "details":"Détails",
-    "unknown":"Inconnu",
-    "dragMeToPlaylist":"M'ajouter à la liste de lecture actuelle",
     "exegesis":"Exégèse",
     "recordedDate":"Date de l'enregistrement",
     "artist":"Artiste",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Verset de la Bible"
   },
-  "album":{
-    "tracks":"Piste(s)",
-    "childAlbums":"Albums d'enfants",
-    "relatedAlbums":"Albums liés"
-  },
   "playlist":{
-    "content":"Contenu",
     "tracks":"Piste(s)",
     "albums":"Album (s)",
-    "totalDuration":"Durée totale",
     "duration":"Durée",
-    "nr":"Nr.",
     "title":"Titre",
-    "addToItunes":"Ajouter à iTunes",
-    "copyPodcastLink":"Copier le lien podcast",
-    "language":"Langue",
     "allLanguages":"Toutes les langues",
-    "feedSize":"Taille du flux",
     "confirmPlaylistDeletion":"Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
     "latestTracks":"Dernières pistes",
     "instrumental":"Instrumental"
   },
   "notify":{
     "play":"Lire",
-    "pause":"Pause",
     "next":"Suivant",
     "previous":"Précédent",
     "shufflePlaylist":"Lecture aléatoire de la liste",
     "loopPlaylist":"Activer la répétition",
     "mute":"Muet",
-    "unmute":"Son",
     "maxVolume":"Volume max",
     "options":"Options",
     "activateVideo":"Activer la vidéo",
@@ -151,8 +121,7 @@
     "showFullscreen":"Afficher plein écran",
     "closeFullscreen":"Quitter plein écran",
     "hideVideo":"Masquer vidéo",
-    "showVideo":"Afficher vidéo",
-    "resizeVideoScreen":"Redimensionner écran vidéo"
+    "showVideo":"Afficher vidéo"
   },
   "copyright":"Droits d'auteur"
 }

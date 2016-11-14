@@ -1,5 +1,5 @@
 {
-  "language":"Angol",
+  "language":"Magyar",
   "general":{
     "search":"Keresés...",
     "searchResultsFor":"Találatok erre:",
@@ -8,22 +8,17 @@
     "almondBlossom":"Mandulavirág",
     "noTitle":"Nincs cím",
     "settings":"Beállítások",
-    "feedback":"Visszajelzések",
     "suport":"Támogatás",
     "readMore":"Tovább"
   },
   "options":{
     "addToPlaylist":"Hozzáadás lejátszási listához",
     "download":"Letöltés",
-    "downloadAudio":"Audió letöltése",
-    "downloadVideo":"Videó letöltése",
     "goToAlbum":"Váltás erre az albumra",
     "podcast":"Podcast",
     "removeFilter":"Szűrő eltávolítása",
     "changeLanguage":"Nyelvváltás",
     "goBack":"Vissza",
-    "addToFavorites":"Hozzáadás a kedvencekhez",
-    "moreInfo":"További információ",
     "choosePlaylist":"Lejátszási lista választás",
     "setupPodcast":"Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használt szoftverbe.",
     "chooseLanguages":"Nyelvek válsztása",
@@ -31,12 +26,10 @@
     "includeLatest":"Tartalmazza a legújabbat",
     "websiteLanguage":"Weboldal nyelve",
     "contentLanguages":"Tartalom nyelve",
-    "preferredContentLanguage":"Tartalom elsődleges nyelve",
     "tracks":"számok",
     "filterByLanguage":"Szűrés nyelv szerint",
     "copyUrl":"URL másolása",
     "copyLink":"Link másolása",
-    "delete":"Törlés",
     "remove":"Eltávolítás",
     "playPlaylist":"Lejátszási lista indítása",
     "share":"Megosztás"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Lejátszási listák",
       "latestTracks":"Új számok",
-      "lastPlayed":"Utoljára lejátszott",
-      "mostPlayed":"Legkedveltebb",
-      "favorites":"Kedvencek",
       "current":"Aktuális",
       "newPlaylist":"Új lejátszási lista",
       "nameOnPlaylist":"Lejátszási lista címe"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Legújabb zenék",
       "artists":"Előadók",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-forrás",
       "childrensMp3Source":"Gyermekek MP3-forrása",
       "instrumental":"Hangszeres"
@@ -94,17 +83,12 @@
       "bibleVerse":"Bibliavers",
       "album":"Album",
       "artist":"Előadó",
-      "lyricist":"Szövegíró",
-      "composer":"Zeneszerző",
-      "contributor":"Közreműködő",
       "interprets":"Előadók"
     }
   },
   "track":{
     "duration":"Időtartam",
     "details":"Részletek",
-    "unknown":"Ismeretlen",
-    "dragMeToPlaylist":"Húzd a lejátszási listához",
     "exegesis":"Értelmezés",
     "recordedDate":"Felvétel dátuma",
     "artist":"Előadó",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Bibliavers"
   },
-  "album":{
-    "tracks":"Szám(ok)",
-    "childAlbums":"Gyermek albumok",
-    "relatedAlbums":"Kapcsolódó albumok"
-  },
   "playlist":{
-    "content":"Tartalom",
     "tracks":"Szám(ok)",
     "albums":"Album(ok)",
-    "totalDuration":"Teljes időtartam",
     "duration":"Időtartam",
-    "nr":"No.",
     "title":"Cím",
-    "addToItunes":"Hozzáadás iTunes-hoz",
-    "copyPodcastLink":"Podcast link másolása",
-    "language":"Nyelv",
     "allLanguages":"Minden nyelv",
-    "feedSize":"Podcast mérete",
     "confirmPlaylistDeletion":"Biztosan törölni kivánod ezt a lejátszási listát?",
     "latestTracks":"Legújabb számok",
     "instrumental":"Hangszeres"
   },
   "notify":{
     "play":"Lejátszás",
-    "pause":"Szünet",
     "next":"Következő",
     "previous":"Előző",
     "shufflePlaylist":"Véletlenszerű lejátszási lista",
     "loopPlaylist":"Lejátszási lista ismétlése",
     "mute":"Némítás",
-    "unmute":"Némítás feloldása",
     "maxVolume":"Maximális hangerő",
     "options":"Opciók",
     "activateVideo":"Videó aktiválása",
@@ -151,8 +121,7 @@
     "showFullscreen":"Teljes képernyő",
     "closeFullscreen":"Teljes képernyő bezárása",
     "hideVideo":"Videó elrejtése",
-    "showVideo":"Videó megjelenítése",
-    "resizeVideoScreen":"Videóméret módosítása"
+    "showVideo":"Videó megjelenítése"
   },
   "copyright":"Szerzői jog"
 }

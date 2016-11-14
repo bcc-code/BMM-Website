@@ -1,5 +1,5 @@
 {
-  "language":"англійська\n",
+  "language":"Український",
   "general":{
     "search":"Пошук...",
     "searchResultsFor":"Результати пошуку для:",
@@ -8,22 +8,17 @@
     "almondBlossom":"Цвіт мигдаля",
     "noTitle":"Без назви",
     "settings":"Налаштування",
-    "feedback":"Відгук",
     "suport":"Підтримка",
     "readMore":"Читати далі"
   },
   "options":{
     "addToPlaylist":"Додати до списку відтворення",
     "download":"Завантажити",
-    "downloadAudio":"Завантажити аудіо",
-    "downloadVideo":"Завантажити відео",
     "goToAlbum":"Перейти до альбому",
     "podcast":"Підкаст",
     "removeFilter":"видалити фільтр",
     "changeLanguage":"Змінити мову",
     "goBack":"Повернутися",
-    "addToFavorites":"Додати в обране",
-    "moreInfo":"Детальніше",
     "choosePlaylist":"Виберіть список відтворення",
     "setupPodcast":"Щоб настроїти подкаст, вам доведеться скопіювати посилання нижче і вставте його в ваш бажаний подкаст програмного забезпечення.",
     "chooseLanguages":"Вибрати мову",
@@ -31,12 +26,10 @@
     "includeLatest":"Включають в себе останні",
     "websiteLanguage":"Мова сайту",
     "contentLanguages":"Мови контенту",
-    "preferredContentLanguage":"Бажаний зміст мови",
     "tracks":"треки",
     "filterByLanguage":"Фільтр по мові",
     "copyUrl":"Скопіюйте URL",
     "copyLink":"копіювати посилання",
-    "delete":"Видалити",
     "remove":"видаляти",
     "playPlaylist":"грати плейлист",
     "share":"Частка"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Списки відтворення",
       "latestTracks":"Нові треки",
-      "lastPlayed":"Останнього відтворення",
-      "mostPlayed":"Найбільш грав",
-      "favorites":"Уподобання",
       "current":"Струм",
       "newPlaylist":"Новий список\n",
       "nameOnPlaylist":"Заголовок списку відтворення"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Останніх музики",
       "artists":"артист\n",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-джерело",
       "childrensMp3Source":"Діти MP3-джерело",
       "instrumental":"Інструментальні"
@@ -94,17 +83,12 @@
       "bibleVerse":"Біблійний вірш",
       "album":"Альбом",
       "artist":"Виконавець",
-      "lyricist":"Автор текстів",
-      "composer":"Композитор",
-      "contributor":"Автори та перекладачі",
       "interprets":"артист"
     }
   },
   "track":{
     "duration":"Тривалість",
     "details":"подробиці",
-    "unknown":"Невідомо",
-    "dragMeToPlaylist":"Перетягнути мене до списку відтворення",
     "exegesis":"Переклад",
     "recordedDate":"Дата запису",
     "artist":"Виконавець",
@@ -113,37 +97,23 @@
     "album":"Альбом",
     "bibleVerse":"Біблійний вірш"
   },
-  "album":{
-    "tracks":"Треки",
-    "childAlbums":"Дитина альбоми",
-    "relatedAlbums":"Подібні Альбом"
-  },
   "playlist":{
-    "content":"Зміст",
     "tracks":"Треки",
     "albums":"Альбом",
-    "totalDuration":"Загальна тривалість",
     "duration":"Тривалість",
-    "nr":"Н. р.",
     "title":"Назва",
-    "addToItunes":"Додати до iTunes",
-    "copyPodcastLink":"Копіювати посилання подкаст",
-    "language":"Мова",
     "allLanguages":"Всі мови",
-    "feedSize":"Розмір завантаження",
     "confirmPlaylistDeletion":"Ви дійсно бажаєте видалити цей список відтворення?",
     "latestTracks":"Новітні треки",
     "instrumental":"Інструментальні"
   },
   "notify":{
     "play":"Грати",
-    "pause":"Пауза",
     "next":"наступний",
     "previous":"Попередній",
     "shufflePlaylist":"перемішати плейлист",
     "loopPlaylist":"цикл плейлист",
     "mute":"беззвучний",
-    "unmute":"включити",
     "maxVolume":"Макс обсяг",
     "options":"Параметри",
     "activateVideo":"активуйте відео",
@@ -151,8 +121,7 @@
     "showFullscreen":"Показати повний екран",
     "closeFullscreen":"Закрити повний екран\n",
     "hideVideo":"приховати відео",
-    "showVideo":"Показати відео",
-    "resizeVideoScreen":"розмір екрану відео"
+    "showVideo":"Показати відео"
   },
   "copyright":"Авторське право"
 }

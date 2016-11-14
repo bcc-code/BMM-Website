@@ -8,22 +8,17 @@
     "almondBlossom":"Kwiat Migdałowy",
     "noTitle":"Bez tytułu",
     "settings":"Ustawienia",
-    "feedback":"wiadomość zwrotna",
     "suport":"Pomoc",
     "readMore":"Czytaj więcej"
   },
   "options":{
     "addToPlaylist":"Dodaj do playlisty",
     "download":"Pobierz",
-    "downloadAudio":"Pobierz audio",
-    "downloadVideo":"Pobierz film",
     "goToAlbum":"Idź do albumu",
     "podcast":"Podcast",
     "removeFilter":"Usuń filtr",
     "changeLanguage":"Zmień język",
     "goBack":"Wróć",
-    "addToFavorites":"Dodaj do ulubionych",
-    "moreInfo":"Więcej informacji",
     "choosePlaylist":"Wybierz playlistę",
     "setupPodcast":"Aby skonfigurować podcast musisz skopiować link poniżej i wkleić go do twojego programu obsugłującego podcasty.",
     "chooseLanguages":"Wybierz język",
@@ -31,12 +26,10 @@
     "includeLatest":"Włącznie z najnowszymi",
     "websiteLanguage":"Język strony",
     "contentLanguages":"Język zawartości",
-    "preferredContentLanguage":"Preferowany język zawartości",
     "tracks":"utwory",
     "filterByLanguage":"Filtruj według języka",
     "copyUrl":"Skopiuj adres URL",
     "copyLink":"Kopiuj link",
-    "delete":"Usuń",
     "remove":"Usuń",
     "playPlaylist":"Otwórz playliste",
     "share":"Udostępnij"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Listy odtwarzania",
       "latestTracks":"Nowe utwory",
-      "lastPlayed":"Ostatnio odtwarzane",
-      "mostPlayed":"Najczęściej odtwarzane",
-      "favorites":"Ulubione",
       "current":"Teraz odtwarzane",
       "newPlaylist":"Nowa playlista",
       "nameOnPlaylist":"Tytuł playlisty"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Najnowsza muzyka",
       "artists":"Wykonawcy",
-      "fromKaare":"Od Kårego",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Pieśni dla dzieci",
       "instrumental":"Instrumentalna"
@@ -94,17 +83,12 @@
       "bibleVerse":"Werset z Biblii",
       "album":"Album",
       "artist":"Wykonawca",
-      "lyricist":"Autor tekstu",
-      "composer":"Kompozytor",
-      "contributor":"Autor",
       "interprets":"Wykonawcy"
     }
   },
   "track":{
     "duration":"Długość utworu",
     "details":"Szczegóły",
-    "unknown":"Nieznany",
-    "dragMeToPlaylist":"Przeciągnij mnie do playlisty",
     "exegesis":"Tłumaczenie",
     "recordedDate":"Data nagrania",
     "artist":"Wykonawca",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Werset z Biblii"
   },
-  "album":{
-    "tracks":"Utwory",
-    "childAlbums":"Albumy",
-    "relatedAlbums":"Powiązane albumy"
-  },
   "playlist":{
-    "content":"Zawartość",
     "tracks":"Utwory",
     "albums":"Album(y)",
-    "totalDuration":"Całkowita długość",
     "duration":"Długość utworu",
-    "nr":"Nr",
     "title":"Tytuł",
-    "addToItunes":"Dodaj do iTunes",
-    "copyPodcastLink":"Kopiuj link podcastu",
-    "language":"Język",
     "allLanguages":"Wszystkie języki",
-    "feedSize":"Pojemność",
     "confirmPlaylistDeletion":"Czy na pewno chcesz usunąć tę playlistę?",
     "latestTracks":"Najnowsze utwory",
     "instrumental":"muzyka instrumentalna"
   },
   "notify":{
     "play":"Odtwórz",
-    "pause":"Pauza",
     "next":"Następny",
     "previous":"Poprzedni",
     "shufflePlaylist":"Wymieszaj playlistę",
     "loopPlaylist":"Włącz odtwarzanie playlisty w pętli",
     "mute":"Wycisz",
-    "unmute":"Wyłącz wyciszenie",
     "maxVolume":"Maksymalna głośność",
     "options":"Opcje",
     "activateVideo":"Aktywuj wideo",
@@ -151,8 +121,7 @@
     "showFullscreen":"Włącz tryb pełnoekranowy",
     "closeFullscreen":"Wyłącz tryb pełnoekranowy",
     "hideVideo":"Ukryj wideo",
-    "showVideo":"Pokaż wideo",
-    "resizeVideoScreen":"resizeVideoScreen"
+    "showVideo":"Pokaż wideo"
   },
   "copyright":"Prawa autorskie"
 }

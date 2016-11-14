@@ -12,7 +12,7 @@
       "waitings":"W oczekiwaniu",
       "contributors":"Współpracownicy",
       "users":"Użytkownicy",
-      "statistic":"Statistics"
+      "statistic":"Statystyki"
     },
     "secondary":{
       "quickMenu":"Szybkie Menu",
@@ -170,13 +170,13 @@
     "exegesis":"Tłumaczenie"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nowy użytkownicy na dzień",
+    "chartByDayTitle":"Dni, w które najczęściej to odtwarzano",
+    "chartMostListenedTitle":"Najczęściej słuchane utwory",
+    "fromKaare":"Od Kårego",
+    "others":"Inne",
+    "clearChart":"Wyczyścić wykres",
+    "add":"Dodaj do wykresu"
   },
   "copyright":"Prawa autorskie"
 }

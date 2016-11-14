@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Paneelbord",
-      "notifications":"Notifications",
+      "notifications":"Notifikasies",
       "waitings":"wag vir goedkeuring",
       "contributors":"bydraers",
       "users":"Gebruikers",
-      "statistic":"Statistics"
+      "statistic":"Statistieke"
     },
     "secondary":{
       "quickMenu":"Vinnige Kieslys",
@@ -119,16 +119,16 @@
       "albumManager":"Album bestuurder",
       "trackManager":"Snit bestuurder",
       "contributorManager":"Bydraer bestuurder",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Kennisgewing bestuurder",
       "allRights":"Alle regte",
       "refreshList":"Herlaai Lys"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Boodskap",
+      "addNotificationTranslation":"Voeg kennisgewing vertaling by",
+      "sendPushNotification":"Stuur stoot-kennisgewing",
+      "sent":"Gestuur",
+      "failed":"Misluk"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"interpretasie"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nuwe gebruikers per dag",
+    "chartByDayTitle":"Dag meeste geluister",
+    "chartMostListenedTitle":"Mees geluisterde snit",
+    "fromKaare":"Van Kåre",
+    "others":"Ander",
+    "clearChart":"Vee Diagram skoon",
+    "add":"Voeg by Diagram"
   },
   "copyright":"Kopiereg"
 }

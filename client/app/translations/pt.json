@@ -1,5 +1,5 @@
 {
-  "language":"Inglês",
+  "language":"Português",
   "general":{
     "search":"\"Buscar\"...",
     "searchResultsFor":"Resultados de busca para:",
@@ -8,22 +8,17 @@
     "almondBlossom":"Amendoeira em flor",
     "noTitle":"Sem título",
     "settings":"Configurações",
-    "feedback":"Feedback",
     "suport":"Suporte",
     "readMore":"Leia mais"
   },
   "options":{
     "addToPlaylist":"Adicionar à lista de reprodução",
     "download":"Download",
-    "downloadAudio":"Baixar audio",
-    "downloadVideo":"Download de vídeo",
     "goToAlbum":"Ir ao álbum",
     "podcast":"Podcast",
     "removeFilter":"Remover filtro",
     "changeLanguage":"Alterar Idioma",
     "goBack":"Voltar",
-    "addToFavorites":"Adicionar a Favoritos",
-    "moreInfo":"Mais informação",
     "choosePlaylist":"Escolher a playlist",
     "setupPodcast":"Para configurar o podcast, copie o link abaixo e cole-o em seu software de podcast preferido.",
     "chooseLanguages":"Escolha de idiomas",
@@ -31,12 +26,10 @@
     "includeLatest":"Incluem o mais recente",
     "websiteLanguage":"Idioma do site",
     "contentLanguages":"Línguas de conteúdo",
-    "preferredContentLanguage":"Idioma preferido de conteúdo",
     "tracks":"faixas",
     "filterByLanguage":"Filtrar por idioma",
     "copyUrl":"Copie a URL",
     "copyLink":"Copiar link",
-    "delete":"Apagar",
     "remove":"Remover",
     "playPlaylist":"Reproduzir playlist",
     "share":"Compartilhar"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Lista de reprodução",
       "latestTracks":"Nova faixa",
-      "lastPlayed":"Última reproducao",
-      "mostPlayed":"Mais acessados",
-      "favorites":"Favoritos",
       "current":"Corrente",
       "newPlaylist":"Nova lista de reprodução",
       "nameOnPlaylist":"Título da lista de reprodução"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Últimas músicas",
       "artists":"Artistas",
-      "fromKaare":"From Kåre",
       "mp3Source":"Mp3-fonte",
       "childrensMp3Source":"MP3-fonte do childen",
       "instrumental":"Instrumental"
@@ -94,17 +83,12 @@
       "bibleVerse":"Versos bíblicos",
       "album":"Album",
       "artist":"Cantor",
-      "lyricist":"Letrista",
-      "composer":"Compositor",
-      "contributor":"Contribuidor",
       "interprets":"Artistas"
     }
   },
   "track":{
     "duration":"Duração",
     "details":"Detalhes",
-    "unknown":"Desconhecido",
-    "dragMeToPlaylist":"Arraste para a playlist",
     "exegesis":"Interpretação",
     "recordedDate":"Data gravada",
     "artist":"Cantor",
@@ -113,37 +97,23 @@
     "album":"Álbum",
     "bibleVerse":"Versos bíblicos"
   },
-  "album":{
-    "tracks":"Faixa",
-    "childAlbums":"Álbuns infantis",
-    "relatedAlbums":"Álbuns relacionados"
-  },
   "playlist":{
-    "content":"Conteúdo",
     "tracks":"Faixa",
     "albums":"Álbuns",
-    "totalDuration":"Duração total",
     "duration":"Duração",
-    "nr":"N. º.",
     "title":"Título",
-    "addToItunes":"Adicionar ao iTunes",
-    "copyPodcastLink":"Copiar link do podcast",
-    "language":"Língua",
     "allLanguages":"Todas as línguas",
-    "feedSize":"Tamanho",
     "confirmPlaylistDeletion":"Tem certeza que deseja excluir esta playlist?",
     "latestTracks":"Últimas faixas",
     "instrumental":"Instrumental"
   },
   "notify":{
     "play":"Play",
-    "pause":"Pausa",
     "next":"Próxima",
     "previous":"Anterior",
     "shufflePlaylist":"Shuffle playlist",
     "loopPlaylist":"Loop playlist",
     "mute":"Sem som",
-    "unmute":"Não mudo",
     "maxVolume":"Volume Max",
     "options":"Opções",
     "activateVideo":"Ativar o vídeo",
@@ -151,8 +121,7 @@
     "showFullscreen":"Visualizar em tela cheia",
     "closeFullscreen":"Fechar tela cheia",
     "hideVideo":"Esconder o vídeo",
-    "showVideo":"Mostrar o vídeo",
-    "resizeVideoScreen":"resizeVideoScreen"
+    "showVideo":"Mostrar o vídeo"
   },
   "copyright":"Direitos autorais"
 }

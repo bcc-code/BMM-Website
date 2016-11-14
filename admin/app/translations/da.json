@@ -1,5 +1,5 @@
 {
-  "language":"Engelsk",
+  "language":"Dansk",
   "general":{
     "search":"Søg...",
     "loading":"Indlæser...",
@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Kontrolpanel",
-      "notifications":"Notifications",
+      "notifications":"Notifikationer",
       "waitings":"Venter",
       "contributors":"Bidragydere",
       "users":"Brugere",
-      "statistic":"Statistics"
+      "statistic":"Statistik"
     },
     "secondary":{
       "quickMenu":"Quick Menu",
@@ -119,16 +119,16 @@
       "albumManager":"Album-manager",
       "trackManager":"Spor-manager",
       "contributorManager":"Medvirkende-manager",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Notifikationsmanager",
       "allRights":"Alle rettigheder",
       "refreshList":"Opdater liste"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Besked",
+      "addNotificationTranslation":"Tilføj notifikations-oversættelse",
+      "sendPushNotification":"Send push-notifikation",
+      "sent":"Sendt",
+      "failed":"Fejlede"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"Tydning"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nye brugere pr. dag",
+    "chartByDayTitle":"Dagens mest hørte",
+    "chartMostListenedTitle":"Mest hørte track",
+    "fromKaare":"Fra Kåre",
+    "others":"Andre",
+    "clearChart":"Ryd diagram",
+    "add":"Føj til diagram"
   },
   "copyright":"Rettigheder"
 }

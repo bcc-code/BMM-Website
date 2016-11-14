@@ -1,5 +1,5 @@
 {
-  "language":"Anglais",
+  "language":"Française",
   "general":{
     "search":"Recherche...",
     "loading":"Chargement...",
@@ -12,7 +12,7 @@
       "waitings":"En attente",
       "contributors":"Contributeurs",
       "users":"Utilisateurs",
-      "statistic":"Statistics"
+      "statistic":"Statistiques"
     },
     "secondary":{
       "quickMenu":"Menu rapide",
@@ -170,13 +170,13 @@
     "exegesis":"Exégèse"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nouveaux utilisateurs par jour",
+    "chartByDayTitle":"Le jour le plus écouté",
+    "chartMostListenedTitle":"Pistes les plus écoutées",
+    "fromKaare":"De Kåre",
+    "others":"Autres",
+    "clearChart":"Effacer la conversation",
+    "add":"Ajouter au graphique"
   },
   "copyright":"Droits d'auteur"
 }

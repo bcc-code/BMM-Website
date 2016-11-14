@@ -8,22 +8,17 @@
     "almondBlossom":"Бадемов цвят",
     "noTitle":"Без заглавие",
     "settings":"Настройки",
-    "feedback":"Обратна връзка",
     "suport":"Поддръжка",
     "readMore":"Прочети повече"
   },
   "options":{
     "addToPlaylist":"Прибави към списъка",
     "download":"Изтегли",
-    "downloadAudio":"Изтегли аудио",
-    "downloadVideo":"Изтегли видео",
     "goToAlbum":"Отиди на албум",
     "podcast":"Подкаст",
     "removeFilter":"Премахни филтър",
     "changeLanguage":"Промени езика",
     "goBack":"Върни се назад",
-    "addToFavorites":"Добави към любими",
-    "moreInfo":"Повече информация",
     "choosePlaylist":"Избери списък",
     "setupPodcast":"За да настроиш подкаста, трябва да копираш линка по-долу и да го поставиш в твоя предпочитан подкаст софтуер.",
     "chooseLanguages":"Избери езици",
@@ -31,12 +26,10 @@
     "includeLatest":"Включи последното",
     "websiteLanguage":"Език на сайта",
     "contentLanguages":"Език на съдържанието",
-    "preferredContentLanguage":"Предпочитан език на съдържанието",
     "tracks":"Песни и речи",
     "filterByLanguage":"Филтрирай по език",
     "copyUrl":"Копирай URL адреса",
     "copyLink":"Копирай връзка",
-    "delete":"Изтрий",
     "remove":"Премахни",
     "playPlaylist":"Пусни списък",
     "share":"Сподели"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Списъци",
       "latestTracks":"Нови песни и речи",
-      "lastPlayed":"Последно изпълнено",
-      "mostPlayed":"Най-изпълнявани",
-      "favorites":"Любими",
       "current":"Текущ",
       "newPlaylist":"Нов списък",
       "nameOnPlaylist":"Заглавие на списъка"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Последна музика",
       "artists":"Изпълнители",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-извор",
       "childrensMp3Source":"Детски MP3-извор",
       "instrumental":"Инструментал"
@@ -94,17 +83,12 @@
       "bibleVerse":"Библейски стих",
       "album":"Албум",
       "artist":"Изпълнител",
-      "lyricist":"Текстописец",
-      "composer":"Композитор",
-      "contributor":"Сътрудник",
       "interprets":"Интерпретира"
     }
   },
   "track":{
     "duration":"Продължителност",
     "details":"Детайли",
-    "unknown":"Неизвестен",
-    "dragMeToPlaylist":"Плъзни ме до списъка",
     "exegesis":"Обяснение",
     "recordedDate":"Дата на записване",
     "artist":"Изпълнител",
@@ -113,37 +97,23 @@
     "album":"Албум",
     "bibleVerse":"Библейски стих"
   },
-  "album":{
-    "tracks":"Запис(а)",
-    "childAlbums":"Придружаващи албуми",
-    "relatedAlbums":"Сродни албуми"
-  },
   "playlist":{
-    "content":"Съдържание",
     "tracks":"Запис(а)",
     "albums":"Албум(и)",
-    "totalDuration":"Обща продължителност",
     "duration":"Продължителност",
-    "nr":"№",
     "title":"Заглавие",
-    "addToItunes":"Добави към iTunes",
-    "copyPodcastLink":"Копирай връзката за подкаст",
-    "language":"Език",
     "allLanguages":"Всички езици",
-    "feedSize":"Feed размер",
     "confirmPlaylistDeletion":"Наистина ли искаш да изтриеш този списък?",
     "latestTracks":"Последни песни и речи",
     "instrumental":"Инструментал"
   },
   "notify":{
     "play":"Пусни",
-    "pause":"Пауза",
     "next":"Следващо",
     "previous":"Предишно",
     "shufflePlaylist":"Разбъркване на списъка за изпълнение",
     "loopPlaylist":"Повтаряне на списък",
     "mute":"Без звук",
-    "unmute":"Със звук",
     "maxVolume":"Максимален звук",
     "options":"Опции",
     "activateVideo":"Задействане на видео",
@@ -151,8 +121,7 @@
     "showFullscreen":"Покажи на цял екран",
     "closeFullscreen":"Затвори цял екран",
     "hideVideo":"Скрий видео",
-    "showVideo":"Покажи видеоклип",
-    "resizeVideoScreen":"Преоразмери  видеоекрана"
+    "showVideo":"Покажи видеоклип"
   },
   "copyright":"Авторско право"
 }

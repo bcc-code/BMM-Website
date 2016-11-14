@@ -1,5 +1,5 @@
 {
-  "language":"Engels",
+  "language":"Dutch",
   "general":{
     "search":"Zoeken...",
     "loading":"Laden...",
@@ -12,7 +12,7 @@
       "waitings":"Wachtrij",
       "contributors":"Bijdragers",
       "users":"Gebruikers",
-      "statistic":"Statistics"
+      "statistic":"Statistieken"
     },
     "secondary":{
       "quickMenu":"Snelmenu",
@@ -37,7 +37,7 @@
       "lyricist":"Schrijver",
       "composer":"Componist",
       "contributor":"Bijdrager",
-      "interprets":"Interpretaties"
+      "interprets":"Artiesten"
     },
     "editor":{
       "mainSettings":"Hoofdinstellingen",
@@ -65,7 +65,7 @@
       "missingFile":"Voeg eerst een bestand toe",
       "album":"Album",
       "type":"Type",
-      "parentAlbum":"Bovenliggende album",
+      "parentAlbum":"Bovenliggend album",
       "setNewParentAlbum":"Nieuw hoofdalbum",
       "lastModified":"Laatst gewijzigd",
       "by":"door",
@@ -77,7 +77,7 @@
       "size":"Grootte",
       "mediaFiles":"Mediabestanden",
       "uploadFile":"Bestand uploaden",
-      "uploadError":"Kan niet uploaden, controleer of uw bestand juist geformatteerd is",
+      "uploadError":"Kan niet uploaden. Controleer of uw bestand in het juiste formaat",
       "imageAllowed":"JPEG, png, gif",
       "mediaAllowed":"MP3, mp4",
       "composers":"Componisten",
@@ -160,23 +160,23 @@
   "warnings":{
     "confirmAlbumDeletion":"Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
     "confirmTrackDeletion":"Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
-    "confirmTranslatedDeletion":"Taal heeft inhoud, verwijdering bevestigen",
-    "confirmContributorDeletion":"WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERT!"
+    "confirmTranslatedDeletion":"Door het verwijderen van deze taal, wordt de inhoud, gerelateerd aan deze taal ook verwijderd. Wilt u doorgaan?",
+    "confirmContributorDeletion":"WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track":{
     "duration":"Afspeelduur",
     "unknown":"Onbekend",
     "dragMeToPlaylist":"Sleep mij naar de afspeellijst",
-    "exegesis":"Exegese"
+    "exegesis":"Uitleg"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nieuwe gebruikers per dag",
+    "chartByDayTitle":"Vandaag het meest geluisterd",
+    "chartMostListenedTitle":"Meest geluisterde nummer",
+    "fromKaare":"Van Kåre",
+    "others":"Anderen",
+    "clearChart":"Grafiek leegmaken",
+    "add":"Toevoegen aan de grafiek"
   },
   "copyright":"Auteursrecht"
 }

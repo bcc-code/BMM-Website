@@ -1,5 +1,5 @@
 {
-  "language":"Inglés",
+  "language":"Español",
   "general":{
     "search":"búsqueda...",
     "loading":"Cargando...",
@@ -12,7 +12,7 @@
       "waitings":"En espera",
       "contributors":"Colaboradores",
       "users":"Usuarios",
-      "statistic":"Statistics"
+      "statistic":"Estadísticas"
     },
     "secondary":{
       "quickMenu":"Menú rápido",
@@ -170,13 +170,13 @@
     "exegesis":"interpretación"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Nuevos usuarios por día",
+    "chartByDayTitle":"Más escuchadas del día",
+    "chartMostListenedTitle":"Canción más escuchada",
+    "fromKaare":"De Kåre",
+    "others":"Otros",
+    "clearChart":"Limpiar cuadro",
+    "add":"Añadir cuadro"
   },
   "copyright":"Derechos de autor"
 }

@@ -134,7 +134,7 @@
   "states":{
     "noChanges":"No changes",
     "allIsWell":"All is well",
-    "changesPerformed":"Changes performed",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Could not create album",
     "couldNotCreateTrack":"Could not create track",
     "errorCode":"Error code",

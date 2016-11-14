@@ -8,22 +8,17 @@
     "almondBlossom":"Mandljev cvet",
     "noTitle":"Brez naslova",
     "settings":"Nastavitve",
-    "feedback":"Povratne informacije",
     "suport":"Podpora",
     "readMore":"Preberite več"
   },
   "options":{
     "addToPlaylist":"Dodaj na seznam predvajanja",
     "download":"Prenesi",
-    "downloadAudio":"Prenesi zvočni posnetek",
-    "downloadVideo":"Prenesi video posnetek",
     "goToAlbum":"Pojdi na album",
     "podcast":"Podcast",
     "removeFilter":"Odstrani filter",
     "changeLanguage":"Spremeni jezik",
     "goBack":"Nazaj",
-    "addToFavorites":"Dodaj med priljubljene",
-    "moreInfo":"Več informacij",
     "choosePlaylist":"Izberite seznam predvajanja",
     "setupPodcast":"Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
     "chooseLanguages":"Izberite jezike",
@@ -31,12 +26,10 @@
     "includeLatest":"Vključi najnovejše",
     "websiteLanguage":"Jezik spletne strani",
     "contentLanguages":"Jezik vsebine",
-    "preferredContentLanguage":"Prednostni jezik vsebine",
     "tracks":"skladbe",
     "filterByLanguage":"Filtriraj po jeziku",
     "copyUrl":"Kopiraj URL",
     "copyLink":"Kopiraj povezavo",
-    "delete":"Izbriši",
     "remove":"Odstrani",
     "playPlaylist":"Predvajaj seznam predvajanja",
     "share":"Deli"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Seznami predvajanja",
       "latestTracks":"Nove skladbe",
-      "lastPlayed":"Nazadnje predvajano",
-      "mostPlayed":"Največkrat predvajano",
-      "favorites":"Priljubljeno",
       "current":"Trenutno",
       "newPlaylist":"Nov seznam predvajanja",
       "nameOnPlaylist":"Naslov seznama predvajanja"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Najnovejša glasba",
       "artists":"Izvajalci",
-      "fromKaare":"Od Kåre-ja",
       "mp3Source":"MP3-Izvir",
       "childrensMp3Source":"Otroški MP3-Izvir",
       "instrumental":"Instrumentalna glasba"
@@ -94,17 +83,12 @@
       "bibleVerse":"Biblijska vrstica",
       "album":"Album",
       "artist":"Izvajalec",
-      "lyricist":"Avtor besedila",
-      "composer":"Skladatelj",
-      "contributor":"Ustvarjalec",
       "interprets":"Izvajalci"
     }
   },
   "track":{
     "duration":"Trajanje",
     "details":"Podrobnosti",
-    "unknown":"Neznano",
-    "dragMeToPlaylist":"Povlecite na seznam predvajanja",
     "exegesis":"Razlaga",
     "recordedDate":"Datum snemanja",
     "artist":"Izvajalec",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Biblijska vrstica"
   },
-  "album":{
-    "tracks":"Skladba(e)",
-    "childAlbums":"Otroški album",
-    "relatedAlbums":"Sorodni albumi"
-  },
   "playlist":{
-    "content":"Vsebina",
     "tracks":"Skladba(e)",
     "albums":"Album(i)",
-    "totalDuration":"Skupno trajanje",
     "duration":"Trajanje",
-    "nr":"Št.",
     "title":"Naslov",
-    "addToItunes":"Dodaj v iTunes",
-    "copyPodcastLink":"Kopiraj podcast povezavo",
-    "language":"Jezik",
     "allLanguages":"Vsi jeziki",
-    "feedSize":"Velikost podcasta",
     "confirmPlaylistDeletion":"Ali ste prepričani, da želite izbrisati ta seznam?",
     "latestTracks":"Najnovejše skladbe",
     "instrumental":"Instrumentalna glasba"
   },
   "notify":{
     "play":"Predvajaj",
-    "pause":"Premor",
     "next":"Naslednji",
     "previous":"Prejšnji",
     "shufflePlaylist":"Naključni seznam predvajanja",
     "loopPlaylist":"Ponavljaj seznam predvajanja",
     "mute":"Nemo",
-    "unmute":"Vklopi zvok",
     "maxVolume":"Najvišja glasnost",
     "options":"Možnosti",
     "activateVideo":"Aktiviraj video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Prikaži celoten zaslon",
     "closeFullscreen":"Zapri celozaslonski način",
     "hideVideo":"Skrij video",
-    "showVideo":"Pokaži video",
-    "resizeVideoScreen":"spremeni velikost zaslona"
+    "showVideo":"Pokaži video"
   },
   "copyright":"Avtorske pravice"
 }

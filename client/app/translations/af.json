@@ -8,22 +8,17 @@
     "almondBlossom":"Almond Blossom",
     "noTitle":"Geen Titel",
     "settings":"Instellings",
-    "feedback":"Terugvoering",
     "suport":"Ondersteuning",
     "readMore":"Lees meer"
   },
   "options":{
     "addToPlaylist":"Voeg by snitlys",
     "download":"Laai af",
-    "downloadAudio":"Laai klank af",
-    "downloadVideo":"Laai video af",
     "goToAlbum":"Gaan na album",
     "podcast":"Podcast",
     "removeFilter":"Verwyder filter",
     "changeLanguage":"Verander taal",
     "goBack":"Gaan terug",
-    "addToFavorites":"Voeg by gunstelinge",
-    "moreInfo":"meer informasie",
     "choosePlaylist":"Kies snitlys",
     "setupPodcast":"Om die podcast in te stel moet jy die skakel van hier onder kopieer en in jou verkiesde podcast sagteware plak.",
     "chooseLanguages":"Kies 'n taal",
@@ -31,12 +26,10 @@
     "includeLatest":"sluit in die nuutste",
     "websiteLanguage":"webwerf taal",
     "contentLanguages":"Taal van inhoud",
-    "preferredContentLanguage":"Verkiesde taal van inhoud",
     "tracks":"Snede",
     "filterByLanguage":"filtreer deur taal",
     "copyUrl":"Kopieer URL",
     "copyLink":"Kopieer Link",
-    "delete":"Verwyder",
     "remove":"Verwyder",
     "playPlaylist":"Speel snitlys",
     "share":"Deel"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Speellys",
       "latestTracks":"Nuwe snede",
-      "lastPlayed":"Laaste gespeel",
-      "mostPlayed":"Meeste gespeel",
-      "favorites":"Gunstelinge",
       "current":"Huideige",
       "newPlaylist":"Nuwe Speellys",
       "nameOnPlaylist":"Speellys titel"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Nuutste Musiek",
       "artists":"Kunstenaars",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-Bron",
       "childrensMp3Source":"Kinder MP3-Bron",
       "instrumental":"Instrumentaal"
@@ -94,17 +83,12 @@
       "bibleVerse":"Bybel verse",
       "album":"Album",
       "artist":"Kunstenaar",
-      "lyricist":"Liriekskrywer",
-      "composer":"Komponis",
-      "contributor":"Bydaer",
       "interprets":"Interpreteer"
     }
   },
   "track":{
     "duration":"Tydsduur",
     "details":"Besonderhede",
-    "unknown":"Onbekend",
-    "dragMeToPlaylist":"Sleep my na snitlys",
     "exegesis":"Uitleg",
     "recordedDate":"Opgeneede datum",
     "artist":"Kunstenaar",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Bybel verse"
   },
-  "album":{
-    "tracks":"Snede",
-    "childAlbums":"Kinder Albums",
-    "relatedAlbums":"Verwante albums"
-  },
   "playlist":{
-    "content":"Inhoud",
     "tracks":"Snede",
     "albums":"Album(s)",
-    "totalDuration":"Totale tydsduur",
     "duration":"Tydsduur",
-    "nr":"Nr.",
     "title":"Titel",
-    "addToItunes":"Voeg by iTunes",
-    "copyPodcastLink":"Kopie podkast lilnk",
-    "language":"Taal",
     "allLanguages":"Alle Tale",
-    "feedSize":"toevoer grootte",
     "confirmPlaylistDeletion":"Is jy seker dat jy die snitlys wil verwyder?",
     "latestTracks":"Nuutste snede",
     "instrumental":"Instrumentaal"
   },
   "notify":{
     "play":"Speel",
-    "pause":"Pause",
     "next":"Volgende",
     "previous":"Vorige",
     "shufflePlaylist":"Skommel speellys",
     "loopPlaylist":"herhaal speellys",
     "mute":"Mute",
-    "unmute":"Unmute",
     "maxVolume":"Maksimaal Volume",
     "options":"Opsies",
     "activateVideo":"Aktiewe Video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Vertoon volskerm",
     "closeFullscreen":"Sluit volskerm",
     "hideVideo":"Verberg volskerm",
-    "showVideo":"Vertoon video",
-    "resizeVideoScreen":"Verander Video skermgrootte"
+    "showVideo":"Vertoon video"
   },
   "copyright":"Kopiereg"
 }

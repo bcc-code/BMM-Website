@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Aloitusnäkymä",
-      "notifications":"Notifications",
+      "notifications":"Ilmoitukset",
       "waitings":"Odottaa hyväksyntää",
       "contributors":"Tekijät",
       "users":"Käyttäjät",
-      "statistic":"Statistics"
+      "statistic":"Tilastot"
     },
     "secondary":{
       "quickMenu":"Pikavalikko",
@@ -119,16 +119,16 @@
       "albumManager":"Albumi emäntä",
       "trackManager":"Hallintatoimintojen",
       "contributorManager":"Avustaja manager",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Ilmoitusten hallinta",
       "allRights":"Kaikki oikeudet",
       "refreshList":"Päivitä luettelo"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Viesti",
+      "addNotificationTranslation":"Lisää ilmoitukselle käännös",
+      "sendPushNotification":"Lähetä push-ilmoitus",
+      "sent":"Lähetetty",
+      "failed":"Epäonnistui"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"Eksegeesi"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Uusia käyttäjiä päivässä",
+    "chartByDayTitle":"Päivän eniten kuunneltu",
+    "chartMostListenedTitle":"Eniten kuunnteltu raita",
+    "fromKaare":"Terveiset Kårelta",
+    "others":"Muut",
+    "clearChart":"Tyhjennä kaavio",
+    "add":"Lisää kaavioon"
   },
   "copyright":"Copyright"
 }

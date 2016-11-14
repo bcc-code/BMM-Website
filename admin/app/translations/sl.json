@@ -12,7 +12,7 @@
       "waitings":"Na čakanju",
       "contributors":"Ustvarjalci",
       "users":"Uporabniki",
-      "statistic":"Statistics"
+      "statistic":"Statistika"
     },
     "secondary":{
       "quickMenu":"Hitri meni",
@@ -160,7 +160,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Ali ste prepričani, da želite izbrisati album z vsemi pod-albumi in pesmimi?",
     "confirmTrackDeletion":"Ali ste prepričani, da želite izbrisati skladbo z vso njeno vsebino?",
-    "confirmTranslatedDeletion":"Jezik ima vsebino. Potrdite brisanje",
+    "confirmTranslatedDeletion":"Če izbrišete ta jezik, bo vsebina, ki se nanaša na jezik, odstranjena. Ali želite nadaljevati?",
     "confirmContributorDeletion":"ALI STE PREPRIČANI, DA ŽELITE IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
   },
   "track":{
@@ -170,13 +170,13 @@
     "exegesis":"Razlaga"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Novi uporabniki na dan",
+    "chartByDayTitle":"Najbolj poslušano dneva",
+    "chartMostListenedTitle":"Najbolj poslušana skladba",
+    "fromKaare":"Od Kåreja",
+    "others":"Drugi",
+    "clearChart":"Počisti lestvico",
+    "add":"Dodaj na lestvico"
   },
   "copyright":"Avtorske pravice"
 }

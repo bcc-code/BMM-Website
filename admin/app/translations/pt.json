@@ -1,5 +1,5 @@
 {
-  "language":"Inglês",
+  "language":"Português",
   "general":{
     "search":"\"Buscar\"...",
     "loading":"Carregando...",
@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Dashboard",
-      "notifications":"Notifications",
+      "notifications":"Notificações",
       "waitings":"Aguardando aprovação",
       "contributors":"Colaboradores",
       "users":"Usuários",
-      "statistic":"Statistics"
+      "statistic":"Estatísticas"
     },
     "secondary":{
       "quickMenu":"Menu rápido",
@@ -119,16 +119,16 @@
       "albumManager":"Gerenciador de álbum",
       "trackManager":"Gerente de pista",
       "contributorManager":"Gerente de contribuinte",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Administrador de notificação",
       "allRights":"Todos os direitos",
       "refreshList":"Atualizar lista"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Mensagens",
+      "addNotificationTranslation":"Adicionar tradução de notificação",
+      "sendPushNotification":"Enviar notificação de envio",
+      "sent":"Enviado",
+      "failed":"Falhou"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"Interpretação"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Novos usuários por dia",
+    "chartByDayTitle":"O mais ouvido do dia",
+    "chartMostListenedTitle":"Faixa mais ouvida",
+    "fromKaare":"De Kåre",
+    "others":"Outros",
+    "clearChart":"Limpar lista",
+    "add":"Adicionar a lista"
   },
   "copyright":"Direitos autorais"
 }

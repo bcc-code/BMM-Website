@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Табло за управление",
-      "notifications":"Notifications",
-      "waitings":"Изчакване",
+      "notifications":"Уведомления",
+      "waitings":"Изчакване за одобрение",
       "contributors":"Сътрудници",
       "users":"Потребители",
-      "statistic":"Statistics"
+      "statistic":"Статистики"
     },
     "secondary":{
       "quickMenu":"Бързо меню",
@@ -119,16 +119,16 @@
       "albumManager":"Управител албум",
       "trackManager":"Управител песни\/речи",
       "contributorManager":"Сътрудник управител",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Управител на уведомление",
       "allRights":"Всички права",
       "refreshList":"Обнови списък"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Речи",
+      "addNotificationTranslation":"Добави известие за превод",
+      "sendPushNotification":"Изпрати известие за съобщение",
+      "sent":"Изпратени",
+      "failed":"Неуспешно"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"Обяснение"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Нови потребители на ден",
+    "chartByDayTitle":"Ден най-слушани",
+    "chartMostListenedTitle":"Най-слушани песни и речи",
+    "fromKaare":"От Коре",
+    "others":"Други",
+    "clearChart":"Изчистване на диаграма",
+    "add":"Добавяне към диаграма"
   },
   "copyright":"Авторско право"
 }

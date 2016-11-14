@@ -8,22 +8,17 @@
     "almondBlossom":"Almond Blossom",
     "noTitle":"Fără titlu",
     "settings":"Setări",
-    "feedback":"Feedback",
     "suport":"Suport",
     "readMore":"Citește mai mult"
   },
   "options":{
     "addToPlaylist":"Adaugă în play-list",
     "download":"Descarcă",
-    "downloadAudio":"Descarcă audio",
-    "downloadVideo":"Descarcă video",
     "goToAlbum":"Mergi la album",
     "podcast":"Podcast",
     "removeFilter":"Eliminaţi filtrul",
     "changeLanguage":"Schimbă limba",
     "goBack":"Înapoi",
-    "addToFavorites":"Adaugă la favorite",
-    "moreInfo":"Mai multe informaţii",
     "choosePlaylist":"Alege play-list",
     "setupPodcast":"Pentru a seta podcast-ul trebuie să copiaţi link-ul de mai jos şi să-l introduceți în programul dumneavoastră preferat de podcast-uri.",
     "chooseLanguages":"Alege limbile",
@@ -31,12 +26,10 @@
     "includeLatest":"Include cele mai recente",
     "websiteLanguage":"Limba site-ului",
     "contentLanguages":"Limba conținutului",
-    "preferredContentLanguage":"Conţinut de limbă preferat",
     "tracks":"piese",
     "filterByLanguage":"Filtru de limbă",
     "copyUrl":"Copiază URL-ul",
     "copyLink":"Copiază link",
-    "delete":"Șterge",
     "remove":"Elimină",
     "playPlaylist":"Play play-list",
     "share":"Împărtășește"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Play-list-uri",
       "latestTracks":"Piese noi",
-      "lastPlayed":"Ultimele redate",
-      "mostPlayed":"Cele mai redate",
-      "favorites":"Favorite",
       "current":"Se redă acum",
       "newPlaylist":"Play-list nou",
       "nameOnPlaylist":"Titlul play-list-ului"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Ultimele melodii",
       "artists":"Artiști",
-      "fromKaare":"De la Kåre",
       "mp3Source":"Sursă-MP3",
       "childrensMp3Source":"Sursă-MP3 pentru copii",
       "instrumental":"Instrumental"
@@ -94,17 +83,12 @@
       "bibleVerse":"Verset biblic",
       "album":"Album",
       "artist":"Artist",
-      "lyricist":"Textier",
-      "composer":"Compozitor",
-      "contributor":"Contribuitor",
       "interprets":"Interpreți"
     }
   },
   "track":{
     "duration":"Durată",
     "details":"Detalii",
-    "unknown":"Anonim",
-    "dragMeToPlaylist":"Trageţi-mă în play-list",
     "exegesis":"Tălmăcire",
     "recordedDate":"Dată de înregistrare",
     "artist":"Artist",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Verset biblic"
   },
-  "album":{
-    "tracks":"Piese",
-    "childAlbums":"Albume pentru copii",
-    "relatedAlbums":"Albume asemănătoare"
-  },
   "playlist":{
-    "content":"Conţinut",
     "tracks":"Piese",
     "albums":"Album(e)",
-    "totalDuration":"Durata totală",
     "duration":"Durată",
-    "nr":"Nr.",
     "title":"Titlu",
-    "addToItunes":"Adaugă în iTunes",
-    "copyPodcastLink":"Copiază linkul podcast-ului",
-    "language":"Limbă",
     "allLanguages":"Toate limbile",
-    "feedSize":"Dimensiune feed",
     "confirmPlaylistDeletion":"Sunteţi sigur că doriţi să ştergeţi acest play-list?",
     "latestTracks":"Ultimele piese",
     "instrumental":"Instrumental"
   },
   "notify":{
     "play":"Play",
-    "pause":"Pauză",
     "next":"Următoarea",
     "previous":"Precedenta",
     "shufflePlaylist":"Amestecă play-list",
     "loopPlaylist":"Repetare play-list",
     "mute":"Fără sunet",
-    "unmute":"Cu sunet",
     "maxVolume":"Volum maxim",
     "options":"Opțiuni",
     "activateVideo":"Activează video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Arată pe tot ecranul",
     "closeFullscreen":"Ieși din vizionarea pe tot ecranul",
     "hideVideo":"Ascunde video",
-    "showVideo":"Arată video",
-    "resizeVideoScreen":"Redimensionează fereastra filmului"
+    "showVideo":"Arată video"
   },
   "copyright":"Drepturi de autor"
 }

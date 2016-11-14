@@ -1,5 +1,5 @@
 {
-  "language":"Angol",
+  "language":"Magyar",
   "general":{
     "search":"Keresés...",
     "loading":"Betöltés...",
@@ -12,7 +12,7 @@
       "waitings":"Jóváhagyásra vár",
       "contributors":"Közreműködők",
       "users":"Felhasználók",
-      "statistic":"Statistics"
+      "statistic":"Statisztikák"
     },
     "secondary":{
       "quickMenu":"Gyorsmenü",
@@ -160,7 +160,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Biztosan törölni kivánod ezt az albumot az al-albumokkal és számokkal együtt?",
     "confirmTrackDeletion":"Biztosan törölni kivánod ezt a számot minden tartalmával együtt?",
-    "confirmTranslatedDeletion":"Ezen a nyelven van elérhető tartalom. Törlés megerősítése",
+    "confirmTranslatedDeletion":"Ha törlöd ezt a nyelvet, ehhez tartozó tartalom is eltűnik. Folytatod?",
     "confirmContributorDeletion":"BIZTOSAN TÖRÖLNI KIVÁNOD EZT A KÖZREMŰKÖDŐT? A FOLYAMAT SORÁN AZ ÖSSZES HOZZÁ KAPCSOLÓDÓ ELEM IS TÖRLÉSRE KERÜL!"
   },
   "track":{
@@ -170,13 +170,13 @@
     "exegesis":"Értelmezés"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Új felhasználó \/ nap",
+    "chartByDayTitle":"A nap legnépszerűbb száma",
+    "chartMostListenedTitle":"Legnépszerűbb szám",
+    "fromKaare":"Kårétől",
+    "others":"Egyéb",
+    "clearChart":"Diagram eltávolítása",
+    "add":"Hozzáadás a diagramhoz"
   },
   "copyright":"Szerzői jog"
 }

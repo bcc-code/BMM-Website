@@ -1,5 +1,5 @@
 {
-  "language":"Inglise keel",
+  "language":"Eesti",
   "general":{
     "search":"Otsi...",
     "searchResultsFor":"Otsingu tulemused:",
@@ -8,22 +8,17 @@
     "almondBlossom":"Mandliõis",
     "noTitle":"Pealkirjata",
     "settings":"Seaded",
-    "feedback":"Tagasiside",
     "suport":"Abi",
     "readMore":"Loe edasi"
   },
   "options":{
     "addToPlaylist":"Lisa esitlusloendisse",
     "download":"Lae alla",
-    "downloadAudio":"Heli allalaadimine",
-    "downloadVideo":"Video allalaadimine",
     "goToAlbum":"Mine albumisse",
     "podcast":"Taskuhääling",
     "removeFilter":"Eemalda filter",
     "changeLanguage":"Muuda keel",
     "goBack":"Mine tagasi",
-    "addToFavorites":"Lisa lemmikutesse",
-    "moreInfo":"Rohkem infot",
     "choosePlaylist":"Valige esitusloend",
     "setupPodcast":"Taskuhäälingu seadistamiseks kopeeri allolev link ja kleebi see oma eelistatud taskuhäälingu mängijasse.",
     "chooseLanguages":"Vali keeled",
@@ -31,12 +26,10 @@
     "includeLatest":"Võta uusimad",
     "websiteLanguage":"Veebilehe keel",
     "contentLanguages":"Sisu keel",
-    "preferredContentLanguage":"Eelistatud sisukeel",
     "tracks":"lood",
     "filterByLanguage":"Filtreeri keele alusel",
     "copyUrl":"Kopeeri URL",
     "copyLink":"Kopeeri link",
-    "delete":"Kustuta",
     "remove":"Eemalda",
     "playPlaylist":"Esita esitlusloend",
     "share":"Jaga"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Esitusloendid",
       "latestTracks":"Uued lood",
-      "lastPlayed":"Viimati esitatud",
-      "mostPlayed":"Enim esitatud",
-      "favorites":"Lemmikud",
       "current":"Praegune",
       "newPlaylist":"Uus esitusloend",
       "nameOnPlaylist":"Esitusloendi pealkiri"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Hiljutised lood",
       "artists":"Esitajad",
-      "fromKaare":"Kårelt",
       "mp3Source":"MP3-allikas",
       "childrensMp3Source":"Laste MP3-allikas",
       "instrumental":"Instrumentaalmuusika"
@@ -94,17 +83,12 @@
       "bibleVerse":"Piibli salm",
       "album":"Album",
       "artist":"Esitaja",
-      "lyricist":"Sõnade autor",
-      "composer":"Helilooja",
-      "contributor":"Kaastegija",
       "interprets":"Esitajad"
     }
   },
   "track":{
     "duration":"Kestus",
     "details":"Üksikasjad",
-    "unknown":"Tundmatu",
-    "dragMeToPlaylist":"Lohista mind esitlusloendisse",
     "exegesis":"Tõlgendus",
     "recordedDate":"Salvestamise kuupäev",
     "artist":"Esitaja",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Piibli salm"
   },
-  "album":{
-    "tracks":"Muusikapala(d)",
-    "childAlbums":"Laste albumid",
-    "relatedAlbums":"Seotud albumid"
-  },
   "playlist":{
-    "content":"Sisu",
     "tracks":"Muusikapala(d)",
     "albums":"Albumi(d)",
-    "totalDuration":"Kogu kestus",
     "duration":"Kestus",
-    "nr":"Nr.",
     "title":"Pealkiri",
-    "addToItunes":"Lisa iTunes'i",
-    "copyPodcastLink":"Kopeeri taskuhäälingu link",
-    "language":"Keel",
     "allLanguages":"Kõik keeled",
-    "feedSize":"Voo suurus",
     "confirmPlaylistDeletion":"Kas soovite kindlasti selle esitlusloendi kustutada?",
     "latestTracks":"Hiljutised laulud",
     "instrumental":"Instrumentaalmuusika"
   },
   "notify":{
     "play":"Esita",
-    "pause":"Paus",
     "next":"Järgmine",
     "previous":"Eelmine",
     "shufflePlaylist":"Juhuesitus",
     "loopPlaylist":"Korda esitlusloendit",
     "mute":"Vaigista",
-    "unmute":"Vaigistus maha",
     "maxVolume":"Maksimaalne valjus",
     "options":"Seaded",
     "activateVideo":"Aktiveeri video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Näita täisekraanil",
     "closeFullscreen":"Sule täisekraan",
     "hideVideo":"Peida video",
-    "showVideo":"Näita videot",
-    "resizeVideoScreen":"muudaVideoEkraani"
+    "showVideo":"Näita videot"
   },
   "copyright":"Autoriõigused"
 }

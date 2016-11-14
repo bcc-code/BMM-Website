@@ -8,11 +8,11 @@
   "menu":{
     "main":{
       "dashboard":"Панель управления",
-      "notifications":"Notifications",
+      "notifications":"Уведомления",
       "waitings":"Ожидает проверки",
       "contributors":"Исполнители",
       "users":"Пользователи",
-      "statistic":"Statistics"
+      "statistic":"Статистика"
     },
     "secondary":{
       "quickMenu":"Быстрое меню",
@@ -119,16 +119,16 @@
       "albumManager":"Менеджер альбомов",
       "trackManager":"Менеджер треков",
       "contributorManager":"Менеджер исполнителей",
-      "notificationManager":"Notification manager",
+      "notificationManager":"Менеджер уведомлений",
       "allRights":"Все права",
       "refreshList":"Обновить список"
     },
     "notifications":{
-      "message":"Message",
-      "addNotificationTranslation":"Add notification translation",
-      "sendPushNotification":"Send push-notification",
-      "sent":"Sent",
-      "failed":"Failed"
+      "message":"Сообщение\n",
+      "addNotificationTranslation":"Добавить перевод уведомлений\n",
+      "sendPushNotification":"Показывать уведомления на экране",
+      "sent":"Отправлено",
+      "failed":"Не удалось"
     }
   },
   "states":{
@@ -170,13 +170,13 @@
     "exegesis":"Толкование"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Новые пользователи за день",
+    "chartByDayTitle":"Часто прослушиваемые за день",
+    "chartMostListenedTitle":"Часто прослушиваемые треки",
+    "fromKaare":"От Коре",
+    "others":"Другие",
+    "clearChart":"Очистить график",
+    "add":"Добавить график"
   },
   "copyright":"Авторское право"
 }

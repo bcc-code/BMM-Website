@@ -2,43 +2,36 @@
   "language":"Deutsch",
   "general":{
     "search":"Suchen ...",
-    "searchResultsFor":"Suchergebniss für:",
+    "searchResultsFor":"Suchergebnisse für:",
     "loading":"Wird geladen...",
     "waysOfTheLord":"Wege des Herrn",
     "almondBlossom":"Mandelblüte",
     "noTitle":"ohne Titel",
     "settings":"Einstellungen",
-    "feedback":"Feedback",
-    "suport":"Hilfe & Support",
+    "suport":"Support",
     "readMore":"Lies mehr"
   },
   "options":{
-    "addToPlaylist":"Zur Wiedergabeliste hinzufügen",
+    "addToPlaylist":"Zur Playliste hinzufügen",
     "download":"Download",
-    "downloadAudio":"Audio herunterladen",
-    "downloadVideo":"Video herunterladen",
-    "goToAlbum":"Zum Album",
+    "goToAlbum":"Album öffnen",
     "podcast":"Podcast",
     "removeFilter":"Filter löschen",
     "changeLanguage":"Sprache ändern",
     "goBack":"zurück",
-    "addToFavorites":"Zu Favoriten hinzufügen",
-    "moreInfo":"Mehr Info",
     "choosePlaylist":"Wiedergabeliste wählen",
-    "setupPodcast":"Um den Podcast zu abonnieren, kopiere den Link und füge ihn in deine Podcast-Software (z. B. iTunes) ein.",
+    "setupPodcast":"Um den Podcast zu abonnieren, kopiere die URL und füge ihn in deine Podcast-Software (z. B. iTunes) ein.",
     "chooseLanguages":"Sprachen auswählen",
     "addLanguage":"Sprache hinzufügen",
     "includeLatest":"Anzahl der Tracks",
     "websiteLanguage":"Sprache",
     "contentLanguages":"Sprache für Audioinhalte",
-    "preferredContentLanguage":"Bevorzugte Sprache",
     "tracks":"Titel",
     "filterByLanguage":"Nach Sprache filtern",
     "copyUrl":"Podcast-Link kopieren",
     "copyLink":"Link",
-    "delete":"Löschen\n",
     "remove":"Entfernen",
-    "playPlaylist":"Wiedergabeliste starten",
+    "playPlaylist":"Playliste starten",
     "share":"Teilen"
   },
   "menu":{
@@ -52,59 +45,50 @@
     "secondary":{
       "playlists":"Playlists",
       "latestTracks":"Neue Titel",
-      "lastPlayed":"Zuletzt gespielt",
-      "mostPlayed":"Am häufigsten gespielt",
-      "favorites":"Favoriten",
       "current":"Aktuell",
-      "newPlaylist":"Neue Wiedergabeliste",
-      "nameOnPlaylist":"Name der Wiedergabeliste"
+      "newPlaylist":"Neue Playlist",
+      "nameOnPlaylist":"Name der Playliste"
     }
   },
   "page":{
     "welcome":{
-      "latestSpeeches":"Neueste Reden",
-      "latestVideos":"Neueste Videos",
-      "latestMusic":"Neueste Musik",
-      "latestAlbums":"Neueste Alben"
+      "latestSpeeches":"Neue Reden",
+      "latestVideos":"Neue Videos",
+      "latestMusic":"Neue Musik",
+      "latestAlbums":"Neue Alben"
     },
     "music":{
-      "latestMusic":"Neueste Musik",
+      "latestMusic":"Neue Musik",
       "artists":"Interpreten",
-      "fromKaare":"Von Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Kinderlieder",
       "instrumental":"Instrumental"
     },
     "speeches":{
-      "latestSpeeches":"Neueste Reden",
+      "latestSpeeches":"Neue Reden",
       "recommended":"Empfohlen"
     },
     "videos":{
-      "latestVideos":"Neueste Videos"
+      "latestVideos":"Neue Videos"
     },
     "archive":{
       "archive":"Archiv"
     },
     "audiobooks":{
-      "latestAudiobooks":"Neueste Hörbücher"
+      "latestAudiobooks":"Neue Hörbücher"
     },
     "search":{
       "searchResults":"Suchergebnisse",
       "content":"Inhalt",
       "bibleVerse":"Bibelvers",
       "album":"Album",
-      "artist":"Künstler",
-      "lyricist":"Verfasser",
-      "composer":"Komponist",
-      "contributor":"Mitwirkender",
+      "artist":"Interpret",
       "interprets":"Interpreten"
     }
   },
   "track":{
     "duration":"Dauer",
     "details":"Details",
-    "unknown":"Unbekannt",
-    "dragMeToPlaylist":"Zieh mich in deine Playlist",
     "exegesis":"Auslegung",
     "recordedDate":"Aufnahmedatum",
     "artist":"Interpret",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Bibelvers"
   },
-  "album":{
-    "tracks":"Titel",
-    "childAlbums":"Kinderalben",
-    "relatedAlbums":"Ähnliche Alben"
-  },
   "playlist":{
-    "content":"Inhalt",
     "tracks":"Titel",
     "albums":"Alben",
-    "totalDuration":"Gesamtlänge",
     "duration":"Länge",
-    "nr":"Nr.",
     "title":"Titel",
-    "addToItunes":"Zu iTunes hinzufügen",
-    "copyPodcastLink":"Podcast-Link kopieren",
-    "language":"Sprache",
     "allLanguages":"Alle Sprachen",
-    "feedSize":"Größe des Podcast",
-    "confirmPlaylistDeletion":"Bist du sicher, dass du die Wiedergabeliste löschen möchtest?",
-    "latestTracks":"Neuste Titel",
+    "confirmPlaylistDeletion":"Bist du sicher, dass du die Playliste löschen möchtest?",
+    "latestTracks":"Neue Titel",
     "instrumental":"Instrumental"
   },
   "notify":{
     "play":"Abspielen",
-    "pause":"Pause",
     "next":"Nächstes",
     "previous":"Voriges",
     "shufflePlaylist":"Zufällige Wiedergabe",
-    "loopPlaylist":"Wiedergabeliste wiederholen",
+    "loopPlaylist":"Playliste wiederholen",
     "mute":"Stumm",
-    "unmute":"Laut",
     "maxVolume":"Maximale Lautstärke",
     "options":"Optionen",
     "activateVideo":"Video aktivieren",
@@ -151,8 +121,7 @@
     "showFullscreen":"Im Vollbildmodus anzeigen",
     "closeFullscreen":"Vollbildmodus schließen",
     "hideVideo":"Video ausblenden",
-    "showVideo":"Video anzeigen",
-    "resizeVideoScreen":"Größe des Videos ändern"
+    "showVideo":"Video anzeigen"
   },
   "copyright":"Copyright"
 }

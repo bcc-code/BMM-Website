@@ -8,22 +8,17 @@
     "almondBlossom":"Mantelinkukka",
     "noTitle":"Ei otsikkoa",
     "settings":"Asetukset",
-    "feedback":"Palaute",
     "suport":"Tuki",
     "readMore":"Lue lisää"
   },
   "options":{
     "addToPlaylist":"Lisää soittolistaan",
     "download":"Lataa",
-    "downloadAudio":"Lataa äänitiedosto",
-    "downloadVideo":"Lataa video",
     "goToAlbum":"Siirry albumiin",
     "podcast":"Podcast",
     "removeFilter":"Poista suodatin",
     "changeLanguage":"Vaihda kieli",
     "goBack":"Takaisin",
-    "addToFavorites":"Lisää suosikkeihin",
-    "moreInfo":"Lisätietoja",
     "choosePlaylist":"Valitse soittolista",
     "setupPodcast":"Ottaaksesi podcastin käyttöön kopioi allaoleva linkki ja liitä se haluamaasi podcast-sovellukseen.",
     "chooseLanguages":"Valitse kielet",
@@ -31,12 +26,10 @@
     "includeLatest":"Sisällytä uusimmat",
     "websiteLanguage":"Sivuston kieli",
     "contentLanguages":"Sisällön kieli",
-    "preferredContentLanguage":"Ensisijainen sisällön kieli",
     "tracks":"kappaleet",
     "filterByLanguage":"Suodata kielen mukaan",
     "copyUrl":"Kopioi URL",
     "copyLink":"Kopioi linkki",
-    "delete":"Poista",
     "remove":"Poista",
     "playPlaylist":"Toista soittolista",
     "share":"Jaa"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Soittolistat",
       "latestTracks":"Uudet kappaleet",
-      "lastPlayed":"Viimeksi kuunnellut",
-      "mostPlayed":"Eniten kuunnellut",
-      "favorites":"Suosikit",
       "current":"Nykyinen",
       "newPlaylist":"Uusi soittolista",
       "nameOnPlaylist":"Soittolistan nimi"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Uusimmat kappaleet",
       "artists":"Artistit",
-      "fromKaare":"From Kåre",
       "mp3Source":"MP3-Lähde",
       "childrensMp3Source":"Lasten MP3-lähde",
       "instrumental":"Instrumentaali"
@@ -94,17 +83,12 @@
       "bibleVerse":"Raamatun jae",
       "album":"Albumi",
       "artist":"Artisti",
-      "lyricist":"Sanoittaja",
-      "composer":"Säveltäjä",
-      "contributor":"Tekijä",
       "interprets":"Käännökset"
     }
   },
   "track":{
     "duration":"Kesto",
     "details":"Tiedot",
-    "unknown":"Tuntematon",
-    "dragMeToPlaylist":"Vedä minut soittolistalle",
     "exegesis":"Eksegeesi",
     "recordedDate":"Nauhoitus päivämäärä",
     "artist":"Artisti",
@@ -113,37 +97,23 @@
     "album":"Albumi",
     "bibleVerse":"Raamatun jae"
   },
-  "album":{
-    "tracks":"Kappale(et)",
-    "childAlbums":"Lasten albumit",
-    "relatedAlbums":"Samankaltaiset albumit"
-  },
   "playlist":{
-    "content":"Sisältö",
     "tracks":"Kappale(et)",
     "albums":"Albumi(t)",
-    "totalDuration":"Kokonaiskesto",
     "duration":"Kesto",
-    "nr":"Nro.",
     "title":"Otsikko",
-    "addToItunes":"Lisää iTunesiin",
-    "copyPodcastLink":"Kopioi podcast linkki",
-    "language":"Kieli",
     "allLanguages":"Kaikki kielet",
-    "feedSize":"Syötteen koko",
     "confirmPlaylistDeletion":"Oletko varma, että haluat poistaa tämän soittolistan?",
     "latestTracks":"Uusimmat kappaleet",
     "instrumental":"Instrumentaali"
   },
   "notify":{
     "play":"Toista",
-    "pause":"Tauko",
     "next":"Seuraava",
     "previous":"Edellinen",
     "shufflePlaylist":"Sekoita soittolista",
     "loopPlaylist":"Toista jatkuvasti",
     "mute":"Mykistä",
-    "unmute":"Poista mykistys",
     "maxVolume":"Maks. äänenvoimakkuus",
     "options":"Asetukset",
     "activateVideo":"Aktivoi video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Näytä koko näytöllä",
     "closeFullscreen":"Sulje koko näytön tila",
     "hideVideo":"Piilota video",
-    "showVideo":"Näytä video",
-    "resizeVideoScreen":"Muuta videon kokoa"
+    "showVideo":"Näytä video"
   },
   "copyright":"Copyright"
 }

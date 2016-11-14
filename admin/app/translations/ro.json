@@ -12,7 +12,7 @@
       "waitings":"În așteptare",
       "contributors":"Contribuitori",
       "users":"Utilizatori",
-      "statistic":"Statistics"
+      "statistic":"Statistici"
     },
     "secondary":{
       "quickMenu":"Meniu rapid",
@@ -160,7 +160,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Sunteţi sigur că doriţi să ştergeţi albumul împreună cu toate sub-albumele şi piesele conținute?",
     "confirmTrackDeletion":"Sunteți sigur că doriţi să ştergeţi piesa cu tot conţinutul ei?",
-    "confirmTranslatedDeletion":"Limba are conţinut, confirmaţi ştergerea",
+    "confirmTranslatedDeletion":"Prin eliminarea acestei limbi, tot conținutul din această limbă va fi șters. Confirmi ştergerea?",
     "confirmContributorDeletion":"SUNTEȚI ÎNTRADEVĂR SIGUR CĂ DORIȚI SĂ ȘTERGEȚI ACEST CONTRIBUITOR? TOATE PIESELE ASOCIATE VOR FI ȘTERSE!"
   },
   "track":{
@@ -170,13 +170,13 @@
     "exegesis":"Tălmăcire"
   },
   "statistic":{
-    "chartByDateTitle":"New users per day",
-    "chartByDayTitle":"Day most listened",
-    "chartMostListenedTitle":"Most listened Track",
-    "fromKaare":"From Kåre",
-    "others":"Others",
-    "clearChart":"Clear Chart",
-    "add":"Add to Chart"
+    "chartByDateTitle":"Utilizatori noi pe zi",
+    "chartByDayTitle":"Cea mai ascultată astăzi",
+    "chartMostListenedTitle":"Cea mai ascultată piesă",
+    "fromKaare":"De la Kåre",
+    "others":"Altele",
+    "clearChart":"Șterge diagramă",
+    "add":"Adaugă în diagramă"
   },
   "copyright":"Drepturi de autor"
 }

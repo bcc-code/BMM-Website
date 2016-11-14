@@ -8,22 +8,17 @@
     "almondBlossom":"Mandelblomsten",
     "noTitle":"Ingen tittel",
     "settings":"Innstillinger",
-    "feedback":"Tilbakemelding",
     "suport":"Support",
     "readMore":"Les mer"
   },
   "options":{
     "addToPlaylist":"Legg til i spilleliste",
     "download":"Last ned",
-    "downloadAudio":"Last ned lyd",
-    "downloadVideo":"Last ned video",
     "goToAlbum":"Gå til albumet",
     "podcast":"Podcast",
     "removeFilter":"Fjern filter",
     "changeLanguage":"Endre språk",
     "goBack":"Gå tilbake",
-    "addToFavorites":"Legg til i favoritter",
-    "moreInfo":"Mer info",
     "choosePlaylist":"Velg spilleliste",
     "setupPodcast":"For å laste ned musikk fra podcast må du kopiere linken, og lime den inn i din foretrukne podcast programvare.",
     "chooseLanguages":"Velg språk",
@@ -31,12 +26,10 @@
     "includeLatest":"Inkluder de nyeste",
     "websiteLanguage":"Nettsidens språk",
     "contentLanguages":"Innholdsspråk",
-    "preferredContentLanguage":"Foretrukket innholdsspråk",
     "tracks":"spor",
     "filterByLanguage":"Filtrer etter språk",
     "copyUrl":"Kopier URL",
     "copyLink":"Kopier link",
-    "delete":"Slett",
     "remove":"Fjern",
     "playPlaylist":"Spill av spilleliste",
     "share":"Del"
@@ -52,9 +45,6 @@
     "secondary":{
       "playlists":"Spillelister",
       "latestTracks":"Nye spor",
-      "lastPlayed":"Sist spilte",
-      "mostPlayed":"Mest spilte",
-      "favorites":"Favoritter",
       "current":"Spilles nå",
       "newPlaylist":"Ny spilleliste",
       "nameOnPlaylist":"Navn på spilleliste"
@@ -70,7 +60,6 @@
     "music":{
       "latestMusic":"Siste Musikk",
       "artists":"Artister",
-      "fromKaare":"Fra Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barnas MP3-Kilden",
       "instrumental":"Instrumental"
@@ -94,17 +83,12 @@
       "bibleVerse":"Bibelvers",
       "album":"Album",
       "artist":"Artist",
-      "lyricist":"Tekstforfatter",
-      "composer":"Komponist",
-      "contributor":"Bidragsyter",
       "interprets":"Artist \/ taler"
     }
   },
   "track":{
     "duration":"Varighet",
     "details":"Detaljer",
-    "unknown":"Ukjent",
-    "dragMeToPlaylist":"Dra meg til spilleliste",
     "exegesis":"Tydning",
     "recordedDate":"Opptaksdato",
     "artist":"Artist",
@@ -113,37 +97,23 @@
     "album":"Album",
     "bibleVerse":"Bibelvers"
   },
-  "album":{
-    "tracks":"Spor",
-    "childAlbums":"Tilhørende Album",
-    "relatedAlbums":"Lignende Album"
-  },
   "playlist":{
-    "content":"Innhold",
     "tracks":"Spor",
     "albums":"Album",
-    "totalDuration":"Samlet varighet",
     "duration":"Varighet",
-    "nr":"Nr.",
     "title":"Tittel",
-    "addToItunes":"Legg til i iTunes",
-    "copyPodcastLink":"Kopier podcast link",
-    "language":"Språk",
     "allLanguages":"Alle språk",
-    "feedSize":"Feed størrelse",
     "confirmPlaylistDeletion":"Er du sikker på at du vil slette denne spillelisten?",
     "latestTracks":"Nye spor",
     "instrumental":"Instrumental"
   },
   "notify":{
     "play":"Spill av",
-    "pause":"Pause",
     "next":"Neste",
     "previous":"Forrige",
     "shufflePlaylist":"Miks spilleliste",
     "loopPlaylist":"Gjenta spilleliste",
     "mute":"Demp",
-    "unmute":"Demping av",
     "maxVolume":"Maks volum",
     "options":"Alternativer",
     "activateVideo":"Aktivér video",
@@ -151,8 +121,7 @@
     "showFullscreen":"Vis fullskjerm",
     "closeFullscreen":"Lukk fullskjerm",
     "hideVideo":"Skjul video",
-    "showVideo":"Vis video",
-    "resizeVideoScreen":"Endre størrelse"
+    "showVideo":"Vis video"
   },
   "copyright":"Opphavsrett"
 }
