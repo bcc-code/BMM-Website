@@ -86,6 +86,8 @@
       "songbooks":"Songbooks",
       "bibleReferences":"Bible references",
       "addBibleReference":"Add bible reference",
+      "externalReferences":"External references",
+      "addExternalReference": "Add external reference",
       "record":"Record",
       "pause":"Pause",
       "resetTime":"Reset time",

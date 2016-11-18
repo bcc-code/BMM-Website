@@ -11,6 +11,12 @@ angular.module('bmmApp')
 
     var unknownRelations = [], loaded = false;
 
+    $scope.sortableOptions = {
+      axis: 'y',
+      handle: '.sort_handle',
+      'ui-floating': false
+    };
+
     $scope.recorder = 0;
     $scope.recording = false;
     $scope.recorderReset = function() {
@@ -138,6 +144,7 @@ angular.module('bmmApp')
       $scope.rel.lyricists = [];
       $scope.rel.interprets = [];
       $scope.rel.bibles = [];
+      $scope.rel.externals = [];
 
       $.each($scope.$parent.model.rel, function() {
         if (typeof $scope.rel[this.type+'s']==='undefined') {
@@ -230,6 +237,7 @@ angular.module('bmmApp')
       $.each(rel.composers, function() { relations.push(this); });
       $.each(rel.lyricists, function() { relations.push(this); });
       $.each(rel.interprets, function() { relations.push(this); });
+      $.each(rel.externals, function() { relations.push(this); });
       $.each(unknownRelations, function() { relations.push(this); });
 
       $scope.$parent.model.rel = relations;
@@ -302,6 +310,18 @@ angular.module('bmmApp')
       $scope.rel.bibles.splice(0,0, {
         time: $filter('_time')($scope.recorder)
       });
+    };
+
+    $scope.addExternalReference = function() {
+      $scope.rel.externals.push({
+        type: "external"
+      });
+    };
+
+    $scope.removeExternalReference = function(externalReference) {
+      var externals = $scope.rel.externals;
+      var index = externals.indexOf(externalReference);
+      externals.splice(index, 1);
     };
 
     $scope.activateContributor = function(contributor, relation) {

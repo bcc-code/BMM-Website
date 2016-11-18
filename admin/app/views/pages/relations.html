@@ -198,3 +198,46 @@
 
     </div>
 </div>
+
+<div class="foldbox">
+    <div class="header"
+        ng-click="externals=!externals">
+        <h3>{{init.translation.page.editor.externalReferences}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': externals}">
+
+        <button ng-click="addExternalReference()"
+            style="margin-bottom: .5em">
+            {{init.translation.page.editor.addExternalReference}}
+        </button>
+
+        <ul
+        ui-sortable="sortableOptions"
+        ng-model="rel.externals">
+        <li
+          style="background: white; padding: 10px"
+          ng-repeat="external in rel.externals">
+          <div>
+
+            <span ng-bind="init.translation.page.contributors.name"></span>: 
+            <input type="text" ng-model="external.name">
+
+            URL:
+            <input type="text" ng-model="external.url"></input>
+
+            <div ng-click="removeExternalReference(external)" style="float:right; margin: 10px">
+              <a style="font-size: 1.7em; color: red" class="btn_remove">
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </div>
+
+            <div style="float:right; margin: 10px">
+              <a style="font-size: 1.7em; color: grey" class="btn_sort sort_handle">
+                <span class="glyphicon glyphicon-sort"></span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
