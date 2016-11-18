@@ -86,6 +86,8 @@
       "songbooks":"Śpiewniki",
       "bibleReferences":"Odwołania do Biblii",
       "addBibleReference":"Dodaj odwołanie do Biblii",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Nagranie",
       "pause":"Pauza",
       "resetTime":"Zeruj czas",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Bez zmian",
     "allIsWell":"Wszystko w porządku",
-    "changesPerformed":"Zmiany przeprowadzone",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Nie można utworzyć albumu",
     "couldNotCreateTrack":"Nie można utworzyć ścieżki",
     "errorCode":"Kod błędu",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Czy na pewno chcesz usunąć album z wszystkimi jego podalbumami i utworami?",
     "confirmTrackDeletion":"Czy na pewno chcesz usunąć utwór z całą jego zawartością?",
-    "confirmTranslatedDeletion":"Język ma zawartość, potwierdź usunięcie",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"CZY JESTEŚ PEWIEN, ŻE CHCESZ USUNĄĆ TEN WSPÓŁPRACOWNIK? WSZYSTKIE UTWORY POŁĄCZONE ZOSTANĄ USUNIĘTE!"
   },
   "track":{

@@ -86,6 +86,8 @@
       "songbooks":"Sangbøger",
       "bibleReferences":"Bibelreferencer",
       "addBibleReference":"Tilføj bibelreference",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Optag",
       "pause":"Pause",
       "resetTime":"Nulstil tid",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Ingen ændringer",
     "allIsWell":"Alt er godt",
-    "changesPerformed":"Ændringer udført",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Kunne ikke oprette album",
     "couldNotCreateTrack":"Kunne ikke oprette spor",
     "errorCode":"Fejlkode",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Er du sikker på at du vil slette albummet med alle dets sub-albums og spor?",
     "confirmTrackDeletion":"Er du sikker på du vil slette sporet med alt dets indhold?",
-    "confirmTranslatedDeletion":"Sproget har indhold, bekræft sletning",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"ER DU VIRKELIG SIKKER PÅ, DU VIL SLETTE DENNE BIDRAGYDER? ALLE SAMMENKÆDEDE SPOR VIL BLIVE SLETTET!"
   },
   "track":{

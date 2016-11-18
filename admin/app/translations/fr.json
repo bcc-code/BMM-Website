@@ -86,6 +86,8 @@
       "songbooks":"Recueils de chants",
       "bibleReferences":"Références Bibliques",
       "addBibleReference":"Ajoutez une référence Biblique",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Enregistrer",
       "pause":"Pause",
       "resetTime":"Réinitialiser le temps",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Aucun changement",
     "allIsWell":"Tout va bien",
-    "changesPerformed":"Changements effectués",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"L'album n'a pa pu être créer",
     "couldNotCreateTrack":"La piste n'a pa pu être créér",
     "errorCode":"Code d'erreur",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Êtes-vous sûr de que vouloir supprimer l'album avec tous ses sous-albums et ses pistes ?",
     "confirmTrackDeletion":"Êtes vous sûr de que vouloir supprimer la piste avec tout son contenu ?",
-    "confirmTranslatedDeletion":"Il y a un contenu dans cette langue, confirmer la suppression",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"ÊTES-VOUS VRAIMENT SÛR DE QUE VOULOIR SUPPRIMER CE COLLABORATEUR ? TOUTES LES PISTES LIÉES SERONT SUPPRIMÉES !"
   },
   "track":{

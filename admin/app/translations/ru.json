@@ -86,6 +86,8 @@
       "songbooks":"Песенники",
       "bibleReferences":"Ссылки в библии",
       "addBibleReference":"Добавить ссылку в Библии",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Запись",
       "pause":"Пауза",
       "resetTime":"Время сброса",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Нет изменений",
     "allIsWell":"Все в порядке",
-    "changesPerformed":"Изменение выполнены",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Не удалось создать альбом",
     "couldNotCreateTrack":"Не удалось создать трек",
     "errorCode":"Код ошибки",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Вы уверены, что вы хотите удалить альбом со всеми вложенными альбомами и треками?",
     "confirmTrackDeletion":"Вы уверены, что вы хотите удалить трек?",
-    "confirmTranslatedDeletion":"Язык имеет содержание. Подтвердите удаление",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"ВЫ ДЕЙСТВИТЕЛЬНО УВЕРЕНЫ, ЧТО ХОТИТЕ УДАЛИТЬ ЭТОГО УЧАСТНИКА? БУДУТ УДАЛЕНЫ ВСЕ СВЯЗАННЫЕ С НИМ ТРЕКИ!"
   },
   "track":{

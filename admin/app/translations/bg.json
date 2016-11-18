@@ -86,6 +86,8 @@
       "songbooks":"Песнярки",
       "bibleReferences":"Библейски препратки",
       "addBibleReference":"Добави Библейски препратки",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Записване",
       "pause":"Пауза",
       "resetTime":"Нулирай време",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Без промени",
     "allIsWell":"Всичко е наред",
-    "changesPerformed":"Промените извършени",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Не мога да създам албум",
     "couldNotCreateTrack":"Не мога да създам песен\/реч",
     "errorCode":"Код на грешка",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Наистина ли искаш да изтриеш албума с всичките му подалбуми, песни и речи?",
     "confirmTrackDeletion":"Наистина ли искаш да изтриеш песента\/речта с цялото ѝ съдържание?",
-    "confirmTranslatedDeletion":"Езикът има съдържание, потвърди изтриването",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"НАИСТИНА ЛИ ИСКАШ ДА ИЗТРИЕШ ТОЗИ СЪТРУДНИК? ВСИЧКИ СВЪРЗАНИ ПЕСНИ\/РЕЧИ ЩЕ БЪДАТ ИЗТРИТИ!"
   },
   "track":{

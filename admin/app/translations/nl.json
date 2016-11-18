@@ -86,6 +86,8 @@
       "songbooks":"Liederenboeken",
       "bibleReferences":"Bijbel verwijzingen",
       "addBibleReference":"Bijbel verwijzing toevoegen",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Opnemen",
       "pause":"Pauze",
       "resetTime":"Reset tijd",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Geen wijzigingen",
     "allIsWell":"Alles is goed",
-    "changesPerformed":"Wijzigingen doorgevoerd",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Kan geen album maken",
     "couldNotCreateTrack":"Kan geen nummer maken",
     "errorCode":"Foutcode",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
     "confirmTrackDeletion":"Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
-    "confirmTranslatedDeletion":"Door het verwijderen van deze taal, wordt de inhoud, gerelateerd aan deze taal ook verwijderd. Wilt u doorgaan?",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track":{

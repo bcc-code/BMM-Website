@@ -86,6 +86,8 @@
       "songbooks":"Laulukirjat",
       "bibleReferences":"Raamatun viittaukset",
       "addBibleReference":"Lisää Raamattu viite",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Ennätys",
       "pause":"Tauko",
       "resetTime":"Palauttaa aika",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Ei muutoksia",
     "allIsWell":"Kaikki on hyvin",
-    "changesPerformed":"Suoritetut muutokset",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Albumin luominen ei onnistunut",
     "couldNotCreateTrack":"Kappaleen luominen ei onnistunut",
     "errorCode":"Virhekoodi",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Oletko varma, että haluat poistaa levyn osa albumit ja kappaleet?",
     "confirmTrackDeletion":"Oletko varma, että haluat poistaa kaikki sen sisältö radan?",
-    "confirmTranslatedDeletion":"Kieli on sisältö. Vahvista poisto",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"OLETKO TODELLA VARMA, ETTÄ HALUAT POISTAA TÄMÄN TUOTTAJAN? KAIKKI LINKITETYT KAPPALEET POISTETAAN!"
   },
   "track":{

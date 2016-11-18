@@ -86,6 +86,8 @@
       "songbooks":"Énekeskönyvek",
       "bibleReferences":"Bibliai hivatkozások",
       "addBibleReference":"Új bibliai hivatkozás",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Felvétel",
       "pause":"Szünet",
       "resetTime":"Idő visszaállítása",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Nincsenek változások",
     "allIsWell":"Minden rendben",
-    "changesPerformed":"Változások végrehajtva",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Album létrehozása sikertelen",
     "couldNotCreateTrack":"Szám létrehozása sikertelen",
     "errorCode":"Hibakód",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Biztosan törölni kivánod ezt az albumot az al-albumokkal és számokkal együtt?",
     "confirmTrackDeletion":"Biztosan törölni kivánod ezt a számot minden tartalmával együtt?",
-    "confirmTranslatedDeletion":"Ha törlöd ezt a nyelvet, ehhez tartozó tartalom is eltűnik. Folytatod?",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"BIZTOSAN TÖRÖLNI KIVÁNOD EZT A KÖZREMŰKÖDŐT? A FOLYAMAT SORÁN AZ ÖSSZES HOZZÁ KAPCSOLÓDÓ ELEM IS TÖRLÉSRE KERÜL!"
   },
   "track":{

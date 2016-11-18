@@ -86,6 +86,8 @@
       "songbooks":"Cărți de cântări",
       "bibleReferences":"Referinţe biblice",
       "addBibleReference":"Adaugă referinţă biblică",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Înregistrați",
       "pause":"Pauză",
       "resetTime":"Resetează timpul",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Nici o modificare",
     "allIsWell":"Totul este bine",
-    "changesPerformed":"Modificări efectuate",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Nu s-a putut crea albumul",
     "couldNotCreateTrack":"Nu s-a putut crea piesa",
     "errorCode":"Cod de eroare",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Sunteţi sigur că doriţi să ştergeţi albumul împreună cu toate sub-albumele şi piesele conținute?",
     "confirmTrackDeletion":"Sunteți sigur că doriţi să ştergeţi piesa cu tot conţinutul ei?",
-    "confirmTranslatedDeletion":"Prin eliminarea acestei limbi, tot conținutul din această limbă va fi șters. Confirmi ştergerea?",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"SUNTEȚI ÎNTRADEVĂR SIGUR CĂ DORIȚI SĂ ȘTERGEȚI ACEST CONTRIBUITOR? TOATE PIESELE ASOCIATE VOR FI ȘTERSE!"
   },
   "track":{

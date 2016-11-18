@@ -86,6 +86,8 @@
       "songbooks":"Cancioneiros",
       "bibleReferences":"Referências da Bíblia",
       "addBibleReference":"Adicionar a referência da Bíblia",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Registro",
       "pause":"Pausa",
       "resetTime":"Tempo de restauração",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Sem alterações",
     "allIsWell":"Está tudo bem",
-    "changesPerformed":"Alterações realizadas",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Não foi possível criar o álbum",
     "couldNotCreateTrack":"Não foi possível criar faixa",
     "errorCode":"Código de erro",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Tem certeza que deseja excluir o álbum com todos os seus álbuns sub e faixas?",
     "confirmTrackDeletion":"Tem certeza que deseja excluir a faixa com todo o seu conteúdo?",
-    "confirmTranslatedDeletion":"Linguagem tem conteúdo. Confirme a exclusão",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"TEM CERTEZA QUE DESEJA EXCLUIR ESTE COLABORADOR? TODAS AS FAIXAS VINCULADAS SERÃO EXCLUÍDAS!"
   },
   "track":{

@@ -86,6 +86,8 @@
       "songbooks":"Sangboeke",
       "bibleReferences":"Bybel verwysings",
       "addBibleReference":"Voeg Bybel verwysing by",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Record",
       "pause":"Pause",
       "resetTime":"Herstel tyd",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Geen varanderinge",
     "allIsWell":"Alles is goed",
-    "changesPerformed":"Wysigings uitgevoer",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Kon nie die album skep nie",
     "couldNotCreateTrack":"Kon nie die snit skep nie",
     "errorCode":"fout kode",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Is jy seker jy wil die album met al sy sub-albums en spore verwyder?",
     "confirmTrackDeletion":"Is jy seker dat jy die snit met al sy inhoud wil verwyder?",
-    "confirmTranslatedDeletion":"Taal het inhoud, bevestig verwydering",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"IS JY REGTIG SEKER DAT JY HIERDIE BYDRAER WIL VERWYDER? ALLE GEKOPPELDE BANE SAL VERWYDER WORD!"
   },
   "track":{

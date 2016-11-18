@@ -86,6 +86,8 @@
       "songbooks":"Liederbücher",
       "bibleReferences":"Bibelverweise",
       "addBibleReference":"Bibelverweis hinzufügen",
+      "externalReferences":"Externe Referenzen",
+      "addExternalReference":"Externen Referenz hinzufügen",
       "record":"Aufnahme",
       "pause":"Pause",
       "resetTime":"Zeit zurücksetzen",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Keine Änderungen",
     "allIsWell":"Alles gut",
-    "changesPerformed":"Änderungen gespeichert",
+    "changesPerformed":"Änderungen gepeichert",
     "couldNotCreateAlbum":"Das Album konnte nicht erstellt werden",
     "couldNotCreateTrack":"Der Track konnte nicht angelegt werden",
     "errorCode":"Fehlercode",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Sind Sie sicher, dass Sie dieses Album, samt den darin enthaltenen Alben und Tracks, löschen möchten?",
     "confirmTrackDeletion":"Sind Sie sich sicher, dass sie diesen Track mit den gesamten verknüpften Inhalten löschen möchten?",
-    "confirmTranslatedDeletion":"Für diese Sprache wurden Inhalte hinterlegt, die auch gelöscht werden. Löschen bestätigen?",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"Sind Sie sich sicher, dass Sie diesen Mitwirkenden löschen wollen? Alle Titel, wo er\/sie mitgewirkt hat, werden dadurch auch gelöscht!"
   },
   "track":{

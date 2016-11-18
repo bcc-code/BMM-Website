@@ -86,6 +86,8 @@
       "songbooks":"Pesmarice",
       "bibleReferences":"Biblijske reference",
       "addBibleReference":"Dodaj biblijsko referenco",
+      "externalReferences":"External references",
+      "addExternalReference":"Add external reference",
       "record":"Snemaj",
       "pause":"Premor",
       "resetTime":"Čas ponastavitve",
@@ -134,7 +136,7 @@
   "states":{
     "noChanges":"Brez sprememb",
     "allIsWell":"Vse je dobro",
-    "changesPerformed":"Spremembe izvedene",
+    "changesPerformed":"Changes saved",
     "couldNotCreateAlbum":"Ni bilo mogoče ustvariti albuma",
     "couldNotCreateTrack":"Ni bilo mogoče ustvariti skladbe",
     "errorCode":"Koda napake",
@@ -160,7 +162,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Ali ste prepričani, da želite izbrisati album z vsemi pod-albumi in pesmimi?",
     "confirmTrackDeletion":"Ali ste prepričani, da želite izbrisati skladbo z vso njeno vsebino?",
-    "confirmTranslatedDeletion":"Če izbrišete ta jezik, bo vsebina, ki se nanaša na jezik, odstranjena. Ali želite nadaljevati?",
+    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
     "confirmContributorDeletion":"ALI STE PREPRIČANI, DA ŽELITE IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
   },
   "track":{
