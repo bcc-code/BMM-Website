@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Musica mas reciente",
       "artists":"Artistas",
+      "fromKaare":"De Kåre",
       "mp3Source":"Mp3-fuente",
       "childrensMp3Source":"Niños MP3-fuente",
       "instrumental":"Instrumental"

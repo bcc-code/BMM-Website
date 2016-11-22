@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Najnovejša glasba",
       "artists":"Izvajalci",
+      "fromKaare":"Od Kåreja",
       "mp3Source":"MP3-Izvir",
       "childrensMp3Source":"Otroški MP3-Izvir",
       "instrumental":"Instrumentalna glasba"

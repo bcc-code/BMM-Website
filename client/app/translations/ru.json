@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Последняя музыка",
       "artists":"артист",
+      "fromKaare":"От Коре",
       "mp3Source":"MP3-источник",
       "childrensMp3Source":"Детская MP3-Источник",
       "instrumental":"Инструментальная музыка"

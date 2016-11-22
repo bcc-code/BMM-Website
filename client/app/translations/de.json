@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Neue Musik",
       "artists":"Interpreten",
+      "fromKaare":"Von Kåre",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Kinderlieder",
       "instrumental":"Instrumental"

@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Hiljutised lood",
       "artists":"Esitajad",
+      "fromKaare":"Kårelt",
       "mp3Source":"MP3-allikas",
       "childrensMp3Source":"Laste MP3-allikas",
       "instrumental":"Instrumentaalmuusika"

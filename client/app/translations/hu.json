@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Legújabb zenék",
       "artists":"Előadók",
+      "fromKaare":"Kårétól",
       "mp3Source":"MP3-forrás",
       "childrensMp3Source":"Gyermekek MP3-forrása",
       "instrumental":"Hangszeres"

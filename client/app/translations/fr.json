@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Dernières musiques",
       "artists":"Artistes",
+      "fromKaare":"Venant de Kåre ",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Barna's MP3 Kilden",
       "instrumental":"Instrumental"

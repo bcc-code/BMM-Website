@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Najnowsza muzyka",
       "artists":"Wykonawcy",
+      "fromKaare":"Od Kårego",
       "mp3Source":"MP3-Kilden",
       "childrensMp3Source":"Pieśni dla dzieci",
       "instrumental":"Instrumentalna"

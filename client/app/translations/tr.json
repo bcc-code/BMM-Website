@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Yeni Müzik",
       "artists":"Sanatçılar",
+      "fromKaare":"Kåre adlı",
       "mp3Source":"MP3-Kaynağı",
       "childrensMp3Source":"Çocuklar için MP3-Kaynağı",
       "instrumental":"Enstrümental"

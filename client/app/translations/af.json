@@ -60,6 +60,7 @@
     "music":{
       "latestMusic":"Nuutste Musiek",
       "artists":"Kunstenaars",
+      "fromKaare":"Van Kåre",
       "mp3Source":"MP3-Bron",
       "childrensMp3Source":"Kinder MP3-Bron",
       "instrumental":"Instrumentaal"
