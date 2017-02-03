@@ -22,18 +22,24 @@ angular.module('bmmLibApp')
 
         /**
          * Get Json File name by timestamp
-         * 
+         *
          * @param {string} timestamp
          * @returns Json Filename e.g. 2016-05-12.json
          */
         function getFileNameByDate(timestamp) {
             var date = new Date(timestamp);
             var month = date.getMonth() + 1;
+            var day = date.getDate().toString();
+
             if (month.toString().length === 1) {
                 month = "0" + month;
             }
 
-            return date.getFullYear() + "-" + month + "-" + date.getDate() + ".json";
+            if (day.length === 1){
+                 day = "0" + day;
+            }
+
+            return date.getFullYear() + "-" + month + "-" + day + ".json";
         }
 
         /**
