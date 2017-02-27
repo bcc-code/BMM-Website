@@ -2,9 +2,6 @@
 
 cd translations
 
-mv es-ES es
-mv pt-PT pt
-mv zh-CN zh
 mv no nb
 
 for language in *
