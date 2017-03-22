@@ -23,5 +23,6 @@ sed -e 's|<base href="/">|<base href="/admin/">|g' admin/dist/index.html > admin
 
 mkdir build;
 rm -R common/dist;
+cp maintenance.html ./build/maintenance.html;
 mv admin/dist ./build/admin;
 mv client/dist ./build/client;
