@@ -31,11 +31,6 @@
             <div class="icon playlist"></div>
             <span ng-bind="init.translation.options.addToPlaylist"></span>
         </li>
-        <li ng-show="showPodcast"
-            ng-click="$parent.newPodcast.link=podcast.link; $parent.newPodcast.show=true">
-            <div class="icon no-flag podcast"></div>
-            <span ng-bind="init.translation.options.podcast"></span>
-        </li>
         <li ng-click="$parent.share.link=path; $parent.share.show=true">
             <div class="icon no-flag share"></div>
             <span ng-bind="init.translation.options.share"></span>
