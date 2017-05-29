@@ -38,7 +38,8 @@ angular.module('bmmApp')
       'child-favorites',
       'instrumental',
       'mp3-kilden',
-      'fra-kaare'
+      'fra-kaare',
+      'test-podcast'
     ];
 
     $scope.fetchModel = function(_raw) {
