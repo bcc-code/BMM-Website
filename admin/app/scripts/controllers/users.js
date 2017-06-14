@@ -18,6 +18,7 @@ angular.module('bmmApp')
                 ROLE_ADMINISTRATOR: false,
                 ROLE_ALBUM_MANAGER: false,
                 ROLE_TRACK_MANAGER: false,
+                ROLE_PODCAST_MANAGER: false,
                 ROLE_NOTIFICATION_MANAGER: false,
                 ROLE_CONTRIBUTOR_MANAGER: false
               };
@@ -78,6 +79,7 @@ angular.module('bmmApp')
           'ROLE_ADMINISTRATOR',
           'ROLE_ALBUM_MANAGER',
           'ROLE_TRACK_MANAGER',
+          'ROLE_PODCAST_MANAGER',
           'ROLE_NOTIFICATION_MANAGER',
           'ROLE_CONTRIBUTOR_MANAGER'
         ]

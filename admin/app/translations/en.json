@@ -11,6 +11,7 @@
       "notifications":"Notifications",
       "waitings":"Awaiting approval",
       "contributors":"Contributors",
+      "podcasts": "Podcasts",
       "users":"Users",
       "statistic":"Statistics"
     },
@@ -118,10 +119,11 @@
     },
     "users":{
       "adminUsers":"Administrator users",
-      "albumManager":"Album manager",
-      "trackManager":"Track manager",
-      "contributorManager":"Contributor manager",
-      "notificationManager":"Notification manager",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"All rights",
       "refreshList":"Refresh list"
     },

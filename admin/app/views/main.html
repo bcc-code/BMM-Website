@@ -54,14 +54,19 @@
                             {{init.translation.menu.main.contributors}}
                         </a>
                     </li>
-                    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
-                        <a ng-class="{ active: isActive('/users')}" ng-href="users">
-                            {{init.translation.menu.main.users}}
+                    <li ng-show="userIs('ROLE_PODCAST_MANAGER')">
+                        <a ng-class="{ active: isActive('/podcasts')}" ng-href="podcasts">
+                            {{init.translation.menu.main.podcasts}}
                         </a>
                     </li>
                     <li ng-show="userIs('ROLE_NOTIFICATION_MANAGER')">
                         <a ng-class="{ active: isActive('/notifications')}" ng-href="notifications">
                             {{init.translation.menu.main.notifications}}
+                        </a>
+                    </li>
+                    <li ng-show="userIs('ROLE_ADMINISTRATOR')">
+                        <a ng-class="{ active: isActive('/users')}" ng-href="users">
+                            {{init.translation.menu.main.users}}
                         </a>
                     </li>
                     <li ng-hide="true">
