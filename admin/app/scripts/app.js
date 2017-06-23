@@ -45,6 +45,11 @@ angular.module('bmmApp', [
         controller: 'NotificationsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }] }
       })
+      .when('/podcasts', {
+        templateUrl: 'views/pages/podcasts.html',
+        controller: 'PodcastsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }] }
+      })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
         controller: 'SearchCtrl',

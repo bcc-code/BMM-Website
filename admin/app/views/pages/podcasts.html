@@ -1,0 +1,49 @@
+<h3>{{init.translation.page.editor.podcasts}}</h3>
+<div class="foldbox">
+<h3>{{init.translation.page.editor.active}}</h3>
+  <ul
+    ui-sortable="sortableOptions"
+    ng-model="activePodcasts">
+    <li ng-repeat="podcast in activePodcasts">
+      <div style="height: 50px" class="foldbox">
+        <h3 style="display: inline;">{{podcast.title}}</h3>
+
+        <div ng-click="deactivatePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: red">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+
+        <div style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: grey" class="sort_handle">
+            <span class="glyphicon glyphicon-sort"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="foldbox">
+  <h3>{{init.translation.page.editor.available}}</h3>
+  <ul>
+    <li ng-repeat="podcast in availablePodcasts">
+      <div style="height: 50px" class="foldbox">
+        <h3 style="display: inline;">{{podcast.title}}</h3>
+
+        <div ng-click="deletePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: red">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+
+        <div ng-click="activatePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: green">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<input ng-click="save()" type="button" value="{{init.translation.page.editor.save}}">

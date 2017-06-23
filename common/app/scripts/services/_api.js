@@ -973,6 +973,39 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.podcastsGet = function() {
+    return factory.podcastsGet();
+  };
+
+  factory.unpublishedPodcastsGet = function() {
+    return factory.podcastsGet({unpublished: 'only'});
+  };
+
+  factory.podcastsGet = function(options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'podcast/',
+      data: options ? $.param(options) : undefined
+    });
+  };
+
+  factory.podcastIdDelete = function(id) {
+    return factory.addToQueue({
+      method: 'DELETE',
+      url: serverUrl + 'podcast/' + id
+    });
+  };
+
+  factory.activePodcastsPut = function(podcastCollection) {
+    return factory.addToQueue({
+      method: 'PUT',
+      url: serverUrl + 'podcast/',
+      data: podcastCollection
+    });
+  };
+
+  window.api = factory;
+
   return factory;
 
 });
