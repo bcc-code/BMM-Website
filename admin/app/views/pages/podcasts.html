@@ -1,0 +1,63 @@
+<h3>{{init.translation.page.editor.podcasts}}</h3>
+<div class="foldbox">
+<h3>{{init.translation.page.editor.active}}</h3>
+  <ul
+    ui-sortable="sortableOptions"
+    ng-model="activePodcasts">
+    <li ng-repeat="podcast in activePodcasts" style="background-color: white;">
+      <div style="height: 50px" class="foldbox">
+        <h3 style="display: inline;">{{getTitle(podcast)}}</h3>
+        <div ng-click="deactivatePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: red">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+
+        <div style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: grey" class="sort_handle">
+            <span class="glyphicon glyphicon-sort"></span>
+          </a>
+        </div>
+
+        <div ng-click="go('/podcasts/' + podcast.id)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: black">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="foldbox">
+  <h3>{{init.translation.page.editor.available}}</h3>
+  <ul>
+    <li ng-repeat="podcast in availablePodcasts" style="background-color: white;">
+      <div style="height: 50px" class="foldbox">
+        <h3 style="display: inline;">{{getTitle(podcast)}}</h3>
+        <div ng-click="deletePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: red">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+
+        <div ng-click="activatePodcast(podcast)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: green">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </div>
+
+        <div ng-click="go('/podcasts/' + podcast.id)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: black">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<button ng-click="save()">{{init.translation.page.editor.save}}</button>
+
+<button ng-click="createNewPodcast()">{{init.translation.page.editor.createNewPodcast}}</button>
+
+<span ng-include="'views/pages/podcast.html'" ng-controller="PodcastCtrl"></span>
