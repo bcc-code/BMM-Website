@@ -1,0 +1,78 @@
+<span ng-controller="PodcastCtrl" ng-if="podcast">
+  <h3>{{init.translation.page.editor.editPodcast}}</h3>
+
+  <div class="foldbox">
+    <div class="header"
+      ng-click="mainVisible=!mainVisible"
+      ng-init="mainVisible=true">
+      <h3>{{init.translation.page.editor.mainSettings}}</h3>
+    </div>
+    <div ng-class="{'visible': mainVisible}" class="body">
+      <div style="float:left">
+        <h3>{{init.translation.page.editor.tags}}</h3>
+        <ul>
+          <h4>{{init.translation.page.editor.active}}</h4>
+          <li ng-repeat="tag in podcast.query.tags"
+              ng-click="removeTag(tag)"
+              style="float: left;">
+              <span>
+                  {{tag}}
+              </span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="float: right" ng-controller="UploaderCtrl"
+             ng-init="initialize($parent.uploadCover);"
+             class="cover">
+            <div ng-hide="podcast.id==undefined" class="new" style="overflow: hidden;">
+                <input ng-file-select type="file" style="opacity: 0">
+            </div>
+            <div ng-hide="podcast.id==undefined" class="trash" ng-click="$parent.podcast.cover=null"></div>
+            <img ng-src="{{$parent.podcast.cover | _cover:'podcast':podcast.id:false}}">
+            <div class="progress" style="width:{{progress}}%;
+                                         background-color: #CAEC81;
+                                         background-image: none;
+                                         margin: 0"></div>
+        </div>
+
+      <br style="clear:both">
+
+      <div>
+        <input type="text" ng-model="tag">
+        <button ng-click="addTag(tag)"
+                style="margin-bottom: .5em">
+          {{init.translation.page.editor.addTag}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="foldbox">
+    <div class="header"
+      ng-click="languagesVisible=!languagesVisible">
+      <h3>{{init.translation.page.editor.languages}}</h3>
+    </div>
+    <div ng-class="{'visible': languagesVisible}" class="body">
+      <select ng-model="languageToAdd" ng-options="lang | _languageCode for lang in availableLanguages | filter : exceptSelected"></select>
+      <input ng-disabled="!languageToAdd" ng-click="addPodcastTranslation(languageToAdd)" type="button" value="{{init.translation.page.podcasts.addPodcastTranslation}}">
+      <ul
+        ng-model="podcast.translations">
+        <li
+          style="background: white;"
+          ng-repeat="translation in podcast.translations">
+          <div style="height: 40px" class="foldbox">
+            <h3 style="margin-left: 10px; margin-top: 10px; display: inline" ng-bind="translation.language | _languageCode"></h3>: 
+            <input type="text" ng-model="translation.title">
+            <div ng-click="removeTranslation(translation)" style="float:right; margin: 2px">
+              <a style="font-size: 1.7em; color: red" class="btn_remove">
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button ng-click="savePodcast()">{{init.translation.page.podcasts.savePodcast}}</button>
+</span>

@@ -978,7 +978,7 @@ angular.module('bmmLibApp')
   };
 
   factory.unpublishedPodcastsGet = function() {
-    return factory.podcastsGet({unpublished: 'only'});
+    return factory.podcastsGet({unpublished: 'only', raw: true});
   };
 
   factory.podcastsGet = function(options) {
@@ -988,6 +988,39 @@ angular.module('bmmLibApp')
       data: options ? $.param(options) : undefined
     });
   };
+
+  factory.podcastPost = function(options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl+'podcast/',
+      data: angular.toJson(options),
+      contentType: 'application/json'
+    });
+
+  };
+
+  factory.podcastIdGet = function(id, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'podcast/'+id,
+      data: $.param(options)
+    });
+  };
+
+  factory.podcastIdPut = function(id, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'PUT',
+      url: serverUrl + 'podcast/' + id,
+      data: angular.toJson(options),
+      contentType: 'application/json'
+    });
+  }
 
   factory.podcastIdDelete = function(id) {
     return factory.addToQueue({

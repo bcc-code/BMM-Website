@@ -21,6 +21,35 @@ angular.module('bmmApp')
     _api.activePodcastsPut(podcastCollection);
   };
 
+  $scope.createNewPodcast = function() {
+    _api.podcastPost({
+      type: 'podcast',
+      translations: [
+        {
+          language: 'en',
+          title: 'New podcast'
+        }
+      ],
+      query: {
+        tags: []
+      }
+    }).then(init);
+  };
+
+  $scope.getTitle = function(podcast) {
+    var title;
+
+    var translation = podcast.translations.find(function (translation) {
+      return translation.language === _init.language;
+    });
+
+    if(!translation) {
+      translation = podcast.translations[0];
+    }
+
+    return translation.title;
+  };
+
   $scope.deactivatePodcast = function(podcast) {
     var activePodcasts = $scope.activePodcasts;
     var availablePodcasts = $scope.availablePodcasts;
@@ -43,6 +72,10 @@ angular.module('bmmApp')
     activePodcasts.push.apply(activePodcasts, activatedPodcasts);
   };
 
+  $scope.editPodcast = function(podcast) {
+    $scope.podcast = podcast;
+  };
+
   $scope.deletePodcast = function(podcast) {
     _api.podcastIdDelete(podcast.id)
       .then(function() {
@@ -51,13 +84,30 @@ angular.module('bmmApp')
       });
   };
 
-  _api.podcastsGet().then(function(podcasts) {
-    $scope.activePodcasts = podcasts;
-  });
+  $scope.savePodcast = function() {
+    var podcastId = $scope.podcast.id;
 
-  _api.unpublishedPodcastsGet().then(function(podcasts) {
-    $scope.availablePodcasts = podcasts;
-  });
+    var podcast = angular.copy($scope.podcast);
+
+    if(podcastId) {
+      delete podcast.id;
+      _api.podcastIdPut(podcastId, podcast);
+    } else {
+      _api.podcastPost(podcast);
+    }
+  }
+
+  function init() {
+    _api.podcastsGet({raw: true}).then(function(podcasts) {
+      $scope.activePodcasts = podcasts;
+    });
+
+    _api.unpublishedPodcastsGet({raw: true}).then(function(podcasts) {
+      $scope.availablePodcasts = podcasts;
+    });
+  };
+
+  init();
 
   $scope.sortableOptions = {
     axis: 'y',

@@ -43,12 +43,17 @@ angular.module('bmmApp', [
       .when('/notifications', {
         templateUrl: 'views/pages/notifications.html',
         controller: 'NotificationsCtrl',
-        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }] }
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
       .when('/podcasts', {
         templateUrl: 'views/pages/podcasts.html',
         controller: 'PodcastsCtrl',
-        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }] }
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
+      .when('/podcasts/:id', {
+        templateUrl: 'views/pages/podcasts.html',
+        controller: 'PodcastsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',
@@ -105,7 +110,7 @@ angular.module('bmmApp', [
         controller: 'WizardCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
-	  .when('/statistic', {
+      .when('/statistic', {
         templateUrl: 'views/pages/statistic.html',
         controller: 'StatisticCtrl',
         resolve: { '_initData': ['_init', function (_init) { return _init.promise(true); }] }

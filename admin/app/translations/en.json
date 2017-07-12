@@ -52,6 +52,7 @@
       "status":"Status",
       "languages":"Languages",
       "tags":"Tags",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Generate titles by tag",
       "active":"Active",
       "available":"Available",
@@ -86,6 +87,7 @@
       "lyricists":"Lyricists",
       "songbooks":"Songbooks",
       "podcasts": "Podcasts",
+      "editPodcast": "Edit Podcast",
       "bibleReferences":"Bible references",
       "addBibleReference":"Add bible reference",
       "externalReferences":"External references",
@@ -94,6 +96,7 @@
       "pause":"Pause",
       "resetTime":"Reset time",
       "createNewContributor":"Create new contributor",
+      "createNewPodcast":"Create new podcast",
       "number":"Number",
       "timestamp":"Timestamp",
       "comment":"Comment",
@@ -134,6 +137,10 @@
       "sendPushNotification":"Send push-notification",
       "sent":"Sent",
       "failed":"Failed"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{
