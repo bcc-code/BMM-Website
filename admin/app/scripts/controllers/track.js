@@ -34,12 +34,10 @@ angular.module('bmmApp')
       'video'
     ];
 
+    $scope.podcastTags = [];
+
     var suggestedTags = [
-      'child-favorites',
-      'instrumental',
-      'mp3-kilden',
-      'fra-kaare',
-      'test-podcast'
+      'instrumental'
     ];
 
     $scope.fetchModel = function(_raw) {
@@ -127,19 +125,8 @@ angular.module('bmmApp')
       });
     };
 
-    var findAvailableTags = function() {
-      $scope.availableTags = [];
-      $.each(suggestedTags, function() {
-        var available = this, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
-        }
-      });
+    $scope.getAvailableTags = function() {
+      return suggestedTags.concat($scope.podcastTags || []);
     };
 
     $scope.refreshModel = function() {
@@ -149,7 +136,10 @@ angular.module('bmmApp')
           $scope.$apply(function() {
             $scope.model = model;
             findAvailableTranslations();
-            findAvailableTags();
+
+            getPodcastTags().then(function(tags) {
+              $scope.podcastTags = tags;
+            });
           });
           modelLoaded = true;
         });
@@ -167,7 +157,6 @@ angular.module('bmmApp')
         //Model is not yet created, fires when routeParams.id === 'new'
         $timeout(function() {
           findAvailableTranslations();
-          findAvailableTags();
         });
       }
       return promise;
@@ -424,24 +413,28 @@ angular.module('bmmApp')
       }
     });
 
+    function getPodcastTags() {
+      return _api.podcastsGet({raw: true, unpublished: 'show'})
+        .then(function(podcasts) {
+          return podcasts.map(function(podcast) {
+            return podcast.query.tags;
+          }).reduce(function(prevTags, curTags) {
+            return prevTags.concat(curTags);
+          }, []);
+        });
+    }
+
     $scope.addTag = function(tag) {
-      $.each($scope.availableTags, function(index) {
-        if (this===tag) {
-          $scope.availableTags.splice(index,1);
-          return false;
-        }
-      });
       $scope.model.tags.push(tag);
     };
 
     $scope.removeTag = function(tag) {
-      $.each($scope.model.tags, function(index) {
-        if (this===tag) {
-          $scope.model.tags.splice(index,1);
-          return false;
-        }
-      });
-      $scope.availableTags.push(tag);
+      var tags = $scope.model.tags;
+      var index = tags.indexOf(tag);
+
+      if(index > -1) {
+        tags.splice(index, 1);
+      }
     };
 
     $scope.uploadCover = {
@@ -508,6 +501,16 @@ angular.module('bmmApp')
 
       });
     };
+
+    $scope.exceptActiveTags = function(tag) {
+      if(!$scope.model || !$scope.model.tags) {
+        return false;
+      }
+
+      var activeTags = $scope.model.tags;
+      var isActive = activeTags.indexOf(tag) !== -1;
+      return !isActive;
+    }
 
     $scope.selectParentAlbum = function(album) {
       $scope.model.parent_id = album.id;
