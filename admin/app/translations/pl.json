@@ -11,6 +11,7 @@
       "notifications":"Powiadomienia",
       "waitings":"W oczekiwaniu",
       "contributors":"Współpracownicy",
+      "podcasts":"Podcasts",
       "users":"Użytkownicy",
       "statistic":"Statystyki"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Języki",
       "tags":"Tagi",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Generuj tytuły na podst. tagów",
       "active":"Aktywne",
       "available":"Dostępne",
@@ -84,14 +86,17 @@
       "interprets":"Wykonawcy\/Przemowy",
       "lyricists":"Autorzy tekstów",
       "songbooks":"Śpiewniki",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Odwołania do Biblii",
       "addBibleReference":"Dodaj odwołanie do Biblii",
-      "externalReferences":"External references",
-      "addExternalReference":"Add external reference",
+      "externalReferences":"Odnośniki zewnętrzne",
+      "addExternalReference":"Dodaj odnośnik zewnętrzny",
       "record":"Nagranie",
       "pause":"Pauza",
       "resetTime":"Zeruj czas",
       "createNewContributor":"Utwórz nowego autora",
+      "createNewPodcast":"Create new podcast",
       "number":"Numer",
       "timestamp":"Znacznik czasu",
       "comment":"Komentarz",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administratorzy",
-      "albumManager":"Menedżer albumu",
-      "trackManager":"Menedżer utworów",
-      "contributorManager":"Współautor Menedżera",
-      "notificationManager":"Menedżer powiadomień",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Wszystkie prawa",
       "refreshList":"Odśwież listę"
     },
@@ -131,12 +137,16 @@
       "sendPushNotification":"Wyślij powiadomienia typu Push",
       "sent":"Wysłane",
       "failed":"Nie powiodło się"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{
     "noChanges":"Bez zmian",
     "allIsWell":"Wszystko w porządku",
-    "changesPerformed":"Changes saved",
+    "changesPerformed":"Zapisano zmiany",
     "couldNotCreateAlbum":"Nie można utworzyć albumu",
     "couldNotCreateTrack":"Nie można utworzyć ścieżki",
     "errorCode":"Kod błędu",
@@ -162,7 +172,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Czy na pewno chcesz usunąć album z wszystkimi jego podalbumami i utworami?",
     "confirmTrackDeletion":"Czy na pewno chcesz usunąć utwór z całą jego zawartością?",
-    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
+    "confirmTranslatedDeletion":"Język zawiera treści. Potwierdź usunięcie",
     "confirmContributorDeletion":"CZY JESTEŚ PEWIEN, ŻE CHCESZ USUNĄĆ TEN WSPÓŁPRACOWNIK? WSZYSTKIE UTWORY POŁĄCZONE ZOSTANĄ USUNIĘTE!"
   },
   "track":{

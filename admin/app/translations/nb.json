@@ -11,6 +11,7 @@
       "notifications":"Meldinger",
       "waitings":"På vent",
       "contributors":"Bidragsytere",
+      "podcasts":"Podcaster",
       "users":"Brukere",
       "statistic":"Statistikk"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Språk",
       "tags":"Tags",
+      "addTag":"Legg til tag",
       "generateTitlesByTag":"Generer titler med tag",
       "active":"Aktiv",
       "available":"Tilgjengelig",
@@ -84,6 +86,8 @@
       "interprets":"Artister og\/eller talere",
       "lyricists":"Tekstforfattere",
       "songbooks":"Sangbøker",
+      "podcasts":"Podcaster",
+      "editPodcast":"Redigere Podcast",
       "bibleReferences":"Bibelreferanser",
       "addBibleReference":"Legg til bibelreferanse",
       "externalReferences":"Eksterne referanser",
@@ -92,6 +96,7 @@
       "pause":"Pause",
       "resetTime":"Tilbakestill tid",
       "createNewContributor":"Opprett ny bidragsyter",
+      "createNewPodcast":"Opprett ny podcast",
       "number":"Nummer",
       "timestamp":"Tidsstempel",
       "comment":"Kommentar",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administratorbrukere",
-      "albumManager":"Album manager",
-      "trackManager":"Spor manager",
-      "contributorManager":"Bidragsyter manager",
-      "notificationManager":"Meldings manager",
+      "albumManager":"Album",
+      "trackManager":"Spor",
+      "contributorManager":"Bidragsytere",
+      "notificationManager":"Meldinger",
+      "podcastManager":"Podcaster",
       "allRights":"Alle rettigheter",
       "refreshList":"Oppdater listen"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Send push-varsel",
       "sent":"Sendt",
       "failed":"Feilet"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Legg podcast oversettelse",
+      "savePodcast":"Lagre podcast"
     }
   },
   "states":{
@@ -162,7 +172,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Er du sikker på at du vil slette albumet med alle under-album og spor?",
     "confirmTrackDeletion":"Er du sikker på at du vil slette spor med alt innholdet?",
-    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
+    "confirmTranslatedDeletion":"Språket har innhold. Bekreft sletting",
     "confirmContributorDeletion":"ER DU VIRKELIG SIKKER PÅ AT DU VIL SLETTE DENNE BIDRAGSYTEREN? ALLE KOBLEDE SPOR VIL BLI SLETTET!"
   },
   "track":{

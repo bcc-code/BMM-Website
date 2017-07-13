@@ -11,6 +11,7 @@
       "notifications":"Notificações",
       "waitings":"Aguardando aprovação",
       "contributors":"Colaboradores",
+      "podcasts":"Podcasts",
       "users":"Usuários",
       "statistic":"Estatísticas"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Língua",
       "tags":"Tags",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Gerar títulos pela tag",
       "active":"Ativo",
       "available":"Disponível",
@@ -84,6 +86,8 @@
       "interprets":"Artistas e\/ou alto-falantes",
       "lyricists":"Letristas",
       "songbooks":"Cancioneiros",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Referências da Bíblia",
       "addBibleReference":"Adicionar a referência da Bíblia",
       "externalReferences":"External references",
@@ -92,6 +96,7 @@
       "pause":"Pausa",
       "resetTime":"Tempo de restauração",
       "createNewContributor":"Criar novo colaborador",
+      "createNewPodcast":"Create new podcast",
       "number":"Número",
       "timestamp":"Timestamp",
       "comment":"Comentário",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Usuários administradores",
-      "albumManager":"Gerenciador de álbum",
-      "trackManager":"Gerente de pista",
-      "contributorManager":"Gerente de contribuinte",
-      "notificationManager":"Administrador de notificação",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Todos os direitos",
       "refreshList":"Atualizar lista"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Enviar notificação de envio",
       "sent":"Enviado",
       "failed":"Falhou"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{

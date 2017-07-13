@@ -11,6 +11,7 @@
       "notifications":"Obvestila",
       "waitings":"Na čakanju",
       "contributors":"Ustvarjalci",
+      "podcasts":"Podcasts",
       "users":"Uporabniki",
       "statistic":"Statistika"
     },
@@ -48,9 +49,10 @@
       "delete":"Izbriši",
       "play":"Predvajaj",
       "download":"Prenesi",
-      "status":"Status",
+      "status":"Stanje",
       "languages":"Jeziki",
       "tags":"Oznake",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Razvrsti naslove po oznaki",
       "active":"Aktiven",
       "available":"Dosegljiv",
@@ -84,14 +86,17 @@
       "interprets":"Izvajalci in\/ali govorniki",
       "lyricists":"Pisci besedil",
       "songbooks":"Pesmarice",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Biblijske reference",
       "addBibleReference":"Dodaj biblijsko referenco",
-      "externalReferences":"External references",
-      "addExternalReference":"Add external reference",
+      "externalReferences":"Zunanji sklici",
+      "addExternalReference":"Dodaj zunanji sklic",
       "record":"Snemaj",
       "pause":"Premor",
       "resetTime":"Čas ponastavitve",
       "createNewContributor":"Ustvari novega ustvarjalca",
+      "createNewPodcast":"Create new podcast",
       "number":"Številka",
       "timestamp":"Časovni žig",
       "comment":"Komentar",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administratorji",
-      "albumManager":"Oskrbnik albumov",
-      "trackManager":"Oskrbnik skladb",
-      "contributorManager":"Menedžer ustvarjalcev",
-      "notificationManager":"Upravitelj obvestil",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Vse pravice",
       "refreshList":"Osveži seznam"
     },
@@ -131,12 +137,16 @@
       "sendPushNotification":"Pošlji potisno obvestilo",
       "sent":"Poslano",
       "failed":"Ni uspelo"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{
     "noChanges":"Brez sprememb",
     "allIsWell":"Vse je dobro",
-    "changesPerformed":"Changes saved",
+    "changesPerformed":"Sprembe so shranjene",
     "couldNotCreateAlbum":"Ni bilo mogoče ustvariti albuma",
     "couldNotCreateTrack":"Ni bilo mogoče ustvariti skladbe",
     "errorCode":"Koda napake",
@@ -162,7 +172,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Ali ste prepričani, da želite izbrisati album z vsemi pod-albumi in pesmimi?",
     "confirmTrackDeletion":"Ali ste prepričani, da želite izbrisati skladbo z vso njeno vsebino?",
-    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
+    "confirmTranslatedDeletion":"Jezik ima vsebino. Potrdite brisanje",
     "confirmContributorDeletion":"ALI STE PREPRIČANI, DA ŽELITE IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
   },
   "track":{

@@ -1,52 +1,52 @@
 {
-  "language":"Slovenščina",
+  "language":"Hrvatski",
   "general":{
-    "search":"Išči...",
-    "searchResultsFor":"Rezultati za:",
-    "loading":"Nalagam...",
-    "waysOfTheLord":"Gospodove poti",
-    "almondBlossom":"Mandljev cvet",
-    "noTitle":"Brez naslova",
-    "settings":"Nastavitve",
-    "suport":"Podpora",
-    "readMore":"Preberite več"
+    "search":"Traži...",
+    "searchResultsFor":"Rezultati pretrage za:",
+    "loading":"Učitavanje...",
+    "waysOfTheLord":"Putevi Gospodnji",
+    "almondBlossom":"Dječja Pjesmarica Bademov cvijet",
+    "noTitle":"Bez naslova",
+    "settings":"Postavke",
+    "suport":"Podrška za",
+    "readMore":"Pročitaj više"
   },
   "options":{
-    "addToPlaylist":"Dodaj na seznam predvajanja",
-    "download":"Prenesi",
-    "goToAlbum":"Pojdi na album",
+    "addToPlaylist":"Dodavanje na listu",
+    "download":"Preuzimanje datoteka",
+    "goToAlbum":"Idi na album",
     "podcast":"Podcast",
-    "removeFilter":"Odstrani filter",
-    "changeLanguage":"Spremeni jezik",
-    "goBack":"Nazaj",
-    "choosePlaylist":"Izberite seznam predvajanja",
+    "removeFilter":"Ukloni filter",
+    "changeLanguage":"Promjena jezika",
+    "goBack":"Natrag",
+    "choosePlaylist":"Odaberite popis za slušanje",
     "setupPodcast":"Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
-    "chooseLanguages":"Izberite jezike",
-    "addLanguage":"Dodajte jezik",
-    "includeLatest":"Vključi najnovejše",
-    "websiteLanguage":"Jezik spletne strani",
-    "contentLanguages":"Jezik vsebine",
-    "tracks":"skladbe",
-    "filterByLanguage":"Filtriraj po jeziku",
-    "copyUrl":"Kopiraj URL",
-    "copyLink":"Kopiraj povezavo",
-    "remove":"Odstrani",
-    "playPlaylist":"Predvajaj seznam predvajanja",
-    "share":"Deli"
+    "chooseLanguages":"Odabir jezika",
+    "addLanguage":"Dodavanje jezika",
+    "includeLatest":"Najnoviji sadržaj",
+    "websiteLanguage":"Jezik web stranice",
+    "contentLanguages":"Jezik sadržaja",
+    "tracks":"Naslov",
+    "filterByLanguage":"Filtriranje prema jeziku",
+    "copyUrl":"Kopirajte URL",
+    "copyLink":"Kopiraj stranicu",
+    "remove":"Uklonite",
+    "playPlaylist":"Pokreni listu",
+    "share":"Podijeli"
   },
   "menu":{
     "main":{
-      "music":"Glasba",
-      "speeches":"Sporočila",
-      "video":"Video posnetki",
-      "archive":"Arhiv",
-      "audiobooks":"Zvočne knjige"
+      "music":"Glazba",
+      "speeches":"Poruke",
+      "video":"Video",
+      "archive":"Arhiva",
+      "audiobooks":"Audioknjige"
     },
     "secondary":{
-      "playlists":"Seznami predvajanja",
-      "latestTracks":"Nove skladbe",
-      "current":"Trenutno",
-      "newPlaylist":"Nov seznam predvajanja",
+      "playlists":"Popis liste za slušanje",
+      "latestTracks":"Nove pjesme",
+      "current":"Aktuelno",
+      "newPlaylist":"Novi popis za slušanje",
       "nameOnPlaylist":"Naslov seznama predvajanja"
     }
   },
@@ -73,7 +73,7 @@
       "latestVideos":"Najnovejši video posnetki"
     },
     "archive":{
-      "archive":"Arhiv"
+      "archive":"Arhiva"
     },
     "audiobooks":{
       "latestAudiobooks":"Najnovejše zvočne knjige"
@@ -104,25 +104,25 @@
     "duration":"Trajanje",
     "title":"Naslov",
     "allLanguages":"Vsi jeziki",
-    "confirmPlaylistDeletion":"Ali ste prepričani, da želite izbrisati ta seznam?",
-    "latestTracks":"Najnovejše skladbe",
+    "confirmPlaylistDeletion":"Jeste li sigurni da želite izbrisati ovaj popis?",
+    "latestTracks":"Najnovije pjesme",
     "instrumental":"Instrumentalna glasba"
   },
   "notify":{
-    "play":"Predvajaj",
-    "next":"Naslednji",
-    "previous":"Prejšnji",
-    "shufflePlaylist":"Naključni seznam predvajanja",
-    "loopPlaylist":"Ponavljaj seznam predvajanja",
-    "mute":"Nemo",
-    "maxVolume":"Najvišja glasnost",
-    "options":"Možnosti",
-    "activateVideo":"Aktiviraj video",
-    "goToAlbum":"Pojdi na album",
-    "showFullscreen":"Prikaži celoten zaslon",
-    "closeFullscreen":"Zapri celozaslonski način",
-    "hideVideo":"Skrij video",
-    "showVideo":"Pokaži video"
+    "play":"Pokreni",
+    "next":"Sljedeći",
+    "previous":"Prethodni",
+    "shufflePlaylist":"Izmiješaj popis",
+    "loopPlaylist":"Ponavljanje naslova",
+    "mute":"Beščujno",
+    "maxVolume":"Maximalno glasno",
+    "options":"Opcije",
+    "activateVideo":"Aktiviranje videa",
+    "goToAlbum":"Idi na album",
+    "showFullscreen":"Prikaži cijeli ekran",
+    "closeFullscreen":"Zatvoti zaslon",
+    "hideVideo":"Sakrij video",
+    "showVideo":"Prikaži video"
   },
-  "copyright":"Avtorske pravice"
+  "copyright":"Autorska prava"
 }

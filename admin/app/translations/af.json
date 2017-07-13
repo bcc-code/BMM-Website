@@ -11,6 +11,7 @@
       "notifications":"Notifikasies",
       "waitings":"wag vir goedkeuring",
       "contributors":"bydraers",
+      "podcasts":"Podcasts",
       "users":"Gebruikers",
       "statistic":"Statistieke"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Tale",
       "tags":"Etikette",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Genereer items deur etikette",
       "active":"Aktief",
       "available":"Beskikbaar",
@@ -84,6 +86,8 @@
       "interprets":"Kunstenaars en \/ of Sprekers",
       "lyricists":"Liriek",
       "songbooks":"Sangboeke",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Bybel verwysings",
       "addBibleReference":"Voeg Bybel verwysing by",
       "externalReferences":"External references",
@@ -92,6 +96,7 @@
       "pause":"Pause",
       "resetTime":"Herstel tyd",
       "createNewContributor":"Skep nuwe bydraer",
+      "createNewPodcast":"Create new podcast",
       "number":"Nommer",
       "timestamp":"Tyd stempel",
       "comment":"Kommentaar",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administrator gebruikers",
-      "albumManager":"Album bestuurder",
-      "trackManager":"Snit bestuurder",
-      "contributorManager":"Bydraer bestuurder",
-      "notificationManager":"Kennisgewing bestuurder",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Alle regte",
       "refreshList":"Herlaai Lys"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Stuur stoot-kennisgewing",
       "sent":"Gestuur",
       "failed":"Misluk"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{

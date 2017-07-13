@@ -11,6 +11,7 @@
       "notifications":"Уведомления",
       "waitings":"Ожидает проверки",
       "contributors":"Исполнители",
+      "podcasts":"Podcasts",
       "users":"Пользователи",
       "statistic":"Статистика"
     },
@@ -51,6 +52,7 @@
       "status":"Статус",
       "languages":"Языки",
       "tags":"Теги",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Генерировать названия по тегу",
       "active":"Активные",
       "available":"Доступно",
@@ -84,6 +86,8 @@
       "interprets":"Исполнители или говорящие",
       "lyricists":"Авторы текстов",
       "songbooks":"Песенники",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Ссылки в библии",
       "addBibleReference":"Добавить ссылку в Библии",
       "externalReferences":"External references",
@@ -92,6 +96,7 @@
       "pause":"Пауза",
       "resetTime":"Время сброса",
       "createNewContributor":"Создать нового исполнителя",
+      "createNewPodcast":"Create new podcast",
       "number":"Номер",
       "timestamp":"Метка времени",
       "comment":"Комментарий",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Администраторы",
-      "albumManager":"Менеджер альбомов",
-      "trackManager":"Менеджер треков",
-      "contributorManager":"Менеджер исполнителей",
-      "notificationManager":"Менеджер уведомлений",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Все права",
       "refreshList":"Обновить список"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Показывать уведомления на экране",
       "sent":"Отправлено",
       "failed":"Не удалось"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{

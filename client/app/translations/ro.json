@@ -83,7 +83,7 @@
       "content":"Conţinut",
       "bibleVerse":"Verset biblic",
       "album":"Album",
-      "artist":"Artist",
+      "artist":"Interpreți",
       "interprets":"Interpreți"
     }
   },
@@ -92,7 +92,7 @@
     "details":"Detalii",
     "exegesis":"Tălmăcire",
     "recordedDate":"Dată de înregistrare",
-    "artist":"Artist",
+    "artist":"Interpreți",
     "lyricist":"Textier",
     "composer":"Compozitor",
     "album":"Album",
@@ -109,7 +109,7 @@
     "instrumental":"Instrumental"
   },
   "notify":{
-    "play":"Play",
+    "play":"Cântă",
     "next":"Următoarea",
     "previous":"Precedenta",
     "shufflePlaylist":"Amestecă play-list",

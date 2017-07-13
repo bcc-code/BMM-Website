@@ -11,6 +11,7 @@
       "notifications":"Benachrichtigungen",
       "waitings":"Wartende Dateien",
       "contributors":"Mitwirkende",
+      "podcasts":"Podcasts",
       "users":"Benutzer",
       "statistic":"Statistiken"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Sprachen",
       "tags":"Tags",
+      "addTag":"Tag hinzufügen",
       "generateTitlesByTag":"Titel aus Tags generieren",
       "active":"Aktiv",
       "available":"Verfügbar",
@@ -84,6 +86,8 @@
       "interprets":"Künstler und\/oder Speechers",
       "lyricists":"Textverfasser",
       "songbooks":"Liederbücher",
+      "podcasts":"Podcasts",
+      "editPodcast":"Podcast bearbeiten",
       "bibleReferences":"Bibelverweise",
       "addBibleReference":"Bibelverweis hinzufügen",
       "externalReferences":"Externe Referenzen",
@@ -92,6 +96,7 @@
       "pause":"Pause",
       "resetTime":"Zeit zurücksetzen",
       "createNewContributor":"Neuen Mitwirkenden anlegen",
+      "createNewPodcast":"Neuen podcast erstellen",
       "number":"Nummer",
       "timestamp":"Zeitpunkt",
       "comment":"Kommentar",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administratoren",
-      "albumManager":"Album Manager",
-      "trackManager":"Administrator für Tracks",
-      "contributorManager":"Manager für Mitwirkende",
-      "notificationManager":"Benachichtigungs Manager",
+      "albumManager":"Alben",
+      "trackManager":"Tracks",
+      "contributorManager":"Mitwirkende",
+      "notificationManager":"Benachrichtigungen",
+      "podcastManager":"Podcasts",
       "allRights":"Alle Rechte",
       "refreshList":"Liste aktualisieren"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Push-Benachrichtigung senden",
       "sent":"Gesendet",
       "failed":"Fehlgeschlagen"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Podcast-Übersetzung hinzufügen",
+      "savePodcast":"Podcast speichern"
     }
   },
   "states":{
@@ -162,7 +172,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Sind Sie sicher, dass Sie dieses Album, samt den darin enthaltenen Alben und Tracks, löschen möchten?",
     "confirmTrackDeletion":"Sind Sie sich sicher, dass sie diesen Track mit den gesamten verknüpften Inhalten löschen möchten?",
-    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
+    "confirmTranslatedDeletion":"Für diese Sprache wurden Inhalte hinterlegt, die auch gelöscht werden. Bitte Löschen bestätigen",
     "confirmContributorDeletion":"Sind Sie sich sicher, dass Sie diesen Mitwirkenden löschen wollen? Alle Titel, wo er\/sie mitgewirkt hat, werden dadurch auch gelöscht!"
   },
   "track":{

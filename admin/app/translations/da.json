@@ -11,6 +11,7 @@
       "notifications":"Notifikationer",
       "waitings":"Venter",
       "contributors":"Bidragydere",
+      "podcasts":"Podcasts",
       "users":"Brugere",
       "statistic":"Statistik"
     },
@@ -51,6 +52,7 @@
       "status":"Status",
       "languages":"Sprog",
       "tags":"Tags",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Generer titler fra tags",
       "active":"Aktiv",
       "available":"Tilgængelig",
@@ -84,6 +86,8 @@
       "interprets":"Artister og\/eller talere",
       "lyricists":"Forfattere",
       "songbooks":"Sangbøger",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Bibelreferencer",
       "addBibleReference":"Tilføj bibelreference",
       "externalReferences":"External references",
@@ -92,6 +96,7 @@
       "pause":"Pause",
       "resetTime":"Nulstil tid",
       "createNewContributor":"Opret nye bidragyder",
+      "createNewPodcast":"Create new podcast",
       "number":"Nummer",
       "timestamp":"Oprettet",
       "comment":"Kommentar",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Administratorer",
-      "albumManager":"Album-manager",
-      "trackManager":"Spor-manager",
-      "contributorManager":"Medvirkende-manager",
-      "notificationManager":"Notifikationsmanager",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Alle rettigheder",
       "refreshList":"Opdater liste"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Send push-notifikation",
       "sent":"Sendt",
       "failed":"Fejlede"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{

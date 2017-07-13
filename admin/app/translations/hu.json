@@ -11,6 +11,7 @@
       "notifications":"Értesítések",
       "waitings":"Jóváhagyásra vár",
       "contributors":"Közreműködők",
+      "podcasts":"Podcasts",
       "users":"Felhasználók",
       "statistic":"Statisztikák"
     },
@@ -51,6 +52,7 @@
       "status":"Állapot",
       "languages":"Nyelvek",
       "tags":"Címkék",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Címek létrehozása címkékből",
       "active":"Aktív",
       "available":"Elérhető",
@@ -84,14 +86,17 @@
       "interprets":"Előadók és\/vagy beszélők",
       "lyricists":"Szövegírók",
       "songbooks":"Énekeskönyvek",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Bibliai hivatkozások",
       "addBibleReference":"Új bibliai hivatkozás",
-      "externalReferences":"External references",
-      "addExternalReference":"Add external reference",
+      "externalReferences":"Extern referenciák",
+      "addExternalReference":"Extern referencia hozzáadása",
       "record":"Felvétel",
       "pause":"Szünet",
       "resetTime":"Idő visszaállítása",
       "createNewContributor":"Új közreműködő létrehozása",
+      "createNewPodcast":"Create new podcast",
       "number":"Sorszám",
       "timestamp":"Kelt",
       "comment":"Megjegyzés",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Rendszergazdák",
-      "albumManager":"Album-kezelő",
-      "trackManager":"Szám-kezelő",
-      "contributorManager":"Közreműködő-kezelő",
-      "notificationManager":"Értesítés-kezelő",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Minden jog",
       "refreshList":"Lista frissítése"
     },
@@ -131,12 +137,16 @@
       "sendPushNotification":"Értesítés küldése",
       "sent":"Elküldve",
       "failed":"Sikertelen"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{
     "noChanges":"Nincsenek változások",
     "allIsWell":"Minden rendben",
-    "changesPerformed":"Changes saved",
+    "changesPerformed":"Változások mentése",
     "couldNotCreateAlbum":"Album létrehozása sikertelen",
     "couldNotCreateTrack":"Szám létrehozása sikertelen",
     "errorCode":"Hibakód",
@@ -162,7 +172,7 @@
   "warnings":{
     "confirmAlbumDeletion":"Biztosan törölni kivánod ezt az albumot az al-albumokkal és számokkal együtt?",
     "confirmTrackDeletion":"Biztosan törölni kivánod ezt a számot minden tartalmával együtt?",
-    "confirmTranslatedDeletion":"Language has content. Confirm deletion",
+    "confirmTranslatedDeletion":"A nyelv tartalommal rendelkezik. Törlés megerősítése",
     "confirmContributorDeletion":"BIZTOSAN TÖRÖLNI KIVÁNOD EZT A KÖZREMŰKÖDŐT? A FOLYAMAT SORÁN AZ ÖSSZES HOZZÁ KAPCSOLÓDÓ ELEM IS TÖRLÉSRE KERÜL!"
   },
   "track":{

@@ -11,6 +11,7 @@
       "notifications":"Уведомления",
       "waitings":"Изчакване за одобрение",
       "contributors":"Сътрудници",
+      "podcasts":"Podcasts",
       "users":"Потребители",
       "statistic":"Статистики"
     },
@@ -51,6 +52,7 @@
       "status":"Статус",
       "languages":"Езици",
       "tags":"Тагове",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Генериране на заглавия по етикет",
       "active":"Активен",
       "available":"Достъпен",
@@ -77,13 +79,15 @@
       "size":"Размер",
       "mediaFiles":"Медийни файлове",
       "uploadFile":"Качи файл",
-      "uploadError":"Не мога да кача, моля, провери дали файлът е в правилен формат",
+      "uploadError":"Не мога да кача. Моля, провери дали файлът е в правилен формат",
       "imageAllowed":"jpeg, png, gif",
       "mediaAllowed":"mp3, mp4",
       "composers":"Композитори",
       "interprets":"Изпълнители и\/или говорители",
       "lyricists":"Текстописци",
       "songbooks":"Песнярки",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Библейски препратки",
       "addBibleReference":"Добави Библейски препратки",
       "externalReferences":"Външни препратки",
@@ -92,6 +96,7 @@
       "pause":"Пауза",
       "resetTime":"Нулирай време",
       "createNewContributor":"Създай нов сътрудник",
+      "createNewPodcast":"Create new podcast",
       "number":"Номер",
       "timestamp":"Индикатор на време",
       "comment":"Коментар",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Администратор потребители",
-      "albumManager":"Управител албум",
-      "trackManager":"Управител песни\/речи",
-      "contributorManager":"Сътрудник управител",
-      "notificationManager":"Управител на уведомление",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Всички права",
       "refreshList":"Обнови списък"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Изпрати известие за съобщение",
       "sent":"Изпратени",
       "failed":"Неуспешно"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{

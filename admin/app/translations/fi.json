@@ -11,6 +11,7 @@
       "notifications":"Ilmoitukset",
       "waitings":"Odottaa hyväksyntää",
       "contributors":"Tekijät",
+      "podcasts":"Podcasts",
       "users":"Käyttäjät",
       "statistic":"Tilastot"
     },
@@ -51,6 +52,7 @@
       "status":"Tila",
       "languages":"Kielet",
       "tags":"Tunnisteet",
+      "addTag":"Add tag",
       "generateTitlesByTag":"Luo otsikot tunnisteiden perusteella",
       "active":"Aktiivinen",
       "available":"Saatavilla",
@@ -84,6 +86,8 @@
       "interprets":"Taiteilijoita ja\/tai kaiuttimet",
       "lyricists":"Sanoittajien",
       "songbooks":"Laulukirjat",
+      "podcasts":"Podcasts",
+      "editPodcast":"Edit Podcast",
       "bibleReferences":"Raamatun viittaukset",
       "addBibleReference":"Lisää Raamattu viite",
       "externalReferences":"External references",
@@ -92,6 +96,7 @@
       "pause":"Tauko",
       "resetTime":"Palauttaa aika",
       "createNewContributor":"Luo uusi avustaja",
+      "createNewPodcast":"Create new podcast",
       "number":"Numero",
       "timestamp":"Aikaleima",
       "comment":"Kommentti",
@@ -118,10 +123,11 @@
     },
     "users":{
       "adminUsers":"Käyttäjillä",
-      "albumManager":"Albumi emäntä",
-      "trackManager":"Hallintatoimintojen",
-      "contributorManager":"Avustaja manager",
-      "notificationManager":"Ilmoitusten hallinta",
+      "albumManager":"Albums",
+      "trackManager":"Tracks",
+      "contributorManager":"Contributors",
+      "notificationManager":"Notifications",
+      "podcastManager":"Podcasts",
       "allRights":"Kaikki oikeudet",
       "refreshList":"Päivitä luettelo"
     },
@@ -131,6 +137,10 @@
       "sendPushNotification":"Lähetä push-ilmoitus",
       "sent":"Lähetetty",
       "failed":"Epäonnistui"
+    },
+    "podcasts":{
+      "addPodcastTranslation":"Add podcast translation",
+      "savePodcast":"Save podcast"
     }
   },
   "states":{
