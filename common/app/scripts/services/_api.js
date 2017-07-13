@@ -973,10 +973,6 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.podcastsGet = function() {
-    return factory.podcastsGet();
-  };
-
   factory.unpublishedPodcastsGet = function() {
     return factory.podcastsGet({unpublished: 'only', raw: true});
   };
