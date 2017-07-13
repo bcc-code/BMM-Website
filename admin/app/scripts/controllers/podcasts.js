@@ -18,22 +18,26 @@ angular.module('bmmApp')
       podcast_references: podcastReferences
     };
 
-    _api.activePodcastsPut(podcastCollection);
+    return _api.activePodcastsPut(podcastCollection);
   };
 
   $scope.createNewPodcast = function() {
-    _api.podcastPost({
-      type: 'podcast',
-      translations: [
-        {
-          language: 'en',
-          title: 'New podcast'
-        }
-      ],
-      query: {
-        tags: []
-      }
-    }).then(init);
+    $scope.save()
+      .then(function() {
+        return _api.podcastPost({
+          type: 'podcast',
+          translations: [
+            {
+              language: 'en',
+              title: 'New podcast'
+            }
+          ],
+          query: {
+            tags: []
+          }
+        });
+      })
+      .then(init);
   };
 
   $scope.getTitle = function(podcast) {

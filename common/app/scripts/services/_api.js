@@ -28,7 +28,7 @@ angular.module('bmmLibApp')
     //The default options for every request
     defaultXhrOptions = {
       crossDomain: true,
-      dataType: 'json',
+      dataType: customXhrOptions.method === 'GET' ? 'json' : 'html',
       timeout: requestTimeout,
       headers: {
         'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
@@ -1020,7 +1020,7 @@ angular.module('bmmLibApp')
       data: angular.toJson(options),
       contentType: 'application/json'
     });
-  }
+  };
 
   factory.podcastIdDelete = function(id) {
     return factory.addToQueue({
