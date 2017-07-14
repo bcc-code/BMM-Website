@@ -29,7 +29,7 @@
                 <input ng-file-select type="file" style="opacity: 0">
             </div>
             <div ng-hide="podcast.id==undefined" class="trash" ng-click="$parent.podcast.cover=null"></div>
-            <img ng-src="{{$parent.podcast.cover | _cover:'podcast':podcast.id:false}}">
+            <img ng-src="{{podcast.cover | _cover:'podcast'}}">
             <div class="progress" style="width:{{progress}}%;
                                          background-color: #CAEC81;
                                          background-image: none;

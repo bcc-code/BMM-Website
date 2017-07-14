@@ -4,6 +4,10 @@ angular.module('bmmLibApp')
   .filter('_cover', function (_api) {
     return function (cover, type, id, antiCache) {
 
+      if(cover && cover.indexOf(_api.getserverUrli()) === -1) {
+        cover = _api.getserverUrli() + 'file/protected/' + cover;
+      }
+
       if (typeof cover==='undefined' || cover===null || cover==='') {
         if (typeof type==='undefined') {
           cover = 'fallback_images/svg/person.svg';
@@ -32,14 +36,6 @@ angular.module('bmmLibApp')
               break;
           }
         }
-      } else if (typeof id!=='undefined') {
-        var antiC;
-        if (typeof antiCache==='undefined'||antiCache) {
-          antiC = '?'+ Math.floor(Math.random() * 9000000) + 1000000;
-        } else {
-          antiC = '';
-        }
-        cover = _api.secureFile(_api.getserverUrli()+type+'/'+id+'/cover')+antiC;
       }
 
       return cover;

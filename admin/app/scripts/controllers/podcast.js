@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('bmmApp')
   .controller('PodcastCtrl', function(
     $scope,

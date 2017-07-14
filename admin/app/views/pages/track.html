@@ -115,7 +115,7 @@
                 <input ng-file-select type="file" style="opacity: 0">
             </div>
             <div ng-hide="model.id==undefined" class="trash" ng-click="$parent.model.cover=null"></div>
-            <img ng-src="{{$parent.model.cover | _cover:'track':model.id:false}}">
+            <img ng-src="{{$parent.model.cover | _cover:'track'}}">
             <div class="progress" style="width:{{progress}}%;
                                          background-color: #CAEC81;
                                          background-image: none;
