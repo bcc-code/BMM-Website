@@ -259,7 +259,6 @@ angular.module('bmmApp')
           $scope.$apply(function() { //Model-watcher updates status to changed
             $scope.model = model;
             findAvailableTranslations();
-            findAvailableTags();
             $timeout(function() { //Secure that watcher is fired
               $scope.status = _init.translation.states.saved; //Update status
               $scope.$apply(); //Render status
