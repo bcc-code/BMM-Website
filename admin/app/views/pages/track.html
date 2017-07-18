@@ -246,7 +246,7 @@
         </ul>
         <ul style="width: 50%; float: left">
             <h4>{{init.translation.page.editor.available}}</h4>
-            <li ng-repeat="tag in getAvailableTags() | filter : exceptActiveTags"
+            <li ng-repeat="tag in podcastTags | filter : exceptActiveTags"
                 ng-click="addTag(tag)"
                 style="float: left;">
                 <span>

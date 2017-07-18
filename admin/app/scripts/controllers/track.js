@@ -36,10 +36,6 @@ angular.module('bmmApp')
 
     $scope.podcastTags = [];
 
-    var suggestedTags = [
-      'instrumental'
-    ];
-
     $scope.fetchModel = function(_raw) {
       if (!newTrack) {
         if (typeof _raw==='undefined'||_raw) {
@@ -123,10 +119,6 @@ angular.module('bmmApp')
           }
         });
       });
-    };
-
-    $scope.getAvailableTags = function() {
-      return suggestedTags.concat($scope.podcastTags || []);
     };
 
     $scope.refreshModel = function() {

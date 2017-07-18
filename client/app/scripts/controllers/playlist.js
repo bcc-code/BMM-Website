@@ -255,45 +255,6 @@ angular.module('bmmApp')
         });
 
         break;
-        
-      case 'instrumental':
-
-        size = 0;
-        $scope.title = _init.translation.playlist.instrumental;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-            $rootScope.safeApply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['instrumental'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['instrumental']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        break;
       case 'podcast':
         size = 0;
 
