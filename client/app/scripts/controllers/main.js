@@ -39,6 +39,10 @@ angular.module('bmmApp')
         });
       };
 
+      _api.podcastsGet().then(function(podcasts) {
+        $scope.podcasts = podcasts;
+      });
+
       $scope.restoreSession = function() {
         var model = angular.fromJson(localStorage[_init.user.username]);
         if (typeof model!=='undefined') {

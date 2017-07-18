@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Списки відтворення",
+      "podcasts":"Podcasts",
       "latestTracks":"Нові треки",
       "current":"Струм",
       "newPlaylist":"Новий список\n",

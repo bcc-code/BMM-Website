@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Afspeellijsten",
+      "podcasts":"Podcasts",
       "latestTracks":"Nieuwe nummers",
       "current":"Huidige",
       "newPlaylist":"Nieuwe afspeellijst",

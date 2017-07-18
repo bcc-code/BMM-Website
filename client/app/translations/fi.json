@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Soittolistat",
+      "podcasts":"Podcastit",
       "latestTracks":"Uudet kappaleet",
       "current":"Nykyinen",
       "newPlaylist":"Uusi soittolista",

@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Listes de lecture",
+      "podcasts":"Podcasts",
       "latestTracks":"Nouvelles pistes",
       "current":"En cours de lecture",
       "newPlaylist":"Nouvelle liste de lecture",

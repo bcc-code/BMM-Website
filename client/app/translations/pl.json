@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Listy odtwarzania",
+      "podcasts":"Podcasty",
       "latestTracks":"Nowe utwory",
       "current":"Teraz odtwarzane",
       "newPlaylist":"Nowa playlista",

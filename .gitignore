@@ -1,3 +1,4 @@
 .*
 !.gitignore
 /build/
+translations_external

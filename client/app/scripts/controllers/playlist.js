@@ -255,122 +255,7 @@ angular.module('bmmApp')
         });
 
         break;
-      case 'mp3kilden':
-
-        size = 0;
-        $scope.title = _init.translation.page.music.mp3Source;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-
-            $rootScope.safeApply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['mp3-kilden'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['mp3-kilden']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        break;
-      case 'frakaare':
-
-        size = 0;
-        $scope.title = _init.translation.page.music.fromKaare;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-
-            $rootScope.safeApply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['fra-kaare'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['fra-kaare']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        break;
-      case 'barnasmp3':
-
-        size = 0;
-        $scope.title = _init.translation.page.music.childrensMp3Source;
-        $(window).on('scrollBottom', function() {
-
-          if (!loading&&!end) {
-            loading = true;
-            $rootScope.safeApply(function() {
-              $scope.load = true;
-            });
-
-            _api.trackLatest({
-              from: size,
-              tags: ['child-favorites'],
-              size: loadAmount
-            }).done(function(data) {
-
-              resolveTracks(data);
-              size+=loadAmount;
-
-            });
-
-          }
-
-        });
-
-        _api.trackLatest({
-          size: loadAmount,
-          tags: ['child-favorites']
-        }).done(function(data) {
-
-          resolveTracks(data);
-          size+=loadAmount;
-
-        });
-
-        break;
+        
       case 'instrumental':
 
         size = 0;
@@ -401,6 +286,42 @@ angular.module('bmmApp')
         _api.trackLatest({
           size: loadAmount,
           tags: ['instrumental']
+        }).done(function(data) {
+
+          resolveTracks(data);
+          size+=loadAmount;
+
+        });
+
+        break;
+      case 'podcast':
+        size = 0;
+
+        $scope.title = $routeParams.name;
+        $(window).on('scrollBottom', function() {
+
+          if (!loading&&!end) {
+            loading = true;
+            $rootScope.safeApply(function() {
+              $scope.load = true;
+            });
+
+            _api.podcastTracksGet($routeParams.id, {
+              from: size,
+              size: loadAmount
+            }).done(function(data) {
+
+              resolveTracks(data);
+              size+=loadAmount;
+
+            });
+
+          }
+
+        });
+
+        _api.podcastTracksGet($routeParams.id, {
+          size: loadAmount
         }).done(function(data) {
 
           resolveTracks(data);

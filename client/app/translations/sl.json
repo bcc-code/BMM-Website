@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Popis liste za slušanje",
+      "podcasts":"Podcasts",
       "latestTracks":"Nove pjesme",
       "current":"Aktuelno",
       "newPlaylist":"Novi popis za slušanje",

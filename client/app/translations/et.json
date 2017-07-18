@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Esitusloendid",
+      "podcasts":"Saated",
       "latestTracks":"Uued lood",
       "current":"Praegune",
       "newPlaylist":"Uus esitusloend",

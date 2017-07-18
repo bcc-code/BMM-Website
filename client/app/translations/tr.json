@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Çalma Listesi",
+      "podcasts":"Podcasts",
       "latestTracks":"Yeni Parçalar",
       "current":"Şimdi",
       "newPlaylist":"Yeni çalma listesi",

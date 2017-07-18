@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Lejátszási listák",
+      "podcasts":"Podcastok",
       "latestTracks":"Új számok",
       "current":"Aktuális",
       "newPlaylist":"Új lejátszási lista",

@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Playlists",
+      "podcasts":"Podcasts",
       "latestTracks":"New tracks",
       "current":"Current",
       "newPlaylist":"New playlist",

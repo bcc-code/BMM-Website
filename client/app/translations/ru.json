@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Списки воспроизведения",
+      "podcasts":"Podcasts",
       "latestTracks":"Новые треки",
       "current":"Текущий",
       "newPlaylist":"Новый плейлист",

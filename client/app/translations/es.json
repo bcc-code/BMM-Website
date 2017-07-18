@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Listas de reproducción",
+      "podcasts":"Podcasts",
       "latestTracks":"Nuevas pistas",
       "current":"en reproduccion",
       "newPlaylist":"Nueva lista de reproducción",

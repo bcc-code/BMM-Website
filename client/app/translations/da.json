@@ -44,6 +44,7 @@
     },
     "secondary":{
       "playlists":"Spillelister",
+      "podcasts":"Podcasts",
       "latestTracks":"Nye sange",
       "current":"Nuværende",
       "newPlaylist":"Ny spilleliste",
