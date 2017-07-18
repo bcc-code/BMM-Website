@@ -1012,7 +1012,7 @@ angular.module('bmmLibApp')
 
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'podcast/'+id+'/track/',
+      url: serverUrl+'podcast/'+id,
       data: $.param(options)
     });
   };
