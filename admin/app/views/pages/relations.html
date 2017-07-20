@@ -78,6 +78,45 @@
 
 <div class="foldbox">
     <div class="header"
+         ng-click="arrangers=!arrangers">
+        <h3>{{init.translation.page.editor.arrangers}}</h3>
+    </div>
+    <div class="body" ng-class="{'visible': arrangers}">
+
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{init.translation.page.editor.active}}</h4>
+            <li ng-repeat="arranger in rel.arrangers"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                <span>
+                    {{arranger.name}}
+                </span>
+                <div class="trash"
+                     style="float: right"
+                     ng-click="deleteReference($index,'arrangers')">x</div>
+            </li>
+        </ul>
+        <ul style="width: 50%; float: left; padding:.5em">
+            <h4>{{init.translation.page.editor.available}}</h4>
+            <input type="text" ng-model="contributors.arranger">
+            <button ng-click="addContributor(contributors.arranger)"
+                    style="margin-bottom: .5em">
+                {{init.translation.page.editor.createNewContributor}}
+            </button>
+            <li ng-repeat="contributor in contributors.arrangers"
+                style="width: 100%; display: inline-block"
+                ng-click="activateContributor(contributor, 'arranger')">
+                <span>
+                    {{contributor.name}}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="foldbox">
+    <div class="header"
          ng-click="composers=!composers">
         <h3>{{init.translation.page.editor.composers}}</h3>
     </div>

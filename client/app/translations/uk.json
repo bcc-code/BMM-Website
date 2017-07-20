@@ -44,7 +44,7 @@
     },
     "secondary":{
       "playlists":"Списки відтворення",
-      "podcasts":"Podcasts",
+      "podcasts":"Підкаст",
       "latestTracks":"Нові треки",
       "current":"Струм",
       "newPlaylist":"Новий список\n",
@@ -95,6 +95,7 @@
     "recordedDate":"Дата запису",
     "artist":"Виконавець",
     "lyricist":"Автор текстів",
+    "arranger":"Аранжувальник",
     "composer":"Композитор",
     "album":"Альбом",
     "bibleVerse":"Біблійний вірш"

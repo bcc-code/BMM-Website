@@ -44,7 +44,7 @@
     },
     "secondary":{
       "playlists":"Popis liste za slušanje",
-      "podcasts":"Podcasts",
+      "podcasts":"Podcasti",
       "latestTracks":"Nove pjesme",
       "current":"Aktuelno",
       "newPlaylist":"Novi popis za slušanje",
@@ -95,6 +95,7 @@
     "recordedDate":"Datum snemanja",
     "artist":"Izvajalec",
     "lyricist":"Avtor besedila",
+    "arranger":"Aranžer",
     "composer":"Skladatelj",
     "album":"Album",
     "bibleVerse":"Biblijska vrstica"

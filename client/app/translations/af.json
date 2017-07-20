@@ -4,8 +4,8 @@
     "search":"Soek...",
     "searchResultsFor":"Soek resultate vir:",
     "loading":"besig om te Laai...",
-    "waysOfTheLord":"Ways of the Lord",
-    "almondBlossom":"Almond Blossom",
+    "waysOfTheLord":"Maniere van die Here",
+    "almondBlossom":"Amandel bloeisel",
     "noTitle":"Geen Titel",
     "settings":"Instellings",
     "suport":"Ondersteuning",
@@ -95,6 +95,7 @@
     "recordedDate":"Opgeneede datum",
     "artist":"Kunstenaar",
     "lyricist":"Lirieke",
+    "arranger":"Arranger",
     "composer":"Komponis",
     "album":"Album",
     "bibleVerse":"Bybel verse"

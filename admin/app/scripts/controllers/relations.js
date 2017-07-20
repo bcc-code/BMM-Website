@@ -57,6 +57,9 @@ angular.module('bmmApp')
     //type: lyricist
     //name:
 
+    //type: arranger
+    //name:
+
     //type: interpret
     //name:
 
@@ -142,6 +145,7 @@ angular.module('bmmApp')
       $scope.rel.songbooks = [];
       $scope.rel.composers = [];
       $scope.rel.lyricists = [];
+      $scope.rel.arrangers = [];
       $scope.rel.interprets = [];
       $scope.rel.bibles = [];
       $scope.rel.externals = [];
@@ -236,6 +240,7 @@ angular.module('bmmApp')
       $.each(unfilterTime(rel.songbooks), function() { relations.push(this); });
       $.each(rel.composers, function() { relations.push(this); });
       $.each(rel.lyricists, function() { relations.push(this); });
+      $.each(rel.arrangers, function() { relations.push(this); });
       $.each(rel.interprets, function() { relations.push(this); });
       $.each(rel.externals, function() { relations.push(this); });
       $.each(unknownRelations, function() { relations.push(this); });
@@ -257,6 +262,7 @@ angular.module('bmmApp')
               $scope.$apply(function() {
                 $scope.contributors.interprets = data;
                 $scope.contributors.lyricists = data;
+                $scope.contributors.arrangers = data;
                 $scope.contributors.composers = data;
               });
             });
@@ -286,6 +292,17 @@ angular.module('bmmApp')
         });
       } else {
         $scope.contributors.lyricists = [];
+      }
+    });
+    $scope.$watch('contributors.arranger', function(name) {
+      if (name!=='') {
+        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+          $scope.$apply(function() {
+            $scope.contributors.arrangers = data;
+          });
+        });
+      } else {
+        $scope.contributors.arrangers = [];
       }
     });
     $scope.$watch('contributors.composer', function(name) {

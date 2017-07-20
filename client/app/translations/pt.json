@@ -13,7 +13,7 @@
   },
   "options":{
     "addToPlaylist":"Adicionar à lista de reprodução",
-    "download":"Download",
+    "download":"Baixar",
     "goToAlbum":"Ir ao álbum",
     "podcast":"Podcast",
     "removeFilter":"Remover filtro",
@@ -83,7 +83,7 @@
       "searchResults":"Resultado da busca",
       "content":"Conteúdo",
       "bibleVerse":"Versos bíblicos",
-      "album":"Album",
+      "album":"Álbum",
       "artist":"Cantor",
       "interprets":"Artistas"
     }
@@ -95,6 +95,7 @@
     "recordedDate":"Data gravada",
     "artist":"Cantor",
     "lyricist":"Letrista",
+    "arranger":"Arranjador",
     "composer":"Compositor",
     "album":"Álbum",
     "bibleVerse":"Versos bíblicos"
@@ -110,7 +111,7 @@
     "instrumental":"Instrumental"
   },
   "notify":{
-    "play":"Play",
+    "play":"Jogar",
     "next":"Próxima",
     "previous":"Anterior",
     "shufflePlaylist":"Shuffle playlist",

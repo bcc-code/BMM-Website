@@ -44,7 +44,7 @@
     },
     "secondary":{
       "playlists":"Çalma Listesi",
-      "podcasts":"Podcasts",
+      "podcasts":"Podcast",
       "latestTracks":"Yeni Parçalar",
       "current":"Şimdi",
       "newPlaylist":"Yeni çalma listesi",
@@ -95,6 +95,7 @@
     "recordedDate":"Kaydedilen Tarih",
     "artist":"Sanatçı",
     "lyricist":"Söz Yazarı",
+    "arranger":"Aranjör",
     "composer":"Besteci",
     "album":"Albüm",
     "bibleVerse":"Kutsal Kitap Ayet"

@@ -234,6 +234,7 @@ angular.module('bmmLibApp')
           resolvedData.unsorted = '';
           resolvedData.interprets = [];
           resolvedData.lyricists = [];
+          resolvedData.arrangers = [];
           resolvedData.composers = [];
 
           //Format relations to strings
@@ -245,6 +246,12 @@ angular.module('bmmLibApp')
 
                 $.each(resolvedData.relations[key], function(index) {
                   resolvedData.lyricists.push(this);
+                });
+
+              case 'arranger':
+
+                $.each(resolvedData.relations[key], function(index) {
+                  resolvedData.arrangers.push(this);
                 });
 
               break;
@@ -351,7 +358,7 @@ angular.module('bmmLibApp')
 
         /**
          * Returns: path, file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
-         *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, composers, interprets
+         *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, arrangers, composers, interprets
          */
 
         return resolvedData;

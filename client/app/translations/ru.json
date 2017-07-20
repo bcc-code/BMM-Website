@@ -44,7 +44,7 @@
     },
     "secondary":{
       "playlists":"Списки воспроизведения",
-      "podcasts":"Podcasts",
+      "podcasts":"Подкасты",
       "latestTracks":"Новые треки",
       "current":"Текущий",
       "newPlaylist":"Новый плейлист",
@@ -95,6 +95,7 @@
     "recordedDate":"Дата записи",
     "artist":"Исполнитель",
     "lyricist":"Текст",
+    "arranger":"Аранжировщик",
     "composer":"Композитор",
     "album":"Альбом",
     "bibleVerse":"Библейский стих"

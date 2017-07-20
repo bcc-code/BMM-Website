@@ -5,7 +5,7 @@
     "searchResultsFor":"Resultados de la búsqueda:",
     "loading":"Cargando...",
     "waysOfTheLord":"Caminos del Señor",
-    "almondBlossom":"Almond Blossom",
+    "almondBlossom":"Almendros en flor",
     "noTitle":"Sin título",
     "settings":"Configuración",
     "suport":"Suport",
@@ -95,6 +95,7 @@
     "recordedDate":"fecha de grabación",
     "artist":"Artista",
     "lyricist":"Letrista",
+    "arranger":"Organizador",
     "composer":"Compositor",
     "album":"Álbum",
     "bibleVerse":"Versiculos Biblicos"

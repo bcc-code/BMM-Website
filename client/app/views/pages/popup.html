@@ -239,6 +239,13 @@
                         {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
 
+                <b><span ng-bind="init.translation.track.arranger"></span></b><br>
+                    <span class="link"
+                          ng-repeat="arranger in $root.trackInfo.track.arrangers"
+                          ng-click="go('/playlist/contributor/'+arranger.id+'/'+arranger.name); $root.trackInfo.show=false;">
+                        {{arranger.name}}<em ng-hide="$last">,&nbsp</em>
+                    </span><br><br>
+
                 <b><span ng-bind="init.translation.track.composer"></span></b><br>
                     <span class="link"
                           ng-repeat="composer in $root.trackInfo.track.composers"
