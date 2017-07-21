@@ -248,6 +248,7 @@ angular.module('bmmLibApp')
                   resolvedData.lyricists.push(this);
                 });
 
+              break;
               case 'arranger':
 
                 $.each(resolvedData.relations[key], function(index) {
