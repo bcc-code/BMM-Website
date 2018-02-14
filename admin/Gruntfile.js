@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-node-sass');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -39,9 +41,9 @@ module.exports = function (grunt) {
         files: ['test/spec/**/*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      compass: {
+      sass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['compass:server', 'postcss:server']
+        tasks: ['sass:server', 'postcss:server']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -173,7 +175,7 @@ module.exports = function (grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
+    sass: {
       options: {
         outputStyle: 'expanded',
         sourcemap: true,
@@ -431,10 +433,10 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+        'sass:server'
       ],
       test: [
-        'compass'
+        'sass'
       ],
       compileAndMinify: [
         'compileCssAndJs',
@@ -530,7 +532,7 @@ module.exports = function (grunt) {
     'concat',
 
     // Compile SCSS to CSS
-    'compass:dist',
+    'sass:dist',
 
     // Must run before minification of JS files (see: https://docs.angularjs.org/guide/di#implicit-annotation)
     'ngAnnotate',

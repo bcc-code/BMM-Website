@@ -29,6 +29,7 @@
     "connect-modrewrite": "^0.8.5",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-karma": "^0.12.1",
+    "grunt-node-sass": "^1.0.1",
     "grunt-wiredep": "^2.0.0",
     "jasmine-core": "^2.4.1",
     "jshint-stylish": "^2.1.0",
