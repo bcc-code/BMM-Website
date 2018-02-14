@@ -193,7 +193,10 @@ module.exports = function (grunt) {
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
-      dist: {},
+      dist: {
+        src: '<%= yeoman.app %>/styles/main.scss',
+        dest: '.tmp/styles/main.css'
+      },
       server: {
         options: {
           debugInfo: true
