@@ -63,21 +63,21 @@ gem install compass
 **6. CD into 'common' via terminal/CMD and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 grunt updateCommonFiles
 ```
 
 **7. CD into 'admin' and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 bower update
 ```
 
 **8. CD into 'client' and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 bower update
 ```
 
