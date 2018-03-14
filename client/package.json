@@ -31,6 +31,7 @@
     "grunt-karma": "^0.12.1",
     "grunt-node-sass": "^1.0.1",
     "grunt-preprocess": "^5.1.0",
+    "grunt-spritesmith": "^6.6.0",
     "jasmine-core": "^2.4.1",
     "jshint-stylish": "^2.1.0",
     "karma": "^0.13.21",

@@ -104,7 +104,19 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          base: '<%= yeoman.dist %>'
+          base: '<%= yeoman.dist %>',
+          protocol: 'http',
+          open: true,
+          // http://danburzo.ro/grunt/chapters/server/
+          middleware: function(connect, options, middlewares) {
+
+            // 1. mod-rewrite behavior
+            var rules = [
+              '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+            ];
+            middlewares.unshift(require('connect-modrewrite')(rules));
+            return middlewares;
+          }
         }
       }
     },
@@ -201,6 +213,14 @@ module.exports = function (grunt) {
         options: {
           debugInfo: true
         }
+      }
+    },
+
+    sprite: {
+      flags: {
+        src: '<%= yeoman.app %>/images/common/flags/*.png',
+        dest: '.tmp/images/flags-sprite.png',
+        destCss: '.tmp/styles/flags-sprite.scss'
       }
     },
 
@@ -571,6 +591,8 @@ module.exports = function (grunt) {
 
     // Concatenate all JS and vendor-CSS files
     'concat',
+
+    'sprite:flags',
 
     // Compile SCSS to CSS
     'sass:dist',

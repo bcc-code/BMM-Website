@@ -158,12 +158,13 @@
                         <div style="width: 100%;float: left; margin-top: 1em;">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown">
-                                    <div class="flags-{{init.websiteLanguage}}"></div>
+                                    <div class="flag flags-{{init.websiteLanguage}}"></div>
                                     {{init.websiteLanguage | _languageCode}}</a>
                                 <ul class="dropdown-menu">
                                     <li ng-repeat="lang in init.translations.available"
                                         ng-click="setWebsiteLanguage(lang);">
-                                        <a class="flags-{{lang}}"><span ng-bind="lang | _languageCode"></span></a>
+                                        <div class="flag flags-{{lang}}"></div>
+                                        <span ng-bind="lang | _languageCode"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -176,13 +177,14 @@
                               <li ng-repeat="language in init.contentLanguages" class="language_element">
                                 <div style="width:70%" class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <div class="flags-{{language}}"></div>
+                                        <div class="flag flags-{{language}}"></div>
                                         {{language | _languageCode}}
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li ng-repeat="lang in init.root.languages | filter : exceptSelected"
                                             ng-click="updateContentLanguage(lang, language)">
-                                            <a class="flags-{{lang}}"><span ng-bind="lang | _languageCode"></span></a>
+                                            <div class="flag flags-{{lang}}"></div>
+                                            <span ng-bind="lang | _languageCode"></span>
                                         </li>
                                     </ul>
                                 </div>

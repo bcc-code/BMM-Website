@@ -112,6 +112,11 @@
               width: 2em;
               height: 1.1em;
               margin: -.1em;
+              &.flag {
+                width: 22px;
+                margin-right: 6px;
+                vertical-align: middle;
+              }
             }
             display: inline-block;
             color: #000;
@@ -121,19 +126,20 @@
             border: .1em solid $colorBorders;
             width: 100%;
           }
-          > ul > li > a {
-            padding: .0em 0 0 2em!important;
-            margin: .5em;
-            height: 1.1em;
-          }
-          > ul > li:hover {
-            color: #262626;
-            background-color: #F5F5F5;
-          }
           > ul > li {
             display: inline-block;
             width: 100%;
             cursor: pointer;
+            padding: .4em .5em .3em .7em;
+            &:hover {
+              color: #262626;
+              background-color: #F5F5F5;
+            }
+            .flag {
+              display: inline-block;
+              margin-right: 6px;
+              vertical-align: text-bottom;
+            }
           }
           .dropdown-menu {
             float: none;

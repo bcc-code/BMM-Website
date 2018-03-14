@@ -1,15 +1,11 @@
 //MIXINS
 //@import "compass/utilities";
 //@import "compass/css3";
+
 @import "mixins/transition.scss";
 @import "mixins/marquee.scss";
 @import "mixins/fade.scss";
 @import "mixins/gradient.scss";
-
-//SPRITES
-// ToDo: find a working solution that does not rely on compass features
-//@import "common/flags/*.png";
-//@include  all-flags-sprites;
 
 //MAIN
 @import "main/config.scss";
