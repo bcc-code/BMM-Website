@@ -46,8 +46,7 @@
 
                                         <ul class="waitings">
                                             <li ng-repeat="file in track.files" style="position: relative">
-                                                <div class="flags-{{file.language}}"
-                                                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
+                                                <div class="flag flags-{{file.language}}" style="float: left;">
                                                 </div>
                                                 <button ng-click="play(file.track)">{{init.translation.page.editor.play}}</button>
                                                 <button ng-click="linkWaiting(file.link, file.track.id, file.language, album, track, $index)"
@@ -84,8 +83,7 @@
                         <img ng-src="{{waiting.track.cover | _cover}}">
                         <div>
                             <span><b>{{waiting.track.albumTitle}}</b></span>
-                            <div class="flags-{{waiting.track.language}}"
-                                 style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
+                            <div class="flag flags-{{waiting.track.language}}" style="float: left;">
                             </div>
                             <span>{{waiting.track.combinedTitle}}</span>
                             <button ng-click="play(waiting.track)">

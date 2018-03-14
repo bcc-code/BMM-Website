@@ -121,8 +121,7 @@
         <table ng-show="c.show_translated_titles">
             <tr ng-repeat="translation in c.raw.translations">
                 <td width="1">
-                    <div class="flags-{{translation.language}}"
-                         style="margin-top: .3em; width: 22px; height: 1.1em; display: inline-block;"></div>
+                    <div class="flag flags-{{translation.language}}"></div>
                 </td>
                 <td>
                     <div ng-init="tmp_translation_title=translation.title" ng-if="tmp_translation_title">{{translation.title}}</div>
@@ -152,7 +151,6 @@
         </div>
     </td>
     <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} language" width="1">
-        <div class="flags-{{c.original_translation.language}}"
-             style="margin-top: .3em; width: 22px; height: 1.1em; display: inline-block;"></div>
+        <div class="flag flags-{{c.original_translation.language}}"></div>
     </td>
 </script>

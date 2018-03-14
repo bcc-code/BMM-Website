@@ -85,9 +85,7 @@
                            'unpublished': !language.is_visible}"
                 ng-click="switchLanguage(language.language)"
                 style="float: left;">
-                <div class="flags-{{language.language}}"
-                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
-                </div>
+                <div class="flag flags-{{language.language}}" style="float: left;"></div>
                 <span>
                     {{language.language | _languageCode}}
                 </span>
@@ -104,8 +102,7 @@
                 style="float: left;"
                 class="available"
                 ng-click="addLanguage(language)">
-                <div class="flags-{{language}}"
-                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
+                <div class="flag flags-{{language}}" style="float: left;">
                 </div>
                 <span>
                     {{language | _languageCode}}
@@ -115,8 +112,7 @@
         <div style="width:100%; padding: 1em 0; display: inline-block">
             <b>{{init.translation.page.editor.selectedLanguage}}</b>:
             {{edited.language | _languageCode}}
-            <div class="flags-{{edited.language}}"
-                 style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block">
+            <div class="flag flags-{{edited.language}}">
             </div>
             <button ng-click="model.original_language=edited.language"
                     ng-disabled="edited.language==model.original_language"

@@ -24,8 +24,7 @@
             <li ng-repeat="track in waitings">
                 <img ng-src="{{track.cover | _cover}}">
                 <div>
-                    <div class="flags-{{track.language}}"
-                         style="width: 2em; height: 1.5em; display: inline-block; float: left;">
+                    <div class="flag flags-{{track.language}}" style="float: left;">
                     </div>
                     <button ng-click="playLinked(track)">{{init.translation.page.editor.play}}</button>
                     <button ng-click="linkWaiting(track.link, track.id, track.language, $index)">{{init.translation.page.waitings.link}}</button>
@@ -137,8 +136,7 @@
                            'unpublished': !language.is_visible}"
                 ng-click="switchLanguage(language.language)"
                 style="float: left;">
-                <div class="flags-{{language.language}}"
-                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
+                <div class="flag flags-{{language.language}}" style="float: left;">
                 </div>
                 <span>
                     {{language.language | _languageCode}}
@@ -156,8 +154,7 @@
                 style="float: left;"
                 class="available"
                 ng-click="addLanguage(language)">
-                <div class="flags-{{language}}"
-                     style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block; float: left;">
+                <div class="flag flags-{{language}}" style="float: left;">
                 </div>
                 <span>
                     {{language | _languageCode}}
@@ -167,8 +164,7 @@
         <div class="language-edit">
             <b>{{init.translation.page.editor.selectedLanguage}}</b>:
             {{edited.language | _languageCode}}
-            <div class="flags-{{edited.language}}"
-                 style="margin-top: .3em; width: 2em; height: 1.1em; display: inline-block">
+            <div class="flag flags-{{edited.language}}">
             </div>
             <button ng-click="model.original_language=edited.language"
                     ng-disabled="edited.language==model.original_language"
