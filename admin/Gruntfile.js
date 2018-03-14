@@ -216,6 +216,14 @@ module.exports = function (grunt) {
       }
     },
 
+    sprite: {
+      flags: {
+        src: '<%= yeoman.app %>/images/common/flags/*.png',
+        dest: '.tmp/images/flags-sprite.png',
+        destCss: '.tmp/styles/flags-sprite.scss'
+      }
+    },
+
     // Renames files for browser caching purposes
     rev: {
       dist: {
@@ -545,6 +553,8 @@ module.exports = function (grunt) {
 
     // Concatenate all JS and vendor-CSS files
     'concat',
+
+    'sprite:flags',
 
     // Compile SCSS to CSS
     'sass:dist',
