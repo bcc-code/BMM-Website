@@ -104,7 +104,19 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          base: '<%= yeoman.dist %>'
+          protocol: 'http',
+          base: '<%= yeoman.dist %>',
+          open: true,
+          // http://danburzo.ro/grunt/chapters/server/
+          middleware: function(connect, options, middlewares) {
+
+            // 1. mod-rewrite behavior
+            var rules = [
+              '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif|\\.woff|\\.woff2|\\.ttf$ /index.html'
+            ];
+            middlewares.unshift(require('connect-modrewrite')(rules));
+            return middlewares;
+          }
         }
       }
     },
