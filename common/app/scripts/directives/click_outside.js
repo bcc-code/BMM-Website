@@ -69,6 +69,15 @@ angular.module('bmmLibApp')
         $scope.$on('$destroy', function() {
           $document.off('click.outsideDirective');
         });
+
+        // we remove all other trackOptions, when a new one is clicked
+        setTimeout(function(){ // we set a timeout so that the new trackOption id is generated in the DOM
+          var allTrackOptions = document.querySelectorAll('*[id^="trackOptions_"]'); // we get all the ids starting with that string
+          for (i = 0; i < allTrackOptions.length; ++i) {
+            if(allTrackOptions[i].id != attr.id) // if it is not the last item clicked
+              allTrackOptions[i].remove();
+          }
+        }, 10);
       }
     };
   });
