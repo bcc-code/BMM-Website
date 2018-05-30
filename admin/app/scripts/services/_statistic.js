@@ -14,11 +14,10 @@ angular.module('bmmLibApp')
         function getStatRequest(filename) {
             return {
                 type: 'GET',
-                url: 'statistic_data/' + filename,
-                dataType: 'json'
+                url: 'https://bmm-statistics.brunstad.org/' + filename,
+                contentType: 'application/json'
             }
         }
-
 
         /**
          * Get Json File name by timestamp
