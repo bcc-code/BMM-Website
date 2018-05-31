@@ -1,130 +1,130 @@
 {
-  "language":"Magyar",
-  "general":{
-    "search":"Keresés...",
-    "searchResultsFor":"Találatok erre:",
-    "loading":"Betöltés...",
-    "waysOfTheLord":"Az Úr Útjai",
-    "almondBlossom":"Mandulavirág",
-    "noTitle":"Nincs cím",
-    "settings":"Beállítások",
-    "suport":"Támogatás",
-    "readMore":"Tovább"
+  "language": "Magyar",
+  "general": {
+    "search": "Keresés...",
+    "searchResultsFor": "Találatok erre:",
+    "loading": "Betöltés...",
+    "waysOfTheLord": "Az Úr Útjai",
+    "almondBlossom": "Mandulavirág",
+    "noTitle": "Nincs cím",
+    "settings": "Beállítások",
+    "suport": "Támogatás",
+    "readMore": "Tovább"
   },
-  "options":{
-    "addToPlaylist":"Hozzáadás lejátszási listához",
-    "download":"Letöltés",
-    "goToAlbum":"Váltás erre az albumra",
-    "podcast":"Podcast",
-    "removeFilter":"Szűrő eltávolítása",
-    "changeLanguage":"Nyelvváltás",
-    "goBack":"Vissza",
-    "choosePlaylist":"Lejátszási lista választás",
-    "setupPodcast":"Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használt szoftverbe.",
-    "chooseLanguages":"Nyelvek válsztása",
-    "addLanguage":"Nyelv hozzáadása",
-    "includeLatest":"Tartalmazza a legújabbat",
-    "websiteLanguage":"Weboldal nyelve",
-    "contentLanguages":"Tartalom nyelve",
-    "tracks":"számok",
-    "filterByLanguage":"Szűrés nyelv szerint",
-    "copyUrl":"URL másolása",
-    "copyLink":"Link másolása",
-    "remove":"Eltávolítás",
-    "playPlaylist":"Lejátszási lista indítása",
-    "share":"Megosztás"
+  "options": {
+    "addToPlaylist": "Hozzáadás lejátszási listához",
+    "download": "Letöltés",
+    "goToAlbum": "Váltás erre az albumra",
+    "podcast": "Podcast",
+    "removeFilter": "Szűrő eltávolítása",
+    "changeLanguage": "Nyelvváltás",
+    "goBack": "Vissza",
+    "choosePlaylist": "Lejátszási lista választás",
+    "setupPodcast": "Ha fel szeretnél iratkozni a podcastra, másold a lenti linket az általad használt szoftverbe.",
+    "chooseLanguages": "Nyelvek válsztása",
+    "addLanguage": "Nyelv hozzáadása",
+    "includeLatest": "Tartalmazza a legújabbat",
+    "websiteLanguage": "Weboldal nyelve",
+    "contentLanguages": "Tartalom nyelve",
+    "tracks": "számok",
+    "filterByLanguage": "Szűrés nyelv szerint",
+    "copyUrl": "URL másolása",
+    "copyLink": "Link másolása",
+    "remove": "Eltávolítás",
+    "playPlaylist": "Lejátszási lista indítása",
+    "share": "Megosztás"
   },
-  "menu":{
-    "main":{
-      "music":"Zene",
-      "speeches":"Üzenetek",
-      "video":"Videók",
-      "archive":"Archívum",
-      "audiobooks":"Hangoskönyvek"
+  "menu": {
+    "main": {
+      "music": "Zene",
+      "speeches": "Üzenetek",
+      "video": "Videók",
+      "archive": "Archívum",
+      "audiobooks": "Hangoskönyvek"
     },
-    "secondary":{
-      "playlists":"Lejátszási listák",
-      "podcasts":"Podcastok",
-      "latestTracks":"Új számok",
-      "current":"Aktuális",
-      "newPlaylist":"Új lejátszási lista",
-      "nameOnPlaylist":"Lejátszási lista címe"
+    "secondary": {
+      "playlists": "Lejátszási listák",
+      "podcasts": "Podcastok",
+      "latestTracks": "Új számok",
+      "current": "Aktuális",
+      "newPlaylist": "Új lejátszási lista",
+      "nameOnPlaylist": "Lejátszási lista címe"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Legújabb üzenetek",
-      "latestVideos":"Legújabb videók",
-      "latestMusic":"Legújabb zenék",
-      "latestAlbums":"Legújabb albumok"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Legújabb üzenetek",
+      "latestVideos": "Legújabb videók",
+      "latestMusic": "Legújabb zenék",
+      "latestAlbums": "Legújabb albumok"
     },
-    "music":{
-      "latestMusic":"Legújabb zenék",
-      "artists":"Előadók",
-      "fromKaare":"Kårétól",
-      "mp3Source":"MP3-forrás",
-      "childrensMp3Source":"Gyermekek MP3-forrása",
-      "instrumental":"Hangszeres"
+    "music": {
+      "latestMusic": "Legújabb zenék",
+      "artists": "Előadók",
+      "fromKaare": "Kårétól",
+      "mp3Source": "MP3-forrás",
+      "childrensMp3Source": "Gyermekek MP3-forrása",
+      "instrumental": "Hangszeres"
     },
-    "speeches":{
-      "latestSpeeches":"Legújabb üzenetek",
-      "recommended":"Ajánlott"
+    "speeches": {
+      "latestSpeeches": "Legújabb üzenetek",
+      "recommended": "Ajánlott"
     },
-    "videos":{
-      "latestVideos":"Legújabb videók"
+    "videos": {
+      "latestVideos": "Legújabb videók"
     },
-    "archive":{
-      "archive":"Archívum"
+    "archive": {
+      "archive": "Archívum"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Legújabb hangoskönyvek"
+    "audiobooks": {
+      "latestAudiobooks": "Legújabb hangoskönyvek"
     },
-    "search":{
-      "searchResults":"Keresési találatok",
-      "content":"Tartalom",
-      "bibleVerse":"Bibliavers",
-      "album":"Album",
-      "artist":"Előadó",
-      "interprets":"Előadók"
+    "search": {
+      "searchResults": "Keresési találatok",
+      "content": "Tartalom",
+      "bibleVerse": "Bibliavers",
+      "album": "Album",
+      "artist": "Előadó",
+      "interprets": "Előadók"
     }
   },
-  "track":{
-    "duration":"Időtartam",
-    "details":"Részletek",
-    "exegesis":"Értelmezés",
-    "recordedDate":"Felvétel dátuma",
-    "artist":"Előadó",
-    "lyricist":"Szövegíró",
-    "arranger":"Rendező",
-    "composer":"Zeneszerző",
-    "album":"Album",
-    "bibleVerse":"Bibliavers"
+  "track": {
+    "duration": "Időtartam",
+    "details": "Részletek",
+    "exegesis": "Értelmezés",
+    "recordedDate": "Felvétel dátuma",
+    "artist": "Előadó",
+    "lyricist": "Szövegíró",
+    "arranger": "Rendező",
+    "composer": "Zeneszerző",
+    "album": "Album",
+    "bibleVerse": "Bibliavers"
   },
-  "playlist":{
-    "tracks":"Szám(ok)",
-    "albums":"Album(ok)",
-    "duration":"Időtartam",
-    "title":"Cím",
-    "allLanguages":"Minden nyelv",
-    "confirmPlaylistDeletion":"Biztosan törölni kivánod ezt a lejátszási listát?",
-    "latestTracks":"Legújabb számok",
-    "instrumental":"Hangszeres"
+  "playlist": {
+    "tracks": "Szám(ok)",
+    "albums": "Album(ok)",
+    "duration": "Időtartam",
+    "title": "Cím",
+    "allLanguages": "Minden nyelv",
+    "confirmPlaylistDeletion": "Biztosan törölni kivánod ezt a lejátszási listát?",
+    "latestTracks": "Legújabb számok",
+    "instrumental": "Hangszeres"
   },
-  "notify":{
-    "play":"Lejátszás",
-    "next":"Következő",
-    "previous":"Előző",
-    "shufflePlaylist":"Véletlenszerű lejátszási lista",
-    "loopPlaylist":"Lejátszási lista ismétlése",
-    "mute":"Némítás",
-    "maxVolume":"Maximális hangerő",
-    "options":"Opciók",
-    "activateVideo":"Videó aktiválása",
-    "goToAlbum":"Váltás erre az albumra",
-    "showFullscreen":"Teljes képernyő",
-    "closeFullscreen":"Teljes képernyő bezárása",
-    "hideVideo":"Videó elrejtése",
-    "showVideo":"Videó megjelenítése"
+  "notify": {
+    "play": "Lejátszás",
+    "next": "Következő",
+    "previous": "Előző",
+    "shufflePlaylist": "Véletlenszerű lejátszási lista",
+    "loopPlaylist": "Lejátszási lista ismétlése",
+    "mute": "Némítás",
+    "maxVolume": "Maximális hangerő",
+    "options": "Opciók",
+    "activateVideo": "Videó aktiválása",
+    "goToAlbum": "Váltás erre az albumra",
+    "showFullscreen": "Teljes képernyő",
+    "closeFullscreen": "Teljes képernyő bezárása",
+    "hideVideo": "Videó elrejtése",
+    "showVideo": "Videó megjelenítése"
   },
-  "copyright":"Szerzői jog"
+  "copyright": "Szerzői jog"
 }

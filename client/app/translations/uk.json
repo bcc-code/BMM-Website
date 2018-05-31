@@ -1,130 +1,130 @@
 {
-  "language":"Український",
-  "general":{
-    "search":"Пошук...",
-    "searchResultsFor":"Результати пошуку для:",
-    "loading":"Завантаження...",
-    "waysOfTheLord":"Шляхи Господні",
-    "almondBlossom":"Цвіт мигдаля",
-    "noTitle":"Без назви",
-    "settings":"Налаштування",
-    "suport":"Підтримка",
-    "readMore":"Читати далі"
+  "language": "Український",
+  "general": {
+    "search": "Пошук...",
+    "searchResultsFor": "Результати пошуку для:",
+    "loading": "Завантаження...",
+    "waysOfTheLord": "Шляхи Господні",
+    "almondBlossom": "Цвіт мигдаля",
+    "noTitle": "Без назви",
+    "settings": "Налаштування",
+    "suport": "Підтримка",
+    "readMore": "Читати далі"
   },
-  "options":{
-    "addToPlaylist":"Додати до списку відтворення",
-    "download":"Завантажити",
-    "goToAlbum":"Перейти до альбому",
-    "podcast":"Підкаст",
-    "removeFilter":"видалити фільтр",
-    "changeLanguage":"Змінити мову",
-    "goBack":"Повернутися",
-    "choosePlaylist":"Виберіть список відтворення",
-    "setupPodcast":"Щоб настроїти подкаст, вам доведеться скопіювати посилання нижче і вставте його в ваш бажаний подкаст програмного забезпечення.",
-    "chooseLanguages":"Вибрати мову",
-    "addLanguage":"Додати мову",
-    "includeLatest":"Включають в себе останні",
-    "websiteLanguage":"Мова сайту",
-    "contentLanguages":"Мови контенту",
-    "tracks":"треки",
-    "filterByLanguage":"Фільтр по мові",
-    "copyUrl":"Скопіюйте URL",
-    "copyLink":"копіювати посилання",
-    "remove":"видаляти",
-    "playPlaylist":"грати плейлист",
-    "share":"Частка"
+  "options": {
+    "addToPlaylist": "Додати до списку відтворення",
+    "download": "Завантажити",
+    "goToAlbum": "Перейти до альбому",
+    "podcast": "Підкаст",
+    "removeFilter": "видалити фільтр",
+    "changeLanguage": "Змінити мову",
+    "goBack": "Повернутися",
+    "choosePlaylist": "Виберіть список відтворення",
+    "setupPodcast": "Щоб настроїти подкаст, вам доведеться скопіювати посилання нижче і вставте його в ваш бажаний подкаст програмного забезпечення.",
+    "chooseLanguages": "Вибрати мову",
+    "addLanguage": "Додати мову",
+    "includeLatest": "Включають в себе останні",
+    "websiteLanguage": "Мова сайту",
+    "contentLanguages": "Мови контенту",
+    "tracks": "треки",
+    "filterByLanguage": "Фільтр по мові",
+    "copyUrl": "Скопіюйте URL",
+    "copyLink": "копіювати посилання",
+    "remove": "видаляти",
+    "playPlaylist": "грати плейлист",
+    "share": "Частка"
   },
-  "menu":{
-    "main":{
-      "music":"Музика",
-      "speeches":"Повідомлення",
-      "video":"Відео\n",
-      "archive":"Архів",
-      "audiobooks":"Аудіокниги"
+  "menu": {
+    "main": {
+      "music": "Музика",
+      "speeches": "Повідомлення",
+      "video": "Відео\n",
+      "archive": "Архів",
+      "audiobooks": "Аудіокниги"
     },
-    "secondary":{
-      "playlists":"Списки відтворення",
-      "podcasts":"Підкаст",
-      "latestTracks":"Нові треки",
-      "current":"Струм",
-      "newPlaylist":"Новий список\n",
-      "nameOnPlaylist":"Заголовок списку відтворення"
+    "secondary": {
+      "playlists": "Списки відтворення",
+      "podcasts": "Підкаст",
+      "latestTracks": "Нові треки",
+      "current": "Струм",
+      "newPlaylist": "Новий список\n",
+      "nameOnPlaylist": "Заголовок списку відтворення"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Останні повідомлення",
-      "latestVideos":"Останні відео",
-      "latestMusic":"Останніх музики",
-      "latestAlbums":"Останніх альбомів"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Останні повідомлення",
+      "latestVideos": "Останні відео",
+      "latestMusic": "Останніх музики",
+      "latestAlbums": "Останніх альбомів"
     },
-    "music":{
-      "latestMusic":"Останніх музики",
-      "artists":"артист\n",
-      "fromKaare":"Від Kåre",
-      "mp3Source":"MP3-джерело",
-      "childrensMp3Source":"Діти MP3-джерело",
-      "instrumental":"Інструментальні"
+    "music": {
+      "latestMusic": "Останніх музики",
+      "artists": "артист\n",
+      "fromKaare": "Від Kåre",
+      "mp3Source": "MP3-джерело",
+      "childrensMp3Source": "Діти MP3-джерело",
+      "instrumental": "Інструментальні"
     },
-    "speeches":{
-      "latestSpeeches":"Останні повідомлення",
-      "recommended":"Рекомендується"
+    "speeches": {
+      "latestSpeeches": "Останні повідомлення",
+      "recommended": "Рекомендується"
     },
-    "videos":{
-      "latestVideos":"Останні відео"
+    "videos": {
+      "latestVideos": "Останні відео"
     },
-    "archive":{
-      "archive":"Архів"
+    "archive": {
+      "archive": "Архів"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Останній аудіокниги"
+    "audiobooks": {
+      "latestAudiobooks": "Останній аудіокниги"
     },
-    "search":{
-      "searchResults":"Результати пошуку",
-      "content":"Зміст",
-      "bibleVerse":"Біблійний вірш",
-      "album":"Альбом",
-      "artist":"Виконавець",
-      "interprets":"артист"
+    "search": {
+      "searchResults": "Результати пошуку",
+      "content": "Зміст",
+      "bibleVerse": "Біблійний вірш",
+      "album": "Альбом",
+      "artist": "Виконавець",
+      "interprets": "артист"
     }
   },
-  "track":{
-    "duration":"Тривалість",
-    "details":"подробиці",
-    "exegesis":"Переклад",
-    "recordedDate":"Дата запису",
-    "artist":"Виконавець",
-    "lyricist":"Автор текстів",
-    "arranger":"Аранжувальник",
-    "composer":"Композитор",
-    "album":"Альбом",
-    "bibleVerse":"Біблійний вірш"
+  "track": {
+    "duration": "Тривалість",
+    "details": "подробиці",
+    "exegesis": "Переклад",
+    "recordedDate": "Дата запису",
+    "artist": "Виконавець",
+    "lyricist": "Автор текстів",
+    "arranger": "Аранжувальник",
+    "composer": "Композитор",
+    "album": "Альбом",
+    "bibleVerse": "Біблійний вірш"
   },
-  "playlist":{
-    "tracks":"Треки",
-    "albums":"Альбом",
-    "duration":"Тривалість",
-    "title":"Назва",
-    "allLanguages":"Всі мови",
-    "confirmPlaylistDeletion":"Ви дійсно бажаєте видалити цей список відтворення?",
-    "latestTracks":"Новітні треки",
-    "instrumental":"Інструментальні"
+  "playlist": {
+    "tracks": "Треки",
+    "albums": "Альбом",
+    "duration": "Тривалість",
+    "title": "Назва",
+    "allLanguages": "Всі мови",
+    "confirmPlaylistDeletion": "Ви дійсно бажаєте видалити цей список відтворення?",
+    "latestTracks": "Новітні треки",
+    "instrumental": "Інструментальні"
   },
-  "notify":{
-    "play":"Грати",
-    "next":"наступний",
-    "previous":"Попередній",
-    "shufflePlaylist":"перемішати плейлист",
-    "loopPlaylist":"цикл плейлист",
-    "mute":"беззвучний",
-    "maxVolume":"Макс обсяг",
-    "options":"Параметри",
-    "activateVideo":"активуйте відео",
-    "goToAlbum":"Перейти до альбому",
-    "showFullscreen":"Показати повний екран",
-    "closeFullscreen":"Закрити повний екран\n",
-    "hideVideo":"приховати відео",
-    "showVideo":"Показати відео"
+  "notify": {
+    "play": "Грати",
+    "next": "наступний",
+    "previous": "Попередній",
+    "shufflePlaylist": "перемішати плейлист",
+    "loopPlaylist": "цикл плейлист",
+    "mute": "беззвучний",
+    "maxVolume": "Макс обсяг",
+    "options": "Параметри",
+    "activateVideo": "активуйте відео",
+    "goToAlbum": "Перейти до альбому",
+    "showFullscreen": "Показати повний екран",
+    "closeFullscreen": "Закрити повний екран\n",
+    "hideVideo": "приховати відео",
+    "showVideo": "Показати відео"
   },
-  "copyright":"Авторське право"
+  "copyright": "Авторське право"
 }

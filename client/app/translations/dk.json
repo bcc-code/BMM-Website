@@ -1,0 +1,130 @@
+{
+  "language": "Dansk",
+  "general": {
+    "search": "Søg...",
+    "searchResultsFor": "Søgeresultater for:",
+    "loading": "Indlæser...",
+    "waysOfTheLord": "Herrens veje",
+    "almondBlossom": "Mandelblomsten",
+    "noTitle": "Ingen titel",
+    "settings": "Indstillinger",
+    "suport": "Hjælp",
+    "readMore": "Læs mere"
+  },
+  "options": {
+    "addToPlaylist": "Tilføj til spilleliste",
+    "download": "Download",
+    "goToAlbum": "Gå til album",
+    "podcast": "Podcast",
+    "removeFilter": "Fjern filter",
+    "changeLanguage": "Ændre sprog",
+    "goBack": "Tilbage",
+    "choosePlaylist": "Vælg spilleliste",
+    "setupPodcast": "Kopier nedenstående link og sæt det ind i dit foretrukne podcast-program for at opsætte podcast.",
+    "chooseLanguages": "Vælg sprog",
+    "addLanguage": "Tilføj et sprog",
+    "includeLatest": "Inkludér de seneste",
+    "websiteLanguage": "Hjemmesidesprog",
+    "contentLanguages": "Indholdssprog",
+    "tracks": "sange og taler",
+    "filterByLanguage": "Filtrér efter sprog",
+    "copyUrl": "Kopier URL",
+    "copyLink": "Kopier link",
+    "remove": "Slet",
+    "playPlaylist": "Afspil spillelisten",
+    "share": "Del"
+  },
+  "menu": {
+    "main": {
+      "music": "Musik",
+      "speeches": "Beskeder",
+      "video": "Videoer",
+      "archive": "Arkiv",
+      "audiobooks": "Lydbøger"
+    },
+    "secondary": {
+      "playlists": "Spillelister",
+      "podcasts": "Podcasts",
+      "latestTracks": "Nye sange",
+      "current": "Nuværende",
+      "newPlaylist": "Ny spilleliste",
+      "nameOnPlaylist": "Navn på spilleliste"
+    }
+  },
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Nyeste beskeder",
+      "latestVideos": "Nyeste videoer",
+      "latestMusic": "Nyeste musik",
+      "latestAlbums": "Nyeste albums"
+    },
+    "music": {
+      "latestMusic": "Nyeste musik\n",
+      "artists": "Artister",
+      "fromKaare": "Fra Kåre",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Børnenes MP3-Kilde",
+      "instrumental": "Instrumental"
+    },
+    "speeches": {
+      "latestSpeeches": "Nyeste Beskeder",
+      "recommended": "Anbefalede"
+    },
+    "videos": {
+      "latestVideos": "Nyeste videoer"
+    },
+    "archive": {
+      "archive": "Arkiv"
+    },
+    "audiobooks": {
+      "latestAudiobooks": "Nyeste lydbøger"
+    },
+    "search": {
+      "searchResults": "Søgeresultater",
+      "content": "Indhold",
+      "bibleVerse": "Bibelvers",
+      "album": "Album",
+      "artist": "Artist",
+      "interprets": "Oversættelser"
+    }
+  },
+  "track": {
+    "duration": "Længde",
+    "details": "Detaljer",
+    "exegesis": "Tydning",
+    "recordedDate": "Registrerede dato",
+    "artist": "Artist",
+    "lyricist": "Forfatter",
+    "arranger": "Arrangør",
+    "composer": "Komponist",
+    "album": "Album",
+    "bibleVerse": "Bibelvers"
+  },
+  "playlist": {
+    "tracks": "Spor",
+    "albums": "Album",
+    "duration": "Længde",
+    "title": "Titel",
+    "allLanguages": "Alle sprog",
+    "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spilleliste?",
+    "latestTracks": "Seneste sange og taler",
+    "instrumental": "Instrumental"
+  },
+  "notify": {
+    "play": "Afspil",
+    "next": "Næste",
+    "previous": "Tidligere",
+    "shufflePlaylist": "Bland spilleliste",
+    "loopPlaylist": "Gentag spilleliste",
+    "mute": "Lydløs",
+    "maxVolume": "Max volumen",
+    "options": "Muligheder",
+    "activateVideo": "Aktiver Video",
+    "goToAlbum": "Gå til album",
+    "showFullscreen": "Fuldskærmsvisning",
+    "closeFullscreen": "Luk fuldskærmsvisning",
+    "hideVideo": "Skjul video",
+    "showVideo": "Vis video"
+  },
+  "copyright": "Rettigheder"
+}

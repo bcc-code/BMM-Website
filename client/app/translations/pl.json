@@ -1,130 +1,130 @@
 {
-  "language":"Polski",
-  "general":{
-    "search":"Szukaj...",
-    "searchResultsFor":"Wyniki wyszukiwania dla:",
-    "loading":"Ładowanie...",
-    "waysOfTheLord":"Drogi Pańskie",
-    "almondBlossom":"Kwiat Migdałowy",
-    "noTitle":"Bez tytułu",
-    "settings":"Ustawienia",
-    "suport":"Pomoc",
-    "readMore":"Czytaj więcej"
+  "language": "Polski",
+  "general": {
+    "search": "Szukaj...",
+    "searchResultsFor": "Wyniki wyszukiwania dla:",
+    "loading": "Ładowanie...",
+    "waysOfTheLord": "Drogi Pańskie",
+    "almondBlossom": "Kwiat Migdałowy",
+    "noTitle": "Bez tytułu",
+    "settings": "Ustawienia",
+    "suport": "Pomoc",
+    "readMore": "Czytaj więcej"
   },
-  "options":{
-    "addToPlaylist":"Dodaj do playlisty",
-    "download":"Pobierz",
-    "goToAlbum":"Idź do albumu",
-    "podcast":"Podcast",
-    "removeFilter":"Usuń filtr",
-    "changeLanguage":"Zmień język",
-    "goBack":"Wróć",
-    "choosePlaylist":"Wybierz playlistę",
-    "setupPodcast":"Aby skonfigurować podcast musisz skopiować link poniżej i wkleić go do twojego programu obsugłującego podcasty.",
-    "chooseLanguages":"Wybierz język",
-    "addLanguage":"Dodaj język",
-    "includeLatest":"Włącznie z najnowszymi",
-    "websiteLanguage":"Język strony",
-    "contentLanguages":"Język zawartości",
-    "tracks":"utwory",
-    "filterByLanguage":"Filtruj według języka",
-    "copyUrl":"Skopiuj adres URL",
-    "copyLink":"Kopiuj link",
-    "remove":"Usuń",
-    "playPlaylist":"Otwórz playliste",
-    "share":"Udostępnij"
+  "options": {
+    "addToPlaylist": "Dodaj do playlisty",
+    "download": "Pobierz",
+    "goToAlbum": "Idź do albumu",
+    "podcast": "Podcast",
+    "removeFilter": "Usuń filtr",
+    "changeLanguage": "Zmień język",
+    "goBack": "Wróć",
+    "choosePlaylist": "Wybierz playlistę",
+    "setupPodcast": "Aby skonfigurować podcast musisz skopiować link poniżej i wkleić go do twojego programu obsugłującego podcasty.",
+    "chooseLanguages": "Wybierz język",
+    "addLanguage": "Dodaj język",
+    "includeLatest": "Włącznie z najnowszymi",
+    "websiteLanguage": "Język strony",
+    "contentLanguages": "Język zawartości",
+    "tracks": "utwory",
+    "filterByLanguage": "Filtruj według języka",
+    "copyUrl": "Skopiuj adres URL",
+    "copyLink": "Kopiuj link",
+    "remove": "Usuń",
+    "playPlaylist": "Otwórz playliste",
+    "share": "Udostępnij"
   },
-  "menu":{
-    "main":{
-      "music":"Muzyka",
-      "speeches":"Przemowy",
-      "video":"Filmy",
-      "archive":"Archiwum",
-      "audiobooks":"Audiobooki"
+  "menu": {
+    "main": {
+      "music": "Muzyka",
+      "speeches": "Przemowy",
+      "video": "Filmy",
+      "archive": "Archiwum",
+      "audiobooks": "Audiobooki"
     },
-    "secondary":{
-      "playlists":"Listy odtwarzania",
-      "podcasts":"Podcasty",
-      "latestTracks":"Nowe utwory",
-      "current":"Teraz odtwarzane",
-      "newPlaylist":"Nowa playlista",
-      "nameOnPlaylist":"Tytuł playlisty"
+    "secondary": {
+      "playlists": "Listy odtwarzania",
+      "podcasts": "Podcasty",
+      "latestTracks": "Nowe utwory",
+      "current": "Teraz odtwarzane",
+      "newPlaylist": "Nowa playlista",
+      "nameOnPlaylist": "Tytuł playlisty"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Najnowsze przemowy",
-      "latestVideos":"Najnowsze filmy",
-      "latestMusic":"Najnowsza muzyka",
-      "latestAlbums":"Najnowsze albumy"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Najnowsze przemowy",
+      "latestVideos": "Najnowsze filmy",
+      "latestMusic": "Najnowsza muzyka",
+      "latestAlbums": "Najnowsze albumy"
     },
-    "music":{
-      "latestMusic":"Najnowsza muzyka",
-      "artists":"Wykonawcy",
-      "fromKaare":"Od Kårego",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Pieśni dla dzieci",
-      "instrumental":"Instrumentalna"
+    "music": {
+      "latestMusic": "Najnowsza muzyka",
+      "artists": "Wykonawcy",
+      "fromKaare": "Od Kårego",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Pieśni dla dzieci",
+      "instrumental": "Instrumentalna"
     },
-    "speeches":{
-      "latestSpeeches":"Najnowsze przemowy",
-      "recommended":"Polecane"
+    "speeches": {
+      "latestSpeeches": "Najnowsze przemowy",
+      "recommended": "Polecane"
     },
-    "videos":{
-      "latestVideos":"Najnowsze filmy"
+    "videos": {
+      "latestVideos": "Najnowsze filmy"
     },
-    "archive":{
-      "archive":"Archiwum"
+    "archive": {
+      "archive": "Archiwum"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Najnowsze audiobooki"
+    "audiobooks": {
+      "latestAudiobooks": "Najnowsze audiobooki"
     },
-    "search":{
-      "searchResults":"Wyniki wyszukiwania",
-      "content":"Zawartość",
-      "bibleVerse":"Werset z Biblii",
-      "album":"Album",
-      "artist":"Wykonawca",
-      "interprets":"Wykonawcy"
+    "search": {
+      "searchResults": "Wyniki wyszukiwania",
+      "content": "Zawartość",
+      "bibleVerse": "Werset z Biblii",
+      "album": "Album",
+      "artist": "Wykonawca",
+      "interprets": "Wykonawcy"
     }
   },
-  "track":{
-    "duration":"Długość utworu",
-    "details":"Szczegóły",
-    "exegesis":"Tłumaczenie",
-    "recordedDate":"Data nagrania",
-    "artist":"Wykonawca",
-    "lyricist":"Autor tekstu",
-    "arranger":"Aranżer",
-    "composer":"Kompozytor",
-    "album":"Album",
-    "bibleVerse":"Werset z Biblii"
+  "track": {
+    "duration": "Długość utworu",
+    "details": "Szczegóły",
+    "exegesis": "Tłumaczenie",
+    "recordedDate": "Data nagrania",
+    "artist": "Wykonawca",
+    "lyricist": "Autor tekstu",
+    "arranger": "Aranżer",
+    "composer": "Kompozytor",
+    "album": "Album",
+    "bibleVerse": "Werset z Biblii"
   },
-  "playlist":{
-    "tracks":"Utwory",
-    "albums":"Album(y)",
-    "duration":"Długość utworu",
-    "title":"Tytuł",
-    "allLanguages":"Wszystkie języki",
-    "confirmPlaylistDeletion":"Czy na pewno chcesz usunąć tę playlistę?",
-    "latestTracks":"Najnowsze utwory",
-    "instrumental":"muzyka instrumentalna"
+  "playlist": {
+    "tracks": "Utwory",
+    "albums": "Album(y)",
+    "duration": "Długość utworu",
+    "title": "Tytuł",
+    "allLanguages": "Wszystkie języki",
+    "confirmPlaylistDeletion": "Czy na pewno chcesz usunąć tę playlistę?",
+    "latestTracks": "Najnowsze utwory",
+    "instrumental": "muzyka instrumentalna"
   },
-  "notify":{
-    "play":"Odtwórz",
-    "next":"Następny",
-    "previous":"Poprzedni",
-    "shufflePlaylist":"Wymieszaj playlistę",
-    "loopPlaylist":"Włącz odtwarzanie playlisty w pętli",
-    "mute":"Wycisz",
-    "maxVolume":"Maksymalna głośność",
-    "options":"Opcje",
-    "activateVideo":"Aktywuj wideo",
-    "goToAlbum":"Idź do albumu",
-    "showFullscreen":"Włącz tryb pełnoekranowy",
-    "closeFullscreen":"Wyłącz tryb pełnoekranowy",
-    "hideVideo":"Ukryj wideo",
-    "showVideo":"Pokaż wideo"
+  "notify": {
+    "play": "Odtwórz",
+    "next": "Następny",
+    "previous": "Poprzedni",
+    "shufflePlaylist": "Wymieszaj playlistę",
+    "loopPlaylist": "Włącz odtwarzanie playlisty w pętli",
+    "mute": "Wycisz",
+    "maxVolume": "Maksymalna głośność",
+    "options": "Opcje",
+    "activateVideo": "Aktywuj wideo",
+    "goToAlbum": "Idź do albumu",
+    "showFullscreen": "Włącz tryb pełnoekranowy",
+    "closeFullscreen": "Wyłącz tryb pełnoekranowy",
+    "hideVideo": "Ukryj wideo",
+    "showVideo": "Pokaż wideo"
   },
-  "copyright":"Prawa autorskie"
+  "copyright": "Prawa autorskie"
 }
