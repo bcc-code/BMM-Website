@@ -177,7 +177,7 @@ angular.module('bmmApp')
           name: newPlaylist,
           type: 'track_collection',
           access: [_init.user.username]
-        }).always(function(xhr) {
+        }).done(function(data, st, xhr, config) {
 
           if (xhr.status===201) {
             $scope._playlistAdd = false;
@@ -194,7 +194,7 @@ angular.module('bmmApp')
 
       $scope.removePLaylist = function(playlist) {
         if (confirm(_init.translation.playlist.confirmPlaylistDeletion)) {
-          _api.userTrackCollectionDelete(playlist).fail(function(xhr) {
+          _api.userTrackCollectionDelete(playlist).done(function(data, st, xhr, config) {
             if (xhr.status<300) {
               $.each($scope.init.user.track_collections, function(index) {
                 if (this.id===playlist) {
