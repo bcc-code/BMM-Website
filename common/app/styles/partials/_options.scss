@@ -33,6 +33,7 @@
     -ms-transform:rotate(45deg);
     transform:rotate(45deg);
     border-radius: .2em;
+    display: none; /* It is a bullet on top of the menu which most probably shouldn't be there, so I just hid it. */
   }
   ul {
     background: $colorPopup;
