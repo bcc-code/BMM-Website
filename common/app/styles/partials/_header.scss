@@ -19,7 +19,7 @@ header {
     position: relative;
     .menu {
       float: right;
-      padding-right: 1.7em;
+      padding-right: 1em;
     }
   }
 }
@@ -147,7 +147,7 @@ header {
     display: inline-block;
     a {
       @include bmm-transition(all, .2s);
-      padding: .3em 0 .3em 1.3em;
+      padding: .3em .65em;
       color: #000;//$colorForeground;
       border-radius: 1em;
       border: .15em solid transparent;
