@@ -1,130 +1,130 @@
 {
-  "language":"Deutsch",
-  "general":{
-    "search":"Suchen ...",
-    "searchResultsFor":"Suchergebnisse für:",
-    "loading":"Wird geladen...",
-    "waysOfTheLord":"Wege des Herrn",
-    "almondBlossom":"Mandelblüte",
-    "noTitle":"ohne Titel",
-    "settings":"Einstellungen",
-    "suport":"Support",
-    "readMore":"Lies mehr"
+  "language": "Deutsch",
+  "general": {
+    "search": "Suchen ...",
+    "searchResultsFor": "Suchergebnisse für:",
+    "loading": "Wird geladen...",
+    "waysOfTheLord": "Wege des Herrn",
+    "almondBlossom": "Mandelblüte",
+    "noTitle": "ohne Titel",
+    "settings": "Einstellungen",
+    "suport": "Support",
+    "readMore": "Lies mehr"
   },
-  "options":{
-    "addToPlaylist":"Zur Playliste hinzufügen",
-    "download":"Download",
-    "goToAlbum":"Album öffnen",
-    "podcast":"Podcast",
-    "removeFilter":"Filter löschen",
-    "changeLanguage":"Sprache ändern",
-    "goBack":"zurück",
-    "choosePlaylist":"Wiedergabeliste wählen",
-    "setupPodcast":"Um den Podcast zu abonnieren, kopiere die URL und füge ihn in deine Podcast-Software (z. B. iTunes) ein.",
-    "chooseLanguages":"Sprachen auswählen",
-    "addLanguage":"Sprache hinzufügen",
-    "includeLatest":"Anzahl der Tracks",
-    "websiteLanguage":"Sprache",
-    "contentLanguages":"Sprache für Audioinhalte",
-    "tracks":"Titel",
-    "filterByLanguage":"Nach Sprache filtern",
-    "copyUrl":"Podcast-Link kopieren",
-    "copyLink":"Link",
-    "remove":"Entfernen",
-    "playPlaylist":"Playliste starten",
-    "share":"Teilen"
+  "options": {
+    "addToPlaylist": "Zur Playliste hinzufügen",
+    "download": "Download",
+    "goToAlbum": "Album öffnen",
+    "podcast": "Podcast",
+    "removeFilter": "Filter löschen",
+    "changeLanguage": "Sprache ändern",
+    "goBack": "zurück",
+    "choosePlaylist": "Wiedergabeliste wählen",
+    "setupPodcast": "Um den Podcast zu abonnieren, kopiere die URL und füge ihn in deine Podcast-Software (z. B. iTunes) ein.",
+    "chooseLanguages": "Sprachen auswählen",
+    "addLanguage": "Sprache hinzufügen",
+    "includeLatest": "Anzahl der Tracks",
+    "websiteLanguage": "Sprache",
+    "contentLanguages": "Sprache für Audioinhalte",
+    "tracks": "Titel",
+    "filterByLanguage": "Nach Sprache filtern",
+    "copyUrl": "Podcast-Link kopieren",
+    "copyLink": "Link",
+    "remove": "Entfernen",
+    "playPlaylist": "Playliste starten",
+    "share": "Teilen"
   },
-  "menu":{
-    "main":{
-      "music":"Musik",
-      "speeches":"Reden",
-      "video":"Videos",
-      "archive":"Archiv",
-      "audiobooks":"Hörbücher"
+  "menu": {
+    "main": {
+      "music": "Musik",
+      "speeches": "Reden",
+      "video": "Videos",
+      "archive": "Archiv",
+      "audiobooks": "Hörbücher"
     },
-    "secondary":{
-      "playlists":"Playlisten",
-      "podcasts":"Podcasts",
-      "latestTracks":"Neue Titel",
-      "current":"Aktuell",
-      "newPlaylist":"Neue Playlist",
-      "nameOnPlaylist":"Name der Playliste"
+    "secondary": {
+      "playlists": "Playlisten",
+      "podcasts": "Podcasts",
+      "latestTracks": "Neue Titel",
+      "current": "Aktuell",
+      "newPlaylist": "Neue Playlist",
+      "nameOnPlaylist": "Name der Playliste"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Neue Reden",
-      "latestVideos":"Neue Videos",
-      "latestMusic":"Neue Musik",
-      "latestAlbums":"Neue Alben"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Neue Reden",
+      "latestVideos": "Neue Videos",
+      "latestMusic": "Neue Musik",
+      "latestAlbums": "Neue Alben"
     },
-    "music":{
-      "latestMusic":"Neue Musik",
-      "artists":"Interpreten",
-      "fromKaare":"Von Kåre",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Kinderlieder",
-      "instrumental":"Instrumental"
+    "music": {
+      "latestMusic": "Neue Musik",
+      "artists": "Interpreten",
+      "fromKaare": "Von Kåre",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Kinderlieder",
+      "instrumental": "Instrumental"
     },
-    "speeches":{
-      "latestSpeeches":"Neue Reden",
-      "recommended":"Empfohlen"
+    "speeches": {
+      "latestSpeeches": "Neue Reden",
+      "recommended": "Empfohlen"
     },
-    "videos":{
-      "latestVideos":"Neue Videos"
+    "videos": {
+      "latestVideos": "Neue Videos"
     },
-    "archive":{
-      "archive":"Archiv"
+    "archive": {
+      "archive": "Archiv"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Neue Hörbücher"
+    "audiobooks": {
+      "latestAudiobooks": "Neue Hörbücher"
     },
-    "search":{
-      "searchResults":"Suchergebnisse",
-      "content":"Inhalt",
-      "bibleVerse":"Bibelvers",
-      "album":"Album",
-      "artist":"Interpret",
-      "interprets":"Interpreten"
+    "search": {
+      "searchResults": "Suchergebnisse",
+      "content": "Inhalt",
+      "bibleVerse": "Bibelvers",
+      "album": "Album",
+      "artist": "Interpret",
+      "interprets": "Interpreten"
     }
   },
-  "track":{
-    "duration":"Dauer",
-    "details":"Details",
-    "exegesis":"Auslegung",
-    "recordedDate":"Aufnahmedatum",
-    "artist":"Interpret",
-    "lyricist":"Verfasser",
-    "arranger":"Arrangeur",
-    "composer":"Komponist",
-    "album":"Album",
-    "bibleVerse":"Bibelvers"
+  "track": {
+    "duration": "Dauer",
+    "details": "Details",
+    "exegesis": "Auslegung",
+    "recordedDate": "Aufnahmedatum",
+    "artist": "Interpret",
+    "lyricist": "Verfasser",
+    "arranger": "Arrangeur",
+    "composer": "Komponist",
+    "album": "Album",
+    "bibleVerse": "Bibelvers"
   },
-  "playlist":{
-    "tracks":"Titel",
-    "albums":"Alben",
-    "duration":"Länge",
-    "title":"Titel",
-    "allLanguages":"Alle Sprachen",
-    "confirmPlaylistDeletion":"Bist du sicher, dass du die Playliste löschen möchtest?",
-    "latestTracks":"Neue Titel",
-    "instrumental":"Instrumental"
+  "playlist": {
+    "tracks": "Titel",
+    "albums": "Alben",
+    "duration": "Länge",
+    "title": "Titel",
+    "allLanguages": "Alle Sprachen",
+    "confirmPlaylistDeletion": "Bist du sicher, dass du die Playliste löschen möchtest?",
+    "latestTracks": "Neue Titel",
+    "instrumental": "Instrumental"
   },
-  "notify":{
-    "play":"Abspielen",
-    "next":"Nächstes",
-    "previous":"Voriges",
-    "shufflePlaylist":"Zufällige Wiedergabe",
-    "loopPlaylist":"Playliste wiederholen",
-    "mute":"Stumm",
-    "maxVolume":"Maximale Lautstärke",
-    "options":"Optionen",
-    "activateVideo":"Video aktivieren",
-    "goToAlbum":"Zum Album",
-    "showFullscreen":"Im Vollbildmodus anzeigen",
-    "closeFullscreen":"Vollbildmodus schließen",
-    "hideVideo":"Video ausblenden",
-    "showVideo":"Video anzeigen"
+  "notify": {
+    "play": "Abspielen",
+    "next": "Nächstes",
+    "previous": "Voriges",
+    "shufflePlaylist": "Zufällige Wiedergabe",
+    "loopPlaylist": "Playliste wiederholen",
+    "mute": "Stumm",
+    "maxVolume": "Maximale Lautstärke",
+    "options": "Optionen",
+    "activateVideo": "Video aktivieren",
+    "goToAlbum": "Zum Album",
+    "showFullscreen": "Im Vollbildmodus anzeigen",
+    "closeFullscreen": "Vollbildmodus schließen",
+    "hideVideo": "Video ausblenden",
+    "showVideo": "Video anzeigen"
   },
-  "copyright":"Copyright"
+  "copyright": "Copyright"
 }

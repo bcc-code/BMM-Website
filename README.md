@@ -63,21 +63,21 @@ gem install compass
 **6. CD into 'common' via terminal/CMD and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 grunt updateCommonFiles
 ```
 
 **7. CD into 'admin' and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 bower update
 ```
 
 **8. CD into 'client' and run the following commands**
 ```
 #!cmd
-sudo npm update
+sudo npm install
 bower update
 ```
 
@@ -96,9 +96,12 @@ DEBUG AND TEST RUN 'client' OR 'admin'
 3. Run command
 ```
 #!cmd
-grunt serve
+grunt serve:dist
 ```
 ... A new browser window should now open
+
+[Unfortunately right now serving the admin site does not work!]
+[For the website "grunt serve" does not work because we removed compass from the build. Instead the "grunt serve:dist" has to be used when you want to have css.]
 
 4. Allow the unauthorized certificate to run with https
 

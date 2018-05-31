@@ -1,130 +1,130 @@
 {
-  "language":"Български",
-  "general":{
-    "search":"Търси...",
-    "searchResultsFor":"Резултати от търсенето за:",
-    "loading":"Зареждане...",
-    "waysOfTheLord":"Господни пътища",
-    "almondBlossom":"Бадемов цвят",
-    "noTitle":"Без заглавие",
-    "settings":"Настройки",
-    "suport":"Поддръжка",
-    "readMore":"Прочети повече"
+  "language": "Български",
+  "general": {
+    "search": "Търси...",
+    "searchResultsFor": "Резултати от търсенето за:",
+    "loading": "Зареждане...",
+    "waysOfTheLord": "Господни пътища",
+    "almondBlossom": "Бадемов цвят",
+    "noTitle": "Без заглавие",
+    "settings": "Настройки",
+    "suport": "Поддръжка",
+    "readMore": "Прочети повече"
   },
-  "options":{
-    "addToPlaylist":"Прибави към списъка",
-    "download":"Изтегли",
-    "goToAlbum":"Отиди на албум",
-    "podcast":"Подкаст",
-    "removeFilter":"Премахни филтър",
-    "changeLanguage":"Промени езика",
-    "goBack":"Върни се назад",
-    "choosePlaylist":"Избери списък",
-    "setupPodcast":"За да настроиш подкаста, трябва да копираш линка по-долу и да го поставиш в твоя предпочитан подкаст софтуер.",
-    "chooseLanguages":"Избери езици",
-    "addLanguage":"Добави език",
-    "includeLatest":"Включи последното",
-    "websiteLanguage":"Език на сайта",
-    "contentLanguages":"Език на съдържанието",
-    "tracks":"Песни и речи",
-    "filterByLanguage":"Филтрирай по език",
-    "copyUrl":"Копирай URL адреса",
-    "copyLink":"Копирай връзка",
-    "remove":"Премахни",
-    "playPlaylist":"Пусни списък",
-    "share":"Сподели"
+  "options": {
+    "addToPlaylist": "Прибави към списъка",
+    "download": "Изтегли",
+    "goToAlbum": "Отиди на албум",
+    "podcast": "Подкаст",
+    "removeFilter": "Премахни филтър",
+    "changeLanguage": "Промени езика",
+    "goBack": "Върни се назад",
+    "choosePlaylist": "Избери списък",
+    "setupPodcast": "За да настроиш подкаста, трябва да копираш линка по-долу и да го поставиш в твоя предпочитан подкаст софтуер.",
+    "chooseLanguages": "Избери езици",
+    "addLanguage": "Добави език",
+    "includeLatest": "Включи последното",
+    "websiteLanguage": "Език на сайта",
+    "contentLanguages": "Език на съдържанието",
+    "tracks": "Песни и речи",
+    "filterByLanguage": "Филтрирай по език",
+    "copyUrl": "Копирай URL адреса",
+    "copyLink": "Копирай връзка",
+    "remove": "Премахни",
+    "playPlaylist": "Пусни списък",
+    "share": "Сподели"
   },
-  "menu":{
-    "main":{
-      "music":"Музика",
-      "speeches":"Речи",
-      "video":"Видео",
-      "archive":"Архив",
-      "audiobooks":"Аудиокниги"
+  "menu": {
+    "main": {
+      "music": "Музика",
+      "speeches": "Речи",
+      "video": "Видео",
+      "archive": "Архив",
+      "audiobooks": "Аудиокниги"
     },
-    "secondary":{
-      "playlists":"Списъци",
-      "podcasts":"Подкаст",
-      "latestTracks":"Нови песни и речи",
-      "current":"Текущ",
-      "newPlaylist":"Нов списък",
-      "nameOnPlaylist":"Заглавие на списъка"
+    "secondary": {
+      "playlists": "Списъци",
+      "podcasts": "Подкаст",
+      "latestTracks": "Нови песни и речи",
+      "current": "Текущ",
+      "newPlaylist": "Нов списък",
+      "nameOnPlaylist": "Заглавие на списъка"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Последни речи",
-      "latestVideos":"Последни видеоклипове",
-      "latestMusic":"Последна музика",
-      "latestAlbums":"Последни албуми"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Последни речи",
+      "latestVideos": "Последни видеоклипове",
+      "latestMusic": "Последна музика",
+      "latestAlbums": "Последни албуми"
     },
-    "music":{
-      "latestMusic":"Последна музика",
-      "artists":"Изпълнители",
-      "fromKaare":"От Коре",
-      "mp3Source":"MP3-извор",
-      "childrensMp3Source":"Детски MP3-извор",
-      "instrumental":"Инструментал"
+    "music": {
+      "latestMusic": "Последна музика",
+      "artists": "Изпълнители",
+      "fromKaare": "От Коре",
+      "mp3Source": "MP3-извор",
+      "childrensMp3Source": "Детски MP3-извор",
+      "instrumental": "Инструментал"
     },
-    "speeches":{
-      "latestSpeeches":"Последни речи",
-      "recommended":"Препоръчано"
+    "speeches": {
+      "latestSpeeches": "Последни речи",
+      "recommended": "Препоръчано"
     },
-    "videos":{
-      "latestVideos":"Последни видеоклипове"
+    "videos": {
+      "latestVideos": "Последни видеоклипове"
     },
-    "archive":{
-      "archive":"Архив"
+    "archive": {
+      "archive": "Архив"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Последни аудио книги"
+    "audiobooks": {
+      "latestAudiobooks": "Последни аудио книги"
     },
-    "search":{
-      "searchResults":"Резултати от търсенето",
-      "content":"Съдържание",
-      "bibleVerse":"Библейски стих",
-      "album":"Албум",
-      "artist":"Изпълнител",
-      "interprets":"Интерпретира"
+    "search": {
+      "searchResults": "Резултати от търсенето",
+      "content": "Съдържание",
+      "bibleVerse": "Библейски стих",
+      "album": "Албум",
+      "artist": "Изпълнител",
+      "interprets": "Интерпретира"
     }
   },
-  "track":{
-    "duration":"Продължителност",
-    "details":"Детайли",
-    "exegesis":"Обяснение",
-    "recordedDate":"Дата на записване",
-    "artist":"Изпълнител",
-    "lyricist":"Текстописец",
-    "arranger":"Аранжор",
-    "composer":"Композитор",
-    "album":"Албум",
-    "bibleVerse":"Библейски стих"
+  "track": {
+    "duration": "Продължителност",
+    "details": "Детайли",
+    "exegesis": "Обяснение",
+    "recordedDate": "Дата на записване",
+    "artist": "Изпълнител",
+    "lyricist": "Текстописец",
+    "arranger": "Аранжор",
+    "composer": "Композитор",
+    "album": "Албум",
+    "bibleVerse": "Библейски стих"
   },
-  "playlist":{
-    "tracks":"Запис(а)",
-    "albums":"Албум(и)",
-    "duration":"Продължителност",
-    "title":"Заглавие",
-    "allLanguages":"Всички езици",
-    "confirmPlaylistDeletion":"Наистина ли искаш да изтриеш този списък?",
-    "latestTracks":"Последни песни и речи",
-    "instrumental":"Инструментал"
+  "playlist": {
+    "tracks": "Запис(а)",
+    "albums": "Албум(и)",
+    "duration": "Продължителност",
+    "title": "Заглавие",
+    "allLanguages": "Всички езици",
+    "confirmPlaylistDeletion": "Наистина ли искаш да изтриеш този списък?",
+    "latestTracks": "Последни песни и речи",
+    "instrumental": "Инструментал"
   },
-  "notify":{
-    "play":"Пусни",
-    "next":"Следващо",
-    "previous":"Предишно",
-    "shufflePlaylist":"Разбъркване на списъка за изпълнение",
-    "loopPlaylist":"Повтаряне на списък",
-    "mute":"Без звук",
-    "maxVolume":"Максимален звук",
-    "options":"Опции",
-    "activateVideo":"Задействане на видео",
-    "goToAlbum":"Отиди на албум",
-    "showFullscreen":"Покажи на цял екран",
-    "closeFullscreen":"Затвори цял екран",
-    "hideVideo":"Скрий видео",
-    "showVideo":"Покажи видеоклип"
+  "notify": {
+    "play": "Пусни",
+    "next": "Следващо",
+    "previous": "Предишно",
+    "shufflePlaylist": "Разбъркване на списъка за изпълнение",
+    "loopPlaylist": "Повтаряне на списък",
+    "mute": "Без звук",
+    "maxVolume": "Максимален звук",
+    "options": "Опции",
+    "activateVideo": "Задействане на видео",
+    "goToAlbum": "Отиди на албум",
+    "showFullscreen": "Покажи на цял екран",
+    "closeFullscreen": "Затвори цял екран",
+    "hideVideo": "Скрий видео",
+    "showVideo": "Покажи видеоклип"
   },
-  "copyright":"Авторско право"
+  "copyright": "Авторско право"
 }

@@ -104,7 +104,19 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          base: '<%= yeoman.dist %>'
+          protocol: 'http',
+          base: '<%= yeoman.dist %>',
+          open: true,
+          // http://danburzo.ro/grunt/chapters/server/
+          middleware: function(connect, options, middlewares) {
+
+            // 1. mod-rewrite behavior
+            var rules = [
+              '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif|\\.woff|\\.woff2|\\.ttf$ /index.html'
+            ];
+            middlewares.unshift(require('connect-modrewrite')(rules));
+            return middlewares;
+          }
         }
       }
     },
@@ -193,11 +205,22 @@ module.exports = function (grunt) {
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
-      dist: {},
+      dist: {
+        src: '<%= yeoman.app %>/styles/main.scss',
+        dest: '.tmp/styles/main.css'
+      },
       server: {
         options: {
           debugInfo: true
         }
+      }
+    },
+
+    sprite: {
+      flags: {
+        src: '<%= yeoman.app %>/images/common/flags/*.png',
+        dest: '.tmp/images/flags-sprite.png',
+        destCss: '.tmp/styles/flags-sprite.scss'
       }
     },
 
@@ -402,7 +425,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}'
+            '*.{ico,png,txt,config}'
           ]
         }, {
           expand: true,
@@ -530,6 +553,8 @@ module.exports = function (grunt) {
 
     // Concatenate all JS and vendor-CSS files
     'concat',
+
+    'sprite:flags',
 
     // Compile SCSS to CSS
     'sass:dist',

@@ -1,5 +1,17 @@
 @import "common/main";
 
+// Sprite for the flags
+@import "../../.tmp/styles/flags-sprite.scss";
+@mixin flag-sprites($sprites) {
+    @each $sprite in $sprites {
+      $sprite-name: nth($sprite, 10);
+      .flags-#{$sprite-name} {
+        @include sprite($sprite);
+      }
+    }
+  }
+@include flag-sprites($spritesheet-sprites);
+
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
 .logo {
@@ -188,4 +200,12 @@ body {
     height: 25px;
     padding: 5px;
   }
+}
+
+.flag {
+  margin-top: .3em;
+  margin-right: .4em;
+  width: 22px;
+  height: 16px;
+  display: inline-block;
 }

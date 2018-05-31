@@ -1,130 +1,130 @@
 {
-  "language":"Română",
-  "general":{
-    "search":"Căutaţi...",
-    "searchResultsFor":"Rezultatele căutării pentru:",
-    "loading":"Se încarcă...",
-    "waysOfTheLord":"Căile Domnului",
-    "almondBlossom":"Almond Blossom",
-    "noTitle":"Fără titlu",
-    "settings":"Setări",
-    "suport":"Suport",
-    "readMore":"Citește mai mult"
+  "language": "Română",
+  "general": {
+    "search": "Căutaţi...",
+    "searchResultsFor": "Rezultatele căutării pentru:",
+    "loading": "Se încarcă...",
+    "waysOfTheLord": "Căile Domnului",
+    "almondBlossom": "Almond Blossom",
+    "noTitle": "Fără titlu",
+    "settings": "Setări",
+    "suport": "Suport",
+    "readMore": "Citește mai mult"
   },
-  "options":{
-    "addToPlaylist":"Adaugă în play-list",
-    "download":"Descarcă",
-    "goToAlbum":"Mergi la album",
-    "podcast":"Podcast",
-    "removeFilter":"Eliminaţi filtrul",
-    "changeLanguage":"Schimbă limba",
-    "goBack":"Înapoi",
-    "choosePlaylist":"Alege play-list",
-    "setupPodcast":"Pentru a seta podcast-ul trebuie să copiaţi link-ul de mai jos şi să-l introduceți în programul dumneavoastră preferat de podcast-uri.",
-    "chooseLanguages":"Alege limbile",
-    "addLanguage":"Adaugă o limbă",
-    "includeLatest":"Include cele mai recente",
-    "websiteLanguage":"Limba site-ului",
-    "contentLanguages":"Limba conținutului",
-    "tracks":"piese",
-    "filterByLanguage":"Filtru de limbă",
-    "copyUrl":"Copiază URL-ul",
-    "copyLink":"Copiază link",
-    "remove":"Elimină",
-    "playPlaylist":"Play play-list",
-    "share":"Împărtășește"
+  "options": {
+    "addToPlaylist": "Adaugă în play-list",
+    "download": "Descarcă",
+    "goToAlbum": "Mergi la album",
+    "podcast": "Podcast",
+    "removeFilter": "Eliminaţi filtrul",
+    "changeLanguage": "Schimbă limba",
+    "goBack": "Înapoi",
+    "choosePlaylist": "Alege play-list",
+    "setupPodcast": "Pentru a seta podcast-ul trebuie să copiaţi link-ul de mai jos şi să-l introduceți în programul dumneavoastră preferat de podcast-uri.",
+    "chooseLanguages": "Alege limbile",
+    "addLanguage": "Adaugă o limbă",
+    "includeLatest": "Include cele mai recente",
+    "websiteLanguage": "Limba site-ului",
+    "contentLanguages": "Limba conținutului",
+    "tracks": "piese",
+    "filterByLanguage": "Filtru de limbă",
+    "copyUrl": "Copiază URL-ul",
+    "copyLink": "Copiază link",
+    "remove": "Elimină",
+    "playPlaylist": "Play play-list",
+    "share": "Împărtășește"
   },
-  "menu":{
-    "main":{
-      "music":"Muzică",
-      "speeches":"Vorbiri",
-      "video":"Videoclipuri",
-      "archive":"Arhivă",
-      "audiobooks":"Cărți audio"
+  "menu": {
+    "main": {
+      "music": "Muzică",
+      "speeches": "Vorbiri",
+      "video": "Videoclipuri",
+      "archive": "Arhivă",
+      "audiobooks": "Cărți audio"
     },
-    "secondary":{
-      "playlists":"Play-list-uri",
-      "podcasts":"Podcast",
-      "latestTracks":"Piese noi",
-      "current":"Se redă acum",
-      "newPlaylist":"Play-list nou",
-      "nameOnPlaylist":"Titlul play-list-ului"
+    "secondary": {
+      "playlists": "Play-list-uri",
+      "podcasts": "Podcast-uri",
+      "latestTracks": "Piese noi",
+      "current": "Se redă acum",
+      "newPlaylist": "Play-list nou",
+      "nameOnPlaylist": "Titlul play-list-ului"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Ultimele vorbiri",
-      "latestVideos":"Ultimele videoclipuri",
-      "latestMusic":"Ultimele melodii",
-      "latestAlbums":"Ultimele albume"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Ultimele vorbiri",
+      "latestVideos": "Ultimele videoclipuri",
+      "latestMusic": "Ultimele melodii",
+      "latestAlbums": "Ultimele albume"
     },
-    "music":{
-      "latestMusic":"Ultimele melodii",
-      "artists":"Artiști",
-      "fromKaare":"De la Kåre",
-      "mp3Source":"Sursă-MP3",
-      "childrensMp3Source":"Sursă-MP3 pentru copii",
-      "instrumental":"Instrumental"
+    "music": {
+      "latestMusic": "Ultimele melodii",
+      "artists": "Artiști",
+      "fromKaare": "De la Kåre",
+      "mp3Source": "Sursă-MP3",
+      "childrensMp3Source": "Sursă-MP3 pentru copii",
+      "instrumental": "Instrumental"
     },
-    "speeches":{
-      "latestSpeeches":"Ultimele vorbiri",
-      "recommended":"Recomandate"
+    "speeches": {
+      "latestSpeeches": "Ultimele vorbiri",
+      "recommended": "Recomandate"
     },
-    "videos":{
-      "latestVideos":"Ultimele videoclipuri"
+    "videos": {
+      "latestVideos": "Ultimele videoclipuri"
     },
-    "archive":{
-      "archive":"Arhivă"
+    "archive": {
+      "archive": "Arhivă"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Cele mai recente cărți audio"
+    "audiobooks": {
+      "latestAudiobooks": "Cele mai recente cărți audio"
     },
-    "search":{
-      "searchResults":"Rezultatele căutării",
-      "content":"Conţinut",
-      "bibleVerse":"Verset biblic",
-      "album":"Album",
-      "artist":"Interpreți",
-      "interprets":"Interpreți"
+    "search": {
+      "searchResults": "Rezultatele căutării",
+      "content": "Conţinut",
+      "bibleVerse": "Verset biblic",
+      "album": "Album",
+      "artist": "Interpreți",
+      "interprets": "Interpreți"
     }
   },
-  "track":{
-    "duration":"Durată",
-    "details":"Detalii",
-    "exegesis":"Tălmăcire",
-    "recordedDate":"Dată de înregistrare",
-    "artist":"Interpreți",
-    "lyricist":"Textier",
-    "arranger":"Aranjor",
-    "composer":"Compozitor",
-    "album":"Album",
-    "bibleVerse":"Verset biblic"
+  "track": {
+    "duration": "Durată",
+    "details": "Detalii",
+    "exegesis": "Tălmăcire",
+    "recordedDate": "Dată de înregistrare",
+    "artist": "Interpreți",
+    "lyricist": "Textier",
+    "arranger": "Aranjor",
+    "composer": "Compozitor",
+    "album": "Album",
+    "bibleVerse": "Verset biblic"
   },
-  "playlist":{
-    "tracks":"Piese",
-    "albums":"Album(e)",
-    "duration":"Durată",
-    "title":"Titlu",
-    "allLanguages":"Toate limbile",
-    "confirmPlaylistDeletion":"Sunteţi sigur că doriţi să ştergeţi acest play-list?",
-    "latestTracks":"Ultimele piese",
-    "instrumental":"Instrumental"
+  "playlist": {
+    "tracks": "Piese",
+    "albums": "Album(e)",
+    "duration": "Durată",
+    "title": "Titlu",
+    "allLanguages": "Toate limbile",
+    "confirmPlaylistDeletion": "Sunteţi sigur că doriţi să ştergeţi acest play-list?",
+    "latestTracks": "Ultimele piese",
+    "instrumental": "Instrumental"
   },
-  "notify":{
-    "play":"Cântă",
-    "next":"Următoarea",
-    "previous":"Precedenta",
-    "shufflePlaylist":"Amestecă play-list",
-    "loopPlaylist":"Repetare play-list",
-    "mute":"Fără sunet",
-    "maxVolume":"Volum maxim",
-    "options":"Opțiuni",
-    "activateVideo":"Activează video",
-    "goToAlbum":"Mergi la album",
-    "showFullscreen":"Arată pe tot ecranul",
-    "closeFullscreen":"Ieși din vizionarea pe tot ecranul",
-    "hideVideo":"Ascunde video",
-    "showVideo":"Arată video"
+  "notify": {
+    "play": "Cântă",
+    "next": "Următoarea",
+    "previous": "Precedenta",
+    "shufflePlaylist": "Amestecă play-list",
+    "loopPlaylist": "Repetare play-list",
+    "mute": "Fără sunet",
+    "maxVolume": "Volum maxim",
+    "options": "Opțiuni",
+    "activateVideo": "Activează video",
+    "goToAlbum": "Mergi la album",
+    "showFullscreen": "Arată pe tot ecranul",
+    "closeFullscreen": "Ieși din vizionarea pe tot ecranul",
+    "hideVideo": "Ascunde video",
+    "showVideo": "Arată video"
   },
-  "copyright":"Drepturi de autor"
+  "copyright": "Drepturi de autor"
 }

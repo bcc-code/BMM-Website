@@ -15,8 +15,7 @@ angular.module('bmmLibApp')
 
         var hasClickedBefore = false;
 
-        // assign the document click handler to a variable so we can un-register it when the directive is destroyed
-        $document.on('click.outsideDirective', function(e) {
+        var onClickHandler = function(e) {
 
           //If this is the first click, then ignore it.
           if(!hasClickedBefore) {
@@ -63,11 +62,15 @@ angular.module('bmmLibApp')
             fn($scope);
             return;
           });
-        });
+        };
+
+        // assign the document click handler to a variable so we can un-register it when the directive is destroyed
+        $document.on('click.outsideDirective', onClickHandler);
 
         // when the scope is destroyed, clean up the documents click handler as we don't want it hanging around
+        // UPDATED: we don't want this because we would lose access to the old $scope
         $scope.$on('$destroy', function() {
-          $document.off('click.outsideDirective');
+          $document.off('click.outsideDirective', onClickHandler);
         });
       }
     };

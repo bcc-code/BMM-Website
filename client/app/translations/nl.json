@@ -1,130 +1,130 @@
 {
-  "language":"Dutch",
-  "general":{
-    "search":"Zoeken...",
-    "searchResultsFor":"Zoekresultaten voor:",
-    "loading":"Laden...",
-    "waysOfTheLord":"Wegen van de Heer",
-    "almondBlossom":"Amandelbloesem",
-    "noTitle":"Geen titel",
-    "settings":"Instellingen",
-    "suport":"Support",
-    "readMore":"Meer lezen"
+  "language": "Dutch",
+  "general": {
+    "search": "Zoeken...",
+    "searchResultsFor": "Zoekresultaten voor:",
+    "loading": "Laden...",
+    "waysOfTheLord": "Wegen van de Heer",
+    "almondBlossom": "Amandelbloesem",
+    "noTitle": "Geen titel",
+    "settings": "Instellingen",
+    "suport": "Support",
+    "readMore": "Meer lezen"
   },
-  "options":{
-    "addToPlaylist":"Toevoegen aan afspeellijst",
-    "download":"Download",
-    "goToAlbum":"Ga naar album",
-    "podcast":"Podcast",
-    "removeFilter":"Filter verwijderen",
-    "changeLanguage":"Taal veranderen",
-    "goBack":"Ga terug",
-    "choosePlaylist":"Kies afspeellijst",
-    "setupPodcast":"Om de podcast in te stellen moet je de link hieronder kopiëren en daarna plakken in de door jou gekozen software.",
-    "chooseLanguages":"Kies talen",
-    "addLanguage":"Voeg een taal toe",
-    "includeLatest":"Laatste toevoegen",
-    "websiteLanguage":"Website taal",
-    "contentLanguages":"Taal van de content",
-    "tracks":"Nummers",
-    "filterByLanguage":"Filteren op taal",
-    "copyUrl":"Kopieër URL",
-    "copyLink":"Link kopiëren",
-    "remove":"Verwijderen",
-    "playPlaylist":"Afspeellijst afspelen",
-    "share":"Delen"
+  "options": {
+    "addToPlaylist": "Toevoegen aan afspeellijst",
+    "download": "Download",
+    "goToAlbum": "Ga naar album",
+    "podcast": "Podcast",
+    "removeFilter": "Filter verwijderen",
+    "changeLanguage": "Taal veranderen",
+    "goBack": "Ga terug",
+    "choosePlaylist": "Kies afspeellijst",
+    "setupPodcast": "Om de podcast in te stellen moet je de link hieronder kopiëren en daarna plakken in de door jou gekozen software.",
+    "chooseLanguages": "Kies talen",
+    "addLanguage": "Voeg een taal toe",
+    "includeLatest": "Laatste toevoegen",
+    "websiteLanguage": "Website taal",
+    "contentLanguages": "Taal van de content",
+    "tracks": "Nummers",
+    "filterByLanguage": "Filteren op taal",
+    "copyUrl": "Kopieër URL",
+    "copyLink": "Link kopiëren",
+    "remove": "Verwijderen",
+    "playPlaylist": "Afspeellijst afspelen",
+    "share": "Delen"
   },
-  "menu":{
-    "main":{
-      "music":"Muziek",
-      "speeches":"Toespraken",
-      "video":"Video's",
-      "archive":"Archief",
-      "audiobooks":"Audioboeken"
+  "menu": {
+    "main": {
+      "music": "Muziek",
+      "speeches": "Toespraken",
+      "video": "Video's",
+      "archive": "Archief",
+      "audiobooks": "Audioboeken"
     },
-    "secondary":{
-      "playlists":"Afspeellijsten",
-      "podcasts":"Podcasts",
-      "latestTracks":"Nieuwe nummers",
-      "current":"Huidige",
-      "newPlaylist":"Nieuwe afspeellijst",
-      "nameOnPlaylist":"Afspeellijst titel"
+    "secondary": {
+      "playlists": "Afspeellijsten",
+      "podcasts": "Podcasts",
+      "latestTracks": "Nieuwe nummers",
+      "current": "Huidige",
+      "newPlaylist": "Nieuwe afspeellijst",
+      "nameOnPlaylist": "Afspeellijst titel"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Nieuwste toespraken",
-      "latestVideos":"Nieuwste video's",
-      "latestMusic":"Nieuwste muziek",
-      "latestAlbums":"Nieuwste albums"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Nieuwste toespraken",
+      "latestVideos": "Nieuwste video's",
+      "latestMusic": "Nieuwste muziek",
+      "latestAlbums": "Nieuwste albums"
     },
-    "music":{
-      "latestMusic":"Nieuwste muziek",
-      "artists":"Artiesten",
-      "fromKaare":"Van Kåre",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Barnas MP3-favoritter",
-      "instrumental":"Instrumentaal"
+    "music": {
+      "latestMusic": "Nieuwste muziek",
+      "artists": "Artiesten",
+      "fromKaare": "Van Kåre",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Barnas MP3-favoritter",
+      "instrumental": "Instrumentaal"
     },
-    "speeches":{
-      "latestSpeeches":"Nieuwste toespraken",
-      "recommended":"Aanbevolen"
+    "speeches": {
+      "latestSpeeches": "Nieuwste toespraken",
+      "recommended": "Aanbevolen"
     },
-    "videos":{
-      "latestVideos":"Nieuwste video's"
+    "videos": {
+      "latestVideos": "Nieuwste video's"
     },
-    "archive":{
-      "archive":"Archief"
+    "archive": {
+      "archive": "Archief"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Nieuwste audioboeken"
+    "audiobooks": {
+      "latestAudiobooks": "Nieuwste audioboeken"
     },
-    "search":{
-      "searchResults":"Zoekresultaten",
-      "content":"Inhoud",
-      "bibleVerse":"Bijbelvers",
-      "album":"Album",
-      "artist":"Artiest",
-      "interprets":"Interpretaties"
+    "search": {
+      "searchResults": "Zoekresultaten",
+      "content": "Inhoud",
+      "bibleVerse": "Bijbelvers",
+      "album": "Album",
+      "artist": "Artiest",
+      "interprets": "Interpretaties"
     }
   },
-  "track":{
-    "duration":"Afspeelduur",
-    "details":"Details",
-    "exegesis":"Uitleg",
-    "recordedDate":"Opnamedatum",
-    "artist":"Artiest",
-    "lyricist":"Tekstschrijver",
-    "arranger":"Arrangeur",
-    "composer":"Componist",
-    "album":"Album",
-    "bibleVerse":"Bijbel vers"
+  "track": {
+    "duration": "Afspeelduur",
+    "details": "Details",
+    "exegesis": "Uitleg",
+    "recordedDate": "Opnamedatum",
+    "artist": "Artiest",
+    "lyricist": "Tekstschrijver",
+    "arranger": "Arrangeur",
+    "composer": "Componist",
+    "album": "Album",
+    "bibleVerse": "Bijbel vers"
   },
-  "playlist":{
-    "tracks":"Nummer(s)",
-    "albums":"Album(s)",
-    "duration":"Afspeelduur",
-    "title":"Titel",
-    "allLanguages":"Alle talen",
-    "confirmPlaylistDeletion":"Weet je zeker dat je deze afspeellijst wilt verwijderen?",
-    "latestTracks":"Laatste nummers",
-    "instrumental":"Instrumentaal"
+  "playlist": {
+    "tracks": "Nummer(s)",
+    "albums": "Album(s)",
+    "duration": "Afspeelduur",
+    "title": "Titel",
+    "allLanguages": "Alle talen",
+    "confirmPlaylistDeletion": "Weet je zeker dat je deze afspeellijst wilt verwijderen?",
+    "latestTracks": "Laatste nummers",
+    "instrumental": "Instrumentaal"
   },
-  "notify":{
-    "play":"Afspelen",
-    "next":"Volgende",
-    "previous":"Vorige",
-    "shufflePlaylist":"Shuffle afspeellijst",
-    "loopPlaylist":"Herhaal afspeellijst",
-    "mute":"Dempen",
-    "maxVolume":"Maximum volume",
-    "options":"Opties",
-    "activateVideo":"Video activeren",
-    "goToAlbum":"Ga naar album",
-    "showFullscreen":"Toon volledig scherm",
-    "closeFullscreen":"Volledig scherm sluiten",
-    "hideVideo":"Video verbergen",
-    "showVideo":"Video weergeven"
+  "notify": {
+    "play": "Afspelen",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "shufflePlaylist": "Shuffle afspeellijst",
+    "loopPlaylist": "Herhaal afspeellijst",
+    "mute": "Dempen",
+    "maxVolume": "Maximum volume",
+    "options": "Opties",
+    "activateVideo": "Video activeren",
+    "goToAlbum": "Ga naar album",
+    "showFullscreen": "Toon volledig scherm",
+    "closeFullscreen": "Volledig scherm sluiten",
+    "hideVideo": "Video verbergen",
+    "showVideo": "Video weergeven"
   },
-  "copyright":"Copyright"
+  "copyright": "Copyright"
 }

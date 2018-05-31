@@ -1,130 +1,130 @@
 {
-  "language":"Hrvatski",
-  "general":{
-    "search":"Traži...",
-    "searchResultsFor":"Rezultati pretrage za:",
-    "loading":"Učitavanje...",
-    "waysOfTheLord":"Putevi Gospodnji",
-    "almondBlossom":"Dječja Pjesmarica Bademov cvijet",
-    "noTitle":"Bez naslova",
-    "settings":"Postavke",
-    "suport":"Podrška za",
-    "readMore":"Pročitaj više"
+  "language": "Angleščina",
+  "general": {
+    "search": "Traži...",
+    "searchResultsFor": "Išči rezultate za:",
+    "loading": "Nalaganje...",
+    "waysOfTheLord": "Putevi Gospodnji",
+    "almondBlossom": "Dječja Pjesmarica Bademov cvijet",
+    "noTitle": "Bez naslova",
+    "settings": "Postavke",
+    "suport": "Podrška za",
+    "readMore": "Pročitaj više"
   },
-  "options":{
-    "addToPlaylist":"Dodavanje na listu",
-    "download":"Preuzimanje datoteka",
-    "goToAlbum":"Idi na album",
-    "podcast":"Podcast",
-    "removeFilter":"Ukloni filter",
-    "changeLanguage":"Promjena jezika",
-    "goBack":"Natrag",
-    "choosePlaylist":"Odaberite popis za slušanje",
-    "setupPodcast":"Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
-    "chooseLanguages":"Odabir jezika",
-    "addLanguage":"Dodavanje jezika",
-    "includeLatest":"Najnoviji sadržaj",
-    "websiteLanguage":"Jezik web stranice",
-    "contentLanguages":"Jezik sadržaja",
-    "tracks":"Naslov",
-    "filterByLanguage":"Filtriranje prema jeziku",
-    "copyUrl":"Kopirajte URL",
-    "copyLink":"Kopiraj stranicu",
-    "remove":"Uklonite",
-    "playPlaylist":"Pokreni listu",
-    "share":"Podijeli"
+  "options": {
+    "addToPlaylist": "Dodavanje na listu",
+    "download": "Preuzimanje datoteka",
+    "goToAlbum": "Idi na album",
+    "podcast": "Podcast",
+    "removeFilter": "Ukloni filter",
+    "changeLanguage": "Promjena jezika",
+    "goBack": "Natrag",
+    "choosePlaylist": "Odaberite popis za slušanje",
+    "setupPodcast": "Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
+    "chooseLanguages": "Odabir jezika",
+    "addLanguage": "Dodavanje jezika",
+    "includeLatest": "Najnoviji sadržaj",
+    "websiteLanguage": "Jezik web stranice",
+    "contentLanguages": "Jezik sadržaja",
+    "tracks": "Naslov",
+    "filterByLanguage": "Filtriranje prema jeziku",
+    "copyUrl": "Kopirajte URL",
+    "copyLink": "Kopiraj stranicu",
+    "remove": "Uklonite",
+    "playPlaylist": "Pokreni listu",
+    "share": "Podijeli"
   },
-  "menu":{
-    "main":{
-      "music":"Glazba",
-      "speeches":"Poruke",
-      "video":"Video",
-      "archive":"Arhiva",
-      "audiobooks":"Audioknjige"
+  "menu": {
+    "main": {
+      "music": "Glazba",
+      "speeches": "Poruke",
+      "video": "Video",
+      "archive": "Arhiva",
+      "audiobooks": "Audioknjige"
     },
-    "secondary":{
-      "playlists":"Popis liste za slušanje",
-      "podcasts":"Podcasti",
-      "latestTracks":"Nove pjesme",
-      "current":"Aktuelno",
-      "newPlaylist":"Novi popis za slušanje",
-      "nameOnPlaylist":"Naslov seznama predvajanja"
+    "secondary": {
+      "playlists": "Popis liste za slušanje",
+      "podcasts": "Podcasti",
+      "latestTracks": "Nove pjesme",
+      "current": "Aktuelno",
+      "newPlaylist": "Novi popis za slušanje",
+      "nameOnPlaylist": "Naslov seznama predvajanja"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Najnovejša sporočila",
-      "latestVideos":"Najnovejši video posnetki",
-      "latestMusic":"Najnovejša glasba",
-      "latestAlbums":"Najnovejši albumi"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Najnovejša sporočila",
+      "latestVideos": "Najnovejši video posnetki",
+      "latestMusic": "Najnovejša glasba",
+      "latestAlbums": "Najnovejši albumi"
     },
-    "music":{
-      "latestMusic":"Najnovejša glasba",
-      "artists":"Izvajalci",
-      "fromKaare":"Od Kåreja",
-      "mp3Source":"MP3-Izvir",
-      "childrensMp3Source":"Otroški MP3-Izvir",
-      "instrumental":"Instrumentalna glasba"
+    "music": {
+      "latestMusic": "Najnovejša glasba",
+      "artists": "Izvajalci",
+      "fromKaare": "Od Kåreja",
+      "mp3Source": "MP3-Izvir",
+      "childrensMp3Source": "Otroški MP3-Izvir",
+      "instrumental": "Instrumentalna glasba"
     },
-    "speeches":{
-      "latestSpeeches":"Najnovejša sporočila",
-      "recommended":"Priporočeno"
+    "speeches": {
+      "latestSpeeches": "Najnovejša sporočila",
+      "recommended": "Priporočeno"
     },
-    "videos":{
-      "latestVideos":"Najnovejši video posnetki"
+    "videos": {
+      "latestVideos": "Najnovejši video posnetki"
     },
-    "archive":{
-      "archive":"Arhiva"
+    "archive": {
+      "archive": "Arhiva"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Najnovejše zvočne knjige"
+    "audiobooks": {
+      "latestAudiobooks": "Najnovejše zvočne knjige"
     },
-    "search":{
-      "searchResults":"Rezultati iskanja",
-      "content":"Vsebina",
-      "bibleVerse":"Biblijska vrstica",
-      "album":"Album",
-      "artist":"Izvajalec",
-      "interprets":"Izvajalci"
+    "search": {
+      "searchResults": "Rezultati iskanja",
+      "content": "Vsebina",
+      "bibleVerse": "Biblijska vrstica",
+      "album": "Album",
+      "artist": "Izvajalec",
+      "interprets": "Izvajalci"
     }
   },
-  "track":{
-    "duration":"Trajanje",
-    "details":"Podrobnosti",
-    "exegesis":"Razlaga",
-    "recordedDate":"Datum snemanja",
-    "artist":"Izvajalec",
-    "lyricist":"Avtor besedila",
-    "arranger":"Aranžer",
-    "composer":"Skladatelj",
-    "album":"Album",
-    "bibleVerse":"Biblijska vrstica"
+  "track": {
+    "duration": "Trajanje",
+    "details": "Podrobnosti",
+    "exegesis": "Razlaga",
+    "recordedDate": "Datum snemanja",
+    "artist": "Izvajalec",
+    "lyricist": "Avtor besedila",
+    "arranger": "Aranžer",
+    "composer": "Skladatelj",
+    "album": "Album",
+    "bibleVerse": "Biblijska vrstica"
   },
-  "playlist":{
-    "tracks":"Skladba(e)",
-    "albums":"Album(i)",
-    "duration":"Trajanje",
-    "title":"Naslov",
-    "allLanguages":"Vsi jeziki",
-    "confirmPlaylistDeletion":"Jeste li sigurni da želite izbrisati ovaj popis?",
-    "latestTracks":"Najnovije pjesme",
-    "instrumental":"Instrumentalna glasba"
+  "playlist": {
+    "tracks": "Skladba(e)",
+    "albums": "Album(i)",
+    "duration": "Trajanje",
+    "title": "Naslov",
+    "allLanguages": "Vsi jeziki",
+    "confirmPlaylistDeletion": "Jeste li sigurni da želite izbrisati ovaj popis?",
+    "latestTracks": "Najnovije pjesme",
+    "instrumental": "Instrumentalna glasba"
   },
-  "notify":{
-    "play":"Pokreni",
-    "next":"Sljedeći",
-    "previous":"Prethodni",
-    "shufflePlaylist":"Izmiješaj popis",
-    "loopPlaylist":"Ponavljanje naslova",
-    "mute":"Beščujno",
-    "maxVolume":"Maximalno glasno",
-    "options":"Opcije",
-    "activateVideo":"Aktiviranje videa",
-    "goToAlbum":"Idi na album",
-    "showFullscreen":"Prikaži cijeli ekran",
-    "closeFullscreen":"Zatvoti zaslon",
-    "hideVideo":"Sakrij video",
-    "showVideo":"Prikaži video"
+  "notify": {
+    "play": "Pokreni",
+    "next": "Sljedeći",
+    "previous": "Prethodni",
+    "shufflePlaylist": "Izmiješaj popis",
+    "loopPlaylist": "Ponavljanje naslova",
+    "mute": "Beščujno",
+    "maxVolume": "Maximalno glasno",
+    "options": "Opcije",
+    "activateVideo": "Aktiviranje videa",
+    "goToAlbum": "Idi na album",
+    "showFullscreen": "Prikaži cijeli ekran",
+    "closeFullscreen": "Zatvoti zaslon",
+    "hideVideo": "Sakrij video",
+    "showVideo": "Prikaži video"
   },
-  "copyright":"Autorska prava"
+  "copyright": "Autorska prava"
 }
