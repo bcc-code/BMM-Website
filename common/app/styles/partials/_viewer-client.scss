@@ -145,7 +145,7 @@
   float: left;
   border-top: .1em solid $colorBorderLight;
 
-  li {
+  > li {
     position: relative;
     border-bottom: .1em solid $colorBorderLight;
     margin-right: 1em;
@@ -186,7 +186,7 @@
 
 .bmm-latest {
   overflow: hidden;
-  margin-top: .2em;
+  padding-top: .2em;
 }
 
 .bmm-latest-bullet {
@@ -282,6 +282,10 @@
 .bmm-zip:hover {
   color: #03D67F;
   border-color: #03D67F;
+}
+
+.bmm-zip:focus {
+    border: .2em solid #03D67F;
 }
 
 .bmm-track-download {
