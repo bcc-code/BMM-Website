@@ -12,7 +12,7 @@
             click-outside="$parent.trackOptions=!$parent.trackOptions"
         >
             <ul ng-if="!downloads">
-                <li ng-click="$parent.$parent.$parent.trackToPlaylist.id=track.id; $parent.$parent.trackToPlaylist.language=track.language">
+                <li ng-click="$root.trackToPlaylist.id=track.id; $root.trackToPlaylist.language=track.language">
                     <div class="icon playlist"></div>
                     <span ng-bind="$root.init.translation.options.addToPlaylist"></span>
                 </li>
