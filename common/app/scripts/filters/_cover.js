@@ -4,10 +4,6 @@ angular.module('bmmLibApp')
   .filter('_cover', function (_api) {
     return function (cover, type, id, antiCache) {
 
-      if(cover && cover.indexOf(_api.getserverUrli()) === -1) {
-        cover = _api.getserverUrli() + 'file/protected/' + cover;
-      }
-
       if (typeof cover==='undefined' || cover===null || cover==='') {
         if (typeof type==='undefined') {
           cover = 'fallback_images/svg/person.svg';
