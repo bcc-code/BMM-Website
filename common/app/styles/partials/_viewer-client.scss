@@ -464,3 +464,18 @@
     display: none;
   }
 }
+
+.search-result-info {
+  width: 100%;
+  margin-bottom: 10px;
+  > div {
+    float: left;
+  }
+  > h3 {
+    width: auto;
+    float: left;
+    margin-top: 16px;
+    font-size: 1.5em;
+    margin-left: 5px;
+  }
+}
