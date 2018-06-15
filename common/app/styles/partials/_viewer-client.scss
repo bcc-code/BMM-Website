@@ -430,6 +430,10 @@
     width: 7.2em;
     height: 4em;
     margin: .1em .5em .1em .1em;
+    .cover-image {
+      width: 100%;
+      transform: translateY(-25%);
+    }
   }
   .bmm-latest-title, .bmm-latest-interprets, .bmm-latest-about {
     max-width: 43%;
