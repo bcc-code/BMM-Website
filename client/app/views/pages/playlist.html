@@ -20,7 +20,6 @@
     {{init.translation.options.download}}
 </a>
 <div class="options albumOptions"
-        title="Options"
         ng-model="albumOptions"
         click-elsewhere="albumOptions=false; languageFilterShow=false">
 
@@ -33,7 +32,7 @@
             <div class="icon playlist"></div>
             <span ng-bind="init.translation.options.addToPlaylist"></span>
         </li>
-        <li ng-click="$parent.share.link=path; $parent.share.show=true">
+        <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
             <div class="icon no-flag share"></div>
             <span ng-bind="init.translation.options.share"></span>
         </li>
