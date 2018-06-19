@@ -23,7 +23,7 @@
         ng-model="albumOptions"
         click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-    <div class="optionsToggl" ng-click="albumOptions=!albumOptions;"></div>
+    <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
 
     <div class="arrow" ng-show="albumOptions"></div>
 
@@ -36,14 +36,14 @@
             <div class="icon no-flag share"></div>
             <span ng-bind="init.translation.options.share"></span>
         </li>
-        <li ng-click="languageFilterShow=true">
+        <li ng-click="languageFilterShow=true; setMinHeight()">
             <div class="icon no-flag settings"></div>
             <span ng-bind="init.translation.options.filterByLanguage"></span>
         </li>
     </ul>
 
     <ul ng-show="albumOptions&&languageFilterShow">
-        <li ng-click="languageFilterShow=false">
+        <li ng-click="languageFilterShow=false; removeMinHeight()">
             <div class="icon go-back"></div>
             <span ng-bind="init.translation.options.goBack"></span>
         </li>

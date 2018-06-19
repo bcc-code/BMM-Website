@@ -342,4 +342,12 @@ angular.module('bmmApp')
       findPlayingTrack();
     });
 
+    // This is a workaround to fix the scroll problem (#5317 in VSTS)
+    $scope.setMinHeight = function() {
+      $('[ng-model="albumOptions"]').parent().css('min-height', '1000px');
+    };
+    $scope.removeMinHeight = function() {
+      $('[ng-model="albumOptions"]').parent().css('min-height', 'initial');
+    };
+
   });
