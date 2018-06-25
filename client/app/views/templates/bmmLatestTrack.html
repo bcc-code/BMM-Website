@@ -1,7 +1,7 @@
 <div class="bmm-latest" ng-class="{'bmm-latest-video': track.subtype == 'video'}" ng-click="onPlay();">
 	<div class="bmm-latest-bullet"><span ng-bind="::trackNumber"></span></div>
-	<div>
-		<img class="bmm-latest-thumbnail" ng-src="{{::track.cover | _cover: track.subtype}}"/>
+	<div class="bmm-latest-thumbnail">
+		<img class="cover-image" ng-src="{{::track.cover | _cover: track.subtype}}"/>
 	</div>
 	<span ng-switch="::track.subtype">
 		<span ng-switch-when="song">

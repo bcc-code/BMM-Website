@@ -1,7 +1,9 @@
-<div ng-show="searchResults"><br>
-    <b><span ng-bind="init.translation.general.searchResultsFor"></span></b>
+<div class="search-result-info">
+    <div ng-show="searchResults"><br>
+        <b><span ng-bind="init.translation.general.searchResultsFor"></span></b>
+    </div>
+    <h3><span ng-bind="::title"></span></h3>
 </div>
-<h3><span ng-bind="::title"></span></h3>
 <span ng-hide="tracks<1"><span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span></span>
 <br ng-show="tracks>0&&albumCount>0">
 <span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>
@@ -18,11 +20,10 @@
     {{init.translation.options.download}}
 </a>
 <div class="options albumOptions"
-        title="Options"
         ng-model="albumOptions"
         click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-    <div class="optionsToggl" ng-click="albumOptions=!albumOptions;"></div>
+    <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
 
     <div class="arrow" ng-show="albumOptions"></div>
 
@@ -31,18 +32,18 @@
             <div class="icon playlist"></div>
             <span ng-bind="init.translation.options.addToPlaylist"></span>
         </li>
-        <li ng-click="$parent.share.link=path; $parent.share.show=true">
+        <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
             <div class="icon no-flag share"></div>
             <span ng-bind="init.translation.options.share"></span>
         </li>
-        <li ng-click="languageFilterShow=true">
+        <li ng-click="languageFilterShow=true; setMinHeight()">
             <div class="icon no-flag settings"></div>
             <span ng-bind="init.translation.options.filterByLanguage"></span>
         </li>
     </ul>
 
     <ul ng-show="albumOptions&&languageFilterShow">
-        <li ng-click="languageFilterShow=false">
+        <li ng-click="languageFilterShow=false; removeMinHeight()">
             <div class="icon go-back"></div>
             <span ng-bind="init.translation.options.goBack"></span>
         </li>

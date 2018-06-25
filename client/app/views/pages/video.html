@@ -3,10 +3,10 @@
     <bmm-latest-list tracks="latestVideo" list-length="latestVideoColHeight" ></bmm-latest-list>
     <bmm-latest-list tracks="latestVideo" start-index="latestVideoColHeight" list-length="latestVideoColHeight" ></bmm-latest-list>
     <bmm-latest-list tracks="latestVideo" class="largeOnly" start-index="latestVideoColHeight*2" list-length="latestVideoColHeight" ></bmm-latest-list>
-
-<h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
+</div>
 
 <div>
+    <h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 	<div title="{{::album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
         <img class="album-latest-image" ng-src="{{::album.cover}}" width="9em" height="9.3em"/>
 		<div class="album-latest-title"><span ng-bind="::album.title"></span></div>

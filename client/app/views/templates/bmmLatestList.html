@@ -2,8 +2,7 @@
 	<li ng-repeat="track in tracks | limitTo:listLength:startIndex"
 		class="draggable latest"
 		id="{{::track.id}}"
-		language="{{::track.language}}"
-		title="{{::track.albumTitle}}">
+		language="{{::track.language}}">
 
 		<bmm-latest-track on-play="play($index)" track-number="getIndex($index) + 1" track="track" type="{{::trackType}}"></bmm-latest-track>
 	</li>
