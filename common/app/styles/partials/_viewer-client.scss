@@ -116,6 +116,17 @@
 }
 .latest.ui-draggable-dragging {
   width: 17em;
+  .bmm-latest-bullet {
+    margin-left: .3em;
+  }
+  bmm-latest-track .flag {
+    width: 1.6em;
+    height: 1.1em;
+    right: .6em;
+    position: absolute;
+    border-radius: .2em;
+    top: 1em;
+  }
 }
 
 .latest.long.ui-draggable-dragging {
@@ -134,7 +145,12 @@
     padding-right: 1em;
   }
   td {
+    padding-top: .2em;
     padding-left: 1em;
+  }
+  .languageFlag {
+    padding-top: 0;
+    vertical-align: middle;
   }
 }
 

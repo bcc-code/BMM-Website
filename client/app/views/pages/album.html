@@ -73,7 +73,7 @@
                 <td title="{{::track.performers}}" class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.performers | _min:20"></span></td>
                 <td class="drag bmm-large-only" title="{{::track.albumTitle}}" class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.albumTitle | _min:40"></span></td>
                 <td class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.duration | _time"></span></td>
-                <td class="bmm-large-only" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);">
+                <td class="bmm-large-only languageFlag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);">
                     <div class="bmm-flag flags-{{::track.language}}"></div>
                 </td>
                 <td>
