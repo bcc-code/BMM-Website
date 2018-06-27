@@ -50,9 +50,12 @@ angular.module('bmmApp')
 
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
-
-        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
-          this.playing = (index === _playlist.index);
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function() {
+          if (this.id===_player.id) {
+            this.playing = true; // set the playing icon to the selected track
+          } else {
+            this.playing = false; // remove the playing icon from all other tracks
+          }
         });
 
       }
