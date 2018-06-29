@@ -157,7 +157,7 @@
 //Latest list
 .bmm-latest-list {
   position: relative;
-  width: 23em;
+  width: 33%;
   float: left;
   border-top: .1em solid $colorBorderLight;
 
@@ -478,6 +478,9 @@
 @media screen and (max-width: 78em) {
   .largeOnly {
     display: none;
+  }
+  .bmm-latest-list {
+    width: 50%;
   }
 }
 
