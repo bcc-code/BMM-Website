@@ -153,7 +153,7 @@ angular.module('bmmApp')
         size = 0;
 
         var search = function(term, _from) {
-          if (typeof from === 'undefined') {
+          if (typeof _from === 'undefined') {
             _from = 0;
           }
           _api.search(term, {
