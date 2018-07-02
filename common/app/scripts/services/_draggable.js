@@ -52,6 +52,7 @@ angular.module('bmmLibApp')
           zIndex: '1000',
           distance: 20,
           refreshPositions: true,
+          containment: "document",
           scroll: true,
           cursorAt: {
             left: 20
@@ -112,6 +113,7 @@ angular.module('bmmLibApp')
             refreshPositions: true,
             zIndex: 100,
             distance: 10,
+            containment: "document",
             scroll: true,
             cursorAt: {
               left: 2,
