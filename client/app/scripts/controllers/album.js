@@ -6,6 +6,7 @@ angular.module('bmmApp')
     $rootScope,
     $routeParams,
     $filter,
+    $timeout,
     $location,
     $window,
     _api,
@@ -69,8 +70,10 @@ angular.module('bmmApp')
         $scope.load = false;
       });
 
-      $('.draggable-playlist').trigger('dragdrop');
-
+      $timeout(function() {
+        $('.draggable-playlist').trigger('dragdrop');
+      });
+      
       findPlayingTrack();
     };
 

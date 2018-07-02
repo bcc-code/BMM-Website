@@ -52,7 +52,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody ng-if="!(album_playlist.hide&&($index>0||playlists.length>1))">
+        <tbody ng-hide="album_playlist.hide&&($index>0||playlists.length>1)">
             <tr class="head">
               <th colspan="2"><span ng-bind="init.translation.playlist.title"></span></th>
               <th><span ng-bind="init.translation.page.search.artist"></span></th>
