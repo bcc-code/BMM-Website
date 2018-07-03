@@ -247,8 +247,16 @@
       top: auto;
       margin-top: auto;
       margin-bottom: .5em;
-      li span {
-        bottom: .4em;
+      li {
+        .icon {
+          background-position-x: center;
+        }
+        .icon.album {
+          background-position-x: initial;
+        }
+        .icon-flag+span {
+          bottom: .3em;
+        }
       }
     }
   }

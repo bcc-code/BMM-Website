@@ -60,14 +60,14 @@
         display: inline-block;
         background-size: contain;
         background-repeat: no-repeat;
+        width: 22px;
         height: 1.5em;
-        width: 1.4em;
-        margin: 0 .4em 0 .6em
+        margin: -0.1em .5em 0 .6em;
       }
       .icon-flag {
         display: inline-block;
         background-repeat: no-repeat;
-        margin: 0 .2em 0 .6em
+        margin: 0 .5em 0 .6em
       }
       .icon.share { background-image: url('../images/common/svg/v3/Icon_Options_Share.svg'); }
       .icon.playlist { background-image: url('../images/common/svg/v3/Icon_Options-Playlist.svg'); }
@@ -75,7 +75,13 @@
       .icon.album { background-image: url('../images/common/svg/v3/Icon_Options-Album.svg'); }
       .icon.settings { background-image: url('../images/common/svg/v3/Icon_Options-Settings.svg'); }
       .icon.details { background-image: url('../images/common/svg/v3/Icon_Options-Info.svg'); }
-      .icon.go-back { background-image: url('../images/common/svg/v3/Icon_Back_Arrow.svg'); }
+      .icon.go-back { 
+        background-image: url('../images/common/svg/v3/Icon_Back_Arrow.svg');
+        height: 16px;
+        background-position-x: .3em;
+        margin-top: 0;
+      }
+      .icon.go-back + span { bottom: .25em }
       .icon.delete {
         background-image: url('../images/common/svg/v3/Icon_Delete.svg');
         background-position: .25em 0;
@@ -84,7 +90,7 @@
         font-size: .9em;
         bottom: .5em;
         position: relative;
-        margin-right: .8em;
+        margin-right: 1em;
       }
     }
     li:hover {

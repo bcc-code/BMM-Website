@@ -109,13 +109,10 @@
           > a {
             > div {
               display: inline-block;
-              width: 2em;
-              height: 1.1em;
-              margin: -.1em;
               &.flag {
                 width: 22px;
-                margin-right: 6px;
-                vertical-align: middle;
+                margin-right: .6em;
+                vertical-align: text-bottom;
               }
             }
             display: inline-block;
