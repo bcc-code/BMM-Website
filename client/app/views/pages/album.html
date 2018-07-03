@@ -8,37 +8,40 @@
   <span ng-bind="mainAlbum.title"></span>
 </h3><br>
 {{tracks}} {{init.translation.playlist.tracks}}
-<div style="float: none; margin-top: .3em;"><span ng-bind="mainAlbum.description"></span></div><br>
-<div class="play-playlist"
-     ng-click="playlist = playlists[0].tracks; play(playlist); playlists[0].hide = false">
-    <span ng-bind="init.translation.options.playPlaylist"></span>
-</div>
-<a title="Download ZIP"
-   class="bmm-zip"
-   ng-show="!init.isIOS"
-   target="_blank"
-   ng-href="{{zip.url}}">
-    <span ng-bind="init.translation.options.download"></span>
-</a>
-<div class="options albumOptions"
-        ng-model="albumOptions"
-        click-elsewhere="albumOptions=false; languageFilterShow=false">
+<div class="albumDescription clearFix"><span ng-bind="mainAlbum.description"></span></div><br>
 
-    <div class="optionsToggl" ng-click="albumOptions=!albumOptions;"></div>
+<div class="actionButtons" ng-show="tracks>0">
+  <div class="clearFix"></div>
+  <div class="play-playlist"
+       ng-click="playlist = playlists[0].tracks; play(playlist); playlists[0].hide = false">
+      <span ng-bind="init.translation.options.playPlaylist"></span>
+  </div>
+  <a class="bmm-zip"
+     ng-show="!init.isIOS"
+     target="_blank"
+     ng-href="{{zip.url}}">
+      <span ng-bind="init.translation.options.download"></span>
+  </a>
+  <div class="options albumOptions"
+          ng-model="albumOptions"
+          click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-    <div class="arrow" ng-show="albumOptions"></div>
+      <div class="optionsToggl" ng-click="albumOptions=!albumOptions;"></div>
 
-    <ul ng-show="albumOptions">
-        <li ng-click="$parent.tracksToPlaylist=getPlaylistCopy(languageFilter);">
-            <div class="icon no-flag playlist"></div>
-            <span ng-bind="init.translation.options.addToPlaylist"></span>
-        </li>
-        <li ng-click="$root.share.link=path; $root.share.show=true">
-            <div class="icon no-flag share"></div>
-            <span ng-bind="init.translation.options.share"></span>
-        </li>
-    </ul>
+      <div class="arrow" ng-show="albumOptions"></div>
 
+      <ul ng-show="albumOptions">
+          <li ng-click="$parent.tracksToPlaylist=getPlaylistCopy(languageFilter);">
+              <div class="icon no-flag playlist"></div>
+              <span ng-bind="init.translation.options.addToPlaylist"></span>
+          </li>
+          <li ng-click="$root.share.link=path; $root.share.show=true">
+              <div class="icon no-flag share"></div>
+              <span ng-bind="init.translation.options.share"></span>
+          </li>
+      </ul>
+
+  </div>
 </div>
 
 <div playlist>

@@ -53,7 +53,7 @@
     </div>
 
     <!--PLAYER-->
-    <div player>
+    <div player ng-show="player.id">
 
         <div class="videoscreen" ng-show="player.showVideo">
             <div class="page-positioning">
@@ -147,7 +147,7 @@
                         <ul ng-if="playerOptions&&flags">
                             <li ng-repeat="language in player.raw.languages"
                                 ng-click="player.changeLanguage(language);">
-                                <div class="flags-{{::language}} icon-flag">
+                                <div class="icon-flag flags-{{::language}}">
                                 </div>
                                 <span ng-bind="language | _languageCode"></span>
                             </li>

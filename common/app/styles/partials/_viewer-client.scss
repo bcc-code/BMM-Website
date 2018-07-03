@@ -489,12 +489,44 @@
   margin-bottom: 10px;
   > div {
     float: left;
+    margin-right: 5px;
   }
   > h3 {
     width: auto;
     float: left;
     margin-top: 16px;
     font-size: 1.5em;
-    margin-left: 5px;
   }
+}
+
+.actionButtons.ng-hide {
+  display: block !important;
+  cursor:  not-allowed;    
+  > div, > a {
+   pointer-events: none;
+  }
+}
+.actionButtons {
+  width: 100%;
+  > div {
+    float: left;
+  }
+  .options .arrow {
+    font-size: 1.2em;
+    right: 0;
+    left: 0;
+    margin: .425em auto 0;
+  }
+  .albumOptions ul {
+    margin-top: .75em;
+  }
+  .clearFix {
+    margin-top: 1.5em;
+  }
+}
+.client .clearFix {
+  float: none;
+}
+.albumDescription.clearFix {
+  margin-top: .3em;
 }

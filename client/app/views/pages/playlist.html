@@ -4,60 +4,61 @@
     </div>
     <h3><span ng-bind="::title"></span></h3>
 </div>
-<span ng-hide="tracks<1"><span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span></span>
+<span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span>
 <br ng-show="tracks>0&&albumCount>0">
 <span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>
 <br>
-<div class="play-playlist"
-     ng-click="play(getPlaylistCopy(languageFilter), 0);">
-    {{init.translation.options.playPlaylist}}
-</div>
-<a title="Download ZIP"
-   class="bmm-zip"
-   ng-show="zip.show&&!init.isIOS"
-   target="_blank"
-   ng-href="{{zip.url}}">
-    {{init.translation.options.download}}
-</a>
-<div class="options albumOptions"
-        ng-model="albumOptions"
-        click-elsewhere="albumOptions=false; languageFilterShow=false">
+<div class="actionButtons" ng-show="tracks>0">
+    <div class="play-playlist"
+         ng-click="play(getPlaylistCopy(languageFilter), 0);">
+        {{init.translation.options.playPlaylist}}
+    </div>
+    <a class="bmm-zip"
+       ng-show="zip.show&&!init.isIOS"
+       target="_blank"
+       ng-href="{{zip.url}}">
+        {{init.translation.options.download}}
+    </a>
+    <div class="options albumOptions"
+            ng-model="albumOptions"
+            click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-    <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
+        <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
 
-    <div class="arrow" ng-show="albumOptions"></div>
+        <div class="arrow" ng-show="albumOptions"></div>
 
-    <ul ng-show="albumOptions&&!languageFilterShow">
-        <li ng-click="$parent.tracksToPlaylist=getPlaylistCopy(languageFilter)">
-            <div class="icon playlist"></div>
-            <span ng-bind="init.translation.options.addToPlaylist"></span>
-        </li>
-        <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
-            <div class="icon no-flag share"></div>
-            <span ng-bind="init.translation.options.share"></span>
-        </li>
-        <li ng-click="languageFilterShow=true; setMinHeight()">
-            <div class="icon no-flag settings"></div>
-            <span ng-bind="init.translation.options.filterByLanguage"></span>
-        </li>
-    </ul>
+        <ul ng-show="albumOptions&&!languageFilterShow">
+            <li ng-click="$parent.tracksToPlaylist=getPlaylistCopy(languageFilter)">
+                <div class="icon playlist"></div>
+                <span ng-bind="init.translation.options.addToPlaylist"></span>
+            </li>
+            <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
+                <div class="icon no-flag share"></div>
+                <span ng-bind="init.translation.options.share"></span>
+            </li>
+            <li ng-click="languageFilterShow=true; setMinHeight()">
+                <div class="icon no-flag settings"></div>
+                <span ng-bind="init.translation.options.filterByLanguage"></span>
+            </li>
+        </ul>
 
-    <ul ng-show="albumOptions&&languageFilterShow">
-        <li ng-click="languageFilterShow=false; removeMinHeight()">
-            <div class="icon go-back"></div>
-            <span ng-bind="init.translation.options.goBack"></span>
-        </li>
-        <li ng-click="languageFilter=''">
-            <div class="icon"></div>
-            <span ng-bind="init.translation.options.removeFilter"></span>
-        </li>
-        <li ng-repeat="lang in init.root.languages"
-            ng-click="$parent.languageFilter=lang">
-            <div class="icon-flag flags-{{::lang}}"></div>
-            <span ng-bind="::lang | _languageCode"></span>
-        </li>
-    </ul>
+        <ul ng-show="albumOptions&&languageFilterShow">
+            <li ng-click="languageFilterShow=false; removeMinHeight()">
+                <div class="icon go-back"></div>
+                <span ng-bind="init.translation.options.goBack"></span>
+            </li>
+            <li ng-click="languageFilter=''">
+                <div class="icon"></div>
+                <span ng-bind="init.translation.options.removeFilter"></span>
+            </li>
+            <li ng-repeat="lang in init.root.languages"
+                ng-click="$parent.languageFilter=lang">
+                <div class="icon-flag flags-{{::lang}}"></div>
+                <span ng-bind="::lang | _languageCode"></span>
+            </li>
+        </ul>
 
+    </div>
 </div>
 
 <div playlist ng-hide="tracks<1">

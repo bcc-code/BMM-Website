@@ -27,13 +27,11 @@
     height: .5em;
     background: #ECECEC;
     top: 100%;
-    margin-top: .25em;
+    margin-top: .2em;
     right: .15em;
     -webkit-transform: rotate(45deg);
     -ms-transform:rotate(45deg);
     transform:rotate(45deg);
-    border-radius: .2em;
-    display: none; /* It is a bullet on top of the menu which most probably shouldn't be there, so I just hid it. */
   }
   ul {
     background: $colorPopup;
