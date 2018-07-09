@@ -116,6 +116,17 @@
 }
 .latest.ui-draggable-dragging {
   width: 17em;
+  .bmm-latest-bullet {
+    margin-left: .3em;
+  }
+  bmm-latest-track .flag {
+    width: 1.6em;
+    height: 1.1em;
+    right: .6em;
+    position: absolute;
+    border-radius: .2em;
+    top: 1em;
+  }
 }
 
 .latest.long.ui-draggable-dragging {
@@ -134,14 +145,19 @@
     padding-right: 1em;
   }
   td {
+    padding-top: .2em;
     padding-left: 1em;
+  }
+  .languageFlag {
+    padding-top: 0;
+    vertical-align: middle;
   }
 }
 
 //Latest list
 .bmm-latest-list {
   position: relative;
-  width: 23em;
+  width: 33%;
   float: left;
   border-top: .1em solid $colorBorderLight;
 
@@ -449,6 +465,15 @@
   background-size: contain;
 }
 
+@media screen and (max-width: 78em) {
+  .largeOnly {
+    display: none;
+  }
+  .bmm-latest-list {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: $mobileWidth) {
   //Latest list
   .bmm-latest-list {
@@ -459,23 +484,49 @@
   }
 }
 
-@media screen and (max-width: 78em) {
-  .largeOnly {
-    display: none;
-  }
-}
-
 .search-result-info {
   width: 100%;
   margin-bottom: 10px;
   > div {
     float: left;
+    margin-right: 5px;
   }
   > h3 {
     width: auto;
     float: left;
     margin-top: 16px;
     font-size: 1.5em;
-    margin-left: 5px;
   }
+}
+
+.actionButtons.ng-hide {
+  display: block !important;
+  cursor:  not-allowed;    
+  > div, > a {
+   pointer-events: none;
+  }
+}
+.actionButtons {
+  width: 100%;
+  > div {
+    float: left;
+  }
+  .options .arrow {
+    font-size: 1.2em;
+    right: 0;
+    left: 0;
+    margin: .425em auto 0;
+  }
+  .albumOptions ul {
+    margin-top: .75em;
+  }
+  .clearFix {
+    margin-top: 1.5em;
+  }
+}
+.client .clearFix {
+  float: none;
+}
+.albumDescription.clearFix {
+  margin-top: .3em;
 }

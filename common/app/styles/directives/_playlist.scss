@@ -176,23 +176,21 @@
   border-bottom: .1em solid $colorBorderLight;
 }
 
-.albumOptions:hover {
-  border-color: #03D67F;
-}
 .albumOptions {
   width: 2em;
   height: 2.5em;
   margin: 1em .5em 0 .5em;
-  border: .2em solid #CCD1CF;
-  border-radius: 50%;
-  padding: .7em 1.1em;
+  padding: .7em 1.3em;
   font-size: 1em;
   .optionsToggl {
     background-image: url(../images/common/svg/v3/Icon_Options.svg);
     background-size: .3em 1.3em;
     background-position: center center;
+    border: .2em solid #CCD1CF;
+    border-radius: 50%;
   }
   .optionsToggl:hover {
+    border-color: #03D67F;
     background-image: url(../images/common/svg/v3/Icon_Options_Hover.svg);
   }
   ul {
@@ -200,9 +198,7 @@
     font-size: 1em;
     li {
       .icon.podcast { background-image: url('../images/common/svg/v3/Icon_Podcast.svg'); }
-      span {
-        bottom: .4em;
-      }
+      .icon-flag+span { bottom: .25em; }
     }
   }
 }

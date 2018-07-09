@@ -50,9 +50,12 @@ angular.module('bmmApp')
 
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
-
-        $.each($scope.getPlaylistCopy($scope.languageFilter), function(index) {
-          this.playing = (index === _playlist.index);
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function() {
+          if (this.id===_player.id) {
+            this.playing = true; // set the playing icon to the selected track
+          } else {
+            this.playing = false; // remove the playing icon from all other tracks
+          }
         });
 
       }
@@ -150,7 +153,7 @@ angular.module('bmmApp')
         size = 0;
 
         var search = function(term, _from) {
-          if (typeof from === 'undefined') {
+          if (typeof _from === 'undefined') {
             _from = 0;
           }
           _api.search(term, {
@@ -344,10 +347,10 @@ angular.module('bmmApp')
 
     // This is a workaround to fix the scroll problem (#5317 in VSTS)
     $scope.setMinHeight = function() {
-      $('[ng-model="albumOptions"]').parent().css('min-height', '1000px');
+      $('body').find('div.frontend').css('min-height', '1000px');
     };
     $scope.removeMinHeight = function() {
-      $('[ng-model="albumOptions"]').parent().css('min-height', 'initial');
+      $('body').find('div.frontend').css('min-height', 'initial');
     };
 
   });

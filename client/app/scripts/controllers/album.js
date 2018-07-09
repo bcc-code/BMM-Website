@@ -6,6 +6,7 @@ angular.module('bmmApp')
     $rootScope,
     $routeParams,
     $filter,
+    $timeout,
     $location,
     $window,
     _api,
@@ -51,18 +52,11 @@ angular.module('bmmApp')
 
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
-
-        $.each($scope.playlists, function() {
-          $.each(this.tracks, function() {
-            this.playing = false;
-          });
-        });
-
-        $.each($scope.getPlaylistCopy($scope.languageFilter, $scope.playlist), function(index) {
-          if (index===_playlist.index) {
-            this.playing = true;
+        $.each($scope.getPlaylistCopy($scope.languageFilter), function() {
+          if (this.id===_player.id) {
+            this.playing = true; // set the playing icon to the selected track
           } else {
-            this.playing = false;
+            this.playing = false; // remove the playing icon from all other tracks
           }
         });
       }
@@ -76,8 +70,10 @@ angular.module('bmmApp')
         $scope.load = false;
       });
 
-      $('.draggable-playlist').trigger('dragdrop');
-
+      $timeout(function() {
+        $('.draggable-playlist').trigger('dragdrop');
+      });
+      
       findPlayingTrack();
     };
 
