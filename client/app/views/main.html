@@ -98,10 +98,9 @@
             </div>
 
             <div class="options"
-                    title="{{init.translation.notify.options}}"
                     ng-model="playerOptions">
 
-                <div class="optionsToggl" ng-click="playerOptions=!playerOptions;"></div>
+                <div class="optionsToggl" ng-click="playerOptions=!playerOptions;" title="{{init.translation.notify.options}}"></div>
 
                 <div class="arrow" ng-if="playerOptions"></div>
                 <span ng-if="playerOptions">

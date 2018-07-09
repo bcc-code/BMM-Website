@@ -465,6 +465,15 @@
   background-size: contain;
 }
 
+@media screen and (max-width: 78em) {
+  .largeOnly {
+    display: none;
+  }
+  .bmm-latest-list {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: $mobileWidth) {
   //Latest list
   .bmm-latest-list {
@@ -472,15 +481,6 @@
   }
   .bmm-large-only {
     display: none;
-  }
-}
-
-@media screen and (max-width: 78em) {
-  .largeOnly {
-    display: none;
-  }
-  .bmm-latest-list {
-    width: 50%;
   }
 }
 
