@@ -1,130 +1,132 @@
 {
-  "language":"Suomi",
-  "general":{
-    "search":"Etsi...",
-    "searchResultsFor":"Tulokset haulla:",
-    "loading":"Lataa...",
-    "waysOfTheLord":"Herran Tiet",
-    "almondBlossom":"Mantelinkukka",
-    "noTitle":"Ei otsikkoa",
-    "settings":"Asetukset",
-    "suport":"Tuki",
-    "readMore":"Lue lisää"
+  "language": "Suomi",
+  "general": {
+    "search": "Etsi...",
+    "searchResultsFor": "Tulokset haulla:",
+    "loading": "Lataa...",
+    "waysOfTheLord": "Herran Tiet",
+    "almondBlossom": "Mantelinkukka",
+    "noTitle": "Ei otsikkoa",
+    "settings": "Asetukset",
+    "suport": "Tuki",
+    "readMore": "Lue lisää"
   },
-  "options":{
-    "addToPlaylist":"Lisää soittolistaan",
-    "download":"Lataa",
-    "goToAlbum":"Siirry albumiin",
-    "podcast":"Podcast",
-    "removeFilter":"Poista suodatin",
-    "changeLanguage":"Vaihda kieli",
-    "goBack":"Takaisin",
-    "choosePlaylist":"Valitse soittolista",
-    "setupPodcast":"Ottaaksesi podcastin käyttöön kopioi allaoleva linkki ja liitä se haluamaasi podcast-sovellukseen.",
-    "chooseLanguages":"Valitse kielet",
-    "addLanguage":"Lisää kieli",
-    "includeLatest":"Sisällytä uusimmat",
-    "websiteLanguage":"Sivuston kieli",
-    "contentLanguages":"Sisällön kieli",
-    "tracks":"kappaleet",
-    "filterByLanguage":"Suodata kielen mukaan",
-    "copyUrl":"Kopioi URL",
-    "copyLink":"Kopioi linkki",
-    "remove":"Poista",
-    "playPlaylist":"Toista soittolista",
-    "share":"Jaa"
+  "options": {
+    "addToPlaylist": "Lisää soittolistaan",
+    "download": "Lataa",
+    "goToAlbum": "Siirry albumiin",
+    "podcast": "Podcast",
+    "removeFilter": "Poista suodatin",
+    "changeLanguage": "Vaihda kieli",
+    "goBack": "Takaisin",
+    "choosePlaylist": "Valitse soittolista",
+    "setupPodcast": "Ottaaksesi podcastin käyttöön kopioi allaoleva linkki ja liitä se haluamaasi podcast-sovellukseen.",
+    "chooseLanguages": "Valitse kielet",
+    "addLanguage": "Lisää kieli",
+    "includeLatest": "Sisällytä uusimmat",
+    "websiteLanguage": "Sivuston kieli",
+    "contentLanguages": "Sisällön kieli",
+    "tracks": "kappaleet",
+    "filterByLanguage": "Suodata kielen mukaan",
+    "copyUrl": "Kopioi URL",
+    "copyLink": "Kopioi linkki",
+    "remove": "Poista",
+    "playPlaylist": "Toista soittolista",
+    "share": "Jaa"
   },
-  "menu":{
-    "main":{
-      "music":"Musiikki",
-      "speeches":"Puheet",
-      "video":"Videot",
-      "archive":"Arkisto",
-      "audiobooks":"Äänikirjat"
+  "menu": {
+    "main": {
+      "music": "Musiikki",
+      "speeches": "Puheet",
+      "video": "Videot",
+      "archive": "Arkisto",
+      "audiobooks": "Äänikirjat"
     },
-    "secondary":{
-      "playlists":"Soittolistat",
-      "podcasts":"Podcastit",
-      "latestTracks":"Uudet kappaleet",
-      "current":"Nykyinen",
-      "newPlaylist":"Uusi soittolista",
-      "nameOnPlaylist":"Soittolistan nimi"
+    "secondary": {
+      "playlists": "Soittolistat",
+      "podcasts": "Podcastit",
+      "latestTracks": "Uudet kappaleet",
+      "current": "Nykyinen",
+      "newPlaylist": "Uusi soittolista",
+      "nameOnPlaylist": "Soittolistan nimi"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Uusimmat puheet",
-      "latestVideos":"Uusimmat videot",
-      "latestMusic":"Uusimmat kappaleet",
-      "latestAlbums":"Uusimmat albumit"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Uusimmat puheet",
+      "latestVideos": "Uusimmat videot",
+      "latestMusic": "Uusimmat kappaleet",
+      "latestAlbums": "Uusimmat albumit"
     },
-    "music":{
-      "latestMusic":"Uusimmat kappaleet",
-      "artists":"Artistit",
-      "fromKaare":"Terveiset Kårelta",
-      "mp3Source":"MP3-Lähde",
-      "childrensMp3Source":"Lasten MP3-lähde",
-      "instrumental":"Instrumentaali"
+    "music": {
+      "latestMusic": "Uusimmat kappaleet",
+      "artists": "Artistit",
+      "fromKaare": "Terveiset Kårelta",
+      "mp3Source": "MP3-Lähde",
+      "childrensMp3Source": "Lasten MP3-lähde",
+      "instrumental": "Instrumentaali"
     },
-    "speeches":{
-      "latestSpeeches":"Uusimmat puheet",
-      "recommended":"Suositellut"
+    "speeches": {
+      "latestSpeeches": "Uusimmat puheet",
+      "recommended": "Suositellut"
     },
-    "videos":{
-      "latestVideos":"Uusimmat videot"
+    "videos": {
+      "latestVideos": "Uusimmat videot"
     },
-    "archive":{
-      "archive":"Arkisto"
+    "archive": {
+      "archive": "Arkisto"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Uusimmat äänikirjat"
+    "audiobooks": {
+      "latestAudiobooks": "Uusimmat äänikirjat"
     },
-    "search":{
-      "searchResults":"Hakutulokset",
-      "content":"Sisältö",
-      "bibleVerse":"Raamatun jae",
-      "album":"Albumi",
-      "artist":"Artisti",
-      "interprets":"Käännökset"
+    "search": {
+      "searchResults": "Hakutulokset",
+      "content": "Sisältö",
+      "bibleVerse": "Raamatun jae",
+      "album": "Albumi",
+      "artist": "Artisti",
+      "interprets": "Käännökset"
     }
   },
-  "track":{
-    "duration":"Kesto",
-    "details":"Tiedot",
-    "exegesis":"Eksegeesi",
-    "recordedDate":"Nauhoitus päivämäärä",
-    "artist":"Artisti",
-    "lyricist":"Sanoittaja",
-    "arranger":"Sovittaja",
-    "composer":"Säveltäjä",
-    "album":"Albumi",
-    "bibleVerse":"Raamatun jae"
+  "track": {
+    "duration": "Kesto",
+    "details": "Tiedot",
+    "exegesis": "Eksegeesi",
+    "recordedDate": "Nauhoitus päivämäärä",
+    "artist": "Artisti",
+    "lyricist": "Sanoittaja",
+    "arranger": "Sovittaja",
+    "composer": "Säveltäjä",
+    "album": "Albumi",
+    "bibleVerse": "Raamatun jae",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Kappale(et)",
-    "albums":"Albumi(t)",
-    "duration":"Kesto",
-    "title":"Otsikko",
-    "allLanguages":"Kaikki kielet",
-    "confirmPlaylistDeletion":"Oletko varma, että haluat poistaa tämän soittolistan?",
-    "latestTracks":"Uusimmat kappaleet",
-    "instrumental":"Instrumentaali"
+  "playlist": {
+    "tracks": "Kappale(et)",
+    "albums": "Albumi(t)",
+    "duration": "Kesto",
+    "title": "Otsikko",
+    "allLanguages": "Kaikki kielet",
+    "confirmPlaylistDeletion": "Oletko varma, että haluat poistaa tämän soittolistan?",
+    "latestTracks": "Uusimmat kappaleet",
+    "instrumental": "Instrumentaali"
   },
-  "notify":{
-    "play":"Toista",
-    "next":"Seuraava",
-    "previous":"Edellinen",
-    "shufflePlaylist":"Sekoita soittolista",
-    "loopPlaylist":"Toista jatkuvasti",
-    "mute":"Mykistä",
-    "maxVolume":"Maks. äänenvoimakkuus",
-    "options":"Asetukset",
-    "activateVideo":"Aktivoi video",
-    "goToAlbum":"Siirry albumiin",
-    "showFullscreen":"Näytä koko näytöllä",
-    "closeFullscreen":"Sulje koko näytön tila",
-    "hideVideo":"Piilota video",
-    "showVideo":"Näytä video"
+  "notify": {
+    "play": "Toista",
+    "next": "Seuraava",
+    "previous": "Edellinen",
+    "shufflePlaylist": "Sekoita soittolista",
+    "loopPlaylist": "Toista jatkuvasti",
+    "mute": "Mykistä",
+    "maxVolume": "Maks. äänenvoimakkuus",
+    "options": "Asetukset",
+    "activateVideo": "Aktivoi video",
+    "goToAlbum": "Siirry albumiin",
+    "showFullscreen": "Näytä koko näytöllä",
+    "closeFullscreen": "Sulje koko näytön tila",
+    "hideVideo": "Piilota video",
+    "showVideo": "Näytä video"
   },
-  "copyright":"Copyright"
+  "copyright": "Copyright"
 }

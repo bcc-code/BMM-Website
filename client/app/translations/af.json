@@ -1,130 +1,132 @@
 {
-  "language":"Afrikaans",
-  "general":{
-    "search":"Soek...",
-    "searchResultsFor":"Soek resultate vir:",
-    "loading":"besig om te Laai...",
-    "waysOfTheLord":"Maniere van die Here",
-    "almondBlossom":"Amandel bloeisel",
-    "noTitle":"Geen Titel",
-    "settings":"Instellings",
-    "suport":"Ondersteuning",
-    "readMore":"Lees meer"
+  "language": "Afrikaans",
+  "general": {
+    "search": "Soek...",
+    "searchResultsFor": "Soek resultate vir:",
+    "loading": "besig om te Laai...",
+    "waysOfTheLord": "Maniere van die Here",
+    "almondBlossom": "Amandel bloeisel",
+    "noTitle": "Geen Titel",
+    "settings": "Instellings",
+    "suport": "Ondersteuning",
+    "readMore": "Lees meer"
   },
-  "options":{
-    "addToPlaylist":"Voeg by snitlys",
-    "download":"Laai af",
-    "goToAlbum":"Gaan na album",
-    "podcast":"Potgooi",
-    "removeFilter":"Verwyder filter",
-    "changeLanguage":"Verander taal",
-    "goBack":"Gaan terug",
-    "choosePlaylist":"Kies snitlys",
-    "setupPodcast":"Om die podcast in te stel moet jy die skakel van hier onder kopieer en in jou verkiesde podcast sagteware plak.",
-    "chooseLanguages":"Kies 'n taal",
-    "addLanguage":"Voeg 'n taal by",
-    "includeLatest":"sluit in die nuutste",
-    "websiteLanguage":"webwerf taal",
-    "contentLanguages":"Taal van inhoud",
-    "tracks":"Snede",
-    "filterByLanguage":"filtreer deur taal",
-    "copyUrl":"Kopieer URL",
-    "copyLink":"Kopieer Link",
-    "remove":"Verwyder",
-    "playPlaylist":"Speel snitlys",
-    "share":"Deel"
+  "options": {
+    "addToPlaylist": "Voeg by snitlys",
+    "download": "Laai af",
+    "goToAlbum": "Gaan na album",
+    "podcast": "Potgooi",
+    "removeFilter": "Verwyder filter",
+    "changeLanguage": "Verander taal",
+    "goBack": "Gaan terug",
+    "choosePlaylist": "Kies snitlys",
+    "setupPodcast": "Om die podcast in te stel moet jy die skakel van hier onder kopieer en in jou verkiesde podcast sagteware plak.",
+    "chooseLanguages": "Kies 'n taal",
+    "addLanguage": "Voeg 'n taal by",
+    "includeLatest": "sluit in die nuutste",
+    "websiteLanguage": "webwerf taal",
+    "contentLanguages": "Taal van inhoud",
+    "tracks": "Snede",
+    "filterByLanguage": "filtreer deur taal",
+    "copyUrl": "Kopieer URL",
+    "copyLink": "Kopieer Link",
+    "remove": "Verwyder",
+    "playPlaylist": "Speel snitlys",
+    "share": "Deel"
   },
-  "menu":{
-    "main":{
-      "music":"Musiek",
-      "speeches":"Toesprake",
-      "video":"Video´s",
-      "archive":"Argief",
-      "audiobooks":"Audio boeke"
+  "menu": {
+    "main": {
+      "music": "Musiek",
+      "speeches": "Toesprake",
+      "video": "Video´s",
+      "archive": "Argief",
+      "audiobooks": "Audio boeke"
     },
-    "secondary":{
-      "playlists":"Speellys",
-      "podcasts":"Potgooie",
-      "latestTracks":"Nuwe snede",
-      "current":"Huideige",
-      "newPlaylist":"Nuwe Speellys",
-      "nameOnPlaylist":"Speellys titel"
+    "secondary": {
+      "playlists": "Speellys",
+      "podcasts": "Potgooie",
+      "latestTracks": "Nuwe snede",
+      "current": "Huideige",
+      "newPlaylist": "Nuwe Speellys",
+      "nameOnPlaylist": "Speellys titel"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Nuutste Toesprake",
-      "latestVideos":"Nuutste Video´s",
-      "latestMusic":"Nuutste Musiek",
-      "latestAlbums":"Nuutste Albums"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Nuutste Toesprake",
+      "latestVideos": "Nuutste Video´s",
+      "latestMusic": "Nuutste Musiek",
+      "latestAlbums": "Nuutste Albums"
     },
-    "music":{
-      "latestMusic":"Nuutste Musiek",
-      "artists":"Kunstenaars",
-      "fromKaare":"Van Kåre",
-      "mp3Source":"MP3-Bron",
-      "childrensMp3Source":"Kinder MP3-Bron",
-      "instrumental":"Instrumentaal"
+    "music": {
+      "latestMusic": "Nuutste Musiek",
+      "artists": "Kunstenaars",
+      "fromKaare": "Van Kåre",
+      "mp3Source": "MP3-Bron",
+      "childrensMp3Source": "Kinder MP3-Bron",
+      "instrumental": "Instrumentaal"
     },
-    "speeches":{
-      "latestSpeeches":"Nuutste Toesprake",
-      "recommended":"Aanbeveel"
+    "speeches": {
+      "latestSpeeches": "Nuutste Toesprake",
+      "recommended": "Aanbeveel"
     },
-    "videos":{
-      "latestVideos":"Nuutste videos"
+    "videos": {
+      "latestVideos": "Nuutste videos"
     },
-    "archive":{
-      "archive":"Argief"
+    "archive": {
+      "archive": "Argief"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Nuutste audio boeke"
+    "audiobooks": {
+      "latestAudiobooks": "Nuutste audio boeke"
     },
-    "search":{
-      "searchResults":"Soek resultate",
-      "content":"Inhoud",
-      "bibleVerse":"Bybel verse",
-      "album":"Album",
-      "artist":"Kunstenaar",
-      "interprets":"Interpreteer"
+    "search": {
+      "searchResults": "Soek resultate",
+      "content": "Inhoud",
+      "bibleVerse": "Bybel verse",
+      "album": "Album",
+      "artist": "Kunstenaar",
+      "interprets": "Interpreteer"
     }
   },
-  "track":{
-    "duration":"Tydsduur",
-    "details":"Besonderhede",
-    "exegesis":"Uitleg",
-    "recordedDate":"Opgeneede datum",
-    "artist":"Kunstenaar",
-    "lyricist":"Lirieke",
-    "arranger":"Arranger",
-    "composer":"Komponis",
-    "album":"Album",
-    "bibleVerse":"Bybel verse"
+  "track": {
+    "duration": "Tydsduur",
+    "details": "Besonderhede",
+    "exegesis": "Uitleg",
+    "recordedDate": "Opgeneede datum",
+    "artist": "Kunstenaar",
+    "lyricist": "Lirieke",
+    "arranger": "Arranger",
+    "composer": "Komponis",
+    "album": "Album",
+    "bibleVerse": "Bybel verse",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Snede",
-    "albums":"Album(s)",
-    "duration":"Tydsduur",
-    "title":"Titel",
-    "allLanguages":"Alle Tale",
-    "confirmPlaylistDeletion":"Is jy seker dat jy die snitlys wil verwyder?",
-    "latestTracks":"Nuutste snede",
-    "instrumental":"Instrumentaal"
+  "playlist": {
+    "tracks": "Snede",
+    "albums": "Album(s)",
+    "duration": "Tydsduur",
+    "title": "Titel",
+    "allLanguages": "Alle Tale",
+    "confirmPlaylistDeletion": "Is jy seker dat jy die snitlys wil verwyder?",
+    "latestTracks": "Nuutste snede",
+    "instrumental": "Instrumentaal"
   },
-  "notify":{
-    "play":"Speel",
-    "next":"Volgende",
-    "previous":"Vorige",
-    "shufflePlaylist":"Skommel speellys",
-    "loopPlaylist":"herhaal speellys",
-    "mute":"Uitdoof",
-    "maxVolume":"Maksimaal Volume",
-    "options":"Opsies",
-    "activateVideo":"Aktiewe Video",
-    "goToAlbum":"Gaan na album",
-    "showFullscreen":"Vertoon volskerm",
-    "closeFullscreen":"Sluit volskerm",
-    "hideVideo":"Verberg volskerm",
-    "showVideo":"Vertoon video"
+  "notify": {
+    "play": "Speel",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "shufflePlaylist": "Skommel speellys",
+    "loopPlaylist": "herhaal speellys",
+    "mute": "Uitdoof",
+    "maxVolume": "Maksimaal Volume",
+    "options": "Opsies",
+    "activateVideo": "Aktiewe Video",
+    "goToAlbum": "Gaan na album",
+    "showFullscreen": "Vertoon volskerm",
+    "closeFullscreen": "Sluit volskerm",
+    "hideVideo": "Verberg volskerm",
+    "showVideo": "Vertoon video"
   },
-  "copyright":"Kopiereg"
+  "copyright": "Kopiereg"
 }

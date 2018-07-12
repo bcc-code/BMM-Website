@@ -1,130 +1,132 @@
 {
-  "language":"Türk",
-  "general":{
-    "search":"Ara...",
-    "searchResultsFor":"Bu Sonuçları Ara:",
-    "loading":"Yükleniyor...",
-    "waysOfTheLord":"Rab'bin Yolları",
-    "almondBlossom":"Badem Çiçeği",
-    "noTitle":"Başlık Yok",
-    "settings":"Ayarlar",
-    "suport":"Destek",
-    "readMore":"Devamını Oku"
+  "language": "Türk",
+  "general": {
+    "search": "Ara...",
+    "searchResultsFor": "Bu Sonuçları Ara:",
+    "loading": "Yükleniyor...",
+    "waysOfTheLord": "Rab'bin Yolları",
+    "almondBlossom": "Badem Çiçeği",
+    "noTitle": "Başlık Yok",
+    "settings": "Ayarlar",
+    "suport": "Destek",
+    "readMore": "Devamını Oku"
   },
-  "options":{
-    "addToPlaylist":"Çalma listesine ekle",
-    "download":"İndir",
-    "goToAlbum":"Albüm' e Git",
-    "podcast":"Podcast",
-    "removeFilter":"Filtreyi Kaldır",
-    "changeLanguage":"Dili değiştir",
-    "goBack":"Geri",
-    "choosePlaylist":"Çalma listesi seç",
-    "setupPodcast":"Podcast'ı kullanmak için, aşağıdaki link'i kopyala ve tercih ettiğin Podcast yazılım programına yapıştır.",
-    "chooseLanguages":"Dil Seç",
-    "addLanguage":"Dil Ekle",
-    "includeLatest":"Sonuncuyu Ekle",
-    "websiteLanguage":"Web sitesi dili",
-    "contentLanguages":"İçerik Dili",
-    "tracks":"parçalar",
-    "filterByLanguage":"Dile göre Filtre",
-    "copyUrl":"URL Kopya",
-    "copyLink":"Link'i kopyala",
-    "remove":"Kaldır",
-    "playPlaylist":"Çalma Listesini Çal",
-    "share":"Paylaş"
+  "options": {
+    "addToPlaylist": "Çalma listesine ekle",
+    "download": "İndir",
+    "goToAlbum": "Albüm' e Git",
+    "podcast": "Podcast",
+    "removeFilter": "Filtreyi Kaldır",
+    "changeLanguage": "Dili değiştir",
+    "goBack": "Geri",
+    "choosePlaylist": "Çalma listesi seç",
+    "setupPodcast": "Podcast'ı kullanmak için, aşağıdaki link'i kopyala ve tercih ettiğin Podcast yazılım programına yapıştır.",
+    "chooseLanguages": "Dil Seç",
+    "addLanguage": "Dil Ekle",
+    "includeLatest": "Sonuncuyu Ekle",
+    "websiteLanguage": "Web sitesi dili",
+    "contentLanguages": "İçerik Dili",
+    "tracks": "parçalar",
+    "filterByLanguage": "Dile göre Filtre",
+    "copyUrl": "URL Kopya",
+    "copyLink": "Link'i kopyala",
+    "remove": "Kaldır",
+    "playPlaylist": "Çalma Listesini Çal",
+    "share": "Paylaş"
   },
-  "menu":{
-    "main":{
-      "music":"Müzik",
-      "speeches":"Mesajlar",
-      "video":"Videolar",
-      "archive":"Arşiv",
-      "audiobooks":"Sesli Kitaplar"
+  "menu": {
+    "main": {
+      "music": "Müzik",
+      "speeches": "Mesajlar",
+      "video": "Videolar",
+      "archive": "Arşiv",
+      "audiobooks": "Sesli Kitaplar"
     },
-    "secondary":{
-      "playlists":"Çalma Listesi",
-      "podcasts":"Podcast",
-      "latestTracks":"Yeni Parçalar",
-      "current":"Şimdi",
-      "newPlaylist":"Yeni çalma listesi",
-      "nameOnPlaylist":"Çalma Listesi Başlığı"
+    "secondary": {
+      "playlists": "Çalma Listesi",
+      "podcasts": "Podcast",
+      "latestTracks": "Yeni Parçalar",
+      "current": "Şimdi",
+      "newPlaylist": "Yeni çalma listesi",
+      "nameOnPlaylist": "Çalma Listesi Başlığı"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Yeni Mesajlar",
-      "latestVideos":"Yeni Videolar",
-      "latestMusic":"Yeni Müzik",
-      "latestAlbums":"Yeni Albümler"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Yeni Mesajlar",
+      "latestVideos": "Yeni Videolar",
+      "latestMusic": "Yeni Müzik",
+      "latestAlbums": "Yeni Albümler"
     },
-    "music":{
-      "latestMusic":"Yeni Müzik",
-      "artists":"Sanatçılar",
-      "fromKaare":"Kåre adlı",
-      "mp3Source":"MP3-Kaynağı",
-      "childrensMp3Source":"Çocuklar için MP3-Kaynağı",
-      "instrumental":"Enstrümental"
+    "music": {
+      "latestMusic": "Yeni Müzik",
+      "artists": "Sanatçılar",
+      "fromKaare": "Kåre adlı",
+      "mp3Source": "MP3-Kaynağı",
+      "childrensMp3Source": "Çocuklar için MP3-Kaynağı",
+      "instrumental": "Enstrümental"
     },
-    "speeches":{
-      "latestSpeeches":"Yeni Mesajlar",
-      "recommended":"Önerilen"
+    "speeches": {
+      "latestSpeeches": "Yeni Mesajlar",
+      "recommended": "Önerilen"
     },
-    "videos":{
-      "latestVideos":"Yeni Videolar"
+    "videos": {
+      "latestVideos": "Yeni Videolar"
     },
-    "archive":{
-      "archive":"Arşiv"
+    "archive": {
+      "archive": "Arşiv"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Yeni Sesli Kitaplar"
+    "audiobooks": {
+      "latestAudiobooks": "Yeni Sesli Kitaplar"
     },
-    "search":{
-      "searchResults":"Arama Sonuçları",
-      "content":"İçerik",
-      "bibleVerse":"Kutsal Kitap Ayeti",
-      "album":"Albüm",
-      "artist":"Sanatçı",
-      "interprets":"Sanatçılar"
+    "search": {
+      "searchResults": "Arama Sonuçları",
+      "content": "İçerik",
+      "bibleVerse": "Kutsal Kitap Ayeti",
+      "album": "Albüm",
+      "artist": "Sanatçı",
+      "interprets": "Sanatçılar"
     }
   },
-  "track":{
-    "duration":"Süre",
-    "details":"Detaylar",
-    "exegesis":"Yorum",
-    "recordedDate":"Kaydedilen Tarih",
-    "artist":"Sanatçı",
-    "lyricist":"Söz Yazarı",
-    "arranger":"Aranjör",
-    "composer":"Besteci",
-    "album":"Albüm",
-    "bibleVerse":"Kutsal Kitap Ayet"
+  "track": {
+    "duration": "Süre",
+    "details": "Detaylar",
+    "exegesis": "Yorum",
+    "recordedDate": "Kaydedilen Tarih",
+    "artist": "Sanatçı",
+    "lyricist": "Söz Yazarı",
+    "arranger": "Aranjör",
+    "composer": "Besteci",
+    "album": "Albüm",
+    "bibleVerse": "Kutsal Kitap Ayet",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Parça(lar)",
-    "albums":"Albüm(ler)",
-    "duration":"Süre",
-    "title":"Başlık",
-    "allLanguages":"Tüm Diller",
-    "confirmPlaylistDeletion":"Çalma Listesini silmeye emin misin?",
-    "latestTracks":"En yeni Parçalar",
-    "instrumental":"Enstrümental"
+  "playlist": {
+    "tracks": "Parça(lar)",
+    "albums": "Albüm(ler)",
+    "duration": "Süre",
+    "title": "Başlık",
+    "allLanguages": "Tüm Diller",
+    "confirmPlaylistDeletion": "Çalma Listesini silmeye emin misin?",
+    "latestTracks": "En yeni Parçalar",
+    "instrumental": "Enstrümental"
   },
-  "notify":{
-    "play":"Oynat",
-    "next":"Sonraki",
-    "previous":"Önceki",
-    "shufflePlaylist":"Karışık Çalma Listesi",
-    "loopPlaylist":"Tekrarlı Çalma Listesi",
-    "mute":"Sessiz",
-    "maxVolume":"Maximum Ses",
-    "options":"Seçenekler",
-    "activateVideo":"Aktif Video",
-    "goToAlbum":"Albüm' e Git",
-    "showFullscreen":"Tam Ekran Göster",
-    "closeFullscreen":"Tam Ekran Kapat",
-    "hideVideo":"Video Gizle",
-    "showVideo":"Video Göster"
+  "notify": {
+    "play": "Oynat",
+    "next": "Sonraki",
+    "previous": "Önceki",
+    "shufflePlaylist": "Karışık Çalma Listesi",
+    "loopPlaylist": "Tekrarlı Çalma Listesi",
+    "mute": "Sessiz",
+    "maxVolume": "Maximum Ses",
+    "options": "Seçenekler",
+    "activateVideo": "Aktif Video",
+    "goToAlbum": "Albüm' e Git",
+    "showFullscreen": "Tam Ekran Göster",
+    "closeFullscreen": "Tam Ekran Kapat",
+    "hideVideo": "Video Gizle",
+    "showVideo": "Video Göster"
   },
-  "copyright":"Telif Hakkı"
+  "copyright": "Telif Hakkı"
 }

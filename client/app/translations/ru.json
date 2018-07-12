@@ -1,130 +1,132 @@
 {
-  "language":"Русский",
-  "general":{
-    "search":"Поиск...",
-    "searchResultsFor":"Результаты поиска:",
-    "loading":"Загрузка...",
-    "waysOfTheLord":"Пути Господни",
-    "almondBlossom":"Цвет миндаля",
-    "noTitle":"Без названия",
-    "settings":"Параметры",
-    "suport":"Поддержка",
-    "readMore":"Читать далее"
+  "language": "Русский",
+  "general": {
+    "search": "Поиск...",
+    "searchResultsFor": "Результаты поиска:",
+    "loading": "Загрузка...",
+    "waysOfTheLord": "Пути Господни",
+    "almondBlossom": "Цвет миндаля",
+    "noTitle": "Без названия",
+    "settings": "Параметры",
+    "suport": "Поддержка",
+    "readMore": "Читать далее"
   },
-  "options":{
-    "addToPlaylist":"Добавить в плейлист",
-    "download":"Скачать",
-    "goToAlbum":"Перейти в альбом",
-    "podcast":"Подкаст",
-    "removeFilter":"Удалить фильтр",
-    "changeLanguage":"Изменить язык",
-    "goBack":"Вернуться",
-    "choosePlaylist":"Выберите плейлист",
-    "setupPodcast":"Чтобы настроить подкаст, скопируйте ссылку ниже и вставьте её в предпочитаемую программу для подкастов.",
-    "chooseLanguages":"Выберите язык",
-    "addLanguage":"Добавить язык",
-    "includeLatest":"Включая последние",
-    "websiteLanguage":"Язык интерфейса",
-    "contentLanguages":"Язык воспроизведения",
-    "tracks":"дорожки",
-    "filterByLanguage":"Фильтр по языку",
-    "copyUrl":"Копировать URL",
-    "copyLink":"Копировать ссылку",
-    "remove":"Удалить",
-    "playPlaylist":"Играть плейлист",
-    "share":"Пделиться"
+  "options": {
+    "addToPlaylist": "Добавить в плейлист",
+    "download": "Скачать",
+    "goToAlbum": "Перейти в альбом",
+    "podcast": "Подкаст",
+    "removeFilter": "Удалить фильтр",
+    "changeLanguage": "Изменить язык",
+    "goBack": "Вернуться",
+    "choosePlaylist": "Выберите плейлист",
+    "setupPodcast": "Чтобы настроить подкаст, скопируйте ссылку ниже и вставьте её в предпочитаемую программу для подкастов.",
+    "chooseLanguages": "Выберите язык",
+    "addLanguage": "Добавить язык",
+    "includeLatest": "Включая последние",
+    "websiteLanguage": "Язык интерфейса",
+    "contentLanguages": "Язык воспроизведения",
+    "tracks": "дорожки",
+    "filterByLanguage": "Фильтр по языку",
+    "copyUrl": "Копировать URL",
+    "copyLink": "Копировать ссылку",
+    "remove": "Удалить",
+    "playPlaylist": "Играть плейлист",
+    "share": "Пделиться"
   },
-  "menu":{
-    "main":{
-      "music":"Музыка",
-      "speeches":"Сообщения",
-      "video":"Видео",
-      "archive":"Архив",
-      "audiobooks":"Аудиокниги"
+  "menu": {
+    "main": {
+      "music": "Музыка",
+      "speeches": "Сообщения",
+      "video": "Видео",
+      "archive": "Архив",
+      "audiobooks": "Аудиокниги"
     },
-    "secondary":{
-      "playlists":"Списки воспроизведения",
-      "podcasts":"Подкасты",
-      "latestTracks":"Новые треки",
-      "current":"Текущий",
-      "newPlaylist":"Новый плейлист",
-      "nameOnPlaylist":"плейлиста"
+    "secondary": {
+      "playlists": "Списки воспроизведения",
+      "podcasts": "Подкасты",
+      "latestTracks": "Новые треки",
+      "current": "Текущий",
+      "newPlaylist": "Новый плейлист",
+      "nameOnPlaylist": "плейлиста"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Последние сообщения",
-      "latestVideos":"Последние видео",
-      "latestMusic":"Последняя музыка",
-      "latestAlbums":"Последние альбомы"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Последние сообщения",
+      "latestVideos": "Последние видео",
+      "latestMusic": "Последняя музыка",
+      "latestAlbums": "Последние альбомы"
     },
-    "music":{
-      "latestMusic":"Последняя музыка",
-      "artists":"артист",
-      "fromKaare":"От Коре",
-      "mp3Source":"MP3-источник",
-      "childrensMp3Source":"Детская MP3-Источник",
-      "instrumental":"Инструментальная музыка"
+    "music": {
+      "latestMusic": "Последняя музыка",
+      "artists": "артист",
+      "fromKaare": "От Коре",
+      "mp3Source": "MP3-источник",
+      "childrensMp3Source": "Детская MP3-Источник",
+      "instrumental": "Инструментальная музыка"
     },
-    "speeches":{
-      "latestSpeeches":"Последние сообщения",
-      "recommended":"Рекомендуется"
+    "speeches": {
+      "latestSpeeches": "Последние сообщения",
+      "recommended": "Рекомендуется"
     },
-    "videos":{
-      "latestVideos":"Последние видео"
+    "videos": {
+      "latestVideos": "Последние видео"
     },
-    "archive":{
-      "archive":"Архив"
+    "archive": {
+      "archive": "Архив"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Последние аудиокниги"
+    "audiobooks": {
+      "latestAudiobooks": "Последние аудиокниги"
     },
-    "search":{
-      "searchResults":"Результаты поиска",
-      "content":"Содержимое",
-      "bibleVerse":"Библейский стих",
-      "album":"Альбом",
-      "artist":"Исполнитель",
-      "interprets":"артист"
+    "search": {
+      "searchResults": "Результаты поиска",
+      "content": "Содержимое",
+      "bibleVerse": "Библейский стих",
+      "album": "Альбом",
+      "artist": "Исполнитель",
+      "interprets": "артист"
     }
   },
-  "track":{
-    "duration":"Продолжительность",
-    "details":"Детали",
-    "exegesis":"Толкование",
-    "recordedDate":"Дата записи",
-    "artist":"Исполнитель",
-    "lyricist":"Текст",
-    "arranger":"Аранжировщик",
-    "composer":"Композитор",
-    "album":"Альбом",
-    "bibleVerse":"Библейский стих"
+  "track": {
+    "duration": "Продолжительность",
+    "details": "Детали",
+    "exegesis": "Толкование",
+    "recordedDate": "Дата записи",
+    "artist": "Исполнитель",
+    "lyricist": "Текст",
+    "arranger": "Аранжировщик",
+    "composer": "Композитор",
+    "album": "Альбом",
+    "bibleVerse": "Библейский стих",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Трек(и)",
-    "albums":"Альбом(ы)",
-    "duration":"Продолжительность",
-    "title":"Название",
-    "allLanguages":"Все языки",
-    "confirmPlaylistDeletion":"Вы уверены, что хотите удалить этот плейлист?",
-    "latestTracks":"Последние треки",
-    "instrumental":"Инструментальная музыка"
+  "playlist": {
+    "tracks": "Трек(и)",
+    "albums": "Альбом(ы)",
+    "duration": "Продолжительность",
+    "title": "Название",
+    "allLanguages": "Все языки",
+    "confirmPlaylistDeletion": "Вы уверены, что хотите удалить этот плейлист?",
+    "latestTracks": "Последние треки",
+    "instrumental": "Инструментальная музыка"
   },
-  "notify":{
-    "play":"Играть",
-    "next":"Следующий",
-    "previous":"Предыдущий",
-    "shufflePlaylist":"Перемешать плейлист",
-    "loopPlaylist":"Повторить плейлист",
-    "mute":"Откл. звук",
-    "maxVolume":"Максимальная громкость",
-    "options":"Опции",
-    "activateVideo":"Запустить видео",
-    "goToAlbum":"Перейти в альбом",
-    "showFullscreen":"На полный экран",
-    "closeFullscreen":"Закрыть полный экран",
-    "hideVideo":"Скрыть видео",
-    "showVideo":"Показать видео"
+  "notify": {
+    "play": "Играть",
+    "next": "Следующий",
+    "previous": "Предыдущий",
+    "shufflePlaylist": "Перемешать плейлист",
+    "loopPlaylist": "Повторить плейлист",
+    "mute": "Откл. звук",
+    "maxVolume": "Максимальная громкость",
+    "options": "Опции",
+    "activateVideo": "Запустить видео",
+    "goToAlbum": "Перейти в альбом",
+    "showFullscreen": "На полный экран",
+    "closeFullscreen": "Закрыть полный экран",
+    "hideVideo": "Скрыть видео",
+    "showVideo": "Показать видео"
   },
-  "copyright":"Все права защищены"
+  "copyright": "Все права защищены"
 }

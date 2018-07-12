@@ -98,7 +98,9 @@
     "arranger": "Aranžer",
     "composer": "Skladatelj",
     "album": "Album",
-    "bibleVerse": "Biblijska vrstica"
+    "bibleVerse": "Biblijska vrstica",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
   "playlist": {
     "tracks": "Skladba(e)",

@@ -1,130 +1,132 @@
 {
-  "language":"Eesti",
-  "general":{
-    "search":"Otsi...",
-    "searchResultsFor":"Otsingu tulemused:",
-    "loading":"Laeb...",
-    "waysOfTheLord":"Issanda Teed",
-    "almondBlossom":"Mandliõis",
-    "noTitle":"Pealkirjata",
-    "settings":"Seaded",
-    "suport":"Abi",
-    "readMore":"Loe edasi"
+  "language": "Eesti",
+  "general": {
+    "search": "Otsi...",
+    "searchResultsFor": "Otsingu tulemused:",
+    "loading": "Laeb...",
+    "waysOfTheLord": "Issanda Teed",
+    "almondBlossom": "Mandliõis",
+    "noTitle": "Pealkirjata",
+    "settings": "Seaded",
+    "suport": "Abi",
+    "readMore": "Loe edasi"
   },
-  "options":{
-    "addToPlaylist":"Lisa esitlusloendisse",
-    "download":"Lae alla",
-    "goToAlbum":"Mine albumisse",
-    "podcast":"Taskuhääling",
-    "removeFilter":"Eemalda filter",
-    "changeLanguage":"Muuda keel",
-    "goBack":"Mine tagasi",
-    "choosePlaylist":"Valige esitusloend",
-    "setupPodcast":"Taskuhäälingu seadistamiseks kopeeri allolev link ja kleebi see oma eelistatud taskuhäälingu mängijasse.",
-    "chooseLanguages":"Vali keeled",
-    "addLanguage":"Lisa keel",
-    "includeLatest":"Võta uusimad",
-    "websiteLanguage":"Veebilehe keel",
-    "contentLanguages":"Sisu keel",
-    "tracks":"lood",
-    "filterByLanguage":"Filtreeri keele alusel",
-    "copyUrl":"Kopeeri URL",
-    "copyLink":"Kopeeri link",
-    "remove":"Eemalda",
-    "playPlaylist":"Esita esitlusloend",
-    "share":"Jaga"
+  "options": {
+    "addToPlaylist": "Lisa esitlusloendisse",
+    "download": "Lae alla",
+    "goToAlbum": "Mine albumisse",
+    "podcast": "Taskuhääling",
+    "removeFilter": "Eemalda filter",
+    "changeLanguage": "Muuda keel",
+    "goBack": "Mine tagasi",
+    "choosePlaylist": "Valige esitusloend",
+    "setupPodcast": "Taskuhäälingu seadistamiseks kopeeri allolev link ja kleebi see oma eelistatud taskuhäälingu mängijasse.",
+    "chooseLanguages": "Vali keeled",
+    "addLanguage": "Lisa keel",
+    "includeLatest": "Võta uusimad",
+    "websiteLanguage": "Veebilehe keel",
+    "contentLanguages": "Sisu keel",
+    "tracks": "lood",
+    "filterByLanguage": "Filtreeri keele alusel",
+    "copyUrl": "Kopeeri URL",
+    "copyLink": "Kopeeri link",
+    "remove": "Eemalda",
+    "playPlaylist": "Esita esitlusloend",
+    "share": "Jaga"
   },
-  "menu":{
-    "main":{
-      "music":"Muusika",
-      "speeches":"Sõnumid",
-      "video":"Videod",
-      "archive":"Arhiiv",
-      "audiobooks":"Audioraamatud"
+  "menu": {
+    "main": {
+      "music": "Muusika",
+      "speeches": "Sõnumid",
+      "video": "Videod",
+      "archive": "Arhiiv",
+      "audiobooks": "Audioraamatud"
     },
-    "secondary":{
-      "playlists":"Esitusloendid",
-      "podcasts":"Saated",
-      "latestTracks":"Uued lood",
-      "current":"Praegune",
-      "newPlaylist":"Uus esitusloend",
-      "nameOnPlaylist":"Esitusloendi pealkiri"
+    "secondary": {
+      "playlists": "Esitusloendid",
+      "podcasts": "Saated",
+      "latestTracks": "Uued lood",
+      "current": "Praegune",
+      "newPlaylist": "Uus esitusloend",
+      "nameOnPlaylist": "Esitusloendi pealkiri"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Hiljutised sõnumid",
-      "latestVideos":"Hiljutised videod",
-      "latestMusic":"Hiljutised lood",
-      "latestAlbums":"Hiljutised albumid"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Hiljutised sõnumid",
+      "latestVideos": "Hiljutised videod",
+      "latestMusic": "Hiljutised lood",
+      "latestAlbums": "Hiljutised albumid"
     },
-    "music":{
-      "latestMusic":"Hiljutised lood",
-      "artists":"Esitajad",
-      "fromKaare":"Kårelt",
-      "mp3Source":"MP3-allikas",
-      "childrensMp3Source":"Laste MP3-allikas",
-      "instrumental":"Instrumentaalmuusika"
+    "music": {
+      "latestMusic": "Hiljutised lood",
+      "artists": "Esitajad",
+      "fromKaare": "Kårelt",
+      "mp3Source": "MP3-allikas",
+      "childrensMp3Source": "Laste MP3-allikas",
+      "instrumental": "Instrumentaalmuusika"
     },
-    "speeches":{
-      "latestSpeeches":"Hiljutised sõnumid",
-      "recommended":"Soovitatud"
+    "speeches": {
+      "latestSpeeches": "Hiljutised sõnumid",
+      "recommended": "Soovitatud"
     },
-    "videos":{
-      "latestVideos":"Hiljutised videod"
+    "videos": {
+      "latestVideos": "Hiljutised videod"
     },
-    "archive":{
-      "archive":"Arhiiv"
+    "archive": {
+      "archive": "Arhiiv"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Hiljutised audioramatud"
+    "audiobooks": {
+      "latestAudiobooks": "Hiljutised audioramatud"
     },
-    "search":{
-      "searchResults":"Otsingu tulemused",
-      "content":"Sisu",
-      "bibleVerse":"Piibli salm",
-      "album":"Album",
-      "artist":"Esitaja",
-      "interprets":"Esitajad"
+    "search": {
+      "searchResults": "Otsingu tulemused",
+      "content": "Sisu",
+      "bibleVerse": "Piibli salm",
+      "album": "Album",
+      "artist": "Esitaja",
+      "interprets": "Esitajad"
     }
   },
-  "track":{
-    "duration":"Kestus",
-    "details":"Üksikasjad",
-    "exegesis":"Tõlgendus",
-    "recordedDate":"Salvestamise kuupäev",
-    "artist":"Esitaja",
-    "lyricist":"Sõnade autor",
-    "arranger":"Korraldajalt",
-    "composer":"Helilooja",
-    "album":"Album",
-    "bibleVerse":"Piibli salm"
+  "track": {
+    "duration": "Kestus",
+    "details": "Üksikasjad",
+    "exegesis": "Tõlgendus",
+    "recordedDate": "Salvestamise kuupäev",
+    "artist": "Esitaja",
+    "lyricist": "Sõnade autor",
+    "arranger": "Korraldajalt",
+    "composer": "Helilooja",
+    "album": "Album",
+    "bibleVerse": "Piibli salm",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Muusikapala(d)",
-    "albums":"Albumi(d)",
-    "duration":"Kestus",
-    "title":"Pealkiri",
-    "allLanguages":"Kõik keeled",
-    "confirmPlaylistDeletion":"Kas soovite kindlasti selle esitlusloendi kustutada?",
-    "latestTracks":"Hiljutised laulud",
-    "instrumental":"Instrumentaalmuusika"
+  "playlist": {
+    "tracks": "Muusikapala(d)",
+    "albums": "Albumi(d)",
+    "duration": "Kestus",
+    "title": "Pealkiri",
+    "allLanguages": "Kõik keeled",
+    "confirmPlaylistDeletion": "Kas soovite kindlasti selle esitlusloendi kustutada?",
+    "latestTracks": "Hiljutised laulud",
+    "instrumental": "Instrumentaalmuusika"
   },
-  "notify":{
-    "play":"Esita",
-    "next":"Järgmine",
-    "previous":"Eelmine",
-    "shufflePlaylist":"Juhuesitus",
-    "loopPlaylist":"Korda esitlusloendit",
-    "mute":"Vaigista",
-    "maxVolume":"Maksimaalne valjus",
-    "options":"Seaded",
-    "activateVideo":"Aktiveeri video",
-    "goToAlbum":"Mine albumisse",
-    "showFullscreen":"Näita täisekraanil",
-    "closeFullscreen":"Sule täisekraan",
-    "hideVideo":"Peida video",
-    "showVideo":"Näita videot"
+  "notify": {
+    "play": "Esita",
+    "next": "Järgmine",
+    "previous": "Eelmine",
+    "shufflePlaylist": "Juhuesitus",
+    "loopPlaylist": "Korda esitlusloendit",
+    "mute": "Vaigista",
+    "maxVolume": "Maksimaalne valjus",
+    "options": "Seaded",
+    "activateVideo": "Aktiveeri video",
+    "goToAlbum": "Mine albumisse",
+    "showFullscreen": "Näita täisekraanil",
+    "closeFullscreen": "Sule täisekraan",
+    "hideVideo": "Peida video",
+    "showVideo": "Näita videot"
   },
-  "copyright":"Autoriõigused"
+  "copyright": "Autoriõigused"
 }

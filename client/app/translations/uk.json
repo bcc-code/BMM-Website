@@ -98,7 +98,9 @@
     "arranger": "Аранжувальник",
     "composer": "Композитор",
     "album": "Альбом",
-    "bibleVerse": "Біблійний вірш"
+    "bibleVerse": "Біблійний вірш",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
   "playlist": {
     "tracks": "Треки",

@@ -98,7 +98,9 @@
     "arranger": "Rendező",
     "composer": "Zeneszerző",
     "album": "Album",
-    "bibleVerse": "Bibliavers"
+    "bibleVerse": "Bibliavers",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
   "playlist": {
     "tracks": "Szám(ok)",

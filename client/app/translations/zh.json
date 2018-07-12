@@ -1,130 +1,132 @@
 {
-  "language":"中文",
-  "general":{
-    "search":"搜索",
-    "searchResultsFor":"Search results for:",
-    "loading":"Loading...",
-    "waysOfTheLord":"Ways of the Lord",
-    "almondBlossom":"Almond Blossom",
-    "noTitle":"No title",
-    "settings":"Settings",
-    "suport":"Support",
-    "readMore":"Read more"
+  "language": "中文",
+  "general": {
+    "search": "搜索",
+    "searchResultsFor": "Search results for:",
+    "loading": "Loading...",
+    "waysOfTheLord": "Ways of the Lord",
+    "almondBlossom": "Almond Blossom",
+    "noTitle": "No title",
+    "settings": "Settings",
+    "suport": "Support",
+    "readMore": "Read more"
   },
-  "options":{
-    "addToPlaylist":"Add to playlist",
-    "download":"Download",
-    "goToAlbum":"Go to album",
-    "podcast":"Podcast",
-    "removeFilter":"Remove filter",
-    "changeLanguage":"Change language",
-    "goBack":"Go back",
-    "choosePlaylist":"Choose playlist",
-    "setupPodcast":"To set up the podcast, copy the link below and paste it into your preferred podcast software.",
-    "chooseLanguages":"Choose languages",
-    "addLanguage":"Add a language",
-    "includeLatest":"Include the latest",
-    "websiteLanguage":"Website language",
-    "contentLanguages":"Content language",
-    "tracks":"tracks",
-    "filterByLanguage":"Filter by language",
-    "copyUrl":"Copy URL",
-    "copyLink":"Copy link",
-    "remove":"Remove",
-    "playPlaylist":"Play playlist",
-    "share":"Share"
+  "options": {
+    "addToPlaylist": "Add to playlist",
+    "download": "Download",
+    "goToAlbum": "Go to album",
+    "podcast": "Podcast",
+    "removeFilter": "Remove filter",
+    "changeLanguage": "Change language",
+    "goBack": "Go back",
+    "choosePlaylist": "Choose playlist",
+    "setupPodcast": "To set up the podcast, copy the link below and paste it into your preferred podcast software.",
+    "chooseLanguages": "Choose languages",
+    "addLanguage": "Add a language",
+    "includeLatest": "Include the latest",
+    "websiteLanguage": "Website language",
+    "contentLanguages": "Content language",
+    "tracks": "tracks",
+    "filterByLanguage": "Filter by language",
+    "copyUrl": "Copy URL",
+    "copyLink": "Copy link",
+    "remove": "Remove",
+    "playPlaylist": "Play playlist",
+    "share": "Share"
   },
-  "menu":{
-    "main":{
-      "music":"音乐",
-      "speeches":"信息",
-      "video":"视频",
-      "archive":"存档",
-      "audiobooks":"有声读物"
+  "menu": {
+    "main": {
+      "music": "音乐",
+      "speeches": "信息",
+      "video": "视频",
+      "archive": "存档",
+      "audiobooks": "有声读物"
     },
-    "secondary":{
-      "playlists":"播放列表",
-      "podcasts":"Podcasts",
-      "latestTracks":"新的曲目",
-      "current":"当前",
-      "newPlaylist":"新的播放列表",
-      "nameOnPlaylist":"播放列表标题"
+    "secondary": {
+      "playlists": "播放列表",
+      "podcasts": "Podcasts",
+      "latestTracks": "新的曲目",
+      "current": "当前",
+      "newPlaylist": "新的播放列表",
+      "nameOnPlaylist": "播放列表标题"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"最新消息",
-      "latestVideos":"最新视频",
-      "latestMusic":"最新的音乐",
-      "latestAlbums":"最新专辑"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "最新消息",
+      "latestVideos": "最新视频",
+      "latestMusic": "最新的音乐",
+      "latestAlbums": "最新专辑"
     },
-    "music":{
-      "latestMusic":"最新的音乐",
-      "artists":"表演者",
-      "fromKaare":"From Kåre",
-      "mp3Source":"MP3 源",
-      "childrensMp3Source":"儿童 MP3-源",
-      "instrumental":"纯器乐"
+    "music": {
+      "latestMusic": "最新的音乐",
+      "artists": "表演者",
+      "fromKaare": "From Kåre",
+      "mp3Source": "MP3 源",
+      "childrensMp3Source": "儿童 MP3-源",
+      "instrumental": "纯器乐"
     },
-    "speeches":{
-      "latestSpeeches":"最新消息",
-      "recommended":"建议"
+    "speeches": {
+      "latestSpeeches": "最新消息",
+      "recommended": "建议"
     },
-    "videos":{
-      "latestVideos":"最新视频"
+    "videos": {
+      "latestVideos": "最新视频"
     },
-    "archive":{
-      "archive":"存档"
+    "archive": {
+      "archive": "存档"
     },
-    "audiobooks":{
-      "latestAudiobooks":"最新有声读物"
+    "audiobooks": {
+      "latestAudiobooks": "最新有声读物"
     },
-    "search":{
-      "searchResults":"搜索结果",
-      "content":"Content",
-      "bibleVerse":"Bible verse",
-      "album":"Album",
-      "artist":"Artist",
-      "interprets":"表演者"
+    "search": {
+      "searchResults": "搜索结果",
+      "content": "Content",
+      "bibleVerse": "Bible verse",
+      "album": "Album",
+      "artist": "Artist",
+      "interprets": "表演者"
     }
   },
-  "track":{
-    "duration":"持续时间",
-    "details":"Details",
-    "exegesis":"Interpretation",
-    "recordedDate":"Recorded date",
-    "artist":"Artist",
-    "lyricist":"作词家",
-    "arranger":"Arranger",
-    "composer":"作曲家",
-    "album":"Album",
-    "bibleVerse":"Bible verse"
+  "track": {
+    "duration": "持续时间",
+    "details": "Details",
+    "exegesis": "Interpretation",
+    "recordedDate": "Recorded date",
+    "artist": "Artist",
+    "lyricist": "作词家",
+    "arranger": "Arranger",
+    "composer": "作曲家",
+    "album": "Album",
+    "bibleVerse": "Bible verse",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Track(s)",
-    "albums":"Album(s)",
-    "duration":"持续时间",
-    "title":"标题",
-    "allLanguages":"All languages",
-    "confirmPlaylistDeletion":"Are you sure you want to delete this playlist?",
-    "latestTracks":"Latest tracks",
-    "instrumental":"纯器乐"
+  "playlist": {
+    "tracks": "Track(s)",
+    "albums": "Album(s)",
+    "duration": "持续时间",
+    "title": "标题",
+    "allLanguages": "All languages",
+    "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
+    "latestTracks": "Latest tracks",
+    "instrumental": "纯器乐"
   },
-  "notify":{
-    "play":"播放",
-    "next":"Next",
-    "previous":"Previous",
-    "shufflePlaylist":"Shuffle playlist",
-    "loopPlaylist":"Repeat playlist",
-    "mute":"Mute",
-    "maxVolume":"Maximum volume",
-    "options":"Options",
-    "activateVideo":"Activate video",
-    "goToAlbum":"Go to album",
-    "showFullscreen":"Show fullscreen",
-    "closeFullscreen":"Close fullscreen",
-    "hideVideo":"Hide video",
-    "showVideo":"Show video"
+  "notify": {
+    "play": "播放",
+    "next": "Next",
+    "previous": "Previous",
+    "shufflePlaylist": "Shuffle playlist",
+    "loopPlaylist": "Repeat playlist",
+    "mute": "Mute",
+    "maxVolume": "Maximum volume",
+    "options": "Options",
+    "activateVideo": "Activate video",
+    "goToAlbum": "Go to album",
+    "showFullscreen": "Show fullscreen",
+    "closeFullscreen": "Close fullscreen",
+    "hideVideo": "Hide video",
+    "showVideo": "Show video"
   },
-  "copyright":"Copyright"
+  "copyright": "Copyright"
 }

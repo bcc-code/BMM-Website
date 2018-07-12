@@ -1,130 +1,132 @@
 {
-  "language":"Norsk",
-  "general":{
-    "search":"Søk...",
-    "searchResultsFor":"Søkeresultater for:",
-    "loading":"Laster...",
-    "waysOfTheLord":"Herrens veier",
-    "almondBlossom":"Mandelblomsten",
-    "noTitle":"Ingen tittel",
-    "settings":"Innstillinger",
-    "suport":"Brukerstøtte",
-    "readMore":"Les mer"
+  "language": "Norsk",
+  "general": {
+    "search": "Søk...",
+    "searchResultsFor": "Søkeresultater for:",
+    "loading": "Laster...",
+    "waysOfTheLord": "Herrens veier",
+    "almondBlossom": "Mandelblomsten",
+    "noTitle": "Ingen tittel",
+    "settings": "Innstillinger",
+    "suport": "Brukerstøtte",
+    "readMore": "Les mer"
   },
-  "options":{
-    "addToPlaylist":"Legg til i spilleliste",
-    "download":"Last ned",
-    "goToAlbum":"Gå til albumet",
-    "podcast":"Podcast",
-    "removeFilter":"Fjern filter",
-    "changeLanguage":"Endre språk",
-    "goBack":"Gå tilbake",
-    "choosePlaylist":"Velg spilleliste",
-    "setupPodcast":"For å laste ned musikk fra podcast må du kopiere linken, og lime den inn i din foretrukne podcast programvare.",
-    "chooseLanguages":"Velg språk",
-    "addLanguage":"Legg til språk",
-    "includeLatest":"Inkluder de nyeste",
-    "websiteLanguage":"Nettsidens språk",
-    "contentLanguages":"Innholdsspråk",
-    "tracks":"spor",
-    "filterByLanguage":"Filtrer etter språk",
-    "copyUrl":"Kopier URL",
-    "copyLink":"Kopier link",
-    "remove":"Fjern",
-    "playPlaylist":"Spill av spilleliste",
-    "share":"Del"
+  "options": {
+    "addToPlaylist": "Legg til i spilleliste",
+    "download": "Last ned",
+    "goToAlbum": "Gå til albumet",
+    "podcast": "Podcast",
+    "removeFilter": "Fjern filter",
+    "changeLanguage": "Endre språk",
+    "goBack": "Gå tilbake",
+    "choosePlaylist": "Velg spilleliste",
+    "setupPodcast": "For å laste ned musikk fra podcast må du kopiere linken, og lime den inn i din foretrukne podcast programvare.",
+    "chooseLanguages": "Velg språk",
+    "addLanguage": "Legg til språk",
+    "includeLatest": "Inkluder de nyeste",
+    "websiteLanguage": "Nettsidens språk",
+    "contentLanguages": "Innholdsspråk",
+    "tracks": "spor",
+    "filterByLanguage": "Filtrer etter språk",
+    "copyUrl": "Kopier URL",
+    "copyLink": "Kopier link",
+    "remove": "Fjern",
+    "playPlaylist": "Spill av spilleliste",
+    "share": "Del"
   },
-  "menu":{
-    "main":{
-      "music":"Musikk",
-      "speeches":"Taler",
-      "video":"Videoer",
-      "archive":"Arkiv",
-      "audiobooks":"Lydbøker"
+  "menu": {
+    "main": {
+      "music": "Musikk",
+      "speeches": "Taler",
+      "video": "Videoer",
+      "archive": "Arkiv",
+      "audiobooks": "Lydbøker"
     },
-    "secondary":{
-      "playlists":"Spillelister",
-      "podcasts":"Podcaster",
-      "latestTracks":"Nye spor",
-      "current":"Spilles nå",
-      "newPlaylist":"Ny spilleliste",
-      "nameOnPlaylist":"Navn på spilleliste"
+    "secondary": {
+      "playlists": "Spillelister",
+      "podcasts": "Podcaster",
+      "latestTracks": "Nye spor",
+      "current": "Spilles nå",
+      "newPlaylist": "Ny spilleliste",
+      "nameOnPlaylist": "Navn på spilleliste"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Siste Taler",
-      "latestVideos":"Siste Videoer",
-      "latestMusic":"Siste Musikk",
-      "latestAlbums":"Siste Album"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Siste Taler",
+      "latestVideos": "Siste Videoer",
+      "latestMusic": "Siste Musikk",
+      "latestAlbums": "Siste Album"
     },
-    "music":{
-      "latestMusic":"Siste Musikk",
-      "artists":"Artister",
-      "fromKaare":"Fra Kåre",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Barnas MP3-Kilden",
-      "instrumental":"Instrumental"
+    "music": {
+      "latestMusic": "Siste Musikk",
+      "artists": "Artister",
+      "fromKaare": "Fra Kåre",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Barnas MP3-Kilden",
+      "instrumental": "Instrumental"
     },
-    "speeches":{
-      "latestSpeeches":"Siste Taler",
-      "recommended":"Anbefalt"
+    "speeches": {
+      "latestSpeeches": "Siste Taler",
+      "recommended": "Anbefalt"
     },
-    "videos":{
-      "latestVideos":"Siste Videoer"
+    "videos": {
+      "latestVideos": "Siste Videoer"
     },
-    "archive":{
-      "archive":"Arkiv"
+    "archive": {
+      "archive": "Arkiv"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Siste Lydbøker"
+    "audiobooks": {
+      "latestAudiobooks": "Siste Lydbøker"
     },
-    "search":{
-      "searchResults":"Søkeresultater",
-      "content":"Innhold",
-      "bibleVerse":"Bibelvers",
-      "album":"Album",
-      "artist":"Artist",
-      "interprets":"Artist \/ taler"
+    "search": {
+      "searchResults": "Søkeresultater",
+      "content": "Innhold",
+      "bibleVerse": "Bibelvers",
+      "album": "Album",
+      "artist": "Artist",
+      "interprets": "Artist \/ taler"
     }
   },
-  "track":{
-    "duration":"Varighet",
-    "details":"Detaljer",
-    "exegesis":"Tydning",
-    "recordedDate":"Opptaksdato",
-    "artist":"Artist",
-    "lyricist":"Tekstforfatter",
-    "arranger":"Arrangør",
-    "composer":"Komponist",
-    "album":"Album",
-    "bibleVerse":"Bibelvers"
+  "track": {
+    "duration": "Varighet",
+    "details": "Detaljer",
+    "exegesis": "Tydning",
+    "recordedDate": "Opptaksdato",
+    "artist": "Artist",
+    "lyricist": "Tekstforfatter",
+    "arranger": "Arrangør",
+    "composer": "Komponist",
+    "album": "Album",
+    "bibleVerse": "Bibelvers",
+    "copyright": "Opphavsrett",
+    "publisher": "Forlegger"
   },
-  "playlist":{
-    "tracks":"Spor",
-    "albums":"Album",
-    "duration":"Varighet",
-    "title":"Tittel",
-    "allLanguages":"Alle språk",
-    "confirmPlaylistDeletion":"Er du sikker på at du vil slette denne spillelisten?",
-    "latestTracks":"Nye spor",
-    "instrumental":"Instrumental"
+  "playlist": {
+    "tracks": "Spor",
+    "albums": "Album",
+    "duration": "Varighet",
+    "title": "Tittel",
+    "allLanguages": "Alle språk",
+    "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spillelisten?",
+    "latestTracks": "Nye spor",
+    "instrumental": "Instrumental"
   },
-  "notify":{
-    "play":"Spill av",
-    "next":"Neste",
-    "previous":"Forrige",
-    "shufflePlaylist":"Miks spilleliste",
-    "loopPlaylist":"Gjenta spilleliste",
-    "mute":"Demp",
-    "maxVolume":"Maks volum",
-    "options":"Alternativer",
-    "activateVideo":"Aktivér video",
-    "goToAlbum":"Gå til albumet",
-    "showFullscreen":"Vis fullskjerm",
-    "closeFullscreen":"Lukk fullskjerm",
-    "hideVideo":"Skjul video",
-    "showVideo":"Vis video"
+  "notify": {
+    "play": "Spill av",
+    "next": "Neste",
+    "previous": "Forrige",
+    "shufflePlaylist": "Miks spilleliste",
+    "loopPlaylist": "Gjenta spilleliste",
+    "mute": "Demp",
+    "maxVolume": "Maks volum",
+    "options": "Alternativer",
+    "activateVideo": "Aktivér video",
+    "goToAlbum": "Gå til albumet",
+    "showFullscreen": "Vis fullskjerm",
+    "closeFullscreen": "Lukk fullskjerm",
+    "hideVideo": "Skjul video",
+    "showVideo": "Vis video"
   },
-  "copyright":"Opphavsrett"
+  "copyright": "Opphavsrett"
 }

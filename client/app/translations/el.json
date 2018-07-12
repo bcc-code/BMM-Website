@@ -1,130 +1,132 @@
 {
-  "language":"Ελληνικά",
-  "general":{
-    "search":"Αναζήτηση...",
-    "searchResultsFor":"Αναζητήστε Αποτελέσματα για: ?",
-    "loading":"Φόρτωση...",
-    "waysOfTheLord":"Δρόμοι του κυρίου",
-    "almondBlossom":"Άνθη αμυγδαλιάς",
-    "noTitle":"Χωρίς τίτλο",
-    "settings":"Ρυθμίσεις",
-    "suport":"Υποστηριξη",
-    "readMore":"Διαβάστε περισσότερα"
+  "language": "Ελληνικά",
+  "general": {
+    "search": "Αναζήτηση...",
+    "searchResultsFor": "Αναζητήστε Αποτελέσματα για: ?",
+    "loading": "Φόρτωση...",
+    "waysOfTheLord": "Δρόμοι του κυρίου",
+    "almondBlossom": "Άνθη αμυγδαλιάς",
+    "noTitle": "Χωρίς τίτλο",
+    "settings": "Ρυθμίσεις",
+    "suport": "Υποστηριξη",
+    "readMore": "Διαβάστε περισσότερα"
   },
-  "options":{
-    "addToPlaylist":"Προσθήκη στη λίστα αναπαραγωγής",
-    "download":"Λήψη",
-    "goToAlbum":"Πήγαινε στο άλμπουμ",
-    "podcast":"Podcast",
-    "removeFilter":"Αφαίρεση φίλτρου",
-    "changeLanguage":"Αλλαγή γλώσσας",
-    "goBack":"Επιστροφή",
-    "choosePlaylist":"Επιλέξτε λίστα αναπαραγωγής",
-    "setupPodcast":"Για να ρυθμίσετε το podcast, αντιγράψτε τον παρακάτω σύνδεσμο και επικολλήστε το στο προτιμώμενο σας λογισμικό podcast.",
-    "chooseLanguages":"Επιλέξτε γλώσσα",
-    "addLanguage":"Προσθήκη γλώσσας",
-    "includeLatest":"Περιλάμβανε το αργότερο",
-    "websiteLanguage":"Γλώσσα ιστοσελίδας",
-    "contentLanguages":"Γλώσσα περιεχομένων",
-    "tracks":"κομμάτια",
-    "filterByLanguage":"Φίλτρο γλωσσών",
-    "copyUrl":"Αντιγραφή διεύθυνσης σελίδας",
-    "copyLink":"Αντιγραφή συνδέσμου",
-    "remove":"Κατάργηση",
-    "playPlaylist":"Αναπαραγωγή λίστας αναπαραγωγής",
-    "share":"Δημοσίευση"
+  "options": {
+    "addToPlaylist": "Προσθήκη στη λίστα αναπαραγωγής",
+    "download": "Λήψη",
+    "goToAlbum": "Πήγαινε στο άλμπουμ",
+    "podcast": "Podcast",
+    "removeFilter": "Αφαίρεση φίλτρου",
+    "changeLanguage": "Αλλαγή γλώσσας",
+    "goBack": "Επιστροφή",
+    "choosePlaylist": "Επιλέξτε λίστα αναπαραγωγής",
+    "setupPodcast": "Για να ρυθμίσετε το podcast, αντιγράψτε τον παρακάτω σύνδεσμο και επικολλήστε το στο προτιμώμενο σας λογισμικό podcast.",
+    "chooseLanguages": "Επιλέξτε γλώσσα",
+    "addLanguage": "Προσθήκη γλώσσας",
+    "includeLatest": "Περιλάμβανε το αργότερο",
+    "websiteLanguage": "Γλώσσα ιστοσελίδας",
+    "contentLanguages": "Γλώσσα περιεχομένων",
+    "tracks": "κομμάτια",
+    "filterByLanguage": "Φίλτρο γλωσσών",
+    "copyUrl": "Αντιγραφή διεύθυνσης σελίδας",
+    "copyLink": "Αντιγραφή συνδέσμου",
+    "remove": "Κατάργηση",
+    "playPlaylist": "Αναπαραγωγή λίστας αναπαραγωγής",
+    "share": "Δημοσίευση"
   },
-  "menu":{
-    "main":{
-      "music":"Μουσικη",
-      "speeches":"Μυνήματα",
-      "video":"Βίντεο",
-      "archive":"Αρχείο",
-      "audiobooks":"Ηχογραφημένα βιβλία"
+  "menu": {
+    "main": {
+      "music": "Μουσικη",
+      "speeches": "Μυνήματα",
+      "video": "Βίντεο",
+      "archive": "Αρχείο",
+      "audiobooks": "Ηχογραφημένα βιβλία"
     },
-    "secondary":{
-      "playlists":"Λίστες αναπαραγωγής",
-      "podcasts":"Podcasts",
-      "latestTracks":"Καινούριο κομμάτι",
-      "current":"Τρέχουσα",
-      "newPlaylist":"Νέα λίστα αναπαραγωγής",
-      "nameOnPlaylist":"Τίτλος λίστας αναπαραγωγής"
+    "secondary": {
+      "playlists": "Λίστες αναπαραγωγής",
+      "podcasts": "Podcasts",
+      "latestTracks": "Καινούριο κομμάτι",
+      "current": "Τρέχουσα",
+      "newPlaylist": "Νέα λίστα αναπαραγωγής",
+      "nameOnPlaylist": "Τίτλος λίστας αναπαραγωγής"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Τελευταία Μηνύματα",
-      "latestVideos":"Τελευταία βίντεο",
-      "latestMusic":"Πιο πρόσφατα κομμάτια",
-      "latestAlbums":"Τελευταία άλμπουμ"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Τελευταία Μηνύματα",
+      "latestVideos": "Τελευταία βίντεο",
+      "latestMusic": "Πιο πρόσφατα κομμάτια",
+      "latestAlbums": "Τελευταία άλμπουμ"
     },
-    "music":{
-      "latestMusic":"Πιο πρόσφατα κομμάτια",
-      "artists":"Καλλιτέχνες",
-      "fromKaare":"Από ο Kåre",
-      "mp3Source":"Πηγή MP3",
-      "childrensMp3Source":"Πηγή παιδικα MP3",
-      "instrumental":"Ορχηστρικό"
+    "music": {
+      "latestMusic": "Πιο πρόσφατα κομμάτια",
+      "artists": "Καλλιτέχνες",
+      "fromKaare": "Από ο Kåre",
+      "mp3Source": "Πηγή MP3",
+      "childrensMp3Source": "Πηγή παιδικα MP3",
+      "instrumental": "Ορχηστρικό"
     },
-    "speeches":{
-      "latestSpeeches":"Τελευταία Μηνύματα",
-      "recommended":"Προτεινόμενα"
+    "speeches": {
+      "latestSpeeches": "Τελευταία Μηνύματα",
+      "recommended": "Προτεινόμενα"
     },
-    "videos":{
-      "latestVideos":"Τελευταία βίντεο"
+    "videos": {
+      "latestVideos": "Τελευταία βίντεο"
     },
-    "archive":{
-      "archive":"Αρχείο"
+    "archive": {
+      "archive": "Αρχείο"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Τελευταίες ηχογραφημένο βιβλίο"
+    "audiobooks": {
+      "latestAudiobooks": "Τελευταίες ηχογραφημένο βιβλίο"
     },
-    "search":{
-      "searchResults":"Αποτελέσματα αναζήτησης",
-      "content":"Περιεχόμενο",
-      "bibleVerse":"Εδάφιο",
-      "album":"Άλμπουμ",
-      "artist":"Καλλιτέχνης",
-      "interprets":"Καλλιτέχνες"
+    "search": {
+      "searchResults": "Αποτελέσματα αναζήτησης",
+      "content": "Περιεχόμενο",
+      "bibleVerse": "Εδάφιο",
+      "album": "Άλμπουμ",
+      "artist": "Καλλιτέχνης",
+      "interprets": "Καλλιτέχνες"
     }
   },
-  "track":{
-    "duration":"Διάρκεια",
-    "details":"Λεπτομέρειες",
-    "exegesis":"Ερμηνεία",
-    "recordedDate":"Ημερομηνία ηχογράφησεις",
-    "artist":"Καλλιτέχνης",
-    "lyricist":"Στιχουργός",
-    "arranger":"Ενορχηστρωτής",
-    "composer":"Συνθέτης",
-    "album":"Άλμπουμ",
-    "bibleVerse":"Εδάφιο"
+  "track": {
+    "duration": "Διάρκεια",
+    "details": "Λεπτομέρειες",
+    "exegesis": "Ερμηνεία",
+    "recordedDate": "Ημερομηνία ηχογράφησεις",
+    "artist": "Καλλιτέχνης",
+    "lyricist": "Στιχουργός",
+    "arranger": "Ενορχηστρωτής",
+    "composer": "Συνθέτης",
+    "album": "Άλμπουμ",
+    "bibleVerse": "Εδάφιο",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Κομμάτια",
-    "albums":"Άλμπουμς",
-    "duration":"Διάρκεια",
-    "title":"Τίτλος",
-    "allLanguages":"Όλες οι γλώσσες",
-    "confirmPlaylistDeletion":"Είστε βέβαιοι ότι θέλετε να διαγράψετε την λίστα αναπαραγωγής;",
-    "latestTracks":"Τελευταία κομμάτια",
-    "instrumental":"Ορχηστρικό"
+  "playlist": {
+    "tracks": "Κομμάτια",
+    "albums": "Άλμπουμς",
+    "duration": "Διάρκεια",
+    "title": "Τίτλος",
+    "allLanguages": "Όλες οι γλώσσες",
+    "confirmPlaylistDeletion": "Είστε βέβαιοι ότι θέλετε να διαγράψετε την λίστα αναπαραγωγής;",
+    "latestTracks": "Τελευταία κομμάτια",
+    "instrumental": "Ορχηστρικό"
   },
-  "notify":{
-    "play":"Αναπαραγωγή \/ Play",
-    "next":"Επόμενο",
-    "previous":"Προηγούμενος",
-    "shufflePlaylist":"Τυχαία αναπαραγωγή λίστας",
-    "loopPlaylist":"Επανάληψη λίστα αναπαραγωγής",
-    "mute":"Σίγαση",
-    "maxVolume":"Μέγιστη ένταση",
-    "options":"Επιλογές",
-    "activateVideo":"Ενεργοποίηση βίντεο",
-    "goToAlbum":"Πήγαινε στο άλμπουμ",
-    "showFullscreen":"Εμφάνιση πλήρους οθόνης",
-    "closeFullscreen":"Έξοδος πλήρους οθόνης",
-    "hideVideo":"Απόκρυψη βίντεο",
-    "showVideo":"Δείτε το βίντεο"
+  "notify": {
+    "play": "Αναπαραγωγή \/ Play",
+    "next": "Επόμενο",
+    "previous": "Προηγούμενος",
+    "shufflePlaylist": "Τυχαία αναπαραγωγή λίστας",
+    "loopPlaylist": "Επανάληψη λίστα αναπαραγωγής",
+    "mute": "Σίγαση",
+    "maxVolume": "Μέγιστη ένταση",
+    "options": "Επιλογές",
+    "activateVideo": "Ενεργοποίηση βίντεο",
+    "goToAlbum": "Πήγαινε στο άλμπουμ",
+    "showFullscreen": "Εμφάνιση πλήρους οθόνης",
+    "closeFullscreen": "Έξοδος πλήρους οθόνης",
+    "hideVideo": "Απόκρυψη βίντεο",
+    "showVideo": "Δείτε το βίντεο"
   },
-  "copyright":"Πνευματικά δικαιώματα"
+  "copyright": "Πνευματικά δικαιώματα"
 }
