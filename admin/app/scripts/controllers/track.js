@@ -34,6 +34,9 @@ angular.module('bmmApp')
       'video'
     ];
 
+    var defaultPublisher = 'Brunstad Christian Church';
+    var defaultCopyright = 'Copyright © Stiftelsen Skjulte Skatters Forlag. All Rights Reserved.';
+
     $scope.podcastTags = [];
 
     $scope.fetchModel = function(_raw) {
@@ -65,7 +68,9 @@ angular.module('bmmApp')
             language: $routeParams.language,
             title: '',
             is_visible: false,
-            media: []
+            media: [],
+            publisher: defaultPublisher,
+            copyright: defaultCopyright
           }];
         } else {
           $.each($routeParams.languages.split(','), function() {
@@ -73,7 +78,9 @@ angular.module('bmmApp')
               language: this,
               title: '',
               is_visible: false,
-              media: []
+              media: [],
+              publisher: defaultPublisher,
+              copyright: defaultCopyright
             });
           });
         }
@@ -121,12 +128,28 @@ angular.module('bmmApp')
       });
     };
 
+    function setPublisherAndCopyright(model) {
+      $.each(model.translations, function() {
+        if(!this.hasOwnProperty('publisher')){
+          if(this._meta.hasOwnProperty('publisher')){
+            this.publisher = this._meta.publisher;
+          }
+        }
+        if(!this.hasOwnProperty('copyright')){
+          if(this._meta.hasOwnProperty('copyright')){
+            this.copyright = this._meta.copyright;
+          }
+        }
+      });
+      return model;
+    }
+
     $scope.refreshModel = function() {
       var promise;
       try {
         promise = $scope.fetchModel().done(function(model) {
           $scope.$apply(function() {
-            $scope.model = model;
+            $scope.model = setPublisherAndCopyright(model);
             findAvailableTranslations();
 
             getPodcastTags().then(function(tags) {
@@ -313,7 +336,9 @@ angular.module('bmmApp')
         is_visible: false,
         language: lang,
         title: '',
-        media: []
+        media: [],
+        publisher: defaultPublisher,
+        copyright: defaultCopyright
       });
       $.each($scope.availableLanguages, function(index) {
         if (this === lang) {
