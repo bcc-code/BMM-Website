@@ -190,7 +190,7 @@ angular.module('bmmApp')
       });
 
       if (newTrack) {
-        return _api.trackPost(toApi).always(function(xhr) {
+        return _api.trackPost(toApi).done(function(data, st, xhr, config) {
           if (xhr.status===201) {
             $location.path('/track/'+xhr.getResponseHeader('X-Document-Id'));
           } else {
@@ -266,42 +266,45 @@ angular.module('bmmApp')
     $scope.save = function(options) {
       $scope.status = _init.translation.states.attemptToSave;
 
-      saveModel().done(function() {
-        $scope.status = _init.translation.states.saveSucceedFetchingNewData;
-        $scope.$apply();
-        $scope.fetchModel().done(function(model) {
-          getWaitings();
-          $scope.$apply(function() { //Model-watcher updates status to changed
-            $scope.model = model;
-            findAvailableTranslations();
-            $timeout(function() { //Secure that watcher is fired
-              $scope.status = _init.translation.states.saved; //Update status
-              $scope.$apply(); //Render status
-            });
+      if(newTrack){
+        saveModel(); //After saving the model we redirect to the newly created track so there is no need to fetchModel
+      } else {
+        saveModel().done(function() {
+          $scope.status = _init.translation.states.saveSucceedFetchingNewData;
+          $scope.$apply();
+          $scope.fetchModel().done(function(model) {
+            getWaitings();
+            $scope.$apply(function() { //Model-watcher updates status to changed
+              $scope.model = model;
+              findAvailableTranslations();
+              $timeout(function() { //Secure that watcher is fired
+                $scope.status = _init.translation.states.saved; //Update status
+                $scope.$apply(); //Render status
+              });
 
-            $scope.status = _init.translation.states.saved;
-            if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
-              options.done();
-            }
-            _quickMenu.refresh();
+              $scope.status = _init.translation.states.saved;
+              if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
+                options.done();
+              }
+              _quickMenu.refresh();
+            });
+          }).fail(function() {
+            $scope.status = _init.translation.states.couldNotFetchData;
+            $scope.$apply();
+          });
+          $scope.fetchModel(false).done(function(model) {
+            $scope.$apply(function() {
+              $scope.standardModel = model;
+              _quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
+                $scope.standardModel._meta.root_parent.id,
+                $scope.standardModel.parent_id);
+            });
           });
         }).fail(function() {
-          $scope.status = _init.translation.states.couldNotFetchData;
+          $scope.status = _init.translation.states.couldNotSave;
           $scope.$apply();
         });
-        $scope.fetchModel(false).done(function(model) {
-          $scope.$apply(function() {
-            $scope.standardModel = model;
-            _quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
-              $scope.standardModel._meta.root_parent.id,
-              $scope.standardModel.parent_id);
-          });
-        });
-      }).fail(function() {
-        $scope.status = _init.translation.states.couldNotSave;
-        $scope.$apply();
-      });
-
+      }
     };
 
     $scope.delete = function() {
