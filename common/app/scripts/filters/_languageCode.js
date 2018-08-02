@@ -6,7 +6,7 @@ angular.module('bmmLibApp')
 
       var languageNames = {
         nb: 'Norsk',
-        dk: 'Dansk',
+        da: 'Dansk',
         af: 'Afrikaans',
         bg: 'Български език',
         cs: 'Čeština',

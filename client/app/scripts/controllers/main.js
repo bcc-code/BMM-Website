@@ -58,6 +58,9 @@ angular.module('bmmApp')
             _api.setContentLanguages(model.contentLanguages);
             $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
           }
+          
+          // We changed the language code for Danish and this makes it backwards compatible for users that have the setting stored in the localStorage. After a few months we can remove it.
+          if (model.websiteLanguage == "dk") { model.websiteLanguage = "da"; }
 
           if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
             $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
