@@ -61,6 +61,10 @@ angular.module('bmmApp')
       var toApi = angular.copy($scope.model);
       delete toApi._meta;
       delete toApi.id;
+      if(toApi.cover){
+        var prefix_url = _api.getserverUrli() + "file/protected/";
+        toApi.cover = toApi.cover.replace(prefix_url, "").split("?last-changed=")[0];
+      }
       _api.contributorIdPut($scope.model.id, toApi).done(function() {
         $scope.loadContributor($scope.model.id);
         if (typeof options!=='undefined') {
