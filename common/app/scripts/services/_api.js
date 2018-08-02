@@ -900,7 +900,8 @@ angular.module('bmmLibApp')
 
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'contributor/'+id
+      url: serverUrl+'contributor/'+id,
+      data: $.param(options)
     });
 
   };
