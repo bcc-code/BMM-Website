@@ -34,6 +34,9 @@ angular.module('bmmApp')
       'video'
     ];
 
+    var defaultPublisher = 'Brunstad Christian Church';
+    var defaultCopyright = 'Copyright © Stiftelsen Skjulte Skatters Forlag. All Rights Reserved.';
+
     $scope.podcastTags = [];
 
     $scope.fetchModel = function(_raw) {
@@ -65,7 +68,9 @@ angular.module('bmmApp')
             language: $routeParams.language,
             title: '',
             is_visible: false,
-            media: []
+            media: [],
+            publisher: defaultPublisher,
+            copyright: defaultCopyright
           }];
         } else {
           $.each($routeParams.languages.split(','), function() {
@@ -73,7 +78,9 @@ angular.module('bmmApp')
               language: this,
               title: '',
               is_visible: false,
-              media: []
+              media: [],
+              publisher: defaultPublisher,
+              copyright: defaultCopyright
             });
           });
         }
@@ -121,12 +128,28 @@ angular.module('bmmApp')
       });
     };
 
+    function setPublisherAndCopyright(model) {
+      $.each(model.translations, function() {
+        if(!this.hasOwnProperty('publisher')){
+          if(this._meta.hasOwnProperty('publisher')){
+            this.publisher = this._meta.publisher;
+          }
+        }
+        if(!this.hasOwnProperty('copyright')){
+          if(this._meta.hasOwnProperty('copyright')){
+            this.copyright = this._meta.copyright;
+          }
+        }
+      });
+      return model;
+    }
+
     $scope.refreshModel = function() {
       var promise;
       try {
         promise = $scope.fetchModel().done(function(model) {
           $scope.$apply(function() {
-            $scope.model = model;
+            $scope.model = setPublisherAndCopyright(model);
             findAvailableTranslations();
 
             getPodcastTags().then(function(tags) {
@@ -167,7 +190,7 @@ angular.module('bmmApp')
       });
 
       if (newTrack) {
-        return _api.trackPost(toApi).always(function(xhr) {
+        return _api.trackPost(toApi).done(function(data, st, xhr, config) {
           if (xhr.status===201) {
             $location.path('/track/'+xhr.getResponseHeader('X-Document-Id'));
           } else {
@@ -243,42 +266,45 @@ angular.module('bmmApp')
     $scope.save = function(options) {
       $scope.status = _init.translation.states.attemptToSave;
 
-      saveModel().done(function() {
-        $scope.status = _init.translation.states.saveSucceedFetchingNewData;
-        $scope.$apply();
-        $scope.fetchModel().done(function(model) {
-          getWaitings();
-          $scope.$apply(function() { //Model-watcher updates status to changed
-            $scope.model = model;
-            findAvailableTranslations();
-            $timeout(function() { //Secure that watcher is fired
-              $scope.status = _init.translation.states.saved; //Update status
-              $scope.$apply(); //Render status
-            });
+      if(newTrack){
+        saveModel(); //After saving the model we redirect to the newly created track so there is no need to fetchModel
+      } else {
+        saveModel().done(function() {
+          $scope.status = _init.translation.states.saveSucceedFetchingNewData;
+          $scope.$apply();
+          $scope.fetchModel().done(function(model) {
+            getWaitings();
+            $scope.$apply(function() { //Model-watcher updates status to changed
+              $scope.model = model;
+              findAvailableTranslations();
+              $timeout(function() { //Secure that watcher is fired
+                $scope.status = _init.translation.states.saved; //Update status
+                $scope.$apply(); //Render status
+              });
 
-            $scope.status = _init.translation.states.saved;
-            if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
-              options.done();
-            }
-            _quickMenu.refresh();
+              $scope.status = _init.translation.states.saved;
+              if (typeof options!=='undefined'&&typeof options.done!=='undefined') {
+                options.done();
+              }
+              _quickMenu.refresh();
+            });
+          }).fail(function() {
+            $scope.status = _init.translation.states.couldNotFetchData;
+            $scope.$apply();
+          });
+          $scope.fetchModel(false).done(function(model) {
+            $scope.$apply(function() {
+              $scope.standardModel = model;
+              _quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
+                $scope.standardModel._meta.root_parent.id,
+                $scope.standardModel.parent_id);
+            });
           });
         }).fail(function() {
-          $scope.status = _init.translation.states.couldNotFetchData;
+          $scope.status = _init.translation.states.couldNotSave;
           $scope.$apply();
         });
-        $scope.fetchModel(false).done(function(model) {
-          $scope.$apply(function() {
-            $scope.standardModel = model;
-            _quickMenu.setMenu($scope.standardModel._meta.root_parent.published_at.substring(0,4),
-              $scope.standardModel._meta.root_parent.id,
-              $scope.standardModel.parent_id);
-          });
-        });
-      }).fail(function() {
-        $scope.status = _init.translation.states.couldNotSave;
-        $scope.$apply();
-      });
-
+      }
     };
 
     $scope.delete = function() {
@@ -313,7 +339,9 @@ angular.module('bmmApp')
         is_visible: false,
         language: lang,
         title: '',
-        media: []
+        media: [],
+        publisher: defaultPublisher,
+        copyright: defaultCopyright
       });
       $.each($scope.availableLanguages, function(index) {
         if (this === lang) {
@@ -521,15 +549,17 @@ angular.module('bmmApp')
 
     /* Changes the language of the media file, not the selected language */
     $scope.changeLanguage = function(toLanguage) {
-      saveModel().then(function() {
-        return _api.changeTrackLanguagePost($scope.model.id, $scope.edited.language, toLanguage);
-      }).then(function() {
-        return $scope.refreshModel();
-      }).then(function() {
-        $timeout(function() {
-          $scope.switchLanguage(toLanguage);
-        }, 0);
-      });
+      if(toLanguage){
+        saveModel().then(function() {
+          return _api.changeTrackLanguagePost($scope.model.id, $scope.edited.language, toLanguage);
+        }).then(function() {
+          return $scope.refreshModel();
+        }).then(function() {
+          $timeout(function() {
+            $scope.switchLanguage(toLanguage);
+          }, 0);
+        });
+      } 
     };
 
   });

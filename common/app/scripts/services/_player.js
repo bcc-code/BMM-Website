@@ -294,7 +294,8 @@ angular.module('bmmLibApp')
       playOnLoad = true;
     };
 
-    _api.trackGet(factory.id, undefined, lang).done(function(track) {
+    // We want to avoid caching, so we send the timestamp in the options
+    _api.trackGet(factory.id, {timestamp: new Date()}, lang).done(function(track) {
 
       track = _track.resolve(track);
 

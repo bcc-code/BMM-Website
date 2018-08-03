@@ -10,29 +10,48 @@ angular.module('bmmApp')
   $scope.init = _init;
   $scope.availableLanguages = _init.root.languages;
 
-  $scope.uploadCover = {
-      url: _api.getserverUrli()+'podcast/'+$routeParams.id+'/cover',
-      method: 'PUT'
-    };
-
-  if($routeParams.id) {
-    _api.podcastIdGet($routeParams.id, {raw: true}).then(function(podcast) {
-      $scope.podcast = podcast;
+  $scope.loadPodcast = function(id) {
+    _api.podcastIdGet(id, {raw: true}).done(function(podcast) {
+      $scope.$apply(function() {
+        $scope.podcast = podcast;
+        $scope.uploadUrl = _api.getserverUrli()+'podcast/'+podcast.id+'/cover';
+      });
     });
+  };
+
+  if(typeof $routeParams.id!=='undefined') {
+    $scope.loadPodcast($routeParams.id);
   }
 
-  $scope.savePodcast = function() {
+  $scope.save = function(options) {
+    $scope.savePodcast(options);
+  }
+
+  $scope.savePodcast = function(options) {
     var podcastId = $scope.podcast.id;
-
     var podcast = angular.copy($scope.podcast);
-
     if(podcastId) {
       delete podcast.id;
-      _api.podcastIdPut(podcastId, podcast);
+      _api.podcastIdPut(podcastId, podcast).done(function(){
+        $scope.loadPodcast(podcastId);
+        if (typeof options!=='undefined') {
+          options.done();
+        }
+      });
     } else {
       _api.podcastPost(podcast);
     }
   }
+
+  $scope.uploadCover = {
+    url: _api.getserverUrli()+'podcast/'+$routeParams.id+'/cover',
+    method: 'PUT'
+  };
+  $scope.uploadUrl = _api.getserverUrli()+'podcast/'+$routeParams.id+'/cover';
+
+  $scope.refreshModel = function() {
+    $scope.loadPodcast($scope.podcast.id);
+  };
 
   $scope.removeTranslation = function(translation) {
     var translations = $scope.podcast.translations;

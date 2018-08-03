@@ -98,7 +98,9 @@
     "arranger": "Arrangeur",
     "composer": "Componist",
     "album": "Album",
-    "bibleVerse": "Bijbel vers"
+    "bibleVerse": "Bijbel vers",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
   "playlist": {
     "tracks": "Nummer(s)",

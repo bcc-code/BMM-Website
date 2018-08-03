@@ -1,130 +1,132 @@
 {
-  "language":"Française",
-  "general":{
-    "search":"Recherche...",
-    "searchResultsFor":"Résultats de la recherche pour :",
-    "loading":"Chargement...",
-    "waysOfTheLord":"Les Voies du Seigneur",
-    "almondBlossom":"La Branche d'Amandier",
-    "noTitle":"Sans titre",
-    "settings":"Paramètres",
-    "suport":"Support",
-    "readMore":"Lire la suite"
+  "language": "Française",
+  "general": {
+    "search": "Recherche...",
+    "searchResultsFor": "Résultats de la recherche pour :",
+    "loading": "Chargement...",
+    "waysOfTheLord": "Les Voies du Seigneur",
+    "almondBlossom": "La Branche d'Amandier",
+    "noTitle": "Sans titre",
+    "settings": "Paramètres",
+    "suport": "Support",
+    "readMore": "Lire la suite"
   },
-  "options":{
-    "addToPlaylist":"Ajouter à la liste de lecture",
-    "download":"Télécharger",
-    "goToAlbum":"Aller à l'album",
-    "podcast":"Podcast",
-    "removeFilter":"Enlever le filtre",
-    "changeLanguage":"Changer la langue",
-    "goBack":"Retour",
-    "choosePlaylist":"Choisir la liste de lecture",
-    "setupPodcast":"Pour parametrer un podcast, vous devez copier le lien ci-dessous et le coller dans votre application de lecture podcast, préférée.",
-    "chooseLanguages":"Choisir les langues",
-    "addLanguage":"Ajouter une langue",
-    "includeLatest":"Inclure le plus récent",
-    "websiteLanguage":"Langue du site Web",
-    "contentLanguages":"Langue du contenu",
-    "tracks":"Pistes",
-    "filterByLanguage":"Filtrer par langue",
-    "copyUrl":"Copier l'URL",
-    "copyLink":"Copier le lien",
-    "remove":"Enlever",
-    "playPlaylist":"Jouer la liste de lecture",
-    "share":"Partager"
+  "options": {
+    "addToPlaylist": "Ajouter à la liste de lecture",
+    "download": "Télécharger",
+    "goToAlbum": "Aller à l'album",
+    "podcast": "Podcast",
+    "removeFilter": "Enlever le filtre",
+    "changeLanguage": "Changer la langue",
+    "goBack": "Retour",
+    "choosePlaylist": "Choisir la liste de lecture",
+    "setupPodcast": "Pour parametrer un podcast, vous devez copier le lien ci-dessous et le coller dans votre application de lecture podcast, préférée.",
+    "chooseLanguages": "Choisir les langues",
+    "addLanguage": "Ajouter une langue",
+    "includeLatest": "Inclure le plus récent",
+    "websiteLanguage": "Langue du site Web",
+    "contentLanguages": "Langue du contenu",
+    "tracks": "Pistes",
+    "filterByLanguage": "Filtrer par langue",
+    "copyUrl": "Copier l'URL",
+    "copyLink": "Copier le lien",
+    "remove": "Enlever",
+    "playPlaylist": "Jouer la liste de lecture",
+    "share": "Partager"
   },
-  "menu":{
-    "main":{
-      "music":"Musique",
-      "speeches":"Messages",
-      "video":"Vidéos",
-      "archive":"Archive",
-      "audiobooks":"Livres audio"
+  "menu": {
+    "main": {
+      "music": "Musique",
+      "speeches": "Messages",
+      "video": "Vidéos",
+      "archive": "Archive",
+      "audiobooks": "Livres audio"
     },
-    "secondary":{
-      "playlists":"Listes de lecture",
-      "podcasts":"Podcasts",
-      "latestTracks":"Nouvelles pistes",
-      "current":"En cours de lecture",
-      "newPlaylist":"Nouvelle liste de lecture",
-      "nameOnPlaylist":"Titre de la liste de lecture"
+    "secondary": {
+      "playlists": "Listes de lecture",
+      "podcasts": "Podcasts",
+      "latestTracks": "Nouvelles pistes",
+      "current": "En cours de lecture",
+      "newPlaylist": "Nouvelle liste de lecture",
+      "nameOnPlaylist": "Titre de la liste de lecture"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Derniers Messages",
-      "latestVideos":"Dernières vidéos",
-      "latestMusic":"Dernières musiques",
-      "latestAlbums":"Derniers Albums"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Derniers Messages",
+      "latestVideos": "Dernières vidéos",
+      "latestMusic": "Dernières musiques",
+      "latestAlbums": "Derniers Albums"
     },
-    "music":{
-      "latestMusic":"Dernières musiques",
-      "artists":"Artistes",
-      "fromKaare":"Venant de Kåre ",
-      "mp3Source":"MP3-Kilden",
-      "childrensMp3Source":"Barna's MP3 Kilden",
-      "instrumental":"Instrumental"
+    "music": {
+      "latestMusic": "Dernières musiques",
+      "artists": "Artistes",
+      "fromKaare": "Venant de Kåre ",
+      "mp3Source": "MP3-Kilden",
+      "childrensMp3Source": "Barna's MP3 Kilden",
+      "instrumental": "Instrumental"
     },
-    "speeches":{
-      "latestSpeeches":"Derniers Messages",
-      "recommended":"Recommandé"
+    "speeches": {
+      "latestSpeeches": "Derniers Messages",
+      "recommended": "Recommandé"
     },
-    "videos":{
-      "latestVideos":"Dernières vidéos"
+    "videos": {
+      "latestVideos": "Dernières vidéos"
     },
-    "archive":{
-      "archive":"Archive"
+    "archive": {
+      "archive": "Archive"
     },
-    "audiobooks":{
-      "latestAudiobooks":"Derniers livres audio"
+    "audiobooks": {
+      "latestAudiobooks": "Derniers livres audio"
     },
-    "search":{
-      "searchResults":"Résultats de la recherche",
-      "content":"Contenu",
-      "bibleVerse":"Verset de la Bible",
-      "album":"Album",
-      "artist":"Artiste",
-      "interprets":"Interprètes"
+    "search": {
+      "searchResults": "Résultats de la recherche",
+      "content": "Contenu",
+      "bibleVerse": "Verset de la Bible",
+      "album": "Album",
+      "artist": "Artiste",
+      "interprets": "Interprètes"
     }
   },
-  "track":{
-    "duration":"Durée",
-    "details":"Détails",
-    "exegesis":"Exégèse",
-    "recordedDate":"Date de l'enregistrement",
-    "artist":"Artiste",
-    "lyricist":"Auteur",
-    "arranger":"Arranger",
-    "composer":"Compositeur",
-    "album":"Album",
-    "bibleVerse":"Verset de la Bible"
+  "track": {
+    "duration": "Durée",
+    "details": "Détails",
+    "exegesis": "Exégèse",
+    "recordedDate": "Date de l'enregistrement",
+    "artist": "Artiste",
+    "lyricist": "Auteur",
+    "arranger": "Arranger",
+    "composer": "Compositeur",
+    "album": "Album",
+    "bibleVerse": "Verset de la Bible",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Piste(s)",
-    "albums":"Album (s)",
-    "duration":"Durée",
-    "title":"Titre",
-    "allLanguages":"Toutes les langues",
-    "confirmPlaylistDeletion":"Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
-    "latestTracks":"Dernières pistes",
-    "instrumental":"Instrumental"
+  "playlist": {
+    "tracks": "Piste(s)",
+    "albums": "Album (s)",
+    "duration": "Durée",
+    "title": "Titre",
+    "allLanguages": "Toutes les langues",
+    "confirmPlaylistDeletion": "Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
+    "latestTracks": "Dernières pistes",
+    "instrumental": "Instrumental"
   },
-  "notify":{
-    "play":"Lire",
-    "next":"Suivant",
-    "previous":"Précédent",
-    "shufflePlaylist":"Lecture aléatoire de la liste",
-    "loopPlaylist":"Activer la répétition",
-    "mute":"Muet",
-    "maxVolume":"Volume max",
-    "options":"Options",
-    "activateVideo":"Activer la vidéo",
-    "goToAlbum":"Aller à l'album",
-    "showFullscreen":"Afficher plein écran",
-    "closeFullscreen":"Quitter plein écran",
-    "hideVideo":"Masquer vidéo",
-    "showVideo":"Afficher vidéo"
+  "notify": {
+    "play": "Lire",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "shufflePlaylist": "Lecture aléatoire de la liste",
+    "loopPlaylist": "Activer la répétition",
+    "mute": "Muet",
+    "maxVolume": "Volume max",
+    "options": "Options",
+    "activateVideo": "Activer la vidéo",
+    "goToAlbum": "Aller à l'album",
+    "showFullscreen": "Afficher plein écran",
+    "closeFullscreen": "Quitter plein écran",
+    "hideVideo": "Masquer vidéo",
+    "showVideo": "Afficher vidéo"
   },
-  "copyright":"Droits d'auteur"
+  "copyright": "Droits d'auteur"
 }

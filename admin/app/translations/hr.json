@@ -1,9 +1,9 @@
 {
-  "language": "English",
+  "language": "Hrvatski",
   "general": {
-    "search": "Search...",
-    "loading": "Loading...",
-    "noTitle": "No title"
+    "search": "Traži...",
+    "loading": "Učitavanje...",
+    "noTitle": "Bez naslova"
   },
   "menu": {
     "main": {
@@ -48,7 +48,7 @@
       "save": "Save",
       "delete": "Delete",
       "play": "Play",
-      "download": "Download",
+      "download": "Preuzimanje datoteka",
       "status": "Status",
       "languages": "Languages",
       "tags": "Tags",
@@ -60,7 +60,7 @@
       "description": "Description",
       "selectedLanguage": "Selected language",
       "originalLanguage": "Original language",
-      "changeLanguage": "Change language",
+      "changeLanguage": "Promjena jezika",
       "publish": "Publish",
       "unpublish": "Unpublish",
       "missingTitle": "Please fill in title first",
@@ -193,5 +193,5 @@
     "clearChart": "Clear Chart",
     "add": "Add to Chart"
   },
-  "copyright": "Copyright"
+  "copyright": "Autorska prava"
 }

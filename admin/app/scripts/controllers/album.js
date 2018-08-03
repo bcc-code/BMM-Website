@@ -174,7 +174,7 @@ angular.module('bmmApp')
       });
 
       if (newAlbum) {
-        _api.albumPost(toApi).always(function(xhr) {
+        _api.albumPost(toApi).done(function(data, st, xhr, config) {
           if (xhr.status===201) {
             $location.path('/album/'+xhr.getResponseHeader('X-Document-Id'));
           } else {

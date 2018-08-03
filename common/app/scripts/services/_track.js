@@ -333,6 +333,12 @@ angular.module('bmmLibApp')
           //subtype
           resolvedData.subtype = data.subtype;
 
+          //publisher
+          resolvedData.publisher = data._meta.publisher;
+
+          //copyright
+          resolvedData.copyright = data._meta.copyright;
+
           //Combined title
           var bindSign = ' - ';
           if (resolvedData.performers===''&&resolvedData.title==='') {
@@ -359,7 +365,8 @@ angular.module('bmmLibApp')
 
         /**
          * Returns: path, file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
-         *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, arrangers, composers, interprets
+         *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, arrangers, composers, interprets,
+         *          publisher, copyright
          */
 
         return resolvedData;

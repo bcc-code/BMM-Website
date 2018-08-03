@@ -1,130 +1,132 @@
 {
-  "language":"Español",
-  "general":{
-    "search":"Búsqueda...",
-    "searchResultsFor":"Resultados de la búsqueda:",
-    "loading":"Cargando...",
-    "waysOfTheLord":"Caminos del Señor",
-    "almondBlossom":"Almendros en flor",
-    "noTitle":"Sin título",
-    "settings":"Configuración",
-    "suport":"Suport",
-    "readMore":"Leer más"
+  "language": "Español",
+  "general": {
+    "search": "Búsqueda...",
+    "searchResultsFor": "Resultados de la búsqueda:",
+    "loading": "Cargando...",
+    "waysOfTheLord": "Caminos del Señor",
+    "almondBlossom": "Almendros en flor",
+    "noTitle": "Sin título",
+    "settings": "Configuración",
+    "suport": "Suport",
+    "readMore": "Leer más"
   },
-  "options":{
-    "addToPlaylist":"Añadir a la lista de reproducción",
-    "download":"Descargar",
-    "goToAlbum":"Ir al álbum",
-    "podcast":"podcast",
-    "removeFilter":"eliminar filtro",
-    "changeLanguage":"Cambiar idioma",
-    "goBack":"Volver",
-    "choosePlaylist":"Seleccione lista de reproducción",
-    "setupPodcast":"Para configurar el podcast  tienes que copiar el enlace de abajo y pegarlo en su software de podcast preferido.",
-    "chooseLanguages":"Elegir idioma",
-    "addLanguage":"Agregar un idioma",
-    "includeLatest":"Incluyen las últimas",
-    "websiteLanguage":"Idioma del sitio web",
-    "contentLanguages":"Idioma del contenido",
-    "tracks":"pistas",
-    "filterByLanguage":"Filtrar por idioma",
-    "copyUrl":"Copiar la URL",
-    "copyLink":"Copiar enlace",
-    "remove":"quitar",
-    "playPlaylist":"Reproducir lista de reproducción",
-    "share":"Compartir"
+  "options": {
+    "addToPlaylist": "Añadir a la lista de reproducción",
+    "download": "Descargar",
+    "goToAlbum": "Ir al álbum",
+    "podcast": "podcast",
+    "removeFilter": "eliminar filtro",
+    "changeLanguage": "Cambiar idioma",
+    "goBack": "Volver",
+    "choosePlaylist": "Seleccione lista de reproducción",
+    "setupPodcast": "Para configurar el podcast  tienes que copiar el enlace de abajo y pegarlo en su software de podcast preferido.",
+    "chooseLanguages": "Elegir idioma",
+    "addLanguage": "Agregar un idioma",
+    "includeLatest": "Incluyen las últimas",
+    "websiteLanguage": "Idioma del sitio web",
+    "contentLanguages": "Idioma del contenido",
+    "tracks": "pistas",
+    "filterByLanguage": "Filtrar por idioma",
+    "copyUrl": "Copiar la URL",
+    "copyLink": "Copiar enlace",
+    "remove": "quitar",
+    "playPlaylist": "Reproducir lista de reproducción",
+    "share": "Compartir"
   },
-  "menu":{
-    "main":{
-      "music":"Música",
-      "speeches":"Mensajes",
-      "video":"Vídeos",
-      "archive":"Archivo",
-      "audiobooks":"Libros audio"
+  "menu": {
+    "main": {
+      "music": "Música",
+      "speeches": "Mensajes",
+      "video": "Vídeos",
+      "archive": "Archivo",
+      "audiobooks": "Libros audio"
     },
-    "secondary":{
-      "playlists":"Listas de reproducción",
-      "podcasts":"Podcasts",
-      "latestTracks":"Nuevas pistas",
-      "current":"en reproduccion",
-      "newPlaylist":"Nueva lista de reproducción",
-      "nameOnPlaylist":"Título de la lista de reproducción"
+    "secondary": {
+      "playlists": "Listas de reproducción",
+      "podcasts": "Podcasts",
+      "latestTracks": "Nuevas pistas",
+      "current": "en reproduccion",
+      "newPlaylist": "Nueva lista de reproducción",
+      "nameOnPlaylist": "Título de la lista de reproducción"
     }
   },
-  "page":{
-    "welcome":{
-      "latestSpeeches":"Últimos mensajes",
-      "latestVideos":"Videos más recientes",
-      "latestMusic":"Musica mas reciente",
-      "latestAlbums":"Últimos álbumes"
+  "page": {
+    "welcome": {
+      "latestSpeeches": "Últimos mensajes",
+      "latestVideos": "Videos más recientes",
+      "latestMusic": "Musica mas reciente",
+      "latestAlbums": "Últimos álbumes"
     },
-    "music":{
-      "latestMusic":"Musica mas reciente",
-      "artists":"Artistas",
-      "fromKaare":"De Kåre",
-      "mp3Source":"Mp3-fuente",
-      "childrensMp3Source":"Niños MP3-fuente",
-      "instrumental":"Instrumental"
+    "music": {
+      "latestMusic": "Musica mas reciente",
+      "artists": "Artistas",
+      "fromKaare": "De Kåre",
+      "mp3Source": "Mp3-fuente",
+      "childrensMp3Source": "Niños MP3-fuente",
+      "instrumental": "Instrumental"
     },
-    "speeches":{
-      "latestSpeeches":"Últimos mensajes",
-      "recommended":"Recomendado"
+    "speeches": {
+      "latestSpeeches": "Últimos mensajes",
+      "recommended": "Recomendado"
     },
-    "videos":{
-      "latestVideos":"Videos más recientes"
+    "videos": {
+      "latestVideos": "Videos más recientes"
     },
-    "archive":{
-      "archive":"Archivo"
+    "archive": {
+      "archive": "Archivo"
     },
-    "audiobooks":{
-      "latestAudiobooks":" Audiolibros mas recientes"
+    "audiobooks": {
+      "latestAudiobooks": " Audiolibros mas recientes"
     },
-    "search":{
-      "searchResults":"Resultados de búsqueda",
-      "content":"Contenido",
-      "bibleVerse":"Versiculos Biblicos",
-      "album":"Álbum",
-      "artist":"Artista",
-      "interprets":"Interpretes"
+    "search": {
+      "searchResults": "Resultados de búsqueda",
+      "content": "Contenido",
+      "bibleVerse": "Versiculos Biblicos",
+      "album": "Álbum",
+      "artist": "Artista",
+      "interprets": "Interpretes"
     }
   },
-  "track":{
-    "duration":"Duración",
-    "details":"Detalles",
-    "exegesis":"interpretación",
-    "recordedDate":"fecha de grabación",
-    "artist":"Artista",
-    "lyricist":"Letrista",
-    "arranger":"Organizador",
-    "composer":"Compositor",
-    "album":"Álbum",
-    "bibleVerse":"Versiculos Biblicos"
+  "track": {
+    "duration": "Duración",
+    "details": "Detalles",
+    "exegesis": "interpretación",
+    "recordedDate": "fecha de grabación",
+    "artist": "Artista",
+    "lyricist": "Letrista",
+    "arranger": "Organizador",
+    "composer": "Compositor",
+    "album": "Álbum",
+    "bibleVerse": "Versiculos Biblicos",
+    "copyright": "Copyright",
+    "publisher": "Publisher"
   },
-  "playlist":{
-    "tracks":"Pista (s)",
-    "albums":"Álbum (es)",
-    "duration":"Duración",
-    "title":"Título",
-    "allLanguages":"Todos los idiomas",
-    "confirmPlaylistDeletion":"¿Está seguro que desea eliminar esta lista de reproducción?",
-    "latestTracks":"Las últimas pistas",
-    "instrumental":"Instrumental"
+  "playlist": {
+    "tracks": "Pista (s)",
+    "albums": "Álbum (es)",
+    "duration": "Duración",
+    "title": "Título",
+    "allLanguages": "Todos los idiomas",
+    "confirmPlaylistDeletion": "¿Está seguro que desea eliminar esta lista de reproducción?",
+    "latestTracks": "Las últimas pistas",
+    "instrumental": "Instrumental"
   },
-  "notify":{
-    "play":"Reproducir",
-    "next":"Siguiente",
-    "previous":"Anterior",
-    "shufflePlaylist":"Lista aleatoria",
-    "loopPlaylist":"Lista de reproducción en bucle",
-    "mute":"Mudo",
-    "maxVolume":"Volumen máximo",
-    "options":"Opciones",
-    "activateVideo":"Activar video",
-    "goToAlbum":"Ir al álbum",
-    "showFullscreen":"Mostrar pantalla completa",
-    "closeFullscreen":"Cerrar Pantalla Completa",
-    "hideVideo":"Ocultar video",
-    "showVideo":"Ver video"
+  "notify": {
+    "play": "Reproducir",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "shufflePlaylist": "Lista aleatoria",
+    "loopPlaylist": "Lista de reproducción en bucle",
+    "mute": "Mudo",
+    "maxVolume": "Volumen máximo",
+    "options": "Opciones",
+    "activateVideo": "Activar video",
+    "goToAlbum": "Ir al álbum",
+    "showFullscreen": "Mostrar pantalla completa",
+    "closeFullscreen": "Cerrar Pantalla Completa",
+    "hideVideo": "Ocultar video",
+    "showVideo": "Ver video"
   },
-  "copyright":"Derechos de autor"
+  "copyright": "Derechos de autor"
 }
