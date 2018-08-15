@@ -49,32 +49,23 @@ SETUP DEVELOPER ENVIRONMENT
 sudo npm install -g yo grunt-cli bower generator-webapp
 ```
 
-**3. Install [Ruby](https://www.ruby-lang.org/en/downloads/)**
+**3. Get a copy of this repository**
 
-**4. Install Compass**
-```
-#!cmd
-gem update --system
-gem install compass
-```
-
-**5. Get a copy of this repository**
-
-**6. CD into 'common' via terminal/CMD and run the following commands**
+**4. CD into 'common' via terminal/CMD and run the following commands**
 ```
 #!cmd
 sudo npm install
 grunt updateCommonFiles
 ```
 
-**7. CD into 'admin' and run the following commands**
+**5. CD into 'admin' and run the following commands**
 ```
 #!cmd
 sudo npm install
 bower update
 ```
 
-**8. CD into 'client' and run the following commands**
+**6. CD into 'client' and run the following commands**
 ```
 #!cmd
 sudo npm install
