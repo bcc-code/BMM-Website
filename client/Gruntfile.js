@@ -43,7 +43,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['sass:server', 'postcss:server']
+        tasks: ['sass:server', 'postcss:server', 'sass:dist']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -572,6 +572,8 @@ module.exports = function (grunt) {
       'clean:server',
       'copy:index_tmp',
       'preprocess:dist',
+      'sprite:flags',
+      'sass:dist',
       'concurrent:server',
       'connect:livereload',
       'watch'

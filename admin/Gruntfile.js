@@ -43,7 +43,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['sass:server', 'postcss:server']
+        tasks: ['sass:server', 'postcss:server', 'sass:dist']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: 'http://localhost:9003/admin',
           protocol: 'http',
           base: [
             '.tmp',
@@ -84,6 +84,7 @@ module.exports = function (grunt) {
 
             // 1. mod-rewrite behavior
             var rules = [
+              '^/admin/(.*) /$1',
               '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif|\\.woff|\\.woff2|\\.ttf$ /index.html'
             ];
             middlewares.unshift(require('connect-modrewrite')(rules));
@@ -112,6 +113,7 @@ module.exports = function (grunt) {
 
             // 1. mod-rewrite behavior
             var rules = [
+              '^/admin/(.*) /$1',
               '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif|\\.woff|\\.woff2|\\.ttf$ /index.html'
             ];
             middlewares.unshift(require('connect-modrewrite')(rules));
@@ -534,6 +536,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'sprite:flags',
+      'sass:dist',
       'concurrent:server',
       'connect:livereload',
       'watch'
