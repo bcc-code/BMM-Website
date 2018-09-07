@@ -34,6 +34,8 @@ angular.module('bmmApp')
       'video'
     ];
 
+    // We have these default values hardcoded for the website as well for a nice UX
+    // When these have to be changed, API-PHP should be changed as well
     var defaultPublisher = 'Brunstad Christian Church';
     var defaultCopyright = 'Copyright © Stiftelsen Skjulte Skatters Forlag. All Rights Reserved.';
 
