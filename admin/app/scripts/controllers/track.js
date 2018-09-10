@@ -131,7 +131,7 @@ angular.module('bmmApp')
     };
 
     function setPublisherAndCopyright(model) {
-      $.each(model.translations, function() {
+      $.each(model.translations, function(index) {
         if(!this.hasOwnProperty('publisher')){
           if(this._meta.hasOwnProperty('publisher')){
             this.publisher = this._meta.publisher;
@@ -142,7 +142,12 @@ angular.module('bmmApp')
             this.copyright = this._meta.copyright;
           }
         }
+
+        if (this.language===model.original_language) {
+          model.original_language_id = index;
+        }
       });
+
       return model;
     }
 
