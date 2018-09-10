@@ -142,12 +142,7 @@ angular.module('bmmApp')
             this.copyright = this._meta.copyright;
           }
         }
-
-        if (this.language===model.original_language) {
-          model.original_language_id = index;
-        }
       });
-
       return model;
     }
 
@@ -194,6 +189,7 @@ angular.module('bmmApp')
 
       $.each(toApi.translations, function() {
         delete this._meta;
+        delete this.arr_index;
       });
 
       if (newTrack) {
@@ -430,9 +426,10 @@ angular.module('bmmApp')
 
     $scope.$watch('model.original_language', function(lang) {
       if (typeof $scope.model.translations!=='undefined') {
-        $.each($scope.model.translations, function() {
+        $.each($scope.model.translations, function(index) {
           if (this.language===lang) {
             $scope.originalLanguage = this;
+            $scope.originalLanguage.arr_index = index;
             return false;
           }
         });
