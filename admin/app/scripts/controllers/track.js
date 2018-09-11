@@ -71,8 +71,8 @@ angular.module('bmmApp')
             title: '',
             is_visible: false,
             media: [],
-            publisher: defaultPublisher,
-            copyright: defaultCopyright
+            publisher: '',
+            copyright: ''
           }];
         } else {
           $.each($routeParams.languages.split(','), function() {
@@ -81,8 +81,8 @@ angular.module('bmmApp')
               title: '',
               is_visible: false,
               media: [],
-              publisher: defaultPublisher,
-              copyright: defaultCopyright
+              publisher: '',
+              copyright: ''
             });
           });
         }
@@ -429,6 +429,13 @@ angular.module('bmmApp')
         $.each($scope.model.translations, function() {
           if (this.language===lang) {
             $scope.originalLanguage = this;
+            
+            if($scope.originalLanguage.publisher == '')
+              $scope.originalLanguage.publisher = defaultPublisher;
+
+            if($scope.originalLanguage.copyright == '')
+              $scope.originalLanguage.copyright = defaultCopyright;
+
             return false;
           }
         });
