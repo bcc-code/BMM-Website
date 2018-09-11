@@ -130,6 +130,7 @@ angular.module('bmmApp')
       });
     };
 
+    // This function is used for older tracks which do not have the publisher and the copyright directly into translations but just in the _meta array
     function setPublisherAndCopyright(model) {
       $.each(model.translations, function(index) {
         if(!this.hasOwnProperty('publisher')){
@@ -189,7 +190,6 @@ angular.module('bmmApp')
 
       $.each(toApi.translations, function() {
         delete this._meta;
-        delete this.arr_index;
       });
 
       if (newTrack) {
@@ -426,10 +426,9 @@ angular.module('bmmApp')
 
     $scope.$watch('model.original_language', function(lang) {
       if (typeof $scope.model.translations!=='undefined') {
-        $.each($scope.model.translations, function(index) {
+        $.each($scope.model.translations, function() {
           if (this.language===lang) {
             $scope.originalLanguage = this;
-            $scope.originalLanguage.arr_index = index;
             return false;
           }
         });
