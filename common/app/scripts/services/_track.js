@@ -199,6 +199,22 @@ angular.module('bmmLibApp')
           resolvedData.title = data.title;
         }
 
+        //Find publisher
+        resolvedData.publisher = '';
+        if (typeof data.publisher!=='undefined') {
+          resolvedData.publisher = data.publisher;
+        } else {
+          resolvedData.publisher = data._meta.publisher;
+        }
+
+        //Find copyright
+        resolvedData.copyright = '';
+        if (typeof data.copyright!=='undefined') {
+          resolvedData.copyright = data.copyright;
+        } else {
+          resolvedData.copyright = data._meta.copyright;
+        }
+
         //Find all relations
         if (typeof data.rel!=='undefined') {
 
@@ -332,12 +348,6 @@ angular.module('bmmLibApp')
 
           //subtype
           resolvedData.subtype = data.subtype;
-
-          //publisher
-          resolvedData.publisher = data._meta.publisher;
-
-          //copyright
-          resolvedData.copyright = data._meta.copyright;
 
           //Combined title
           var bindSign = ' - ';
