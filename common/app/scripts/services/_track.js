@@ -203,17 +203,13 @@ angular.module('bmmLibApp')
         resolvedData.publisher = '';
         if (typeof data.publisher!=='undefined') {
           resolvedData.publisher = data.publisher;
-        } else {
-          resolvedData.publisher = data._meta.publisher;
-        }
+        } 
 
         //Find copyright
         resolvedData.copyright = '';
         if (typeof data.copyright!=='undefined') {
           resolvedData.copyright = data.copyright;
-        } else {
-          resolvedData.copyright = data._meta.copyright;
-        }
+        } 
 
         //Find all relations
         if (typeof data.rel!=='undefined') {
