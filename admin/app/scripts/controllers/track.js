@@ -34,6 +34,11 @@ angular.module('bmmApp')
       'video'
     ];
 
+    // We have these default values hardcoded for the website as well for a nice UX
+    // When these have to be changed, API-PHP should be changed as well
+    var defaultPublisher = 'Brunstad Christian Church';
+    var defaultCopyright = 'Copyright © Stiftelsen Skjulte Skatters Forlag. All Rights Reserved.';
+
     $scope.podcastTags = [];
 
     $scope.fetchModel = function(_raw) {
@@ -65,7 +70,9 @@ angular.module('bmmApp')
             language: $routeParams.language,
             title: '',
             is_visible: false,
-            media: []
+            media: [],
+            publisher: '',
+            copyright: ''
           }];
         } else {
           $.each($routeParams.languages.split(','), function() {
@@ -73,7 +80,9 @@ angular.module('bmmApp')
               language: this,
               title: '',
               is_visible: false,
-              media: []
+              media: [],
+              publisher: '',
+              copyright: ''
             });
           });
         }
@@ -316,7 +325,9 @@ angular.module('bmmApp')
         is_visible: false,
         language: lang,
         title: '',
-        media: []
+        media: [],
+        publisher: '',
+        copyright: ''
       });
       $.each($scope.availableLanguages, function(index) {
         if (this === lang) {
@@ -401,6 +412,13 @@ angular.module('bmmApp')
         $.each($scope.model.translations, function() {
           if (this.language===lang) {
             $scope.originalLanguage = this;
+            
+            if($scope.originalLanguage.publisher == '')
+              $scope.originalLanguage.publisher = defaultPublisher;
+
+            if($scope.originalLanguage.copyright == '')
+              $scope.originalLanguage.copyright = defaultCopyright;
+
             return false;
           }
         });
