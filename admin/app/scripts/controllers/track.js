@@ -411,6 +411,19 @@ angular.module('bmmApp')
       if (typeof $scope.model.translations!=='undefined') {
         $.each($scope.model.translations, function() {
           if (this.language===lang) {
+            if(typeof $scope.originalLanguage!=='undefined'){
+              // take the values of the previous originalLanguage
+              this.publisher = $scope.originalLanguage.publisher;
+              this.copyright = $scope.originalLanguage.copyright;
+
+              $.each($scope.model.translations, function() {
+                // remove the values of the previous originalLanguage
+                if(this.language===$scope.originalLanguage.language){
+                  this.publisher = "";
+                  this.copyright = "";
+                }
+              });
+            }
             $scope.originalLanguage = this;
             
             if($scope.originalLanguage.publisher == '')

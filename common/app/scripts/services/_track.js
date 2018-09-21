@@ -195,20 +195,20 @@ angular.module('bmmLibApp')
 
         //Find title
         resolvedData.title = '';
-        if (typeof data.title!=='undefined') {
-          resolvedData.title = data.title;
+        if (typeof data._meta.title!=='undefined' && data._meta.title!=='') {
+          resolvedData.title = data._meta.title;
         }
 
         //Find publisher
         resolvedData.publisher = '';
-        if (typeof data.publisher!=='undefined') {
-          resolvedData.publisher = data.publisher;
+        if (typeof data._meta.publisher!=='undefined' && data._meta.publisher!=='') {
+          resolvedData.publisher = data._meta.publisher;
         } 
 
         //Find copyright
         resolvedData.copyright = '';
-        if (typeof data.copyright!=='undefined') {
-          resolvedData.copyright = data.copyright;
+        if (typeof data._meta.copyright!=='undefined' && data._meta.copyright!=='') {
+          resolvedData.copyright = data._meta.copyright;
         } 
 
         //Find all relations
