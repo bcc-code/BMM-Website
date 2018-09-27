@@ -237,33 +237,7 @@ angular.module('bmmLibApp')
   };
 
   factory.secureFile = function(file) {
-
-    //Is credentials supported by browser? Else cookies is automatically used
-    if (credentialsSuported==='unresolved') {
-      var el = document.createElement('img');
-      try {
-        el.src = factory.getserverUrli().replace('://','://'+factory.getCredentials(true)+'@');
-        if (el.src) {
-          credentialsSuported = true;
-          //Logout session (cookies not needed)
-          //factory.logout();
-        } else {
-          credentialsSuported = false;
-        }
-        factory.keepAlive();
-      }
-      catch(err) {
-        credentialsSuported = false;
-        factory.keepAlive();
-      }
-    }
-
-    if (credentialsSuported) {
-      return file.replace('://','://'+factory.getCredentials(true)+'@');
-    } else {
-      return file;
-    }
-
+    return file;
   };
 
   factory.setCredentials = function(user, pass) {
