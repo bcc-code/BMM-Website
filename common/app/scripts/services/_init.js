@@ -159,7 +159,7 @@ angular.module('bmmLibApp')
             findcontentLanguages(user.languages,0, contentLanguageLoaded);
             
             // -- Translation
-            var model = angular.fromJson(localStorage[user.username]);
+            var model = angular.fromJson(localStorage[user.username]) || {};
             if (typeof model.websiteLanguage !== 'undefined') {
               findTranslation([model.websiteLanguage],0, translationLoaded);
               factory.websiteLanguage = model.websiteLanguage;

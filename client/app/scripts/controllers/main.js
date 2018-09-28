@@ -148,7 +148,7 @@ angular.module('bmmApp')
             url: $scope.init.config.translationFolder+lang+'.json',
             success: function(data) {
               $scope.init.translations[lang] = data;
-              $timeout(function() {
+              $scope.$apply(function() {
                 $scope.setWebsiteLanguageAction(lang);
               });
             }
