@@ -236,10 +236,6 @@ angular.module('bmmLibApp')
 
   };
 
-  factory.secureFile = function(file) {
-    return file;
-  };
-
   factory.setCredentials = function(user, pass) {
     credentials = {
       username: user,

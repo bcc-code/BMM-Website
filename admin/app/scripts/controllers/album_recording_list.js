@@ -167,7 +167,7 @@ angular.module('bmmApp')
             }
 
             track[(mediaType+'s')] = [{
-                file: _api.secureFile($filter('_protectedURL')(file.path)),
+                file: $filter('_protectedURL')(file.path),
                 type: file.mime_type,
                 duration: file.duration,
                 name: file.mime_type
