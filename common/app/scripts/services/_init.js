@@ -141,16 +141,8 @@ angular.module('bmmLibApp')
                 }
             }
 
-            //Load all translations (Loads in background, not time dependent)
             $.each(factory.config.translationsAvailable, function() {
-              var lang = this;
-              $.ajax({
-                url: factory.config.translationFolder+lang+'.json',
-                success: function(data) {
-                  factory.translations[lang] = data;
-                  factory.translations.available.push(lang);
-                }
-              });
+              factory.translations.available.push(this);
             });
             factory.root = root;
             rootLoaded.resolve();
@@ -165,10 +157,15 @@ angular.module('bmmLibApp')
             }
 
             findcontentLanguages(user.languages,0, contentLanguageLoaded);
-
+            
             // -- Translation
-            findTranslation(user.languages,0, translationLoaded);
-
+            var model = angular.fromJson(localStorage[user.username]);
+            if (typeof model.websiteLanguage !== 'undefined') {
+              findTranslation([model.websiteLanguage],0, translationLoaded);
+              factory.websiteLanguage = model.websiteLanguage;
+            } else {
+              findTranslation(user.languages,0, translationLoaded);
+            }
           });
 
           // -- isIOS (iphone, ipod, ipad ?)
@@ -282,6 +279,7 @@ angular.module('bmmLibApp')
         success: function(data) {
           factory.translation = data;
           factory.translation['iso-639-1'] = lang[index];
+          factory.translations[lang[index]] = data;
           promise.resolve();
           factory.load.percent+=20;
         }
