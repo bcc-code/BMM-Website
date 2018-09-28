@@ -6,37 +6,40 @@ angular.module('bmmLibApp')
         locals = {};
     locals.date = {};
 
-    factory.fetchFiles = function(url) {
+    factory.fetchFiles = function(url, user) {
 
       var localsLoaded = $q.defer(), //Will be resolved at a later time
           folderLoaded = _api.root().done(function(root) {
 
         var promises = [];
-        var expectedResponses = root.languages.length;
-        var results = 2;
+        var expectedResponses = 1;
+        var results = 0;
 
-        $.each(root.languages, function() {
-          if (this !== 'zxx') {
-            promises.push($http.get(url+this+'.json')
-              .success(function(file) {
-                if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
-                  locals.date[file.id] = file.date;
-                }
-                results++;
-                if (results>=expectedResponses) {
-                  localsLoaded.resolve();
-                }
-              })
-              .error(function() {
-                results++;
-                if (results>=expectedResponses) {
-                  localsLoaded.resolve();
-                }
-              })
-            );
-          }
-        });
+        var model = angular.fromJson(localStorage[user.username]) || {}, lang;
+        if (typeof model.websiteLanguage !== 'undefined') {
+          lang = model.websiteLanguage;
+        } else {
+          var contentLanguages = _api.getContentLanguages();
+          lang = contentLanguages[0] ? contentLanguages[0] : "nb";
+        }
 
+        promises.push($http.get(url+lang+'.json')
+          .success(function(file) {
+            if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
+              locals.date[file.id] = file.date;
+            }
+            results++;
+            if (results>=expectedResponses) {
+              localsLoaded.resolve();
+            }
+          })
+          .error(function() {
+            results++;
+            if (results>=expectedResponses) {
+              localsLoaded.resolve();
+            }
+          })
+        );
       });
 
       return $q.all([localsLoaded.promise]);

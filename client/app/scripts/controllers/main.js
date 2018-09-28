@@ -13,7 +13,8 @@ angular.module('bmmApp')
     _playlist,
     _play,
     _player,
-    _draggable
+    _draggable,
+    _locals
   ) {
 
     $scope.load = _init.load;
@@ -152,6 +153,8 @@ angular.module('bmmApp')
                 $scope.setWebsiteLanguageAction(lang);
               });
             }
+          }).then(function(){
+            _locals.fetchFiles($scope.init.config.localsPath, _init.user);
           });
         } else {
           $scope.setWebsiteLanguageAction(lang);

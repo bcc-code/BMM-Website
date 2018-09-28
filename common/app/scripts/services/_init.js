@@ -177,7 +177,7 @@ angular.module('bmmLibApp')
           }
 
           // -- Date locals
-          var localsLoaded = _locals.fetchFiles(config.localsPath).then(function() {
+          var localsLoaded = _locals.fetchFiles(config.localsPath, user).then(function() {
             factory.load.percent+=10;
           });
           promises.push(localsLoaded);
