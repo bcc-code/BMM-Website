@@ -10,6 +10,7 @@ angular.module('bmmApp')
     $window,
     _init,
     _api,
+    _session,
     _playlist,
     _play,
     _player,
@@ -21,7 +22,10 @@ angular.module('bmmApp')
 
     _init.load.complete.promise.then(function() {
 
+      window._init = _init;
+
       $rootScope.init = $scope.init = _init;
+      $rootScope.session = $scope.session = _session.current;
       $scope.now = function() { return new Date(); };
 
       $scope.pushMessages = [];
@@ -33,41 +37,21 @@ angular.module('bmmApp')
 
       $scope.saveSession = function() {
         localStorage[_init.user.username] = angular.toJson({
-          contentLanguages: $scope.init.contentLanguages,
-          websiteLanguage: $scope.init.websiteLanguage,
+          contentLanguages: $scope.session.contentLanguages,
+          websiteLanguage: $scope.session.websiteLanguage,
           videoFirst: _player.videoFirst,
           pushMessages: $scope.pushMessages
         });
       };
 
       $scope.restoreSession = function() {
-        var model = angular.fromJson(localStorage[_init.user.username]);
-        if (typeof model!=='undefined') {
-          if (typeof model.pushMessages!=='undefined') {
-            $scope.pushMessages = model.pushMessages;
-          }
-          _player.videoFirst = model.videoFirst;
-
-          //This is just so that users that still only have 1 language in their
-          //localStorage, prepend their language to the contentLanguages.
-          if(model.contentLanguage) {
-            _init.prependLanguage(model.contentLanguage);
-            delete model.contentLanguage;
-          }
-
-          if(model.contentLanguages) {
-            _api.setContentLanguages(model.contentLanguages);
-            $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
-          }
-          
-          // We changed the language code for Danish and this makes it backwards compatible for users that have the setting stored in the localStorage. After a few months we can remove it.
-          if (model.websiteLanguage == "dk") { model.websiteLanguage = "da"; }
-
-          if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
-            $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
-            $scope.init.translation = _init.translation = _init.translations[model.websiteLanguage];
-          }
+        if (_session.current.pushMessages !== 'undefined') {
+          $scope.pushMessages = _session.current.pushMessages;
         }
+
+        _player.videoFirst = _session.current.videoFirst;
+
+        _api.setContentLanguages(_session.current.contentLanguages);
       };
       $scope.restoreSession();
 
@@ -92,12 +76,12 @@ angular.module('bmmApp')
       };
 
       $scope.removeContentLanguage = function(index) {
-        $scope.init.contentLanguages.splice(index, 1);
+        $scope.session.contentLanguages.splice(index, 1);
         $scope.setLanguagesChanged();
       };
 
       $scope.updateContentLanguage = function(lang, language) {
-        $scope.init.contentLanguages[$scope.init.contentLanguages.indexOf(language)] = lang;
+        $scope.session.contentLanguages[$scope.session.contentLanguages.indexOf(language)] = lang;
         $scope.setLanguagesChanged();
       };
 
@@ -124,7 +108,7 @@ angular.module('bmmApp')
         for(var i = 0; i < langs.length; i++) {
           var lang = langs[i];
           if($scope.exceptSelected(lang)) {
-            _init.appendLanguage(lang);
+            _init.appendLanguage(_init.contentLanguages, lang);
             return;
           }
         }
@@ -143,35 +127,30 @@ angular.module('bmmApp')
         $route.reload();
       };
 
-      $scope.fetchTranslationIfNeeded = function(
-        lang, 
-        action = function(){
-          $.ajax({
-            url: $scope.init.config.translationFolder+lang+'.json',
-            success: function(data) {
-              $scope.$apply(function() {
-                $scope.init.translations[lang] = data;
-                setNewLanguage();
-              });
-            }
-          }).then(function(){
-            _locals.fetchFiles($scope.init.config.localsPath, lang);
-          });
-        }, 
-        setNewLanguage = function(){
-          $scope.init.websiteLanguage = lang;
-          $scope.init.translation = _init.translation = _init.translations[lang];
-          $scope.saveSession();
-        }
-      ) {
+      $scope.fetchTranslationIfNeeded = function(lang, action) {
         if(!_init.translations.hasOwnProperty(lang)) {
-          action();
+            $.ajax({
+              url: $scope.init.config.translationFolder + lang + '.json',
+              success: function(data) {
+                $scope.$apply(function() {
+                  $scope.init.translations[lang] = data;
+                  action();
+                });
+              }
+            }).then(function(){
+              _locals.fetchFiles($scope.init.config.localsPath, lang);
+            });
         } else {
-          setNewLanguage();
+          action();
         }
       };
+
       $scope.setWebsiteLanguage = function(lang) {
-        $scope.fetchTranslationIfNeeded(lang);
+        $scope.fetchTranslationIfNeeded(lang, function() {
+          $scope.session.websiteLanguage = lang;
+          $scope.init.translation = _init.translation = _init.translations[lang];
+          $scope.saveSession();
+        });
       };
 
       $rootScope.go = $scope.go = function ( path ) {
