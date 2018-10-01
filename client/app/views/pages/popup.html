@@ -161,7 +161,7 @@
                                     <div class="flag flags-{{init.websiteLanguage}}"></div>
                                     {{init.websiteLanguage | _languageCode}}</a>
                                 <ul class="dropdown-menu">
-                                    <li ng-repeat="lang in init.translations.available"
+                                    <li ng-repeat="lang in init.config.translationsAvailable"
                                         ng-click="setWebsiteLanguage(lang);">
                                         <div class="flag flags-{{lang}}"></div>
                                         <span ng-bind="lang | _languageCode"></span>

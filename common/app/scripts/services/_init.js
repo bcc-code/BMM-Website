@@ -12,7 +12,6 @@ angular.module('bmmLibApp')
     factory.root = {};
     factory.translation = {};
     factory.translations = {}; //Object with actual translations
-    factory.translations.available = []; //Array with translations available
     factory.contentLanguages = ['nb', 'en']; //Fallback
     factory.isIOS = false;
     factory.config = {};
@@ -110,6 +109,9 @@ angular.module('bmmLibApp')
           // -- Admin
           factory.admin = isAdmin(user.roles);
 
+          // -- Model
+          var model = angular.fromJson(localStorage[user.username]) || {};
+
           // -- Credentials
           _api.setCredentials(user.username, user.token);
 
@@ -141,9 +143,6 @@ angular.module('bmmLibApp')
                 }
             }
 
-            $.each(factory.config.translationsAvailable, function() {
-              factory.translations.available.push(this);
-            });
             factory.root = root;
             rootLoaded.resolve();
             factory.load.percent+=20;
@@ -159,7 +158,6 @@ angular.module('bmmLibApp')
             findcontentLanguages(user.languages,0, contentLanguageLoaded);
             
             // -- Translation
-            var model = angular.fromJson(localStorage[user.username]) || {};
             if (typeof model.websiteLanguage !== 'undefined') {
               findTranslation([model.websiteLanguage],0, translationLoaded);
               factory.websiteLanguage = model.websiteLanguage;
@@ -177,7 +175,7 @@ angular.module('bmmLibApp')
           }
 
           // -- Date locals
-          var localsLoaded = _locals.fetchFiles(config.localsPath, user).then(function() {
+          var localsLoaded = _locals.fetchFiles(config.localsPath, (model.websiteLanguage || user.languages[0])).then(function() {
             factory.load.percent+=10;
           });
           promises.push(localsLoaded);

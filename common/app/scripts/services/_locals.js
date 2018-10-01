@@ -6,7 +6,7 @@ angular.module('bmmLibApp')
         locals = {};
     locals.date = {};
 
-    factory.fetchFiles = function(url, user) {
+    factory.fetchFiles = function(url, lang) {
 
       var localsLoaded = $q.defer(), //Will be resolved at a later time
           folderLoaded = _api.root().done(function(root) {
@@ -14,14 +14,6 @@ angular.module('bmmLibApp')
         var promises = [];
         var expectedResponses = 1;
         var results = 0;
-
-        var model = angular.fromJson(localStorage[user.username]) || {}, lang;
-        if (typeof model.websiteLanguage !== 'undefined') {
-          lang = model.websiteLanguage;
-        } else {
-          var contentLanguages = _api.getContentLanguages();
-          lang = contentLanguages[0] ? contentLanguages[0] : "nb";
-        }
 
         promises.push($http.get(url+lang+'.json')
           .success(function(file) {

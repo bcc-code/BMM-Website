@@ -143,27 +143,35 @@ angular.module('bmmApp')
         $route.reload();
       };
 
-      $scope.setWebsiteLanguage = function(lang) {
-        if(!_init.translations.hasOwnProperty(lang)) {
+      $scope.fetchTranslationIfNeeded = function(
+        lang, 
+        action = function(){
           $.ajax({
             url: $scope.init.config.translationFolder+lang+'.json',
             success: function(data) {
-              $scope.init.translations[lang] = data;
               $scope.$apply(function() {
-                $scope.setWebsiteLanguageAction(lang);
+                $scope.init.translations[lang] = data;
+                setNewLanguage();
               });
             }
           }).then(function(){
-            _locals.fetchFiles($scope.init.config.localsPath, _init.user);
+            _locals.fetchFiles($scope.init.config.localsPath, lang);
           });
+        }, 
+        setNewLanguage = function(){
+          $scope.init.websiteLanguage = lang;
+          $scope.init.translation = _init.translation = _init.translations[lang];
+          $scope.saveSession();
+        }
+      ) {
+        if(!_init.translations.hasOwnProperty(lang)) {
+          action();
         } else {
-          $scope.setWebsiteLanguageAction(lang);
+          setNewLanguage();
         }
       };
-      $scope.setWebsiteLanguageAction = function(lang) {
-        $scope.init.websiteLanguage = lang;
-        $scope.init.translation = _init.translation = _init.translations[lang];
-        $scope.saveSession();
+      $scope.setWebsiteLanguage = function(lang) {
+        $scope.fetchTranslationIfNeeded(lang);
       };
 
       $rootScope.go = $scope.go = function ( path ) {
