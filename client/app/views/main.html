@@ -35,13 +35,13 @@
 
     <!--PUSH MESSAGES-->
     <div class="push-messages"
-         ng-style="{height: pushMessages.length<1 ? '0' : 'auto'}">
+         ng-style="{height: welcomeMessages.length<1 ? '0' : 'auto'}">
         <div class="page-positioning" style="padding: 0 1em;">
             <ul>
-                <li ng-repeat="message in pushMessages">
+                <li ng-repeat="message in welcomeMessages">
                     <span ng-bind="message.title"></span>
-                    <button ng-click="$parent.pushMessage.message=message; $parent.pushMessage.show=true;"><span ng-bind="init.translation.general.readMore"></span></button>
-                    <div class="exit" ng-click="removePushMessage($index)"></div>
+                    <button ng-click="$parent.welcomeMessage.message=message; $parent.welcomeMessage.show=true;"><span ng-bind="init.translation.general.readMore"></span></button>
+                    <div class="exit" ng-click="removeWelcomeMessage($index)"></div>
                 </li>
             </ul>
         </div>

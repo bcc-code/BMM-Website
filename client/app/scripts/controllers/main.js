@@ -28,38 +28,19 @@ angular.module('bmmApp')
       $rootScope.session = $scope.session = _session.current;
       $scope.now = function() { return new Date(); };
 
-      $scope.pushMessages = [];
+      $scope.welcomeMessages = _session.current.welcomeMessages | [];
 
-      $scope.removePushMessage = function(index) {
-        $scope.pushMessages.splice(index,1);
+      _player.videoFirst = $scope.session.videoFirst;
+
+      $scope.removeWelcomeMessage = function(index) {
+        $scope.welcomeMessages.splice(index,1);
+        $scope.session.welcomeMessages = $scope.welcomeMessages;
         $scope.saveSession();
       };
 
       $scope.saveSession = function() {
-        localStorage[_init.user.username] = angular.toJson({
-          contentLanguages: $scope.session.contentLanguages,
-          websiteLanguage: $scope.session.websiteLanguage,
-          videoFirst: _player.videoFirst,
-          pushMessages: $scope.pushMessages
-        });
+        _session.saveSession(_init.user.username, _player.videoFirst, $scope.welcomeMessages);
       };
-
-      $scope.restoreSession = function() {
-        if (_session.current.pushMessages !== 'undefined') {
-          $scope.pushMessages = _session.current.pushMessages;
-        }
-
-        _player.videoFirst = _session.current.videoFirst;
-
-        _api.setContentLanguages(_session.current.contentLanguages);
-      };
-      $scope.restoreSession();
-
-      $scope.$parent.$watch('init.contentLanguages[0]', function(lang) {
-        if (typeof lang!=='undefined') {
-          $scope.init.podcastLanguage = lang;
-        }
-      });
 
       _api.podcastsGet().then(function(podcasts) {
         $scope.podcasts = podcasts;
@@ -80,8 +61,8 @@ angular.module('bmmApp')
         $scope.setLanguagesChanged();
       };
 
-      $scope.updateContentLanguage = function(lang, language) {
-        $scope.session.contentLanguages[$scope.session.contentLanguages.indexOf(language)] = lang;
+      $scope.updateContentLanguage = function(newLang, oldLang) {
+        $scope.session.contentLanguages[$scope.session.contentLanguages.indexOf(oldLang)] = newLang;
         $scope.setLanguagesChanged();
       };
 
@@ -99,8 +80,8 @@ angular.module('bmmApp')
 
       //This filter functions filters out the languages
       //that are already selected. Prevents duplicates.
-      $scope.exceptSelected = function(item) {
-        return $scope.init.contentLanguages.indexOf(item) === -1;
+      $scope.exceptSelected = function(lang) {
+        return $scope.session.contentLanguages.indexOf(lang) === -1;
       };
 
       $scope.addLanguage = function() {
@@ -108,7 +89,7 @@ angular.module('bmmApp')
         for(var i = 0; i < langs.length; i++) {
           var lang = langs[i];
           if($scope.exceptSelected(lang)) {
-            _init.appendLanguage(_init.contentLanguages, lang);
+            $scope.session.contentLanguages.push(lang);
             return;
           }
         }
@@ -116,8 +97,10 @@ angular.module('bmmApp')
 
       $scope.setContentLangConditional = function() {
         if($scope.contentLangsChanged) {
-          $scope.setContentLanguages($scope.init.contentLanguages);
+          $scope.setContentLanguages($scope.session.contentLanguages);
           $scope.contentLangsChanged = false;
+          _api.setContentLanguages($scope.session.contentLanguages);
+          location.reload(); // temporary fix: since we have to reload the whole content we decided to refresh the whole page instead
         }
       };
 
@@ -127,31 +110,10 @@ angular.module('bmmApp')
         $route.reload();
       };
 
-      $scope.fetchTranslationIfNeeded = function(lang, action) {
-        if(!_init.translations.hasOwnProperty(lang)) {
-            $.ajax({
-              url: $scope.init.config.translationFolder + lang + '.json',
-              success: function(data) {
-                $scope.$apply(function() {
-                  $scope.init.translations[lang] = data;
-                  action();
-                });
-              }
-            }).then(function(){
-              _locals.fetchFiles($scope.init.config.localsPath, lang);
-            });
-        } else {
-          action();
-        }
-      };
-
       $scope.setWebsiteLanguage = function(lang) {
-        $scope.fetchTranslationIfNeeded(lang, function() {
-          $scope.session.websiteLanguage = lang;
-          $scope.init.translation = _init.translation = _init.translations[lang];
-          $scope.saveSession();
-        });
-      };
+        _session.setWebsiteLanguage(lang, _init);
+      }
+      _session.setWebsiteLanguage($scope.session.websiteLanguage, _init, $scope.welcomeMessages);
 
       $rootScope.go = $scope.go = function ( path ) {
         $location.path( path );
