@@ -80,11 +80,6 @@ angular.module('bmmLibApp')
           // -- User
           factory.user = user;
 
-          _session.restoreSession(user.username, user.languages);
-
-          _api.setContentLanguages(_session.current.contentLanguages); // Fallback
-          _api.appendUnknownLanguage = true;
-
           // -- Admin
           factory.admin = isAdmin(user.roles);
 
@@ -103,7 +98,6 @@ angular.module('bmmLibApp')
           factory.load.status = 'Fetching data';
 
           _api.root().done(function(root) {
-
             factory.load.status = 'Root loaded';
 
             // Temporary remove zxx because it's for multilingual content (@todo - remove later)
@@ -119,6 +113,11 @@ angular.module('bmmLibApp')
 
             factory.root = root;
             rootLoaded.resolve();
+
+            _session.restoreSession(user.username, user.languages, factory.root.languages);
+
+            _api.setContentLanguages(_session.current.contentLanguages); // Fallback
+            _api.appendUnknownLanguage = true;
 
             // Use the top language as podcastLanguage
             factory.podcastLanguage = _session.current.contentLanguages[0];
@@ -213,7 +212,7 @@ angular.module('bmmLibApp')
           promise.resolve();
         }
       });
-    };
+    };    
 
     return factory;
   });

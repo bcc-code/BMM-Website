@@ -21,7 +21,7 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.restoreSession = function(username, fallbackLanguages) {
+  factory.restoreSession = function(username, portalLanguages, bmmLanguages) {
     var model = angular.fromJson(localStorage[username]);
     if (typeof model!=='undefined') {
            
@@ -30,6 +30,7 @@ angular.module('bmmLibApp')
 
       factory.current = model;
     } else {
+        var fallbackLanguages = factory.fallbackLanguages(portalLanguages, bmmLanguages);
         var fallbackSession = {
             contentLanguages: fallbackLanguages,
             websiteLanguage: fallbackLanguages[0],
@@ -37,6 +38,16 @@ angular.module('bmmLibApp')
         };
         factory.current = fallbackSession;
     }
+  };
+
+  factory.fallbackLanguages = function(portalLanguages, bmmLanguages) {
+    var fallbackLanguages = [];
+    $.each(portalLanguages, function() {
+      if (bmmLanguages.indexOf(this) !== -1){
+        fallbackLanguages.push(this);
+      }
+    });
+    return fallbackLanguages.length > 0 ? fallbackLanguages : ["nb"];
   };
 
   factory.fetchTranslationIfNeeded = function(lang, _init, action) {
