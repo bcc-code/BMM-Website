@@ -12,24 +12,16 @@ angular.module('bmmLibApp')
           folderLoaded = _api.root().done(function(root) {
 
         var promises = [];
-        var expectedResponses = 1;
-        var results = 0;
 
         promises.push($http.get(url+lang+'.json')
           .success(function(file) {
             if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
               locals.date[file.id] = file.date;
             }
-            results++;
-            if (results>=expectedResponses) {
-              localsLoaded.resolve();
-            }
+            localsLoaded.resolve();
           })
           .error(function() {
-            results++;
-            if (results>=expectedResponses) {
-              localsLoaded.resolve();
-            }
+            localsLoaded.resolve();
           })
         );
       });

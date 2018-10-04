@@ -22,8 +22,6 @@ angular.module('bmmApp')
 
     _init.load.complete.promise.then(function() {
 
-      window._init = _init;
-
       $rootScope.init = $scope.init = _init;
       $rootScope.session = $scope.session = _session.current;
       $scope.now = function() { return new Date(); };
