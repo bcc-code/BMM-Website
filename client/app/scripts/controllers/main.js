@@ -28,7 +28,7 @@ angular.module('bmmApp')
       $rootScope.session = $scope.session = _session.current;
       $scope.now = function() { return new Date(); };
 
-      $scope.welcomeMessages = _session.current.welcomeMessages | [];
+      $scope.welcomeMessages = _session.current.welcomeMessages || [];
 
       _player.videoFirst = $scope.session.videoFirst;
 
