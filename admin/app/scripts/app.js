@@ -110,11 +110,6 @@ angular.module('bmmApp', [
         controller: 'WizardCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
-      .when('/statistic', {
-        templateUrl: 'views/pages/statistic.html',
-        controller: 'StatisticCtrl',
-        resolve: { '_initData': ['_init', function (_init) { return _init.promise(true); }] }
-      })
       .otherwise({
         redirectTo: '/dashboard'
       });
