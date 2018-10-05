@@ -7,18 +7,22 @@
 angular.module('bmmApp')
   .controller('MainCtrl', function (
     $scope,
+    $rootScope,
     $location,
     $route,
     _init,
+    _session,
     _play,
     _quickMenu,
     _api_queue
   ) {
 
-    $scope.init = _init;
+    $rootScope.init = $scope.init = _init;
     $scope.api_queue = _api_queue;
 
     _init.load.complete.promise.then(function() {
+
+      $scope.session = _session.current;
 
       $scope.userIs = function(role) {
         if(_init.user.roles.indexOf('ROLE_ADMINISTRATOR') !== -1) {
@@ -31,9 +35,11 @@ angular.module('bmmApp')
       $scope.go = function (path) { $location.path(path); };
 
       $scope.setContentLanguages = function(languages) {
-        _init.contentLanguages = languages;
+        _session.current.contentLanguages = languages;
         $route.reload();
       };
+
+      _session.setWebsiteLanguage($scope.session.websiteLanguage, _init);
 
       $scope.play = function(playlist, index) {
         _play.setPlay(playlist, index);

@@ -8,6 +8,7 @@ angular.module('bmmApp')
     $routeParams,
     $timeout,
     _api,
+    _session,
     _init,
     _album,
     _track,
@@ -41,7 +42,7 @@ angular.module('bmmApp')
         }
 
         if (typeof $routeParams.language==='undefined') {
-          $routeParams.language = _init.contentLanguages[0];
+          $routeParams.language = _session.current.contentLanguages[0];
         }
 
         if (typeof $routeParams.date==='undefined') {

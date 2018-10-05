@@ -6,37 +6,24 @@ angular.module('bmmLibApp')
         locals = {};
     locals.date = {};
 
-    factory.fetchFiles = function(url) {
+    factory.fetchFiles = function(url, lang) {
 
       var localsLoaded = $q.defer(), //Will be resolved at a later time
           folderLoaded = _api.root().done(function(root) {
 
         var promises = [];
-        var expectedResponses = root.languages.length;
-        var results = 2;
 
-        $.each(root.languages, function() {
-          if (this !== 'zxx') {
-            promises.push($http.get(url+this+'.json')
-              .success(function(file) {
-                if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
-                  locals.date[file.id] = file.date;
-                }
-                results++;
-                if (results>=expectedResponses) {
-                  localsLoaded.resolve();
-                }
-              })
-              .error(function() {
-                results++;
-                if (results>=expectedResponses) {
-                  localsLoaded.resolve();
-                }
-              })
-            );
-          }
-        });
-
+        promises.push($http.get(url+lang+'.json')
+          .success(function(file) {
+            if (typeof file.id!=='undefined'&&typeof file.date!=='undefined') {
+              locals.date[file.id] = file.date;
+            }
+            localsLoaded.resolve();
+          })
+          .error(function() {
+            localsLoaded.resolve();
+          })
+        );
       });
 
       return $q.all([localsLoaded.promise]);

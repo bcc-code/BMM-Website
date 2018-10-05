@@ -10,10 +10,12 @@ angular.module('bmmApp')
     $window,
     _init,
     _api,
+    _session,
     _playlist,
     _play,
     _player,
-    _draggable
+    _draggable,
+    _locals
   ) {
 
     $scope.load = _init.load;
@@ -21,60 +23,22 @@ angular.module('bmmApp')
     _init.load.complete.promise.then(function() {
 
       $rootScope.init = $scope.init = _init;
+      $rootScope.session = $scope.session = _session.current;
       $scope.now = function() { return new Date(); };
 
-      $scope.pushMessages = [];
+      $scope.welcomeMessages = _session.current.welcomeMessages || [];
 
-      $scope.removePushMessage = function(index) {
-        $scope.pushMessages.splice(index,1);
+      _player.videoFirst = $scope.session.videoFirst;
+
+      $scope.removeWelcomeMessage = function(index) {
+        $scope.welcomeMessages.splice(index,1);
+        $scope.session.welcomeMessages = $scope.welcomeMessages;
         $scope.saveSession();
       };
 
       $scope.saveSession = function() {
-        localStorage[_init.user.username] = angular.toJson({
-          contentLanguages: $scope.init.contentLanguages,
-          websiteLanguage: $scope.init.websiteLanguage,
-          videoFirst: _player.videoFirst,
-          pushMessages: $scope.pushMessages
-        });
+        _session.saveSession(_init.user.username, _player.videoFirst, $scope.welcomeMessages);
       };
-
-      $scope.restoreSession = function() {
-        var model = angular.fromJson(localStorage[_init.user.username]);
-        if (typeof model!=='undefined') {
-          if (typeof model.pushMessages!=='undefined') {
-            $scope.pushMessages = model.pushMessages;
-          }
-          _player.videoFirst = model.videoFirst;
-
-          //This is just so that users that still only have 1 language in their
-          //localStorage, prepend their language to the contentLanguages.
-          if(model.contentLanguage) {
-            _init.prependLanguage(model.contentLanguage);
-            delete model.contentLanguage;
-          }
-
-          if(model.contentLanguages) {
-            _api.setContentLanguages(model.contentLanguages);
-            $scope.init.contentLanguages = _init.contentLanguages = model.contentLanguages;
-          }
-          
-          // We changed the language code for Danish and this makes it backwards compatible for users that have the setting stored in the localStorage. After a few months we can remove it.
-          if (model.websiteLanguage == "dk") { model.websiteLanguage = "da"; }
-
-          if (typeof _init.translations[model.websiteLanguage]!=='undefined') {
-            $scope.init.websiteLanguage = _init.websiteLanguage = model.websiteLanguage;
-            $scope.init.translation = _init.translation = _init.translations[model.websiteLanguage];
-          }
-        }
-      };
-      $scope.restoreSession();
-
-      $scope.$parent.$watch('init.contentLanguages[0]', function(lang) {
-        if (typeof lang!=='undefined') {
-          $scope.init.podcastLanguage = lang;
-        }
-      });
 
       _api.podcastsGet().then(function(podcasts) {
         $scope.podcasts = podcasts;
@@ -91,12 +55,12 @@ angular.module('bmmApp')
       };
 
       $scope.removeContentLanguage = function(index) {
-        $scope.init.contentLanguages.splice(index, 1);
+        $scope.session.contentLanguages.splice(index, 1);
         $scope.setLanguagesChanged();
       };
 
-      $scope.updateContentLanguage = function(lang, language) {
-        $scope.init.contentLanguages[$scope.init.contentLanguages.indexOf(language)] = lang;
+      $scope.updateContentLanguage = function(newLang, oldLang) {
+        $scope.session.contentLanguages[$scope.session.contentLanguages.indexOf(oldLang)] = newLang;
         $scope.setLanguagesChanged();
       };
 
@@ -114,8 +78,8 @@ angular.module('bmmApp')
 
       //This filter functions filters out the languages
       //that are already selected. Prevents duplicates.
-      $scope.exceptSelected = function(item) {
-        return $scope.init.contentLanguages.indexOf(item) === -1;
+      $scope.exceptSelected = function(lang) {
+        return $scope.session.contentLanguages.indexOf(lang) === -1;
       };
 
       $scope.addLanguage = function() {
@@ -123,7 +87,7 @@ angular.module('bmmApp')
         for(var i = 0; i < langs.length; i++) {
           var lang = langs[i];
           if($scope.exceptSelected(lang)) {
-            _init.appendLanguage(lang);
+            $scope.session.contentLanguages.push(lang);
             return;
           }
         }
@@ -131,8 +95,10 @@ angular.module('bmmApp')
 
       $scope.setContentLangConditional = function() {
         if($scope.contentLangsChanged) {
-          $scope.setContentLanguages($scope.init.contentLanguages);
+          $scope.setContentLanguages($scope.session.contentLanguages);
           $scope.contentLangsChanged = false;
+          _api.setContentLanguages($scope.session.contentLanguages);
+          location.reload(); // temporary fix: since we have to reload the whole content we decided to refresh the whole page instead
         }
       };
 
@@ -143,10 +109,9 @@ angular.module('bmmApp')
       };
 
       $scope.setWebsiteLanguage = function(lang) {
-        $scope.init.websiteLanguage = lang;
-        $scope.init.translation = _init.translation = _init.translations[lang];
-        $scope.saveSession();
-      };
+        _session.setWebsiteLanguage(lang, _init);
+      }
+      _session.setWebsiteLanguage($scope.session.websiteLanguage, _init, $scope.welcomeMessages);
 
       $rootScope.go = $scope.go = function ( path ) {
         $location.path( path );
