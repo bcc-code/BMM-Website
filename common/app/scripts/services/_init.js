@@ -112,15 +112,16 @@ angular.module('bmmLibApp')
             }
 
             factory.root = root;
-            rootLoaded.resolve();
 
             _session.restoreSession(user.username, user.languages, factory.root.languages);
 
-            _api.setContentLanguages(_session.current.contentLanguages); // Fallback
+            _api.setContentLanguages(_session.current.contentLanguages);
             _api.appendUnknownLanguage = true;
 
             // Use the top language as podcastLanguage
             factory.podcastLanguage = _session.current.contentLanguages[0];
+            
+            rootLoaded.resolve();
             factory.load.percent+=25;
 
             // -- Date locals

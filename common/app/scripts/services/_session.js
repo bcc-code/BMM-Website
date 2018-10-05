@@ -6,11 +6,19 @@ angular.module('bmmLibApp')
     _locals
   ) {
   
-  var factory = {};
-  var fallbackSession = {
-
+  var factory = {
+    current: {}
   };
-  factory.current = {};
+
+  var getFallbackLanguages = function(portalLanguages, bmmLanguages) {
+    var fallbackLanguages = [];
+    $.each(portalLanguages, function() {
+      if (bmmLanguages.indexOf(this) !== -1){
+        fallbackLanguages.push(this);
+      }
+    });
+    return fallbackLanguages.length > 0 ? fallbackLanguages : ["nb"];
+  };
 
   factory.saveSession = function(username, videoFirst, welcomeMessages) {
     localStorage[username] = angular.toJson({
@@ -30,7 +38,7 @@ angular.module('bmmLibApp')
 
       factory.current = model;
     } else {
-        var fallbackLanguages = factory.fallbackLanguages(portalLanguages, bmmLanguages);
+        var fallbackLanguages = getFallbackLanguages(portalLanguages, bmmLanguages);
         var fallbackSession = {
             contentLanguages: fallbackLanguages,
             websiteLanguage: fallbackLanguages[0],
@@ -38,16 +46,6 @@ angular.module('bmmLibApp')
         };
         factory.current = fallbackSession;
     }
-  };
-
-  factory.fallbackLanguages = function(portalLanguages, bmmLanguages) {
-    var fallbackLanguages = [];
-    $.each(portalLanguages, function() {
-      if (bmmLanguages.indexOf(this) !== -1){
-        fallbackLanguages.push(this);
-      }
-    });
-    return fallbackLanguages.length > 0 ? fallbackLanguages : ["nb"];
   };
 
   factory.fetchTranslationIfNeeded = function(lang, _init, action) {
@@ -75,8 +73,6 @@ angular.module('bmmLibApp')
       factory.saveSession(_init.user.username, factory.current.videoFirst, welcomeMessages);
     });
   };
-
-  window.session = factory;
 
   return factory;
 
