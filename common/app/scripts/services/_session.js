@@ -68,11 +68,10 @@ angular.module('bmmLibApp')
     }
   };
 
-  factory.setWebsiteLanguage = function(lang, _init, welcomeMessages = factory.current.welcomeMessages) {
+  factory.setWebsiteLanguage = function(lang, _init) {
     factory.fetchTranslationIfNeeded(lang, _init, function() {
       factory.current.websiteLanguage = lang;
       $rootScope.init.translation = _init.translation = _init.translations[lang];
-      factory.saveSession(_init.user.username, factory.current.videoFirst, welcomeMessages);
     });
   };
 
