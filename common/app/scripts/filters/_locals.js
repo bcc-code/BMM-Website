@@ -7,6 +7,8 @@ angular.module('bmmLibApp')
       if (typeof date!=='undefined') {
 
         date = new Date(date);
+        // We add the timezone offset + UTC+2 of Norway's timezone
+        date = new Date(date.getTime() + date.getTimezoneOffset()*60000 + 120*60000);
 
         var local='', wd = date.getDay();
 
