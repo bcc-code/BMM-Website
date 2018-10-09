@@ -231,6 +231,13 @@
                           ng-click="go('/album/'+$root.trackInfo.track.raw.parent_id); $root.trackInfo.show=false;">
                         {{$root.trackInfo.track.albumTitle}}
                     </span><br><br>
+                </div>     
+
+                <div ng-if="$root.trackInfo.track.songbooks != ''">
+                    <b><span ng-bind="init.translation.track.songbooks"></span></b><br>
+                    <span>
+                        {{$root.trackInfo.track.songbooks}}
+                    </span><br><br>
                 </div>   
 
                 <div ng-if="$root.trackInfo.track.interprets != ''">
