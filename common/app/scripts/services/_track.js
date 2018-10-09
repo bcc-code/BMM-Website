@@ -248,6 +248,7 @@ angular.module('bmmLibApp')
           resolvedData.lyricists = [];
           resolvedData.arrangers = [];
           resolvedData.composers = [];
+          resolvedData.songbooks = "";
 
           //Format relations to strings
           $.each(resolvedData.relations, function(key) {
@@ -299,20 +300,21 @@ angular.module('bmmLibApp')
                 break;
               case 'songbook':
 
+                $.each(resolvedData.relations[key], function(index) {
+                  var name;
+                  if (this.name==='herrens_veier') {
+                    name = 'HV';
+                  } else {
+                    name = 'MB';
+                  }
+                  if ((resolvedData.relations[key].length-1)===index) {
+                    resolvedData.songbooks += name+' '+this.id;
+                  } else {
+                    resolvedData.songbooks += name+' '+this.id+', ';
+                  }
+                });
                 if (resolvedData.title==='') {
-                  $.each(resolvedData.relations[key], function(index) {
-                    var name;
-                    if (this.name==='herrens_veier') {
-                      name = 'HV';
-                    } else {
-                      name = 'MB';
-                    }
-                    if ((resolvedData.relations[key].length-1)===index) {
-                      resolvedData.title+= name+' '+this.id;
-                    } else {
-                      resolvedData.title+= name+' '+this.id+', ';
-                    }
-                  });
+                  resolvedData.title+= resolvedData.songbooks;
                 }
 
                 break;
@@ -372,7 +374,7 @@ angular.module('bmmLibApp')
         /**
          * Returns: path, file, duration, type (filetype), performers, title, cover, bible, parentTitle, subtype,
          *          combinedTitle, parentRootTitle, albumTitle, raw, lyricists, arrangers, composers, interprets,
-         *          publisher, copyright
+         *          songbooks, publisher, copyright
          */
 
         return resolvedData;
