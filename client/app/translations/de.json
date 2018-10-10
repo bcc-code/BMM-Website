@@ -99,8 +99,9 @@
     "composer": "Komponist",
     "album": "Album",
     "bibleVerse": "Bibelvers",
+    "songbooks": "Liednummer",
     "copyright": "Copyright",
-    "publisher": "Publisher"
+    "publisher": "Herausgeber"
   },
   "playlist": {
     "tracks": "Titel",
