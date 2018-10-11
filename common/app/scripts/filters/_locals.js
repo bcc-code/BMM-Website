@@ -2,13 +2,13 @@
 
 angular.module('bmmLibApp')
   .filter('_locals', function (_locals, $filter) {
-    return function (date, lang, out) {
+    return function (dateString, lang, out) {
 
-      if (typeof date!=='undefined') {
+      if (typeof dateString!=='undefined') {
 
-        date = new Date(date);
+        var localDate = new Date(dateString);
         // We add the timezone offset + UTC+2 of Norway's timezone
-        date = new Date(date.getTime() + date.getTimezoneOffset()*60000 + 120*60000);
+        var date = new Date(localDate.getTime() + localDate.getTimezoneOffset()*60000 + 120*60000);
 
         var local='', wd = date.getDay();
 
