@@ -24,7 +24,6 @@ angular.module('bmmApp')
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
     $scope.hasChildAlbums = false;
-    $scope.status = _init.translation.states.noChanges;
 
     $scope.fetchModel = function(_raw) {
       if (!newAlbum) {
@@ -122,6 +121,7 @@ angular.module('bmmApp')
             _quickMenu.setMenu($scope.model.published_at.substring(0,4), $scope.model.parent_id, $scope.model.id);
           });
           modelLoaded = true;
+          $scope.status = _init.translation.states.noChanges;
         });
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
