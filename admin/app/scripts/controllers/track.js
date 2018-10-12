@@ -25,7 +25,6 @@ angular.module('bmmApp')
 
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
-    $scope.status = _init.translation.states.noChanges;
     $scope.possibleSubtypes = [
       'song',
       'speech',
@@ -144,6 +143,7 @@ angular.module('bmmApp')
             });
           });
           modelLoaded = true;
+          $scope.status = _init.translation.states.noChanges;
         });
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
