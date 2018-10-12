@@ -3,28 +3,36 @@
 angular.module('bmmLibApp')
   .filter('_locals', function (_locals, $filter) {
 
+    var msInOneMinute = 60000;
+
     Date.prototype.stdTimezoneOffset = function () {
       var jan = new Date(this.getFullYear(), 0, 1);
       var jul = new Date(this.getFullYear(), 6, 1);
       return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
     }
-    Date.prototype.getUtcInNorway = function () {
-      if(this.getTimezoneOffset() < this.stdTimezoneOffset()){
-        return 120*60000;
+    Date.prototype.getNorwegianTimezoneOffset = function () {
+      var offsetFromUtcInMinutes;
+      if (this.getTimezoneOffset() < this.stdTimezoneOffset()){
+        offsetFromUtcInMinutes = 120; // summer time
       } else {
-        return 60*60000;
+        offsetFromUtcInMinutes = 60; // winter time
       }
+      return this.getTimezoneOffset() + offsetFromUtcInMinutes;
+    }
+
+    var convertToTimeInNorway = function(dateString) {
+      var localDate = new Date(dateString);
+      return new Date(localDate.getTime() + localDate.getNorwegianTimezoneOffset() * msInOneMinute);
     }
 
     return function (dateString, lang, out) {
 
       if (typeof dateString!=='undefined') {
 
-        var localDate = new Date(dateString);
         // This filter shows the time in the norwegian timezone
         // On the website we use this filter everywhere date-related. 
         // On the admin panel we don't use this filter at all and show times in the local timezone
-        var date = new Date(localDate.getTime() + localDate.getTimezoneOffset()*60000 + localDate.getUtcInNorway());
+        var date = convertToTimeInNorway(dateString);
 
         var local='', wd = date.getDay();
 
