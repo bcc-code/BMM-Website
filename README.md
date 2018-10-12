@@ -89,7 +89,7 @@ DEBUG AND TEST RUN 'client' OR 'admin'
 #!cmd
 grunt serve
 ```
-... A new browser window should now open
+... A new browser tab should now open
 
 4. Allow the unauthorized certificate to run with https
 
