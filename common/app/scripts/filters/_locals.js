@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('_locals', function (_locals, $filter) {
+  .filter('_locals', function (_locals, $filter, _session) {
 
     var msInOneMinute = 60000;
 
@@ -41,7 +41,7 @@ angular.module('bmmLibApp')
         };
 
         if (typeof _locals.getAll().date[lang]==='undefined') {
-          lang = 'nb'; //Fallback
+          lang = _session.current.websiteLanguage; // Fallback
         }
         
         if (typeof _locals.getAll().date[lang].output!=='undefined') {
