@@ -110,7 +110,6 @@ angular.module('bmmApp')
 
       $scope.setWebsiteLanguage = function(lang) {
         _session.setWebsiteLanguage(lang, _init);
-        $scope.saveSession();
       }
       $scope.setWebsiteLanguage($scope.session.websiteLanguage);
 
