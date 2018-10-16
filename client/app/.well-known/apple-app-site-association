@@ -1,0 +1,15 @@
+{
+   "applinks": {
+     "apps": [],
+     "details": [
+       {
+         "appID": "KJ6LCYQ3A8.org.brunstad.bmm",
+         "paths": ["/music", "/speeches", "/video", "/archive", "/audiobooks", "/album/*", "/track/*", "/playlist/private/*", "/playlist/contributor/*", "/copyright", "/"]
+       },
+       {
+         "appID": "S9X3H6TVG5.org.brunstad.bmm-dev",
+         "paths": ["/music", "/speeches", "/video", "/archive", "/audiobooks", "/album/*", "/track/*", "/playlist/private/*", "/playlist/contributor/*", "/copyright", "/"]
+       }
+     ]
+   }
+}
