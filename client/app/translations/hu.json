@@ -99,8 +99,9 @@
     "composer": "Zeneszerző",
     "album": "Album",
     "bibleVerse": "Bibliavers",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "songbooks": "Ének száma",
+    "copyright": "Szerzői jog",
+    "publisher": "Kiadó"
   },
   "playlist": {
     "tracks": "Szám(ok)",

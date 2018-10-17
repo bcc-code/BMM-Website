@@ -451,7 +451,8 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
-            '*.{ico,png,txt,config}'
+            '*.{ico,png,txt,config}',
+            '.well-known/*'
           ]
         }, {
           expand: true,

@@ -1,12 +1,38 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .filter('_locals', function (_locals, $filter) {
-    return function (date, lang, out) {
+  .filter('_locals', function (_locals, $filter, _session) {
 
-      if (typeof date!=='undefined') {
+    var msInOneMinute = 60000;
 
-        date = new Date(date);
+    Date.prototype.stdTimezoneOffset = function () {
+      var jan = new Date(this.getFullYear(), 0, 1);
+      var jul = new Date(this.getFullYear(), 6, 1);
+      return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+    }
+    Date.prototype.getNorwegianTimezoneOffset = function () {
+      var offsetFromUtcInMinutes;
+      if (this.getTimezoneOffset() < this.stdTimezoneOffset()){
+        offsetFromUtcInMinutes = 120; // summer time
+      } else {
+        offsetFromUtcInMinutes = 60; // winter time
+      }
+      return this.getTimezoneOffset() + offsetFromUtcInMinutes;
+    }
+
+    var convertToTimeInNorway = function(dateString) {
+      var localDate = new Date(dateString);
+      return new Date(localDate.getTime() + localDate.getNorwegianTimezoneOffset() * msInOneMinute);
+    }
+
+    return function (dateString, lang, out) {
+
+      if (typeof dateString!=='undefined') {
+
+        // This filter shows the time in the norwegian timezone
+        // On the website we use this filter everywhere date-related. 
+        // On the admin panel we don't use this filter at all and show times in the local timezone
+        var date = convertToTimeInNorway(dateString);
 
         var local='', wd = date.getDay();
 
@@ -15,7 +41,7 @@ angular.module('bmmLibApp')
         };
 
         if (typeof _locals.getAll().date[lang]==='undefined') {
-          lang = 'nb'; //Fallback
+          lang = _session.current.websiteLanguage; // Fallback
         }
         
         if (typeof _locals.getAll().date[lang].output!=='undefined') {

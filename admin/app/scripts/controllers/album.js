@@ -8,6 +8,7 @@ angular.module('bmmApp')
     $routeParams,
     $timeout,
     _api,
+    _session,
     _init,
     _album,
     _track,
@@ -23,7 +24,6 @@ angular.module('bmmApp')
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
     $scope.hasChildAlbums = false;
-    $scope.status = _init.translation.states.noChanges;
 
     $scope.fetchModel = function(_raw) {
       if (!newAlbum) {
@@ -41,7 +41,7 @@ angular.module('bmmApp')
         }
 
         if (typeof $routeParams.language==='undefined') {
-          $routeParams.language = _init.contentLanguages[0];
+          $routeParams.language = _session.current.contentLanguages[0];
         }
 
         if (typeof $routeParams.date==='undefined') {
@@ -121,6 +121,7 @@ angular.module('bmmApp')
             _quickMenu.setMenu($scope.model.published_at.substring(0,4), $scope.model.parent_id, $scope.model.id);
           });
           modelLoaded = true;
+          $scope.status = _init.translation.states.noChanges;
         });
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {

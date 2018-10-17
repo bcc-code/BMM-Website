@@ -1014,8 +1014,6 @@ angular.module('bmmLibApp')
     });
   };
 
-  window.api = factory;
-
   return factory;
 
 });

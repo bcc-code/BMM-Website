@@ -10,6 +10,7 @@ angular.module('bmmApp')
     _waitings,
     _play,
     _api,
+    _session,
     _init,
     _track,
     _album,
@@ -24,7 +25,6 @@ angular.module('bmmApp')
 
     $scope.model = {}; //Raw
     $scope.standardModel = {}; //Standard
-    $scope.status = _init.translation.states.noChanges;
     $scope.possibleSubtypes = [
       'song',
       'speech',
@@ -57,7 +57,7 @@ angular.module('bmmApp')
         }
 
         if (typeof $routeParams.language==='undefined') {
-          $routeParams.language = _init.contentLanguages[0];
+          $routeParams.language = _session.current.contentLanguages[0];
         }
 
         if (typeof $routeParams.date==='undefined') {
@@ -143,6 +143,7 @@ angular.module('bmmApp')
             });
           });
           modelLoaded = true;
+          $scope.status = _init.translation.states.noChanges;
         });
         $scope.fetchModel(false).done(function(model) {
           $scope.$apply(function() {
@@ -413,8 +414,12 @@ angular.module('bmmApp')
           if (this.language===lang) {
             if(typeof $scope.originalLanguage!=='undefined'){
               // take the values of the previous originalLanguage
-              this.publisher = $scope.originalLanguage.publisher;
-              this.copyright = $scope.originalLanguage.copyright;
+              if(this.publisher == '') {
+                this.publisher = $scope.originalLanguage.publisher;
+              }
+              if(this.copyright == '') {
+                this.copyright = $scope.originalLanguage.copyright;
+              }
 
               $.each($scope.model.translations, function() {
                 // remove the values of the previous originalLanguage
@@ -426,11 +431,13 @@ angular.module('bmmApp')
             }
             $scope.originalLanguage = this;
             
-            if($scope.originalLanguage.publisher == '')
+            if($scope.originalLanguage.publisher == '') {
               $scope.originalLanguage.publisher = defaultPublisher;
+            }
 
-            if($scope.originalLanguage.copyright == '')
+            if($scope.originalLanguage.copyright == '') {
               $scope.originalLanguage.copyright = defaultCopyright;
+            }
 
             return false;
           }

@@ -127,17 +127,17 @@
 </div>
 
 <!--PUSH MESSAGE-->
-<div class="popup" ng-if="pushMessage.show">
+<div class="popup" ng-if="welcomeMessage.show">
     <div class="container">
         <div class="verticalCenter">
-            <div id="popup-push-message" class="container" click-outside="pushMessage.show=false">
+            <div id="popup-push-message" class="container" click-outside="welcomeMessage.show=false">
 
-                <div class="exit" ng-click="pushMessage.show=false"></div>
+                <div class="exit" ng-click="welcomeMessage.show=false"></div>
 
-                <b><span ng-bind="pushMessage.message.title"></span></b>
+                <b><span ng-bind="welcomeMessage.message.title"></span></b>
 
                 <p>
-                    {{pushMessage.message.message}}
+                    {{welcomeMessage.message.message}}
                 </p>
 
             </div>
@@ -158,10 +158,10 @@
                         <div style="width: 100%;float: left; margin-top: 1em;">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown">
-                                    <div class="flag flags-{{init.websiteLanguage}}"></div>
-                                    {{init.websiteLanguage | _languageCode}}</a>
+                                    <div class="flag flags-{{session.websiteLanguage}}"></div>
+                                    {{session.websiteLanguage | _languageCode}}</a>
                                 <ul class="dropdown-menu">
-                                    <li ng-repeat="lang in init.translations.available"
+                                    <li ng-repeat="lang in init.config.translationsAvailable"
                                         ng-click="setWebsiteLanguage(lang);">
                                         <div class="flag flags-{{lang}}"></div>
                                         <span ng-bind="lang | _languageCode"></span>
@@ -173,8 +173,8 @@
                     <uib-tab heading="{{init.translation.options.contentLanguages}}">
                         <div style="width: 100%;">
                             <b class="choose-language"><span ng-bind="init.translation.options.chooseLanguages"></span></b>
-                            <ul ui-sortable="sortableOptions" ng-model="init.contentLanguages">
-                              <li ng-repeat="language in init.contentLanguages" class="language_element">
+                            <ul ui-sortable="sortableOptions" ng-model="session.contentLanguages">
+                              <li ng-repeat="language in session.contentLanguages" class="language_element">
                                 <div style="width:70%" class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown">
                                         <div class="flag flags-{{language}}"></div>
@@ -230,6 +230,13 @@
                     <span class="link"
                           ng-click="go('/album/'+$root.trackInfo.track.raw.parent_id); $root.trackInfo.show=false;">
                         {{$root.trackInfo.track.albumTitle}}
+                    </span><br><br>
+                </div>     
+
+                <div ng-if="$root.trackInfo.track.songbooks != ''">
+                    <b><span ng-bind="init.translation.track.songbooks"></span></b><br>
+                    <span>
+                        {{$root.trackInfo.track.songbooks}}
                     </span><br><br>
                 </div>   
 
