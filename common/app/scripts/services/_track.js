@@ -57,7 +57,7 @@ angular.module('bmmLibApp')
 
         //Path
         resolvedData.path = $location.absUrl();
-        resolvedData.path = resolvedData.path.replace($location.path(), '/track/'+data.id+'/'+data.language);
+        resolvedData.path = resolvedData.path.replace(encodeURI($location.path()), '/track/'+data.id+'/'+data.language);
 
         //Find parent title
         if (typeof data._meta!=='undefined'&&
