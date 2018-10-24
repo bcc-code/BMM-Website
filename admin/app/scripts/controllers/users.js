@@ -3,8 +3,6 @@
 angular.module('bmmApp')
   .controller('UsersCtrl', function ($scope, $timeout, _api, _init) {
 
-    $scope.status = _init.translation.states.loadingUsers;
-
     $scope.$watch('userSearch', function(name) {
       if (name!=='') {
         _api.userSuggesterCompletionGet(name, {
@@ -70,8 +68,6 @@ angular.module('bmmApp')
     };
 
     $scope.fetchUsers = function() {
-
-      $scope.status = _init.translation.states.loadingUsers;
 
       _api.userGet({
         size: 500,
