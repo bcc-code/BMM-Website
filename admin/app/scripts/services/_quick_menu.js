@@ -1,9 +1,10 @@
 'use strict';
 
+var factory = {};
+
 angular.module('bmmLibApp')
   .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', function ($rootScope, $timeout, _api, _track, _album) {
 
-    var factory = {};
 
     factory.menu = {};
     factory.menu.reRender = 0;
@@ -139,7 +140,7 @@ angular.module('bmmLibApp')
         unpublished: 'show'
       }).done(function(data) {
 
-        factory.childAlbum = [];
+        factory.albumChild = [];
         factory.childAlbums = [];
         factory.childTracks = [];
         $.each(data.children, function() {
@@ -194,8 +195,10 @@ angular.module('bmmLibApp')
             }
           });
 
-          factory.findTracks(albumRootId);
-
+          if(!albumParentId) {
+            factory.findTracks(albumRootId);
+          }
+          
           factory.findChildAlbums(albumRootId, {
             done: function() {
 
@@ -208,8 +211,9 @@ angular.module('bmmLibApp')
                   }
                 });
 
-                factory.findChildTracks(albumParentId);
-
+                if(albumParentId) {
+                  factory.findChildTracks(albumParentId);
+                }
               }
 
               factory.refresh();
@@ -226,4 +230,22 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }]);
+  }])
+  .controller('quickMenu', ['$scope', '$location', function($scope, $location) {
+    $scope.go = function (path) { 
+      $location.path(path);
+      factory.refresh();
+    };
+  }])
+  .directive("changeMe", function() {
+    return {
+      scope: {
+        changeMe: '&'
+      },
+      link: function($scope, element, attr) {
+        element.on("change", function() {
+             $scope.changeMe();
+        })
+      }
+    }
+  });

@@ -212,7 +212,7 @@
             <!--QUICK MENU -->
             <div ng-show="userIs('ROLE_CONTRIBUTOR_MANAGER') && userIs('ROLE_TRACK_MANAGER') && userIs('ROLE_ALBUM_MANAGER')">
                 <h2>{{init.translation.menu.secondary.quickMenu}}</h2>
-                <div class="quick-menu">
+                <div class="quick-menu" ng-controller="quickMenu">
                     <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
                     <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
 
@@ -224,7 +224,7 @@
 
                     <div ng-hide="quickMenu.albums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.album}}</span>
-                        <select ng-change="go('/album/'+quickMenu.album.id);"
+                        <select change-me="go('/album/'+quickMenu.album.id);"
                                 ng-model="quickMenu.album"
                                 ng-options="album.title for album in quickMenu.albums">
                         </select>
@@ -254,7 +254,7 @@
 
                     <div ng-hide="quickMenu.childAlbums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.childAlbums}}</span>
-                        <select ng-change="go('/album/'+quickMenu.albumChild.id);"
+                        <select change-me="go('/album/'+quickMenu.albumChild.id);"
                                 ng-model="quickMenu.albumChild"
                                 ng-options="childAlbum.title for childAlbum in quickMenu.childAlbums">
                         </select>
