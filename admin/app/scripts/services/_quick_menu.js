@@ -1,10 +1,10 @@
 'use strict';
 
-var factory = {};
 
 angular.module('bmmLibApp')
   .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', function ($rootScope, $timeout, _api, _track, _album) {
 
+    var factory = {};
 
     factory.menu = {};
     factory.menu.reRender = 0;
@@ -96,8 +96,10 @@ angular.module('bmmLibApp')
 
         factory.albums = [];
         factory.tracks = [];
-        factory.childAlbums = [];
-        factory.childTracks = [];
+        if(factory.menu.year != year){
+          factory.childAlbums = [];
+          factory.childTracks = [];
+        }
         $.each(albums, function() {
           var album = _album.resolve(this);
           factory.albums.push(album);
@@ -230,22 +232,4 @@ angular.module('bmmLibApp')
 
     return factory;
 
-  }])
-  .controller('quickMenu', ['$scope', '$location', function($scope, $location) {
-    $scope.go = function (path) { 
-      $location.path(path);
-      factory.refresh();
-    };
-  }])
-  .directive("changeMe", function() {
-    return {
-      scope: {
-        changeMe: '&'
-      },
-      link: function($scope, element, attr) {
-        element.on("change", function() {
-             $scope.changeMe();
-        })
-      }
-    }
-  });
+  }]);

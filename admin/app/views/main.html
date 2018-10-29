@@ -29,7 +29,7 @@
     <header>
         <div class="page-positioning">
             <div class="wrapper">
-                <a ng-href="./" class="logo"></a>
+                <a ng-href="./" class="logo" ng-click="clearMenu()"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term);">
                         <input ng-model="bmm.term"
@@ -40,7 +40,7 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="dashboard">
+                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="dashboard" ng-click="clearMenu()">
                             {{init.translation.menu.main.dashboard}}
                         </a>
                     </li>
@@ -212,7 +212,7 @@
             <!--QUICK MENU -->
             <div ng-show="userIs('ROLE_CONTRIBUTOR_MANAGER') && userIs('ROLE_TRACK_MANAGER') && userIs('ROLE_ALBUM_MANAGER')">
                 <h2>{{init.translation.menu.secondary.quickMenu}}</h2>
-                <div class="quick-menu" ng-controller="quickMenu">
+                <div class="quick-menu">
                     <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
                     <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button><br><br>
 
@@ -224,7 +224,7 @@
 
                     <div ng-hide="quickMenu.albums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.album}}</span>
-                        <select change-me="go('/album/'+quickMenu.album.id);"
+                        <select ng-change="go('/album/'+quickMenu.album.id);"
                                 ng-model="quickMenu.album"
                                 ng-options="album.title for album in quickMenu.albums">
                         </select>
@@ -254,7 +254,7 @@
 
                     <div ng-hide="quickMenu.childAlbums.length<=0" style="margin: 0">
                         <span>{{init.translation.menu.secondary.childAlbums}}</span>
-                        <select change-me="go('/album/'+quickMenu.albumChild.id);"
+                        <select ng-change="go('/album/'+quickMenu.albumChild.id);"
                                 ng-model="quickMenu.albumChild"
                                 ng-options="childAlbum.title for childAlbum in quickMenu.childAlbums">
                         </select>

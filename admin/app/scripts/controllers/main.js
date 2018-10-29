@@ -24,6 +24,13 @@ angular.module('bmmApp')
 
       $scope.session = _session.current;
 
+      $scope.clearMenu = function() {
+        $scope.quickMenu.year='';
+        $scope.quickMenu.albums=[];
+        $scope.quickMenu.childAlbums=[];
+        $scope.quickMenu.childTracks=[];
+      }
+
       $scope.userIs = function(role) {
         if(_init.user.roles.indexOf('ROLE_ADMINISTRATOR') !== -1) {
           return true;
