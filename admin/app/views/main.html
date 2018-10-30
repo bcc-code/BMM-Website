@@ -29,7 +29,7 @@
     <header>
         <div class="page-positioning">
             <div class="wrapper">
-                <a ng-href="./" class="logo"></a>
+                <a ng-href="./" class="logo" ng-click="clearMenu()"></a>
                 <div class="search">
                     <form ng-submit="go('/search/'+bmm.term);">
                         <input ng-model="bmm.term"
@@ -40,7 +40,7 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="dashboard">
+                        <a ng-class="{ active: isActive('/dashboard')}" ng-href="dashboard" ng-click="clearMenu()">
                             {{init.translation.menu.main.dashboard}}
                         </a>
                     </li>

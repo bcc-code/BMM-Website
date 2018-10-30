@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('bmmLibApp')
   .factory('_quickMenu', ['$rootScope', '$timeout', '_api', '_track', '_album', function ($rootScope, $timeout, _api, _track, _album) {
 
@@ -95,8 +96,10 @@ angular.module('bmmLibApp')
 
         factory.albums = [];
         factory.tracks = [];
-        factory.childAlbums = [];
-        factory.childTracks = [];
+        if(factory.menu.year != year){
+          factory.childAlbums = [];
+          factory.childTracks = [];
+        }
         $.each(albums, function() {
           var album = _album.resolve(this);
           factory.albums.push(album);
@@ -139,7 +142,7 @@ angular.module('bmmLibApp')
         unpublished: 'show'
       }).done(function(data) {
 
-        factory.childAlbum = [];
+        factory.albumChild = [];
         factory.childAlbums = [];
         factory.childTracks = [];
         $.each(data.children, function() {
@@ -194,8 +197,10 @@ angular.module('bmmLibApp')
             }
           });
 
-          factory.findTracks(albumRootId);
-
+          if(!albumParentId) {
+            factory.findTracks(albumRootId);
+          }
+          
           factory.findChildAlbums(albumRootId, {
             done: function() {
 
@@ -208,8 +213,9 @@ angular.module('bmmLibApp')
                   }
                 });
 
-                factory.findChildTracks(albumParentId);
-
+                if(albumParentId) {
+                  factory.findChildTracks(albumParentId);
+                }
               }
 
               factory.refresh();
