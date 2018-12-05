@@ -25,7 +25,8 @@
       "recordingList": "Listă de înregistrări",
       "tracks": "Piese",
       "childTracks": "Piese pentru copii",
-      "open": "deschide"
+      "open": "deschide",
+      "nextFraKaare": "Următorul De la Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Activ",
       "available": "Disponibile",
       "title": "Titlu",
+      "uploaded": "Încărcat",
+      "published": "Publicat",
       "description": "Descriere",
       "selectedLanguage": "Limbă selectată",
       "originalLanguage": "Limbă originală",
@@ -181,7 +184,7 @@
     "unknown": "Anonim",
     "dragMeToPlaylist": "Trage-mă în play-list",
     "exegesis": "Tălmăcire",
-    "copyright": "Copyright",
+    "copyright": "Drepturi de autor",
     "publisher": "Editor"
   },
   "statistic": {

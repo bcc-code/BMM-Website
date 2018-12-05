@@ -25,7 +25,8 @@
       "recordingList": "Aufnahmeliste",
       "tracks": "Titel",
       "childTracks": "Tracks",
-      "open": "Öffnen"
+      "open": "Öffnen",
+      "nextFraKaare": "Nächste Fra Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiv",
       "available": "Verfügbar",
       "title": "Titel",
+      "uploaded": "Hochgeladen",
+      "published": "Veröffentlicht",
       "description": "Beschreibung",
       "selectedLanguage": "Gewählte Sprache",
       "originalLanguage": "Originalsprache",

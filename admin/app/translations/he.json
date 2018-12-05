@@ -25,7 +25,8 @@
       "recordingList": "Recording list",
       "tracks": "Tracks",
       "childTracks": "Child tracks",
-      "open": "open"
+      "open": "open",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Active",
       "available": "Available",
       "title": "Title",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Description",
       "selectedLanguage": "Selected language",
       "originalLanguage": "Original language",

@@ -35,6 +35,11 @@ angular.module('bmmApp', [
         templateUrl: 'views/pages/index.html',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/next/:id', {
+        templateUrl: 'views/pages/next_episode.html',
+        controller: 'NextEpisodeCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .when('/waitings', {
         templateUrl: 'views/pages/waitings.html',
         controller: 'WaitingsCtrl',
