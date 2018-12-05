@@ -25,7 +25,8 @@
       "recordingList": "Opname lijst",
       "tracks": "Nummers",
       "childTracks": "Nummers voor kinderen",
-      "open": "Openen"
+      "open": "Openen",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Actief",
       "available": "Beschikbaar",
       "title": "Titel",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Beschrijving",
       "selectedLanguage": "Geselecteerde taal",
       "originalLanguage": "Oorspronkelijke taal",

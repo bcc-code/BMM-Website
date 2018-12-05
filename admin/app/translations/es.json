@@ -25,7 +25,8 @@
       "recordingList": "Lista de grabacion",
       "tracks": "Pistas",
       "childTracks": "Pistas para niños",
-      "open": "abrir"
+      "open": "abrir",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Activo",
       "available": "Disponible",
       "title": "Título",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Descripción",
       "selectedLanguage": "Idioma seleccionado",
       "originalLanguage": "Idioma original",

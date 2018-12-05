@@ -25,7 +25,8 @@
       "recordingList": "Списък записи",
       "tracks": "Песни и речи",
       "childTracks": "Придружаващи песни\/речи",
-      "open": "отвори"
+      "open": "отвори",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Активен",
       "available": "Достъпен",
       "title": "Заглавие",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Описание",
       "selectedLanguage": "Избран език",
       "originalLanguage": "Първоначален език",

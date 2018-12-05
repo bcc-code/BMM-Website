@@ -25,7 +25,8 @@
       "recordingList": "Felvételek",
       "tracks": "Számok",
       "childTracks": "Alárendelt számok",
-      "open": "Megnyitás"
+      "open": "Megnyitás",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktív",
       "available": "Elérhető",
       "title": "Cím",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Leírás",
       "selectedLanguage": "Választott nyelv",
       "originalLanguage": "Eredeti nyelv",

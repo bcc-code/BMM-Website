@@ -25,7 +25,8 @@
       "recordingList": "Λίστα ηχογράφησης",
       "tracks": "Κομμάτι",
       "childTracks": "Παιδικά κομμάτια",
-      "open": "ανοιχτά"
+      "open": "ανοιχτά",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "\tΕνεργός",
       "available": "Διαθέσιμος",
       "title": "Τίτλος",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Περιγραφή",
       "selectedLanguage": "Επιλεγμένη γλώσσα",
       "originalLanguage": "Γλώσσα πρωτοτύπου",

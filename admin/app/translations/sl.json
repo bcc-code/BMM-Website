@@ -25,7 +25,8 @@
       "recordingList": "Seznam posnetkov",
       "tracks": "Skladbe",
       "childTracks": "Otroške skladbe",
-      "open": "odpri"
+      "open": "odpri",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiven",
       "available": "Dosegljiv",
       "title": "Naslov",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Opis",
       "selectedLanguage": "Izbrani jezik",
       "originalLanguage": "Izvirni jezik",

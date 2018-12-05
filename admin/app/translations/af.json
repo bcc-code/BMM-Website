@@ -25,7 +25,8 @@
       "recordingList": "Lys opname",
       "tracks": "Snede",
       "childTracks": "Kinder snitte",
-      "open": "open"
+      "open": "open",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktief",
       "available": "Beskikbaar",
       "title": "Titel",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Beskrywing",
       "selectedLanguage": "Gekose taal",
       "originalLanguage": "Oorspronklike taal",

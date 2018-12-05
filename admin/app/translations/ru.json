@@ -25,7 +25,8 @@
       "recordingList": "Список записей",
       "tracks": "Треки",
       "childTracks": "Треки для детей",
-      "open": "открыть"
+      "open": "открыть",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Активные",
       "available": "Доступно",
       "title": "Название",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Описание",
       "selectedLanguage": "Выбранный язык",
       "originalLanguage": "Язык оригинала",

@@ -25,7 +25,8 @@
       "recordingList": "Optagelse liste",
       "tracks": "Sange og taler",
       "childTracks": "Børnesange",
-      "open": "åben"
+      "open": "åben",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiv",
       "available": "Tilgængelig",
       "title": "Titel",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Beskrivelse",
       "selectedLanguage": "Vælg sprog",
       "originalLanguage": "Originalsprog",

@@ -25,7 +25,8 @@
       "recordingList": "Список записування",
       "tracks": "Треки",
       "childTracks": "Дитячі пісні",
-      "open": "відкрити"
+      "open": "відкрити",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Активні",
       "available": "Доступні",
       "title": "Назва",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Опис",
       "selectedLanguage": "Вибрану мову",
       "originalLanguage": "Мова оригіналу",
