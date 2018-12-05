@@ -94,10 +94,4 @@ angular.module('bmmApp')
   };
 
   init(offset);
-
-  $scope.sortableOptions = {
-    axis: 'y',
-    handle: '.sort_handle',
-    'ui-floating': false
-  };
 });
