@@ -25,7 +25,8 @@
       "recordingList": "Kayıt Listesi",
       "tracks": "Parçalar",
       "childTracks": "Çocuk Parçaları",
-      "open": "aç"
+      "open": "aç",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktif",
       "available": "Mevcut",
       "title": "Başlık",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Açıklama",
       "selectedLanguage": "Seçilen Dil",
       "originalLanguage": "Orjinal Dil",

@@ -25,7 +25,8 @@
       "recordingList": "Tallennus-luettelo",
       "tracks": "Kappaleet",
       "childTracks": "Aliraidat",
-      "open": "Avaa"
+      "open": "Avaa",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiivinen",
       "available": "Saatavilla",
       "title": "Otsikko",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Kuvaus",
       "selectedLanguage": "Valitulla kielellä",
       "originalLanguage": "Alkuperäinen kieli",

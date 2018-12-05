@@ -25,7 +25,8 @@
       "recordingList": "Innspillingsliste",
       "tracks": "Spor",
       "childTracks": "Tilhørende spor",
-      "open": "Åpne"
+      "open": "Åpne",
+      "nextFraKaare": "Neste Fra Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiv",
       "available": "Tilgjengelig",
       "title": "Tittel",
+      "uploaded": "Lastet opp",
+      "published": "Publisert",
       "description": "Beskrivelse",
       "selectedLanguage": "Valgt språk",
       "originalLanguage": "Originalspråk",
@@ -181,8 +184,8 @@
     "unknown": "Ukjent",
     "dragMeToPlaylist": "Dra meg til spilleliste",
     "exegesis": "Tydning",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Opphavsrett",
+    "publisher": "Forlegger"
   },
   "statistic": {
     "chartByDateTitle": "Nye brukere per dag",

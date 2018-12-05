@@ -25,7 +25,8 @@
       "recordingList": "Elenco di registrazione",
       "tracks": "Tracce",
       "childTracks": "Tracce per bambini",
-      "open": "apri"
+      "open": "apri",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Attivo",
       "available": "Disponibile",
       "title": "Titolo",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Descrizione",
       "selectedLanguage": "Lingua selezionata",
       "originalLanguage": "Lingua originale",

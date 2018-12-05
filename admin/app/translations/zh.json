@@ -25,7 +25,8 @@
       "recordingList": "Recording list",
       "tracks": "曲目",
       "childTracks": "儿童曲目",
-      "open": "打开"
+      "open": "打开",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Active",
       "available": "Available",
       "title": "标题",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "描述",
       "selectedLanguage": "所选的语言",
       "originalLanguage": "原属语言",

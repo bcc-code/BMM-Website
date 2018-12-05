@@ -25,7 +25,8 @@
       "recordingList": "Salvestamine loendi",
       "tracks": "Muusikapalad",
       "childTracks": "Laste muusikapalad",
-      "open": "ava"
+      "open": "ava",
+      "nextFraKaare": "Next From Kåre"
     }
   },
   "page": {
@@ -57,6 +58,8 @@
       "active": "Aktiivne",
       "available": "Saadaval",
       "title": "Pealkiri",
+      "uploaded": "Uploaded",
+      "published": "Published",
       "description": "Kirjeldus",
       "selectedLanguage": "Valitud keel",
       "originalLanguage": "Algupärane keel",
