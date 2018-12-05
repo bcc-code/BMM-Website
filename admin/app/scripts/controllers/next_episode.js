@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('NextCtrl', function(
+  .controller('NextEpisodeCtrl', function(
     $scope,
     $routeParams,
     _api,
@@ -9,6 +9,7 @@ angular.module('bmmApp')
   ) {
   $scope.init = _init;
   $scope.missingLanguages = [];
+  $scope.differencePercentage = 10;
 
   var offset = 0;
   var nextEpisodeId = null;
@@ -32,15 +33,13 @@ angular.module('bmmApp')
   };
 
   var detectDuplicateTitles = function(){
-    $scope.nextEpisode.translations.forEach(function(translation) {
-      var translationsCopy = $scope.nextEpisode.translations.map(function(translationCopy) { 
-        if(translationCopy.language != translation.language) return translationCopy.title; 
-      });
-
-      if(translationsCopy.indexOf(translation.title) !== -1) {
-        translation.duplicate_title = true;
+    for (var i = 0; i < $scope.nextEpisode.translations.length; i++) {
+      for (var j = i+1; j < $scope.nextEpisode.translations.length; j++) {
+        if ($scope.nextEpisode.translations[i].title == $scope.nextEpisode.translations[j].title) {
+          $scope.nextEpisode.translations[i].duplicate_title = $scope.nextEpisode.translations[j].duplicate_title = true;
+        }
       }
-    });
+    }
   }
 
   var detectBigDifferenceInDuration = function(){
@@ -53,9 +52,11 @@ angular.module('bmmApp')
       }
     });
 
+    var durationBoundary = originalLanguageDuration * $scope.differencePercentage / 100;
+
     $scope.nextEpisode.translations.forEach(function(translation) {
       if(translation.media != null)
-        if(Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= originalLanguageDuration * 0.1) {
+        if(Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= durationBoundary) {
           translation.big_difference_in_duration = true;
         }
     });

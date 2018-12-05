@@ -27,7 +27,7 @@
         </td>
         <td>
             {{translation.media[0].files[0].duration | _time}} &nbsp;
-            <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than 10%!" style="color: orange" class="glyphicon glyphicon-exclamation-sign"></span>
+            <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than {{differencePercentage}}%!" style="color: orange" class="glyphicon glyphicon-exclamation-sign"></span>
         </td>
         <td>
             <span ng-if="translation.media != null" title="This language has a media file attached to it." style="color: green" class="glyphicon glyphicon-ok"></span>
