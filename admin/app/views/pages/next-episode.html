@@ -3,7 +3,7 @@
     <h3 ng-if="podcast.title">Next episode from "<a href="album/{{nextEpisode.parent_id}}" ng-click="go('/album/'+nextEpisode.parent_id);">{{podcast.title}}</a>"</h3>
     <h3 ng-if="!podcast.title">No podcast with the specified id found!</h3>
 
-    <h4 ng-if="!nextEpisode">Ingen neste episode tilgjengelig!</h4>
+    <h4 ng-if="!nextEpisode">No next episode available!</h4>
     <h4 ng-if="nextEpisode">Will be published on: {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)</h4>
 
     <div ng-if="errors" class="errors">
