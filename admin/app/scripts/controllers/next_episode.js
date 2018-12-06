@@ -19,20 +19,20 @@ angular.module('bmmApp')
     // Info: Episodes are ordered newest first
     episodes.forEach(function(episode) {
       offset++;
-      if(new Date(episode.published_at) > datetime){
+      if (new Date(episode.published_at) > datetime) {
         nextEpisodeId = episode.id;
       } else {
         return;
       }
     });
 
-    if(offset % 20 == 0) {
-      // In case there are more than 20 unpublished episodes, we get nextEpisodeIdfrom the next 20 episodes
+    if (offset % 20 == 0 && episodes.length > 0) {
+      // In case there are more than 20 unpublished episodes, we get nextEpisodeId from the next 20 episodes
       init(offset);
     }
   };
 
-  var orderLanguages = function(){
+  var orderLanguages = function() {
     var languageOrdering = ["nb", "en", "de", "nl", "ro", "hu", "pl", "fr", "ru", "es", "fi", "pt", "tr", "it", "ta", "sl"];
     var orderedLanguages = [];
 
@@ -63,7 +63,7 @@ angular.module('bmmApp')
     var originalLanguageDuration = 0;
 
     $scope.nextEpisode.translations.forEach(function(translation) {
-      if(translation.language == $scope.nextEpisode.original_language && translation.media != null) {
+      if (translation.language == $scope.nextEpisode.original_language && translation.media != null) {
         originalLanguageDuration = translation.media[0].files[0].duration;
         return;
       }
@@ -72,8 +72,8 @@ angular.module('bmmApp')
     var durationBoundary = originalLanguageDuration * $scope.differencePercentage / 100;
 
     $scope.nextEpisode.translations.forEach(function(translation) {
-      if(translation.media != null)
-        if(Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= durationBoundary) {
+      if (translation.media != null)
+        if (Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= durationBoundary) {
           translation.big_difference_in_duration = true;
         }
     });
@@ -84,10 +84,14 @@ angular.module('bmmApp')
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
     
     expectedLanguages.forEach(function(expectedLang) {
-      if(availableLanguages.indexOf(expectedLang) === -1) {
+      if (availableLanguages.indexOf(expectedLang) === -1) {
         $scope.missingLanguages.push(expectedLang);
       }
     });
+  }
+
+  function doneLoading() {
+    $scope.loading = false;
   }
 
   function init(offset) {
@@ -95,27 +99,35 @@ angular.module('bmmApp')
 
     _api.podcastIdGet($routeParams.id).then(function(podcast) {
       $scope.podcast = podcast;
+
+      _api.podcastTracksGet($routeParams.id, {from: offset, unpublished: 'only'}).then(function(podcast) {
+        getNextEpisodeId(podcast);
+
+        if (nextEpisodeId) {
+          _api.trackGet(nextEpisodeId, {raw: true}).then(function(nextEpisode) {
+            $scope.nextEpisode = nextEpisode;
+
+            orderLanguages();
+            detectDuplicateTitles();
+            detectBigDifferenceInDuration();
+            detectMissingLanguages();
+
+            $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
+            $scope.errors = $scope.missingLanguages || $scope.norwegianNotMainLanguage ? true : false;
+            
+          }).then(function(){
+            doneLoading();
+          });
+        } else {
+          doneLoading();
+        }
+
+      });
+
+    }).fail(function(){
+      doneLoading();
     });
 
-    _api.podcastTracksGet($routeParams.id, {from: offset, unpublished: 'only'}).then(function(podcast) {
-      getNextEpisodeId(podcast);
-
-      if(nextEpisodeId) {
-        _api.trackGet(nextEpisodeId, {raw: true}).then(function(nextEpisode) {
-          $scope.nextEpisode = nextEpisode;
-
-          orderLanguages();
-          detectDuplicateTitles();
-          detectBigDifferenceInDuration();
-          detectMissingLanguages();
-
-          $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
-          $scope.errors = $scope.missingLanguages || $scope.norwegianNotMainLanguage ? true : false;
-          
-          $scope.loading = false;
-        });
-      }
-    });
   };
 
   init(offset);
