@@ -1,0 +1,54 @@
+.nextEpisode {
+  float: none !important;
+
+  .errors {
+    float: none;
+    padding: 0 20px;
+    border: 1px dashed red;
+    margin: 20px 0;
+
+    h5 > span {
+      color: red; 
+      vertical-align: top;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    tbody tr {
+      padding: 5px 0;
+      height: 25px;
+      border-top: 1px solid #ccc;
+
+      td:not(:last-child) {
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .flag {
+    vertical-align: top;
+  }
+
+  .glyphicon-exclamation-sign {
+    color: orange; 
+    vertical-align: text-top;
+  }
+  .glyphicon-ok {
+    color: green;
+  }
+  .glyphicon-remove {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 53em) {
+  .nextEpisode .languageCode {
+    display: none;
+  }
+}

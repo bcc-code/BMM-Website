@@ -1,41 +1,48 @@
-<h3>Next episode from "<a href="album/{{nextEpisode.parent_id}}" ng-click="go('/album/'+nextEpisode.parent_id);">{{podcast.title}}</a>"</h3>
+<p ng-if="loading">Loading ...</p>
+<div ng-if="!loading" class="nextEpisode">
+    <h3 ng-if="podcast.title">Next episode from "<a href="album/{{nextEpisode.parent_id}}" ng-click="go('/album/'+nextEpisode.parent_id);">{{podcast.title}}</a>"</h3>
+    <h3 ng-if="!podcast.title">No podcast with the specified id found!</h3>
 
-<h4 ng-if="!nextEpisode">Ingen neste episode tilgjengelig!</h4>
-<h4 ng-if="nextEpisode">Will be published on: {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)</h4>
+    <h4 ng-if="!nextEpisode">Ingen neste episode tilgjengelig!</h4>
+    <h4 ng-if="nextEpisode">Will be published on: {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)</h4>
 
-<div ng-if="missingLanguages">
-    <h5 ng-repeat="language in missingLanguages"><strong>{{language}}</strong> is missing from the expected languages!</h5>
+    <div ng-if="errors" class="errors">
+        <h5 ng-if="norwegianNotMainLanguage"><span class="glyphicon glyphicon-remove"></span> <strong>nb</strong> is not the main language!</h5>
+        <div ng-if="missingLanguages">
+            <h5 ng-repeat="language in missingLanguages"><span class="glyphicon glyphicon-remove"></span> <strong>{{language}}</strong> is missing from the expected languages!</h5>
+        </div>
+    </div>
+
+    <table ng-if="nextEpisode">
+        <thead>
+            <tr>
+                <th></th>
+                <th>{{init.translation.page.editor.title}}</th>
+                <th>{{init.translation.page.editor.duration}}</th>
+                <th class="center">{{init.translation.page.editor.uploaded}}</th>
+                <th class="center">{{init.translation.page.editor.published}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="translation in nextEpisode.translations">
+                <td>
+                    <span class="flag flags-{{translation.language}}"></span> <span class="languageCode">{{translation.language}}</span>
+                </td>
+                <td>
+                    <span ng-if="translation.duplicate_title" title="The title is the same as of another language!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.title}}
+                </td>
+                <td>
+                    <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than {{differencePercentage}}%!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.media[0].files[0].duration | _time}}
+                </td>
+                <td class="center">
+                    <span ng-if="translation.media" title="This language has a media file attached to it." class="glyphicon glyphicon-ok"></span>
+                    <span ng-if="!translation.media" title="This language doesn't have a media file attached to it!" class="glyphicon glyphicon-remove"></span>
+                </td>
+                <td class="center">
+                    <span ng-if="translation.is_visible" title="This language is published." class="glyphicon glyphicon-ok"></span>
+                    <span ng-if="!translation.is_visible" title="This language is not yet published!" class="glyphicon glyphicon-remove"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<br><br>
-
-<table ng-if="nextEpisode" style="width: 100%">
-    <tr>
-        <th></th>
-        <th>{{init.translation.page.editor.title}}</th>
-        <th>{{init.translation.page.editor.duration}}</th>
-        <th>{{init.translation.page.editor.uploaded}}</th>
-        <th>{{init.translation.page.editor.published}}</th>
-    </tr>
-    <tr ng-repeat="translation in nextEpisode.translations">
-        <td>
-            {{translation.language}}
-        </td>
-        <td>
-            {{translation.title}} &nbsp;
-            <span ng-if="translation.duplicate_title" title="The title is the same as of another language!" style="color: orange" class="glyphicon glyphicon-exclamation-sign"></span>
-        </td>
-        <td>
-            {{translation.media[0].files[0].duration | _time}} &nbsp;
-            <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than {{differencePercentage}}%!" style="color: orange" class="glyphicon glyphicon-exclamation-sign"></span>
-        </td>
-        <td>
-            <span ng-if="translation.media != null" title="This language has a media file attached to it." style="color: green" class="glyphicon glyphicon-ok"></span>
-            <span ng-if="translation.media == null" title="This language doesn't have a media file attached to it!" style="color: red" class="glyphicon glyphicon-remove"></span>
-        </td>
-        <td>
-            <span ng-if="translation.is_visible" title="This language is published." style="color: green" class="glyphicon glyphicon-ok"></span>
-            <span ng-if="!translation.is_visible" title="This language is not yet published!" style="color: red" class="glyphicon glyphicon-remove"></span>
-        </td>
-    </tr>
-</table>
