@@ -32,6 +32,23 @@ angular.module('bmmApp')
     }
   };
 
+  var orderLanguages = function(){
+    var languageOrdering = ["nb", "en", "de", "nl", "fr", "ro", "pl", "hu", "ru", "es", "fi", "tr", "pt", "it", "ta", "sl"];
+    var orderedLanguages = [];
+
+    for (var i = 0; i < languageOrdering.length; i++) {
+      for (var j = 0; j < $scope.nextEpisode.translations.length; j++) {
+        if ($scope.nextEpisode.translations[j].language == languageOrdering[i]) {
+          orderedLanguages.push($scope.nextEpisode.translations[j]); 
+          $scope.nextEpisode.translations.splice(j, 1);
+          break;
+        }
+      }
+    }
+
+    $scope.nextEpisode.translations = orderedLanguages.concat($scope.nextEpisode.translations);
+  }
+
   var detectDuplicateTitles = function(){
     for (var i = 0; i < $scope.nextEpisode.translations.length; i++) {
       for (var j = i+1; j < $scope.nextEpisode.translations.length; j++) {
@@ -63,7 +80,7 @@ angular.module('bmmApp')
   }
 
   var detectMissingLanguages = function(){
-    var expectedLanguages = ["nb", "de", "en", "nl", "fr"];
+    var expectedLanguages = ["nb", "en", "de", "nl", "ro", "fr", "fi", "hu", "pl", "ru"];
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
     
     expectedLanguages.forEach(function(expectedLang) {
@@ -74,6 +91,8 @@ angular.module('bmmApp')
   }
 
   function init(offset) {
+    $scope.loading = true;
+
     _api.podcastIdGet($routeParams.id).then(function(podcast) {
       $scope.podcast = podcast;
     });
@@ -85,9 +104,15 @@ angular.module('bmmApp')
         _api.trackGet(nextEpisodeId, {raw: true}).then(function(nextEpisode) {
           $scope.nextEpisode = nextEpisode;
 
+          orderLanguages();
           detectDuplicateTitles();
           detectBigDifferenceInDuration();
           detectMissingLanguages();
+
+          $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
+          $scope.errors = $scope.missingLanguages || $scope.norwegianNotMainLanguage ? true : false;
+          
+          $scope.loading = false;
         });
       }
     });
