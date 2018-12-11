@@ -215,7 +215,8 @@
                 <div class="quick-menu">
                     <button ng-click="go('/album/new')">{{init.translation.menu.secondary.newAlbum}}</button>
                     <button ng-click="go('/track/new')">{{init.translation.menu.secondary.newTrack}}</button>
-                    <button ng-click="go('/next/1')">{{init.translation.menu.secondary.nextFraKaare}}</button><br><br>
+                    <button ng-click="go('/next/1')">{{init.translation.menu.secondary.nextFraKaare}}</button>
+                    <button ng-click="go('/custom-notifications')">{{init.translation.menu.secondary.customNotifications}}</button><br><br>
 
                     <span>{{init.translation.menu.secondary.year}}</span>
                     <select ng-change="quickMenu.findAlbums(quickMenu.year);"

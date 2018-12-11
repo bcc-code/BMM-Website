@@ -1,0 +1,43 @@
+<input ng-disabled="!languageToAdd" ng-click="addNewTranslation(languageToAdd)" type="button" value="{{init.translation.page.notifications.addNotificationTranslation}}">
+
+<select ng-model="languageToAdd" ng-options="lang | _languageCode for lang in availableLanguages | filter : exceptSelected"></select>
+
+<form ng-submit="sendNotification()">
+  <ul
+    ui-sortable="sortableOptions"
+    ng-model="notificationTranslations"
+    class="foldbox">
+    <li
+      style="background: white;"
+      ng-repeat="translation in notificationTranslations">
+      <div class="foldbox">
+      <h3 style="margin-left: 10px; margin-top: 10px" ng-bind="translation.language | _languageCode"></h3>
+
+        <span ng-bind="init.translation.page.editor.title"></span>: 
+        <input type="text" ng-model="translation.title" placeholder="BMM News">
+
+        <span ng-bind="init.translation.page.notifications.message"></span>:
+        <textarea rows="2" cols="30" ng-model="translation.message" required></textarea>
+
+
+        <div ng-click="removeTranslation(translation)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: red" class="btn_remove">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+
+        <div style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: grey" class="btn_sort sort_handle">
+            <span class="glyphicon glyphicon-sort"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div ng-if="notificationTranslations.length > 0" style="float: right">
+    <input
+      value="{{init.translation.page.notifications.sendPushNotification}}"
+      type="submit">
+  </div>
+</form>

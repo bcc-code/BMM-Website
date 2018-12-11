@@ -3,67 +3,86 @@
 angular.module('bmmApp')
   .controller('NotificationsCtrl', function(
     $scope,
+    $routeParams,
     _api,
     _init
   ) {
+  $scope.init = _init;
+  $scope.anyNotification = false;
 
-    $scope.init = _init;
+  var graceTime = _init.config.graceTimeNotificationJob;
+  var timeBetweenNotificationJobs = 5;
+  var currentDatetime = new Date();
 
-    function reset() {
-      $scope.notificationTranslations = [{
-        language: 'nb'
-      }];
+  function doneLoading() {
+    $scope.loading = false;
+  }
 
-      $scope.languageToAdd = _init.root.languages[0];
-    }
-
-    reset();
-
-    $scope.sendNotification = function() {
-      var notification = {
-        translations: $scope.notificationTranslations
+  function checkNotificationBatchAlreadyExists(notifications, batchDate) {
+    var batchIndex = -1;
+    notifications.forEach(function(notification, index) {
+      if (notification.scheduledTime == batchDate) {
+        batchIndex = index;
+        return;
       }
+    });
+    return batchIndex;
+  }
 
-      _api.sendNotification(notification).then(function(result) {
-        reset();
-        alert(_init.translation.page.notifications.sent + ': ' + result.success + '\n'
-          + _init.translation.page.notifications.failed + ': ' + result.failure);
-      });
-    };
+  function init() {
+    $scope.loading = true;
+    var podcastsLoaded = 0;
 
-    $scope.removeTranslation = function(translation) {
-      var translations = $scope.notificationTranslations;
-      var index = translations.indexOf(translation);
-      if(index !== -1) {
-        translations.splice(index, 1);
-      }
-    }
+    _api.podcastsGet().then(function(podcasts) {
+      $scope.podcasts = podcasts;
 
-    $scope.addNewTranslation = function(language) {
-      this.notificationTranslations.push({
-        language: language
-      });
-    };
+        podcasts.forEach(function(podcast) {
+          _api.nextTracksToBePublished(podcast.id).then(function(tracks) {
+            podcast.notifications = [];
 
-    //This filter functions filters out the languages
-    //that are already selected. Prevents duplicates.
-    $scope.exceptSelected = function(language) {
-      for(var i = 0; i < $scope.notificationTranslations.length; i++) {
-        var translation = $scope.notificationTranslations[i];
+            tracks.forEach(function(track) {
+              $scope.anyNotification = true;
 
-        if(translation.language === language) {
-          return false;
-        }
-      }
+              var lastModifiedAt = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
+              var scheduledTime = lastModifiedAt.getTime();
+              if (currentDatetime > lastModifiedAt) {
+                 scheduledTime += graceTime * 60000;
+              }
 
-      return true;
-    };
+              var minutesTilNextNotificationJob = timeBetweenNotificationJobs - (new Date(scheduledTime).getMinutes() % timeBetweenNotificationJobs);
+              var secondsToRemoveToBeAbleToHaveSameBatchDates = new Date(scheduledTime).getSeconds();
+              var batchDate = scheduledTime + (minutesTilNextNotificationJob * 60000) - (secondsToRemoveToBeAbleToHaveSameBatchDates * 1000);
 
-    $scope.availableLanguages = _init.root.languages;
+              // Check if there is already a notification batch sending on batchDate
+              var indexOfNotificationBatch = checkNotificationBatchAlreadyExists(podcast.notifications, batchDate);
+              if (indexOfNotificationBatch != -1) {
+                podcast.notifications[indexOfNotificationBatch].tracks.push(track);
+                podcast.notifications[indexOfNotificationBatch].scheduledTime = batchDate;
+              } else {
+                podcast.notifications.push({ tracks: [track], scheduledTime: batchDate });
+              }
 
-    $scope.sortableOptions = {
-      axis: 'y',
-      handle: '.sort_handle',
-      'ui-floating': false
-    };
-  });
+              track.languages = [];
+              track.translations.forEach(function(translation) {
+                if (translation.language == track.original_language) {
+                  track.title = translation.title;
+                }
+                if (translation.is_visible) {
+                  track.languages.push(translation.language);
+                }
+              });
+            });
+
+            if (++podcastsLoaded == podcasts.length) {
+              doneLoading();
+            }
+          });
+        });
+
+    }).fail(function() {
+      doneLoading();
+    });
+  };
+
+  init();
+});
