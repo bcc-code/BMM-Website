@@ -37,16 +37,23 @@ angular.module('bmmApp')
       $scope.podcasts = podcasts;
 
         podcasts.forEach(function(podcast) {
-          _api.nextTracksToBePublished(podcast.id).then(function(tracks) {
+          _api.nextTracksToBePublished(podcast.id).then(function(tracks) { // Will get just unnotified tracks
             podcast.notifications = [];
 
             tracks.forEach(function(track) {
               $scope.anyNotification = true;
 
+              var graceTimeWasUsed;
               var lastModifiedAt = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
               var scheduledTime = lastModifiedAt.getTime();
-              if (currentDatetime > lastModifiedAt) {
-                 scheduledTime += graceTime * 60000;
+
+              if (Math.round((((new Date(track.published_at) - new Date(track._meta.modified_at)) % 86400000) % 3600000) / 60000) > graceTime) {
+                  // The track was published with a DateTime in the future
+                  graceTimeWasUsed = false;
+              } else {
+                  // The track was published or last modified in the near future (less than the graceTime) or in the past
+                  scheduledTime += graceTime * 60000;
+                  graceTimeWasUsed = true;
               }
 
               var minutesTilNextNotificationJob = timeBetweenNotificationJobs - (new Date(scheduledTime).getMinutes() % timeBetweenNotificationJobs);
@@ -58,8 +65,9 @@ angular.module('bmmApp')
               if (indexOfNotificationBatch != -1) {
                 podcast.notifications[indexOfNotificationBatch].tracks.push(track);
                 podcast.notifications[indexOfNotificationBatch].scheduledTime = batchDate;
+                podcast.notifications[indexOfNotificationBatch].graceTimeWasUsed = graceTimeWasUsed;
               } else {
-                podcast.notifications.push({ tracks: [track], scheduledTime: batchDate });
+                podcast.notifications.push({ tracks: [track], scheduledTime: batchDate, graceTimeWasUsed: graceTimeWasUsed });
               }
 
               track.languages = [];

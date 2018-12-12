@@ -1,6 +1,10 @@
 .notifications {
   float: none !important;
 
+  > div {
+    float: none !important;
+  }
+
   h3 {
     margin-bottom: 20px;
   }

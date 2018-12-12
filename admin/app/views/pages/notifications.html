@@ -1,29 +1,36 @@
 <p ng-if="loading">Loading ...</p>
-<div ng-if="!loading" class="notifications">
+<div ng-if="!loading" class="notifications" ng-init="notifications = 0">
     <h3>Notifications overview</h3>
 
-    <table ng-init="notificationIndex = 0" ng-if="anyNotification">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Tracks</th>
-            <th>Podcast</th>
-            <th>Scheduled time</th>
-          </tr>
-        </thead>
-        <tbody ng-repeat="podcast in podcasts" ng-init="current = $parent.notificationIndex; $parent.notificationIndex = $parent.notificationIndex + podcasts.length + 1">
-          <tr ng-repeat="notification in podcast.notifications">
-            <td>{{current + $index}}</td>
-            <td class="tracks">
-              <div ng-repeat="track in notification.tracks">
-                <a href="track/{{track.id}}" ng-click="go('/track/'+track.id);">{{track.title}}</a> ({{track.languages.join(', ')}})
-              </div>
-            </td>
-            <td><a href="album/{{notification.tracks[0].parent_id}}" ng-click="go('/album/'+notification.tracks[0].parent_id);">{{podcast.title}}</a></td>
-            <td>{{notification.scheduledTime | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (+{{init.config.graceTimeNotificationJob}} minutes)</td>
-          </tr>
-        </tbody>
-    </table>
+    <h4 ng-if="!anyNotification">There is no notification scheduled!</h4>
+    <div ng-if="anyNotification">
+        <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Tracks</th>
+                <th>Podcast</th>
+                <th>Scheduled time</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="podcast in podcasts">
+              <tr ng-repeat="notification in podcast.notifications" ng-init="$root.notifications = $root.notifications + 1; notificationIndex = $root.notifications">
+                <td>{{notificationIndex}}</td>
+                <td class="tracks">
+                  <div ng-repeat="track in notification.tracks">
+                    <a href="track/{{track.id}}" ng-click="go('/track/'+track.id);">{{track.title}}</a> ({{track.languages.join(', ')}})
+                  </div>
+                </td>
+                <td><a href="album/{{notification.tracks[0].parent_id}}" ng-click="go('/album/'+notification.tracks[0].parent_id);">{{podcast.title}}</a></td>
+                <td>{{notification.scheduledTime | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} <span ng-if="notification.graceTimeWasUsed">(+{{init.config.graceTimeNotificationJob}} minutes)*</span></td>
+              </tr>
+            </tbody>
+        </table>
+
+        <p style="font-style: italic;">* Grace time was used and added to the scheduled time</p>
+
+        <br>
+    </div>
 
     <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Information</h4>
     <p>There is a grace time implemented to avoid sending notifications right away without checking the informations.</p>
