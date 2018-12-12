@@ -84,6 +84,8 @@ angular.module('bmmApp')
             if (++podcastsLoaded == podcasts.length) {
               doneLoading();
             }
+          }).fail(function(){
+            doneLoading();
           });
         });
 
