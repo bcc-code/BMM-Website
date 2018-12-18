@@ -8,6 +8,7 @@ angular.module('bmmLibApp')
       credentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'https://localhost/', //Fallback
+      CSharpServerUrl = 'http://localhost:44303/', //Fallback
       requestTimeout,
       responseCache = {},
       contentLanguages = [];
@@ -20,6 +21,10 @@ angular.module('bmmLibApp')
 
   factory.serverUrl = function(url) {
     serverUrl = url;
+  };
+
+  factory.CSharpServerUrl = function(url) {
+    CSharpServerUrl = url;
   };
 
   factory.prepareRequest = function(customXhrOptions) {
@@ -196,6 +201,10 @@ angular.module('bmmLibApp')
 
   factory.getserverUrli = function() {
     return serverUrl;
+  };
+
+  factory.getCSharpServerUrli = function() {
+    return CSharpServerUrl;
   };
 
   factory.setKeepAliveTime = function(time) {
@@ -1014,6 +1023,15 @@ angular.module('bmmLibApp')
     });
   };
 
+  // C# API Functions
+
+  factory.nextTracksToBePublished = function(id) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: CSharpServerUrl + 'Notification/next/' + id
+    });
+  };
+  
   return factory;
 
 });

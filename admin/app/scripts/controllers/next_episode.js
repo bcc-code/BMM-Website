@@ -113,7 +113,7 @@ angular.module('bmmApp')
             detectMissingLanguages();
 
             $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
-            $scope.errors = $scope.missingLanguages || $scope.norwegianNotMainLanguage ? true : false;
+            $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
             
           }).then(function(){
             doneLoading();

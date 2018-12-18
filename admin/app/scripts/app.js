@@ -40,14 +40,19 @@ angular.module('bmmApp', [
         controller: 'NextEpisodeCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/notifications', {
+        templateUrl: 'views/pages/notifications.html',
+        controller: 'NotificationsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .when('/waitings', {
         templateUrl: 'views/pages/waitings.html',
         controller: 'WaitingsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
-      .when('/notifications', {
-        templateUrl: 'views/pages/notifications.html',
-        controller: 'NotificationsCtrl',
+      .when('/custom-notifications', {
+        templateUrl: 'views/pages/custom-notifications.html',
+        controller: 'CustomNotificationsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
       .when('/podcasts', {
