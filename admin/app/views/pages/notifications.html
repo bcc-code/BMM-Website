@@ -22,7 +22,7 @@
                   </div>
                 </td>
                 <td><a href="album/{{notification.tracks[0].parent_id}}" ng-click="go('/album/'+notification.tracks[0].parent_id);">{{podcast.title}}</a></td>
-                <td>{{notification.scheduledTime | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} <span ng-if="notification.graceTimeWasUsed">(+{{init.config.graceTimeNotificationJob}} minutes)*</span></td>
+                <td>{{notification.scheduledTime | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} <span ng-if="notification.graceTimeWasUsed">(+{{graceTime}} minutes)*</span></td>
               </tr>
             </tbody>
         </table>
@@ -32,9 +32,8 @@
 
     <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Information</h4>
     <ul>
-        <li>There is a grace time implemented to avoid sending notifications right away without checking the informations.</li>
-        <li>Even though the published_at value is in the past, the notification will be sent after the grace time, which we have set on {{init.config.graceTimeNotificationJob}} minutes, from the moment it is published.</li>
-        <li>If published_at value is in the future, the notification will be sent at that datetime.</li>
+        <li>There is a grace time implemented to avoid sending notifications right away without checking the informations. Even though the published_at value is in the past, the notification will be sent after the grace time, which we have set on {{graceTime}} minutes, from the moment it is published. If published_at value is in the future, the notification will be sent at that datetime.</li>
+        <li>In addition, we have another variable called batchPeriod = {{batchPeriod}} minutes, which is the period we check for other tracks from the same podcast. To make this more clear, if the publish date of the first track it's, let's say, at 10:00 and to a second track on 10:50, then the notification will be sent at 10:50.</li>
     </ul>
 </div>
 

@@ -29,6 +29,5 @@
     "es",
     "hu"
   ],
-  "includeAllContentLanguages": true,
-  "graceTimeNotificationJob": 30
+  "includeAllContentLanguages": true
 }
