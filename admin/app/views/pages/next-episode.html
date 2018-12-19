@@ -1,15 +1,34 @@
 <p ng-if="loading">Loading ...</p>
 <div ng-if="!loading" class="nextEpisode">
-    <h3 ng-if="podcast.title">Next episode from "<a href="album/{{nextEpisode.parent_id}}" ng-click="go('/album/'+nextEpisode.parent_id);">{{podcast.title}}</a>"</h3>
+    <h3 ng-if="podcast.title">Next episodes from "<a href="album/{{nextEpisode.parent_id}}" ng-click="go('/album/'+nextEpisode.parent_id);">{{podcast.title}}</a>"</h3>
     <h3 ng-if="!podcast.title">No podcast with the specified id found!</h3>
 
     <h4 ng-if="!nextEpisode">No next episode available!</h4>
-    <h4 ng-if="nextEpisode">Will be published on: {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)</h4>
+    <div class="episodeAvailable" ng-if="nextEpisode">
+        <h4>Publishing at: {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)</h4>
+        <div class="controls">
+            <span class="disabled left" ng-if="episodeShowedIndex == 0">
+                <span class="glyphicon glyphicon-menu-left"></span> <span>Previous</span>
+            </span>
+            <span class="enabled left" ng-click="getPreviousEpisode()" ng-if="episodeShowedIndex > 0">
+                <span class="glyphicon glyphicon-menu-left"></span> <span>Previous</span>
+            </span>
+
+            <span class="disabled right" ng-if="episodeShowedIndex == nextEpisodesIds.length-1">
+                <span>Next</span> <span class="glyphicon glyphicon-menu-right"></span>
+            </span>
+            <span class="enabled right" ng-click="getNextEpisode()" ng-if="episodeShowedIndex < nextEpisodesIds.length-1">
+                <span>Next</span> <span class="glyphicon glyphicon-menu-right"></span>
+            </span>
+        </div>
+    </div>
+
+    
 
     <div ng-if="errors" class="errors">
         <h5 ng-if="norwegianNotMainLanguage"><span class="glyphicon glyphicon-remove"></span> <strong>nb</strong> is not the main language!</h5>
         <div ng-if="missingLanguages">
-            <h5 ng-repeat="language in missingLanguages"><span class="glyphicon glyphicon-remove"></span> <strong>{{language}}</strong> is missing from the expected languages!</h5>
+            <h5 ng-repeat="language in missingLanguages"><span class="glyphicon glyphicon-remove"></span> <strong>{{language}}</strong> is missing but is a required language!</h5>
         </div>
     </div>
 
@@ -29,7 +48,7 @@
                     <span class="flag flags-{{translation.language}}"></span> <span class="languageCode">{{translation.language}}</span>
                 </td>
                 <td>
-                    <span ng-if="translation.duplicate_title" title="The title is the same as of another language!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.title}}
+                    <span ng-if="translation.duplicate_title || !translation.title" title="Duplicate or empty title!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.title}} <em ng-if="!translation.title">(Empty title)</em>
                 </td>
                 <td>
                     <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than {{differencePercentage}}%!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.media[0].files[0].duration | _time}}

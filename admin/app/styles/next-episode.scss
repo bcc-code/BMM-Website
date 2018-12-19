@@ -1,5 +1,44 @@
 .nextEpisode {
   float: none !important;
+  position: relative;
+
+  .episodeAvailable {
+    position: relative;
+
+    > h4 {
+      text-align: center;
+    }
+  }
+
+  .controls {
+    position: absolute;
+    height: 15px;
+    top: 0;
+    width: 100%;
+
+    .left {
+      left: 0;
+    }
+    .right {
+      right: 0;
+    }
+
+    > span {
+      position: absolute;
+
+      &.disabled {
+        color: #ccc;
+      }
+      &.enabled {
+        color: #000;
+        cursor: pointer;
+      }
+
+      .glyphicon {
+        vertical-align: text-top;
+      }
+    }
+  }
 
   .errors {
     float: none;

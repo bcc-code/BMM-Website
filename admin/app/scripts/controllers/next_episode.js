@@ -11,23 +11,30 @@ angular.module('bmmApp')
   $scope.missingLanguages = [];
   $scope.differencePercentage = 10;
 
+  $scope.nextEpisodesIds = [];
+  $scope.episodeShowedIndex = 0;
+
   var offset = 0;
-  var nextEpisodeId = null;
+  var maxNextEpisodes = 5;
   var datetime = new Date();
 
-  var getNextEpisodeId = function(episodes) {
+  var getNextEpisodesIds = function(episodes) {
     // Info: Episodes are ordered newest first
     episodes.forEach(function(episode) {
       offset++;
       if (new Date(episode.published_at) > datetime) {
-        nextEpisodeId = episode.id;
+        $scope.nextEpisodesIds.unshift(episode.id);
+
+        if($scope.nextEpisodesIds.length > maxNextEpisodes) {
+          $scope.nextEpisodesIds.pop();
+        }
       } else {
         return;
       }
     });
 
     if (offset % 20 == 0 && episodes.length > 0) {
-      // In case there are more than 20 unpublished episodes, we get nextEpisodeId from the next 20 episodes
+      // In case there are more than 20 unpublished episodes, we get $scope.nextEpisodesIds from the next 20 episodes
       init(offset);
     }
   };
@@ -94,6 +101,38 @@ angular.module('bmmApp')
     $scope.loading = false;
   }
 
+  $scope.getPreviousEpisode = function() {
+    $scope.episodeShowedIndex--;
+    getEpisodeInformation();
+  }
+
+  $scope.getNextEpisode = function() {
+    $scope.episodeShowedIndex++;
+    getEpisodeInformation();
+  }
+
+  function getEpisodeInformation() {
+    $scope.loading = true;
+    if ($scope.nextEpisodesIds[$scope.episodeShowedIndex]) {
+      _api.trackGet($scope.nextEpisodesIds[$scope.episodeShowedIndex], {raw: true}).then(function(nextEpisode) {
+        $scope.nextEpisode = nextEpisode;
+
+        orderLanguages();
+        detectDuplicateTitles();
+        detectBigDifferenceInDuration();
+        detectMissingLanguages();
+
+        $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
+        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
+        
+      }).then(function(){
+        doneLoading();
+      });
+    } else {
+      doneLoading();
+    }
+  }
+
   function init(offset) {
     $scope.loading = true;
 
@@ -101,33 +140,13 @@ angular.module('bmmApp')
       $scope.podcast = podcast;
 
       _api.podcastTracksGet($routeParams.id, {from: offset, unpublished: 'only'}).then(function(podcast) {
-        getNextEpisodeId(podcast);
-
-        if (nextEpisodeId) {
-          _api.trackGet(nextEpisodeId, {raw: true}).then(function(nextEpisode) {
-            $scope.nextEpisode = nextEpisode;
-
-            orderLanguages();
-            detectDuplicateTitles();
-            detectBigDifferenceInDuration();
-            detectMissingLanguages();
-
-            $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
-            $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
-            
-          }).then(function(){
-            doneLoading();
-          });
-        } else {
-          doneLoading();
-        }
-
+        getNextEpisodesIds(podcast);
+        getEpisodeInformation();
       });
 
     }).fail(function(){
       doneLoading();
     });
-
   };
 
   init(offset);
