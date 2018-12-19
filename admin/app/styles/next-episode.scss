@@ -7,6 +7,15 @@
 
     > h4 {
       text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+
+      .publishing {
+        font-weight: bold;
+      }
     }
   }
 
@@ -88,7 +97,9 @@
 }
 
 @media screen and (max-width: 53em) {
-  .nextEpisode .languageCode {
-    display: none;
+  .nextEpisode {
+    .languageCode, .publishing {
+      display: none;
+    }
   }
 }

@@ -8,7 +8,6 @@ angular.module('bmmApp')
     _init
   ) {
   $scope.init = _init;
-  $scope.missingLanguages = [];
   $scope.differencePercentage = 10;
 
   $scope.nextEpisodesIds = [];
@@ -113,6 +112,8 @@ angular.module('bmmApp')
 
   function getEpisodeInformation() {
     $scope.loading = true;
+    $scope.missingLanguages = [];
+    
     if ($scope.nextEpisodesIds[$scope.episodeShowedIndex]) {
       _api.trackGet($scope.nextEpisodesIds[$scope.episodeShowedIndex], {raw: true}).then(function(nextEpisode) {
         $scope.nextEpisode = nextEpisode;
