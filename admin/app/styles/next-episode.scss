@@ -1,5 +1,53 @@
 .nextEpisode {
   float: none !important;
+  position: relative;
+
+  .episodeAvailable {
+    position: relative;
+
+    > h4 {
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+
+      .publishing {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    height: 15px;
+    top: 0;
+    width: 100%;
+
+    .left {
+      left: 0;
+    }
+    .right {
+      right: 0;
+    }
+
+    > span {
+      position: absolute;
+
+      &.disabled {
+        color: #ccc;
+      }
+      &.enabled {
+        color: #000;
+        cursor: pointer;
+      }
+
+      .glyphicon {
+        vertical-align: text-top;
+      }
+    }
+  }
 
   .errors {
     float: none;
@@ -49,7 +97,9 @@
 }
 
 @media screen and (max-width: 53em) {
-  .nextEpisode .languageCode {
-    display: none;
+  .nextEpisode {
+    .languageCode, .publishing {
+      display: none;
+    }
   }
 }
