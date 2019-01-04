@@ -26,7 +26,7 @@
       "tracks": "Számok",
       "childTracks": "Alárendelt számok",
       "open": "Megnyitás",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Következő Fra Kåre"
     }
   },
   "page": {
@@ -58,8 +58,8 @@
       "active": "Aktív",
       "available": "Elérhető",
       "title": "Cím",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Fel van töltve",
+      "published": "Közé van téve",
       "description": "Leírás",
       "selectedLanguage": "Választott nyelv",
       "originalLanguage": "Eredeti nyelv",
