@@ -30,10 +30,11 @@
         <p style="font-style: italic;">* Grace time was used and added to the scheduled time</p>
     </div>
 
-    <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Information</h4>
+    <h4>Explanatory Information</h4>
     <ul>
-        <li>There is a grace time implemented to avoid sending notifications right away without checking the informations. Even though the published_at value is in the past, the notification will be sent after the grace time, which we have set on {{graceTime}} minutes, from the moment it is published. If published_at value is in the future, the notification will be sent at that datetime.</li>
-        <li>In addition, we have another variable called batchPeriod = {{batchPeriod}} minutes, which is the period we check for other tracks from the same podcast. To make this more clear, if the publish date of the first track it's, let's say, at 10:00 and to a second track on 10:50, then the notification will be sent at 10:50.</li>
+        <li>To make uploading tracks and sending notifications easier we implemented a grace time. That means if the track was modified up to {{graceTime}} minutes ago, we wait with sending out the notification, giving you the chance to upload additional tracks or fix mistakes in the metadata.</li>
+        <li>In addition, we batch notifications for the same podcast, if they are scheduled to be published within {{batchPeriod}} minutes. This prevents "spamming" the user with several notifications within a short period of time.<br />
+          For example, if the publish date of the first track is at 10:00 and a second track on 10:50, then the notification for both will be sent at 10:50.</li>
     </ul>
 </div>
 
