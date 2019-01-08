@@ -149,7 +149,6 @@ angular.module('bmmApp')
       $scope.podcast = podcast;
 
       _api.podcastTracksGet($routeParams.id, {size: maxEpisodes, from: offset, unpublished: 'show'}).then(function(podcast) {
-        console.log($scope.nextEpisodesIds);
         getNextEpisodesIds(podcast);
         getEpisodeInformation();
       });
