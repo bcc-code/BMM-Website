@@ -49,15 +49,19 @@ angular.module('bmmApp')
               $scope.anyNotification = true;
 
               var graceTimeWasUsed;
-              var lastModifiedAt = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
-              var scheduledTime = lastModifiedAt.getTime();
+              var scheduledTime = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
+              var modifiedTime = new Date(track._meta.modified_at);
+              var publishedTime = new Date(track.published_at);
 
-              if (Math.round((((new Date(track.published_at) - new Date(track._meta.modified_at)) % 86400000) % 3600000) / 60000) > $scope.graceTime) {
-                  // The track was published with a DateTime in the future
+              var latestPossibleModifyTime = publishedTime;
+              latestPossibleModifyTime.setMinutes(latestPossibleModifyTime.getMinutes() - $scope.graceTime);
+              
+              if (modifiedTime < latestPossibleModifyTime) {
+                  // no grace time needed since the last edit was made enough time before publishing
                   graceTimeWasUsed = false;
               } else {
-                  // The track was published or last modified in the near future (less than the $scope.graceTime) or in the past
-                  scheduledTime += $scope.graceTime * 60000;
+                  // the last edit was made close to the publish time. Therefore we delay publishing.
+                  scheduledTime.setMinutes(scheduledTime.getMinutes() + $scope.graceTime);
                   graceTimeWasUsed = true;
               }
 
@@ -67,9 +71,9 @@ angular.module('bmmApp')
               if (indexOfNotificationBatch != -1) {
                 podcast.notifications[indexOfNotificationBatch].tracks.push(track);
                 podcast.notifications[indexOfNotificationBatch].graceTimeWasUsed = graceTimeWasUsed;
-                podcast.notifications[indexOfNotificationBatch].scheduledTime = Math.max(scheduledTime, podcast.notifications[indexOfNotificationBatch].scheduledTime);
+                podcast.notifications[indexOfNotificationBatch].scheduledTime = Math.max(scheduledTime.getTime(), podcast.notifications[indexOfNotificationBatch].scheduledTime);
               } else {
-                podcast.notifications.push({ tracks: [track], scheduledTime: scheduledTime, graceTimeWasUsed: graceTimeWasUsed });
+                podcast.notifications.push({ tracks: [track], scheduledTime: scheduledTime.getTime(), graceTimeWasUsed: graceTimeWasUsed });
               }
 
               track.languages = [];
