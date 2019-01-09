@@ -32,7 +32,13 @@ angular.module('bmmApp')
       if (new Date(episode.published_at) < datetime) {
         if ($scope.episodeShowedIndex == 0) {
           $scope.episodeShowedIndex = Math.abs(maxEpisodes - offset);
+
+          // In case there are unpublished episodes set the index to the episode which is going to be published next
+          if ($scope.episodeShowedIndex < maxEpisodes-1) {
+            $scope.episodeShowedIndex++;
+          }
         }
+        
         oldEpisodesIndex++;
         if (oldEpisodesIndex == minOldEpisodes && $scope.nextEpisodesIds.length == maxEpisodes) {
           return;
@@ -131,6 +137,7 @@ angular.module('bmmApp')
         detectBigDifferenceInDuration();
         detectMissingLanguages();
 
+        $scope.nextEpisode.published = new Date(nextEpisode.published_at) < datetime;
         $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
         $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
         
