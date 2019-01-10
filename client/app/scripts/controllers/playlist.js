@@ -186,7 +186,6 @@ angular.module('bmmApp')
         break;
       case 'latest':
 
-        $scope.title = _init.translation.playlist.latestTracks;
         size = 0;
 
         $(window).on('scrollBottom', function() {
@@ -216,6 +215,7 @@ angular.module('bmmApp')
           size: loadAmount
         }).done(function(data) {
 
+          $scope.title = _init.translation.playlist.latestTracks;
           resolveTracks(data);
           size+=loadAmount;
 
