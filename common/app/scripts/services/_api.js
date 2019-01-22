@@ -947,7 +947,7 @@ angular.module('bmmLibApp')
   factory.sendNotification = function(notification) {
     return factory.addToQueue({
       method: 'POST',
-      url: serverUrl + 'notifications/send',
+      url: CSharpServerUrl + 'notifications/send',
       data: angular.toJson(notification),
       contentType: 'application/json'
     });
@@ -1028,7 +1028,7 @@ angular.module('bmmLibApp')
   factory.nextTracksToBePublished = function(id) {
     return factory.addToQueue({
       method: 'GET',
-      url: CSharpServerUrl + 'Notification/next/' + id
+      url: CSharpServerUrl + 'notifications/next/' + id
     });
   };
   

@@ -53,7 +53,7 @@ angular.module('bmmApp')
   };
 
   var orderLanguages = function() {
-    var languageOrdering = ["nb", "en", "de", "nl", "ro", "hu", "pl", "fr", "ru", "es", "fi", "pt", "tr", "it", "ta", "sl"];
+    var languageOrdering = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru', 'es', 'fi', 'pt', 'tr', 'it', 'ta', 'sl'];
     var orderedLanguages = [];
 
     for (var i = 0; i < languageOrdering.length; i++) {
@@ -100,7 +100,7 @@ angular.module('bmmApp')
   }
 
   var detectMissingLanguages = function(){
-    var expectedLanguages = ["nb", "en", "de", "nl", "ro", "hu", "pl", "fr", "ru"];
+    var expectedLanguages = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru'];
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
     
     expectedLanguages.forEach(function(expectedLang) {
@@ -160,7 +160,7 @@ angular.module('bmmApp')
         getEpisodeInformation();
       });
 
-    }).fail(function(){
+    }).fail(function() {
       doneLoading();
     });
   };

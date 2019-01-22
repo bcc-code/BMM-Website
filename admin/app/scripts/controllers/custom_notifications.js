@@ -22,13 +22,15 @@ angular.module('bmmApp')
     $scope.sendNotification = function() {
       var notification = {
         translations: $scope.notificationTranslations
-      }
+      };
 
-      _api.sendNotification(notification).then(function(result) {
-        reset();
-        alert(_init.translation.page.notifications.sent + ': ' + result.success + '\n'
-          + _init.translation.page.notifications.failed + ': ' + result.failure);
-      });
+      _api.sendNotification(notification)
+        .done(function(result) {
+          reset();
+          alert("successfully sent notification");
+        }).fail(function(result) {
+          alert("An unexpected error occurred");
+        });
     };
 
     $scope.removeTranslation = function(translation) {
