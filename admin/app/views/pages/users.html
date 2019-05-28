@@ -18,6 +18,7 @@
                 <th>{{init.translation.page.users.contributorManager}}</th>
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
+                <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in searchResults">
@@ -38,6 +39,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_FEATURE_PREVIEW" ng-change="updateUser(user, true)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user, true)">
@@ -72,6 +76,7 @@
                 <th>{{init.translation.page.users.contributorManager}}</th>
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
+                <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in users">
@@ -92,6 +97,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_FEATURE_PREVIEW" ng-change="updateUser(user)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user)">
