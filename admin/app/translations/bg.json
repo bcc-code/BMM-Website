@@ -26,7 +26,7 @@
       "tracks": "Песни и речи",
       "childTracks": "Придружаващи песни\/речи",
       "open": "отвори",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Следващо От Коре"
     }
   },
   "page": {
@@ -39,7 +39,7 @@
       "lyricist": "Текстописец",
       "composer": "Композитор",
       "contributor": "Сътрудник",
-      "interprets": "Интерпретира"
+      "interprets": "Изпълнители"
     },
     "editor": {
       "mainSettings": "Основни настройки",
@@ -58,8 +58,8 @@
       "active": "Активен",
       "available": "Достъпен",
       "title": "Заглавие",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Качено",
+      "published": "Публикуван",
       "description": "Описание",
       "selectedLanguage": "Избран език",
       "originalLanguage": "Първоначален език",
@@ -132,6 +132,7 @@
       "contributorManager": "Сътрудници",
       "notificationManager": "Уведомления",
       "podcastManager": "Подкаст",
+      "featurePreview": "Feature Preview",
       "allRights": "Всички права",
       "refreshList": "Обнови списък"
     },
@@ -184,8 +185,8 @@
     "unknown": "Неизвестен",
     "dragMeToPlaylist": "Плъзни ме до списъка",
     "exegesis": "Обяснение",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Авторско право",
+    "publisher": "Издател"
   },
   "statistic": {
     "chartByDateTitle": "Нови потребители на ден",

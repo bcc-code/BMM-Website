@@ -14,13 +14,13 @@
   "options": {
     "addToPlaylist": "Прибави към списъка",
     "download": "Изтегли",
-    "goToAlbum": "Отиди на албум",
+    "goToAlbum": "Отиди на албума",
     "podcast": "Подкаст",
     "removeFilter": "Премахни филтър",
     "changeLanguage": "Промени езика",
     "goBack": "Върни се назад",
     "choosePlaylist": "Избери списък",
-    "setupPodcast": "За да настроиш подкаста, трябва да копираш линка по-долу и да го поставиш в твоя предпочитан подкаст софтуер.",
+    "setupPodcast": "За да настроиш подкаста, копирай линка по-долу и го постави в твоя предпочитан подкаст софтуер.",
     "chooseLanguages": "Избери езици",
     "addLanguage": "Добави език",
     "includeLatest": "Включи последното",
@@ -31,14 +31,14 @@
     "copyUrl": "Копирай URL адреса",
     "copyLink": "Копирай връзка",
     "remove": "Премахни",
-    "playPlaylist": "Пусни списък",
+    "playPlaylist": "Пусни списъка",
     "share": "Сподели"
   },
   "menu": {
     "main": {
       "music": "Музика",
       "speeches": "Речи",
-      "video": "Видео",
+      "video": "Видео клипове",
       "archive": "Архив",
       "audiobooks": "Аудиокниги"
     },
@@ -99,9 +99,9 @@
     "composer": "Композитор",
     "album": "Албум",
     "bibleVerse": "Библейски стих",
-    "songbooks": "Song number",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "songbooks": "Номер на песен",
+    "copyright": "Авторско право",
+    "publisher": "Издател"
   },
   "playlist": {
     "tracks": "Запис(а)",
@@ -123,10 +123,10 @@
     "maxVolume": "Максимален звук",
     "options": "Опции",
     "activateVideo": "Задействане на видео",
-    "goToAlbum": "Отиди на албум",
+    "goToAlbum": "Отиди на албума",
     "showFullscreen": "Покажи на цял екран",
     "closeFullscreen": "Затвори цял екран",
-    "hideVideo": "Скрий видео",
+    "hideVideo": "Скрий видеоклип",
     "showVideo": "Покажи видеоклип"
   },
   "copyright": "Авторско право"
