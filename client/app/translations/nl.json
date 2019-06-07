@@ -100,8 +100,8 @@
     "album": "Album",
     "bibleVerse": "Bijbel vers",
     "songbooks": "Song number",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Auteursrecht",
+    "publisher": "Uitgever"
   },
   "playlist": {
     "tracks": "Nummer(s)",
@@ -129,5 +129,5 @@
     "hideVideo": "Video verbergen",
     "showVideo": "Video weergeven"
   },
-  "copyright": "Copyright"
+  "copyright": "Auteursrecht"
 }

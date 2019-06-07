@@ -128,9 +128,9 @@
     "users": {
       "adminUsers": "Administrator gebruikers",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
+      "trackManager": "Nummers",
+      "contributorManager": "Bijdragers",
+      "notificationManager": "Meldingen",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
       "allRights": "Alle rechten",
@@ -185,8 +185,8 @@
     "unknown": "Onbekend",
     "dragMeToPlaylist": "Sleep mij naar de afspeellijst",
     "exegesis": "Uitleg",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Auteursrecht",
+    "publisher": "Uitgever"
   },
   "statistic": {
     "chartByDateTitle": "Nieuwe gebruikers per dag",

@@ -90,7 +90,7 @@
       "interprets": "Художники та\/або колонки",
       "lyricists": "Поетам",
       "songbooks": "Пісенники",
-      "podcasts": "Podcasts",
+      "podcasts": "Підкаст",
       "editPodcast": "Редагувати подкаст",
       "bibleReferences": "Біблія посилання",
       "addBibleReference": "Додати посилання Біблії",
@@ -129,9 +129,9 @@
       "adminUsers": "Адміністратор користувачів",
       "albumManager": "Альбоми",
       "trackManager": "Треки",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "contributorManager": "Автори та перекладачі",
+      "notificationManager": "Сповіщення",
+      "podcastManager": "Підкаст",
       "featurePreview": "Feature Preview",
       "allRights": "Всі права",
       "refreshList": "Оновіть список"
@@ -185,7 +185,7 @@
     "unknown": "Невідомо",
     "dragMeToPlaylist": "Перетягнути мене до списку відтворення",
     "exegesis": "Екзегеза",
-    "copyright": "Copyright",
+    "copyright": "Авторське право",
     "publisher": "Publisher"
   },
   "statistic": {

@@ -128,9 +128,9 @@
     "users": {
       "adminUsers": "Διαχειριστής χρηστών??",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
+      "trackManager": "Κομμάτι",
+      "contributorManager": "Συνεργάτες",
+      "notificationManager": "Ειδοποιήσεις",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
       "allRights": "Όλα τα δικαιώματα???",
@@ -185,7 +185,7 @@
     "unknown": "Άγνωστο",
     "dragMeToPlaylist": "Σύρετε στη λίστα αναπαραγωγής",
     "exegesis": "Ερμηνεία",
-    "copyright": "Copyright",
+    "copyright": "Πνευματικά δικαιώματα",
     "publisher": "Publisher"
   },
   "statistic": {

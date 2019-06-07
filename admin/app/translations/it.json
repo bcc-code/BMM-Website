@@ -11,7 +11,7 @@
       "notifications": "Notifications",
       "waitings": "In attesa di approvazione",
       "contributors": "Contributori",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcast",
       "users": "Utenti",
       "statistic": "Statistics"
     },
@@ -90,7 +90,7 @@
       "interprets": "Artisti e\/o oratori",
       "lyricists": "Autori",
       "songbooks": "Libri dei canti",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcast",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Riferimenti biblici",
       "addBibleReference": "Aggiungi riferimento biblico",
@@ -128,10 +128,10 @@
     "users": {
       "adminUsers": "Utenti amministratore",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
+      "trackManager": "Tracce",
+      "contributorManager": "Contributori",
       "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "podcastManager": "Podcast",
       "featurePreview": "Feature Preview",
       "allRights": "Tutti i diritti",
       "refreshList": "Aggiorna elenco"

@@ -128,9 +128,9 @@
     "users": {
       "adminUsers": "Administratorer",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
+      "trackManager": "Sange og taler",
+      "contributorManager": "Bidragydere",
+      "notificationManager": "Notifikationer",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
       "allRights": "Alle rettigheder",
@@ -185,7 +185,7 @@
     "unknown": "Ukendt",
     "dragMeToPlaylist": "Træk til spilleliste",
     "exegesis": "Tydning",
-    "copyright": "Copyright",
+    "copyright": "Rettigheder",
     "publisher": "Publisher"
   },
   "statistic": {

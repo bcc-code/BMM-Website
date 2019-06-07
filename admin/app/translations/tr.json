@@ -11,7 +11,7 @@
       "notifications": "Notifications",
       "waitings": "Onay Bekliyor",
       "contributors": "Katkı Yapanlar",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcast",
       "users": "Kullanıcılar",
       "statistic": "Statistics"
     },
@@ -90,7 +90,7 @@
       "interprets": "Sanatçı ve\/ya da Konuşmacılar",
       "lyricists": "Söz Yazarları",
       "songbooks": "İlahi Kitapları",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcast",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Kutsal Kitap Referansları",
       "addBibleReference": "Kutsal Kitap Referansları Ekle",
@@ -128,10 +128,10 @@
     "users": {
       "adminUsers": "Admin Kullanıcıları",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
+      "trackManager": "Parçalar",
+      "contributorManager": "Katkı Yapanlar",
       "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "podcastManager": "Podcast",
       "featurePreview": "Feature Preview",
       "allRights": "Tüm Haklar",
       "refreshList": "Listeyi Yenile"
@@ -185,7 +185,7 @@
     "unknown": "Belirsiz",
     "dragMeToPlaylist": "Çalma Listesine Ekle",
     "exegesis": "Yorum",
-    "copyright": "Copyright",
+    "copyright": "Telif Hakkı",
     "publisher": "Publisher"
   },
   "statistic": {

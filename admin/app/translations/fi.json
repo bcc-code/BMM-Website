@@ -11,7 +11,7 @@
       "notifications": "Ilmoitukset",
       "waitings": "Odottaa hyväksyntää",
       "contributors": "Tekijät",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcastit",
       "users": "Käyttäjät",
       "statistic": "Tilastot"
     },
@@ -90,7 +90,7 @@
       "interprets": "Taiteilijoita ja\/tai kaiuttimet",
       "lyricists": "Sanoittajien",
       "songbooks": "Laulukirjat",
-      "podcasts": "Podcasts",
+      "podcasts": "Podcastit",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Raamatun viittaukset",
       "addBibleReference": "Lisää Raamattu viite",
@@ -128,10 +128,10 @@
     "users": {
       "adminUsers": "Käyttäjillä",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "trackManager": "Kappaleet",
+      "contributorManager": "Tekijät",
+      "notificationManager": "Ilmoitukset",
+      "podcastManager": "Podcastit",
       "featurePreview": "Feature Preview",
       "allRights": "Kaikki oikeudet",
       "refreshList": "Päivitä luettelo"

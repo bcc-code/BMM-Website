@@ -3,17 +3,17 @@
   "general": {
     "search": "搜索",
     "searchResultsFor": "Search results for:",
-    "loading": "Loading...",
+    "loading": "正在加载...",
     "waysOfTheLord": "Ways of the Lord",
     "almondBlossom": "Almond Blossom",
-    "noTitle": "No title",
+    "noTitle": "无标题",
     "settings": "Settings",
     "suport": "Support",
     "readMore": "Read more"
   },
   "options": {
     "addToPlaylist": "Add to playlist",
-    "download": "Download",
+    "download": "下载",
     "goToAlbum": "Go to album",
     "podcast": "Podcast",
     "removeFilter": "Remove filter",
@@ -81,10 +81,10 @@
     },
     "search": {
       "searchResults": "搜索结果",
-      "content": "Content",
-      "bibleVerse": "Bible verse",
-      "album": "Album",
-      "artist": "Artist",
+      "content": "目录",
+      "bibleVerse": "圣经经文",
+      "album": "专辑",
+      "artist": "演唱家",
       "interprets": "表演者"
     }
   },
@@ -93,12 +93,12 @@
     "details": "Details",
     "exegesis": "Interpretation",
     "recordedDate": "Recorded date",
-    "artist": "Artist",
+    "artist": "演唱家",
     "lyricist": "作词家",
     "arranger": "Arranger",
     "composer": "作曲家",
-    "album": "Album",
-    "bibleVerse": "Bible verse",
+    "album": "专辑",
+    "bibleVerse": "圣经经文",
     "songbooks": "Song number",
     "copyright": "Copyright",
     "publisher": "Publisher"

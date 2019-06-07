@@ -11,7 +11,7 @@
       "notifications": "Notifikasies",
       "waitings": "wag vir goedkeuring",
       "contributors": "bydraers",
-      "podcasts": "Podcasts",
+      "podcasts": "Potgooie",
       "users": "Gebruikers",
       "statistic": "Statistieke"
     },
@@ -90,7 +90,7 @@
       "interprets": "Kunstenaars en \/ of Sprekers",
       "lyricists": "Liriek",
       "songbooks": "Sangboeke",
-      "podcasts": "Podcasts",
+      "podcasts": "Potgooie",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Bybel verwysings",
       "addBibleReference": "Voeg Bybel verwysing by",
@@ -128,10 +128,10 @@
     "users": {
       "adminUsers": "Administrator gebruikers",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "trackManager": "Snede",
+      "contributorManager": "bydraers",
+      "notificationManager": "Notifikasies",
+      "podcastManager": "Potgooie",
       "featurePreview": "Feature Preview",
       "allRights": "Alle regte",
       "refreshList": "Herlaai Lys"
@@ -185,7 +185,7 @@
     "unknown": "Onbekend",
     "dragMeToPlaylist": "Sleep my na speellys",
     "exegesis": "interpretasie",
-    "copyright": "Copyright",
+    "copyright": "Kopiereg",
     "publisher": "Publisher"
   },
   "statistic": {
