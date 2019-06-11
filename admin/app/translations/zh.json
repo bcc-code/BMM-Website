@@ -128,7 +128,7 @@
     "users": {
       "adminUsers": "Administrator users",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
+      "trackManager": "曲目",
       "contributorManager": "Contributors",
       "notificationManager": "Notifications",
       "podcastManager": "Podcasts",

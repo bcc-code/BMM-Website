@@ -128,9 +128,9 @@
     "users": {
       "adminUsers": "Usuarios administradores",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
+      "trackManager": "Pistas",
+      "contributorManager": "Colaboradores",
+      "notificationManager": "Notificaciones",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
       "allRights": "Todos los derechos",
@@ -185,7 +185,7 @@
     "unknown": "Desconocido",
     "dragMeToPlaylist": "llevame a la lista de reproducción",
     "exegesis": "interpretación",
-    "copyright": "Copyright",
+    "copyright": "Derechos de autor",
     "publisher": "Publisher"
   },
   "statistic": {

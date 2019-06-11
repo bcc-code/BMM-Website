@@ -11,7 +11,7 @@
       "notifications": "Teavitused",
       "waitings": "Ootel",
       "contributors": "Kaastegijad",
-      "podcasts": "Podcasts",
+      "podcasts": "Saated",
       "users": "Kasutajad",
       "statistic": "Statistika"
     },
@@ -90,7 +90,7 @@
       "interprets": "Esitajad ja\/või kõnelejad",
       "lyricists": "Sõnade autorid",
       "songbooks": "Lauluraamatud",
-      "podcasts": "Podcasts",
+      "podcasts": "Saated",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Piibli viited",
       "addBibleReference": "Lisa Piibli viide",
@@ -128,10 +128,10 @@
     "users": {
       "adminUsers": "Administraator kasutajad",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
-      "podcastManager": "Podcasts",
+      "trackManager": "Muusikapalad",
+      "contributorManager": "Kaastegijad",
+      "notificationManager": "Teavitused",
+      "podcastManager": "Saated",
       "featurePreview": "Feature Preview",
       "allRights": "Kõik õigused",
       "refreshList": "Värskenda nimekirja"
@@ -185,7 +185,7 @@
     "unknown": "Tundmatu",
     "dragMeToPlaylist": "Lohista mind esitlusloendisse",
     "exegesis": "Exegesis",
-    "copyright": "Copyright",
+    "copyright": "Autoriõigused",
     "publisher": "Publisher"
   },
   "statistic": {

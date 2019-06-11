@@ -128,9 +128,9 @@
     "users": {
       "adminUsers": "Администраторы",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
-      "notificationManager": "Notifications",
+      "trackManager": "Треки",
+      "contributorManager": "Исполнители",
+      "notificationManager": "Уведомления",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
       "allRights": "Все права",
@@ -185,7 +185,7 @@
     "unknown": "Неизвестно",
     "dragMeToPlaylist": "Перетащите в плейлист",
     "exegesis": "Толкование",
-    "copyright": "Copyright",
+    "copyright": "Авторское право",
     "publisher": "Publisher"
   },
   "statistic": {

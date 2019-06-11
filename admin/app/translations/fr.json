@@ -128,8 +128,8 @@
     "users": {
       "adminUsers": "Administrateurs",
       "albumManager": "Albums",
-      "trackManager": "Tracks",
-      "contributorManager": "Contributors",
+      "trackManager": "Pistes",
+      "contributorManager": "Contributeurs",
       "notificationManager": "Notifications",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
@@ -185,8 +185,8 @@
     "unknown": "Inconnu",
     "dragMeToPlaylist": "M'ajouter à la liste de lecture actuelle",
     "exegesis": "Exégèse",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Droits d'auteur",
+    "publisher": "Éditeur"
   },
   "statistic": {
     "chartByDateTitle": "Nouveaux utilisateurs par jour",

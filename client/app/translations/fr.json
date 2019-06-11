@@ -100,8 +100,8 @@
     "album": "Album",
     "bibleVerse": "Verset de la Bible",
     "songbooks": "Song number",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "copyright": "Droits d'auteur",
+    "publisher": "Éditeur"
   },
   "playlist": {
     "tracks": "Piste(s)",
