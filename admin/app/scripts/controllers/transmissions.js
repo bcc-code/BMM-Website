@@ -24,6 +24,9 @@ angular.module('bmmApp')
 
     _api.transmissionsGet().then(function(transmissions) {
       $scope.transmissions = transmissions;
+    }).then(function(){
+      doneLoading();
+      
     }).fail(function() {
       doneLoading();
     });
