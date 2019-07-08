@@ -61,6 +61,7 @@ angular.module('bmmApp')
 
   $scope.editTransmission = function(transmission) {
     $scope.transmission = transmission;
+    $scope.mainVisible = true;
   };
 
   $scope.deleteTransmission = function(transmission) {
