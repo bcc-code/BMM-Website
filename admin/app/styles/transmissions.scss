@@ -1,0 +1,26 @@
+.admin {
+  .transmissions {
+    float: none;
+
+    table {
+      width: 100%;
+      margin: 20px 0;
+
+      .glyphicon:hover {
+        cursor: pointer;
+      }
+      
+      .glyphicon-remove {
+        color: red;
+      }
+    }
+  }
+
+  .addTransmission {
+    padding: 10px;
+
+    .body p {
+      font-weight: bold;
+    }
+  }
+}

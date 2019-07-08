@@ -1,0 +1,70 @@
+'use strict';
+
+angular.module('bmmApp')
+  .controller('TransmissionsCtrl', function(
+    $scope,
+    $routeParams,
+    _api,
+    _init
+  ) {
+  $scope.init = _init;
+
+  var date = new Date();
+  var defaultTitle = 'Transmission title';
+  var defaultStartDate = date.setHours(11, 0, 0);
+  var defaultEndDate = date.setHours(13, 0, 0);
+
+  function doneLoading() {
+    $scope.loading = false;
+  }
+
+  function init() {
+    $scope.loading = true;
+    $scope.transmission = initNewTransmission();
+
+    _api.transmissionsGet().then(function(transmissions) {
+      $scope.transmissions = transmissions;
+    }).fail(function() {
+      doneLoading();
+    });
+  };
+  init();
+
+  function initNewTransmission() {
+    return {
+      title: defaultTitle,
+      start: defaultStartDate,
+      end: defaultEndDate,
+      type: 'transmission'
+    };
+  };
+
+  $scope.saveTransmission = function() {
+    $scope.save()
+      .then(init);
+  }
+
+  $scope.save = function() {
+    var transmissionId = $scope.transmission.id;
+    var transmission = angular.copy($scope.transmission);
+
+    if(transmissionId) {
+      delete transmission.id;
+      return _api.transmissionIdPut(transmissionId, transmission);
+    } else {
+      return _api.transmissionPost(transmission);
+    }
+  }
+
+  $scope.editTransmission = function(transmission) {
+    $scope.transmission = transmission;
+  };
+
+  $scope.deleteTransmission = function(transmission) {
+    _api.transmissionIdDelete(transmission.id)
+      .then(function() {
+        var index = $scope.transmissions.indexOf(transmission);
+        $scope.transmissions.splice(index, 1);
+      });
+  };
+});

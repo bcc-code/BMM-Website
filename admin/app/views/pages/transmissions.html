@@ -1,0 +1,86 @@
+<style type="text/css">
+
+</style>
+
+<p ng-if="loading">Loading ...</p>
+<div ng-if="!loading" class="transmissions">
+    <h3 ng-if="transmissions.length > 0">Upcoming live transmissions</h3>
+    <h3 ng-if="transmissions.length == 0">No upcoming live transmission!</h3>
+
+    <div class="foldbox addTransmission">
+      <div class="header"
+        ng-click="mainVisible=!mainVisible">
+        <h3 ng-if="!transmission.id">{{init.translation.page.transmissions.add}}</h3>
+        <h3 ng-if="transmission.id">{{init.translation.page.transmissions.edit}}</h3>
+      </div>
+
+      <div ng-class="{'visible': mainVisible}" class="body">
+        <div>
+          <p>{{init.translation.page.editor.title}}:</p>
+          <input type="text" style="width: 100%" ng-model="transmission.title">
+        </div>
+
+        <br>
+
+        <div>
+          <p>{{init.translation.page.editor.start}}:</p>
+          <input bs-datepicker data-autoclose="1" type="text"
+                 data-date-format="dd.MM.yyyy"
+                 min-view="date"
+                 ng-model="transmission.start"><br>
+          <input bs-timepicker data-autoclose="1" type="text"
+                 data-time-format="HH:mm"
+                 ng-model="transmission.start">
+        </div>
+
+        <br>
+
+        <div>
+          <p>{{init.translation.page.editor.end}}:</p>
+          <input bs-datepicker data-autoclose="1" type="text"
+                 data-date-format="dd.MM.yyyy"
+                 min-view="date"
+                 ng-model="transmission.end"><br>
+          <input bs-timepicker data-autoclose="1" type="text"
+                 data-time-format="HH:mm"
+                 ng-model="transmission.end">
+        </div>
+
+        <br>
+        
+        <button ng-click="saveTransmission()">{{init.translation.page.transmissions.save}}</button>
+
+      </div>
+    </div>
+
+    <table ng-if="transmissions.length > 0">
+        <thead>
+            <tr>
+                <th></th>
+                <th>{{init.translation.page.editor.title}}</th>
+                <th class="center">{{init.translation.page.editor.start}}</th>
+                <th class="center">{{init.translation.page.editor.end}}</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="transmission in transmissions">
+                <td width="5%">
+                    {{transmission.id}}
+                </td>
+                <td width="40%">
+                    {{transmission.title}} <em ng-if="!transmission.title">({{init.translation.page.editor.noTitle}})</em>
+                </td>
+                <td class="center" width="20%">
+                    {{transmission.start | date:'dd.MM.yyyy HH:mm'}}
+                </td>
+                <td class="center" width="20%">
+                    {{transmission.end | date:'dd.MM.yyyy HH:mm'}}
+                </td>
+                <td width="5%"><span class="glyphicon glyphicon-edit" ng-click="editTransmission(transmission)"></span></td>
+                <td width="5%"><span class="glyphicon glyphicon-remove" ng-click="deleteTransmission(transmission)"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

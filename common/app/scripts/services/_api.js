@@ -1031,6 +1031,49 @@ angular.module('bmmLibApp')
       url: CSharpServerUrl + 'notifications/next/' + id
     });
   };
+
+  factory.transmissionsGet = function(options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: CSharpServerUrl + 'transmission/'
+    });
+  };
+
+  factory.transmissionIdGet = function(id, options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: CSharpServerUrl+'transmission/'+id
+    });
+  };
+
+  factory.transmissionPost = function(options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'POST',
+      url: CSharpServerUrl+'transmission/',
+      data: angular.toJson(options),
+      contentType: 'application/json'
+    });
+  };
+
+  factory.transmissionIdPut = function(id, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'PUT',
+      url: CSharpServerUrl + 'transmission/' + id,
+      data: angular.toJson(options),
+      contentType: 'application/json'
+    });
+  };
+
+  factory.transmissionIdDelete = function(id) {
+    return factory.addToQueue({
+      method: 'DELETE',
+      url: CSharpServerUrl + 'transmission/' + id
+    });
+  };
   
   return factory;
 
