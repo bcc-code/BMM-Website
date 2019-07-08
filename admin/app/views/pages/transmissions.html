@@ -5,7 +5,7 @@
 <p ng-if="loading">Loading ...</p>
 <div ng-if="!loading" class="transmissions">
     <h3 ng-if="transmissions.length > 0">{{init.translation.page.transmissions.upcomingMessage}}</h3>
-    <h3 ng-if="transmissions.length == 0">{{init.translation.page.transmissions.noUpcoming}}</h3>
+    <h3 ng-if="transmissions.length == 0">{{init.translation.page.transmissions.noUpcomingMessage}}</h3>
 
     <div class="foldbox addTransmission">
       <div class="header"
@@ -56,7 +56,6 @@
     <table ng-if="transmissions.length > 0">
         <thead>
             <tr>
-                <th></th>
                 <th>{{init.translation.page.editor.title}}</th>
                 <th class="center">{{init.translation.page.editor.start}}</th>
                 <th class="center">{{init.translation.page.editor.end}}</th>
@@ -66,10 +65,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="transmission in transmissions">
-                <td width="5%">
-                    {{transmission.id}}
-                </td>
-                <td width="40%">
+                <td width="45%">
                     {{transmission.title}} <em ng-if="!transmission.title">({{init.translation.page.editor.noTitle}})</em>
                 </td>
                 <td class="center" width="20%">

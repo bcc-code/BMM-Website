@@ -12,7 +12,7 @@
       "waitings": "Awaiting approval",
       "contributors": "Contributors",
       "podcasts": "Podcasts",
-      "transmissions": "Transmissions",
+      "transmissions": "Live",
       "users": "Users",
       "statistic": "Statistics"
     },
@@ -133,8 +133,9 @@
       "save": "Save transmission",
       "edit": "Edit transmission",
       "add": "Add transmission",
+      "addNew": "Add new",
       "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
     },
     "users": {
       "adminUsers": "Administrator users",
@@ -144,7 +145,7 @@
       "notificationManager": "Notifications",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
-      "liveManager": "Transmissions",
+      "liveManager": "Live",
       "allRights": "All rights",
       "refreshList": "Refresh list"
     },
