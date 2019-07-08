@@ -1048,6 +1048,10 @@ angular.module('bmmLibApp')
 
   factory.transmissionPost = function(options) {
     if (typeof options === 'undefined') { options = {}; }
+    else {
+      options.start = new Date(options.start);
+      options.end = new Date(options.end);
+    }
 
     return factory.addToQueue({
       method: 'POST',
@@ -1059,6 +1063,10 @@ angular.module('bmmLibApp')
 
   factory.transmissionIdPut = function(id, options) {
     if (typeof options === 'undefined') { options = {}; }
+    else {
+      options.start = new Date(options.start);
+      options.end = new Date(options.end);
+    }
 
     return factory.addToQueue({
       method: 'PUT',
