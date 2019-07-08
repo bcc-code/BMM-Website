@@ -6,6 +6,12 @@
       width: 100%;
       margin: 20px 0;
 
+      tbody tr {
+        padding: 5px 0;
+        height: 25px;
+        border-top: 1px solid #ccc;
+      }
+
       .glyphicon:hover {
         cursor: pointer;
       }
