@@ -20,7 +20,7 @@ angular.module('bmmApp')
                 ROLE_NOTIFICATION_MANAGER: false,
                 ROLE_CONTRIBUTOR_MANAGER: false,
                 ROLE_FEATURE_PREVIEW: false,
-                ROLE_TRANSMISSION_MANAGER: false
+                ROLE_LIVE_MANAGER: false
               };
 
               $.each(this.roles, function() {
@@ -81,7 +81,7 @@ angular.module('bmmApp')
           'ROLE_NOTIFICATION_MANAGER',
           'ROLE_CONTRIBUTOR_MANAGER',
           'ROLE_FEATURE_PREVIEW',
-          'ROLE_TRANSMISSION_MANAGER'
+          'ROLE_LIVE_MANAGER'
         ]
       }).done(function(users) {
         $scope.$apply(function() {
@@ -94,7 +94,7 @@ angular.module('bmmApp')
               ROLE_TRACK_MANAGER: false,
               ROLE_CONTRIBUTOR_MANAGER: false,
               ROLE_FEATURE_PREVIEW: false,
-              ROLE_TRANSMISSION_MANAGER: false
+              ROLE_LIVE_MANAGER: false
             };
 
             $.each(this.roles, function() {

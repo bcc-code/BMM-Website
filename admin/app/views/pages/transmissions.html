@@ -4,8 +4,8 @@
 
 <p ng-if="loading">Loading ...</p>
 <div ng-if="!loading" class="transmissions">
-    <h3 ng-if="transmissions.length > 0">Upcoming live transmissions</h3>
-    <h3 ng-if="transmissions.length == 0">No upcoming live transmission!</h3>
+    <h3 ng-if="transmissions.length > 0">{{init.translation.page.transmissions.upcomingMessage}}</h3>
+    <h3 ng-if="transmissions.length == 0">{{init.translation.page.transmissions.noUpcoming}}</h3>
 
     <div class="foldbox addTransmission">
       <div class="header"

@@ -19,7 +19,7 @@
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
                 <th>{{init.translation.page.users.featurePreview}}</th>
-                <th>{{init.translation.page.users.transmissionManager}}</th>
+                <th>{{init.translation.page.users.liveManager}}</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in searchResults">
@@ -45,7 +45,7 @@
                     <input type="checkbox" ng-model="user.perm.ROLE_FEATURE_PREVIEW" ng-change="updateUser(user, true)">
                 </td>
                 <td>
-                    <input type="checkbox" ng-model="user.perm.ROLE_TRANSMISSION_MANAGER" ng-change="updateUser(user, true)">
+                    <input type="checkbox" ng-model="user.perm.ROLE_LIVE_MANAGER" ng-change="updateUser(user, true)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user, true)">
@@ -81,7 +81,7 @@
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
                 <th>{{init.translation.page.users.featurePreview}}</th>
-                <th>{{init.translation.page.users.transmissionManager}}</th>
+                <th>{{init.translation.page.users.liveManager}}</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in users">
@@ -107,7 +107,7 @@
                     <input type="checkbox" ng-model="user.perm.ROLE_FEATURE_PREVIEW" ng-change="updateUser(user)">
                 </td>
                 <td>
-                    <input type="checkbox" ng-model="user.perm.ROLE_TRANSMISSION_MANAGER" ng-change="updateUser(user)">
+                    <input type="checkbox" ng-model="user.perm.ROLE_LIVE_MANAGER" ng-change="updateUser(user)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user)">

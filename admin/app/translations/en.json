@@ -132,7 +132,9 @@
     "transmissions": {
       "save": "Save transmission",
       "edit": "Edit transmission",
-      "add": "Add transmission"
+      "add": "Add transmission",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!",
     },
     "users": {
       "adminUsers": "Administrator users",
@@ -142,7 +144,7 @@
       "notificationManager": "Notifications",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
-      "transmissionManager": "Transmissions",
+      "liveManager": "Transmissions",
       "allRights": "All rights",
       "refreshList": "Refresh list"
     },

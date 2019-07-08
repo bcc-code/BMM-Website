@@ -10,7 +10,7 @@ angular.module('bmmApp')
   $scope.init = _init;
 
   var date = new Date();
-  var defaultTitle = 'Transmission title';
+  var defaultTitle = 'Møte – 11:00';
   var defaultStartDate = date.setHours(11, 0, 0);
   var defaultEndDate = date.setHours(13, 0, 0);
 
