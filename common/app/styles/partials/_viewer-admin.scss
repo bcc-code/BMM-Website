@@ -5,22 +5,22 @@
     .dropdown-menu button {
       color: #333;
     }
-    button {
+    button.ng-binding {
       color: $colorForeground;
       background-color: $colorBackground;
       border-radius: .3em;
       height: 1.5em;
     }
-    button:hover {
+    button.ng-binding:hover {
       color: $colorBackground;
       background-color: $colorForeground;
     }
-    button.disabled {
+    button.ng-binding.disabled {
       background-color: silver;
       color: gray;
       cursor: default;
     }
-    button.disabled:hover {
+    button.ng-binding.disabled:hover {
       background-color: silver;
     }
   }
