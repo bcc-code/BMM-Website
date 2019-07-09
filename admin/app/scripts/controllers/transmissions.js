@@ -14,33 +14,38 @@ angular.module('bmmApp')
   var defaultStartDate = date.setHours(11, 0, 0);
   var defaultEndDate = date.setHours(13, 0, 0);
 
+  var defaultTransmission = {
+    title: defaultTitle,
+    start: defaultStartDate,
+    end: defaultEndDate,
+    type: 'transmission'
+  };
+
+  $scope.initNewTransmission = function() {
+    $scope.transmission = defaultTransmission;
+  };
+
   function doneLoading() {
     $scope.loading = false;
   }
 
   function init() {
     $scope.loading = true;
-    $scope.transmission = initNewTransmission();
+    $scope.initNewTransmission();
 
     _api.transmissionsGet().then(function(transmissions) {
-      $scope.transmissions = transmissions;
-    }).then(function(){
+      $scope.transmissions = orderByStartDate(transmissions);
+    })
+
+    .then(function(){
       doneLoading();
-      
-    }).fail(function() {
+    })
+
+    .fail(function() {
       doneLoading();
     });
   };
-  init();
-
-  function initNewTransmission() {
-    return {
-      title: defaultTitle,
-      start: defaultStartDate,
-      end: defaultEndDate,
-      type: 'transmission'
-    };
-  };
+  init();  
 
   $scope.saveTransmission = function() {
     $scope.save()

@@ -1,15 +1,10 @@
-<style type="text/css">
-
-</style>
-
 <p ng-if="loading">Loading ...</p>
 <div ng-if="!loading" class="transmissions">
     <h3 ng-if="transmissions.length > 0">{{init.translation.page.transmissions.upcomingMessage}}</h3>
     <h3 ng-if="transmissions.length == 0">{{init.translation.page.transmissions.noUpcomingMessage}}</h3>
 
     <div class="foldbox addTransmission">
-      <div class="header"
-        ng-click="mainVisible=!mainVisible">
+      <div class="header" ng-click="mainVisible=!mainVisible">
         <h3 ng-if="!transmission.id">{{init.translation.page.transmissions.add}}</h3>
         <h3 ng-if="transmission.id">{{init.translation.page.transmissions.edit}}</h3>
       </div>
@@ -49,7 +44,7 @@
         <br>
         
         <button ng-click="saveTransmission()">{{init.translation.page.transmissions.save}}</button>
-
+        <button ng-click="initNewTransmission()">{{init.translation.page.transmissions.addNew}}</button>
       </div>
     </div>
 
