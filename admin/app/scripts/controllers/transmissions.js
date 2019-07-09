@@ -34,7 +34,7 @@ angular.module('bmmApp')
     $scope.initNewTransmission();
 
     _api.transmissionsGet().then(function(transmissions) {
-      $scope.transmissions = orderByStartDate(transmissions);
+      $scope.transmissions = transmissions;
     })
 
     .then(function(){
