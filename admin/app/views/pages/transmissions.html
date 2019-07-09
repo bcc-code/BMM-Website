@@ -12,10 +12,8 @@
       <div ng-class="{'visible': mainVisible}" class="body">
         <div>
           <p>{{init.translation.page.editor.title}}:</p>
-          <input type="text" style="width: 100%" ng-model="transmission.title">
+          <input type="text" class="title" ng-model="transmission.title">
         </div>
-
-        <br>
 
         <div>
           <p>{{init.translation.page.editor.start}}:</p>
@@ -28,8 +26,6 @@
                  ng-model="transmission.start">
         </div>
 
-        <br>
-
         <div>
           <p>{{init.translation.page.editor.end}}:</p>
           <input bs-datepicker data-autoclose="1" type="text"
@@ -41,8 +37,6 @@
                  ng-model="transmission.end">
         </div>
 
-        <br>
-        
         <button ng-click="saveTransmission()">{{init.translation.page.transmissions.save}}</button>
         <button ng-click="initNewTransmission()">{{init.translation.page.transmissions.addNew}}</button>
       </div>
