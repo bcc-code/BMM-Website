@@ -76,4 +76,13 @@ angular.module('bmmApp')
         $scope.transmissions.splice(index, 1);
       });
   };
+
+  $scope.startDateChanged = function(startDate) {
+    $scope.transmission.end = new Date(startDate);
+  }
+
+  $scope.startTimeChanged = function(startDate) {
+    var newStartDate = new Date(startDate);
+    $scope.transmission.end = newStartDate.setHours(newStartDate.getHours() + 2);
+  }
 });

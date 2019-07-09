@@ -17,22 +17,26 @@
 
         <div>
           <p>{{init.translation.page.editor.start}}:</p>
-          <input bs-datepicker data-autoclose="1" type="text"
+          <input id="startDate" class="date" ng-change="startDateChanged(transmission.start)"
+                 bs-datepicker data-autoclose="1" type="text"
                  data-date-format="dd.MM.yyyy"
                  min-view="date"
-                 ng-model="transmission.start"><br>
-          <input bs-timepicker data-autoclose="1" type="text"
+                 ng-model="transmission.start">
+          <input id="startTime" class="time" ng-change="startTimeChanged(transmission.start)"
+                 bs-timepicker data-autoclose="1" type="text"
                  data-time-format="HH:mm"
                  ng-model="transmission.start">
         </div>
 
         <div>
           <p>{{init.translation.page.editor.end}}:</p>
-          <input bs-datepicker data-autoclose="1" type="text"
+          <input id="endDate" class="date"
+                 bs-datepicker data-autoclose="1" type="text"
                  data-date-format="dd.MM.yyyy"
                  min-view="date"
-                 ng-model="transmission.end"><br>
-          <input bs-timepicker data-autoclose="1" type="text"
+                 ng-model="transmission.end">
+          <input id="endTime" class="time" 
+                 bs-timepicker data-autoclose="1" type="text"
                  data-time-format="HH:mm"
                  ng-model="transmission.end">
         </div>
@@ -53,18 +57,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="transmission in transmissions">
+            <tr ng-repeat="t in transmissions">
                 <td width="45%">
-                    {{transmission.title}} <em ng-if="!transmission.title">({{init.translation.page.editor.noTitle}})</em>
+                    {{t.title}} <em ng-if="!t.title">({{init.translation.page.editor.noTitle}})</em>
                 </td>
                 <td class="center" width="20%">
-                    {{transmission.start | date:'dd.MM.yyyy HH:mm'}}
+                    {{t.start | date:'dd.MM.yyyy HH:mm'}}
                 </td>
                 <td class="center" width="20%">
-                    {{transmission.end | date:'dd.MM.yyyy HH:mm'}}
+                    {{t.end | date:'dd.MM.yyyy HH:mm'}}
                 </td>
-                <td width="5%"><span class="glyphicon glyphicon-edit" ng-click="editTransmission(transmission)"></span></td>
-                <td width="5%"><span class="glyphicon glyphicon-remove" ng-click="deleteTransmission(transmission)"></span></td>
+                <td width="5%"><span class="glyphicon glyphicon-edit" ng-click="editTransmission(t)"></span></td>
+                <td width="5%"><span class="glyphicon glyphicon-remove" ng-click="deleteTransmission(t)"></span></td>
             </tr>
         </tbody>
     </table>
