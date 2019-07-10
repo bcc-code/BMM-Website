@@ -17,12 +17,12 @@
 
         <div>
           <p>{{init.translation.page.editor.start}}:</p>
-          <input id="startDate" class="date" ng-change="startDateChanged(transmission.start)"
+          <input id="startDate" class="date" ng-change="updateTransmissionEnd(transmission.start)"
                  bs-datepicker data-autoclose="1" type="text"
                  data-date-format="dd.MM.yyyy"
                  min-view="date"
                  ng-model="transmission.start">
-          <input id="startTime" class="time" ng-change="startTimeChanged(transmission.start)"
+          <input id="startTime" class="time" ng-change="updateTransmissionEnd(transmission.start)"
                  bs-timepicker data-autoclose="1" type="text"
                  data-time-format="HH:mm"
                  ng-model="transmission.start">

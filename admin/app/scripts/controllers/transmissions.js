@@ -77,11 +77,7 @@ angular.module('bmmApp')
       });
   };
 
-  $scope.startDateChanged = function(startDate) {
-    $scope.transmission.end = new Date(startDate);
-  }
-
-  $scope.startTimeChanged = function(startDate) {
+  $scope.updateTransmissionEnd = function(startDate) {
     var newStartDate = new Date(startDate);
     $scope.transmission.end = newStartDate.setHours(newStartDate.getHours() + 2);
   }
