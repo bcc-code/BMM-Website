@@ -133,7 +133,7 @@
       "save": "Save transmission",
       "edit": "Edit transmission",
       "add": "Add transmission",
-      "addNew": "Add new",
+      "cancelEditing": "Cancel editing",
       "upcomingMessage": "Upcoming BMM live transmissions",
       "noUpcomingMessage": "No upcoming BMM live transmissions!"
     },

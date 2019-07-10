@@ -42,7 +42,7 @@
         </div>
 
         <button ng-click="saveTransmission()">{{init.translation.page.transmissions.save}}</button>
-        <button ng-click="initNewTransmission()">{{init.translation.page.transmissions.addNew}}</button>
+        <button ng-click="initNewTransmission()" ng-if="transmission.id">{{init.translation.page.transmissions.cancelEditing}}</button>
       </div>
     </div>
 
