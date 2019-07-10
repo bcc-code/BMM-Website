@@ -19,7 +19,8 @@ angular.module('bmmApp')
                 ROLE_PODCAST_MANAGER: false,
                 ROLE_NOTIFICATION_MANAGER: false,
                 ROLE_CONTRIBUTOR_MANAGER: false,
-                ROLE_FEATURE_PREVIEW: false
+                ROLE_FEATURE_PREVIEW: false,
+                ROLE_LIVE_MANAGER: false
               };
 
               $.each(this.roles, function() {
@@ -79,7 +80,8 @@ angular.module('bmmApp')
           'ROLE_PODCAST_MANAGER',
           'ROLE_NOTIFICATION_MANAGER',
           'ROLE_CONTRIBUTOR_MANAGER',
-          'ROLE_FEATURE_PREVIEW'
+          'ROLE_FEATURE_PREVIEW',
+          'ROLE_LIVE_MANAGER'
         ]
       }).done(function(users) {
         $scope.$apply(function() {
@@ -91,7 +93,8 @@ angular.module('bmmApp')
               ROLE_ALBUM_MANAGER: false,
               ROLE_TRACK_MANAGER: false,
               ROLE_CONTRIBUTOR_MANAGER: false,
-              ROLE_FEATURE_PREVIEW: false
+              ROLE_FEATURE_PREVIEW: false,
+              ROLE_LIVE_MANAGER: false
             };
 
             $.each(this.roles, function() {

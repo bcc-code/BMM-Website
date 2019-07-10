@@ -1,0 +1,50 @@
+.admin {
+  .transmissions {
+    float: none;
+
+    table {
+      width: 100%;
+      margin: 20px 0;
+
+      tbody tr {
+        padding: 5px 0;
+        height: 30px;
+        border-top: 1px solid #ccc;
+      }
+
+      .glyphicon:hover {
+        cursor: pointer;
+      }
+      
+      .glyphicon-remove {
+        color: red;
+      }
+    }
+  }
+
+  .addTransmission {
+    padding: 10px;
+
+    .body {
+      > div {
+        margin-bottom: 20px;
+      }
+
+      .title {
+        width: 100%;
+      }
+
+      input {
+        padding: 0 5px;
+      }
+
+      .date, .time {
+        text-align: center;
+      }
+
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}

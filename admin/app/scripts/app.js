@@ -110,6 +110,11 @@ angular.module('bmmApp', [
         controller: 'ContributorsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/transmissions', {
+        templateUrl: 'views/pages/transmissions.html',
+        controller: 'TransmissionsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .when('/users', {
         templateUrl: 'views/pages/users.html',
         controller: 'UsersCtrl',
