@@ -12,8 +12,8 @@ angular.module('bmmApp')
   var date = new Date();
   var defaultTransmission = {
     title: "Møte – 11:00",
-    start: date.setHours(11, 0, 0),
-    end: date.setHours(13, 0, 0),
+    start: new Date(date.setHours(11, 0, 0, 0)),
+    end: new Date(date.setHours(13, 0, 0, 0)),
     type: 'transmission'
   };
 
@@ -50,7 +50,7 @@ angular.module('bmmApp')
     if(transmissionId) {
       delete transmission.id;
       _api.transmissionIdPut(transmissionId, transmission)
-        .then(function() {
+        .done(function() {
           var index = $scope.transmissions.indexOf(transmission);
           $scope.transmissions[index] = transmission;
           $scope.transmissions.sort(byDate);
@@ -71,7 +71,7 @@ angular.module('bmmApp')
 
   $scope.deleteTransmission = function(transmission) {
     _api.transmissionIdDelete(transmission.id)
-      .then(function() {
+      .done(function() {
         var index = $scope.transmissions.indexOf(transmission);
         $scope.transmissions.splice(index, 1);
       });
@@ -79,10 +79,10 @@ angular.module('bmmApp')
 
   $scope.updateTransmissionEnd = function(startDate) {
     var newStartDate = new Date(startDate);
-    $scope.transmission.end = newStartDate.setHours(newStartDate.getHours() + 2);
+    $scope.transmission.end = new Date(newStartDate.setHours(newStartDate.getHours() + 2));
   }
 
   function byDate(a, b) {
     return new Date(a.start).getTime() - new Date(b.start).getTime();
-}
+  }
 });
