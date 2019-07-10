@@ -48,19 +48,23 @@ angular.module('bmmApp')
   init();  
 
   $scope.saveTransmission = function() {
-    $scope.save()
-      .then(init);
-  }
-
-  $scope.save = function() {
     var transmissionId = $scope.transmission.id;
     var transmission = angular.copy($scope.transmission);
 
     if(transmissionId) {
       delete transmission.id;
-      return _api.transmissionIdPut(transmissionId, transmission);
+      _api.transmissionIdPut(transmissionId, transmission)
+        .then(function() {
+          var index = $scope.transmissions.indexOf(transmission);
+          $scope.transmissions[index] = transmission;
+          $scope.transmissions.sort(byDate);
+        });
     } else {
-      return _api.transmissionPost(transmission);
+      _api.transmissionPost(transmission)
+        .done(function(insertedTransmission) {
+          $scope.transmissions.push(JSON.parse(insertedTransmission));
+          $scope.transmissions.sort(byDate);
+        });
     }
   }
 
@@ -81,4 +85,8 @@ angular.module('bmmApp')
     var newStartDate = new Date(startDate);
     $scope.transmission.end = newStartDate.setHours(newStartDate.getHours() + 2);
   }
+
+  function byDate(a, b) {
+    return new Date(a.start).getTime() - new Date(b.start).getTime();
+}
 });
