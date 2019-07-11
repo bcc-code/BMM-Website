@@ -12,6 +12,7 @@
       "waitings": "Onay Bekliyor",
       "contributors": "Katkı Yapanlar",
       "podcasts": "Podcast",
+      "transmissions": "Live",
       "users": "Kullanıcılar",
       "statistic": "Statistics"
     },
@@ -58,6 +59,7 @@
       "active": "Aktif",
       "available": "Mevcut",
       "title": "Başlık",
+      "noTitle": "Başlık Yok",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Açıklama",
@@ -110,7 +112,9 @@
       "waitingsReady": "Beklenenler Hazır",
       "missingTrack": "Eksik Parça",
       "missingAlbum": "Eksik Albüm",
-      "wrongId": "Yanlış BMM-ID"
+      "wrongId": "Yanlış BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Bağla",
@@ -125,6 +129,14 @@
       "search": "Ara",
       "contributors": "Katılımcılar"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Admin Kullanıcıları",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Notifications",
       "podcastManager": "Podcast",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Tüm Haklar",
       "refreshList": "Listeyi Yenile"
     },

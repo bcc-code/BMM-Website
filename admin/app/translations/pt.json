@@ -12,6 +12,7 @@
       "waitings": "Aguardando aprovação",
       "contributors": "Colaboradores",
       "podcasts": "Podcasts",
+      "transmissions": "Live",
       "users": "Usuários",
       "statistic": "Estatísticas"
     },
@@ -58,6 +59,7 @@
       "active": "Ativo",
       "available": "Disponível",
       "title": "Título",
+      "noTitle": "Sem título",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Descrição",
@@ -110,7 +112,9 @@
       "waitingsReady": "Esperas prontas",
       "missingTrack": "Faixa faltante",
       "missingAlbum": "Album faltante",
-      "wrongId": "BMM-ID errado"
+      "wrongId": "BMM-ID errado",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Link",
@@ -125,6 +129,14 @@
       "search": "Busca",
       "contributors": "Colaboradores"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Usuários administradores",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Notificações",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Todos os direitos",
       "refreshList": "Atualizar lista"
     },

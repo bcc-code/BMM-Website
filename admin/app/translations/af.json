@@ -12,6 +12,7 @@
       "waitings": "wag vir goedkeuring",
       "contributors": "bydraers",
       "podcasts": "Potgooie",
+      "transmissions": "Live",
       "users": "Gebruikers",
       "statistic": "Statistieke"
     },
@@ -58,6 +59,7 @@
       "active": "Aktief",
       "available": "Beskikbaar",
       "title": "Titel",
+      "noTitle": "Geen Titel",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Beskrywing",
@@ -110,7 +112,9 @@
       "waitingsReady": "verwagtinge gereed",
       "missingTrack": "Vermiste spoor",
       "missingAlbum": "Vermiste album",
-      "wrongId": "Verkeerde BMM-ID"
+      "wrongId": "Verkeerde BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "skakel",
@@ -125,6 +129,14 @@
       "search": "Soek",
       "contributors": "Bydraers"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administrator gebruikers",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Notifikasies",
       "podcastManager": "Potgooie",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Alle regte",
       "refreshList": "Herlaai Lys"
     },

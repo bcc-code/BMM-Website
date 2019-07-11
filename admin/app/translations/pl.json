@@ -12,6 +12,7 @@
       "waitings": "W oczekiwaniu",
       "contributors": "Współpracownicy",
       "podcasts": "Podcasty",
+      "transmissions": "Na żywo",
       "users": "Użytkownicy",
       "statistic": "Statystyki"
     },
@@ -26,7 +27,7 @@
       "tracks": "Utwory",
       "childTracks": "Utwory dla dzieci",
       "open": "otwarte",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Następny od Kårego"
     }
   },
   "page": {
@@ -58,8 +59,9 @@
       "active": "Aktywne",
       "available": "Dostępne",
       "title": "Tytuł",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "noTitle": "Bez tytułu",
+      "uploaded": "Przesłane",
+      "published": "Opublikowany",
       "description": "Opis",
       "selectedLanguage": "Wybrany język",
       "originalLanguage": "Język oryginału",
@@ -110,7 +112,9 @@
       "waitingsReady": "Oczekujące pliki",
       "missingTrack": "Brakujący utwór",
       "missingAlbum": "Brakujący album",
-      "wrongId": "Błędny BMM-ID"
+      "wrongId": "Błędny BMM-ID",
+      "start": "Rozpocznij",
+      "end": "Zakończ"
     },
     "waitings": {
       "link": "Link",
@@ -125,6 +129,14 @@
       "search": "Szukaj",
       "contributors": "Osoby wnoszące wkład"
     },
+    "transmissions": {
+      "save": "Zapisz transmisję",
+      "edit": "Edytuj transmisję",
+      "add": "Dodaj transmisję",
+      "cancelEditing": "Anuluj edycję",
+      "upcomingMessage": "Nadchodzące transmisje BMM na żywo",
+      "noUpcomingMessage": "Nie ma nadchodzących transmisji BMM na żywo!"
+    },
     "users": {
       "adminUsers": "Administratorzy",
       "albumManager": "Albumy",
@@ -132,7 +144,8 @@
       "contributorManager": "Autorzy",
       "notificationManager": "Powiadomienia",
       "podcastManager": "Podcasty",
-      "featurePreview": "Feature Preview",
+      "featurePreview": "Podgląd Funkcjonalności",
+      "liveManager": "Na żywo",
       "allRights": "Wszystkie prawa",
       "refreshList": "Odśwież listę"
     },

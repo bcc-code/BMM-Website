@@ -12,6 +12,7 @@
       "waitings": "Αναμονή έγκρισης",
       "contributors": "Συνεργάτες",
       "podcasts": "Podcasts",
+      "transmissions": "Live",
       "users": "Χρήστες",
       "statistic": "Στατιστικά στοιχεία"
     },
@@ -58,6 +59,7 @@
       "active": "\tΕνεργός",
       "available": "Διαθέσιμος",
       "title": "Τίτλος",
+      "noTitle": "Χωρίς τίτλο",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Περιγραφή",
@@ -110,7 +112,9 @@
       "waitingsReady": "Προσδοκίες έτοιμο??",
       "missingTrack": "έλλειψη κομμάτι",
       "missingAlbum": "έλλειψη άλμπουμ",
-      "wrongId": "Λάθος BMM-εγγραφή???"
+      "wrongId": "Λάθος BMM-εγγραφή???",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Σύνδεση",
@@ -125,6 +129,14 @@
       "search": "Αναζήτηση",
       "contributors": "Συνεισφέροντες???"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Διαχειριστής χρηστών??",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Ειδοποιήσεις",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Όλα τα δικαιώματα???",
       "refreshList": "Ανανέωση λίστας"
     },

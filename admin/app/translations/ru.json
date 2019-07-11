@@ -12,6 +12,7 @@
       "waitings": "Ожидает проверки",
       "contributors": "Исполнители",
       "podcasts": "Podcasts",
+      "transmissions": "Live",
       "users": "Пользователи",
       "statistic": "Статистика"
     },
@@ -58,6 +59,7 @@
       "active": "Активные",
       "available": "Доступно",
       "title": "Название",
+      "noTitle": "Без названия",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Описание",
@@ -110,7 +112,9 @@
       "waitingsReady": "Проверено",
       "missingTrack": "Трек отсутствует",
       "missingAlbum": "Альбом отсутсвиет",
-      "wrongId": "Неправильный BMM-ID"
+      "wrongId": "Неправильный BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Ссылка",
@@ -125,6 +129,14 @@
       "search": "Поиск",
       "contributors": "Исполнители"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Администраторы",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Уведомления",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Все права",
       "refreshList": "Обновить список"
     },

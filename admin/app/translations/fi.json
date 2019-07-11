@@ -12,6 +12,7 @@
       "waitings": "Odottaa hyväksyntää",
       "contributors": "Tekijät",
       "podcasts": "Podcastit",
+      "transmissions": "Live",
       "users": "Käyttäjät",
       "statistic": "Tilastot"
     },
@@ -58,6 +59,7 @@
       "active": "Aktiivinen",
       "available": "Saatavilla",
       "title": "Otsikko",
+      "noTitle": "Ei otsikkoa",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Kuvaus",
@@ -110,7 +112,9 @@
       "waitingsReady": "Waitings valmis",
       "missingTrack": "Puuttuvat kappale",
       "missingAlbum": "Puuttuvat albumi",
-      "wrongId": "Väärä BMM-ID"
+      "wrongId": "Väärä BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Linkki",
@@ -125,6 +129,14 @@
       "search": "Haku",
       "contributors": "Tekijät"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Käyttäjillä",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Ilmoitukset",
       "podcastManager": "Podcastit",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Kaikki oikeudet",
       "refreshList": "Päivitä luettelo"
     },

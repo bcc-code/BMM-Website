@@ -12,6 +12,7 @@
       "waitings": "Ootel",
       "contributors": "Kaastegijad",
       "podcasts": "Saated",
+      "transmissions": "Live",
       "users": "Kasutajad",
       "statistic": "Statistika"
     },
@@ -58,6 +59,7 @@
       "active": "Aktiivne",
       "available": "Saadaval",
       "title": "Pealkiri",
+      "noTitle": "Pealkirjata",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Kirjeldus",
@@ -110,7 +112,9 @@
       "waitingsReady": "Ootamised valmis",
       "missingTrack": "Puuduv muusikapala",
       "missingAlbum": "Puuduv album",
-      "wrongId": "Vale BMM-ID"
+      "wrongId": "Vale BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Link",
@@ -125,6 +129,14 @@
       "search": "Otsi",
       "contributors": "Kaastegijad"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administraator kasutajad",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Teavitused",
       "podcastManager": "Saated",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Kõik õigused",
       "refreshList": "Värskenda nimekirja"
     },

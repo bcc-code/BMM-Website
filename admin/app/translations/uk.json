@@ -12,6 +12,7 @@
       "waitings": "Очікування",
       "contributors": "Автори та перекладачі",
       "podcasts": "Підкаст",
+      "transmissions": "Live",
       "users": "Користувачі",
       "statistic": "Статистика"
     },
@@ -58,6 +59,7 @@
       "active": "Активні",
       "available": "Доступні",
       "title": "Назва",
+      "noTitle": "Без назви",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Опис",
@@ -110,7 +112,9 @@
       "waitingsReady": "Чекань готовий",
       "missingTrack": "Відсутній трек",
       "missingAlbum": "Відсутній альбом",
-      "wrongId": "Неправильний BMM-ID\n"
+      "wrongId": "Неправильний BMM-ID\n",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Посилання",
@@ -125,6 +129,14 @@
       "search": "Пошук",
       "contributors": "Автори та перекладачі"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Адміністратор користувачів",
       "albumManager": "Альбоми",
@@ -133,6 +145,7 @@
       "notificationManager": "Сповіщення",
       "podcastManager": "Підкаст",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Всі права",
       "refreshList": "Оновіть список"
     },

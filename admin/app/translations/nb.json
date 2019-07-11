@@ -12,6 +12,7 @@
       "waitings": "På vent",
       "contributors": "Bidragsytere",
       "podcasts": "Podcaster",
+      "transmissions": "Live",
       "users": "Brukere",
       "statistic": "Statistikk"
     },
@@ -58,6 +59,7 @@
       "active": "Aktiv",
       "available": "Tilgjengelig",
       "title": "Tittel",
+      "noTitle": "Ingen tittel",
       "uploaded": "Lastet opp",
       "published": "Publisert",
       "description": "Beskrivelse",
@@ -110,7 +112,9 @@
       "waitingsReady": "Waitings klare",
       "missingTrack": "Mangler spor",
       "missingAlbum": "Mangler album",
-      "wrongId": "Feil BMM-ID"
+      "wrongId": "Feil BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Koble spor",
@@ -125,6 +129,14 @@
       "search": "Søk",
       "contributors": "Bidragsytere"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administratorbrukere",
       "albumManager": "Album",
@@ -133,6 +145,7 @@
       "notificationManager": "Meldinger",
       "podcastManager": "Podcaster",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Alle rettigheter",
       "refreshList": "Oppdater listen"
     },

@@ -12,6 +12,7 @@
       "waitings": "În așteptare",
       "contributors": "Contribuitori",
       "podcasts": "Podcast-uri",
+      "transmissions": "Live",
       "users": "Utilizatori",
       "statistic": "Statistici"
     },
@@ -58,6 +59,7 @@
       "active": "Activ",
       "available": "Disponibile",
       "title": "Titlu",
+      "noTitle": "Fără titlu",
       "uploaded": "Încărcat",
       "published": "Publicat",
       "description": "Descriere",
@@ -110,7 +112,9 @@
       "waitingsReady": "Listă de așteptare gata",
       "missingTrack": "Piesă lipsă",
       "missingAlbum": "Album lipsă",
-      "wrongId": "ID-BMM greșit"
+      "wrongId": "ID-BMM greșit",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Link-ul",
@@ -125,6 +129,14 @@
       "search": "Caută",
       "contributors": "Contribuitori"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administratorul utilizatorilor",
       "albumManager": "Albume",
@@ -133,6 +145,7 @@
       "notificationManager": "Notificări",
       "podcastManager": "Podcast-uri",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Toate drepturile",
       "refreshList": "Reîmprospătează lista"
     },

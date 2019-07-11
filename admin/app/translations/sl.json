@@ -12,6 +12,7 @@
       "waitings": "Na čakanju",
       "contributors": "Ustvarjalci",
       "podcasts": "Posnetki",
+      "transmissions": "Live",
       "users": "Uporabniki",
       "statistic": "Statistika"
     },
@@ -58,6 +59,7 @@
       "active": "Aktiven",
       "available": "Dosegljiv",
       "title": "Naslov",
+      "noTitle": "Brez naslova",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Opis",
@@ -110,7 +112,9 @@
       "waitingsReady": "Čakajoče datoteke pripravljene",
       "missingTrack": "Manjkajoča skladba",
       "missingAlbum": "Manjkajoči album",
-      "wrongId": "Napačen BMM-ID"
+      "wrongId": "Napačen BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Povezava",
@@ -125,6 +129,14 @@
       "search": "Išči",
       "contributors": "Ustvarjalci"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administratorji",
       "albumManager": "Albumi",
@@ -133,6 +145,7 @@
       "notificationManager": "Obvestila",
       "podcastManager": "Posnetki",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Vse pravice",
       "refreshList": "Osveži seznam"
     },

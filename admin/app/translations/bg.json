@@ -12,6 +12,7 @@
       "waitings": "Изчакване за одобрение",
       "contributors": "Сътрудници",
       "podcasts": "Подкаст",
+      "transmissions": "Live",
       "users": "Потребители",
       "statistic": "Статистики"
     },
@@ -58,6 +59,7 @@
       "active": "Активен",
       "available": "Достъпен",
       "title": "Заглавие",
+      "noTitle": "Без заглавие",
       "uploaded": "Качено",
       "published": "Публикуван",
       "description": "Описание",
@@ -110,7 +112,9 @@
       "waitingsReady": "Изчакване готово",
       "missingTrack": "Липсваща песен\/реч",
       "missingAlbum": "Липсващ албум",
-      "wrongId": "Грешно BMM-ID"
+      "wrongId": "Грешно BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Връзка",
@@ -125,6 +129,14 @@
       "search": "Търси",
       "contributors": "Сътрудници"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Администратор потребители",
       "albumManager": "Албуми",
@@ -133,6 +145,7 @@
       "notificationManager": "Уведомления",
       "podcastManager": "Подкаст",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Всички права",
       "refreshList": "Обнови списък"
     },

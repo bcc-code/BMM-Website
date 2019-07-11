@@ -12,6 +12,7 @@
       "waitings": "Venter",
       "contributors": "Bidragydere",
       "podcasts": "Podcasts",
+      "transmissions": "Live",
       "users": "Brugere",
       "statistic": "Statistik"
     },
@@ -58,6 +59,7 @@
       "active": "Aktiv",
       "available": "Tilgængelig",
       "title": "Titel",
+      "noTitle": "Ingen titel",
       "uploaded": "Uploaded",
       "published": "Published",
       "description": "Beskrivelse",
@@ -110,7 +112,9 @@
       "waitingsReady": "Klar",
       "missingTrack": "Mangler spor",
       "missingAlbum": "Mangler album",
-      "wrongId": "Forkert BMM-ID"
+      "wrongId": "Forkert BMM-ID",
+      "start": "Start",
+      "end": "End"
     },
     "waitings": {
       "link": "Link",
@@ -125,6 +129,14 @@
       "search": "Søg",
       "contributors": "Bidragsydere"
     },
+    "transmissions": {
+      "save": "Save transmission",
+      "edit": "Edit transmission",
+      "add": "Add transmission",
+      "cancelEditing": "Cancel editing",
+      "upcomingMessage": "Upcoming BMM live transmissions",
+      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+    },
     "users": {
       "adminUsers": "Administratorer",
       "albumManager": "Albums",
@@ -133,6 +145,7 @@
       "notificationManager": "Notifikationer",
       "podcastManager": "Podcasts",
       "featurePreview": "Feature Preview",
+      "liveManager": "Live",
       "allRights": "Alle rettigheder",
       "refreshList": "Opdater liste"
     },
