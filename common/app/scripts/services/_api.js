@@ -948,7 +948,7 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'POST',
       url: CSharpServerUrl + 'notifications/send',
-      data: angular.toJson(notification),
+      data: JSON.stringify(notification),
       contentType: 'application/json'
     });
   };
@@ -981,7 +981,7 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'POST',
       url: serverUrl+'podcast/',
-      data: angular.toJson(options),
+      data: JSON.stringify(options),
       contentType: 'application/json'
     });
 
@@ -1003,7 +1003,7 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'PUT',
       url: serverUrl + 'podcast/' + id,
-      data: angular.toJson(options),
+      data: JSON.stringify(options),
       contentType: 'application/json'
     });
   };
@@ -1046,24 +1046,24 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.transmissionPost = function(options) {
-    if (typeof options === 'undefined') { options = {}; }
+  factory.transmissionPost = function(transmission) {
+    if (typeof transmission === 'undefined') { transmission = {}; }
 
     return factory.addToQueue({
       method: 'POST',
       url: CSharpServerUrl+'transmission/',
-      data: angular.toJson(options),
+      data: JSON.stringify(transmission),
       contentType: 'application/json'
     });
   };
 
-  factory.transmissionIdPut = function(id, options) {
-    if (typeof options === 'undefined') { options = {}; }
+  factory.transmissionIdPut = function(id, transmission) {
+    if (typeof transmission === 'undefined') { transmission = {}; }
 
     return factory.addToQueue({
       method: 'PUT',
       url: CSharpServerUrl + 'transmission/' + id,
-      data: angular.toJson(options),
+      data: JSON.stringify(transmission),
       contentType: 'application/json'
     });
   };
