@@ -12,7 +12,7 @@
       "waitings": "Jóváhagyásra vár",
       "contributors": "Közreműködők",
       "podcasts": "Podcastok",
-      "transmissions": "Live",
+      "transmissions": "Élő",
       "users": "Felhasználók",
       "statistic": "Statisztikák"
     },
@@ -113,8 +113,8 @@
       "missingTrack": "Hiányzó szám",
       "missingAlbum": "Hiányzó album",
       "wrongId": "Ismeretlen BMM-ID",
-      "start": "Start",
-      "end": "End"
+      "start": "Kezdés",
+      "end": "Vége"
     },
     "waitings": {
       "link": "Link",
@@ -130,12 +130,12 @@
       "contributors": "Közreműködők"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Adás mentése",
+      "edit": "Adás szerkesztése",
+      "add": "Adás hozzáadása",
+      "cancelEditing": "Szerkesztés megszakítása",
+      "upcomingMessage": "Következő BMM élő közvetítése",
+      "noUpcomingMessage": "Nincs BMM élő közvetítése!"
     },
     "users": {
       "adminUsers": "Rendszergazdák",
@@ -144,8 +144,8 @@
       "contributorManager": "Közreműködők",
       "notificationManager": "Értesítések",
       "podcastManager": "Podcastok",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "featurePreview": "Funkció előnézete",
+      "liveManager": "Élő",
       "allRights": "Minden jog",
       "refreshList": "Lista frissítése"
     },
