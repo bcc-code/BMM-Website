@@ -97,11 +97,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-sortable/0.13.4/sortable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angulartics/1.0.3/angulartics.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angulartics-google-analytics/0.1.4/angulartics-google-analytics.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.0/jquery.jplayer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <!-- @endif --> 
+    
+    <!-- When delivering this using cdn it will be blocked by uBlock Origins -->
+    <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+    <!-- @endif -->
 
     <!-- build:js scripts/vendor.js -->
     <script src="bower_components/SHA-1/sha1.js"></script>
