@@ -451,6 +451,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
+            'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
             '*.{ico,jpg,png,txt,config}',
             '.well-known/*'
           ]
