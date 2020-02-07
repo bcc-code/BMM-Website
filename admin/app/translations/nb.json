@@ -130,9 +130,9 @@
       "contributors": "Bidragsytere"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
+      "save": "Lagre overføring",
+      "edit": "Rediger overføring",
+      "add": "Legg til sending",
       "cancelEditing": "Cancel editing",
       "upcomingMessage": "Upcoming BMM live transmissions",
       "noUpcomingMessage": "No upcoming BMM live transmissions!"
