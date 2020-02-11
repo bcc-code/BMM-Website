@@ -27,7 +27,7 @@
       "tracks": "Nummers",
       "childTracks": "Nummers voor kinderen",
       "open": "Openen",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Volgende Van Kåre"
     }
   },
   "page": {
@@ -54,14 +54,14 @@
       "status": "Status",
       "languages": "Talen",
       "tags": "Tags",
-      "addTag": "Add tag",
+      "addTag": "Tag toevoegen",
       "generateTitlesByTag": "Genereer titels aan de hand van de tags",
       "active": "Actief",
       "available": "Beschikbaar",
       "title": "Titel",
       "noTitle": "Geen titel",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Geüpload",
+      "published": "Gepubliceerd",
       "description": "Beschrijving",
       "selectedLanguage": "Geselecteerde taal",
       "originalLanguage": "Oorspronkelijke taal",
@@ -88,21 +88,21 @@
       "imageAllowed": "JPEG, png, gif",
       "mediaAllowed": "MP3, mp4",
       "composers": "Componisten",
-      "arrangers": "Arrangers",
+      "arrangers": "Arrangeurs",
       "interprets": "Artiesten en\/of sprekers",
       "lyricists": "Tekstschrijvers",
       "songbooks": "Liederenboeken",
       "podcasts": "Podcasts",
-      "editPodcast": "Edit Podcast",
+      "editPodcast": "Podcast wijzigen",
       "bibleReferences": "Bijbel verwijzingen",
       "addBibleReference": "Bijbel verwijzing toevoegen",
-      "externalReferences": "External references",
-      "addExternalReference": "Add external reference",
+      "externalReferences": "Externe referenties",
+      "addExternalReference": "Externe referentie toevoegen",
       "record": "Opnemen",
       "pause": "Pauze",
       "resetTime": "Reset tijd",
       "createNewContributor": "Nieuwe medewerker maken",
-      "createNewPodcast": "Create new podcast",
+      "createNewPodcast": "Nieuwe podcast maken",
       "number": "Nummer",
       "timestamp": "Tijdstip",
       "comment": "Commentaar",
@@ -113,8 +113,8 @@
       "missingTrack": "Ontbrekend nummer",
       "missingAlbum": "Ontbrekend album",
       "wrongId": "Verkeerde BMM-ID",
-      "start": "Start",
-      "end": "End"
+      "start": "Begin",
+      "end": "Eind"
     },
     "waitings": {
       "link": "Link",
@@ -130,12 +130,12 @@
       "contributors": "Bijdragers"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Uitzending opslaan",
+      "edit": "Uitzending wijzigen",
+      "add": "Uitzending toevoegen",
+      "cancelEditing": "Wijzigingen annuleren",
+      "upcomingMessage": "Komende live-uitzendingen van BMM",
+      "noUpcomingMessage": "Geen komende live uitzendingen van BMM!"
     },
     "users": {
       "adminUsers": "Administrator gebruikers",
@@ -144,7 +144,7 @@
       "contributorManager": "Bijdragers",
       "notificationManager": "Meldingen",
       "podcastManager": "Podcasts",
-      "featurePreview": "Feature Preview",
+      "featurePreview": "Feature voorbeeld",
       "liveManager": "Live",
       "allRights": "Alle rechten",
       "refreshList": "Lijst vernieuwen"
@@ -157,14 +157,14 @@
       "failed": "Mislukt"
     },
     "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+      "addPodcastTranslation": "Podcastvertaling toevoegen",
+      "savePodcast": "Podcast opslaan"
     }
   },
   "states": {
     "noChanges": "Geen wijzigingen",
     "allIsWell": "Alles is goed",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Wijzigingen opgeslagen",
     "couldNotCreateAlbum": "Kan geen album maken",
     "couldNotCreateTrack": "Kan geen nummer maken",
     "errorCode": "Foutcode",
@@ -190,7 +190,7 @@
   "warnings": {
     "confirmAlbumDeletion": "Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
     "confirmTrackDeletion": "Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "Taal heeft content. Verwijderen bevestigen",
     "confirmContributorDeletion": "WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track": {

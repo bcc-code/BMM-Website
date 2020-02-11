@@ -1,5 +1,5 @@
 {
-  "language": "Dutch",
+  "language": "Nederlands",
   "general": {
     "search": "Zoeken...",
     "searchResultsFor": "Zoekresultaten voor:",
@@ -20,15 +20,15 @@
     "changeLanguage": "Taal veranderen",
     "goBack": "Ga terug",
     "choosePlaylist": "Kies afspeellijst",
-    "setupPodcast": "Om de podcast in te stellen moet je de link hieronder kopiëren en daarna plakken in de door jou gekozen software.",
+    "setupPodcast": "Om de podcast in te stellen, moet je de link hieronder kopiëren en daarna in de door jou gekozen software plakken.",
     "chooseLanguages": "Kies talen",
     "addLanguage": "Voeg een taal toe",
     "includeLatest": "Laatste toevoegen",
-    "websiteLanguage": "Website taal",
-    "contentLanguages": "Taal van de content",
+    "websiteLanguage": "Taal website",
+    "contentLanguages": "Taal content",
     "tracks": "Nummers",
     "filterByLanguage": "Filteren op taal",
-    "copyUrl": "Kopieër URL",
+    "copyUrl": "URL kopiëren ",
     "copyLink": "Link kopiëren",
     "remove": "Verwijderen",
     "playPlaylist": "Afspeellijst afspelen",
@@ -48,7 +48,7 @@
       "latestTracks": "Nieuwe nummers",
       "current": "Huidige",
       "newPlaylist": "Nieuwe afspeellijst",
-      "nameOnPlaylist": "Afspeellijst titel"
+      "nameOnPlaylist": "Titel afspeellijst"
     }
   },
   "page": {
@@ -99,7 +99,7 @@
     "composer": "Componist",
     "album": "Album",
     "bibleVerse": "Bijbel vers",
-    "songbooks": "Song number",
+    "songbooks": "Liednummer",
     "copyright": "Auteursrecht",
     "publisher": "Uitgever"
   },
@@ -120,7 +120,7 @@
     "shufflePlaylist": "Shuffle afspeellijst",
     "loopPlaylist": "Herhaal afspeellijst",
     "mute": "Dempen",
-    "maxVolume": "Maximum volume",
+    "maxVolume": "Maximaal volume",
     "options": "Opties",
     "activateVideo": "Video activeren",
     "goToAlbum": "Ga naar album",

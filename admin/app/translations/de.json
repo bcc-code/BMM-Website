@@ -114,7 +114,7 @@
       "missingAlbum": "Fehlendes Album",
       "wrongId": "Falsche BMM-ID",
       "start": "Start",
-      "end": "End"
+      "end": "Ende"
     },
     "waitings": {
       "link": "Link",
@@ -130,12 +130,12 @@
       "contributors": "Mitwirkende"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Übertragung speichern",
+      "edit": "Übertragung bearbeiten",
+      "add": "Übertragung hinzufügen",
+      "cancelEditing": "Bearbeiten abbrechen",
+      "upcomingMessage": "Kommende BMM Live Übertragungen",
+      "noUpcomingMessage": "Keine kommenden Live-Übertragungen!"
     },
     "users": {
       "adminUsers": "Administratoren",
