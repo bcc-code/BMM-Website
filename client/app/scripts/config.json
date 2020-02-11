@@ -8,7 +8,7 @@
   ],
   "serverUrlIndex": 1,
   "developerPort": 9001,
-  "protocol": "https",
+  "protocol": "http",
   "localsPath": "translations/locals/",
   "keepAlive": 5,
   "requestTimeout": false,
