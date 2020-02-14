@@ -9,7 +9,8 @@ angular.module('bmmApp', [
   'ui.sortable',
   'ngTouch',
   'angulartics',
-  'angulartics.google.analytics'
+  'angulartics.google.analytics',
+  'ng.oidcclient'
 ]).run(['$route', '$location', '_api', function($route, $location, _api)  {
 
     //Removes unwanted urlchange done by topbar while developing
@@ -24,6 +25,22 @@ angular.module('bmmApp', [
       FastClick.attach(document.body);
     });
 
+  }])
+  .config(['ngOidcClientProvider', function(ngOidcClientProvider) {
+    ngOidcClientProvider.setSettings({
+      authority: "https://dev-zkj2sxgs.auth0.com/",
+      client_id: "MDqxZ3kgX6bdq9JA0djyobGUuYSSIa1c",
+      redirect_uri: "http://localhost:9001/redirect.html",
+      silent_redirect_uri: "http://localhost:9001/silent-renew.html",
+      post_logout_redirect_uri: "http://localhost:9001/logoutRedirect.html",
+
+      response_type: "id_token token",
+      scope: "openid profile roles api",
+
+      automaticSilentRenew: true,
+
+      filterProtocolClaims: true
+    });
   }])
   .config(['$routeProvider','$locationProvider', '$analyticsProvider', '$compileProvider', function ($routeProvider, $locationProvider, $analyticsProvider, $compileProvider) {
 
