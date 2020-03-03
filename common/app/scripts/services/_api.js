@@ -238,13 +238,6 @@ angular.module('bmmLibApp')
     return image;
   };
 
-  factory.getPodcastHash = function(path) {
-
-    var md5 = $.md5(credentials.username+'\n'+path).substring(0,10);
-    return encodeURIComponent(credentials.username+'|'+credentials.password+'|'+md5);
-
-  };
-
   factory.setCredentials = function(user, pass) {
     credentials = {
       username: user,
