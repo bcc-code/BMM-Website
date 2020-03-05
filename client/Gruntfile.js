@@ -450,8 +450,11 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            'redirect.html',
+            'silent-renew.html',
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
             'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
+            'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}',
             '.well-known/*'
           ]

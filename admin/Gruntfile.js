@@ -427,6 +427,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}'
           ]
         }, {
