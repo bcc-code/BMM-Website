@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics) {
-  
+  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics, ngOidcClient, $q) {
+
   var factory = {},
       credentials = {},
+      oidcUser = {},
       credentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'https://localhost/', //Fallback
-      CSharpServerUrl = 'http://localhost:44303/', //Fallback
+      serverUrl = 'http://localhost/', //Fallback
+      CSharpServerUrl = 'https://localhost:44303/', //Fallback
       requestTimeout,
       responseCache = {},
       contentLanguages = [];
@@ -36,7 +37,7 @@ angular.module('bmmLibApp')
       dataType: customXhrOptions.method === 'GET' ? 'json' : 'html',
       timeout: requestTimeout,
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'Authorization': factory.getAuthorizationHeader(),
         //Add this to all requests, because if we don't add this header, the browser will
         //add one with it's own languages. It will not harm to leave it here for all the requests,
         //even though it's not required.
@@ -49,13 +50,13 @@ angular.module('bmmLibApp')
 
     function merge(obj1,obj2){ // Custom merge function
         var result = {}; // return result
-        for(var i in obj1){      // for every property in obj1 
+        for(var i in obj1){      // for every property in obj1
             if((i in obj2) && (typeof obj1[i] === 'object') && (i !== null) && !$.isArray(obj1[i])){
 
               //Arrays are not merged, they're treated like any other primitive property.
               //This is because of the Accept-Languages property.
 
-                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge   
+                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge
             } else {
                result[i] = obj1[i]; // add it to result
             }
@@ -89,7 +90,7 @@ angular.module('bmmLibApp')
     if(typeof xhrOptions.method !== 'string' || supportedMethods.indexOf(xhrOptions.method) === -1) {
       throw new Error('The HTTP method: ' + xhrOptions.method + ' is not supported');
     }
-    
+
     //Check if the language code for non-lingual content should be appended to the languages array.
     if(factory.appendUnknownLanguage && xhrOptions.headers) {
       var languages = xhrOptions.headers['Accept-Language'];
@@ -147,7 +148,7 @@ angular.module('bmmLibApp')
    * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
    */
   factory.sendXHR = function(customXhrOptions, errorHandler) {
-    
+
     var xhrOptions = factory.prepareRequest(customXhrOptions);
 
     errorHandler = errorHandler || factory.exceptionHandler;
@@ -220,10 +221,10 @@ angular.module('bmmLibApp')
       factory.loginRedirect();
     }
   };
-    
+
   factory.keepAlive = function() {
     $timeout(function() {
-      factory.loginUser().done(function() {
+      factory.loginUser().then(function() {
         factory.keepAlive();
       });
     }, keepAliveTime);
@@ -251,6 +252,10 @@ angular.module('bmmLibApp')
     } else {
       return credentials.username+':'+credentials.password;
     }
+  };
+
+  factory.getAuthorizationHeader = function() {
+    return "Bearer " + oidcUser.access_token;
   };
 
   factory.setContentLanguages = function(languages) {
@@ -669,13 +674,33 @@ angular.module('bmmLibApp')
 
   /** Get the users profile **/
   factory.loginUser = function() {
+    var deferred = $q.defer();
 
-    return factory.sendXHR({
-      method: 'GET',
-      url: serverUrl+'login/user'
-    }, false);
+    ngOidcClient.manager.getUser().then(function(user){
+      if (!user) {
+        console.log("signinRedirect");
+        ngOidcClient.manager.signinRedirect();
+      } else {
+        console.log("user", user);
+        oidcUser = user;
+        debugger;
+
+        factory.sendXHR({
+          method: 'GET',
+          url: serverUrl+'currentUser'
+        }, false).then(function(apiUser) {
+          deferred.resolve(apiUser);
+        });
+      }
+    });
+
+    // return factory.sendXHR({
+    //   method: 'GET',
+    //   url: serverUrl+'login/user'
+    // }, false);
     //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
 
+    return deferred.promise;
   };
 
   /** Accept track guessed for file, when file is uploaded through FTP **/
@@ -1067,7 +1092,7 @@ angular.module('bmmLibApp')
       url: CSharpServerUrl + 'transmission/' + id
     });
   };
-  
+
   return factory;
 
 });

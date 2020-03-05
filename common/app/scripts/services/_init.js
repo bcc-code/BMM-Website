@@ -23,7 +23,7 @@ angular.module('bmmLibApp')
       complete: $q.defer()
     },
     factory.blockingLoad = {
-      loading: false 
+      loading: false
     };
 
     factory.promise = function(admin) {
@@ -73,7 +73,8 @@ angular.module('bmmLibApp')
         factory.load.status = 'Attempt to login';
 
         // -- Attempt to login
-        _api.loginUser().done(function(user) {
+        _api.loginUser().then(function(user) {
+          console.log("old user", user);
 
           factory.load.percent+=25;
           var promises = [];
@@ -121,7 +122,7 @@ angular.module('bmmLibApp')
 
             // Use the top language as podcastLanguage
             factory.podcastLanguage = _session.current.contentLanguages[0];
-            
+
             rootLoaded.resolve();
             factory.load.percent+=25;
 
@@ -166,7 +167,7 @@ angular.module('bmmLibApp')
             factory.load.status = 'Loading complete';
           });
 
-        }).fail(function() {
+        }, function(error) {
 
           if (attempt>=loginAttempts) {
             window.location = _api.getserverUrli()+'login/redirect?redirect_to='+window.location;
@@ -214,7 +215,7 @@ angular.module('bmmLibApp')
           promise.resolve();
         }
       });
-    };    
+    };
 
     return factory;
   });

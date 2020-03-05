@@ -28,14 +28,17 @@ angular.module('bmmApp', [
   }])
   .config(['ngOidcClientProvider', function(ngOidcClientProvider) {
     ngOidcClientProvider.setSettings({
-      authority: "https://dev-zkj2sxgs.auth0.com/",
-      client_id: "MDqxZ3kgX6bdq9JA0djyobGUuYSSIa1c",
+      authority: "https://login.bcc.no",
+      client_id: "atNnW7N113LOEFnTBOLpZvXueLknm4uE",
       redirect_uri: "http://localhost:9001/redirect.html",
       silent_redirect_uri: "http://localhost:9001/silent-renew.html",
       post_logout_redirect_uri: "http://localhost:9001/logoutRedirect.html",
 
       response_type: "id_token token",
-      scope: "openid profile roles api",
+      scope: "openid profile email roles api",
+      extraQueryParams: {
+        audience: "https://bmm-api.brunstad.org"
+      },
 
       automaticSilentRenew: true,
 
@@ -118,5 +121,5 @@ angular.module('bmmApp', [
       });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
-    
+
   }]);

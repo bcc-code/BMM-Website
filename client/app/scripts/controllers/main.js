@@ -21,15 +21,6 @@ angular.module('bmmApp')
 
     $scope.load = _init.load;
 
-    ngOidcClient.manager.getUser().then(function(user){
-      if (!user) {
-        console.log("signinRedirect");
-        ngOidcClient.manager.signinRedirect();
-      } else {
-        console.log("user", user);
-      }
-    });
-
     _init.load.complete.promise.then(function() {
 
       $rootScope.init = $scope.init = _init;
@@ -83,7 +74,7 @@ angular.module('bmmApp')
         update: function() {
           $scope.setLanguagesChanged();
         },
-        axis: 'y' 
+        axis: 'y'
       };
 
       //This filter functions filters out the languages
