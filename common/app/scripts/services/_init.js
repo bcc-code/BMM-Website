@@ -85,9 +85,6 @@ angular.module('bmmLibApp')
           // -- Admin
           factory.admin = isAdmin(user.roles);
 
-          // -- Credentials
-          _api.setCredentials(user.username, user.token);
-
           //Set the username for the angulartics reports:
           $analytics.setUsername(user.username);
 
@@ -115,7 +112,7 @@ angular.module('bmmLibApp')
 
             factory.root = root;
 
-            _session.restoreSession(user.username, user.languages, factory.root.languages);
+            _session.restoreSession(user.username, [], factory.root.languages);
 
             _api.setContentLanguages(_session.current.contentLanguages);
             _api.appendUnknownLanguage = true;

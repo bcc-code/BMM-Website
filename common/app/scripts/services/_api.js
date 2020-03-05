@@ -4,9 +4,7 @@ angular.module('bmmLibApp')
   .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics, ngOidcClient, $q) {
 
   var factory = {},
-      credentials = {},
       oidcUser = {},
-      credentialsSuported = 'unresolved',
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'http://localhost/', //Fallback
       CSharpServerUrl = 'https://localhost:44303/', //Fallback
@@ -222,13 +220,14 @@ angular.module('bmmLibApp')
     }
   };
 
-  factory.keepAlive = function() {
-    $timeout(function() {
-      factory.loginUser().then(function() {
-        factory.keepAlive();
-      });
-    }, keepAliveTime);
-  };
+  //// keep alive is not used with oidc-client
+  // factory.keepAlive = function() {
+  //   $timeout(function() {
+  //     factory.loginUser().then(function() {
+  //       factory.keepAlive();
+  //     });
+  //   }, keepAliveTime);
+  // };
 
   factory.addLanguagesToDownloadUrl = function(downloadUrl) {
     return downloadUrl + '?languages[]=' + contentLanguages.join('&languages[]=');
@@ -237,21 +236,6 @@ angular.module('bmmLibApp')
   //Doesnt need to be secured
   factory.secureImage = function(image) {
     return image;
-  };
-
-  factory.setCredentials = function(user, pass) {
-    credentials = {
-      username: user,
-      password: pass
-    };
-  };
-
-  factory.getCredentials = function(encoded) {
-    if (typeof encoded!=='undefined'&&encoded) {
-      return encodeURIComponent(credentials.username)+':'+encodeURIComponent(credentials.password);
-    } else {
-      return credentials.username+':'+credentials.password;
-    }
   };
 
   factory.getAuthorizationHeader = function() {
@@ -577,7 +561,6 @@ angular.module('bmmLibApp')
      *    media-type                Array(String)   audio|video
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      *    tags                      Array(String)
-     *    test credentials: steffan:f6f6f772748de54501aae49edcbd489a
      */
 
     return factory.addToQueue({
@@ -683,7 +666,6 @@ angular.module('bmmLibApp')
       } else {
         console.log("user", user);
         oidcUser = user;
-        debugger;
 
         factory.sendXHR({
           method: 'GET',
@@ -691,14 +673,9 @@ angular.module('bmmLibApp')
         }, false).then(function(apiUser) {
           deferred.resolve(apiUser);
         });
+        //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
       }
     });
-
-    // return factory.sendXHR({
-    //   method: 'GET',
-    //   url: serverUrl+'login/user'
-    // }, false);
-    //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
 
     return deferred.promise;
   };
