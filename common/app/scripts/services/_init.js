@@ -27,7 +27,6 @@ angular.module('bmmLibApp')
     };
 
     factory.promise = function(admin) {
-      if (typeof admin==='undefined') { admin = false; }
       factory.authorize(admin);
       return factory.load.complete.promise;
     };
@@ -193,7 +192,7 @@ angular.module('bmmLibApp')
         if (this==='ROLE_ADMINISTRATOR') { isAdmin = true; }
       });
       return isAdmin;
-    }
+    };
 
     var findBible = function(lang, index, promise) {
       factory.load.status = 'Fetch bible';

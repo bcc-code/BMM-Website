@@ -26,13 +26,14 @@ angular.module('bmmApp', [
     });
 
   }])
-  .config(['ngOidcClientProvider', function(ngOidcClientProvider) {
+  .config(['ngOidcClientProvider', '$locationProvider', function(ngOidcClientProvider, $locationProvider) {
+    var url = window.location.origin;
     ngOidcClientProvider.setSettings({
       authority: "https://login.bcc.no",
       client_id: "atNnW7N113LOEFnTBOLpZvXueLknm4uE",
-      redirect_uri: "http://localhost:9001/redirect.html",
-      silent_redirect_uri: "http://localhost:9001/silent-renew.html",
-      post_logout_redirect_uri: "http://localhost:9001/logoutRedirect.html",
+      redirect_uri: url + "/redirect.html",
+      silent_redirect_uri: url + "/silent-renew.html",
+      post_logout_redirect_uri: url + "/logoutRedirect.html",
 
       response_type: "id_token token",
       scope: "openid profile email roles api",
