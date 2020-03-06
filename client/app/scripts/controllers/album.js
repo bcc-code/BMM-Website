@@ -31,7 +31,6 @@ angular.module('bmmApp')
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};
-    $rootScope.podcastHash = _api.getPodcastHash('/podcast/album/'+$routeParams.id+'/track/');
     $scope.podcast.link = _api.getserverUrli()+'podcast/album/'+$routeParams.id+'/track/?';
 
     $scope.getPlaylistCopy = function(filter) {
@@ -73,7 +72,7 @@ angular.module('bmmApp')
       $timeout(function() {
         $('.draggable-playlist').trigger('dragdrop');
       });
-      
+
       findPlayingTrack();
     };
 
