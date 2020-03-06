@@ -30,7 +30,7 @@ angular.module('bmmApp', [
     var url = window.location.origin;
     ngOidcClientProvider.setSettings({
       authority: "https://login.bcc.no",
-      client_id: "atNnW7N113LOEFnTBOLpZvXueLknm4uE",
+      client_id: "EPlaBVrMQc3gsuwUTA0D3aX0ZLXJ33C4",
       redirect_uri: url + "/redirect.html",
       silent_redirect_uri: url + "/silent-renew.html",
       post_logout_redirect_uri: url + "/logoutRedirect.html",
