@@ -242,6 +242,10 @@ angular.module('bmmLibApp')
     return "Bearer " + oidcUser.access_token;
   };
 
+  factory.getAuthorizationQueryString = function() {
+    return "auth=" + factory.getAuthorizationHeader();
+  };
+
   factory.setContentLanguages = function(languages) {
     contentLanguages = languages;
   };
@@ -438,25 +442,6 @@ angular.module('bmmLibApp')
       method: 'GET',
       url: serverUrl+'facets/track_recorded/years',
       data: $.param(options)
-    });
-
-  };
-
-  /** Authenticate by username and password **/
-  factory.loginAuthentication = function(options) {
-
-    if (typeof options === 'undefined') { options = {}; }
-
-    /** OPTIONS (Stars = Required)
-     *    username *                String
-     *    password *                String
-     */
-
-    return factory.addToQueue({
-      method: 'POST',
-      url: serverUrl+'login/authentication',
-      data: JSON.stringify(options),
-      contentType: 'application/json'
     });
 
   };
