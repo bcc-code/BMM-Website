@@ -15,8 +15,7 @@ angular.module('bmmApp')
     _play,
     _player,
     _draggable,
-    _locals,
-    ngOidcClient
+    _locals
   ) {
 
     $scope.load = _init.load;

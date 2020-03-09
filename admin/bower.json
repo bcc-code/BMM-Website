@@ -23,7 +23,8 @@
     "jquery.ui.touch-punch.dk": "~0.3.3",
     "jqueryui": "~1.10.3",
     "bootstrap": "^3.3.7",
-    "chart.js": "^2.3.0"
+    "chart.js": "^2.3.0",
+    "oidc-client": "1.10.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redirect callback</title>
+</head>
+
+<body>
+    <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
+    <script>
+        new Oidc.UserManager().signinRedirectCallback().then(function() {
+            window.location.replace("./");
+        });
+    </script>
+</body>
+
+</html>

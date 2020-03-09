@@ -152,7 +152,7 @@ angular.module('bmmLibApp')
             // -- Bibleverses
             var bibleLoaded = $q.defer();
             promises.push(bibleLoaded.promise);
-            findBible(factory.user.languages, 0, bibleLoaded);
+            findBible([], 0, bibleLoaded);
           }
 
           $q.all(promises).then(function() {
