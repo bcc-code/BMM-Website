@@ -216,7 +216,7 @@ angular.module('bmmLibApp')
 
   factory.exceptionHandler = function(xhr) {
     if (xhr.status===401) {
-      factory.loginRedirect();
+      console.error("Unauthorized");
     }
   };
 
@@ -644,12 +644,16 @@ angular.module('bmmLibApp')
   factory.loginUser = function() {
     var deferred = $q.defer();
 
+    ngOidcClient.manager.events.addUserLoaded(function(user) {
+      // Update user when silent renew is triggered
+      oidcUser = user;
+    });
+
     ngOidcClient.manager.getUser().then(function(user){
       if (!user) {
         console.log("signinRedirect");
         ngOidcClient.manager.signinRedirect();
       } else {
-        console.log("user", user);
         oidcUser = user;
 
         factory.sendXHR({

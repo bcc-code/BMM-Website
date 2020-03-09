@@ -73,8 +73,6 @@ angular.module('bmmLibApp')
 
         // -- Attempt to login
         _api.loginUser().then(function(user) {
-          console.log("old user", user);
-
           factory.load.percent+=25;
           var promises = [];
 
@@ -164,21 +162,7 @@ angular.module('bmmLibApp')
           });
 
         }, function(error) {
-
-          if (attempt>=loginAttempts) {
-            window.location = _api.getserverUrli()+'login/redirect?redirect_to='+window.location;
-          }
-
-          _api.loginRedirect({
-            done: function() {
-              factory.load.progress = false;
-              factory.authorize(admin, (attempt+1));
-            },
-            fail: function(signOn) {
-              window.location = signOn;
-            }
-          });
-
+          console.error("not able to login user");
         });
       }).error(function() {
         factory.load.progress = false;
