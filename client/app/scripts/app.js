@@ -36,7 +36,7 @@ angular.module('bmmApp', [
       post_logout_redirect_uri: url + "/logoutRedirect.html",
 
       response_type: "id_token token",
-      scope: "openid profile email roles api",
+      scope: "openid profile",
       extraQueryParams: {
         audience: "https://bmm-api.brunstad.org"
       },
