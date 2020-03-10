@@ -12,7 +12,8 @@ angular.module('bmmApp', [
   'monospaced.elastic',
   'angular-duration-format',
   'angulartics',
-  'angulartics.google.analytics'
+  'angulartics.google.analytics',
+  'ng.oidcclient'
 ]).run(['$route', '$location', function($route, $location)  {
 
     //Removes unwanted urlchange done by topbar while developing
@@ -25,6 +26,26 @@ angular.module('bmmApp', [
       FastClick.attach(document.body);
     });
 
+  }])
+  .config(['ngOidcClientProvider', '$locationProvider', function(ngOidcClientProvider, $locationProvider) {
+    var url = window.location.origin;
+    ngOidcClientProvider.setSettings({
+      authority: "https://login.bcc.no",
+      client_id: "EPlaBVrMQc3gsuwUTA0D3aX0ZLXJ33C4",
+      redirect_uri: url + "/admin/redirect.html",
+      silent_redirect_uri: url + "/admin/silent-renew.html",
+      post_logout_redirect_uri: url + "/admin/logoutRedirect.html",
+
+      response_type: "id_token token",
+      scope: "openid profile",
+      extraQueryParams: {
+        audience: "https://bmm-api.brunstad.org"
+      },
+
+      automaticSilentRenew: true,
+
+      filterProtocolClaims: true
+    });
   }])
   .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider, $locationProvider, $analyticsProvider) {
 
@@ -130,5 +151,5 @@ angular.module('bmmApp', [
       });
 
     $locationProvider.html5Mode(true);
-    
+
   }]);

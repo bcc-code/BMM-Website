@@ -2,7 +2,7 @@
 
 angular.module('bmmLibApp')
   .factory('_player', function ($timeout, $rootScope, $filter, $window, $analytics, _api, _playlist,  _track) {
-  
+
   var factory = {},
       videoTarget,
       source;
@@ -196,7 +196,7 @@ angular.module('bmmLibApp')
         $(videoTarget).jPlayer('unmute');
         factory.muted = false;
       }
-      
+
     } else {
       if ($(videoTarget).data('jPlayer').options.muted) {
         $(videoTarget).jPlayer('unmute');
@@ -355,38 +355,39 @@ angular.module('bmmLibApp')
     };
 
     $.each(files, function() {
+      var url = this.file + '&' + _api.getAuthorizationQueryString();
 
       switch(this.type) {
         case 'audio/mpeg':
-          sourceReady.mp3 = this.file;
+          sourceReady.mp3 = url;
           factory.setAudio();
           break;
         case 'video/mp4':
-          sourceReady.m4v = this.file;
+          sourceReady.m4v = url;
           factory.setVideo();
           break;
         case 'application/ogg':
           if (video) {
-            sourceReady.ogv = this.file;
+            sourceReady.ogv = url;
             factory.setVideo();
           } else {
-            sourceReady.oga = this.file;
+            sourceReady.oga = url;
             factory.setAudio();
           }
           break;
         case 'video/webm':
-          sourceReady.webmv = this.file;
+          sourceReady.webmv = url;
           factory.setVideo();
           break;
         case 'audio/webm':
-          sourceReady.webma = this.file;
+          sourceReady.webma = url;
           factory.setAudio();
           break;
         default:
-          sourceReady.mp3 = this.file;
+          sourceReady.mp3 = url;
           factory.setAudio();
           break;
-      };
+      }
 
     });
 

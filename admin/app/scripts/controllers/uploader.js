@@ -19,7 +19,7 @@ angular.module('bmmApp')
         removeAfterUpload: true,
         headers: {
           'X-HTTP-METHOD-OVERRIDE': options.method,
-          'Authorization': 'Basic '+window.btoa(_api.getCredentials())
+          'Authorization': _api.getAuthorizationHeader()
         }
       });
 

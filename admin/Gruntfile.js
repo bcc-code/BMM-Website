@@ -427,6 +427,10 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            'redirect.html',
+            'silent-renew.html',
+            'logout-redirect.html',
+            'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}'
           ]
         }, {
@@ -434,7 +438,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts',
           dest: '<%= yeoman.dist %>/scripts',
           src: ['config.json']
-        }, 
+        },
         {
           expand: true,
           cwd: '<%= yeoman.app %>/bower_components/bootstrap/dist',

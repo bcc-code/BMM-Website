@@ -73,7 +73,7 @@ angular.module('bmmApp')
         update: function() {
           $scope.setLanguagesChanged();
         },
-        axis: 'y' 
+        axis: 'y'
       };
 
       //This filter functions filters out the languages

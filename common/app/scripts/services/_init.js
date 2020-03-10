@@ -23,11 +23,10 @@ angular.module('bmmLibApp')
       complete: $q.defer()
     },
     factory.blockingLoad = {
-      loading: false 
+      loading: false
     };
 
     factory.promise = function(admin) {
-      if (typeof admin==='undefined') { admin = false; }
       factory.authorize(admin);
       return factory.load.complete.promise;
     };
@@ -73,8 +72,7 @@ angular.module('bmmLibApp')
         factory.load.status = 'Attempt to login';
 
         // -- Attempt to login
-        _api.loginUser().done(function(user) {
-
+        _api.loginUser().then(function(user) {
           factory.load.percent+=25;
           var promises = [];
 
@@ -83,9 +81,6 @@ angular.module('bmmLibApp')
 
           // -- Admin
           factory.admin = isAdmin(user.roles);
-
-          // -- Credentials
-          _api.setCredentials(user.username, user.token);
 
           //Set the username for the angulartics reports:
           $analytics.setUsername(user.username);
@@ -114,14 +109,14 @@ angular.module('bmmLibApp')
 
             factory.root = root;
 
-            _session.restoreSession(user.username, user.languages, factory.root.languages);
+            _session.restoreSession(user.username, [], factory.root.languages);
 
             _api.setContentLanguages(_session.current.contentLanguages);
             _api.appendUnknownLanguage = true;
 
             // Use the top language as podcastLanguage
             factory.podcastLanguage = _session.current.contentLanguages[0];
-            
+
             rootLoaded.resolve();
             factory.load.percent+=25;
 
@@ -155,7 +150,7 @@ angular.module('bmmLibApp')
             // -- Bibleverses
             var bibleLoaded = $q.defer();
             promises.push(bibleLoaded.promise);
-            findBible(factory.user.languages, 0, bibleLoaded);
+            findBible([], 0, bibleLoaded);
           }
 
           $q.all(promises).then(function() {
@@ -166,22 +161,8 @@ angular.module('bmmLibApp')
             factory.load.status = 'Loading complete';
           });
 
-        }).fail(function() {
-
-          if (attempt>=loginAttempts) {
-            window.location = _api.getserverUrli()+'login/redirect?redirect_to='+window.location;
-          }
-
-          _api.loginRedirect({
-            done: function() {
-              factory.load.progress = false;
-              factory.authorize(admin, (attempt+1));
-            },
-            fail: function(signOn) {
-              window.location = signOn;
-            }
-          });
-
+        }, function(error) {
+          console.error("not able to login user");
         });
       }).error(function() {
         factory.load.progress = false;
@@ -195,7 +176,7 @@ angular.module('bmmLibApp')
         if (this==='ROLE_ADMINISTRATOR') { isAdmin = true; }
       });
       return isAdmin;
-    }
+    };
 
     var findBible = function(lang, index, promise) {
       factory.load.status = 'Fetch bible';
@@ -214,7 +195,7 @@ angular.module('bmmLibApp')
           promise.resolve();
         }
       });
-    };    
+    };
 
     return factory;
   });
