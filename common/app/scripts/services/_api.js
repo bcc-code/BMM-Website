@@ -243,7 +243,7 @@ angular.module('bmmLibApp')
   };
 
   factory.getAuthorizationQueryString = function() {
-    return "auth=" + factory.getAuthorizationHeader();
+    return "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
   };
 
   factory.setContentLanguages = function(languages) {

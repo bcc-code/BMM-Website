@@ -97,7 +97,7 @@
 
 <div style="margin-top: 2em; width: 100%;">
     <div title="{{::album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in albums">
-        <img class="album-latest-image" ng-src="{{::album.cover}}"/>
+        <img class="album-latest-image" ng-src="{{::album.cover | _authorizedUrl}}"/>
         <div class="album-latest-title"><span ng-bind="album.title"></span></div>
         <div class="album-latest-about"></div>
     </div>
