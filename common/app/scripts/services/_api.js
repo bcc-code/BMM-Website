@@ -791,6 +791,13 @@ angular.module('bmmLibApp')
 
   };
 
+  factory.userTrackCollectionsGet = function() {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'track_collection/'
+    });
+  };
+
   /** Get a collection **/
   factory.userTrackCollectionGet = function(id) {
 
