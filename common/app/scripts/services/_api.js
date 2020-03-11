@@ -220,15 +220,6 @@ angular.module('bmmLibApp')
     }
   };
 
-  //// keep alive is not used with oidc-client
-  // factory.keepAlive = function() {
-  //   $timeout(function() {
-  //     factory.loginUser().then(function() {
-  //       factory.keepAlive();
-  //     });
-  //   }, keepAliveTime);
-  // };
-
   factory.addLanguagesToDownloadUrl = function(downloadUrl) {
     return downloadUrl + '?languages[]=' + contentLanguages.join('&languages[]=');
   };
