@@ -647,6 +647,7 @@ angular.module('bmmLibApp')
     ngOidcClient.manager.events.addUserLoaded(function(user) {
       // Update user when silent renew is triggered
       oidcUser = user;
+      window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
     });
 
     ngOidcClient.manager.getUser().then(function(user){
@@ -655,6 +656,7 @@ angular.module('bmmLibApp')
         ngOidcClient.manager.signinRedirect();
       } else {
         oidcUser = user;
+        window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
 
         factory.sendXHR({
           method: 'GET',
