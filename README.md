@@ -92,7 +92,7 @@ grunt serve
 ```
 ... A new browser tab should now open
 
-4. Allow the unauthorized certificate to run with https
+4. It might happen that chrome requires localhost to use https. That happens especially if you use a local version of the API. In that case you can remove that again on chrome://net-internals/#hsts
 
 ____________________________________________
 
