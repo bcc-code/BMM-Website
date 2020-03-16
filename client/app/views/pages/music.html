@@ -32,7 +32,7 @@
 
 <div>
 	<div title="{{::album.title}}" ng-click="go('/album/'+album.id);"  class="album-latest bmm-hover" ng-repeat="album in ::latestAlbums">
-        <img class="album-latest-image" ng-src="{{::album.cover}}"/>
+        <img class="album-latest-image" ng-src="{{::album.cover | _authorizedUrl}}"/>
 		<div class="album-latest-title"><span ng-bind="::album.title"></span></div>
         <div class="flag flags-{{::album.raw.language}}"></div>
 	</div>

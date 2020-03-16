@@ -38,7 +38,7 @@
     
     <link rel="stylesheet" href="styles/main.css" />
     <!-- stylesheet link (common for all widgets) -->
-    <link href="https://widgets.brunstad.org/widgets.css" rel="stylesheet" type="text/css" />
+    <link href="https://widgets.bcc.no/styles/widgets.css" rel="stylesheet" type="text/css" />
     <!-- end stylesheet link -->
   </head>
   <body>
@@ -82,6 +82,7 @@
     <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <!-- @endif -->
 
     <!-- NOTE: When a library is being updated, it has to be updated here and in bower.json -->
@@ -103,6 +104,7 @@
     
     <!-- When delivering this using cdn it will be blocked by uBlock Origins -->
     <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+    <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <!-- @endif -->
 
     <!-- build:js scripts/vendor.js -->
@@ -114,6 +116,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/common/bmm_lib.js"></script>
     <script src="scripts/common/googleanalytics.js"></script>
+    <script src="scripts/common/angular-oidc-client.js"></script>
     <script src="scripts/common/directives/click_outside.js"></script>
     <script src="scripts/common/directives/navigator.js"></script>
     <script src="scripts/common/directives/player.js"></script>
@@ -122,6 +125,7 @@
     <script src="scripts/common/directives/slider_video.js"></script>
     <script src="scripts/common/directives/treeview.js"></script>
     <script src="scripts/common/filters/_cover.js"></script>
+    <script src="scripts/common/filters/_authorizedUrl.js"></script>
     <script src="scripts/common/filters/_icon.js"></script>
     <script src="scripts/common/filters/_languageCode.js"></script>
     <script src="scripts/common/filters/_locals.js"></script>
@@ -155,10 +159,6 @@
     <script src="scripts/controllers/bmmlatestlist.js"></script>
     <script src="scripts/directives/bmmlatesttrack.js"></script>
     <!-- endbuild -->
-
-    <!-- topbar widget -->
-        <script src="https://widgets.brunstad.org/TopBar/js?mode=optional" ></script>
-    <!-- end topbar widget -->
 
     <!-- real user measurements for the Traffic Manager in Azure -->
         <script src="https://www.atmrum.net/rum.js"></script>

@@ -44,6 +44,10 @@ angular.module('bmmApp')
         $scope.podcasts = podcasts;
       });
 
+      _api.userTrackCollectionsGet().then(function(trackCollections) {
+        $scope.trackCollections = trackCollections;
+      });
+
       $scope.getCurrent = function() {
         $location.path( _playlist.getUrl() );
       };
@@ -73,7 +77,7 @@ angular.module('bmmApp')
         update: function() {
           $scope.setLanguagesChanged();
         },
-        axis: 'y' 
+        axis: 'y'
       };
 
       //This filter functions filters out the languages
@@ -152,9 +156,9 @@ angular.module('bmmApp')
         }).done(function(data, st, xhr, config) {
 
           if (xhr.status===201) {
-            $scope._playlistAdd = false;
+            $scope.bmmPlaylistAdd = false;
             $scope.newPlaylist = '';
-            $scope.init.user.track_collections.splice(0,0, {
+            $scope.trackCollections.splice(0,0, {
               id: xhr.getResponseHeader('X-Document-Id'),
               name: newPlaylist
             });
@@ -168,9 +172,9 @@ angular.module('bmmApp')
         if (confirm(_init.translation.playlist.confirmPlaylistDeletion)) {
           _api.userTrackCollectionDelete(playlist).done(function(data, st, xhr, config) {
             if (xhr.status<300) {
-              $.each($scope.init.user.track_collections, function(index) {
+              $.each($scope.trackCollections, function(index) {
                 if (this.id===playlist) {
-                  $scope.init.user.track_collections.splice(index,1);
+                  $scope.trackCollections.splice(index,1);
                   return false;
                 }
               });

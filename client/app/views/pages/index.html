@@ -18,7 +18,7 @@
 			ng-repeat="album in ::latestAlbums"
 			title="{{::album.title}}"
 			style="
-				background-image: url({{::album.cover}});
+				background-image: url({{::album.cover | _authorizedUrl}});
 				background-size: contain"
 			class="bmm-hover">
 			<div class="title">

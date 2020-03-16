@@ -6,8 +6,13 @@ angular.module('bmmLibApp')
 
       var fallback_images = "fallback_images/";
       var prefix_url = _api.getserverUrli() + "file/protected/";
-      if(cover && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){
+      if (cover && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){
         cover = prefix_url + cover;
+      }
+      
+      if (cover && cover.indexOf(prefix_url) !== -1 && cover.indexOf('auth=') == -1) {
+        var divider = cover.indexOf('?') == -1 ? '?':'&';
+        cover = cover + divider + _api.getAuthorizationQueryString();
       }
 
       if (typeof cover==='undefined' || cover===null || cover==='') {

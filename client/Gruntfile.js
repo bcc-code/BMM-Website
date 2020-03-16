@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         port: 9001,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
-        protocol: 'https',
+        protocol: 'http',
         livereload: 35729
       },
       livereload: {
@@ -450,8 +450,12 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            'redirect.html',
+            'silent-renew.html',
+            'logout-redirect.html',
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
             'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
+            'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}',
             '.well-known/*'
           ]
@@ -460,7 +464,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts',
           dest: '<%= yeoman.dist %>/scripts',
           src: ['config.json']
-        }, 
+        },
         {
           expand: true,
           cwd: '<%= yeoman.app %>/bower_components/sass-bootstrap/dist',

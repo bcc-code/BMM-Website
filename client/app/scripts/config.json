@@ -4,7 +4,8 @@
     "https://int-bmm-api.brunstad.org/",
     "https://127.0.0.1/bmm/api/web/app_dev.php/",
     "https://devapibmm.brunstad.org/",
-    "https://api.bmm/"
+    "https://api.bmm/",
+    "https://localhost:44303/"
   ],
   "serverUrlIndex": 1,
   "developerPort": 9001,

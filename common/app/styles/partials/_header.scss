@@ -6,7 +6,7 @@
 header {
   @include transition(margin-top);
   position: absolute;
-  top: $topbarHeight;
+  top: 0px;
   height: $headerHeight;
   width: 100%;
   background-color: #fff;//$colorMain;
@@ -22,6 +22,10 @@ header {
       padding-right: 1em;
     }
   }
+}
+
+#bcc-widget-topbar + div header {
+  top: $topbarHeight;
 }
 
 .sub-header {
@@ -57,7 +61,7 @@ header {
       }
     }
   }
-  .search {
+  div.search {
     width: 100%;
     padding: 0 .5em;
     float: none;
@@ -82,7 +86,7 @@ header {
   }
 }
 
-.search {
+div.search {
   position: relative;
   margin: .4em 0 0 16em;
   width: 16em;

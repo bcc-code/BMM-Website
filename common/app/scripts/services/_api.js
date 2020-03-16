@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics) {
-  
+  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics, ngOidcClient, $q) {
+
   var factory = {},
-      credentials = {},
-      credentialsSuported = 'unresolved',
+      oidcUser = {},
       keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'https://localhost/', //Fallback
-      CSharpServerUrl = 'http://localhost:44303/', //Fallback
+      serverUrl = 'http://localhost/', //Fallback
+      CSharpServerUrl = 'https://localhost:44303/', //Fallback
       requestTimeout,
       responseCache = {},
       contentLanguages = [];
@@ -36,7 +35,7 @@ angular.module('bmmLibApp')
       dataType: customXhrOptions.method === 'GET' ? 'json' : 'html',
       timeout: requestTimeout,
       headers: {
-        'Authorization': 'Basic '+window.btoa(factory.getCredentials()),
+        'Authorization': factory.getAuthorizationHeader(),
         //Add this to all requests, because if we don't add this header, the browser will
         //add one with it's own languages. It will not harm to leave it here for all the requests,
         //even though it's not required.
@@ -49,13 +48,13 @@ angular.module('bmmLibApp')
 
     function merge(obj1,obj2){ // Custom merge function
         var result = {}; // return result
-        for(var i in obj1){      // for every property in obj1 
+        for(var i in obj1){      // for every property in obj1
             if((i in obj2) && (typeof obj1[i] === 'object') && (i !== null) && !$.isArray(obj1[i])){
 
               //Arrays are not merged, they're treated like any other primitive property.
               //This is because of the Accept-Languages property.
 
-                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge   
+                result[i] = merge(obj1[i],obj2[i]); // if it's an object, merge
             } else {
                result[i] = obj1[i]; // add it to result
             }
@@ -89,7 +88,7 @@ angular.module('bmmLibApp')
     if(typeof xhrOptions.method !== 'string' || supportedMethods.indexOf(xhrOptions.method) === -1) {
       throw new Error('The HTTP method: ' + xhrOptions.method + ' is not supported');
     }
-    
+
     //Check if the language code for non-lingual content should be appended to the languages array.
     if(factory.appendUnknownLanguage && xhrOptions.headers) {
       var languages = xhrOptions.headers['Accept-Language'];
@@ -147,7 +146,7 @@ angular.module('bmmLibApp')
    * @return {xhrPromise}                     Returns the jqXHR instance that is returned by $.ajax()
    */
   factory.sendXHR = function(customXhrOptions, errorHandler) {
-    
+
     var xhrOptions = factory.prepareRequest(customXhrOptions);
 
     errorHandler = errorHandler || factory.exceptionHandler;
@@ -217,16 +216,8 @@ angular.module('bmmLibApp')
 
   factory.exceptionHandler = function(xhr) {
     if (xhr.status===401) {
-      factory.loginRedirect();
+      console.error("Unauthorized");
     }
-  };
-    
-  factory.keepAlive = function() {
-    $timeout(function() {
-      factory.loginUser().done(function() {
-        factory.keepAlive();
-      });
-    }, keepAliveTime);
   };
 
   factory.addLanguagesToDownloadUrl = function(downloadUrl) {
@@ -238,26 +229,12 @@ angular.module('bmmLibApp')
     return image;
   };
 
-  factory.getPodcastHash = function(path) {
-
-    var md5 = $.md5(credentials.username+'\n'+path).substring(0,10);
-    return encodeURIComponent(credentials.username+'|'+credentials.password+'|'+md5);
-
+  factory.getAuthorizationHeader = function() {
+    return "Bearer " + oidcUser.access_token;
   };
 
-  factory.setCredentials = function(user, pass) {
-    credentials = {
-      username: user,
-      password: pass
-    };
-  };
-
-  factory.getCredentials = function(encoded) {
-    if (typeof encoded!=='undefined'&&encoded) {
-      return encodeURIComponent(credentials.username)+':'+encodeURIComponent(credentials.password);
-    } else {
-      return credentials.username+':'+credentials.password;
-    }
+  factory.getAuthorizationQueryString = function() {
+    return "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
   };
 
   factory.setContentLanguages = function(languages) {
@@ -460,25 +437,6 @@ angular.module('bmmLibApp')
 
   };
 
-  /** Authenticate by username and password **/
-  factory.loginAuthentication = function(options) {
-
-    if (typeof options === 'undefined') { options = {}; }
-
-    /** OPTIONS (Stars = Required)
-     *    username *                String
-     *    password *                String
-     */
-
-    return factory.addToQueue({
-      method: 'POST',
-      url: serverUrl+'login/authentication',
-      data: JSON.stringify(options),
-      contentType: 'application/json'
-    });
-
-  };
-
   /** Authenticates the user by redirecting him to the Sherwood SignOn Server **/
   factory.loginRedirect = function(options) {
 
@@ -579,7 +537,6 @@ angular.module('bmmLibApp')
      *    media-type                Array(String)   audio|video
      *    unpublished               String          hide|show|only Role: ROLE_CONTENT_UNPUBLISHED
      *    tags                      Array(String)
-     *    test credentials: steffan:f6f6f772748de54501aae49edcbd489a
      */
 
     return factory.addToQueue({
@@ -676,13 +633,33 @@ angular.module('bmmLibApp')
 
   /** Get the users profile **/
   factory.loginUser = function() {
+    var deferred = $q.defer();
 
-    return factory.sendXHR({
-      method: 'GET',
-      url: serverUrl+'login/user'
-    }, false);
-    //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
+    ngOidcClient.manager.events.addUserLoaded(function(user) {
+      // Update user when silent renew is triggered
+      oidcUser = user;
+      window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
+    });
 
+    ngOidcClient.manager.getUser().then(function(user){
+      if (!user) {
+        console.log("signinRedirect");
+        ngOidcClient.manager.signinRedirect();
+      } else {
+        oidcUser = user;
+        window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
+
+        factory.sendXHR({
+          method: 'GET',
+          url: serverUrl+'currentUser'
+        }, false).then(function(apiUser) {
+          deferred.resolve(apiUser);
+        });
+        //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
+      }
+    });
+
+    return deferred.promise;
   };
 
   /** Accept track guessed for file, when file is uploaded through FTP **/
@@ -812,6 +789,13 @@ angular.module('bmmLibApp')
       }
     });
 
+  };
+
+  factory.userTrackCollectionsGet = function() {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'track_collection/'
+    });
   };
 
   /** Get a collection **/
@@ -1074,7 +1058,7 @@ angular.module('bmmLibApp')
       url: CSharpServerUrl + 'transmission/' + id
     });
   };
-  
+
   return factory;
 
 });
