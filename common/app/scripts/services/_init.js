@@ -76,6 +76,8 @@ angular.module('bmmLibApp')
           factory.load.percent+=25;
           var promises = [];
 
+          $('body').append('<script id="script-bcc-topbar" data-authentication-type="SPA" data-authentication-location="oidc.access_token" src="https://widgets.bcc.no/widgets/TopbarJs"></script>');
+
           // -- User
           factory.user = user;
 

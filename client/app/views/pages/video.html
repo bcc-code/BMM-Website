@@ -8,7 +8,7 @@
 <div>
     <h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 	<div title="{{::album.title}}" ng-click="go('/album/'+album.id);" class="album-latest bmm-hover" ng-repeat="album in latestAlbums">
-        <img class="album-latest-image" ng-src="{{::album.cover}}" width="9em" height="9.3em"/>
+        <img class="album-latest-image" ng-src="{{::album.cover | _authorizedUrl}}" width="9em" height="9.3em"/>
 		<div class="album-latest-title"><span ng-bind="::album.title"></span></div>
         <div class="flag flags-{{::album.raw.language}}"></div>
 	</div>

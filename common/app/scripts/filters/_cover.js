@@ -3,7 +3,7 @@
 angular.module('bmmLibApp')
   .filter('_cover', function (_api) {
     return function (cover, type, id, antiCache) {
-      
+
       var fallback_images = "fallback_images/";
       var prefix_url = _api.getserverUrli() + "file/protected/";
       if (cover && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){

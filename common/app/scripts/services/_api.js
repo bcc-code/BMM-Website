@@ -220,15 +220,6 @@ angular.module('bmmLibApp')
     }
   };
 
-  //// keep alive is not used with oidc-client
-  // factory.keepAlive = function() {
-  //   $timeout(function() {
-  //     factory.loginUser().then(function() {
-  //       factory.keepAlive();
-  //     });
-  //   }, keepAliveTime);
-  // };
-
   factory.addLanguagesToDownloadUrl = function(downloadUrl) {
     return downloadUrl + '?languages[]=' + contentLanguages.join('&languages[]=');
   };
@@ -243,7 +234,7 @@ angular.module('bmmLibApp')
   };
 
   factory.getAuthorizationQueryString = function() {
-    return "auth=" + factory.getAuthorizationHeader();
+    return "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
   };
 
   factory.setContentLanguages = function(languages) {
@@ -647,6 +638,7 @@ angular.module('bmmLibApp')
     ngOidcClient.manager.events.addUserLoaded(function(user) {
       // Update user when silent renew is triggered
       oidcUser = user;
+      window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
     });
 
     ngOidcClient.manager.getUser().then(function(user){
@@ -655,6 +647,7 @@ angular.module('bmmLibApp')
         ngOidcClient.manager.signinRedirect();
       } else {
         oidcUser = user;
+        window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
 
         factory.sendXHR({
           method: 'GET',
@@ -796,6 +789,13 @@ angular.module('bmmLibApp')
       }
     });
 
+  };
+
+  factory.userTrackCollectionsGet = function() {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'track_collection/'
+    });
   };
 
   /** Get a collection **/

@@ -10,7 +10,7 @@
                 <br><br>
 
                 <ul class="playlist">
-                    <li ng-repeat="collection in init.user.track_collections"
+                    <li ng-repeat="collection in trackCollections"
                         ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
                               trackToPlaylist.id=false;">
                         {{collection.name}}
@@ -34,7 +34,7 @@
                 <br><br>
 
                 <ul class="playlist">
-                    <li ng-repeat="collection in init.user.track_collections"
+                    <li ng-repeat="collection in trackCollections"
                         ng-click="addTracksToPlaylist(collection.id, tracksToPlaylist, tracksToPlaylist[0].language); tracksToPlaylist.length=0">
                         {{collection.name}}
                     </li>

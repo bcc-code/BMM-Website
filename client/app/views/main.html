@@ -298,7 +298,7 @@
                 <li class="bmm-playlist-private"
                     ng-class="{'edited': collection.edit}"
                     id="{{::collection.id}}"
-                    ng-repeat="collection in init.user.track_collections">
+                    ng-repeat="collection in trackCollections">
                     <a ng-hide="collection.edit == true"
                        ng-click="$parent.visible=false"
                        ng-href="playlist/private/{{::collection.id}}">
