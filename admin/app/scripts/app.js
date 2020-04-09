@@ -29,22 +29,27 @@ angular.module('bmmApp', [
   }])
   .config(['ngOidcClientProvider', '$locationProvider', function(ngOidcClientProvider, $locationProvider) {
     var url = window.location.origin;
+    var auth0Domain = "https://login.bcc.no";
     ngOidcClientProvider.setSettings({
-      authority: "https://login.bcc.no",
+      authority: auth0Domain,
       client_id: "EPlaBVrMQc3gsuwUTA0D3aX0ZLXJ33C4",
       redirect_uri: url + "/admin/redirect.html",
       silent_redirect_uri: url + "/admin/silent-renew.html",
-      post_logout_redirect_uri: url + "/admin/logoutRedirect.html",
-
+      post_logout_redirect_uri: url,
       response_type: "id_token token",
       scope: "openid profile",
+      automaticSilentRenew: true,
+      filterProtocolClaims: true,
       extraQueryParams: {
         audience: "https://bmm-api.brunstad.org"
       },
-
-      automaticSilentRenew: true,
-
-      filterProtocolClaims: true
+      metadata: {
+        issuer: auth0Domain + "/",
+        authorization_endpoint: auth0Domain + "/authorize",
+        userinfo_endpoint: auth0Domain + "/userinfo",
+        end_session_endpoint: auth0Domain + "/v2/logout",
+        jwks_uri: auth0Domain + "/.well-known/jwks.json"
+      }
     });
   }])
   .config(['$routeProvider','$locationProvider', '$analyticsProvider', function ($routeProvider, $locationProvider, $analyticsProvider) {

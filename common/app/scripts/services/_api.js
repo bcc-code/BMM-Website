@@ -649,11 +649,37 @@ angular.module('bmmLibApp')
         oidcUser = user;
         window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
 
+        var loadNewlyCreatedUser = function(triesSoFar, promise) {
+          factory.sendXHR({
+            method: 'GET',
+            url: serverUrl+'currentUser'
+          }, false).then(function(apiUser) {
+            console.log("needed "+(triesSoFar+1)+" tries to load the user");
+            promise.resolve(apiUser);
+          }, function() {
+            if (triesSoFar > 10) {
+              alert("An unexpected error occurred. Please contact support");
+            } else {
+              loadNewlyCreatedUser(triesSoFar+1, promise);
+            }
+          });
+        }
+
         factory.sendXHR({
           method: 'GET',
           url: serverUrl+'currentUser'
         }, false).then(function(apiUser) {
           deferred.resolve(apiUser);
+        }, function(xhr) {
+          if (xhr.status == 417) {
+            console.log("We need to create the user");
+            factory.sendXHR({
+              method: 'PUT',
+              url: serverUrl+'currentUser'
+            }).then(function() {
+              loadNewlyCreatedUser(0, deferred);
+            });
+          }
         });
         //Errors are handeled by the initializator, therefore no errorHandler, (second argument false)
       }

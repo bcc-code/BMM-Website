@@ -430,6 +430,7 @@ module.exports = function (grunt) {
             'redirect.html',
             'silent-renew.html',
             'logout-redirect.html',
+            'logout.html',
             'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}'
           ]

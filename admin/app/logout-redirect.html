@@ -6,11 +6,9 @@
 </head>
 
 <body>
-  <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
+  <script src="https://widgets.bcc.no/widgets/signoutjs"></script>
   <script>
-    new Oidc.UserManager().signoutRedirectCallback().then(function() {
-      window.location.replace("./");
-    });
+    window.location = "logout.html";
   </script>
 </body>
 
