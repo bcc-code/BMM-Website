@@ -44,7 +44,11 @@ angular.module('bmmApp', [
         audience: "https://bmm-api.brunstad.org"
       },
       metadata: {
-        end_session_endpoint: auth0Domain + "/v2/logout"
+        issuer: auth0Domain + "/",
+        authorization_endpoint: auth0Domain + "/authorize",
+        userinfo_endpoint: auth0Domain + "/userinfo",
+        end_session_endpoint: auth0Domain + "/v2/logout",
+        jwks_uri: auth0Domain + "/.well-known/jwks.json"
       }
     });
   }])
