@@ -5,8 +5,7 @@ angular.module('bmmLibApp')
     return function(url) {
       var prefix_url = _api.getserverUrli() + "file/protected/";
       if (url && url.indexOf(prefix_url) !== -1 && url.indexOf('auth=') == -1) {
-        var divider = url.indexOf('?') == -1 ? '?':'&';
-        url = url + divider + _api.getAuthorizationQueryString();
+        return _api.addAuthorizationQueryString(url);
       }
 
       return url;
