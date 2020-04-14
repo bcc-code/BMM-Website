@@ -355,7 +355,7 @@ angular.module('bmmLibApp')
     };
 
     $.each(files, function() {
-      var url = this.file + '&' + _api.getAuthorizationQueryString();
+      var url = _api.addAuthorizationQueryString(this.file);
 
       switch(this.type) {
         case 'audio/mpeg':

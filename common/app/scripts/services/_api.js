@@ -233,8 +233,9 @@ angular.module('bmmLibApp')
     return "Bearer " + oidcUser.access_token;
   };
 
-  factory.getAuthorizationQueryString = function() {
-    return "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
+  factory.addAuthorizationQueryString = function(url) {
+    var divider = url.indexOf('?') == -1 ? '?':'&';
+    return url + divider + "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
   };
 
   factory.setContentLanguages = function(languages) {
