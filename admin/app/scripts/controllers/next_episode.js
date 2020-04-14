@@ -99,6 +99,22 @@ angular.module('bmmApp')
     });
   }
 
+  var detectDuplicateFilesize = function() {
+    for (var i = 0; i < $scope.nextEpisode.translations.length; i++) {
+      for (var j = i+1; j < $scope.nextEpisode.translations.length; j++) {
+        var iT = $scope.nextEpisode.translations[i];
+        var jT = $scope.nextEpisode.translations[j];
+        if (iT.media != null && jT.media != null
+          && iT.media[0].files[0].size == jT.media[0].files[0].size){
+          iT.duplicate_filesize = true;
+          iT.duplicate_filesize_language = jT.language;
+          jT.duplicate_filesize = true;
+          jT.duplicate_filesize_language = iT.language;
+        }
+      }
+    }
+  }
+
   var detectMissingLanguages = function(){
     var expectedLanguages = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru'];
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
@@ -135,6 +151,7 @@ angular.module('bmmApp')
         orderLanguages();
         detectDuplicateTitles();
         detectBigDifferenceInDuration();
+        detectDuplicateFilesize();
         detectMissingLanguages();
 
         $scope.nextEpisode.published = new Date(nextEpisode.published_at) < datetime;
