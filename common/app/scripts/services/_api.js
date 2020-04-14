@@ -235,7 +235,7 @@ angular.module('bmmLibApp')
 
   factory.addAuthorizationQueryString = function(url) {
     var divider = url.indexOf('?') == -1 ? '?':'&';
-    url = url + divider + "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
+    return url + divider + "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
   };
 
   factory.setContentLanguages = function(languages) {
