@@ -9,7 +9,7 @@
     <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <script>
         new Oidc.UserManager().signinRedirectCallback().then(function() {
-            window.location.replace("./");
+            window.location.replace(user.state || '/');
         });
     </script>
 </body>

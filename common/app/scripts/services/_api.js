@@ -645,7 +645,7 @@ angular.module('bmmLibApp')
     ngOidcClient.manager.getUser().then(function(user){
       if (!user) {
         console.log("signinRedirect");
-        ngOidcClient.manager.signinRedirect();
+        ngOidcClient.manager.signinRedirect({state:window.location.href});
       } else {
         oidcUser = user;
         window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
