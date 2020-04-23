@@ -157,7 +157,8 @@ angular.module('bmmLibApp')
     $.ajax(xhrOptions)
     .then(promise.resolve, function(xhr, arg2, arg3){
       if (xhr.status===401) {
-        console.log("retry", xhr, arg2, arg3);
+        // This can happen when the browser looses focus past the token expiration.
+        // oidc-client knows about but hasn't fixed it yet: https://github.com/IdentityModel/oidc-client-js/issues/143
         ngOidcClient.manager.signinSilent().then(function() {
           xhrOptions.headers.Authorization = factory.getAuthorizationHeader();
           $.ajax(xhrOptions).then(promise.resolve, promise.reject);
