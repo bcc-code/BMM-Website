@@ -8,8 +8,8 @@
 <body>
     <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <script>
-        new Oidc.UserManager().signinRedirectCallback().then(function() {
-            window.location.replace("./");
+        new Oidc.UserManager().signinRedirectCallback().then(function(user) {
+            window.location.replace(user.state || '/');
         });
     </script>
 </body>

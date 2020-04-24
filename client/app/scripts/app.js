@@ -1,5 +1,9 @@
 'use strict';
 
+// // enable this to debug OIDC. You can also enable it on the live page by pasting these 2 lines.
+// Oidc.Log.logger = console;
+// Oidc.Log.level = Oidc.Log.DEBUG;
+
 angular.module('bmmApp', [
   'ngResource',
   'ngSanitize',

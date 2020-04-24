@@ -153,7 +153,20 @@ angular.module('bmmLibApp')
 
     var time = Date.now();
 
-    var promise = $.ajax(xhrOptions);
+    var promise = $.Deferred();
+    $.ajax(xhrOptions)
+    .then(promise.resolve, function(xhr, arg2, arg3){
+      if (xhr.status===401) {
+        // This can happen when the browser looses focus past the token expiration.
+        // oidc-client knows about but hasn't fixed it yet: https://github.com/IdentityModel/oidc-client-js/issues/143
+        ngOidcClient.manager.signinSilent().then(function() {
+          xhrOptions.headers.Authorization = factory.getAuthorizationHeader();
+          $.ajax(xhrOptions).then(promise.resolve, promise.reject);
+        });
+      } else {
+        promise.reject(xhr, arg2, arg3);
+      }
+    });
 
     promise.done(function(data, textStatus, XMLHttpRequest) {
       $analytics.userTimings({
@@ -645,7 +658,7 @@ angular.module('bmmLibApp')
     ngOidcClient.manager.getUser().then(function(user){
       if (!user) {
         console.log("signinRedirect");
-        ngOidcClient.manager.signinRedirect();
+        ngOidcClient.manager.signinRedirect({state:window.location.href});
       } else {
         oidcUser = user;
         window.localStorage.setItem('oidc', window.JSON.stringify(oidcUser));
