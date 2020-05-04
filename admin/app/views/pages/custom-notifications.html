@@ -3,6 +3,25 @@
 <select ng-model="languageToAdd" ng-options="lang | _languageCode for lang in availableLanguages | filter : exceptSelected"></select>
 
 <form ng-submit="sendNotification()">
+
+  <br />
+  <div>
+    <span ng-bind="init.translation.page.notifications.scheduledSendTime"></span>:
+    <input id="scheduledDate" class="date"
+            bs-datepicker data-autoclose="1" type="text"
+            data-date-format="dd.MM.yyyy"
+            min-view="date"
+            ng-model="scheduledDateTime">
+    <input id="scheduledTime" class="time"
+            bs-timepicker data-autoclose="1" type="text"
+            data-time-format="HH:mm"
+            ng-model="scheduledDateTime">
+  </div>
+  <div>
+    <span ng-bind="init.translation.page.notifications.link"></span>:
+    <input type="text" ng-model="actionUrl">
+  </div>
+
   <ul
     ui-sortable="sortableOptions"
     ng-model="notificationTranslations"
@@ -11,14 +30,13 @@
       style="background: white;"
       ng-repeat="translation in notificationTranslations">
       <div class="foldbox">
-      <h3 style="margin-left: 10px; margin-top: 10px" ng-bind="translation.language | _languageCode"></h3>
+        <h3 style="margin-left: 10px; margin-top: 10px" ng-bind="translation.language | _languageCode"></h3>
 
         <span ng-bind="init.translation.page.editor.title"></span>: 
         <input type="text" ng-model="translation.title">
 
         <span ng-bind="init.translation.page.notifications.message"></span>:
         <textarea rows="2" cols="30" ng-model="translation.message" required></textarea>
-
 
         <div ng-click="removeTranslation(translation)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: red" class="btn_remove">

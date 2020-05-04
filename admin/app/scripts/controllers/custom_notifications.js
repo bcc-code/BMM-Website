@@ -13,6 +13,8 @@ angular.module('bmmApp')
       $scope.notificationTranslations = [{
         language: 'nb'
       }];
+      $scope.scheduledDateTime = new Date();
+      $scope.actionUrl = "";
 
       $scope.languageToAdd = _init.root.languages[0];
     }
@@ -21,7 +23,8 @@ angular.module('bmmApp')
 
     $scope.sendNotification = function() {
       var notification = {
-        translations: $scope.notificationTranslations
+        translations: $scope.notificationTranslations,
+        scheduledDateTime: $scope.scheduledDateTime
       };
 
       _api.sendNotification(notification)
