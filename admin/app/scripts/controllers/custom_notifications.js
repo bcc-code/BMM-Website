@@ -24,7 +24,8 @@ angular.module('bmmApp')
     $scope.sendNotification = function() {
       var notification = {
         translations: $scope.notificationTranslations,
-        scheduledDateTime: $scope.scheduledDateTime
+        scheduledTime: $scope.scheduledDateTime,
+        actionUrl: $scope.actionUrl
       };
 
       _api.sendNotification(notification)
