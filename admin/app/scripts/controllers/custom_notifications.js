@@ -13,7 +13,9 @@ angular.module('bmmApp')
       $scope.notificationTranslations = [{
         language: 'nb'
       }];
-      $scope.scheduledDateTime = new Date();
+      var precision = 1000 * 60 * 5;
+      var next5Minutes = new Date(Math.ceil(new Date().getTime()/precision) * precision);
+      $scope.scheduledDateTime = next5Minutes;
       $scope.actionUrl = "";
 
       $scope.languageToAdd = _init.root.languages[0];
@@ -22,10 +24,11 @@ angular.module('bmmApp')
     reset();
 
     $scope.sendNotification = function() {
+      // We use snake case when communicating with the API
       var notification = {
         translations: $scope.notificationTranslations,
-        scheduledTime: $scope.scheduledDateTime,
-        actionUrl: $scope.actionUrl
+        scheduled_time: $scope.scheduledDateTime,
+        action_url: $scope.actionUrl
       };
 
       _api.sendNotification(notification)
