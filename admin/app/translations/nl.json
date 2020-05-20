@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Melding vertaling toevoegen",
       "sendPushNotification": "Push-bericht verzenden",
       "sent": "Verzonden",
-      "failed": "Mislukt"
+      "failed": "Mislukt",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Podcastvertaling toevoegen",

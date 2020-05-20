@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Voeg kennisgewing vertaling by",
       "sendPushNotification": "Stuur stoot-kennisgewing",
       "sent": "Gestuur",
-      "failed": "Misluk"
+      "failed": "Misluk",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",

@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Legg til oversettelse",
       "sendPushNotification": "Send push-varsel",
       "sent": "Sendt",
-      "failed": "Feilet"
+      "failed": "Feilet",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Legg podcast oversettelse",

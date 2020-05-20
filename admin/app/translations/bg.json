@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Добави известие за превод",
       "sendPushNotification": "Изпрати известие за съобщение",
       "sent": "Изпратени",
-      "failed": "Неуспешно"
+      "failed": "Неуспешно",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Добави подкаст превод",

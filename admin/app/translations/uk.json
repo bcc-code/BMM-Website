@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Додати повідомлення про Переклад",
       "sendPushNotification": "Отправить толчок уведомление",
       "sent": "Відправлені",
-      "failed": " не вдалося"
+      "failed": " не вдалося",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",

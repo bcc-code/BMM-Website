@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Ajouter une traduction de notification",
       "sendPushNotification": "Envoyer notification push",
       "sent": "Envoyé",
-      "failed": "Erreur"
+      "failed": "Erreur",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",

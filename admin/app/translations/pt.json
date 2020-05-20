@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Adicionar tradução de notificação",
       "sendPushNotification": "Enviar notificação de envio",
       "sent": "Enviado",
-      "failed": "Falhou"
+      "failed": "Falhou",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",
