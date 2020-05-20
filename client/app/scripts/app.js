@@ -72,6 +72,11 @@ angular.module('bmmApp', [
         controller: 'MusicCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
       })
+      .when('/messages', {
+        templateUrl: 'views/pages/speeches.html',
+        controller: 'SpeechesCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
+      })
       .when('/speeches', {
         templateUrl: 'views/pages/speeches.html',
         controller: 'SpeechesCtrl',
