@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Добавить перевод уведомлений\n",
       "sendPushNotification": "Показывать уведомления на экране",
       "sent": "Отправлено",
-      "failed": "Не удалось"
+      "failed": "Не удалось",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",

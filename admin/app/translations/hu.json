@@ -1,5 +1,5 @@
 {
-  "language": "Magyar",
+  "language": "Angol",
   "general": {
     "search": "Keresés...",
     "loading": "Betöltés...",
@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Új értesítés fordítása",
       "sendPushNotification": "Értesítés küldése",
       "sent": "Elküldve",
-      "failed": "Sikertelen"
+      "failed": "Sikertelen",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Podcast fordítást hozzáadása",

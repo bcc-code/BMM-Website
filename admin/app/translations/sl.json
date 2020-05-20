@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Dodaj prevod obvestila",
       "sendPushNotification": "Pošlji potisno obvestilo",
       "sent": "Poslano",
-      "failed": "Ni uspelo"
+      "failed": "Ni uspelo",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Dodaj prevod posnetka",

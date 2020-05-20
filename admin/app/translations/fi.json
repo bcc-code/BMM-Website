@@ -154,7 +154,9 @@
       "addNotificationTranslation": "Lisää ilmoitukselle käännös",
       "sendPushNotification": "Lähetä push-ilmoitus",
       "sent": "Lähetetty",
-      "failed": "Epäonnistui"
+      "failed": "Epäonnistui",
+      "scheduledSendTime": "scheduled send time",
+      "link": "link"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",
