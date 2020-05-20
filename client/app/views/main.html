@@ -23,7 +23,7 @@
                     </form>
                 </div>
                 <ul class="menu">
-                    <li><a ng-class="{ active: isActive('/speeches')}" ng-href="speeches"><span ng-bind="init.translation.menu.main.speeches"></span></a></li>
+                    <li><a ng-class="{ active: isActive('/speeches') || isActive('/messages')}" ng-href="messages"><span ng-bind="init.translation.menu.main.speeches"></span></a></li>
                     <li><a ng-class="{ active: isActive('/music')}" ng-href="music"><span ng-bind="init.translation.menu.main.music"></span></a></li>
                     <li><a ng-class="{ active: isActive('/audiobooks')}" ng-href="audiobooks"><span ng-bind="init.translation.menu.main.audiobooks"></span></a></li>
                     <li><a ng-class="{ active: isActive('/archive')}" ng-href="archive"><span ng-bind="init.translation.menu.main.archive"></span></a></li>
