@@ -14,7 +14,8 @@ angular.module('bmmApp')
     _session,
     _play,
     _quickMenu,
-    _api_queue
+    _api_queue,
+    _modifiedResponseTransformer
   ) {
 
     $rootScope.init = $scope.init = _init;
