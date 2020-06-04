@@ -64,9 +64,15 @@ angular.module('bmmApp')
         $scope.progress = 0;
       });
 
-      uploader.bind('error', function () {
-        var tranScope = $scope.$parent.$parent.translation.page.editor;
-        alert(tranScope.uploadError);
+      uploader.bind('error', function (obj, xhr, item, response) {
+        var translatedMessage = $scope.$parent.$parent.init.translation.page.editor.uploadError;
+        try{
+          var message = "\"" + response.message + ":\n" + response.errors.children.file.errors[0] + "\"";
+          alert(translatedMessage + "\n" + message);
+        } catch (ex){
+          console.log("exception", ex);
+          alert(translatedMessage + "\n" + response);
+        }
       });
 
     };
