@@ -5,7 +5,7 @@
     "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js",
     "angular": "1.4.5",
     "angular-elastic": "~2.5.1",
-    "angular-file-upload": "~0.5.6",
+    "angular-file-upload": "~0.5.7",
     "angular-duration-format": "~1.0.0",
     "angular-resource": "1.2.6",
     "angular-route": "1.2.6",
