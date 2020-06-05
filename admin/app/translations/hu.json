@@ -155,7 +155,7 @@
       "sendPushNotification": "Értesítés küldése",
       "sent": "Elküldve",
       "failed": "Sikertelen",
-      "scheduledSendTime": "scheduled send time",
+      "scheduledSendTime": "az adás tervezett időpontja",
       "link": "link"
     },
     "podcasts": {
