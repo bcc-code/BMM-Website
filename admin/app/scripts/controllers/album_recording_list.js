@@ -273,11 +273,6 @@ angular.module('bmmApp')
 
                             if (model.type === 'track') {
                                 children[model.type + model.id].relations = {
-                                    bible: [],
-                                    composer: [],
-                                    lyricist: [],
-                                    interpret: [],
-                                    songbook: []
                                 };
                                 model.rel.forEach(function (relation) {
                                     if (relation.type === 'bible') {
