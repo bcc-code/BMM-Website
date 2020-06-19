@@ -290,6 +290,9 @@ angular.module('bmmApp')
                                         }
                                     }
 
+                                    if(!children[model.type + model.id].relations[relation.type])
+                                        children[model.type + model.id].relations[relation.type] = [];
+
                                     children[model.type + model.id].relations[relation.type].push(relation);
                                 });
                             }
