@@ -16,7 +16,7 @@
     "jquery": "1.12.3",
     "jquery-md5": "*",
     "jquery-ui": "1.11.4",
-    "jqueryui-touch-punch.dk": "0.3.3",
+    "jquery.ui.touch-punch.dk": "0.3.3",
     "bootstrap": "3.3.6",
     "oidc-client": "1.10.1",
     "SHA-1": "0.1.1"
