@@ -281,7 +281,7 @@ angular.module('bmmApp')
                                         if (relation.name === 'herrens_veier') {
                                             relation.name = 'HV';
                                         } else {
-                                            relation.name = 'MB';
+                                            relation.name = 'FMB';
                                         }
                                     }
 
