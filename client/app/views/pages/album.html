@@ -58,6 +58,7 @@
         <tbody ng-hide="album_playlist.hide&&($index>0||playlists.length>1)">
             <tr class="head">
               <th colspan="2"><span ng-bind="init.translation.playlist.title"></span></th>
+              <th class="bmm-large-only"><span ng-bind="init.translation.playlist.song"></span></th>
               <th><span ng-bind="init.translation.page.search.artist"></span></th>
               <th class="bmm-large-only"><span ng-bind="init.translation.page.search.album"></span></th>
               <th><span ng-bind="init.translation.playlist.duration"></span></th>
@@ -72,6 +73,7 @@
                     <img ng-show="track.playing" ng-src="{{::'playing' | _icon}}">
                 </td>
                 <td title="{{::track.title}}" class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.title | _min:40"></span></td>
+                <td title="{{::track | _songnumber}}" class="drag bmm-large-only" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track | _songnumber"></span></td>
                 <td title="{{::track.performers}}" class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.performers | _min:20"></span></td>
                 <td class="drag bmm-large-only" title="{{::track.albumTitle}}" class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.albumTitle | _min:40"></span></td>
                 <td class="drag" ng-click="$parent.$parent.playlist = album_playlist.tracks; play(album_playlist.tracks, $index);"><span ng-bind="::track.duration | _time"></span></td>
