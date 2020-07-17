@@ -108,6 +108,7 @@
     "albums": "Album(s)",
     "duration": "Duration",
     "title": "Title",
+    "song": "Song",
     "allLanguages": "All languages",
     "confirmPlaylistDeletion": "Jeste li sigurni da želite izbrisati ovaj popis?",
     "latestTracks": "Najnovije pjesme",

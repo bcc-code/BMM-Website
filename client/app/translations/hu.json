@@ -108,6 +108,7 @@
     "albums": "Album(ok)",
     "duration": "Időtartam",
     "title": "Cím",
+    "song": "Ének",
     "allLanguages": "Minden nyelv",
     "confirmPlaylistDeletion": "Biztosan törölni kivánod ezt a lejátszási listát?",
     "latestTracks": "Legújabb számok",

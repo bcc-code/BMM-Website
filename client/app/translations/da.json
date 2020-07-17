@@ -108,6 +108,7 @@
     "albums": "Album",
     "duration": "Længde",
     "title": "Titel",
+    "song": "Sang",
     "allLanguages": "Alle sprog",
     "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spilleliste?",
     "latestTracks": "Seneste sange og taler",

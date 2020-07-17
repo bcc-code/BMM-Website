@@ -108,6 +108,7 @@
     "albums": "Альбом(ы)",
     "duration": "Продолжительность",
     "title": "Название",
+    "song": "Song",
     "allLanguages": "Все языки",
     "confirmPlaylistDeletion": "Вы уверены, что хотите удалить этот плейлист?",
     "latestTracks": "Последние треки",

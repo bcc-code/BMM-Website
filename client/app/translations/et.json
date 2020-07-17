@@ -108,6 +108,7 @@
     "albums": "Albumi(d)",
     "duration": "Kestus",
     "title": "Pealkiri",
+    "song": "Song",
     "allLanguages": "Kõik keeled",
     "confirmPlaylistDeletion": "Kas soovite kindlasti selle esitlusloendi kustutada?",
     "latestTracks": "Hiljutised laulud",

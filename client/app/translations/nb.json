@@ -108,6 +108,7 @@
     "albums": "Album",
     "duration": "Varighet",
     "title": "Tittel",
+    "song": "Sang",
     "allLanguages": "Alle språk",
     "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spillelisten?",
     "latestTracks": "Nye spor",

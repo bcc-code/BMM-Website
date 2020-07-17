@@ -108,6 +108,7 @@
     "albums": "Album(s)",
     "duration": "Afspeelduur",
     "title": "Titel",
+    "song": "Lied",
     "allLanguages": "Alle talen",
     "confirmPlaylistDeletion": "Weet je zeker dat je deze afspeellijst wilt verwijderen?",
     "latestTracks": "Laatste nummers",

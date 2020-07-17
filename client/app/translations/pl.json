@@ -108,6 +108,7 @@
     "albums": "Album(y)",
     "duration": "Długość utworu",
     "title": "Tytuł",
+    "song": "Song",
     "allLanguages": "Wszystkie języki",
     "confirmPlaylistDeletion": "Czy na pewno chcesz usunąć tę playlistę?",
     "latestTracks": "Najnowsze utwory",

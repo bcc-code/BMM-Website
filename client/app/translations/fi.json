@@ -108,6 +108,7 @@
     "albums": "Albumi(t)",
     "duration": "Kesto",
     "title": "Otsikko",
+    "song": "Laulu",
     "allLanguages": "Kaikki kielet",
     "confirmPlaylistDeletion": "Oletko varma, että haluat poistaa tämän soittolistan?",
     "latestTracks": "Uusimmat kappaleet",

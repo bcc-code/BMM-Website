@@ -108,6 +108,7 @@
     "albums": "Album(s)",
     "duration": "持续时间",
     "title": "标题",
+    "song": "Song",
     "allLanguages": "All languages",
     "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
     "latestTracks": "Latest tracks",

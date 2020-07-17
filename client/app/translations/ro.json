@@ -108,6 +108,7 @@
     "albums": "Album(e)",
     "duration": "Durată",
     "title": "Titlu",
+    "song": "Song",
     "allLanguages": "Toate limbile",
     "confirmPlaylistDeletion": "Sunteţi sigur că doriţi să ştergeţi acest play-list?",
     "latestTracks": "Ultimele piese",

@@ -108,6 +108,7 @@
     "albums": "Album(s)",
     "duration": "Duration",
     "title": "Title",
+    "song": "Song",
     "allLanguages": "All languages",
     "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
     "latestTracks": "Latest tracks",
