@@ -201,6 +201,11 @@
                             {{init.translation.menu.main.contributors}}
                         </a>
                     </li>
+                    <li ng-show="userIs('ROLE_NOTIFICATION_MANAGER')">
+                        <a ng-class="{ active: isActive('/notifications')}" ng-href="notifications">
+                            {{init.translation.menu.main.notifications}}
+                        </a>
+                    </li>
                     <li>
                         <a ng-class="{ active: isActive('/transmissions')}" ng-href="transmissions">
                             {{init.translation.menu.main.transmissions}}
