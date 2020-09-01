@@ -3,8 +3,6 @@
 /// This service modifies the default implementation of defaultResponseTransformer to work-around a bug in angular-file-upload
 angular.module('bmmLibApp').factory('_modifiedResponseTransformer', ['$http', function ($http) {
 
-    console.log("executing response transformer", $http.defaults.transformResponse[0].name, $http.defaults);
-
     var isString = function(value) {return typeof value === 'string';};
     var isJsonLike = function(str) {
         var jsonStart = str.match(JSON_START);
