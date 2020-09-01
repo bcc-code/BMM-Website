@@ -81,6 +81,11 @@ angular.module('bmmApp', [
         controller: 'CustomNotificationsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/track-lists', {
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .when('/podcasts', {
         templateUrl: 'views/pages/podcasts.html',
         controller: 'PodcastsCtrl',
