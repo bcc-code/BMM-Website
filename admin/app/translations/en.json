@@ -94,9 +94,6 @@
       "lyricists": "Lyricists",
       "songbooks": "Songbooks",
       "trackLists": "Track Lists",
-      "podcasts": "Podcasts",
-      "playlists": "Playlists",
-      "musicChannels": "Music Channels",
       "editPodcast": "Edit Podcast",
       "bibleReferences": "Bible references",
       "addBibleReference": "Add bible reference",
@@ -106,7 +103,6 @@
       "pause": "Pause",
       "resetTime": "Reset time",
       "createNewContributor": "Create new contributor",
-      "createNewPodcast": "Create new podcast",
       "number": "Number",
       "timestamp": "Timestamp",
       "comment": "Comment",
@@ -161,6 +157,18 @@
       "failed": "Failed",
       "scheduledSendTime": "scheduled send time",
       "link": "link"
+    },
+    "podcast": {
+      "title": "Podcasts",
+      "createNew": "Create new podcast"
+    },
+    "playlist": {
+      "title": "Playlists",
+      "createNew": "Create new playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "createNew": "Create new music channel"
     },
     "podcasts": {
       "addPodcastTranslation": "Add podcast translation",

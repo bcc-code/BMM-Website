@@ -980,6 +980,9 @@ angular.module('bmmLibApp')
   factory.unpublishedPodcastsGet = function() {
     return factory.podcastsGet({unpublished: 'only', raw: true});
   };
+  factory.unpublishedTrackListGet = function(type) {
+    return factory.trackListGet(type, {unpublished: 'only', raw: true});
+  };
 
   factory.podcastTracksGet = function(id, options) {
     if (typeof options === 'undefined') { options = {}; }
@@ -990,6 +993,14 @@ angular.module('bmmLibApp')
       data: $.param(options)
     });
   }
+
+  factory.trackListGet = function(type, options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + type + '/',
+      data: options ? $.param(options) : undefined
+    });
+  };
 
   factory.podcastsGet = function(options) {
     return factory.addToQueue({
