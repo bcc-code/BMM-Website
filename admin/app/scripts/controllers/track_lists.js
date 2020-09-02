@@ -11,19 +11,19 @@ angular.module('bmmApp')
   $scope.type = type;
 
   $scope.save = function() {
-    var podcastReferences = $scope.activeItems.map(function(podcast) {
-      return { id: podcast.id };
+    var references = $scope.activeItems.map(function(item) {
+      return { id: item.id };
     });
 
     var podcastCollection = {
       type: 'podcast_collection',
-      podcast_references: podcastReferences
+      podcast_references: references
     };
 
     return _api.activePodcastsPut(podcastCollection);
   };
 
-  $scope.createNewPodcast = function() {
+  $scope.createNewTrackList = function() {
     $scope.save()
       .then(function() {
         return _api.podcastPost({
@@ -31,7 +31,7 @@ angular.module('bmmApp')
           translations: [
             {
               language: 'en',
-              title: 'New podcast'
+              title: 'New item'
             }
           ],
           query: {
@@ -42,75 +42,71 @@ angular.module('bmmApp')
       .then(init);
   };
 
-  $scope.getTitle = function(podcast) {
-    var title;
-
-    var translation = podcast.translations.find(function (translation) {
+  $scope.getTitle = function(item) {
+    var translation = item.translations.find(function (translation) {
       return translation.language === _init.language;
     });
 
     if(!translation) {
-      translation = podcast.translations[0];
+      translation = item.translations[0];
     }
 
     return translation.title;
   };
 
-  $scope.deactivatePodcast = function(podcast) {
+  $scope.deactivateTrackList = function(item) {
     var activeItems = $scope.activeItems;
-    var availablePodcasts = $scope.availablePodcasts;
+    var availableItems = $scope.availableItems;
 
-    var index = activeItems.indexOf(podcast);
+    var index = activeItems.indexOf(item);
 
-    var disabledPodcasts = activeItems.splice(index, 1);
+    var disabledItems = activeItems.splice(index, 1);
 
-    availablePodcasts.push.apply(availablePodcasts, disabledPodcasts);
+    availableItems.push.apply(availableItems, disabledItems);
   };
 
-  $scope.activatePodcast = function(podcast) {
+  $scope.activateTrackList = function(item) {
     var activeItems = $scope.activeItems;
-    var availablePodcasts = $scope.availablePodcasts;
+    var availableItems = $scope.availableItems;
 
-    var index = availablePodcasts.indexOf(podcast);
+    var index = availableItems.indexOf(item);
 
-    var activatedPodcasts = availablePodcasts.splice(index, 1);
+    var activatedItems = availableItems.splice(index, 1);
 
-    activeItems.push.apply(activeItems, activatedPodcasts);
+    activeItems.push.apply(activeItems, activatedItems);
   };
 
-  $scope.editPodcast = function(podcast) {
-    $scope.podcast = podcast;
+  $scope.editPodcast = function(item) {
+    $scope.selectedItem = item;
   };
 
-  $scope.deletePodcast = function(podcast) {
-    _api.podcastIdDelete(podcast.id)
+  $scope.deleteTrackList = function(item) {
+    _api.podcastIdDelete(item.id)
       .then(function() {
-        var index = $scope.availablePodcasts.indexOf(podcast);
-        $scope.availablePodcasts.splice(index, 1);
+        var index = $scope.availableItems.indexOf(item);
+        $scope.availableItems.splice(index, 1);
       });
   };
 
   $scope.savePodcast = function() {
-    var podcastId = $scope.podcast.id;
+    var id = $scope.selectedItem.id;
+    var item = angular.copy($scope.selectedItem);
 
-    var podcast = angular.copy($scope.podcast);
-
-    if(podcastId) {
-      delete podcast.id;
-      _api.podcastIdPut(podcastId, podcast);
+    if(id) {
+      delete item.id;
+      _api.podcastIdPut(id, item);
     } else {
-      _api.podcastPost(podcast);
+      _api.podcastPost(item);
     }
   }
 
   function init() {
-    console.log("init", $scope);
     _api.trackListGet($scope.type, {raw: true}).then(function(items) {
       $scope.activeItems = items;
     });
 
     _api.unpublishedTrackListGet($scope.type, {raw: true}).then(function(items) {
-      $scope.availablePodcasts = items;
+      $scope.availableItems = items;
     });
   };
 

@@ -977,13 +977,6 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.unpublishedPodcastsGet = function() {
-    return factory.podcastsGet({unpublished: 'only', raw: true});
-  };
-  factory.unpublishedTrackListGet = function(type) {
-    return factory.trackListGet(type, {unpublished: 'only', raw: true});
-  };
-
   factory.podcastTracksGet = function(id, options) {
     if (typeof options === 'undefined') { options = {}; }
 
@@ -992,7 +985,11 @@ angular.module('bmmLibApp')
       url: serverUrl + 'podcast/' + id + '/track/',
       data: $.param(options)
     });
-  }
+  };
+
+  factory.unpublishedTrackListGet = function(type) {
+    return factory.trackListGet(type, {unpublished: 'only', raw: true});
+  };
 
   factory.trackListGet = function(type, options) {
     return factory.addToQueue({
