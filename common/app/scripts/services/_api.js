@@ -987,6 +987,14 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.trackListOverview = function(type, options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + type + '/overview',
+      data: options ? $.param(options) : undefined
+    });
+  };
+
   factory.unpublishedTrackListGet = function(type) {
     return factory.trackListGet(type, {unpublished: 'only', raw: true});
   };

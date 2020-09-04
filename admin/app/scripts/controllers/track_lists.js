@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 angular.module('bmmApp')
   .controller('TrackListsCtrl', function(
@@ -11,7 +11,7 @@ angular.module('bmmApp')
   $scope.type = type;
 
   $scope.save = function() {
-    var references = $scope.activeItems.map(function(item) {
+    var references = $scope.publishedItems.map(function(item) {
       return { id: item.id };
     });
 
@@ -54,26 +54,24 @@ angular.module('bmmApp')
     return translation.title;
   };
 
-  $scope.deactivateTrackList = function(item) {
-    var activeItems = $scope.activeItems;
+  $scope.unpublishTrackList = function(item) {
+    var publishedItems = $scope.publishedItems;
     var availableItems = $scope.availableItems;
 
-    var index = activeItems.indexOf(item);
-
-    var disabledItems = activeItems.splice(index, 1);
+    var index = publishedItems.indexOf(item);
+    var disabledItems = publishedItems.splice(index, 1);
 
     availableItems.push.apply(availableItems, disabledItems);
   };
 
-  $scope.activateTrackList = function(item) {
-    var activeItems = $scope.activeItems;
+  $scope.publishTrackList = function(item) {
+    var publishedItems = $scope.publishedItems;
     var availableItems = $scope.availableItems;
 
     var index = availableItems.indexOf(item);
-
     var activatedItems = availableItems.splice(index, 1);
 
-    activeItems.push.apply(activeItems, activatedItems);
+    publishedItems.push.apply(publishedItems, activatedItems);
   };
 
   $scope.editPodcast = function(item) {
@@ -101,12 +99,9 @@ angular.module('bmmApp')
   }
 
   function init() {
-    _api.trackListGet($scope.type, {raw: true}).then(function(items) {
-      $scope.activeItems = items;
-    });
-
-    _api.unpublishedTrackListGet($scope.type, {raw: true}).then(function(items) {
-      $scope.availableItems = items;
+    _api.trackListOverview($scope.type, {}).then(function(result) {
+      $scope.publishedItems = result.published;
+      $scope.availableItems = result.unpublished;
     });
   };
 

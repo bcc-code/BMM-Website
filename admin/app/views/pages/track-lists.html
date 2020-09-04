@@ -3,11 +3,11 @@
 <h3>{{init.translation.page.editor.active}}</h3>
   <ul
     ui-sortable="sortableOptions"
-    ng-model="activeItems">
-    <li ng-repeat="item in activeItems" style="background-color: white;">
+    ng-model="publishedItems">
+    <li ng-repeat="item in publishedItems" style="background-color: white;">
       <div style="height: 50px" class="foldbox">
         <h3 style="display: inline;">{{getTitle(item)}}</h3>
-        <div ng-click="deactivateTrackList(item)" style="float:right; margin: 10px">
+        <div ng-click="unpublishTrackList(item)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: red">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
@@ -40,7 +40,7 @@
           </a>
         </div>
 
-        <div ng-click="activateTrackList(item)" style="float:right; margin: 10px">
+        <div ng-click="publishTrackList(item)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: green">
             <span class="glyphicon glyphicon-plus"></span>
           </a>
