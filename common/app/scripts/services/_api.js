@@ -1015,17 +1015,27 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.podcastPost = function(options) {
-    if (typeof options === 'undefined') { options = {}; }
+    factory.podcastPost = function(options) {
+      if (typeof options === 'undefined') { options = {}; }
 
-    return factory.addToQueue({
-      method: 'POST',
-      url: serverUrl+'podcast/',
-      data: JSON.stringify(options),
-      contentType: 'application/json'
-    });
+      return factory.addToQueue({
+        method: 'POST',
+        url: serverUrl+'podcast/',
+        data: JSON.stringify(options),
+        contentType: 'application/json'
+      });
 
-  };
+    };
+    factory.trackListCreate = function(type, options) {
+      if (typeof options === 'undefined') { options = {}; }
+
+      return factory.addToQueue({
+        method: 'POST',
+        url: serverUrl + type +'/',
+        data: JSON.stringify(options),
+        contentType: 'application/json'
+      });
+    };
 
   factory.podcastIdGet = function(id, options) {
     if (typeof options === 'undefined') { options = {}; }
@@ -1037,23 +1047,44 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.podcastIdPut = function(id, options) {
-    if (typeof options === 'undefined') { options = {}; }
 
-    return factory.addToQueue({
-      method: 'PUT',
-      url: serverUrl + 'podcast/' + id,
-      data: JSON.stringify(options),
-      contentType: 'application/json'
-    });
-  };
+    factory.trackListUpdate = function(type, id, options) {
+      if (typeof options === 'undefined') { options = {}; }
 
-  factory.podcastIdDelete = function(id) {
-    return factory.addToQueue({
-      method: 'DELETE',
-      url: serverUrl + 'podcast/' + id
-    });
-  };
+      return factory.addToQueue({
+        method: 'PUT',
+        url: serverUrl + type + '/' + id,
+        data: JSON.stringify(options),
+        contentType: 'application/json'
+      });
+    };
+
+    factory.podcastIdPut = function(id, options) {
+      if (typeof options === 'undefined') { options = {}; }
+
+      return factory.addToQueue({
+        method: 'PUT',
+        url: serverUrl + 'podcast/' + id,
+        data: JSON.stringify(options),
+        contentType: 'application/json'
+      });
+    };
+
+    factory.trackListDelete = function(type, id) {
+      return factory.addToQueue({
+        method: 'DELETE',
+        url: serverUrl + type + '/' + id
+      });
+    };
+
+    factory.trackListOverviewUpdate = function(type, collection) {
+      return factory.addToQueue({
+        method: 'PUT',
+        url: serverUrl + type + '/overview/',
+        data: JSON.stringify(collection),
+        contentType: 'application/json'
+      });
+    };
 
   factory.activePodcastsPut = function(podcastCollection) {
     return factory.addToQueue({

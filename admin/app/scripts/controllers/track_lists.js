@@ -15,19 +15,20 @@ angular.module('bmmApp')
       return { id: item.id };
     });
 
-    var podcastCollection = {
-      type: 'podcast_collection',
-      podcast_references: references
+    var collection = {
+      type: $scope.type + '_collection',
+      references: references,
+      podcast_references: references // we need this for backwards compatibility
     };
 
-    return _api.activePodcastsPut(podcastCollection);
+    return _api.trackListOverviewUpdate($scope.type, collection);
   };
 
   $scope.createNewTrackList = function() {
     $scope.save()
       .then(function() {
-        return _api.podcastPost({
-          type: 'podcast',
+        return _api.trackListCreate($scope.type, {
+          type: $scope.type,
           translations: [
             {
               language: 'en',
@@ -79,7 +80,7 @@ angular.module('bmmApp')
   };
 
   $scope.deleteTrackList = function(item) {
-    _api.podcastIdDelete(item.id)
+    _api.trackListDelete($scope.type, item.id)
       .then(function() {
         var index = $scope.availableItems.indexOf(item);
         $scope.availableItems.splice(index, 1);
@@ -92,9 +93,9 @@ angular.module('bmmApp')
 
     if(id) {
       delete item.id;
-      _api.podcastIdPut(id, item);
+      _api.trackListUpdate($scope.type, id, item);
     } else {
-      _api.podcastPost(item);
+      _api.trackListCreate($scope.type, item);
     }
   }
 
