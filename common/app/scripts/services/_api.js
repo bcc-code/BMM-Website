@@ -1015,34 +1015,23 @@ angular.module('bmmLibApp')
     });
   };
 
-    factory.podcastPost = function(options) {
-      if (typeof options === 'undefined') { options = {}; }
+  factory.trackListCreate = function(type, options) {
+    if (typeof options === 'undefined') { options = {}; }
 
-      return factory.addToQueue({
-        method: 'POST',
-        url: serverUrl+'podcast/',
-        data: JSON.stringify(options),
-        contentType: 'application/json'
-      });
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + type +'/',
+      data: JSON.stringify(options),
+      contentType: 'application/json'
+    });
+  };
 
-    };
-    factory.trackListCreate = function(type, options) {
-      if (typeof options === 'undefined') { options = {}; }
-
-      return factory.addToQueue({
-        method: 'POST',
-        url: serverUrl + type +'/',
-        data: JSON.stringify(options),
-        contentType: 'application/json'
-      });
-    };
-
-  factory.podcastIdGet = function(id, options) {
+  factory.trackListIdGet = function(type, id, options) {
     if (typeof options === 'undefined') { options = {}; }
 
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'podcast/'+id,
+      url: serverUrl+type+'/'+id,
       data: $.param(options)
     });
   };
@@ -1054,17 +1043,6 @@ angular.module('bmmLibApp')
       return factory.addToQueue({
         method: 'PUT',
         url: serverUrl + type + '/' + id,
-        data: JSON.stringify(options),
-        contentType: 'application/json'
-      });
-    };
-
-    factory.podcastIdPut = function(id, options) {
-      if (typeof options === 'undefined') { options = {}; }
-
-      return factory.addToQueue({
-        method: 'PUT',
-        url: serverUrl + 'podcast/' + id,
         data: JSON.stringify(options),
         contentType: 'application/json'
       });

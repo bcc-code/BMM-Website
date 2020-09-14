@@ -19,7 +19,7 @@
           </a>
         </div>
 
-        <div ng-click="go('/'+type+'/' + item.id)" style="float:right; margin: 10px">
+        <div ng-click="go('/'+type+'s/' + item.id)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: black">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
@@ -60,4 +60,4 @@
 
 <button ng-click="createNewTrackList()">{{init.translation.page[type].createNew}}</button>
 
-<span ng-include="'views/pages/podcast.html'" ng-controller="PodcastCtrl"></span>
+<span ng-include="'views/pages/track-list.html'" ng-controller="TrackListCtrl"></span>

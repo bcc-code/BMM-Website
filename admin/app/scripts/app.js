@@ -91,6 +91,11 @@ angular.module('bmmApp', [
         controller: 'TrackListsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "playlist"}
       })
+      .when('/playlists/:id', {
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "playlist"}
+      })
       .when('/podcasts', {
         templateUrl: 'views/pages/track-lists.html',
         controller: 'TrackListsCtrl',

@@ -75,7 +75,7 @@ angular.module('bmmApp')
     publishedItems.push.apply(publishedItems, activatedItems);
   };
 
-  $scope.editPodcast = function(item) {
+  $scope.editTrackList = function(item) {
     $scope.selectedItem = item;
   };
 
@@ -87,7 +87,7 @@ angular.module('bmmApp')
       });
   };
 
-  $scope.savePodcast = function() {
+  $scope.saveTrackList = function() {
     var id = $scope.selectedItem.id;
     var item = angular.copy($scope.selectedItem);
 
