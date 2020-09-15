@@ -1,5 +1,5 @@
 <span ng-controller="TrackListCtrl" ng-if="current">
-  <h3>{{init.translation.page.editor.editPodcast}}</h3>
+  <h3>{{init.translation.page[type].editTitle}}</h3>
 
   <div class="foldbox">
     <div class="header"
@@ -55,7 +55,7 @@
     </div>
     <div ng-class="{'visible': languagesVisible}" class="body">
       <select ng-model="languageToAdd" ng-options="lang | _languageCode for lang in availableLanguages | filter : exceptSelected"></select>
-      <input ng-disabled="!languageToAdd" ng-click="addTranslation(languageToAdd)" type="button" value="{{init.translation.page.podcasts.addPodcastTranslation}}">
+      <input ng-disabled="!languageToAdd" ng-click="addTranslation(languageToAdd)" type="button" value="{{init.translation.page[type].addTranslation}}">
       <ul
         ng-model="current.translations">
         <li
@@ -74,5 +74,5 @@
       </ul>
     </div>
   </div>
-  <button ng-click="saveTrackList()">{{init.translation.page.podcasts.savePodcast}}</button>
+  <button ng-click="saveTrackList()">{{init.translation.page[type].save}}</button>
 </span>

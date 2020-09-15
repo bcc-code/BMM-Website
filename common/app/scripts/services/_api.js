@@ -1058,7 +1058,7 @@ angular.module('bmmLibApp')
     factory.trackListOverviewUpdate = function(type, collection) {
       return factory.addToQueue({
         method: 'PUT',
-        url: serverUrl + type + '/overview/',
+        url: serverUrl + type + '/collection/',
         data: JSON.stringify(collection),
         contentType: 'application/json'
       });
