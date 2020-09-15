@@ -7,7 +7,6 @@ angular.module('bmmLibApp')
       oidcUser = {},
       keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'http://localhost/', //Fallback
-      CSharpServerUrl = 'https://localhost:44303/', //Fallback
       requestTimeout,
       responseCache = {},
       contentLanguages = [];
@@ -20,10 +19,6 @@ angular.module('bmmLibApp')
 
   factory.serverUrl = function(url) {
     serverUrl = url;
-  };
-
-  factory.CSharpServerUrl = function(url) {
-    CSharpServerUrl = url;
   };
 
   factory.prepareRequest = function(customXhrOptions) {
@@ -213,10 +208,6 @@ angular.module('bmmLibApp')
 
   factory.getserverUrli = function() {
     return serverUrl;
-  };
-
-  factory.getCSharpServerUrli = function() {
-    return CSharpServerUrl;
   };
 
   factory.setKeepAliveTime = function(time) {
@@ -971,7 +962,7 @@ angular.module('bmmLibApp')
   factory.sendNotification = function(notification) {
     return factory.addToQueue({
       method: 'POST',
-      url: CSharpServerUrl + 'notifications/send',
+      url: serverUrl + 'notifications/send',
       data: JSON.stringify(notification),
       contentType: 'application/json'
     });
@@ -1077,21 +1068,21 @@ angular.module('bmmLibApp')
   factory.nextTracksToBePublished = function(id) {
     return factory.addToQueue({
       method: 'GET',
-      url: CSharpServerUrl + 'notifications/next/' + id
+      url: serverUrl + 'notifications/next/' + id
     });
   };
 
   factory.transmissionsGet = function(options) {
     return factory.addToQueue({
       method: 'GET',
-      url: CSharpServerUrl + 'transmission/'
+      url: serverUrl + 'transmission/'
     });
   };
 
   factory.transmissionIdGet = function(id, options) {
     return factory.addToQueue({
       method: 'GET',
-      url: CSharpServerUrl+'transmission/'+id
+      url: serverUrl+'transmission/'+id
     });
   };
 
@@ -1100,7 +1091,7 @@ angular.module('bmmLibApp')
 
     return factory.addToQueue({
       method: 'POST',
-      url: CSharpServerUrl+'transmission/',
+      url: serverUrl+'transmission/',
       data: JSON.stringify(transmission),
       contentType: 'application/json'
     });
@@ -1111,7 +1102,7 @@ angular.module('bmmLibApp')
 
     return factory.addToQueue({
       method: 'PUT',
-      url: CSharpServerUrl + 'transmission/' + id,
+      url: serverUrl + 'transmission/' + id,
       data: JSON.stringify(transmission),
       contentType: 'application/json'
     });
@@ -1120,7 +1111,7 @@ angular.module('bmmLibApp')
   factory.transmissionIdDelete = function(id) {
     return factory.addToQueue({
       method: 'DELETE',
-      url: CSharpServerUrl + 'transmission/' + id
+      url: serverUrl + 'transmission/' + id
     });
   };
 
