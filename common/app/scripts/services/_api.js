@@ -968,6 +968,13 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.getTags = function(){
+    return factory.addToQueue({
+      method:'GET',
+      url: serverUrl + 'podcast/tags/'
+    });
+  };
+
   factory.podcastTracksGet = function(id, options) {
     if (typeof options === 'undefined') { options = {}; }
 
