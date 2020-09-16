@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmApp')
-  .controller('TrackListOverviewCtrl', function(
+  .controller('TrackListsOverviewCtrl', function(
     $scope,
     _api,
     _init

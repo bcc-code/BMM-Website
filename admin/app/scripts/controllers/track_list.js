@@ -9,6 +9,7 @@ angular.module('bmmApp')
   ) {
   $scope.init = _init;
   $scope.availableLanguages = _init.root.languages;
+  $scope.tag = '';
 
   $scope.loadTrackList = function(id) {
     _api.trackListIdGet($scope.type, id, {raw: true}).done(function(trackList) {

@@ -83,7 +83,7 @@ angular.module('bmmApp', [
       })
       .when('/track-lists', {
         templateUrl: 'views/pages/track-list-overview.html',
-        controller: 'TrackListOverviewCtrl',
+        controller: 'TrackListsOverviewCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
       .when('/playlists', {
