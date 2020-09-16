@@ -971,7 +971,7 @@ angular.module('bmmLibApp')
   factory.getTags = function(){
     return factory.addToQueue({
       method:'GET',
-      url: serverUrl + 'podcast/tags/'
+      url: serverUrl + 'tags/'
     });
   };
 
