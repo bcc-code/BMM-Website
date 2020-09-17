@@ -1034,43 +1034,32 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.trackListUpdate = function(type, id, options) {
+    if (typeof options === 'undefined') { options = {}; }
 
-    factory.trackListUpdate = function(type, id, options) {
-      if (typeof options === 'undefined') { options = {}; }
-
-      return factory.addToQueue({
-        method: 'PUT',
-        url: serverUrl + type + '/' + id,
-        data: JSON.stringify(options),
-        contentType: 'application/json'
-      });
-    };
-
-    factory.trackListDelete = function(type, id) {
-      return factory.addToQueue({
-        method: 'DELETE',
-        url: serverUrl + type + '/' + id
-      });
-    };
-
-    factory.trackListOverviewUpdate = function(type, collection) {
-      return factory.addToQueue({
-        method: 'PUT',
-        url: serverUrl + type + '/collection/',
-        data: JSON.stringify(collection),
-        contentType: 'application/json'
-      });
-    };
-
-  factory.activePodcastsPut = function(podcastCollection) {
     return factory.addToQueue({
       method: 'PUT',
-      url: serverUrl + 'podcast/',
-      data: podcastCollection
+      url: serverUrl + type + '/' + id,
+      data: JSON.stringify(options),
+      contentType: 'application/json'
     });
   };
 
-  // C# API Functions
+  factory.trackListDelete = function(type, id) {
+    return factory.addToQueue({
+      method: 'DELETE',
+      url: serverUrl + type + '/' + id
+    });
+  };
+
+  factory.trackListOverviewUpdate = function(type, collection) {
+    return factory.addToQueue({
+      method: 'PUT',
+      url: serverUrl + type + '/collection/',
+      data: JSON.stringify(collection),
+      contentType: 'application/json'
+    });
+  };
 
   factory.nextTracksToBePublished = function(id) {
     return factory.addToQueue({
