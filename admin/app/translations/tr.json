@@ -11,6 +11,7 @@
       "notifications": "Notifications",
       "waitings": "Onay Bekliyor",
       "contributors": "Katkı Yapanlar",
+      "trackLists": "Track Lists",
       "podcasts": "Podcast",
       "transmissions": "Live",
       "users": "Kullanıcılar",
@@ -92,8 +93,7 @@
       "interprets": "Sanatçı ve\/ya da Konuşmacılar",
       "lyricists": "Söz Yazarları",
       "songbooks": "İlahi Kitapları",
-      "podcasts": "Podcast",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Kutsal Kitap Referansları",
       "addBibleReference": "Kutsal Kitap Referansları Ekle",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Dur",
       "resetTime": "Resetle",
       "createNewContributor": "Yeni Katılımcı Oluştur",
-      "createNewPodcast": "Create new podcast",
       "number": "Numara",
       "timestamp": "Zaman Damgası",
       "comment": "Yorum",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Podcast",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Çalma Listesi",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

@@ -11,6 +11,7 @@
       "notifications": "Meldinger",
       "waitings": "På vent",
       "contributors": "Bidragsytere",
+      "trackLists": "Track Lists",
       "podcasts": "Podcaster",
       "transmissions": "Live",
       "users": "Brukere",
@@ -92,8 +93,7 @@
       "interprets": "Artister og\/eller talere",
       "lyricists": "Tekstforfattere",
       "songbooks": "Sangbøker",
-      "podcasts": "Podcaster",
-      "editPodcast": "Redigere Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Bibelreferanser",
       "addBibleReference": "Legg til bibelreferanse",
       "externalReferences": "Eksterne referanser",
@@ -102,7 +102,6 @@
       "pause": "Pause",
       "resetTime": "Tilbakestill tid",
       "createNewContributor": "Opprett ny bidragsyter",
-      "createNewPodcast": "Opprett ny podcast",
       "number": "Nummer",
       "timestamp": "Tidsstempel",
       "comment": "Kommentar",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Legg podcast oversettelse",
-      "savePodcast": "Lagre podcast"
+    "podcast": {
+      "title": "Podcaster",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Spillelister",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

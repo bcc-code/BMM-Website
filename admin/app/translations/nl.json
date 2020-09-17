@@ -11,6 +11,7 @@
       "notifications": "Meldingen",
       "waitings": "Wachtrij",
       "contributors": "Bijdragers",
+      "trackLists": "Track Lists",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Gebruikers",
@@ -92,8 +93,7 @@
       "interprets": "Artiesten en\/of sprekers",
       "lyricists": "Tekstschrijvers",
       "songbooks": "Liederenboeken",
-      "podcasts": "Podcasts",
-      "editPodcast": "Podcast wijzigen",
+      "trackLists": "Track Lists",
       "bibleReferences": "Bijbel verwijzingen",
       "addBibleReference": "Bijbel verwijzing toevoegen",
       "externalReferences": "Externe referenties",
@@ -102,7 +102,6 @@
       "pause": "Pauze",
       "resetTime": "Reset tijd",
       "createNewContributor": "Nieuwe medewerker maken",
-      "createNewPodcast": "Nieuwe podcast maken",
       "number": "Nummer",
       "timestamp": "Tijdstip",
       "comment": "Commentaar",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Podcastvertaling toevoegen",
-      "savePodcast": "Podcast opslaan"
+    "podcast": {
+      "title": "Podcasts",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Afspeellijsten",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

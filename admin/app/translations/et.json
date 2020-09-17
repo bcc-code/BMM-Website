@@ -11,6 +11,7 @@
       "notifications": "Teavitused",
       "waitings": "Ootel",
       "contributors": "Kaastegijad",
+      "trackLists": "Track Lists",
       "podcasts": "Saated",
       "transmissions": "Live",
       "users": "Kasutajad",
@@ -92,8 +93,7 @@
       "interprets": "Esitajad ja\/või kõnelejad",
       "lyricists": "Sõnade autorid",
       "songbooks": "Lauluraamatud",
-      "podcasts": "Saated",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Piibli viited",
       "addBibleReference": "Lisa Piibli viide",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Pause",
       "resetTime": "Lähtesta aeg",
       "createNewContributor": "Loo uus kaastegija",
-      "createNewPodcast": "Create new podcast",
       "number": "Number",
       "timestamp": "Ajatempel",
       "comment": "Kommentaar",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Saated",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Esitusloendid",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

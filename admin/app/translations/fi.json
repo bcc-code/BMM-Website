@@ -11,6 +11,7 @@
       "notifications": "Ilmoitukset",
       "waitings": "Odottaa hyväksyntää",
       "contributors": "Tekijät",
+      "trackLists": "Track Lists",
       "podcasts": "Podcastit",
       "transmissions": "Live",
       "users": "Käyttäjät",
@@ -92,8 +93,7 @@
       "interprets": "Taiteilijoita ja\/tai kaiuttimet",
       "lyricists": "Sanoittajien",
       "songbooks": "Laulukirjat",
-      "podcasts": "Podcastit",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Raamatun viittaukset",
       "addBibleReference": "Lisää Raamattu viite",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Tauko",
       "resetTime": "Palauttaa aika",
       "createNewContributor": "Luo uusi avustaja",
-      "createNewPodcast": "Create new podcast",
       "number": "Numero",
       "timestamp": "Aikaleima",
       "comment": "Kommentti",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Podcastit",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Soittolistat",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

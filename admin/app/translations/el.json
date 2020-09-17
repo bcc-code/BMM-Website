@@ -11,6 +11,7 @@
       "notifications": "Ειδοποιήσεις",
       "waitings": "Αναμονή έγκρισης",
       "contributors": "Συνεργάτες",
+      "trackLists": "Track Lists",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Χρήστες",
@@ -92,8 +93,7 @@
       "interprets": "Καλλιτέχνες και\/ή ομιλητές",
       "lyricists": "Στιχουργός",
       "songbooks": "υμνολογίο",
-      "podcasts": "Podcasts",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Αναφορές Αγία Γραφή",
       "addBibleReference": "Προσθέστε την αναφορά Βίβλο",
       "externalReferences": "Εξωτερικές αναφορές",
@@ -102,7 +102,6 @@
       "pause": "Παύση",
       "resetTime": "Χρόνος επαναφοράς  ?",
       "createNewContributor": "Δημιουργήσετε νέο συνεργάτη",
-      "createNewPodcast": "Create new podcast",
       "number": "Αριθμός",
       "timestamp": "Χρονική σήμανση??",
       "comment": "Σχόλιο",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Podcasts",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Λίστες αναπαραγωγής",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {
