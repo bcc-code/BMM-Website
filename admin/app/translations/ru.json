@@ -11,6 +11,7 @@
       "notifications": "Уведомления",
       "waitings": "Ожидает проверки",
       "contributors": "Исполнители",
+      "trackLists": "Track Lists",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Пользователи",
@@ -92,8 +93,7 @@
       "interprets": "Исполнители или говорящие",
       "lyricists": "Авторы текстов",
       "songbooks": "Песенники",
-      "podcasts": "Podcasts",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Ссылки в библии",
       "addBibleReference": "Добавить ссылку в Библии",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Пауза",
       "resetTime": "Время сброса",
       "createNewContributor": "Создать нового исполнителя",
-      "createNewPodcast": "Create new podcast",
       "number": "Номер",
       "timestamp": "Метка времени",
       "comment": "Комментарий",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Podcasts",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Списки воспроизведения",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

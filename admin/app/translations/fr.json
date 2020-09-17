@@ -11,6 +11,7 @@
       "notifications": "Notifications",
       "waitings": "En attente",
       "contributors": "Contributeurs",
+      "trackLists": "Track Lists",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Utilisateurs",
@@ -92,8 +93,7 @@
       "interprets": "Artistes et\/ou Intervenants",
       "lyricists": "Auteurs",
       "songbooks": "Recueils de chants",
-      "podcasts": "Podcasts",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Références Bibliques",
       "addBibleReference": "Ajoutez une référence Biblique",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Pause",
       "resetTime": "Réinitialiser le temps",
       "createNewContributor": "Créer un nouveau contributeur",
-      "createNewPodcast": "Create new podcast",
       "number": "Nombre",
       "timestamp": "Horodatage",
       "comment": "Commentaire",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Podcasts",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Listes de lecture",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

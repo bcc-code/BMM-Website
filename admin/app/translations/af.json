@@ -11,6 +11,7 @@
       "notifications": "Notifikasies",
       "waitings": "wag vir goedkeuring",
       "contributors": "bydraers",
+      "trackLists": "Track Lists",
       "podcasts": "Potgooie",
       "transmissions": "Live",
       "users": "Gebruikers",
@@ -92,8 +93,7 @@
       "interprets": "Kunstenaars en \/ of Sprekers",
       "lyricists": "Liriek",
       "songbooks": "Sangboeke",
-      "podcasts": "Potgooie",
-      "editPodcast": "Edit Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Bybel verwysings",
       "addBibleReference": "Voeg Bybel verwysing by",
       "externalReferences": "External references",
@@ -102,7 +102,6 @@
       "pause": "Pause",
       "resetTime": "Herstel tyd",
       "createNewContributor": "Skep nuwe bydraer",
-      "createNewPodcast": "Create new podcast",
       "number": "Nommer",
       "timestamp": "Tyd stempel",
       "comment": "Kommentaar",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Add podcast translation",
-      "savePodcast": "Save podcast"
+    "podcast": {
+      "title": "Potgooie",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Speellys",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

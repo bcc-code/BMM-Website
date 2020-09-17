@@ -11,6 +11,7 @@
       "notifications": "Értesítések",
       "waitings": "Jóváhagyásra vár",
       "contributors": "Közreműködők",
+      "trackLists": "Track Lists",
       "podcasts": "Podcastok",
       "transmissions": "Élő",
       "users": "Felhasználók",
@@ -92,8 +93,7 @@
       "interprets": "Előadók és\/vagy beszélők",
       "lyricists": "Szövegírók",
       "songbooks": "Énekeskönyvek",
-      "podcasts": "Podcastok",
-      "editPodcast": "Podcast szerkesztése",
+      "trackLists": "Track Lists",
       "bibleReferences": "Bibliai hivatkozások",
       "addBibleReference": "Új bibliai hivatkozás",
       "externalReferences": "Extern referenciák",
@@ -102,7 +102,6 @@
       "pause": "Szünet",
       "resetTime": "Idő visszaállítása",
       "createNewContributor": "Új közreműködő létrehozása",
-      "createNewPodcast": "Hozzon létre új podcast",
       "number": "Sorszám",
       "timestamp": "Kelt",
       "comment": "Megjegyzés",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "az adás tervezett időpontja",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Podcast fordítást hozzáadása",
-      "savePodcast": "Podcast mentése"
+    "podcast": {
+      "title": "Podcastok",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Lejátszási listák",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

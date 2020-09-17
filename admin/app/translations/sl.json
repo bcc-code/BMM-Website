@@ -11,6 +11,7 @@
       "notifications": "Obvestila",
       "waitings": "Na čakanju",
       "contributors": "Ustvarjalci",
+      "trackLists": "Track Lists",
       "podcasts": "Posnetki",
       "transmissions": "Live",
       "users": "Uporabniki",
@@ -92,8 +93,7 @@
       "interprets": "Izvajalci in\/ali govorniki",
       "lyricists": "Pisci besedil",
       "songbooks": "Pesmarice",
-      "podcasts": "Posnetki",
-      "editPodcast": "Urejanje posnetka",
+      "trackLists": "Track Lists",
       "bibleReferences": "Biblijske reference",
       "addBibleReference": "Dodaj biblijsko referenco",
       "externalReferences": "Zunanji sklici",
@@ -102,7 +102,6 @@
       "pause": "Premor",
       "resetTime": "Čas ponastavitve",
       "createNewContributor": "Ustvari novega ustvarjalca",
-      "createNewPodcast": "Ustvari nov posnetek",
       "number": "Številka",
       "timestamp": "Časovni žig",
       "comment": "Komentar",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Dodaj prevod posnetka",
-      "savePodcast": "Shrani posnetek"
+    "podcast": {
+      "title": "Posnetki",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Popis liste za slušanje",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

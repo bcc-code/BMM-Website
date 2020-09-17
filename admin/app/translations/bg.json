@@ -11,6 +11,7 @@
       "notifications": "Уведомления",
       "waitings": "Изчакване за одобрение",
       "contributors": "Сътрудници",
+      "trackLists": "Track Lists",
       "podcasts": "Подкаст",
       "transmissions": "Live",
       "users": "Потребители",
@@ -92,8 +93,7 @@
       "interprets": "Изпълнители и\/или говорители",
       "lyricists": "Текстописци",
       "songbooks": "Песнярки",
-      "podcasts": "Подкаст",
-      "editPodcast": "Редактиране на подкаст",
+      "trackLists": "Track Lists",
       "bibleReferences": "Библейски препратки",
       "addBibleReference": "Добави Библейски препратки",
       "externalReferences": "Външни препратки",
@@ -102,7 +102,6 @@
       "pause": "Пауза",
       "resetTime": "Нулирай време",
       "createNewContributor": "Създай нов сътрудник",
-      "createNewPodcast": "Създаване на нов подкаст",
       "number": "Номер",
       "timestamp": "Индикатор на време",
       "comment": "Коментар",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Добави подкаст превод",
-      "savePodcast": "Запиши подкаст"
+    "podcast": {
+      "title": "Подкаст",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Списъци",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {
