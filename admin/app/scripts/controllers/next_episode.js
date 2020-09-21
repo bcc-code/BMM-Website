@@ -38,7 +38,7 @@ angular.module('bmmApp')
             $scope.episodeShowedIndex++;
           }
         }
-        
+
         oldEpisodesIndex++;
         if (oldEpisodesIndex == minOldEpisodes && $scope.nextEpisodesIds.length == maxEpisodes) {
           return;
@@ -59,7 +59,7 @@ angular.module('bmmApp')
     for (var i = 0; i < languageOrdering.length; i++) {
       for (var j = 0; j < $scope.nextEpisode.translations.length; j++) {
         if ($scope.nextEpisode.translations[j].language == languageOrdering[i]) {
-          orderedLanguages.push($scope.nextEpisode.translations[j]); 
+          orderedLanguages.push($scope.nextEpisode.translations[j]);
           $scope.nextEpisode.translations.splice(j, 1);
           break;
         }
@@ -118,7 +118,7 @@ angular.module('bmmApp')
   var detectMissingLanguages = function(){
     var expectedLanguages = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru'];
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
-    
+
     expectedLanguages.forEach(function(expectedLang) {
       if (availableLanguages.indexOf(expectedLang) === -1) {
         $scope.missingLanguages.push(expectedLang);
@@ -143,7 +143,7 @@ angular.module('bmmApp')
   function getEpisodeInformation() {
     $scope.loading = true;
     $scope.missingLanguages = [];
-    
+
     if ($scope.nextEpisodesIds[$scope.episodeShowedIndex]) {
       _api.trackGet($scope.nextEpisodesIds[$scope.episodeShowedIndex], {raw: true}).then(function(nextEpisode) {
         $scope.nextEpisode = nextEpisode;
@@ -155,9 +155,9 @@ angular.module('bmmApp')
         detectMissingLanguages();
 
         $scope.nextEpisode.published = new Date(nextEpisode.published_at) < datetime;
-        $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false; 
+        $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false;
         $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
-        
+
       }).then(function(){
         doneLoading();
       });
@@ -169,7 +169,7 @@ angular.module('bmmApp')
   function init(offset) {
     $scope.loading = true;
 
-    _api.podcastIdGet($routeParams.id).then(function(podcast) {
+    _api.trackListIdGet("podcast", $routeParams.id).then(function(podcast) {
       $scope.podcast = podcast;
 
       _api.podcastTracksGet($routeParams.id, {size: maxEpisodes, from: offset, unpublished: 'show'}).then(function(podcast) {

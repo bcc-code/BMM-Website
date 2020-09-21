@@ -74,7 +74,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: 'http://localhost:9003/admin',
-          protocol: 'http',
+          protocol: 'https',
           base: [
             '.tmp',
             '<%= yeoman.app %>'

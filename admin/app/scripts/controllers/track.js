@@ -138,7 +138,7 @@ angular.module('bmmApp')
             $scope.model = model;
             findAvailableTranslations();
 
-            getPodcastTags().then(function(tags) {
+            _api.getTags().then(function(tags) {
               $scope.podcastTags = tags;
             });
           });
@@ -430,7 +430,7 @@ angular.module('bmmApp')
               });
             }
             $scope.originalLanguage = this;
-            
+
             if($scope.originalLanguage.publisher == '') {
               $scope.originalLanguage.publisher = defaultPublisher;
             }
@@ -444,17 +444,6 @@ angular.module('bmmApp')
         });
       }
     });
-
-    function getPodcastTags() {
-      return _api.podcastsGet({raw: true, unpublished: 'show'})
-        .then(function(podcasts) {
-          return podcasts.map(function(podcast) {
-            return podcast.query.tags;
-          }).reduce(function(prevTags, curTags) {
-            return prevTags.concat(curTags);
-          }, []);
-        });
-    }
 
     $scope.addTag = function(tag) {
       $scope.model.tags.push(tag);
@@ -572,7 +561,7 @@ angular.module('bmmApp')
             $scope.switchLanguage(toLanguage);
           }, 0);
         });
-      } 
+      }
     };
 
   });

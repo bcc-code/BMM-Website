@@ -81,15 +81,30 @@ angular.module('bmmApp', [
         controller: 'CustomNotificationsCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
-      .when('/podcasts', {
-        templateUrl: 'views/pages/podcasts.html',
-        controller: 'PodcastsCtrl',
+      .when('/track-lists', {
+        templateUrl: 'views/pages/track-list-overview.html',
+        controller: 'TrackListsOverviewCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/playlists', {
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "playlist"}
+      })
+      .when('/playlists/:id', {
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "playlist"}
+      })
+      .when('/podcasts', {
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "podcast"}
+      })
       .when('/podcasts/:id', {
-        templateUrl: 'views/pages/podcasts.html',
-        controller: 'PodcastsCtrl',
-        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+        templateUrl: 'views/pages/track-lists.html',
+        controller: 'TrackListsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }], 'type': () => "podcast"}
       })
       .when('/search/:term', {
         templateUrl: 'views/pages/search.html',

@@ -11,6 +11,7 @@
       "notifications": "Notificări",
       "waitings": "În așteptare",
       "contributors": "Contribuitori",
+      "trackLists": "Track Lists",
       "podcasts": "Podcast-uri",
       "transmissions": "Live",
       "users": "Utilizatori",
@@ -92,8 +93,7 @@
       "interprets": "Artiști și\/sau Vorbitori",
       "lyricists": "Textier",
       "songbooks": "Cărți de cântări",
-      "podcasts": "Podcast-uri",
-      "editPodcast": "Editare Podcast",
+      "trackLists": "Track Lists",
       "bibleReferences": "Referinţe biblice",
       "addBibleReference": "Adaugă referinţă biblică",
       "externalReferences": "Referințe externe",
@@ -102,7 +102,6 @@
       "pause": "Pauză",
       "resetTime": "Resetează timpul",
       "createNewContributor": "Creează un nou contribuitor",
-      "createNewPodcast": "Creează un nou podcast",
       "number": "Număr",
       "timestamp": "Marcaj de timp",
       "comment": "Comentariu",
@@ -158,9 +157,26 @@
       "scheduledSendTime": "scheduled send time",
       "link": "link"
     },
-    "podcasts": {
-      "addPodcastTranslation": "Adaugă traducere pentru podcast",
-      "savePodcast": "Salvare podcast"
+    "podcast": {
+      "title": "Podcast-uri",
+      "editTitle": "Edit Podcast",
+      "createNew": "Create new podcast",
+      "addTranslation": "Add podcast translation",
+      "save": "Save podcast"
+    },
+    "playlist": {
+      "title": "Play-list-uri",
+      "editTitle": "Edit Playlist",
+      "createNew": "Create new playlist",
+      "addTranslation": "Add playlist translation",
+      "save": "Save playlist"
+    },
+    "musicchannel": {
+      "title": "Music Channels",
+      "editTitle": "Edit Music Channel",
+      "createNew": "Create new music channel",
+      "addTranslation": "Add channel translation",
+      "save": "Save music channel"
     }
   },
   "states": {

@@ -1,5 +1,5 @@
-<span ng-controller="PodcastCtrl" ng-if="podcast">
-  <h3>{{init.translation.page.editor.editPodcast}}</h3>
+<span ng-controller="TrackListCtrl" ng-if="current">
+  <h3>{{init.translation.page[type].editTitle}}</h3>
 
   <div class="foldbox">
     <div class="header"
@@ -12,7 +12,7 @@
         <h3>{{init.translation.page.editor.tags}}</h3>
         <ul>
           <h4>{{init.translation.page.editor.active}}</h4>
-          <li ng-repeat="tag in podcast.query.tags"
+          <li ng-repeat="tag in getTags()"
               ng-click="removeTag(tag)"
               style="float: left;">
               <span>
@@ -22,25 +22,27 @@
         </ul>
       </div>
 
-      <div style="float: right" ng-controller="UploaderCtrl"
-             ng-init="initialize($parent.uploadCover);"
-             class="cover">
-            <div ng-hide="podcast.id==undefined" class="new" style="overflow: hidden;">
-                <input ng-file-select type="file" style="opacity: 0">
-            </div>
-            <div ng-hide="podcast.id==undefined" class="trash" ng-click="$parent.podcast.cover=null"></div>
-            <img ng-src="{{podcast.cover | _cover:'podcast'}}">
-            <div class="progress" style="width:{{progress}}%;
-                                         background-color: #CAEC81;
-                                         background-image: none;
-                                         margin: 0"></div>
+      <div ng-hide="type!=='podcast'">
+        <div style="float: right" ng-controller="UploaderCtrl"
+               ng-init="initialize($parent.uploadCover);"
+               class="cover">
+              <div ng-hide="current.id==undefined" class="new" style="overflow: hidden;">
+                  <input ng-file-select type="file" style="opacity: 0">
+              </div>
+              <div ng-hide="current.id==undefined" class="trash" ng-click="$parent.current.cover=null"></div>
+              <img ng-src="{{current.cover | _cover:type}}">
+              <div class="progress" style="width:{{progress}}%;
+                                           background-color: #CAEC81;
+                                           background-image: none;
+                                           margin: 0"></div>
         </div>
+      </div>
 
       <br style="clear:both">
 
       <div>
         <input type="text" ng-model="tag">
-        <button ng-click="addTag(tag)"
+        <button ng-click="addTag()"
                 style="margin-bottom: .5em">
           {{init.translation.page.editor.addTag}}
         </button>
@@ -55,14 +57,14 @@
     </div>
     <div ng-class="{'visible': languagesVisible}" class="body">
       <select ng-model="languageToAdd" ng-options="lang | _languageCode for lang in availableLanguages | filter : exceptSelected"></select>
-      <input ng-disabled="!languageToAdd" ng-click="addPodcastTranslation(languageToAdd)" type="button" value="{{init.translation.page.podcasts.addPodcastTranslation}}">
+      <input ng-disabled="!languageToAdd" ng-click="addTranslation(languageToAdd)" type="button" value="{{init.translation.page[type].addTranslation}}">
       <ul
-        ng-model="podcast.translations">
+        ng-model="current.translations">
         <li
           style="background: white;"
-          ng-repeat="translation in podcast.translations">
+          ng-repeat="translation in current.translations">
           <div style="height: 40px" class="foldbox">
-            <h3 style="margin-left: 10px; margin-top: 10px; display: inline" ng-bind="translation.language | _languageCode"></h3>: 
+            <h3 style="margin-left: 10px; margin-top: 10px; display: inline" ng-bind="translation.language | _languageCode"></h3>:
             <input type="text" ng-model="translation.title">
             <div ng-click="removeTranslation(translation)" style="float:right; margin: 2px">
               <a style="font-size: 1.7em; color: red" class="btn_remove">
@@ -74,5 +76,5 @@
       </ul>
     </div>
   </div>
-  <button ng-click="savePodcast()">{{init.translation.page.podcasts.savePodcast}}</button>
+  <button ng-click="saveTrackList()">{{init.translation.page[type].save}}</button>
 </span>
