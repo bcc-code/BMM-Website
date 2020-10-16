@@ -8,7 +8,7 @@
     "https://localhost:44303/"
   ],
   "serverUrlIndex": 1,
-  "fileServerUrl": "https://int-bmm-files.bcc.no/",
+  "fileServerUrl": "https://int-bmm-files.brunstad.org/",
   "developerPort": 9001,
   "protocol": "https",
   "localsPath": "translations/locals/",
