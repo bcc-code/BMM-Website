@@ -6,7 +6,7 @@ angular.module('bmmLibApp')
   var factory = {},
       oidcUser = {},
       keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'http://localhost/', //Fallback
+      serverUrl = 'http://localhost/',
       fileServerUrl = 'http://localhost/',
       requestTimeout,
       responseCache = {},
