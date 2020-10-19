@@ -5,7 +5,6 @@ angular.module('bmmLibApp')
 
   var factory = {},
       oidcUser = {},
-      keepAliveTime = 60000*10, //Default time = 10min
       serverUrl = 'http://localhost/',
       fileServerUrl = 'http://localhost/',
       requestTimeout,
@@ -215,10 +214,6 @@ angular.module('bmmLibApp')
   factory.getFileServerUrl = function() {
     return fileServerUrl + "file/protected/";
   }
-
-  factory.setKeepAliveTime = function(time) {
-    keepAliveTime = time;
-  };
 
   factory.setRequestTimeout = function(time) {
     requestTimeout = time;
