@@ -213,7 +213,7 @@ angular.module('bmmApp')
     };
 
     $scope.download = function(path) {
-      window.location = $filter('_protectedURL')(path)+'?download=1';
+      window.location = $filter('_protectedURL')(path)+'?download=true';
     };
 
     $scope.playLinked = function(track) {
