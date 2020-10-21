@@ -5,8 +5,8 @@ angular.module('bmmLibApp')
 
   var factory = {},
       oidcUser = {},
-      keepAliveTime = 60000*10, //Default time = 10min
-      serverUrl = 'http://localhost/', //Fallback
+      serverUrl = 'http://localhost/',
+      fileServerUrl = 'http://localhost/',
       requestTimeout,
       responseCache = {},
       contentLanguages = [];
@@ -17,8 +17,9 @@ angular.module('bmmLibApp')
 
   factory.cachingEnabled = false;
 
-  factory.serverUrl = function(url) {
+  factory.serverUrl = function(url, fileUrl) {
     serverUrl = url;
+    fileServerUrl = fileUrl;
   };
 
   factory.prepareRequest = function(customXhrOptions) {
@@ -210,9 +211,9 @@ angular.module('bmmLibApp')
     return serverUrl;
   };
 
-  factory.setKeepAliveTime = function(time) {
-    keepAliveTime = time;
-  };
+  factory.getFileServerUrl = function() {
+    return fileServerUrl + "file/protected/";
+  }
 
   factory.setRequestTimeout = function(time) {
     requestTimeout = time;

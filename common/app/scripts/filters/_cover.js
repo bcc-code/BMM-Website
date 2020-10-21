@@ -5,7 +5,7 @@ angular.module('bmmLibApp')
     return function (cover, type, id, antiCache) {
 
       var fallback_images = "fallback_images/";
-      var prefix_url = _api.getserverUrli() + "file/protected/";
+      var prefix_url = _api.getFileServerUrl();
       if (cover && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){
         cover = prefix_url + cover;
       }

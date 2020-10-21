@@ -54,8 +54,7 @@ angular.module('bmmLibApp')
       $http.get('scripts/config.json').success(function(config) {
 
         factory.config = config;
-        _api.serverUrl(config.knownServerUrls[config.serverUrlIndex]);
-        _api.setKeepAliveTime(config.keepAlive*100*60);
+        _api.serverUrl(config.knownServerUrls[config.serverUrlIndex], config.fileServerUrl);
         if(config.requestTimeout) {
           _api.setRequestTimeout(config.requestTimeout*1000);
         }
