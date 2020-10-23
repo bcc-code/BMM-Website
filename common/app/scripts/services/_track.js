@@ -2,7 +2,7 @@
 
 angular.module('bmmLibApp')
   .factory('_track', function ($location, _api, _init) {
-    
+
     var factory = {};
 
     factory.resolve = function(data) {
@@ -126,7 +126,7 @@ angular.module('bmmLibApp')
                 resolvedData.video = true;
                 resolvedData.videos.push({
                   file: this.url,
-                  downloadLink: this.url+'&download=1',
+                  downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -135,7 +135,7 @@ angular.module('bmmLibApp')
                 resolvedData.audio = true;
                 resolvedData.audios.push({
                   file: this.url,
-                  downloadLink: this.url+'&download=1',
+                  downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -157,7 +157,7 @@ angular.module('bmmLibApp')
           resolvedData[(data.link.type+'s')] = [];
           resolvedData[(data.link.type+'s')].push({
             file: _file,
-            downloadLink: _file+'&download=1',
+            downloadLink: _api.addAuthorizationQueryString(_file)+'&download=true',
             type: data.link.mime_type,
             name: renameMimeType(data.link.mime_type),
             duration: data.link.duration
@@ -203,13 +203,13 @@ angular.module('bmmLibApp')
         resolvedData.publisher = '';
         if (typeof data._meta.publisher!=='undefined' && data._meta.publisher!=='') {
           resolvedData.publisher = data._meta.publisher;
-        } 
+        }
 
         //Find copyright
         resolvedData.copyright = '';
         if (typeof data._meta.copyright!=='undefined' && data._meta.copyright!=='') {
           resolvedData.copyright = data._meta.copyright;
-        } 
+        }
 
         //Find all relations
         if (typeof data.rel!=='undefined') {
