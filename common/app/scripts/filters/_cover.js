@@ -6,11 +6,11 @@ angular.module('bmmLibApp')
 
       var fallback_images = "fallback_images/";
       var prefix_url = _api.getFileServerUrl();
-      if (cover && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){
+      if (cover && cover.indexOf("http") !== 0 && cover.indexOf(prefix_url) === -1 && cover.indexOf(fallback_images) === -1){
         cover = prefix_url + cover;
       }
-      
-      if (cover && cover.indexOf(prefix_url) !== -1 && cover.indexOf('auth=') == -1) {
+
+      if (cover && cover.indexOf('auth=') == -1) {
         cover = _api.addAuthorizationQueryString(cover);
       }
 
