@@ -239,8 +239,12 @@ angular.module('bmmLibApp')
   };
 
   factory.addAuthorizationQueryString = function(url) {
-    var divider = url.indexOf('?') == -1 ? '?':'&';
-    return url + divider + "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
+    if (url.indexOf('auth=') == -1) {
+      var divider = url.indexOf('?') == -1 ? '?' : '&';
+      return url + divider + "auth=" + encodeURIComponent(factory.getAuthorizationHeader());
+    } else {
+      return url;
+    }
   };
 
   factory.setContentLanguages = function(languages) {
