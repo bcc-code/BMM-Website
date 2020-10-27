@@ -224,7 +224,7 @@ angular.module('bmmApp')
         break;
       case 'private':
 
-        $scope.zip.url = _api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download';
+        $scope.zip.url = _api.addAuthorizationQueryString(_api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download');
         $scope.zip.show = true;
         $scope.private = true;
         _api.userTrackCollectionGet($routeParams.id).done(function(data) {
