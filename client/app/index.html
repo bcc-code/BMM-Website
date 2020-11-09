@@ -102,7 +102,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     
-    <!-- When delivering this using cdn it will be blocked by uBlock Origins -->
+    <!-- Google Analytics might be blocked by browser privacy mechanisms -->
     <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
     <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <!-- @endif -->
@@ -163,7 +163,7 @@
 
     <!-- real user measurements for the Traffic Manager in Azure -->
         <script src="https://www.atmrum.net/rum.js"></script>
-        <script>rum.start("a5ea1949af124ff7aa97141bbfe7cff0");</script>
+        <script>try {rum.start("a5ea1949af124ff7aa97141bbfe7cff0");}catch{}</script>
     <!-- end real user measurements -->
     <script type="text/javascript" src="https://auth.bcc.no/signout/js" signout-path="/logout-redirect.html"></script>
 
