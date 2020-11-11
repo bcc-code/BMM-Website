@@ -6,7 +6,7 @@
 try {
   // Try to load the angulartics.google.analytics module which might be blocked by browser privacy mechanisms.
   angular.injector('angulartics.google.analytics');
-} catch {
+} catch (e) {
   // If it could not be loaded, provide a dummy.
   angular.module('angulartics.google.analytics', []).config(['$analyticsProvider', function ($analyticsProvider) { }]);
 }
