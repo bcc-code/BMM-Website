@@ -12,7 +12,7 @@
     "angulartics": "^1.0.3",
     "angulartics-google-analytics": "^0.1.4",
     "fastclick": "1.0.6",
-    "jplayer": "~2.6.0",
+    "jplayer": "2.9.2",
     "jquery": "1.12.3",
     "jquery-md5": "*",
     "jquery-ui": "1.11.4",
