@@ -8,7 +8,7 @@ angular.module('bmmApp')
     _init
   ) {
   $scope.init = _init;
-  $scope.differencePercentage = 10;
+  $scope.differenceToleranceSeconds = 10;
 
   $scope.nextEpisodesIds = [];
   $scope.episodeShowedIndex = 0;
@@ -89,11 +89,9 @@ angular.module('bmmApp')
       }
     });
 
-    var durationBoundary = originalLanguageDuration * $scope.differencePercentage / 100;
-
     $scope.nextEpisode.translations.forEach(function(translation) {
       if (translation.media != null)
-        if (Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= durationBoundary) {
+        if (Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= $scope.differenceToleranceSeconds) {
           translation.big_difference_in_duration = true;
         }
     });
