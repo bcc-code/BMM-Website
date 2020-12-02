@@ -211,11 +211,11 @@ angular.module('bmmLibApp')
     return serverUrl;
   };
 
-  factory.getFileUploadServerUrl = function() {
+  factory.getFileServerUrl = function() {
     return fileServerUrl;
   };
 
-  factory.getFileServerUrl = function() {
+  factory.getProtectedFileServerUrl = function() {
     return fileServerUrl + "file/protected/";
   };
 
