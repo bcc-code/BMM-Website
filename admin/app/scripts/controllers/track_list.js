@@ -15,7 +15,8 @@ angular.module('bmmApp')
     _api.trackListIdGet($scope.type, id, {raw: true}).done(function(trackList) {
       $scope.$apply(function() {
         $scope.current = trackList;
-        $scope.uploadUrl = _api.getserverUrli()+$scope.type+'/'+trackList.id+'/cover';
+        var serverUrl = $scope.type === 'podcast' ? _api.getserverUrli() : _api.getFileServerUrl();
+        $scope.uploadUrl = serverUrl + $scope.type + '/' + trackList.id + '/cover';
       });
     });
   };
@@ -46,10 +47,9 @@ angular.module('bmmApp')
   }
 
   $scope.uploadCover = {
-    url: _api.getserverUrli()+$scope.type+'/'+$routeParams.id+'/cover',
+    url: $scope.type === 'podcast' ? _api.getserverUrli() : _api.getFileServerUrl() + $scope.type + '/' + $routeParams.id + '/cover',
     method: 'PUT'
   };
-  $scope.uploadUrl = _api.getserverUrli()+$scope.type+'/'+$routeParams.id+'/cover';
 
   $scope.refreshModel = function() {
     $scope.loadTrackList($scope.current.id);
@@ -71,7 +71,7 @@ angular.module('bmmApp')
   };
 
   $scope.addTag = function() {
-    if($scope.type === "podcast")
+    if($scope.type === 'podcast')
       $scope.current.query.tags.push($scope.tag);
     else
       $scope.current.tags.push($scope.tag);
@@ -83,8 +83,9 @@ angular.module('bmmApp')
     var index = tags.indexOf(tag);
     tags.splice(index, 1);
   };
+
   $scope.getTags = function() {
-    if($scope.type === "podcast")
+    if($scope.type === 'podcast')
       return $scope.current.query.tags;
     else
       return $scope.current.tags;
@@ -94,7 +95,7 @@ angular.module('bmmApp')
   //that are already selected. Prevents duplicates.
   $scope.exceptSelected = function(language) {
     if($scope.current) {
-      var translations = $scope.current.translations
+      var translations = $scope.current.translations;
       for(var i = 0; i < translations.length; i++) {
         var translation = translations[i];
 
