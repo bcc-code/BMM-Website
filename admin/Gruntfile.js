@@ -73,7 +73,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: 'http://127.0.0.1:9003/admin',
+          open: 'https://127.0.0.1:9003/admin/',
           protocol: 'https',
           base: [
             '.tmp',

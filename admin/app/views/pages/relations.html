@@ -173,6 +173,9 @@
                 <input type="text" ng-model="songbook.id"><br>
                 {{init.translation.page.editor.timestamp}}<br>
                 <input type="text" ng-model="songbook.timestamp">
+                <button ng-if="rel.songbooks.length > 0" ng-click="loadMetadata(songbook)" style="margin-bottom: .5em">
+                  {{init.translation.page.editor.loadSongMetadata}}
+                </button>
                 <div class="trash"
                      style="float: right"
                      ng-click="deleteReference($index,'songbooks')">x</div>
@@ -258,7 +261,7 @@
           ng-repeat="external in rel.externals">
           <div>
 
-            <span ng-bind="init.translation.page.contributors.name"></span>: 
+            <span ng-bind="init.translation.page.contributors.name"></span>:
             <input type="text" ng-model="external.name">
 
             URL:

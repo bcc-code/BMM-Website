@@ -3,6 +3,7 @@
 angular.module('bmmApp')
   .controller('RelationsCtrl', function (
       $scope,
+      $rootScope,
       $filter,
       $timeout,
       _api,
@@ -367,5 +368,24 @@ angular.module('bmmApp')
         $scope.rel[relations].splice(index,1);
       }
     };
+    $scope.loadMetadata=function(songbook) {
+      $rootScope.songtreasures = {
+        id: songbook.id,
+        loading: true
+      };
+
+      _api.songMetadataGet("HV", songbook.id).done(function(data) {
+        $rootScope.songtreasures.loading = false;
+        $rootScope.songtreasures.newLyricists = $.map(data.authors, function(author){return author.name});
+        $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name});
+        $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name});
+        $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name});
+        console.log("scope", $scope);
+
+        $rootScope.songtreasures.replace = function() {
+
+        }
+      });
+    }
 
   });

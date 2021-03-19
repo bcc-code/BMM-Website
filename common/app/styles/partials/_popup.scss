@@ -81,7 +81,7 @@
           border-top: .1em solid $colorBorderLight;
         };
 
-        .languages-add {
+        .languages-add, .button {
           margin-top: 1em;
           margin-right: .5em;
           background-color: $colorLightGreen;
@@ -98,7 +98,7 @@
           white-space: nowrap;
         };
 
-        .languages-add:hover {
+        .languages-add:hover, .button:hover {
           background-color: #0AB66F;
         };
 

@@ -1,0 +1,53 @@
+<!--Load song metadata from songtreasures-->
+<div class="popup" ng-if="$root.songtreasures.id">
+  <div class="container">
+    <div class="verticalCenter" ng-model="$root.songtreasures">
+      <div id="popup-song-metadata" class="container" always click-outside="$root.songtreasures.id=false">
+        <div class="exit" ng-click="$root.songtreasures.id=false"></div>
+
+        <div ng-if="$root.songtreasures.loading">
+          Loading metadata for <span>{{$root.songtreasures.id}}</span>
+        </div>
+        <div ng-if="!$root.songtreasures.loading">
+          {{init.translation.page.editor.lyricists}}:
+          <ul>
+            <li ng-repeat="lyricist in $root.songtreasures.newLyricists" class="no-hover">{{lyricist}}</li>
+          </ul>
+          {{init.translation.page.editor.composers}}:
+          <ul>
+            <li ng-repeat="composer in $root.songtreasures.newComposers" class="no-hover">{{composer}}</li>
+          </ul>
+
+          <div class="button">{{init.translation.page.editor.songMetadata.replace}}</div>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--ADD TRACK TO PLAYLIST-->
+<div class="popup" ng-if="trackToPlaylist.id">
+    <div class="container">
+        <div class="verticalCenter">
+            <div id="popup-track-to-playlist" class="container" always click-outside="trackToPlaylist.id=false">
+
+                <div class="exit" ng-click="trackToPlaylist.id=false"></div>
+
+                <b><span ng-bind="init.translation.options.choosePlaylist"></span></b>
+                <br><br>
+
+                <ul class="playlist">
+                    <li ng-repeat="collection in trackCollections"
+                        ng-click="addToPlaylist(collection.id, trackToPlaylist.id, trackToPlaylist.language);
+                              trackToPlaylist.id=false;">
+                        {{collection.name}}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

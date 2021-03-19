@@ -1120,6 +1120,18 @@ angular.module('bmmLibApp')
     });
   };
 
+
+  // SongTreasures
+  // See https://songtreasures.azurewebsites.net/swagger for information about the api
+  factory.songMetadataGet = function(songbook, id) {
+    //ToDo: add header for X-Api-Version
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'songtreasures/Songs/'+songbook+'/'+id+'?expand=authors,composers'
+    });
+
+  };
+
   return factory;
 
 });
