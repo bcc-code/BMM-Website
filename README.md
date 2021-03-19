@@ -42,7 +42,7 @@ SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 
 **1. Install [NodeJS](http://nodejs.org/) and open Terminal / CMD**
-!! grunt-node-sass is not compatible with newer versions of nodejs. So make sure that `node -v` is <= 9.x.x !!
+!! grunt-node-sass is not compatible with newer versions of nodejs. So make sure that `node -v` is <= 10.x.x !!
 
 **2. Install Yeoman, Bower and Yeoman generator**
 ```
@@ -92,7 +92,8 @@ grunt serve
 ```
 ... A new browser tab should now open
 
-4. It might happen that chrome requires localhost to use https. That happens especially if you use a local version of the API. In that case you can remove that again on chrome://net-internals/#hsts
+4. We use 127.0.0.1 instead of localhost because browsers are less strict about https. 
+It might happen that chrome requires localhost to use https. That happens especially if you use a local version of the API. In that case you can remove that again on chrome://net-internals/#hsts
 
 ____________________________________________
 

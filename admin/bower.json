@@ -3,35 +3,35 @@
   "version": "0.0.0",
   "dependencies": {
     "ajaxq": "https://raw.githubusercontent.com/Foliotek/AjaxQ/master/ajaxq.js",
-    "angular": "1.4.5",
+    "angular": "1.5.3",
     "angular-elastic": "~2.5.1",
     "angular-file-upload": "~0.5.7",
-    "angular-duration-format": "~1.0.0",
-    "angular-resource": "1.2.6",
-    "angular-route": "1.2.6",
-    "angular-sanitize": "1.2.6",
+    "angular-duration-format": "~1.0.1",
+    "angular-resource": "1.5.3",
+    "angular-route": "1.5.3",
+    "angular-sanitize": "1.5.3",
     "angular-strap": "latest",
-    "angular-touch": "~1.2.14",
+    "angular-touch": "~1.5.8",
     "angular-ui-bootstrap-bower": "*",
-    "angular-ui-sortable": "0.12.8",
-    "angulartics": "^1.0.3",
+    "angular-ui-sortable": "0.19.0",
+    "angulartics": "1.5.0",
     "angulartics-google-analytics": "^0.1.4",
     "fastclick": "~1.0.1",
     "jplayer": "~2.6.0",
-    "jquery": "~1.10.2",
+    "jquery": "1.12.3",
     "jquery-md5": "*",
+    "jquery-ui": "1.11.4",
     "jquery.ui.touch-punch.dk": "0.3.3",
-    "jqueryui": "~1.10.3",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.3.0",
     "oidc-client": "1.10.1",
     "SHA-1": "0.1.1"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.6",
-    "angular-scenario": "1.2.6"
+    "angular-mocks": "1.5.3",
+    "angular-scenario": "1.5.3"
   },
   "resolutions": {
-    "angular": "1.4.5"
+    "angular": "1.5.3"
   }
 }
