@@ -11,7 +11,7 @@
       "notifications": "Powiadomienia",
       "waitings": "W oczekiwaniu",
       "contributors": "Współpracownicy",
-      "trackLists": "Track Lists",
+      "trackLists": "Lista utworów",
       "podcasts": "Podcasty",
       "transmissions": "Na żywo",
       "users": "Użytkownicy",
@@ -93,7 +93,7 @@
       "interprets": "Wykonawcy\/Przemowy",
       "lyricists": "Autorzy tekstów",
       "songbooks": "Śpiewniki",
-      "trackLists": "Track Lists",
+      "trackLists": "Lista utworów",
       "bibleReferences": "Odwołania do Biblii",
       "addBibleReference": "Dodaj odwołanie do Biblii",
       "externalReferences": "Odnośniki zewnętrzne",
@@ -154,29 +154,29 @@
       "sendPushNotification": "Wyślij powiadomienia typu Push",
       "sent": "Wysłane",
       "failed": "Nie powiodło się",
-      "scheduledSendTime": "scheduled send time",
+      "scheduledSendTime": "planowany czas wysłania",
       "link": "link"
     },
     "podcast": {
       "title": "Podcasty",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Edytuj Podcast",
+      "createNew": "Stwórz nowy podcast",
+      "addTranslation": "Dodaj tłumaczenie podcastu",
+      "save": "Zapisz podcast"
     },
     "playlist": {
       "title": "Listy odtwarzania",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Edytuj playlistę",
+      "createNew": "Stwórz nową playlistę",
+      "addTranslation": "Dodaj tłumaczenie playlisty",
+      "save": "Zapisz playlistę"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Kanały muzyczne",
+      "editTitle": "Edytuj kanał muzyczny",
+      "createNew": "Stwórz nowy kanał muzyczny",
+      "addTranslation": "Dodaj tłumaczenie kanału",
+      "save": "Zapisz kanał muzyczny"
     }
   },
   "states": {
