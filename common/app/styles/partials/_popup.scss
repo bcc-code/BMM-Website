@@ -32,6 +32,10 @@
         padding: 1em 1.5em;
         background-color: #fff;
 
+        &.wide {
+          max-width: 50em;
+        }
+
         .exit {
           position: absolute;
           right: 1.5em;
@@ -81,21 +85,25 @@
           border-top: .1em solid $colorBorderLight;
         };
 
-        .languages-add, .button {
+        .button {
           margin-top: 1em;
           margin-right: .5em;
           background-color: $colorLightGreen;
-          background-image: url(../images/common/svg/v3/Icon_plus.svg);
           background-size: .8em .8em;
           background-position: .8em .7em;
           background-repeat: no-repeat;
           display: inline-block;
-          padding: .25em 1em .2em 2.1em;
+          padding: .25em 1em .2em 1em;
           border-radius: .5em;
           cursor: pointer;
           color: #fff;
           border: .2em solid transparent;
           white-space: nowrap;
+
+          &.languages-add {
+            padding-right: 2.1em;
+            background-image: url(../images/common/svg/v3/Icon_plus.svg);
+          }
         };
 
         .languages-add:hover, .button:hover {
@@ -184,6 +192,13 @@
           border-radius: .2em;
           border: .1em solid $colorBorders;
           padding: 0 .5em;
+        }
+
+        table.visible-table {
+          td, th {
+            border-bottom: 1px solid #ECECEC;
+            padding: .2em .5em;
+          }
         }
 
       }

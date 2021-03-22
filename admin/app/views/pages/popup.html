@@ -2,23 +2,44 @@
 <div class="popup" ng-if="$root.songtreasures.id">
   <div class="container">
     <div class="verticalCenter" ng-model="$root.songtreasures">
-      <div id="popup-song-metadata" class="container" always click-outside="$root.songtreasures.id=false">
+      <div id="popup-song-metadata" class="container wide" always click-outside="$root.songtreasures.id=false">
         <div class="exit" ng-click="$root.songtreasures.id=false"></div>
 
         <div ng-if="$root.songtreasures.loading">
-          Loading metadata for <span>{{$root.songtreasures.id}}</span>
+          {{init.translation.general.loading}}
         </div>
         <div ng-if="!$root.songtreasures.loading">
-          {{init.translation.page.editor.lyricists}}:
-          <ul>
-            <li ng-repeat="lyricist in $root.songtreasures.newLyricists" class="no-hover">{{lyricist}}</li>
-          </ul>
-          {{init.translation.page.editor.composers}}:
-          <ul>
-            <li ng-repeat="composer in $root.songtreasures.newComposers" class="no-hover">{{composer}}</li>
-          </ul>
 
-          <div class="button">{{init.translation.page.editor.songMetadata.replace}}</div>
+          <table class="visible-table">
+            <thead>
+            <th></th><th>Current</th><th>New</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in $root.songtreasures.titles">
+              <th>
+                <div class="flag flags-{{item.language}}" style="float: left;">
+                </div>
+                <span>
+                    {{item.language | _languageCode}}
+                </span>
+              </th>
+              <td>{{item.current}}</td>
+              <td>{{item.new}}</td>
+            </tr>
+            <tr>
+              <th>{{init.translation.page.editor.lyricists}}</th>
+              <td>{{$root.songtreasures.currentLyricists}}</td>
+              <td>{{$root.songtreasures.newLyricists}}</td>
+            </tr>
+            <tr>
+              <th>{{init.translation.page.editor.composers}}</th>
+              <td>{{$root.songtreasures.currentComposers}}</td>
+              <td>{{$root.songtreasures.newComposers}}</td>
+            </tr>
+            </tbody>
+          </table>
+
+          <div class="button accept" ng-click="$root.songtreasures.replace()">{{init.translation.page.editor.songMetadata.replace}}</div>
         </div>
 
         <br><br>

@@ -173,12 +173,10 @@
                 <input type="text" ng-model="songbook.id"><br>
                 {{init.translation.page.editor.timestamp}}<br>
                 <input type="text" ng-model="songbook.timestamp">
-                <button ng-if="rel.songbooks.length > 0" ng-click="loadMetadata(songbook)" style="margin-bottom: .5em">
+                <button ng-if="rel.songbooks.length > 0" ng-click="loadMetadata(songbook)" style="margin-bottom: .5em; margin-top: .4em;">
                   {{init.translation.page.editor.loadSongMetadata}}
                 </button>
-                <div class="trash"
-                     style="float: right"
-                     ng-click="deleteReference($index,'songbooks')">x</div>
+                <div class="trash" style="float: right" ng-click="deleteReference($index,'songbooks')">x</div>
             </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
