@@ -437,8 +437,7 @@ angular.module('bmmApp')
             }
           });
 
-          // hide popup while we do some potentialy async work
-          $rootScope.songtreasures = {};
+          $rootScope.songtreasures.loading = true;
 
           var missingPromises = [];
           if (missingContributors.length > 0){
@@ -478,6 +477,7 @@ angular.module('bmmApp')
               var relation = loadedRelations[item.name];
               return $.extend({}, relation, {type:"lyricist"});
             });
+            $rootScope.songtreasures = {};
           });
 
         }
