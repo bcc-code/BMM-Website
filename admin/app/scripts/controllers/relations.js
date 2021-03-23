@@ -387,7 +387,13 @@ angular.module('bmmApp')
         return language;
       }
 
-      _api.songMetadataGet("HV", songbook.id).done(function(data) {
+      var songbookName = songbook.name === "herrens_veier" ? "HV" : "MB"; //Songtreasures uses MB instead of FMB
+      _api.songMetadataGet(songbookName, songbook.id)
+        .fail(function(response) {
+          alert("unable to load metadata: " + response.responseText);
+          $rootScope.songtreasures = {};
+        })
+        .done(function(data) {
         var model = $scope.$parent.model;
         $rootScope.songtreasures.titles =
         $.map(model.translations, function(item) {
