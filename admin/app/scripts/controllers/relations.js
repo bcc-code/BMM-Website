@@ -260,6 +260,7 @@ angular.module('bmmApp')
         });
       });
     };
+
     $scope.createContributor = function(contributor) {
       var defer = $.Deferred();
       if (contributor!=='') {
@@ -275,6 +276,8 @@ angular.module('bmmApp')
             });
           }, 1000);
         })
+      } else {
+        defer.fail();
       }
       return defer.promise();
     }
@@ -394,100 +397,100 @@ angular.module('bmmApp')
           $rootScope.songtreasures = {};
         })
         .done(function(data) {
-        var model = $scope.$parent.model;
-        $rootScope.songtreasures.titles =
-        $.map(model.translations, function(item) {
-          return {language: item.language, current: item.title, new: data.name[convertLanguageToSongtreasure(item.language)]};
-        });
-        $rootScope.songtreasures.newLyricists = $.map(data.authors, function(author){return author.name}).join(", ");
-        $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name}).join(", ");
-        $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
-        $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name}).join(", ");
-        $rootScope.songtreasures.loading = false;
-
-        var contributorsLoaded = false;
-        var loadedRelations = [];
-        var promises = [];
-        var missingContributors = [];
-        $.each(data.composers.concat(data.authors), function(index, contributor) {
-          promises.push(_api.contributorSuggesterCompletionGet(contributor.name).done(function(list) {
-            for(var i = 0; i < list.length; i++) {
-              var item = list[i];
-              if (item.name == contributor.name) {
-                loadedRelations[contributor.name]={
-                  id: item.id,
-                  name: item.name,
-                  type: item.type
-                };
-                return;
-              }
-            }
-            missingContributors.push(contributor.name);
-            console.log("contributor "+contributor.name+" is missing in BMM");
-          }));
-        });
-        $.when(...promises).then(function() {
-          contributorsLoaded = true;
-        });
-
-        $rootScope.songtreasures.replace = function() {
-          if (!contributorsLoaded) {
-            alert("unable to load contributors");
-            return;
-          }
-
-          $.each($scope.$parent.model.translations, function(index, item) {
-            var newTitle = data.name[convertLanguageToSongtreasure(item.language)];
-            if (newTitle !== null && newTitle !== undefined) {
-              item.title = newTitle;
-            }
+          var model = $scope.$parent.model;
+          $rootScope.songtreasures.titles =
+          $.map(model.translations, function(item) {
+            return {language: item.language, current: item.title, new: data.name[convertLanguageToSongtreasure(item.language)]};
           });
+          $rootScope.songtreasures.newLyricists = $.map(data.authors, function(author){return author.name}).join(", ");
+          $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name}).join(", ");
+          $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
+          $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name}).join(", ");
+          $rootScope.songtreasures.loading = false;
 
-          $rootScope.songtreasures.loading = true;
-
-          var missingPromises = [];
-          if (missingContributors.length > 0){
-            $.each(missingContributors, function(index, name) {
-              if (loadedRelations[name]!==undefined) {
-                //item has been added in the meantime. Most likely because composer and lyricist have the same person
-                return;
-              }
-
-              var defer = $.Deferred();
-              missingPromises.push(defer.promise());
-              $scope.createContributor(name).then(function(list) {
-                console.log("created a new contributor for "+name);
-                for(var i = 0; i < list.length; i++) {
-                  var item = list[i];
-                  if (item.name === name) {
-                    loadedRelations[name]={
-                      id: item.id,
-                      name: item.name,
-                      type: item.type
-                    };
-                    defer.resolve();
-                    return;
-                  }
+          var contributorsLoaded = false;
+          var loadedRelations = [];
+          var promises = [];
+          var missingContributors = [];
+          $.each(data.composers.concat(data.authors), function(index, contributor) {
+            promises.push(_api.contributorSuggesterCompletionGet(contributor.name).done(function(list) {
+              for(var i = 0; i < list.length; i++) {
+                var item = list[i];
+                if (item.name == contributor.name) {
+                  loadedRelations[contributor.name]={
+                    id: item.id,
+                    name: item.name,
+                    type: item.type
+                  };
+                  return;
                 }
-                alert("an unexpected error occurred");
-              });
-            });
-          }
-
-          $.when(...missingPromises).then(function() {
-            $scope.rel.composers = $.map(data.composers, function(item) {
-              var relation = loadedRelations[item.name];
-              return $.extend({}, relation, {type:"composer"});
-            });
-            $scope.rel.lyricists = $.map(data.authors, function(item) {
-              var relation = loadedRelations[item.name];
-              return $.extend({}, relation, {type:"lyricist"});
-            });
-            $rootScope.songtreasures = {};
+              }
+              missingContributors.push(contributor.name);
+              console.log("contributor "+contributor.name+" is missing in BMM");
+            }));
+          });
+          $.when(...promises).then(function() {
+            contributorsLoaded = true;
           });
 
-        }
-      });
+          $rootScope.songtreasures.replace = function() {
+            if (!contributorsLoaded) {
+              alert("unable to load contributors");
+              return;
+            }
+
+            $.each($scope.$parent.model.translations, function(index, item) {
+              var newTitle = data.name[convertLanguageToSongtreasure(item.language)];
+              if (newTitle !== null && newTitle !== undefined) {
+                item.title = newTitle;
+              }
+            });
+
+            $rootScope.songtreasures.loading = true;
+
+            var missingPromises = [];
+            if (missingContributors.length > 0) {
+              $.each(missingContributors, function(index, name) {
+                if (loadedRelations[name]!==undefined) {
+                  //item has been added in the meantime. Most likely because composer and lyricist have the same person
+                  return;
+                }
+
+                var defer = $.Deferred();
+                missingPromises.push(defer.promise());
+                $scope.createContributor(name).then(function(list) {
+                  console.log("created a new contributor for "+name);
+                  for(var i = 0; i < list.length; i++) {
+                    var item = list[i];
+                    if (item.name === name) {
+                      loadedRelations[name]={
+                        id: item.id,
+                        name: item.name,
+                        type: item.type
+                      };
+                      defer.resolve();
+                      return;
+                    }
+                  }
+                  alert("an unexpected error occurred");
+                });
+              });
+            }
+
+            $.when(...missingPromises).then(function() {
+              $scope.rel.composers = $.map(data.composers, function(item) {
+                var relation = loadedRelations[item.name];
+                return $.extend({}, relation, {type:"composer"});
+              });
+              $scope.rel.lyricists = $.map(data.authors, function(item) {
+                var relation = loadedRelations[item.name];
+                return $.extend({}, relation, {type:"lyricist"});
+              });
+              $rootScope.songtreasures = {};
+            });
+
+          }
+        });
     }
 
   });
