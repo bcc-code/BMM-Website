@@ -429,7 +429,7 @@ angular.module('bmmApp')
               console.log("contributor "+contributor.name+" is missing in BMM");
             }));
           });
-          $.when(...promises).then(function() {
+          $.when.apply(null, promises).then(function() {
             contributorsLoaded = true;
           });
 
@@ -477,7 +477,7 @@ angular.module('bmmApp')
               });
             }
 
-            $.when(...missingPromises).then(function() {
+            $.when.apply(null, missingPromises).then(function() {
               $scope.rel.composers = $.map(data.composers, function(item) {
                 var relation = loadedRelations[item.name];
                 return $.extend({}, relation, {type:"composer"});
