@@ -113,7 +113,11 @@
       "missingAlbum": "έλλειψη άλμπουμ",
       "wrongId": "Λάθος BMM-εγγραφή???",
       "start": "Start",
-      "end": "End"
+      "end": "End",
+      "loadSongMetadata": "load song metadata",
+      "songMetadata": {
+        "replace": "replace metadata"
+      }
     },
     "waitings": {
       "link": "Σύνδεση",

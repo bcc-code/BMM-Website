@@ -113,7 +113,11 @@
       "missingAlbum": "Ontbrekend album",
       "wrongId": "Verkeerde BMM-ID",
       "start": "Begin",
-      "end": "Eind"
+      "end": "Eind",
+      "loadSongMetadata": "load song metadata",
+      "songMetadata": {
+        "replace": "replace metadata"
+      }
     },
     "waitings": {
       "link": "Link",

@@ -113,7 +113,11 @@
       "missingAlbum": "Album faltante",
       "wrongId": "BMM-ID errado",
       "start": "Começar",
-      "end": "Fim "
+      "end": "Fim ",
+      "loadSongMetadata": "load song metadata",
+      "songMetadata": {
+        "replace": "replace metadata"
+      }
     },
     "waitings": {
       "link": "Link",

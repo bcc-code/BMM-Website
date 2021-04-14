@@ -113,7 +113,11 @@
       "missingAlbum": "Hiányzó album",
       "wrongId": "Ismeretlen BMM-ID",
       "start": "Kezdés",
-      "end": "Vége"
+      "end": "Vége",
+      "loadSongMetadata": "load song metadata",
+      "songMetadata": {
+        "replace": "replace metadata"
+      }
     },
     "waitings": {
       "link": "Link",

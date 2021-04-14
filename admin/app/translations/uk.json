@@ -113,7 +113,11 @@
       "missingAlbum": "Відсутній альбом",
       "wrongId": "Неправильний BMM-ID\n",
       "start": "Start",
-      "end": "End"
+      "end": "End",
+      "loadSongMetadata": "load song metadata",
+      "songMetadata": {
+        "replace": "replace metadata"
+      }
     },
     "waitings": {
       "link": "Посилання",
