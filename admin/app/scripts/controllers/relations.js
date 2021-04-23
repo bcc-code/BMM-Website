@@ -387,6 +387,8 @@ angular.module('bmmApp')
       var convertLanguageToSongtreasure = function(language) {
         if (language === "nb")
           return "no";
+        if (language === "zxx")
+          return "no"; // use norwegian title for instrumental songs
         return language;
       }
 
