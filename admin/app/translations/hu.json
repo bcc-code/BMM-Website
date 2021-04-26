@@ -114,9 +114,9 @@
       "wrongId": "Ismeretlen BMM-ID",
       "start": "Kezdés",
       "end": "Vége",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "Ének metaadatai betöltése",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Metaadat áthelyezése"
       }
     },
     "waitings": {

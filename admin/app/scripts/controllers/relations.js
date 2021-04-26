@@ -387,6 +387,8 @@ angular.module('bmmApp')
       var convertLanguageToSongtreasure = function(language) {
         if (language === "nb")
           return "no";
+        if (language === "zxx")
+          return "no"; // use norwegian title for instrumental songs
         return language;
       }
 
@@ -398,12 +400,20 @@ angular.module('bmmApp')
         })
         .done(function(data) {
           var model = $scope.$parent.model;
+          var alternativeContributors = [];
+          var melodyOrigin = null;
           $rootScope.songtreasures.titles =
           $.map(model.translations, function(item) {
             return {language: item.language, current: item.title, new: data.name[convertLanguageToSongtreasure(item.language)]};
           });
           $rootScope.songtreasures.newLyricists = $.map(data.authors, function(author){return author.name}).join(", ");
-          $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name}).join(", ");
+          if (data.composers.length > 0)
+            $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name}).join(", ");
+          else if (data.melodyOrigin && data.melodyOrigin.name && data.melodyOrigin.name.no) {
+            $rootScope.songtreasures.newComposers = data.melodyOrigin.name.no;
+            alternativeContributors.push({name: data.melodyOrigin.name.no});
+            melodyOrigin = data.melodyOrigin.name.no;
+          }
           $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
           $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name}).join(", ");
           $rootScope.songtreasures.loading = false;
@@ -412,7 +422,7 @@ angular.module('bmmApp')
           var loadedRelations = [];
           var promises = [];
           var missingContributors = [];
-          $.each(data.composers.concat(data.authors), function(index, contributor) {
+          $.each(data.composers.concat(data.authors.concat(alternativeContributors)), function(index, contributor) {
             promises.push(_api.contributorSuggesterCompletionGet(contributor.name).done(function(list) {
               for(var i = 0; i < list.length; i++) {
                 var item = list[i];
@@ -478,10 +488,13 @@ angular.module('bmmApp')
             }
 
             $.when.apply(null, missingPromises).then(function() {
-              $scope.rel.composers = $.map(data.composers, function(item) {
-                var relation = loadedRelations[item.name];
-                return $.extend({}, relation, {type:"composer"});
-              });
+              if (melodyOrigin !== null)
+                $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type:"composer"})];
+              else
+                $scope.rel.composers = $.map(data.composers, function(item) {
+                  var relation = loadedRelations[item.name];
+                  return $.extend({}, relation, {type:"composer"});
+                });
               $scope.rel.lyricists = $.map(data.authors, function(item) {
                 var relation = loadedRelations[item.name];
                 return $.extend({}, relation, {type:"lyricist"});
