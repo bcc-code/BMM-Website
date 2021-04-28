@@ -64,6 +64,11 @@ angular.module('bmmApp')
       _draggable.makeDraggable($scope);
     });
 
+    //CURATED PLAYLISTS
+    _api.playlistsGet().done(function(data) {
+      $scope.curatedPlaylists = data;
+    });
+
     //LATEST ALBUMS
     _api.albumLatest({
       size: 20

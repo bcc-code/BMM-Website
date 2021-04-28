@@ -4,6 +4,24 @@
 <bmm-latest-list tracks="latestSpeeches" start-index="latestSpeechesColHeight" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 <bmm-latest-list class="largeOnly" tracks="latestSpeeches" start-index="latestSpeechesColHeight*2" list-length="latestSpeechesColHeight" ></bmm-latest-list>
 
+<h2 class="playlists"><span ng-bind="init.translation.page.welcome.playlists"></span></h2>
+
+<div slider-album>
+  <ul>
+    <li ng-click="go('/playlist/curated/'+playlist.id+'/'+playlist.title);"
+        ng-repeat="playlist in ::curatedPlaylists"
+        title="{{::playlist.title}}"
+        style="
+				background-image: url({{::playlist.cover | _authorizedUrl}});
+				background-size: contain"
+        class="bmm-hover">
+      <div class="title">
+        <span ng-bind="::playlist.title"></span>
+      </div>
+    </li>
+  </ul>
+</div>
+
 <h2  class="audio"><span ng-bind="init.translation.page.welcome.latestMusic"></span></h2>
 
 <bmm-latest-list tracks="latestMusic" list-length="latestMusicColHeight" ></bmm-latest-list>
