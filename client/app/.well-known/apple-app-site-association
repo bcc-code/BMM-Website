@@ -4,11 +4,11 @@
      "details": [
        {
          "appID": "KJ6LCYQ3A8.org.brunstad.bmm",
-         "paths": ["/archive", "/album/*", "/track/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured"]
+         "paths": ["/archive", "/album/*", "/track/*", "/playlist/curated/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured"]
        },
        {
          "appID": "S9X3H6TVG5.org.brunstad.bmm-dev",
-         "paths": ["/archive", "/album/*", "/track/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured"]
+         "paths": ["/archive", "/album/*", "/track/*", "/playlist/curated/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured"]
        }
      ]
    }

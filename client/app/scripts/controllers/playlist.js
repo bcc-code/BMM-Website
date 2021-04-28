@@ -258,6 +258,13 @@ angular.module('bmmApp')
         });
 
         break;
+      case 'curated':
+        _api.playlistTracksGet($routeParams.id).done(function(data) {
+          console.log("playlist", data);
+          resolveTracks(data);
+          $scope.title = $routeParams.name;
+        });
+        break;
       case 'podcast':
         size = 0;
 
@@ -274,14 +281,10 @@ angular.module('bmmApp')
               from: size,
               size: loadAmount
             }).done(function(data) {
-
               resolveTracks(data);
               size+=loadAmount;
-
             });
-
           }
-
         });
 
         _api.podcastTracksGet($routeParams.id, {

@@ -994,6 +994,16 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.playlistTracksGet = function(id, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method:'GET',
+      url: serverUrl + 'playlist/' + id + '/track/',
+      data: $.param(options)
+    });
+  }
+
   factory.trackListOverview = function(type, options) {
     return factory.addToQueue({
       method: 'GET',
@@ -1018,6 +1028,14 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl + 'podcast/',
+      data: options ? $.param(options) : undefined
+    });
+  };
+
+  factory.playlistsGet = function(options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'playlist/',
       data: options ? $.param(options) : undefined
     });
   };
