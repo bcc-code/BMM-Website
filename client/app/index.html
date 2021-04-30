@@ -35,7 +35,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- endbuild -->
-    
+
     <link rel="stylesheet" href="styles/main.css" />
     <!-- stylesheet link (common for all widgets) -->
     <link href="https://widgets.bcc.no/styles/widgets.css" rel="stylesheet" type="text/css" />
@@ -66,6 +66,15 @@
         </div>
     <![endif]-->
 
+    <script src="https://js.monitor.azure.com/scripts/b/ai.2.min.js"></script>
+    <script type="text/javascript">
+      window.appInsights = new Microsoft.ApplicationInsights.ApplicationInsights({ config: {
+          instrumentationKey: '9c1e38de-4b55-4437-a307-76afa3740ba2'
+          /* ...Other Configuration Options... */
+        } });
+      window.appInsights.loadAppInsights();
+    </script>
+
     <!-- @if NODE_ENV='development' -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -79,6 +88,7 @@
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
     <script src="bower_components/angulartics/src/angulartics.js"></script>
     <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+    <script src="bower_components/angulartics-application-insights/dist/angulartics-application-insights.min.js"></script>
     <script src="bower_components/jplayer/jquery.jplayer/jquery.jplayer.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
@@ -101,9 +111,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.4/jquery.jplayer/jquery.jplayer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    
+
     <!-- Google Analytics might be blocked by browser privacy mechanisms -->
     <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
+    <script src="bower_components/angulartics-application-insights/dist/angulartics-application-insights.min.js"></script>
     <script src="bower_components/oidc-client/dist/oidc-client.js"></script>
     <!-- @endif -->
 
