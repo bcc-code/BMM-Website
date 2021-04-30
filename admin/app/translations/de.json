@@ -78,7 +78,7 @@
       "lastModified": "Zuletzt geändert",
       "by": "von",
       "noParentAlbum": "Kein übergeordnetes Album",
-      "tracks": "Tracks",
+      "tracks": "Titel",
       "addTrack": "Track hinzufügen",
       "select": "Auswählen",
       "duration": "Dauer",
@@ -124,7 +124,7 @@
     },
     "contributors": {
       "name": "Name",
-      "tracks": "Tracks",
+      "tracks": "Titel",
       "search": "Suche",
       "contributors": "Mitwirkende"
     },
@@ -139,7 +139,7 @@
     "users": {
       "adminUsers": "Administratoren",
       "albumManager": "Alben",
-      "trackManager": "Tracks",
+      "trackManager": "Titel",
       "contributorManager": "Mitwirkende",
       "notificationManager": "Benachrichtigungen",
       "podcastManager": "Podcasts",
