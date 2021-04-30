@@ -60,11 +60,22 @@ angular.module('bmmLibApp')
           });
         },
         ended: function() {
-          //End of track
-          $analytics.eventTrack('play end', {
-            category: 'tracks',
-            label: factory.title,
-            value: factory.id
+          var status = $(videoTarget).data('jPlayer').status;
+          // we assume that the user has listened to the whole track. This is not correct but works good enough in most cases.
+          $analytics.eventTrack('Track played', {
+            PersonId: _api.getPersonId(),
+            albumId: factory.raw.parent_id,
+            availability: "Remote",
+            language: factory.raw.language,
+            percentage: 100,
+            playbackOrigin: "Website",
+            spentTime: status.duration,
+            statusListened: "Complete",
+            tags: factory.raw.tags,
+            trackId: factory.raw.id,
+            trackLength: status.duration,
+            typeOfTrack: factory.raw.subtype,
+            uniqueSecondsListened: status.duration
           });
 
           factory.setNext(true);
@@ -254,11 +265,6 @@ angular.module('bmmLibApp')
           time = 0;
         }
       }
-      $analytics.eventTrack('play start', {
-        category: 'tracks',
-        label: factory.title,
-        value: factory.id
-      });
 
       //You should use this
       factory.source = source;
@@ -271,6 +277,18 @@ angular.module('bmmLibApp')
       } else if (source.audio) {
         src = factory.resolveTypes(source.audios);
         $(videoTarget).jPlayer('setMedia', src);
+
+        var status = $(videoTarget).data('jPlayer').status;
+        console.log("start playing", factory.id, factory.title, status, factory);
+        $analytics.eventTrack('Playback started', {
+          name: "Playback started",
+          PersonId: _api.getPersonId(),
+          track: factory.id,
+          title: factory.raw.title,
+          availability: "online",
+          origin: "website",
+          waitTimeInSeconds: null
+        });
       }
 
       if (!paused) {

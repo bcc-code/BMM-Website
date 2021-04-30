@@ -242,6 +242,10 @@ angular.module('bmmLibApp')
     return "Bearer " + oidcUser.access_token;
   };
 
+  factory.getPersonId = function() {
+    return oidcUser.profile["https://members.bcc.no/app_metadata"].personId;
+  };
+
   factory.addAuthorizationQueryString = function(url) {
     if (url.indexOf('auth=') == -1) {
       var divider = url.indexOf('?') == -1 ? '?' : '&';
