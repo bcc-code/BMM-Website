@@ -260,7 +260,6 @@ angular.module('bmmApp')
         break;
       case 'curated':
         _api.playlistTracksGet($routeParams.id).done(function(data) {
-          console.log("playlist", data);
           resolveTracks(data);
           $scope.title = $routeParams.name;
         });

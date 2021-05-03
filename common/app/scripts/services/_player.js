@@ -278,8 +278,6 @@ angular.module('bmmLibApp')
         src = factory.resolveTypes(source.audios);
         $(videoTarget).jPlayer('setMedia', src);
 
-        var status = $(videoTarget).data('jPlayer').status;
-        console.log("start playing", factory.id, factory.title, status, factory);
         $analytics.eventTrack('Playback started', {
           name: "Playback started",
           PersonId: _api.getPersonId(),
