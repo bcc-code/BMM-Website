@@ -1,5 +1,6 @@
 {
   "language": "Deutsch",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Suchen ...",
     "searchResultsFor": "Suchergebnisse für:",
