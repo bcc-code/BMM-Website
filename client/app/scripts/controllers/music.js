@@ -15,6 +15,7 @@ angular.module('bmmApp')
     $scope.latestMusic = [];
 
     $scope.latestMusicColHeight = 5;
+    $scope.curatedPlaylists = [];
 
     $(window).off('scrollBottom');
 
@@ -83,8 +84,13 @@ angular.module('bmmApp')
       $scope.latestMusic = data.map(function(trackData) {
         return _track.resolve(trackData);
       });
-      
+
       _draggable.makeDraggable($scope);
+    });
+
+    //CURATED PLAYLISTS
+    _api.playlistsGet().done(function(data) {
+      $scope.curatedPlaylists = data;
     });
 
     //LATEST AUDIO ALBUMS

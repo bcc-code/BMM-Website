@@ -242,6 +242,10 @@ angular.module('bmmLibApp')
     return "Bearer " + oidcUser.access_token;
   };
 
+  factory.getPersonId = function() {
+    return oidcUser.profile["https://members.bcc.no/app_metadata"].personId;
+  };
+
   factory.addAuthorizationQueryString = function(url) {
     if (url.indexOf('auth=') == -1) {
       var divider = url.indexOf('?') == -1 ? '?' : '&';
@@ -994,6 +998,16 @@ angular.module('bmmLibApp')
     });
   };
 
+  factory.playlistTracksGet = function(id, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method:'GET',
+      url: serverUrl + 'playlist/' + id + '/track/',
+      data: $.param(options)
+    });
+  }
+
   factory.trackListOverview = function(type, options) {
     return factory.addToQueue({
       method: 'GET',
@@ -1018,6 +1032,14 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl + 'podcast/',
+      data: options ? $.param(options) : undefined
+    });
+  };
+
+  factory.playlistsGet = function(options) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'playlist/',
       data: options ? $.param(options) : undefined
     });
   };

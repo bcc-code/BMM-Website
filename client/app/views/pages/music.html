@@ -28,6 +28,16 @@
     </ul>
 </div>
 
+<h2><span ng-bind="init.translation.page.welcome.playlists"></span></h2>
+
+<div>
+  <div title="{{::playlist.title}}" ng-click="go('/playlist/curated/'+playlist.id+'/'+playlist.title);" class="album-latest bmm-hover" ng-repeat="playlist in ::curatedPlaylists">
+    <img class="album-latest-image" ng-src="{{::playlist.cover | _authorizedUrl}}"/>
+    <div class="album-latest-title"><span ng-bind="::playlist.title"></span></div>
+    <div class="flag flags-{{::playlist.language}}"></div>
+  </div>
+</div>
+
 <h2><span ng-bind="init.translation.page.welcome.latestAlbums"></span></h2>
 
 <div>

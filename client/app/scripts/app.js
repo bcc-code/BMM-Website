@@ -3,13 +3,7 @@
 // // enable this to debug OIDC. You can also enable it on the live page by pasting these 2 lines.
 // Oidc.Log.logger = console;
 // Oidc.Log.level = Oidc.Log.DEBUG;
-try {
-  // Try to load the angulartics.google.analytics module which might be blocked by browser privacy mechanisms.
-  angular.injector('angulartics.google.analytics');
-} catch (e) {
-  // If it could not be loaded, provide a dummy.
-  angular.module('angulartics.google.analytics', []).config(['$analyticsProvider', function ($analyticsProvider) { }]);
-}
+
 angular.module('bmmApp', [
   'ngResource',
   'ngSanitize',
@@ -19,7 +13,7 @@ angular.module('bmmApp', [
   'ui.sortable',
   'ngTouch',
   'angulartics',
-  'angulartics.google.analytics',
+  'angulartics.application.insights',
   'ng.oidcclient'
 ]).run(['$route', '$location', '_api', function($route, $location, _api)  {
 
