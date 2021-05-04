@@ -56,11 +56,12 @@
       "latestSpeeches": "Ultimele vorbiri",
       "latestVideos": "Ultimele videoclipuri",
       "latestMusic": "Ultimele melodii",
-      "latestAlbums": "Ultimele albume"
+      "latestAlbums": "Ultimele albume",
+      "playlists": "Play-list-uri"
     },
     "music": {
       "latestMusic": "Ultimele melodii",
-      "artists": "Artiști",
+      "artists": "Interpreți",
       "fromKaare": "De la Kåre",
       "mp3Source": "Sursă-MP3",
       "childrensMp3Source": "Sursă-MP3 pentru copii",
