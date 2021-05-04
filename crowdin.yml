@@ -1,3 +1,5 @@
+commit_message: "New translations"
+append_commit_message: false
 files:
   - source: /client-translations.json
     translation: /client/app/translations/%two_letters_code%.json
