@@ -56,7 +56,8 @@
       "latestSpeeches": "Hiljutised sõnumid",
       "latestVideos": "Hiljutised videod",
       "latestMusic": "Hiljutised lood",
-      "latestAlbums": "Hiljutised albumid"
+      "latestAlbums": "Hiljutised albumid",
+      "playlists": "Esitusloendid"
     },
     "music": {
       "latestMusic": "Hiljutised lood",
