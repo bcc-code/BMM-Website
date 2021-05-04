@@ -56,7 +56,8 @@
       "latestSpeeches": "Nyeste beskeder",
       "latestVideos": "Nyeste videoer",
       "latestMusic": "Nyeste musik",
-      "latestAlbums": "Nyeste albums"
+      "latestAlbums": "Nyeste albums",
+      "playlists": "Spillelister"
     },
     "music": {
       "latestMusic": "Nyeste musik\n",
