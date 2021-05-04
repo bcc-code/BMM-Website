@@ -3,7 +3,7 @@
   "general": {
     "search": "Ara...",
     "searchResultsFor": "Bu Sonuçları Ara:",
-    "loading": "Yükleme...",
+    "loading": "Yükleniyor...",
     "waysOfTheLord": "Rab'bin Yolları",
     "almondBlossom": "Badem Çiçeği",
     "noTitle": "Başlık Yok",
@@ -17,7 +17,7 @@
     "goToAlbum": "Albüm' e Git",
     "podcast": "Podcast",
     "removeFilter": "Filtreyi Kaldır",
-    "changeLanguage": "Dil Değiştir",
+    "changeLanguage": "Dili değiştir",
     "goBack": "Geri",
     "choosePlaylist": "Çalma listesi seç",
     "setupPodcast": "Podcast'ı kullanmak için, aşağıdaki link'i kopyala ve tercih ettiğin Podcast yazılım programına yapıştır.",
@@ -83,7 +83,7 @@
     "search": {
       "searchResults": "Arama Sonuçları",
       "content": "İçerik",
-      "bibleVerse": "Kutsal Kitap Ayet",
+      "bibleVerse": "Kutsal Kitap Ayeti",
       "album": "Albüm",
       "artist": "Sanatçı",
       "interprets": "Sanatçılar"
