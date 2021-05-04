@@ -56,7 +56,8 @@
       "latestSpeeches": "Najnowsze przemowy",
       "latestVideos": "Najnowsze filmy",
       "latestMusic": "Najnowsza muzyka",
-      "latestAlbums": "Najnowsze albumy"
+      "latestAlbums": "Najnowsze albumy",
+      "playlists": "Listy odtwarzania"
     },
     "music": {
       "latestMusic": "Najnowsza muzyka",
