@@ -448,9 +448,14 @@ module.exports = function (grunt) {
         }]
       },
 
+      translation_master: {
+        files: [{
+          src: '../admin-translations.json',
+          dest: '<%= yeoman.app %>/translations/en.json'
+        }]
+      },
       translation: {
-        files: [
-        {
+        files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
@@ -541,6 +546,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'copy:translation_master',
       'sprite:flags',
       'sass:dist',
       'concurrent:server',
@@ -584,6 +590,7 @@ module.exports = function (grunt) {
     'clean:dist',
 
     'copy:dist',
+    'copy:translation_master',
     'copy:translation',
 
     // Generates concatenated JS, CSS files and sprites

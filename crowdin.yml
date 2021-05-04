@@ -1,4 +1,5 @@
-preserve_hierarchy: false
 files:
-  - source: /**/translations/en.json
-    translation: /**/translations/%two_letters_code%.json
+  - source: /client_translations.json
+    translation: /client/app/translations/%two_letters_code%.json
+  - source: /admin_translations.json
+    translation: /admin/app/translations/%two_letters_code%.json
