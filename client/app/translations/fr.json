@@ -56,7 +56,8 @@
       "latestSpeeches": "Derniers Messages",
       "latestVideos": "Dernières vidéos",
       "latestMusic": "Dernières musiques",
-      "latestAlbums": "Derniers Albums"
+      "latestAlbums": "Derniers Albums",
+      "playlists": "Listes de lecture"
     },
     "music": {
       "latestMusic": "Dernières musiques",

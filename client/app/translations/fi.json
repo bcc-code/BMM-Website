@@ -56,7 +56,8 @@
       "latestSpeeches": "Uusimmat puheet",
       "latestVideos": "Uusimmat videot",
       "latestMusic": "Uusimmat kappaleet",
-      "latestAlbums": "Uusimmat albumit"
+      "latestAlbums": "Uusimmat albumit",
+      "playlists": "Soittolistat"
     },
     "music": {
       "latestMusic": "Uusimmat kappaleet",

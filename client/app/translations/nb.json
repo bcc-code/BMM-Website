@@ -56,7 +56,8 @@
       "latestSpeeches": "Siste Taler",
       "latestVideos": "Siste Videoer",
       "latestMusic": "Siste Musikk",
-      "latestAlbums": "Siste Album"
+      "latestAlbums": "Siste Album",
+      "playlists": "Spillelister"
     },
     "music": {
       "latestMusic": "Siste Musikk",

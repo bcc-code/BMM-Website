@@ -56,7 +56,8 @@
       "latestSpeeches": "Ultimele vorbiri",
       "latestVideos": "Ultimele videoclipuri",
       "latestMusic": "Ultimele melodii",
-      "latestAlbums": "Ultimele albume"
+      "latestAlbums": "Ultimele albume",
+      "playlists": "Play-list-uri"
     },
     "music": {
       "latestMusic": "Ultimele melodii",
