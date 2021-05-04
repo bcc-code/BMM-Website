@@ -1,5 +1,6 @@
 {
   "language": "Український",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Пошук...",
     "searchResultsFor": "Результати пошуку для:",
