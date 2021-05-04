@@ -1,5 +1,6 @@
 {
   "language": "Ελληνικά",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Αναζήτηση...",
     "searchResultsFor": "Αναζητήστε Αποτελέσματα για: ?",
