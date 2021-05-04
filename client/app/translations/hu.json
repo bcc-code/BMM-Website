@@ -1,5 +1,6 @@
 {
   "language": "Magyar",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Keresés...",
     "searchResultsFor": "Találatok erre:",
