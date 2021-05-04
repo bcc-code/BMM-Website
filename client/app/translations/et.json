@@ -1,5 +1,6 @@
 {
   "language": "Eesti",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Otsi...",
     "searchResultsFor": "Otsingu tulemused:",
