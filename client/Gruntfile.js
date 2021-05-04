@@ -455,7 +455,7 @@ module.exports = function (grunt) {
             'logout-redirect.html',
             'logout.html',
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
-            'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
+            'bower_components/angulartics-application-insights/dist/angulartics-application-insights.min.js',
             'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}',
             '.well-known/*'
