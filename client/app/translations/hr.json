@@ -1,5 +1,6 @@
 {
   "language": "Hrvatski",
+  "test": "This can be removed. Don't translate!!!",
   "general": {
     "search": "Traži...",
     "searchResultsFor": "Rezultati pretrage za:",
