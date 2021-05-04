@@ -130,7 +130,7 @@
       "name": "Nazwa",
       "tracks": "Utwory",
       "search": "Szukaj",
-      "contributors": "Współpracownicy"
+      "contributors": "Osoby wnoszące wkład"
     },
     "transmissions": {
       "save": "Zapisz transmisję",
@@ -144,7 +144,7 @@
       "adminUsers": "Administratorzy",
       "albumManager": "Albumy",
       "trackManager": "Utwory",
-      "contributorManager": "Współpracownicy",
+      "contributorManager": "Autorzy",
       "notificationManager": "Powiadomienia",
       "podcastManager": "Podcasty",
       "featurePreview": "Podgląd Funkcjonalności",
