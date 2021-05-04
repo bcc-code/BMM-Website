@@ -455,7 +455,7 @@ module.exports = function (grunt) {
             'logout-redirect.html',
             'logout.html',
             'bower_components/jplayer/jquery.jplayer/Jplayer.swf',
-            'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
+            'bower_components/angulartics-application-insights/dist/angulartics-application-insights.min.js',
             'bower_components/oidc-client/dist/oidc-client.js',
             '*.{ico,jpg,png,txt,config}',
             '.well-known/*'
@@ -488,9 +488,14 @@ module.exports = function (grunt) {
         }]
       },
 
+      translation_master: {
+        files: [{
+          src: '../client-translations.json',
+          dest: '<%= yeoman.app %>/translations/en.json'
+        }]
+      },
       translation: {
-        files: [
-        {
+        files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/translations',
@@ -577,6 +582,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'copy:translation_master',
       'copy:index_tmp',
       'preprocess:dist',
       'sprite:flags',
@@ -623,6 +629,7 @@ module.exports = function (grunt) {
     'clean:dist',
 
     'copy:dist',
+    'copy:translation_master',
     'copy:translation',
 
     'copy:index_tmp',
