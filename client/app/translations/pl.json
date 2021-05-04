@@ -56,11 +56,12 @@
       "latestSpeeches": "Najnowsze przemowy",
       "latestVideos": "Najnowsze filmy",
       "latestMusic": "Najnowsza muzyka",
-      "latestAlbums": "Najnowsze albumy"
+      "latestAlbums": "Najnowsze albumy",
+      "playlists": "Listy odtwarzania"
     },
     "music": {
       "latestMusic": "Najnowsza muzyka",
-      "artists": "Wykonawcy",
+      "artists": "Artyści",
       "fromKaare": "Od Kårego",
       "mp3Source": "MP3-Kilden",
       "childrensMp3Source": "Pieśni dla dzieci",
@@ -85,7 +86,7 @@
       "bibleVerse": "Werset z Biblii",
       "album": "Album",
       "artist": "Wykonawca",
-      "interprets": "Wykonawcy"
+      "interprets": "Artyści"
     }
   },
   "track": {
@@ -112,10 +113,10 @@
     "allLanguages": "Wszystkie języki",
     "confirmPlaylistDeletion": "Czy na pewno chcesz usunąć tę playlistę?",
     "latestTracks": "Najnowsze utwory",
-    "instrumental": "muzyka instrumentalna"
+    "instrumental": "Instrumentalna"
   },
   "notify": {
-    "play": "Odtwórz",
+    "play": "Graj",
     "next": "Następny",
     "previous": "Poprzedni",
     "shufflePlaylist": "Wymieszaj playlistę",
