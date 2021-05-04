@@ -44,7 +44,7 @@
     },
     "secondary": {
       "playlists": "Списки воспроизведения",
-      "podcasts": "Podcasts",
+      "podcasts": "Подкасты",
       "latestTracks": "Новые треки",
       "current": "Текущий",
       "newPlaylist": "Новый плейлист",
@@ -61,7 +61,7 @@
     },
     "music": {
       "latestMusic": "Последняя музыка",
-      "artists": "Исполнитель",
+      "artists": "артист",
       "fromKaare": "От Коре",
       "mp3Source": "MP3-источник",
       "childrensMp3Source": "Детская MP3-Источник",
@@ -82,11 +82,11 @@
     },
     "search": {
       "searchResults": "Результаты поиска",
-      "content": "Содержание",
+      "content": "Содержимое",
       "bibleVerse": "Библейский стих",
       "album": "Альбом",
       "artist": "Исполнитель",
-      "interprets": "Исполнитель"
+      "interprets": "артист"
     }
   },
   "track": {
@@ -131,5 +131,5 @@
     "hideVideo": "Скрыть видео",
     "showVideo": "Показать видео"
   },
-  "copyright": "Авторское право"
+  "copyright": "Все права защищены"
 }
