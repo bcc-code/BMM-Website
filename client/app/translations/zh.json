@@ -56,7 +56,8 @@
       "latestSpeeches": "最新消息",
       "latestVideos": "最新视频",
       "latestMusic": "最新的音乐",
-      "latestAlbums": "最新专辑"
+      "latestAlbums": "最新专辑",
+      "playlists": "播放列表"
     },
     "music": {
       "latestMusic": "最新的音乐",
