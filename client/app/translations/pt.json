@@ -109,14 +109,14 @@
     "albums": "Álbuns",
     "duration": "Duração",
     "title": "Título",
-    "song": "Música",
+    "song": "Cant",
     "allLanguages": "Todas as línguas",
     "confirmPlaylistDeletion": "Tem certeza que deseja excluir esta playlist?",
     "latestTracks": "Últimas faixas",
     "instrumental": "Instrumental"
   },
   "notify": {
-    "play": "Reproduzir",
+    "play": "Jogar",
     "next": "Próxima",
     "previous": "Anterior",
     "shufflePlaylist": "Shuffle playlist",
