@@ -1,5 +1,5 @@
 files:
-  - source: client_translations.json
+  - source: /client-translations.json
     translation: /client/app/translations/%two_letters_code%.json
-  - source: /admin_translations.json
+  - source: /admin-translations.json
     translation: /admin/app/translations/%two_letters_code%.json
