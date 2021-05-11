@@ -116,7 +116,7 @@
       "end": "Ende",
       "loadSongMetadata": "load song metadata",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Metadaten ersetzen"
       }
     },
     "waitings": {
@@ -170,10 +170,10 @@
     },
     "playlist": {
       "title": "Playlisten",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Playliste bearbeiten",
+      "createNew": "Neue Playliste erstellen",
+      "addTranslation": "Übersetzung für Playliste hinzufügen",
+      "save": "Playliste speichern"
     },
     "musicchannel": {
       "title": "Music Channels",
