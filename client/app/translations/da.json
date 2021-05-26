@@ -100,9 +100,9 @@
     "composer": "Komponist",
     "album": "Album",
     "bibleVerse": "Bibelvers",
-    "songbooks": "Song number",
+    "songbooks": "Sangnummer",
     "copyright": "Rettigheder",
-    "publisher": "Publisher"
+    "publisher": "Udgiver"
   },
   "playlist": {
     "tracks": "Spor",
