@@ -137,14 +137,14 @@ angular.module('bmmApp')
 
       $scope.addTracksToPlaylist = function(playlistId, tracks, language) {
         var ids = [];
-        var lang = language;
+        var languages = [language];
         $.each(tracks, function() {
           ids.push(this.id);
-          if(lang != this.language){ // if there are more languages in a playlist/album
-            lang = undefined; // we want all tracks, not just from one language
+          if(!languages.includes(this.language)) {
+            languages.push(this.language);
           }
         });
-        _api.userTrackCollectionLink(playlistId, ids, lang);
+        _api.userTrackCollectionLink(playlistId, ids, languages.join(','));
       };
 
       $scope.addPLaylist = function(newPlaylist) {
