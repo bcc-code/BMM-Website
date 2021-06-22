@@ -402,16 +402,18 @@ angular.module('bmmApp')
           var model = $scope.$parent.model;
           var alternativeContributors = [];
           var melodyOrigin = null;
+          var authors = $.grep(data.participants, function(item){return item.type=="author"});
+          var composers = $.grep(data.participants, function(item){return item.type=="composer"});
           $rootScope.songtreasures.titles =
           $.map(model.translations, function(item) {
             return {language: item.language, current: item.title, new: data.name[convertLanguageToSongtreasure(item.language)]};
           });
-          $rootScope.songtreasures.newLyricists = $.map(data.authors, function(author){return author.name}).join(", ");
-          if (data.composers.length > 0)
-            $rootScope.songtreasures.newComposers = $.map(data.composers, function(composer){return composer.name}).join(", ");
+          $rootScope.songtreasures.newLyricists = $.map(authors, function(author){return author.contributor.name}).join(", ");
+          if (composers.length > 0)
+            $rootScope.songtreasures.newComposers = $.map(composers, function(composer){return composer.contributor.name}).join(", ");
           else if (data.melodyOrigin && data.melodyOrigin.name && data.melodyOrigin.name.no) {
             $rootScope.songtreasures.newComposers = data.melodyOrigin.name.no;
-            alternativeContributors.push({name: data.melodyOrigin.name.no});
+            alternativeContributors.push({contributor: {name: data.melodyOrigin.name.no}});
             melodyOrigin = data.melodyOrigin.name.no;
           }
           $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
@@ -422,12 +424,12 @@ angular.module('bmmApp')
           var loadedRelations = [];
           var promises = [];
           var missingContributors = [];
-          $.each(data.composers.concat(data.authors.concat(alternativeContributors)), function(index, contributor) {
-            promises.push(_api.contributorSuggesterCompletionGet(contributor.name).done(function(list) {
+          $.each(composers.concat(authors.concat(alternativeContributors)), function(index, contributor) {
+            promises.push(_api.contributorSuggesterCompletionGet(contributor.contributor.name).done(function(list) {
               for(var i = 0; i < list.length; i++) {
                 var item = list[i];
-                if (item.name == contributor.name) {
-                  loadedRelations[contributor.name]={
+                if (item.name == contributor.contributor.name) {
+                  loadedRelations[contributor.contributor.name]={
                     id: item.id,
                     name: item.name,
                     type: item.type
@@ -435,8 +437,8 @@ angular.module('bmmApp')
                   return;
                 }
               }
-              missingContributors.push(contributor.name);
-              console.log("contributor "+contributor.name+" is missing in BMM");
+              missingContributors.push(contributor.contributor.name);
+              console.log("contributor "+contributor.contributor.name+" is missing in BMM");
             }));
           });
           $.when.apply(null, promises).then(function() {
@@ -491,12 +493,12 @@ angular.module('bmmApp')
               if (melodyOrigin !== null)
                 $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type:"composer"})];
               else
-                $scope.rel.composers = $.map(data.composers, function(item) {
-                  var relation = loadedRelations[item.name];
+                $scope.rel.composers = $.map(composers, function(item) {
+                  var relation = loadedRelations[item.contributor.name];
                   return $.extend({}, relation, {type:"composer"});
                 });
-              $scope.rel.lyricists = $.map(data.authors, function(item) {
-                var relation = loadedRelations[item.name];
+              $scope.rel.lyricists = $.map(authors, function(item) {
+                var relation = loadedRelations[item.contributor.name];
                 return $.extend({}, relation, {type:"lyricist"});
               });
               $rootScope.songtreasures = {};

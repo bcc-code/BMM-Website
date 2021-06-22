@@ -1149,7 +1149,7 @@ angular.module('bmmLibApp')
     //ToDo: add header for X-Api-Version
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'songtreasures/Songs/'+songbook+'/'+id+'?expand=authors,composers'
+      url: serverUrl+'songtreasures/Songs/'+songbook+'/'+id+'?expand=participants/contributor'
     });
 
   };
