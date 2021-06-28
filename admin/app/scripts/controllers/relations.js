@@ -398,7 +398,8 @@ angular.module('bmmApp')
           alert("unable to load metadata: " + response.responseText);
           $rootScope.songtreasures = {};
         })
-        .done(function(data) {
+        .done(function(response) {
+          var data = response.result;
           var model = $scope.$parent.model;
           var alternativeContributors = [];
           var melodyOrigin = null;
