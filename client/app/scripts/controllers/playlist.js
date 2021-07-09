@@ -38,6 +38,8 @@ angular.module('bmmApp')
     $scope.duration = 0;
     $scope.zip = {};
     $scope.zip.show = false;
+    $scope.showFollow = false;
+    $scope.follow = null;
     $scope.albums = [];
     $scope.albumCount = 0;
     $scope.searchResults = false;
@@ -47,6 +49,8 @@ angular.module('bmmApp')
 
     $scope.playlist = [];
     $scope.private = false;
+    $scope.showShareButton = true;
+    $scope.showOptions = true;
 
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
@@ -262,6 +266,20 @@ angular.module('bmmApp')
         _api.playlistTracksGet($routeParams.id).done(function(data) {
           resolveTracks(data);
           $scope.title = $routeParams.name;
+        });
+        break;
+      case 'shared':
+        $scope.showShareButton = false;
+        $scope.showOptions = false;
+        $scope.showFollow = true;
+        $scope.follow = function() {
+          _api.playlistSharedFollow($routeParams.id).done(function() {
+            $scope.showFollow = false;
+          });
+        };
+        _api.playlistSharedGet($routeParams.id).done(function(data) {
+          resolveTracks(data.tracks);
+          $scope.title = data.name;
         });
         break;
       case 'podcast':

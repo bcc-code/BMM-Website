@@ -9,7 +9,10 @@
 <span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>
 <br>
 <div class="actionButtons" ng-show="tracks>0">
-    <div class="play-playlist"
+    <div class="actionButton add-to-my-playlists" ng-click="follow();" ng-show="showFollow">
+      {{init.translation.options.addToMyPlaylists}}
+    </div>
+    <div class="actionButton play-playlist"
          ng-click="play(getPlaylistCopy(languageFilter), 0);">
         {{init.translation.options.playPlaylist}}
     </div>
@@ -23,7 +26,7 @@
             ng-model="albumOptions"
             click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-        <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
+        <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()" ng-show="showOptions"></div>
 
         <div class="arrow" ng-show="albumOptions"></div>
 
@@ -32,7 +35,7 @@
                 <div class="icon playlist"></div>
                 <span ng-bind="init.translation.options.addToPlaylist"></span>
             </li>
-            <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
+            <li ng-show="showShareButton" ng-click="$root.share.link=path; $root.share.show=true">
                 <div class="icon no-flag share"></div>
                 <span ng-bind="init.translation.options.share"></span>
             </li>
