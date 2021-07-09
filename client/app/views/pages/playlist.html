@@ -4,6 +4,7 @@
     </div>
     <h3><span ng-bind="::title"></span></h3>
 </div>
+<span class="playlist-author" ng-show="showAuthor">{{init.translation.playlist.by}} {{authorName}}</span>
 <span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span>
 <br ng-show="tracks>0&&albumCount>0">
 <span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>

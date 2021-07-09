@@ -114,7 +114,8 @@
     "allLanguages": "All languages",
     "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
     "latestTracks": "Latest tracks",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "by"
   },
   "notify": {
     "play": "Play",

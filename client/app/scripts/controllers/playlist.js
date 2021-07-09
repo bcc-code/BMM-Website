@@ -39,6 +39,8 @@ angular.module('bmmApp')
     $scope.zip = {};
     $scope.zip.show = false;
     $scope.showFollow = false;
+    $scope.authorName = null;
+    $scope.showAuthor = false;
     $scope.follow = null;
     $scope.albums = [];
     $scope.albumCount = 0;
@@ -231,6 +233,10 @@ angular.module('bmmApp')
         $scope.zip.url = _api.addAuthorizationQueryString(_api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download');
         $scope.zip.show = true;
         $scope.private = true;
+        $scope.authorName = data.authorName;
+        if ($scope.authorName) {
+          $scope.showAuthor = true;
+        }
         _api.userTrackCollectionGet($routeParams.id).done(function(data) {
 
           $scope.title = data.name;
@@ -280,6 +286,10 @@ angular.module('bmmApp')
         _api.playlistSharedGet($routeParams.id).done(function(data) {
           resolveTracks(data.tracks);
           $scope.title = data.name;
+          $scope.authorName = data.authorName;
+          if ($scope.authorName) {
+            $scope.showAuthor = true;
+          }
         });
         break;
       case 'podcast':
