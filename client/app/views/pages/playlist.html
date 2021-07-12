@@ -81,8 +81,8 @@
 		<tbody ui-sortable="sortableOptions" ng-model="playlist">
       <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
-				<td ng-class="{'sort': private}">
-                    <div ng-show="private" class="sort_handle"></div>
+				<td ng-class="{'sort': canEdit}">
+                    <div ng-show="canEdit" class="sort_handle"></div>
                     <img ng-hide="track.playing" ng-src="{{::track.subtype | _icon}}">
                     <img ng-show="track.playing" ng-src="{{::'playing'| _icon}}">
                 </td>

@@ -51,6 +51,7 @@ angular.module('bmmApp')
 
     $scope.playlist = [];
     $scope.private = false;
+    $scope.canEdit = false;
     $scope.showShareButton = true;
     $scope.showOptions = true;
 
@@ -233,14 +234,17 @@ angular.module('bmmApp')
         $scope.zip.url = _api.addAuthorizationQueryString(_api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download');
         $scope.zip.show = true;
         $scope.private = true;
-        $scope.authorName = data.authorName;
-        if ($scope.authorName) {
-          $scope.showAuthor = true;
-        }
         _api.userTrackCollectionGet($routeParams.id).done(function(data) {
 
           $scope.title = data.name;
           resolveTracks(data.tracks);
+
+          $scope.canEdit = data.can_edit;
+          $scope.showShareButton = $scope.canEdit;
+          $scope.authorName = data.author_name;
+          if ($scope.authorName) {
+            $scope.showAuthor = true;
+          }
 
           $scope.sortableOptions = {
             update: function() {
@@ -286,7 +290,7 @@ angular.module('bmmApp')
         _api.playlistSharedGet($routeParams.id).done(function(data) {
           resolveTracks(data.tracks);
           $scope.title = data.name;
-          $scope.authorName = data.authorName;
+          $scope.authorName = data.author_name;
           if ($scope.authorName) {
             $scope.showAuthor = true;
           }

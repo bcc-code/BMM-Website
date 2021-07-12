@@ -38,7 +38,7 @@
                     <div class="icon details"></div>
                     <span ng-bind="$root.init.translation.track.details"></span>
                 </li>
-                <li ng-if="private" ng-click="remove($index)">
+                <li ng-if="canEdit" ng-click="remove($index)">
                     <div class="icon delete"></div>
                     <span ng-bind="$root.init.translation.options.remove"></span>
                 </li>
