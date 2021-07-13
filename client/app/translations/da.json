@@ -32,6 +32,7 @@
     "copyLink": "Kopier link",
     "remove": "Slet",
     "playPlaylist": "Afspil spillelisten",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Del"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Alle sprog",
     "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spilleliste?",
     "latestTracks": "Seneste sange og taler",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "af"
   },
   "notify": {
     "play": "Afspil",
