@@ -32,6 +32,7 @@
     "copyLink": "Copiază link",
     "remove": "Elimină",
     "playPlaylist": "Play play-list",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Împărtășește"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Toate limbile",
     "confirmPlaylistDeletion": "Sunteţi sigur că doriţi să ştergeţi acest play-list?",
     "latestTracks": "Ultimele piese",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "de"
   },
   "notify": {
     "play": "Cântă",

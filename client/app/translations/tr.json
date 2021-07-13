@@ -32,6 +32,7 @@
     "copyLink": "Link'i kopyala",
     "remove": "Kaldır",
     "playPlaylist": "Çalma Listesini Çal",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Paylaş"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Tüm Diller",
     "confirmPlaylistDeletion": "Çalma Listesini silmeye emin misin?",
     "latestTracks": "En yeni Parçalar",
-    "instrumental": "Enstrümental"
+    "instrumental": "Enstrümental",
+    "by": "tarafından"
   },
   "notify": {
     "play": "Oynat",

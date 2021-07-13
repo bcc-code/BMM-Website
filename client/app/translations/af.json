@@ -32,6 +32,7 @@
     "copyLink": "Kopieer Link",
     "remove": "Verwyder",
     "playPlaylist": "Speel snitlys",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Deel"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Alle Tale",
     "confirmPlaylistDeletion": "Is jy seker dat jy die snitlys wil verwyder?",
     "latestTracks": "Nuutste snede",
-    "instrumental": "Instrumentaal"
+    "instrumental": "Instrumentaal",
+    "by": "deur"
   },
   "notify": {
     "play": "Speel",

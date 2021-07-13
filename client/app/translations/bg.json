@@ -32,6 +32,7 @@
     "copyLink": "Копирай връзка",
     "remove": "Премахни",
     "playPlaylist": "Пусни списъка",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Сподели"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Всички езици",
     "confirmPlaylistDeletion": "Наистина ли искаш да изтриеш този списък?",
     "latestTracks": "Последни песни и речи",
-    "instrumental": "Инструментал"
+    "instrumental": "Инструментал",
+    "by": "от"
   },
   "notify": {
     "play": "Пусни",

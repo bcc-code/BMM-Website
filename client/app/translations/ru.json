@@ -32,6 +32,7 @@
     "copyLink": "Копировать ссылку",
     "remove": "Удалить",
     "playPlaylist": "Играть плейлист",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Пделиться"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Все языки",
     "confirmPlaylistDeletion": "Вы уверены, что хотите удалить этот плейлист?",
     "latestTracks": "Последние треки",
-    "instrumental": "Инструментальная музыка"
+    "instrumental": "Инструментальная музыка",
+    "by": "Кем:"
   },
   "notify": {
     "play": "Играть",

@@ -32,6 +32,7 @@
     "copyLink": "Link másolása",
     "remove": "Eltávolítás",
     "playPlaylist": "Lejátszási lista indítása",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Megosztás"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Minden nyelv",
     "confirmPlaylistDeletion": "Biztosan törölni kivánod ezt a lejátszási listát?",
     "latestTracks": "Legújabb számok",
-    "instrumental": "Hangszeres"
+    "instrumental": "Hangszeres",
+    "by": "által"
   },
   "notify": {
     "play": "Lejátszás",

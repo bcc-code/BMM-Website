@@ -32,6 +32,7 @@
     "copyLink": "Kopeeri link",
     "remove": "Eemalda",
     "playPlaylist": "Esita esitlusloend",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Jaga"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Kõik keeled",
     "confirmPlaylistDeletion": "Kas soovite kindlasti selle esitlusloendi kustutada?",
     "latestTracks": "Hiljutised laulud",
-    "instrumental": "Instrumentaalmuusika"
+    "instrumental": "Instrumentaalmuusika",
+    "by": "poolt"
   },
   "notify": {
     "play": "Esita",

@@ -32,6 +32,7 @@
     "copyLink": "Kopioi linkki",
     "remove": "Poista",
     "playPlaylist": "Toista soittolista",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Jaa"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Kaikki kielet",
     "confirmPlaylistDeletion": "Oletko varma, että haluat poistaa tämän soittolistan?",
     "latestTracks": "Uusimmat kappaleet",
-    "instrumental": "Instrumentaali"
+    "instrumental": "Instrumentaali",
+    "by": "mennessä"
   },
   "notify": {
     "play": "Toista",
