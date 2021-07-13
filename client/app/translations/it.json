@@ -32,6 +32,7 @@
     "copyLink": "Copia collegamento",
     "remove": "Rimuovi",
     "playPlaylist": "Riproduci la playlist",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Condividi"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Tutte le lingue",
     "confirmPlaylistDeletion": "Sei sicuro di voler eliminare questa playlist?",
     "latestTracks": "Ultimi brani",
-    "instrumental": "Strumentale"
+    "instrumental": "Strumentale",
+    "by": "da"
   },
   "notify": {
     "play": "Riproduci",
