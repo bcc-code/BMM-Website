@@ -32,6 +32,7 @@
     "copyLink": "Link kopiëren",
     "remove": "Verwijderen",
     "playPlaylist": "Afspeellijst afspelen",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Delen"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Alle talen",
     "confirmPlaylistDeletion": "Weet je zeker dat je deze afspeellijst wilt verwijderen?",
     "latestTracks": "Laatste nummers",
-    "instrumental": "Instrumentaal"
+    "instrumental": "Instrumentaal",
+    "by": "door"
   },
   "notify": {
     "play": "Afspelen",
