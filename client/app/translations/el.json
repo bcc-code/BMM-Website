@@ -32,6 +32,7 @@
     "copyLink": "Αντιγραφή συνδέσμου",
     "remove": "Κατάργηση",
     "playPlaylist": "Αναπαραγωγή λίστας αναπαραγωγής",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Δημοσίευση"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Όλες οι γλώσσες",
     "confirmPlaylistDeletion": "Είστε βέβαιοι ότι θέλετε να διαγράψετε την λίστα αναπαραγωγής;",
     "latestTracks": "Τελευταία κομμάτια",
-    "instrumental": "Ορχηστρικό"
+    "instrumental": "Ορχηστρικό",
+    "by": "από"
   },
   "notify": {
     "play": "Αναπαραγωγή / Play",
