@@ -32,6 +32,7 @@
     "copyLink": "Kopiraj stranicu",
     "remove": "Uklonite",
     "playPlaylist": "Pokreni listu",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Podijeli"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "All languages",
     "confirmPlaylistDeletion": "Jeste li sigurni da želite izbrisati ovaj popis?",
     "latestTracks": "Najnovije pjesme",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "by"
   },
   "notify": {
     "play": "Pokreni",
