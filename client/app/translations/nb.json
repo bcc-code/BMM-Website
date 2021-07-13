@@ -32,6 +32,7 @@
     "copyLink": "Kopier link",
     "remove": "Fjern",
     "playPlaylist": "Spill av spilleliste",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Del"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Alle språk",
     "confirmPlaylistDeletion": "Er du sikker på at du vil slette denne spillelisten?",
     "latestTracks": "Nye spor",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "av"
   },
   "notify": {
     "play": "Spill av",
