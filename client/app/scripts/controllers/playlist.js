@@ -53,6 +53,7 @@ angular.module('bmmApp')
     $scope.private = false;
     $scope.canEdit = false;
     $scope.showShareButton = true;
+    $scope.shareLink = null;
     $scope.showOptions = true;
 
     var findPlayingTrack = function() {
@@ -241,6 +242,7 @@ angular.module('bmmApp')
 
           $scope.canEdit = data.can_edit;
           $scope.showShareButton = $scope.canEdit;
+          $scope.shareLink = $scope.canEdit ? data.share_link : null;
           $scope.authorName = data.author_name;
           if ($scope.authorName) {
             $scope.showAuthor = true;
