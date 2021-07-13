@@ -11,9 +11,9 @@
       "notifications": "Notificări",
       "waitings": "În așteptare",
       "contributors": "Contribuitori",
-      "trackLists": "Track Lists",
+      "trackLists": "Lista pieselor",
       "podcasts": "Podcast-uri",
-      "transmissions": "Live",
+      "transmissions": "În direct",
       "users": "Utilizatori",
       "statistic": "Statistici"
     },
@@ -93,7 +93,7 @@
       "interprets": "Artiști și\/sau Vorbitori",
       "lyricists": "Textier",
       "songbooks": "Cărți de cântări",
-      "trackLists": "Track Lists",
+      "trackLists": "Lista pieselor",
       "bibleReferences": "Referinţe biblice",
       "addBibleReference": "Adaugă referinţă biblică",
       "externalReferences": "Referințe externe",
@@ -113,10 +113,10 @@
       "missingAlbum": "Album lipsă",
       "wrongId": "ID-BMM greșit",
       "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "end": "Sfârșit",
+      "loadSongMetadata": "încarcă metadata melodiei",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "înlocuiește metadata"
       }
     },
     "waitings": {
@@ -133,12 +133,12 @@
       "contributors": "Contribuitori"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Salvează transmisia",
+      "edit": "Salvează transmisia",
+      "add": "Adaugă transmisie",
+      "cancelEditing": "Anulează editarea",
+      "upcomingMessage": "Transmisiuni viitoare BMM în direct",
+      "noUpcomingMessage": "Nu sunt viitoare transmisiuni BMM în direct!"
     },
     "users": {
       "adminUsers": "Administratorul utilizatorilor",
@@ -147,8 +147,8 @@
       "contributorManager": "Contribuitori",
       "notificationManager": "Notificări",
       "podcastManager": "Podcast-uri",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "featurePreview": "Previzualizare funcție",
+      "liveManager": "În direct",
       "allRights": "Toate drepturile",
       "refreshList": "Reîmprospătează lista"
     },
@@ -158,29 +158,29 @@
       "sendPushNotification": "Trimite notificare push",
       "sent": "Trimis",
       "failed": "Eroare",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "scheduledSendTime": "ora programată de trimitere",
+      "link": "link-ul"
     },
     "podcast": {
       "title": "Podcast-uri",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Editare Podcast",
+      "createNew": "Creează podcast nou ",
+      "addTranslation": "Adaugă traducere pentru podcast",
+      "save": "Salvare podcast"
     },
     "playlist": {
       "title": "Play-list-uri",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Editare listă de redare",
+      "createNew": "Creează listă de redare nouă ",
+      "addTranslation": "Adaugă traducere listă de redare",
+      "save": "Salvează listă de redare"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Canale muzicale",
+      "editTitle": "Editează canal muzical",
+      "createNew": "Creează canal muzical nou ",
+      "addTranslation": "Adaugă traducerea canalului",
+      "save": "Salvează canalul muzical"
     }
   },
   "states": {
