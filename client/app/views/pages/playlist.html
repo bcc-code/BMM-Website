@@ -4,12 +4,16 @@
     </div>
     <h3><span ng-bind="::title"></span></h3>
 </div>
+<span class="playlist-author" ng-show="showAuthor">{{init.translation.playlist.by}} {{authorName}}</span>
 <span ng-bind="tracks + ' ' + init.translation.playlist.tracks"></span>
 <br ng-show="tracks>0&&albumCount>0">
 <span ng-hide="albumCount<1"><span ng-bind="albumCount + ' ' + init.translation.playlist.albums"></span></span>
 <br>
 <div class="actionButtons" ng-show="tracks>0">
-    <div class="play-playlist"
+    <div class="actionButton add-to-my-playlists" ng-click="follow();" ng-show="showFollow">
+      {{init.translation.options.addToMyPlaylists}}
+    </div>
+    <div class="actionButton play-playlist"
          ng-click="play(getPlaylistCopy(languageFilter), 0);">
         {{init.translation.options.playPlaylist}}
     </div>
@@ -23,7 +27,7 @@
             ng-model="albumOptions"
             click-elsewhere="albumOptions=false; languageFilterShow=false">
 
-        <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()"></div>
+        <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()" ng-show="showOptions"></div>
 
         <div class="arrow" ng-show="albumOptions"></div>
 
@@ -32,7 +36,7 @@
                 <div class="icon playlist"></div>
                 <span ng-bind="init.translation.options.addToPlaylist"></span>
             </li>
-            <li ng-show="!private" ng-click="$root.share.link=path; $root.share.show=true">
+            <li ng-show="showShareButton" ng-click="$root.share.link=shareLink; $root.share.show=true">
                 <div class="icon no-flag share"></div>
                 <span ng-bind="init.translation.options.share"></span>
             </li>
@@ -77,8 +81,8 @@
 		<tbody ui-sortable="sortableOptions" ng-model="playlist">
       <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
-				<td ng-class="{'sort': private}">
-                    <div ng-show="private" class="sort_handle"></div>
+				<td ng-class="{'sort': canEdit}">
+                    <div ng-show="canEdit" class="sort_handle"></div>
                     <img ng-hide="track.playing" ng-src="{{::track.subtype | _icon}}">
                     <img ng-show="track.playing" ng-src="{{::'playing'| _icon}}">
                 </td>

@@ -38,6 +38,10 @@ angular.module('bmmApp')
     $scope.duration = 0;
     $scope.zip = {};
     $scope.zip.show = false;
+    $scope.showFollow = false;
+    $scope.authorName = null;
+    $scope.showAuthor = false;
+    $scope.follow = null;
     $scope.albums = [];
     $scope.albumCount = 0;
     $scope.searchResults = false;
@@ -47,6 +51,10 @@ angular.module('bmmApp')
 
     $scope.playlist = [];
     $scope.private = false;
+    $scope.canEdit = false;
+    $scope.showShareButton = true;
+    $scope.shareLink = null;
+    $scope.showOptions = true;
 
     var findPlayingTrack = function() {
       if ($location.path()===_playlist.getUrl()) {
@@ -232,6 +240,14 @@ angular.module('bmmApp')
           $scope.title = data.name;
           resolveTracks(data.tracks);
 
+          $scope.canEdit = data.can_edit;
+          $scope.showShareButton = $scope.canEdit;
+          $scope.shareLink = $scope.canEdit ? data.share_link : null;
+          $scope.authorName = data.author_name;
+          if ($scope.authorName) {
+            $scope.showAuthor = true;
+          }
+
           $scope.sortableOptions = {
             update: function() {
               //Set timeout, so $scope.playlist get updated
@@ -262,6 +278,24 @@ angular.module('bmmApp')
         _api.playlistTracksGet($routeParams.id).done(function(data) {
           resolveTracks(data);
           $scope.title = $routeParams.name;
+        });
+        break;
+      case 'shared':
+        $scope.showShareButton = false;
+        $scope.showOptions = false;
+        $scope.showFollow = true;
+        $scope.follow = function() {
+          _api.playlistSharedFollow($routeParams.id).done(function() {
+            $scope.showFollow = false;
+          });
+        };
+        _api.playlistSharedGet($routeParams.id).done(function(data) {
+          resolveTracks(data.tracks);
+          $scope.title = data.name;
+          $scope.authorName = data.author_name;
+          if ($scope.authorName) {
+            $scope.showAuthor = true;
+          }
         });
         break;
       case 'podcast':

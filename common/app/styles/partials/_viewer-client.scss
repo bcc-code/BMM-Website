@@ -260,11 +260,16 @@
   height: 1.1em;
 }
 
-.play-playlist {
+.playlist-author {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.actionButtons .actionButton {
   margin-top: 1em;
   margin-right: .5em;
   background-color: #03d67f;
-  background-image: url(../images/common/svg/v3/Icon_Play-small.svg);
+  background-image: url(../images/common/svg/v3/Icon_plus.svg);
   background-size: .8em .8em;
   background-position: .8em .7em;
   background-repeat: no-repeat;
@@ -276,8 +281,11 @@
   border: .2em solid transparent;
   white-space: nowrap;
 }
-.play-playlist:hover {
+.actionButtons .actionButton:hover {
   background-color: #0AB66F;
+}
+.actionButtons .actionButton.play-playlist {
+  background-image: url(../images/common/svg/v3/Icon_Play-small.svg);
 }
 
 .bmm-zip {
@@ -501,7 +509,7 @@
 
 .actionButtons.ng-hide {
   display: block !important;
-  cursor:  not-allowed;    
+  cursor:  not-allowed;
   > div, > a {
    pointer-events: none;
   }

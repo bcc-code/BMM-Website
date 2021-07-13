@@ -1006,7 +1006,21 @@ angular.module('bmmLibApp')
       url: serverUrl + 'playlist/' + id + '/track/',
       data: $.param(options)
     });
-  }
+  };
+
+  factory.playlistSharedGet = function(secret) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'shared_playlist/' + secret
+    });
+  };
+
+  factory.playlistSharedFollow = function(secret) {
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + 'shared_playlist/' + secret + '/follow'
+    })
+  };
 
   factory.trackListOverview = function(type, options) {
     return factory.addToQueue({
@@ -1145,7 +1159,6 @@ angular.module('bmmLibApp')
   // SongTreasures
   // See https://songtreasures.azurewebsites.net/swagger for information about the api
   factory.songMetadataGet = function(songbook, id) {
-    //ToDo: add header for X-Api-Version
     return factory.addToQueue({
       method: 'GET',
       url: serverUrl+'songtreasures/Songs/'+songbook+'/'+id+'?expand=participants/contributor',

@@ -12,10 +12,11 @@
 
 <div class="actionButtons" ng-show="tracks>0">
   <div class="clearFix"></div>
-  <div class="play-playlist"
+  <div class="actionButton play-playlist"
        ng-click="playlist = playlists[0].tracks; play(playlist); playlists[0].hide = false">
       <span ng-bind="init.translation.options.playPlaylist"></span>
   </div>
+
   <a class="bmm-zip"
      ng-show="!init.isIOS"
      target="_blank"
