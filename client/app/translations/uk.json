@@ -32,6 +32,7 @@
     "copyLink": "копіювати посилання",
     "remove": "видаляти",
     "playPlaylist": "грати плейлист",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Частка"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Всі мови",
     "confirmPlaylistDeletion": "Ви дійсно бажаєте видалити цей список відтворення?",
     "latestTracks": "Новітні треки",
-    "instrumental": "Інструментальні"
+    "instrumental": "Інструментальні",
+    "by": "от"
   },
   "notify": {
     "play": "Грати",
