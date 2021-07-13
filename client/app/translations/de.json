@@ -32,6 +32,7 @@
     "copyLink": "Link",
     "remove": "Entfernen",
     "playPlaylist": "Playliste starten",
+    "addToMyPlaylists": "Add to my playlists",
     "share": "Teilen"
   },
   "menu": {
@@ -113,7 +114,8 @@
     "allLanguages": "Alle Sprachen",
     "confirmPlaylistDeletion": "Bist du sicher, dass du die Playliste löschen möchtest?",
     "latestTracks": "Neue Titel",
-    "instrumental": "Instrumental"
+    "instrumental": "Instrumental",
+    "by": "von"
   },
   "notify": {
     "play": "Abspielen",
