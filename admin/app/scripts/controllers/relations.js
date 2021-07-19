@@ -412,10 +412,13 @@ angular.module('bmmApp')
           $rootScope.songtreasures.newLyricists = $.map(authors, function(author){return author.contributor.name}).join(", ");
           if (composers.length > 0)
             $rootScope.songtreasures.newComposers = $.map(composers, function(composer){return composer.contributor.name}).join(", ");
-          else if (data.melodyOrigin && data.melodyOrigin.name && data.melodyOrigin.name.no) {
-            $rootScope.songtreasures.newComposers = data.melodyOrigin.name.no;
-            alternativeContributors.push({contributor: {name: data.melodyOrigin.name.no}});
-            melodyOrigin = data.melodyOrigin.name.no;
+          else {
+            var mOrigin = $.grep(data.origins, function(item){return item.type == "melody";});
+            if (mOrigin.length>0 && mOrigin[0].description.no) {
+              melodyOrigin = mOrigin[0].description.no;
+              $rootScope.songtreasures.newComposers = melodyOrigin;
+              alternativeContributors.push({contributor: {name: melodyOrigin}});
+            }
           }
           $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
           $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name}).join(", ");
