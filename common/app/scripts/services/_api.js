@@ -502,7 +502,7 @@ angular.module('bmmLibApp')
 
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'search/'+term,
+      url: serverUrl+'textsearch/'+term,
       data: $.param(options)
     });
 
