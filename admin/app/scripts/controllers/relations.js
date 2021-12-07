@@ -392,7 +392,7 @@ angular.module('bmmApp')
         return language;
       }
 
-      var songbookName = songbook.name === "herrens_veier" ? "HV" : "MB"; //Songtreasures uses MB instead of FMB
+      var songbookName = songbook.name === "herrens_veier" ? "HV" : "FMB";
       _api.songMetadataGet(songbookName, songbook.id)
         .fail(function(response) {
           alert("unable to load metadata: " + response.responseText);
