@@ -63,7 +63,7 @@ angular.module('bmmApp')
               video: false
             });
 
-          } else {
+          } else if(typeof this.type!=='undefined'&&this.type==='track') {
             type = 'track';
             track = _track.resolve(this);
 
@@ -145,6 +145,9 @@ angular.module('bmmApp')
 
             }
 
+          }
+          else {
+            // other types like contributor are not supported
           }
 
           cnt++;

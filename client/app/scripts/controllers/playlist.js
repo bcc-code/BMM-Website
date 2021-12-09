@@ -81,7 +81,7 @@ angular.module('bmmApp')
             $scope.albums.push(_album.resolve(this));
             $scope.albumCount++;
             cnt++;
-          } else {
+          } else if (this.type==='track') {
 
             track = _track.resolve(this);
 
