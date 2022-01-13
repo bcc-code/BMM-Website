@@ -111,7 +111,10 @@ angular.module('bmmLibApp')
 
             _session.restoreSession(user.username, [], factory.root.languages);
 
-            _api.setContentLanguages(_session.current.contentLanguages);
+            if (admin)
+              _api.setContentLanguages(root.languages);
+            else
+              _api.setContentLanguages(_session.current.contentLanguages);
             _api.appendUnknownLanguage = true;
 
             // Use the top language as podcastLanguage
