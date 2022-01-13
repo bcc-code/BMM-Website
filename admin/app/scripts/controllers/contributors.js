@@ -10,7 +10,7 @@ angular.module('bmmApp')
     _track,
     _play,
     _init) {
-    
+
     $scope.model={};
     $scope.status = _init.translation.states.waitingForSelection;
 
@@ -29,9 +29,8 @@ angular.module('bmmApp')
         });
 
         _api.contributorTracksGet(model.id, {
-          size: 100
+          size: 100, unpublished: "show"
         }).done(function(data) {
-
           $scope.$apply(function() {
 
             $scope.tracks = [];
@@ -42,7 +41,6 @@ angular.module('bmmApp')
             });
 
             $scope.status = _init.translation.states.contributorLoaded;
-
           });
 
         });
