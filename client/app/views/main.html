@@ -198,8 +198,8 @@
 
             <div class="mainControllers">
 
-                <div class="current"><span ng-bind="player.currentTime | _time"></span></div>
-                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTime) | _time"></span></div>
+                <div class="current"><span ng-bind="player.currentTimeVisual | _time"></span></div>
+                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTimeVisual) | _time"></span></div>
 
                 <div class="centered">
                     <div class="shuffle"
@@ -223,8 +223,8 @@
 
                 </div>
 
-                <!--div class="current"><span ng-bind="player.currentTime | _time"></span></div>
-                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTime) | _time"></span></div-->
+                <!--div class="current"><span ng-bind="player.currentTimeVisual | _time"></span></div>
+                <div class="remaining"><span ng-bind="(player.getDuration()-player.currentTimeVisual) | _time"></span></div-->
                 <div class="slider"><div class="target"></div></div>
 
             </div>
