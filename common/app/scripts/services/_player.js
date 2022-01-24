@@ -8,6 +8,8 @@ angular.module('bmmLibApp')
       source;
 
   factory.currentTime = 0;
+  factory.isSliding = false;
+  factory.currentTimeVisual = 0;
   factory.currentTimePercent = 0;
   factory.volume = .8;
   factory.muted = false;
@@ -57,6 +59,9 @@ angular.module('bmmLibApp')
               $(videoTarget).data('jPlayer').status.currentTime;
             factory.currentTimePercent =
               $(videoTarget).data('jPlayer').status.currentPercentAbsolute;
+            if(!factory.isSliding){
+              factory.currentTimeVisual = factory.currentTime;
+            }
           });
         },
         ended: function() {
@@ -354,6 +359,14 @@ angular.module('bmmLibApp')
   factory.setCurrentTime = function(value) {
     $(videoTarget).jPlayer('playHead', value);
   };
+
+  factory.setVisualTime = function(value) {
+    factory.currentTimeVisual = (value / 100) * this.getDuration();
+  }
+
+  factory.setIsSliding = function(value) {
+    factory.isSliding = value;
+  }
 
   factory.getDuration = function() {
     return $(videoTarget).data('jPlayer').status.duration;

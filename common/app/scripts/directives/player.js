@@ -22,8 +22,8 @@ angular.module('bmmLibApp')
             '<div class="play" title="{{init.translation.notify.play}}" ng-class="{\'pause\': player.playing}" ng-click="player.togglePlay();"></div>' +
             '<div class="next" title="{{init.translation.notify.next}}" ng-click="player.setNext();"></div>' +
             '<div class="duration">' +
-              '{{player.currentTime | _time}} / ' +
-              '{{(player.getDuration()-player.currentTime) | _time}}' +
+              '{{player.currentTimeVisual | _time}} / ' +
+              '{{(player.getDuration()-player.currentTimeVisual) | _time}}' +
             '</div>' +
             '<div class="fullscreen-toggle" title="{{init.translation.notify.closeFullscreen}}"></div>' +
             '<div class="mute" title="{{init.translation.notify.mute}}" ng-hide="init.isIOS" ng-class="{\'active\': player.muted}" ng-click="player.setMute();"></div>' +
@@ -41,10 +41,16 @@ angular.module('bmmLibApp')
           },
           slide: function(e, ui) {
             trackSlider.find('.behind').css({ width: (100-ui.value)+'%' });
-            scope.player.setCurrentTime(ui.value);
+            scope.player.setVisualTime(ui.value);
+            scope.player.setIsSliding(true);
           },
           change: function(e, ui) {
             trackSlider.find('.behind').css({ width: (100-ui.value)+'%' });
+            //if the event e has the property handleObj then it's done via UserInput like mouseup
+            if(e.handleObj != null){
+              scope.player.setCurrentTime(ui.value);
+              scope.player.setIsSliding(false);
+            }
           }
         });
 
