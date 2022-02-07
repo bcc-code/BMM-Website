@@ -83,7 +83,7 @@ angular.module('bmmApp')
           //IF A YEAR IS OPENED, DISPLAY ALBUMS FOR THE WHOLE YEAR
           if ($scope.tree.expandedNode.group==='year') {
 
-            _api.albumTracksRecordedYear($scope.tree.expandedNode.roleId, {}).done(function(data) {
+            _api.albumPublishedYear($scope.tree.expandedNode.roleId, {}).done(function(data) {
 
               $scope.tree.expandedNode.children = [];
               $.each(data, function() {
