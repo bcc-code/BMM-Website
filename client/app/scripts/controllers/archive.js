@@ -16,7 +16,7 @@ angular.module('bmmApp')
     $(window).off('scrollBottom');
 
     //FETCH ALL YEARS WHERE TRACKS WHERE RECORDED
-    _api.facetsTrackRecordedYears().done(function(data) {
+    _api.facetsAlbumPublishedYears().done(function(data) {
 
       $scope.roleList = [];
 
