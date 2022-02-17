@@ -127,6 +127,11 @@ angular.module('bmmApp', [
         controller: 'PlaylistCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
       })
+      .when('/groupgoal/:secret', {
+        templateUrl: 'views/pages/groupgoal.html',
+        controller: 'GroupGoalCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
+      })
       .when('/copyright', {
         templateUrl: 'views/pages/copyright.html',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}

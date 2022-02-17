@@ -122,6 +122,7 @@ angular.module('bmmLibApp')
 
     //Don't cache playlists because the user often interacts with it and it may change.
     if(getFullUrl(xhrOptions).match(/track_collection/)) return false;
+    if(getFullUrl(xhrOptions).match(/groupgoal/)) return false;
 
     if(xhrOptions.method !== 'GET') return false;
 
@@ -1019,6 +1020,19 @@ angular.module('bmmLibApp')
     return factory.addToQueue({
       method: 'POST',
       url: serverUrl + 'shared_playlist/' + secret + '/follow'
+    })
+  };
+
+  factory.groupGoalGet = function(secret) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'groupgoal/' + secret
+    })
+  };
+  factory.groupGoalJoin = function(secret) {
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + 'groupgoal/' + secret + '/join'
     })
   };
 

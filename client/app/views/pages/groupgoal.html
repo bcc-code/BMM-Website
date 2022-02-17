@@ -1,0 +1,26 @@
+<div class="search-result-info">
+  <div ng-show="searchResults"><br>
+    <b><span ng-bind="init.translation.general.searchResultsFor"></span></b>
+  </div>
+  <h3><span ng-bind="::title"></span></h3>
+</div>
+
+<span ng-show="!load" style="font-size: 15px;">
+  <span class="playlist-author">{{init.translation.playlist.by}} {{goal.owner_name}}</span>
+  <span>{{goal.participants}} participants</span><br>
+  <span>listen to {{goal.tracks}} tracks from {{goal.start | date:'dd.MM.yyyy'}} to {{goal.end | date:'dd.MM.yyyy'}}</span><br>
+</span>
+<span ng-show="!load && goal.joined" style="font-size: 15px;">
+  <span>participants on track: <span style="font-weight: bold; font-size: 20px;">{{onTrack}}%</span></span>
+  <span>after catching up: <span style="font-weight: bold; font-size: 20px;">{{onTrackCatchingUp}}%</span></span><br>
+  <span>current track: Some track title</span>
+</span>
+<div class="actionButtons">
+  <div class="actionButton add-to-my-playlists" ng-click="joinGoal();" ng-show="!load && !goal.joined">
+    Join group goal
+  </div>
+</div>
+
+<div ng-show="load" style="margin-top: 2em">
+  <img ng-src="fallback_images/gif/load.gif">
+</div>
