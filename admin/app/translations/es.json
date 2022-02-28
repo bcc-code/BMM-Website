@@ -11,9 +11,9 @@
       "notifications": "Notificaciones",
       "waitings": "En espera",
       "contributors": "Colaboradores",
-      "trackLists": "Track Lists",
+      "trackLists": "Listas de pistas",
       "podcasts": "Podcasts",
-      "transmissions": "Live",
+      "transmissions": "En Vivo",
       "users": "Usuarios",
       "statistic": "Estadísticas"
     },
@@ -28,7 +28,7 @@
       "tracks": "Pistas",
       "childTracks": "Pistas para niños",
       "open": "abrir",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Siguiente Fra Kåre"
     }
   },
   "page": {
@@ -55,14 +55,14 @@
       "status": "Estado",
       "languages": "Idiomas",
       "tags": "Etiquetas",
-      "addTag": "Add tag",
+      "addTag": "Añadir etiqueta",
       "generateTitlesByTag": "Ordenar títulos por etiqueta",
       "active": "Activo",
       "available": "Disponible",
       "title": "Título",
       "noTitle": "Sin título",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Subido",
+      "published": "Publicado",
       "description": "Descripción",
       "selectedLanguage": "Idioma seleccionado",
       "originalLanguage": "Idioma original",
@@ -89,15 +89,15 @@
       "imageAllowed": "JPEG, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Compositores",
-      "arrangers": "Arrangers",
+      "arrangers": "Organizadores",
       "interprets": "Artistas y\/o Habladores",
       "lyricists": "Letristas",
       "songbooks": "Cancioneros",
-      "trackLists": "Track Lists",
+      "trackLists": "Listas de pistas",
       "bibleReferences": "Referencias bíblicas",
       "addBibleReference": "Agregar referencia bíblica",
-      "externalReferences": "External references",
-      "addExternalReference": "Add external reference",
+      "externalReferences": "Referencias externas",
+      "addExternalReference": "Añadir referencias externas",
       "record": "Registro",
       "pause": "Pausa",
       "resetTime": "reestablecer tiempo",
@@ -112,11 +112,11 @@
       "missingTrack": "Pista que falta",
       "missingAlbum": "Álbum perdido",
       "wrongId": "Mal BMM-ID",
-      "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "start": "Comenzar",
+      "end": "Terminar",
+      "loadSongMetadata": "cargar metadatos de la canción",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "reemplazar metadatos"
       }
     },
     "waitings": {
@@ -133,22 +133,22 @@
       "contributors": "Colaboradores"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Guardar transmisión",
+      "edit": "Editar transmisión",
+      "add": "Añadir transmisión",
+      "cancelEditing": "Cancelar edición",
+      "upcomingMessage": "Próximas transmisiones en directo de BMM",
+      "noUpcomingMessage": "¡No hay próximas transmisiones en vivo de BMM!"
     },
     "users": {
       "adminUsers": "Usuarios administradores",
-      "albumManager": "Albums",
+      "albumManager": "Álbumes",
       "trackManager": "Pistas",
       "contributorManager": "Colaboradores",
       "notificationManager": "Notificaciones",
       "podcastManager": "Podcasts",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "featurePreview": "Vista previa de la Función",
+      "liveManager": "En Vivo",
       "allRights": "Todos los derechos",
       "refreshList": "Actualizar lista"
     },
@@ -158,35 +158,35 @@
       "sendPushNotification": "Enviar notificación push",
       "sent": "Enviado",
       "failed": "Error",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "scheduledSendTime": "hora programada",
+      "link": "enlace"
     },
     "podcast": {
       "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Editar Podcast",
+      "createNew": "Crear un nuevo podcast",
+      "addTranslation": "Añadir traducción al podcast",
+      "save": "Guardar podcast"
     },
     "playlist": {
       "title": "Listas de reproducción",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Editar lista de reproducción",
+      "createNew": "Crear una nueva lista de reproducción",
+      "addTranslation": "Añadir la traducción de la lista de reproducción",
+      "save": "Guardar lista de reproducción"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Canales de Música",
+      "editTitle": "Editar Canal de Música",
+      "createNew": "Crea un nuevo canal de música",
+      "addTranslation": "Añadir traducción al canal",
+      "save": "Guardar canal de música"
     }
   },
   "states": {
     "noChanges": "Sin cambios",
     "allIsWell": "Todo está bien",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Cambios guardados",
     "couldNotCreateAlbum": "No se pudo crear el álbum",
     "couldNotCreateTrack": "No se pudo crear pista",
     "errorCode": "Código de error",
@@ -212,7 +212,7 @@
   "warnings": {
     "confirmAlbumDeletion": "¿Está seguro que desea eliminar el álbum con todos sus sub-álbumes y pistas?",
     "confirmTrackDeletion": "¿Está usted seguro de que desea eliminar la pista con todo su contenido?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "El idioma tiene contenido. Confirmar la eliminación",
     "confirmContributorDeletion": "¿ESTÁS SEGURO DE QUE DESEA ELIMINAR ESTE COLABORADOR? SE ELIMINARÁN TODAS LAS PISTAS ENLAZADAS."
   },
   "track": {
