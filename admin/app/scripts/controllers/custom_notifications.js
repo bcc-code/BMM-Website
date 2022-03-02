@@ -17,6 +17,7 @@ angular.module('bmmApp')
       var next5Minutes = new Date(Math.ceil(new Date().getTime()/precision) * precision);
       $scope.scheduledDateTime = next5Minutes;
       $scope.actionUrl = "";
+      $scope.filterOutConfirmedListeners = false;
 
       $scope.languageToAdd = _init.root.languages[0];
     }
@@ -28,7 +29,8 @@ angular.module('bmmApp')
       var notification = {
         translations: $scope.notificationTranslations,
         scheduled_time: $scope.scheduledDateTime,
-        action_url: $scope.actionUrl
+        action_url: $scope.actionUrl,
+        filter_out_confirmed_listeners: $scope.filterOutConfirmedListeners
       };
 
       _api.sendNotification(notification)
