@@ -15,32 +15,34 @@ stages:
   
   - stage: Deploy
     displayName: 'Deploy'
-    steps:
-      - task: AzureRmWebAppDeployment@3
-        displayName: 'Deploy Client App Service'
-        inputs:
-          azureSubscription: '$(azureSubscription)'
-          appType: 'Web App'
-          WebAppName: 'INT-BMM'
-          Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/client-*.zip'
-          TakeAppOfflineFlag: true
-          UseWebDeploy: true
-          RemoveAdditionalFilesFlag: true
-          ExcludeFilesFromAppDataFlag: true
-          RenameFilesFlag: true
-          JSONFiles: '/scripts/*.config.json'
-          
-      - task: AzureRmWebAppDeployment@3
-        displayName: 'Deploy Admin App Service'
-        inputs:
-          azureSubscription: '$(azureSubscription)'
-          appType: 'Web App'
-          WebAppName: 'INT-BMM'
-          VirtualApplication: /admin
-          Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/admin-*.zip'
-          TakeAppOfflineFlag: true
-          UseWebDeploy: true
-          RemoveAdditionalFilesFlag: true
-          ExcludeFilesFromAppDataFlag: true
-          RenameFilesFlag: true
-          JSONFiles: '/scripts/*.config.json'
+    jobs:
+    - job: 'Deploy Job'
+      steps:
+        - task: AzureRmWebAppDeployment@3
+          displayName: 'Deploy Client App Service'
+          inputs:
+            azureSubscription: '$(azureSubscription)'
+            appType: 'Web App'
+            WebAppName: 'INT-BMM'
+            Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/client-*.zip'
+            TakeAppOfflineFlag: true
+            UseWebDeploy: true
+            RemoveAdditionalFilesFlag: true
+            ExcludeFilesFromAppDataFlag: true
+            RenameFilesFlag: true
+            JSONFiles: '/scripts/*.config.json'
+            
+        - task: AzureRmWebAppDeployment@3
+          displayName: 'Deploy Admin App Service'
+          inputs:
+            azureSubscription: '$(azureSubscription)'
+            appType: 'Web App'
+            WebAppName: 'INT-BMM'
+            VirtualApplication: /admin
+            Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/admin-*.zip'
+            TakeAppOfflineFlag: true
+            UseWebDeploy: true
+            RemoveAdditionalFilesFlag: true
+            ExcludeFilesFromAppDataFlag: true
+            RenameFilesFlag: true
+            JSONFiles: '/scripts/*.config.json'
