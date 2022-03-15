@@ -1,0 +1,94 @@
+pool:
+  name: Azure Pipelines
+  vmImage: 'windows-2019'
+
+steps:
+  - task: UseNode@1
+    displayName: 'Use Node 10.x for compatibility with node-sass'
+    inputs:
+      version: 10.x
+
+  - task: Npm@1
+    displayName: 'common - npm install'
+    inputs:
+      workingDir: common
+      verbose: false
+  
+  - task: Grunt@0
+    displayName: 'common - updateCommonFiles'
+    inputs:
+      gruntFile: common/Gruntfile.js
+      targets: updateCommonFiles
+  
+  - task: Npm@1
+    displayName: 'admin - npm install'
+    inputs:
+      workingDir: admin
+      verbose: false
+  
+  - task: touchify.vsts-bower.bower.Bower@0
+    displayName: 'admin - bower'
+    inputs:
+      command: update
+      bowerjson: admin/bower.json
+  
+  - task: Grunt@0
+    displayName: 'admin - build'
+    inputs:
+      gruntFile: admin/Gruntfile.js
+      targets: build
+  
+  - task: Npm@1
+    displayName: 'client - npm install'
+    inputs:
+      workingDir: client
+      verbose: false
+  
+  - task: touchify.vsts-bower.bower.Bower@0
+    displayName: 'client - bower'
+    inputs:
+      command: update
+      bowerjson: client/bower.json
+  
+  - task: Grunt@0
+    displayName: 'client - build'
+    inputs:
+      gruntFile: client/Gruntfile.js
+      targets: build
+  
+  - task: CopyFiles@2
+    displayName: 'Copy admin files'
+    inputs:
+      SourceFolder: admin/dist
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy/admin'
+  
+  - task: CopyFiles@2
+    displayName: 'Copy client files'
+    inputs:
+      SourceFolder: client/dist
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy/client'
+  
+  - task: ArchiveFiles@1
+    displayName: 'Archive client files'
+    inputs:
+      rootFolder: '$(Build.ArtifactStagingDirectory)/deploy/client'
+      includeRootFolder: false
+      archiveFile: '$(Build.ArtifactStagingDirectory)/client-$(Build.BuildId).zip'
+  
+  - task: ArchiveFiles@1
+    displayName: 'Archive admin files'
+    inputs:
+      rootFolder: '$(Build.ArtifactStagingDirectory)/deploy/admin'
+      includeRootFolder: false
+      archiveFile: '$(Build.ArtifactStagingDirectory)/admin-$(Build.BuildId).zip'
+  
+  - task: CopyPublishBuildArtifacts@1
+    displayName: 'Copy Publish Artifact: drop'
+    inputs:
+      CopyRoot: '$(Build.ArtifactStagingDirectory)'
+      Contents: |
+       admin-$(Build.BuildId).zip
+       client-$(Build.BuildId).zip
+      ArtifactName: drop
+      ArtifactType: Container
+    condition: succeededOrFailed()
