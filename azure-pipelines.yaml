@@ -13,8 +13,9 @@ stages:
     jobs:
       - template: 'template.build.yml'
   
-  - stage: Deploy
-    displayName: 'Deploy'
+  - stage: DeployINT
+    dependsOn: BuildAndPackage
+    displayName: 'DeployINT'
     jobs:
     - job: 'DeployJob'
       steps:
@@ -24,7 +25,7 @@ stages:
             azureSubscription: '$(azureSubscription)'
             appType: 'Web App'
             WebAppName: 'INT-BMM'
-            Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/client-*.zip'
+            Package: '$(Pipeline.Workspace)/BMM Website/drop/client-*.zip'
             TakeAppOfflineFlag: true
             UseWebDeploy: true
             RemoveAdditionalFilesFlag: true
@@ -39,7 +40,7 @@ stages:
             appType: 'Web App'
             WebAppName: 'INT-BMM'
             VirtualApplication: /admin
-            Package: '$(System.DefaultWorkingDirectory)/BMM Website/drop/admin-*.zip'
+            Package: '$(Pipeline.Workspace)/BMM Website/drop/admin-*.zip'
             TakeAppOfflineFlag: true
             UseWebDeploy: true
             RemoveAdditionalFilesFlag: true
