@@ -5,7 +5,7 @@ variables:
   CSharpServerUrlIndex: 1
   fileServerUrl: 'https://int-bmm-files.brunstad.org/'
   serverUrlIndex: 1
-  azureSubscription: 'ReplaceMe'
+  ##azureSubscription: 'ReplaceMe'
 
 stages:
   - stage: BuildAndPackage
