@@ -16,7 +16,7 @@ stages:
   - stage: Deploy
     displayName: 'Deploy'
     jobs:
-    - job: 'Deploy Job'
+    - job: 'DeployJob'
       steps:
         - task: AzureRmWebAppDeployment@3
           displayName: 'Deploy Client App Service'
