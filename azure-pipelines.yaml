@@ -19,6 +19,8 @@ stages:
     jobs:
     - job: 'DeployJob'
       steps:
+        - task: DownloadPipelineArtifact@2
+
         - task: AzureRmWebAppDeployment@3
           displayName: 'Deploy Client App Service'
           inputs:
