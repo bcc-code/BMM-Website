@@ -18,9 +18,10 @@ jobs:
     - task: Npm@1
       displayName: 'common - updateCommonFiles'
       inputs:
+        command: custom
+        customCommand: 'run updateCommonFiles'
         workingDir: common
         verbose: false
-        customCommand: 'run updateCommonFiles'
     
     - task: Npm@1
       displayName: 'admin - npm install'
