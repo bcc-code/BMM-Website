@@ -16,6 +16,7 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "updateCommonFiles": "grunt updateCommonFiles"
   }
 }

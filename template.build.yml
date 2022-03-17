@@ -14,12 +14,20 @@ jobs:
       inputs:
         workingDir: common
         verbose: false
+
+    - task: Npm@1
+      displayName: 'common - updateCommonFiles'
+      inputs:
+        workingDir: common
+        verbose: false
+        customCommand: 'run updateCommonFiles'
     
     - task: Grunt@0
       displayName: 'common - updateCommonFiles'
       inputs:
         gruntFile: common/Gruntfile.js
         targets: updateCommonFiles
+      disabled: true
     
     - task: Npm@1
       displayName: 'admin - npm install'
