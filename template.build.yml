@@ -34,12 +34,14 @@ jobs:
       inputs:
         command: update
         bowerjson: admin/bower.json
-    
-    - task: Grunt@0
+
+    - task: Npm@1
       displayName: 'admin - build'
       inputs:
-        gruntFile: admin/Gruntfile.js
-        targets: build
+        command: custom
+        customCommand: 'run build'
+        workingDir: admin
+        verbose: false
     
     - task: Npm@1
       displayName: 'client - npm install'
@@ -52,12 +54,14 @@ jobs:
       inputs:
         command: update
         bowerjson: client/bower.json
-    
-    - task: Grunt@0
+
+    - task: Npm@1
       displayName: 'client - build'
       inputs:
-        gruntFile: client/Gruntfile.js
-        targets: build
+        command: custom
+        customCommand: 'run build'
+        workingDir: client
+        verbose: false
     
     - task: CopyFiles@2
       displayName: 'Copy admin files'
