@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "connect-modrewrite": "^0.8.5",
+    "grunt-cli": "^1.4.3",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-karma": "^0.12.1",
     "grunt-node-sass": "^1.0.1",
