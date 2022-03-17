@@ -2,7 +2,7 @@ jobs:
   - job: 'Build'
     displayName: 'Build'
     pool:
-      vmImage: 'windows-2022'
+      vmImage: 'macOS-latest'
     steps:
     - task: UseNode@1
       displayName: 'Use Node 10.x for compatibility with node-sass'
@@ -62,9 +62,6 @@ jobs:
         customCommand: 'run build'
         workingDir: client
         verbose: false
-        
-    - script: dotnet build --configuration Release
-      displayName: 'dotnet build Release'
       
     - task: CopyFiles@2
       displayName: 'Copy admin files'

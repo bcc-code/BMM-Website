@@ -12,9 +12,20 @@ stages:
     displayName: 'Build and package'
     jobs:
       - template: 'template.build.yml'
+
+  - stage: BuildDotnet
+    dependsOn: BuildAndPackage
+    displayName: 'BuildDotnet'
+    jobs:
+      - job: 'BuildDotnetJob'
+        steps:
+          - task: DownloadPipelineArtifact@2
+
+          - script: dotnet build --configuration Release
+            displayName: 'dotnet build Release'
   
   - stage: DeployINT
-    dependsOn: BuildAndPackage
+    dependsOn: BuildDotnet
     displayName: 'DeployINT'
     jobs:
     - job: 'DeployJob'
