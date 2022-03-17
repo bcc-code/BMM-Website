@@ -2,7 +2,7 @@ jobs:
   - job: 'Build'
     displayName: 'Build'
     pool:
-      vmImage: 'macOS-latest'
+      vmImage: 'windows-2022'
     steps:
     - task: UseNode@1
       displayName: 'Use Node 10.x for compatibility with node-sass'
