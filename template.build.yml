@@ -62,7 +62,10 @@ jobs:
         customCommand: 'run build'
         workingDir: client
         verbose: false
-    
+        
+    - script: dotnet build --configuration Release
+      displayName: 'dotnet build Release'
+      
     - task: CopyFiles@2
       displayName: 'Copy admin files'
       inputs:
