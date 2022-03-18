@@ -28,8 +28,8 @@ stages:
               TargetFolder: 'BMM.Website/wwwroot'
               overwrite: true
 
-          - script: mkdir admin
-            workingDirectory: 'BMM.Website/wwwroot'
+          ##- script: mkdir admin
+          ##  workingDirectory: 'BMM.Website/wwwroot'
             
           - task: CopyFiles@2
               displayName: 'Copy admin files'
