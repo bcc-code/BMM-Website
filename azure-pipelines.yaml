@@ -24,17 +24,14 @@ stages:
           - task: CopyFiles@2
             displayName: 'Copy client files'
             inputs:
-              SourceFolder: client
+              SourceFolder: 'client'
               TargetFolder: 'BMM.Website/wwwroot'
-              overwrite: true
-
-          ##- script: mkdir admin
-          ##  workingDirectory: 'BMM.Website/wwwroot'
+              overwrite: 'true'
             
           - task: CopyFiles@2
               displayName: 'Copy admin files'
               inputs:
-                SourceFolder: admin
+                SourceFolder: 'admin'
                 TargetFolder: 'BMM.Website/wwwroot/admin'
 
           - script: dotnet build --configuration Release
