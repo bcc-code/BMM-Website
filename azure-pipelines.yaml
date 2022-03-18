@@ -24,12 +24,19 @@ stages:
           - task: CopyFiles@2
             displayName: 'Copy client files'
             inputs:
-              sourceFolder: 'client'
+              sourceFolder: 'client/app'
               targetFolder: 'BMM.Website/wwwroot'
+
+          - task: CopyFiles@2
+            displayName: 'Copy admin files'
+            inputs:
+              sourceFolder: 'admin/app'
+              targetFolder: 'BMM.Website/wwwroot/admin'
 
           - script: dotnet build --configuration Release
             displayName: 'dotnet build Release'
           - script: dotnet publish -o output/
+            displayName: 'dotnet publish'
           
           - publish: $(System.DefaultWorkingDirectory)
             artifact: WorkingDirectory
