@@ -23,6 +23,10 @@ stages:
 
           - script: dotnet build --configuration Release
             displayName: 'dotnet build Release'
+          
+          - script: mkdir wwwroot
+          - publish: $(System.DefaultWorkingDirectory)
+            artifact: WebApp
   
   - stage: DeployINT
     dependsOn: BuildDotnet
