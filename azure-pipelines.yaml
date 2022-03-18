@@ -26,12 +26,6 @@ stages:
             inputs:
               sourceFolder: 'client'
               targetFolder: 'BMM.Website/wwwroot'
-            
-          - task: CopyFiles@2
-              displayName: 'Copy admin files'
-              inputs:
-                sourceFolder: 'admin'
-                targetFolder: 'BMM.Website/wwwroot/admin'
 
           - script: dotnet build --configuration Release
             displayName: 'dotnet build Release'
