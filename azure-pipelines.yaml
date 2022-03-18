@@ -27,8 +27,10 @@ stages:
               SourceFolder: client
               TargetFolder: 'BMM.Website/wwwroot'
               overwrite: true
+
           - script: mkdir admin
-            workingDirectory: BMM.Website/wwwroot
+            workingDirectory: 'BMM.Website/wwwroot'
+            
           - task: CopyFiles@2
               displayName: 'Copy admin files'
               inputs:
