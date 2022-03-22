@@ -37,10 +37,17 @@ stages:
             displayName: 'dotnet build Release'
           - script: dotnet publish -o output/
             displayName: 'dotnet publish'
+
+          - task: ArchiveFiles@1
+            displayName: 'Archive WebApp'
+            inputs:
+              rootFolder: '$(System.DefaultWorkingDirectory)/output/'
+              includeRootFolder: false
+              archiveFile: $(System.DefaultWorkingDirectory)/output/WebApp-$(Build.BuildId).zip
           
           - publish: $(System.DefaultWorkingDirectory)
             artifact: WorkingDirectory
-          - publish: $(System.DefaultWorkingDirectory)/output/
+          - publish: $(System.DefaultWorkingDirectory)/output/WebApp-$(Build.BuildId).zip
             artifact: WebApp
   
   - stage: DeployINT
@@ -51,31 +58,11 @@ stages:
       steps:
         - task: DownloadPipelineArtifact@2
 
-        - task: AzureRmWebAppDeployment@3
+        - task: AzureRmWebAppDeployment@4
           displayName: 'Deploy Client App Service'
           inputs:
             azureSubscription: '$(azureSubscription)'
-            appType: 'Web App'
-            WebAppName: 'INT-BMM'
-            Package: '$(Pipeline.Workspace)/drop/client-*.zip'
-            TakeAppOfflineFlag: true
-            UseWebDeploy: true
-            RemoveAdditionalFilesFlag: true
-            ExcludeFilesFromAppDataFlag: true
-            RenameFilesFlag: true
-            JSONFiles: '/scripts/*.config.json'
-            
-        - task: AzureRmWebAppDeployment@3
-          displayName: 'Deploy Admin App Service'
-          inputs:
-            azureSubscription: '$(azureSubscription)'
-            appType: 'Web App'
-            WebAppName: 'INT-BMM'
-            VirtualApplication: /admin
-            Package: '$(Pipeline.Workspace)/drop/admin-*.zip'
-            TakeAppOfflineFlag: true
-            UseWebDeploy: true
-            RemoveAdditionalFilesFlag: true
-            ExcludeFilesFromAppDataFlag: true
-            RenameFilesFlag: true
+            appType: 'webApp'
+            appName: 'INT-BMM'
+            Package: '$(Pipeline.Workspace)/WebApp-*.zip'
             JSONFiles: '/scripts/*.config.json'
