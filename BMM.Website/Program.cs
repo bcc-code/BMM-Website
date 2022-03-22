@@ -5,12 +5,8 @@ var app = builder.Build();
 
 var indexFile = File.ReadAllText("wwwroot/index.html");
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/track/99888", () =>
-{
-    return new HtmlResult(indexFile, "bmm", "Listen to edifying music and messages");
-});
+app.MapGet("/track/99144", () => new HtmlResult(indexFile, "Forward! No Relenting!", "BF Winnipeg 2018"));
 app.UseStaticFiles();
-app.MapGet("*", () => "catch all");
+app.MapGet("{*.}", () => new HtmlResult(indexFile, "bmm", "Listen to edifying music and messages"));
 
 app.Run();
