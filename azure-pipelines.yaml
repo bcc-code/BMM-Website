@@ -63,6 +63,6 @@ stages:
           inputs:
             azureSubscription: '$(azureSubscription)'
             appType: 'webApp'
-            appName: 'INT-BMM'
+            WebAppName: 'INT-BMM'
             Package: '$(Pipeline.Workspace)/WebApp-*.zip'
             JSONFiles: '/scripts/*.config.json'
