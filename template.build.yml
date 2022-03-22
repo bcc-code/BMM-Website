@@ -67,35 +67,14 @@ jobs:
       displayName: 'Copy admin files'
       inputs:
         SourceFolder: admin/dist
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy/admin'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/admin'
     
     - task: CopyFiles@2
       displayName: 'Copy client files'
       inputs:
         SourceFolder: client/dist
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy/client'
-    
-    - task: ArchiveFiles@1
-      displayName: 'Archive client files'
-      inputs:
-        rootFolder: '$(Build.ArtifactStagingDirectory)/deploy/client'
-        includeRootFolder: false
-        archiveFile: '$(Build.ArtifactStagingDirectory)/client-$(Build.BuildId).zip'
-    
-    - task: ArchiveFiles@1
-      displayName: 'Archive admin files'
-      inputs:
-        rootFolder: '$(Build.ArtifactStagingDirectory)/deploy/admin'
-        includeRootFolder: false
-        archiveFile: '$(Build.ArtifactStagingDirectory)/admin-$(Build.BuildId).zip'
-    
-    - task: CopyPublishBuildArtifacts@1
-      displayName: 'Copy Publish Artifact: drop'
-      inputs:
-        CopyRoot: '$(Build.ArtifactStagingDirectory)'
-        Contents: |
-         admin-$(Build.BuildId).zip
-         client-$(Build.BuildId).zip
-        ArtifactName: drop
-        ArtifactType: Container
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/client'
+
+    - publish: $(Build.ArtifactStagingDirectory)
+      artifact: dist
       condition: succeededOrFailed()

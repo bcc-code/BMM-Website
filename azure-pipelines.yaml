@@ -24,13 +24,13 @@ stages:
           - task: CopyFiles@2
             displayName: 'Copy client files'
             inputs:
-              sourceFolder: 'client/app'
+              sourceFolder: '$(Pipeline.Workspace)/dist/client/'
               targetFolder: 'BMM.Website/wwwroot'
 
           - task: CopyFiles@2
             displayName: 'Copy admin files'
             inputs:
-              sourceFolder: 'admin/app'
+              sourceFolder: '$(Pipeline.Workspace)/dist/admin/'
               targetFolder: 'BMM.Website/wwwroot/admin'
 
           - script: dotnet build --configuration Release
