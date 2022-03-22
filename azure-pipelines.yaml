@@ -65,4 +65,4 @@ stages:
             appType: 'webApp'
             WebAppName: 'INT-BMM'
             Package: '$(Pipeline.Workspace)/WebApp/WebApp-*.zip'
-            JSONFiles: '/scripts/*.config.json'
+            JSONFiles: '/**/scripts/config.json'
