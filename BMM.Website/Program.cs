@@ -1,4 +1,5 @@
 using BMM.Website;
+using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
@@ -24,6 +25,10 @@ app.MapGet("track/{*.}", handler);
 app.MapGet("playlist/{*.}", handler);
 app.MapGet("groupgoal/{*.}", handler);
 app.MapGet("copyright/{*.}", handler);
+
+app.UseRewriter(new RewriteOptions()
+    .AddRewrite("^admin(?!.*\\.(js|css|jpg|svg|png|html|txt|json|map|woff|eot|ttf|woff2|ico|gif)($|\\?)).*",
+        "admin/index.html", true));
 
 app.UseStaticFiles();
 
