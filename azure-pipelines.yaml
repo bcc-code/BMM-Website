@@ -26,6 +26,7 @@ stages:
             inputs:
               sourceFolder: '$(Pipeline.Workspace)/dist/client/'
               targetFolder: 'BMM.Website/wwwroot'
+              overWrite: true
 
           - task: CopyFiles@2
             displayName: 'Copy admin files'
