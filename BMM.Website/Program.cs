@@ -1,3 +1,4 @@
+using System.Globalization;
 using BMM.Website;
 using Microsoft.AspNetCore.Rewrite;
 
@@ -30,7 +31,16 @@ app.UseRewriter(new RewriteOptions()
     .AddRewrite("^admin(?!.*\\.(js|css|jpg|svg|png|html|txt|json|map|woff|eot|ttf|woff2|ico|gif)($|\\?)).*",
         "admin/index.html", true));
 
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        // Cache static files for 30 days
+        ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=2592000");
+        ctx.Context.Response.Headers.Append("Expires",
+            DateTime.UtcNow.AddDays(30).ToString("R", CultureInfo.InvariantCulture));
+    }
+});
 
 //ToDo: <add name="Content-Security-Policy" value="frame-ancestors https://*.bcc.no" /> for logout-redirect.html and logout.html
 app.Run();
