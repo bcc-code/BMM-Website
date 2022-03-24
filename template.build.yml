@@ -1,0 +1,80 @@
+jobs:
+  - job: 'Build'
+    displayName: 'Build'
+    pool:
+      vmImage: 'macOS-latest'
+    steps:
+    - task: UseNode@1
+      displayName: 'Use Node 10.x for compatibility with node-sass'
+      inputs:
+        version: 10.x
+  
+    - task: Npm@1
+      displayName: 'common - npm install'
+      inputs:
+        workingDir: common
+        verbose: false
+
+    - task: Npm@1
+      displayName: 'common - updateCommonFiles'
+      inputs:
+        command: custom
+        customCommand: 'run updateCommonFiles'
+        workingDir: common
+        verbose: false
+    
+    - task: Npm@1
+      displayName: 'admin - npm install'
+      inputs:
+        workingDir: admin
+        verbose: false
+    
+    - task: touchify.vsts-bower.bower.Bower@0
+      displayName: 'admin - bower'
+      inputs:
+        command: update
+        bowerjson: admin/bower.json
+
+    - task: Npm@1
+      displayName: 'admin - build'
+      inputs:
+        command: custom
+        customCommand: 'run build'
+        workingDir: admin
+        verbose: false
+    
+    - task: Npm@1
+      displayName: 'client - npm install'
+      inputs:
+        workingDir: client
+        verbose: false
+    
+    - task: touchify.vsts-bower.bower.Bower@0
+      displayName: 'client - bower'
+      inputs:
+        command: update
+        bowerjson: client/bower.json
+
+    - task: Npm@1
+      displayName: 'client - build'
+      inputs:
+        command: custom
+        customCommand: 'run build'
+        workingDir: client
+        verbose: false
+      
+    - task: CopyFiles@2
+      displayName: 'Copy admin files'
+      inputs:
+        SourceFolder: admin/dist
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/admin'
+    
+    - task: CopyFiles@2
+      displayName: 'Copy client files'
+      inputs:
+        SourceFolder: client/dist
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/client'
+
+    - publish: $(Build.ArtifactStagingDirectory)
+      artifact: dist
+      condition: succeededOrFailed()
