@@ -13,7 +13,39 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/workflows/build.yml
+      - name: Use Node 10.x for compatibility with node-sass
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.x
+      - name: common - npm install & updateCommonFiles
+        run: | 
+          npm install
+          npm run updateCommonFiles
+        working-directory: ./common
+
+      - name: admin - build
+        run: |
+          npm install
+          bower update
+          npm run build
+        working-directory: ./admin
+
+      - name: client - build
+        run: | 
+          npm client
+          bower update
+          npm run build
+        working-directory: ./client
+
+      - name: Copy admin files
+        run: Copy 'admin/dist/' '${{ github.workspace }}/admin'
+      - name: Copy client files
+        run: Copy 'client/dist/' '${{ github.workspace }}/client'
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}
+          name: dist
+        if: (${{ job.status }} != 'cancelled')
   build_dotnet:
     runs-on: windows-latest
     needs:
