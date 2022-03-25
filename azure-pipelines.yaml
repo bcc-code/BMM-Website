@@ -1,6 +1,12 @@
 pool:
   vmImage: 'windows-2022'
-  
+
+trigger:
+  branches:
+    include:
+      - develop
+      - main
+
 variables:
   CSharpServerUrlIndex: 1
   fileServerUrl: 'https://int-bmm-files.brunstad.org/'

@@ -32,7 +32,7 @@ jobs:
 
       - name: client - build
         run: | 
-          npm client
+          npm install
           npm run bowerUpdate
           npm run build
         working-directory: ./client
