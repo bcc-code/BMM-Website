@@ -12,7 +12,7 @@ jobs:
   build_javascript:
     runs-on: macos-latest
     steps:
-      - uses: ./.github/workflows/build
+      - uses: ./.github/workflows/build.yml
   build_dotnet:
     runs-on: windows-latest
     needs:
