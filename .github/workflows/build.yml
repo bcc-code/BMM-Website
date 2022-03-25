@@ -1,0 +1,42 @@
+on:
+  workflow_dispatch:
+jobs:
+  Build:
+    name: Build Javascript
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node 10.x for compatibility with node-sass
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.x
+      - name: common - npm install
+        run: npm common
+      - name: common - updateCommonFiles
+        run: npm run updateCommonFiles common
+        
+      - name: admin - npm install
+        run: npm admin
+      - name: admin - bower 
+        working-directory: ./admin
+        run: bower update
+      - name: admin - build
+        run: npm run build admin
+        
+      - name: client - npm install
+        run: npm client
+      - name: client - bower
+        working-directory: ./client
+        run: bower update
+      - name: client - build
+        run: npm run build client
+        
+      - name: Copy admin files
+        run: Copy 'admin/dist/' '${{ github.workspace }}/admin'
+      - name: Copy client files
+        run: Copy 'client/dist/' '${{ github.workspace }}/client'
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}
+          name: dist
+        if: (${{ job.status }} != 'cancelled')

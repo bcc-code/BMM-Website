@@ -5,6 +5,7 @@ translations_external
 /.vs
 /client/app/translations/en.json
 /admin/app/translations/en.json
+!/.github/
 
 ###################
 # compiled source #
