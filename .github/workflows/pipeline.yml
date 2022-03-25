@@ -12,6 +12,7 @@ jobs:
   build_javascript:
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/workflows/build.yml
   build_dotnet:
     runs-on: windows-latest
