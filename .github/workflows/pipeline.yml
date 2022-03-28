@@ -105,7 +105,7 @@ jobs:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: '${{ env.Pipeline.Workspace }}/appsettings.json'
+          files: '${{ github.workspace }}/WebApp/appsettings.json'
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
@@ -113,4 +113,4 @@ jobs:
         with:
           app-name: INT-BMM
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.Pipeline.Workspace }}/WebApp
+          package: ${{ github.workspace }}/WebApp
