@@ -70,9 +70,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -o output/
       - name: unzip client files
-        run: unzip '${{ env.Pipeline.Workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
+        run: unzip '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
       - name: unzip admin files
-        run: unzip '${{ env.Pipeline.Workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
+        run: unzip '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
         
       #- name: Copy client files
       #  run: Copy '${{ env.Pipeline.Workspace }}/dist/client//' '${{ github.workspace }}/output/wwwroot'
