@@ -82,49 +82,36 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
+
       - name: dotnet build Release
         run: dotnet build --configuration Release
       - name: dotnet publish
         run: dotnet publish -o output/
+
       - name: unzip client files
         run: unzip '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
       - name: unzip admin files
         run: unzip '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
-        
-      #- name: Copy client files
-      #  run: Copy '${{ env.Pipeline.Workspace }}/dist/client//' '${{ github.workspace }}/output/wwwroot'
-      #- name: Copy admin files
-      #  run: Copy '${{ env.Pipeline.Workspace }}/dist/admin//' '${{ github.workspace }}/output/wwwroot/admin'
-#      - uses: papeloto/action-zip@v1
-#        with:
-#          files: output/
-#          dest: '${{ github.workspace }}/WebApp.zip'
-      #- name: Archive output
-      #  run: |
-      #    zip '${{ github.workspace }}/WebApp.zip' -r output 
-      #- uses: actions/upload-artifact@v2
-      #  with:
-      #    path: ${{ github.workspace }}
-      #    name: WorkingDirectory
+
       - uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/output/
           name: WebApp
-#  deploy_INT:
-#    runs-on: windows-latest
-#    needs:
-#      - build_dotnet
-#    steps:
-#      - uses: actions/download-artifact@v2
-#      uses: microsoft/variable-substitution@v1
-#        with:
-#          files: '${{ env.Pipeline.Workspace }}/WebApp/appsettings.json'
-#        env:
-#          CSharpServerUrlIndex: 1
-#      - name: Deploy Client App Service
-#        uses: Azure/webapps-deploy@v2
-#        with:
-#          app-name: INT-BMM
-#          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-#          package: ${{ env.Pipeline.Workspace }}/WebApp
+  deploy_INT:
+    runs-on: windows-latest
+    needs:
+      - build_dotnet
+    steps:
+      - uses: actions/download-artifact@v2
+      uses: microsoft/variable-substitution@v1
+        with:
+          files: '${{ env.Pipeline.Workspace }}/WebApp/appsettings.json'
+        env:
+          CSharpServerUrlIndex: 1
+      - name: Deploy Client App Service
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: INT-BMM
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.Pipeline.Workspace }}/WebApp
                     
