@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 10.x
-      - name: cache node modules
+      - name: cache .npm folder
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -28,6 +28,24 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: cache client node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-client-node-modules
+        with:
+          path: ${{ github.workspace }}/client/node_modules
+          key: ${{ runner.os }}-client-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-client-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: cache admin node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-admin-node-modules
+        with:
+          path: ${{ github.workspace }}/admin/node_modules
+          key: ${{ runner.os }}-admin-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-admin-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: common - npm install & updateCommonFiles
         run: | 
           npm install
