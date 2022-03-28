@@ -89,9 +89,9 @@ jobs:
         run: dotnet publish -o output/
 
       - name: unzip client files
-        run: unzip '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
+        run: unzip -o '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
       - name: unzip admin files
-        run: unzip '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
+        run: unzip -o '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
 
       - uses: actions/upload-artifact@v2
         with:
@@ -99,7 +99,7 @@ jobs:
           name: WebApp
   deploy_int:
     runs-on: windows-latest
-    needs: 
+    needs:
       - build_dotnet
     steps:
       - uses: actions/download-artifact@v2
