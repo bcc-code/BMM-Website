@@ -50,12 +50,12 @@ jobs:
       
       - name: Archive output
         run: |
-          zip '${{ github.workspace }}/client.zip' -r client/dist 
-          zip '${{ github.workspace }}/admin.zip' -r admin/dist 
+          zip '${{ github.workspace }}/client.zip' -r client/dist
+          zip '${{ github.workspace }}/admin.zip' -r admin/dist
 
       - uses: actions/upload-artifact@v2
         with:
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}/**.zip
           name: dist
         if: (${{ job.status }} != 'cancelled')
   build_dotnet:
