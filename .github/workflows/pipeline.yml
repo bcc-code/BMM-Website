@@ -99,6 +99,7 @@ jobs:
           name: WebApp
   deploy_int:
     runs-on: windows-latest
+    environment: INT
     needs:
       - build_dotnet
     steps:
@@ -107,6 +108,11 @@ jobs:
       - uses: microsoft/variable-substitution@v1
         with:
           files: /WebApp/wwwroot/scripts/*.config.json
+        env:
+          CSharpServerUrlIndex: 1
+      - uses: microsoft/variable-substitution@v1
+        with:
+          files: /WebApp/wwwroot/admin/scripts/*.config.json
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
