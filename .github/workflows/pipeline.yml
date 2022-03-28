@@ -31,16 +31,17 @@ jobs:
         working-directory: ./admin
 
       - name: client - build
-        run: | 
+        run: |
           npm install
           npm run bowerUpdate
           npm run build
         working-directory: ./client
-
-      - name: Copy files
+      
+      - name: Archive output
         run: |
-          cp -r 'admin/dist/' '${{ github.workspace }}/admin'
-          cp -r 'client/dist/' '${{ github.workspace }}/client'
+          zip '${{ github.workspace }}/client.zip' -r client/dist 
+          zip '${{ github.workspace }}/admin.zip' -r admin/dist 
+
       - uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}
@@ -57,14 +58,22 @@ jobs:
         run: dotnet build --configuration Release
       - name: dotnet publish
         run: dotnet publish -o output/
-      - name: Copy client files
-        run: Copy '${{ env.Pipeline.Workspace }}/dist/client//' '${{ github.workspace }}/output/wwwroot'
-      - name: Copy admin files
-        run: Copy '${{ env.Pipeline.Workspace }}/dist/admin//' '${{ github.workspace }}/output/wwwroot/admin'
-      - uses: actions/upload-artifact@v2
-        with:
-          path: ${{ github.workspace }}
-          name: WorkingDirectory
+      - name: unzip client files
+        run: unzip '${{ env.Pipeline.Workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
+      - name: unzip admin files
+        run: unzip '${{ env.Pipeline.Workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
+        
+      #- name: Copy client files
+      #  run: Copy '${{ env.Pipeline.Workspace }}/dist/client//' '${{ github.workspace }}/output/wwwroot'
+      #- name: Copy admin files
+      #  run: Copy '${{ env.Pipeline.Workspace }}/dist/admin//' '${{ github.workspace }}/output/wwwroot/admin'
+      - name: Archive output
+        run: |
+          zip '${{ github.workspace }}/WebApp.zip' -r output 
+      #- uses: actions/upload-artifact@v2
+      #  with:
+      #    path: ${{ github.workspace }}
+      #    name: WorkingDirectory
       - uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/output/
