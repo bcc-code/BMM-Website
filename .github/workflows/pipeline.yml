@@ -78,9 +78,13 @@ jobs:
       #  run: Copy '${{ env.Pipeline.Workspace }}/dist/client//' '${{ github.workspace }}/output/wwwroot'
       #- name: Copy admin files
       #  run: Copy '${{ env.Pipeline.Workspace }}/dist/admin//' '${{ github.workspace }}/output/wwwroot/admin'
-      - name: Archive output
-        run: |
-          zip '${{ github.workspace }}/WebApp.zip' -r output 
+      - uses: papeloto/action-zip@v1
+        with:
+          files: output/
+          dest: '${{ github.workspace }}/WebApp.zip'
+      #- name: Archive output
+      #  run: |
+      #    zip '${{ github.workspace }}/WebApp.zip' -r output 
       #- uses: actions/upload-artifact@v2
       #  with:
       #    path: ${{ github.workspace }}
