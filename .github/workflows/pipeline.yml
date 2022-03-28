@@ -105,7 +105,7 @@ jobs:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: '${{ github.workspace }}/WebApp/appsettings.json'
+          files: '${{ github.workspace }}/WebApp/**/*.config.json'
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
