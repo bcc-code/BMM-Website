@@ -103,10 +103,10 @@ jobs:
       - build_dotnet
     steps:
       - uses: actions/download-artifact@v2
-      - run: dir
+      - run: ls
       - uses: microsoft/variable-substitution@v1
         with:
-          files: '${{ github.workspace }}/WebApp/wwwroot/scripts/*.config.json'
+          files: /WebApp/wwwroot/scripts/*.config.json
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
