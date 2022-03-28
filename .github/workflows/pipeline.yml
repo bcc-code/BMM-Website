@@ -37,10 +37,10 @@ jobs:
           npm run build
         working-directory: ./client
 
-      - name: Copy admin files
-        run: Copy 'admin/dist/' '${{ github.workspace }}/admin'
-      - name: Copy client files
-        run: Copy 'client/dist/' '${{ github.workspace }}/client'
+      - name: Copy files
+        run: |
+          cp -r 'admin/dist/' '${{ github.workspace }}/admin'
+          cp -r 'client/dist/' '${{ github.workspace }}/client'
       - uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}
