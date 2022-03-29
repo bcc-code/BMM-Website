@@ -3,7 +3,7 @@ on:
     branches:
       - 'develop'
       - 'main'
-      - 'feature/github-actions'
+      - 'feature/*'
   workflow_dispatch:
 env:
   CSharpServerUrlIndex: 1
