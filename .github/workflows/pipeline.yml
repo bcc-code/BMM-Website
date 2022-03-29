@@ -99,6 +99,7 @@ jobs:
           path: ${{ github.workspace }}/output/
           name: WebApp
   deploy_int:
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' 
     runs-on: windows-latest
     environment: INT
     needs:
@@ -123,11 +124,10 @@ jobs:
           package: ${{ github.workspace }}/WebApp
 
   deploy_prod:
-    if: github.ref == 'refs/heads/feature/github-actions'
     runs-on: windows-latest
     environment: PROD
     needs:
-      - build_dotnet
+      - deploy_int
     env:
       CSharpServerUrlIndex: 0
       fileServerUrl: https://bmm-files.brunstad.org/
