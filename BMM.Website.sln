@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{803114AB-F
 		README.md = README.md
 		azure-pipelines.yaml = azure-pipelines.yaml
 		template.build.yml = template.build.yml
+		build.yml = .github/workflows/build.yml
+		pipeline.yml = .github/workflows/pipeline.yml
 	EndProjectSection
 EndProject
 Global

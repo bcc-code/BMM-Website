@@ -1,0 +1,160 @@
+on:
+  push:
+    branches:
+      - 'develop'
+      - 'main'
+      - 'feature/*'
+  workflow_dispatch:
+env:
+  CSharpServerUrlIndex: 1
+  fileServerUrl: https://int-bmm-files.brunstad.org/
+  serverUrlIndex: 1
+jobs:
+  build_javascript:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node 10.x for compatibility with node-sass
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.x
+      - name: cache .npm folder
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+      - name: cache client node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-client-node-modules
+        with:
+          path: ${{ github.workspace }}/client/node_modules
+          key: ${{ runner.os }}-client-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-client-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: cache admin node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-admin-node-modules
+        with:
+          path: ${{ github.workspace }}/admin/node_modules
+          key: ${{ runner.os }}-admin-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-admin-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: common - npm install & updateCommonFiles
+        run: | 
+          npm install
+          npm run updateCommonFiles
+        working-directory: ./common
+
+      - name: admin - build
+        run: |
+          npm install
+          npm run bowerUpdate
+          npm run build
+        working-directory: ./admin
+
+      - name: client - build
+        run: |
+          npm install
+          npm run bowerUpdate
+          npm run build
+        working-directory: ./client
+      
+      - run: zip '${{ github.workspace }}/client.zip' -r ./
+        working-directory: ./client/dist
+      - run: zip '${{ github.workspace }}/admin.zip' -r ./
+        working-directory: ./admin/dist
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/**.zip
+          name: dist
+        if: (${{ job.status }} != 'cancelled')
+  build_dotnet:
+    runs-on: windows-latest
+    needs:
+      - build_javascript
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+
+      - name: dotnet build Release
+        run: dotnet build --configuration Release
+      - name: dotnet publish
+        run: dotnet publish -o output/
+
+      - name: unzip client files
+        run: unzip -o '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
+      - name: unzip admin files
+        run: unzip -o '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/output/
+          name: WebApp
+  deploy_int:
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' 
+    runs-on: windows-latest
+    environment: INT
+    needs:
+      - build_dotnet
+    steps:
+      - uses: actions/download-artifact@v2
+      - uses: microsoft/variable-substitution@v1
+        with:
+          files: /WebApp/wwwroot/scripts/*.config.json
+        env:
+          CSharpServerUrlIndex: 1
+      - uses: microsoft/variable-substitution@v1
+        with:
+          files: /WebApp/wwwroot/admin/scripts/*.config.json
+        env:
+          CSharpServerUrlIndex: 1
+      - name: Deploy Client App Service
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: INT-BMM
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ github.workspace }}/WebApp
+
+  deploy_prod:
+    runs-on: windows-latest
+    environment: PROD
+    needs:
+      - deploy_int
+    env:
+      CSharpServerUrlIndex: 0
+      fileServerUrl: https://bmm-files.brunstad.org/
+      serverUrlIndex: 0
+    steps:
+      - uses: actions/download-artifact@v2
+      - uses: microsoft/variable-substitution@v1
+        with:
+          files: /WebApp/wwwroot/scripts/*.config.json
+      - uses: microsoft/variable-substitution@v1
+        with:
+          files: /WebApp/wwwroot/admin/scripts/*.config.json
+      - name: Deploy App Service in South Central US
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: PROD-BMM-South-Central-US
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_US }}
+          package: ${{ github.workspace }}/WebApp
+      - name: Deploy App Service in West Europe
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: Prod-BMM
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_EUROPE }}
+          package: ${{ github.workspace }}/WebApp
+      - name: Deploy App Service in Southeast Asia
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: PROD-BMM-Southeast-Asia
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_ASIA }}
+          package: ${{ github.workspace }}/WebApp
