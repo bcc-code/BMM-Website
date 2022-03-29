@@ -23,6 +23,8 @@ public class HtmlResult : IResult
         var metaTags =
             $"<meta property=\"og:title\" content=\"{_title}\"><meta property=\"og:description\" content=\"{_description}\">\n";
         var adjustedHtml = _indexHtml.Replace(Placeholder, metaTags);
+
+        httpContext.Response.Headers.Append("Cache-Control", "no-store");
         
         httpContext.Response.ContentType = MediaTypeNames.Text.Html;
         httpContext.Response.ContentLength = Encoding.UTF8.GetByteCount(adjustedHtml);
