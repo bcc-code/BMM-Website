@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - 'develop'
+      - 'main'
       - 'feature/github-actions'
   workflow_dispatch:
 env:
@@ -139,9 +140,21 @@ jobs:
       - uses: microsoft/variable-substitution@v1
         with:
           files: /WebApp/wwwroot/admin/scripts/*.config.json
-      - name: Deploy Client App Service
+      - name: Deploy App Service in South Central US
         uses: Azure/webapps-deploy@v2
         with:
           app-name: PROD-BMM-South-Central-US
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_US }}
+          package: ${{ github.workspace }}/WebApp
+      - name: Deploy App Service in West Europe
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: Prod-BMM
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_EUROPE }}
+          package: ${{ github.workspace }}/WebApp
+      - name: Deploy App Service in Southeast Asia
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: PROD-BMM-Southeast-Asia
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_ASIA }}
           package: ${{ github.workspace }}/WebApp
