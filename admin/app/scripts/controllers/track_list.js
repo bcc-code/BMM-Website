@@ -15,8 +15,7 @@ angular.module('bmmApp')
     _api.trackListIdGet($scope.type, id, {raw: true}).done(function(trackList) {
       $scope.$apply(function() {
         $scope.current = trackList;
-        var serverUrl = $scope.type === 'podcast' ? _api.getserverUrli() : _api.getFileServerUrl();
-        $scope.uploadUrl = serverUrl + $scope.type + '/' + trackList.id + '/cover';
+        $scope.uploadUrl = _api.getserverUrli() + $scope.type + '/' + trackList.id + '/cover';
       });
     });
   };
@@ -47,7 +46,7 @@ angular.module('bmmApp')
   }
 
   $scope.uploadCover = {
-    url: $scope.type === 'podcast' ? _api.getserverUrli() : _api.getFileServerUrl() + $scope.type + '/' + $routeParams.id + '/cover',
+    url: _api.getserverUrli() + $scope.type + '/' + $routeParams.id + '/cover',
     method: 'PUT'
   };
 
