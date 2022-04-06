@@ -28,6 +28,7 @@ app.MapGet("groupgoal/{*.}", handler);
 app.MapGet("copyright/{*.}", handler);
 
 app.UseRewriter(new RewriteOptions()
+    .AddRewrite(".well-known/apple-app-site-association", ".well-known/apple-app-site-association.json", true)
     .AddRewrite("^admin(?!.*\\.(js|css|jpg|svg|png|html|txt|json|map|woff|eot|ttf|woff2|ico|gif)($|\\?)).*",
         "admin/index.html", true));
 
