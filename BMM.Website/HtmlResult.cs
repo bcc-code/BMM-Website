@@ -6,20 +6,39 @@ namespace BMM.Website;
 public class HtmlResult : IResult
 {
     private readonly string _indexHtml;
-    private readonly string _title;
-    private readonly string _description;
+    private readonly string? _path;
+    private string _title = "bmm";
+    private string _description = "Listen to edifying music and messages";
     private const string Placeholder = "<!-- {{MetadataPlaceholder}} -->";
 
-    public HtmlResult(string indexHtml, string title, string description)
+    public HtmlResult(string indexHtml)
     {
         _indexHtml = indexHtml;
-        _title = title;
-        _description = description;
+    }
+
+    public HtmlResult(string indexHtml, string? path)
+    {
+        _indexHtml = indexHtml;
+        _path = path;
     }
     
-    public Task ExecuteAsync(HttpContext httpContext)
+    public async Task ExecuteAsync(HttpContext httpContext)
     {
-        //ToDo: load actual metadata 
+        if (_path != null)
+        {
+            try
+            {
+                var api = httpContext.RequestServices.GetRequiredService<BmmApiClient>();
+                var data = await api.LoadMetadata(_path);
+                _title = data.Title;
+                _description = data.Description;
+            }
+            catch (Exception)
+            {
+                // If we can't get anything useful from the API we just use the default values.
+            }
+        }
+ 
         var metaTags =
             $"<meta property=\"og:title\" content=\"{_title}\"><meta property=\"og:description\" content=\"{_description}\">\n";
         var adjustedHtml = _indexHtml.Replace(Placeholder, metaTags);
@@ -28,6 +47,6 @@ public class HtmlResult : IResult
         
         httpContext.Response.ContentType = MediaTypeNames.Text.Html;
         httpContext.Response.ContentLength = Encoding.UTF8.GetByteCount(adjustedHtml);
-        return httpContext.Response.WriteAsync(adjustedHtml);
+        await httpContext.Response.WriteAsync(adjustedHtml);
     }
 }

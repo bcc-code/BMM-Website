@@ -3,15 +3,17 @@ using BMM.Website;
 using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient<BmmApiClient>();
+builder.Services.AddHttpClient<BmmApiClient>(c => c.BaseAddress = new Uri("https://int-bmm-api.brunstad.org"));
 var app = builder.Build();
 
 var indexFile = File.ReadAllText("wwwroot/index.html");
 
-var handler = () => new HtmlResult(indexFile, "bmm", "Listen to edifying music and messages");
+var handler = () => new HtmlResult(indexFile);
 
 app.MapGet("/", handler);
 app.MapGet("index.html", handler);
-app.MapGet("/track/99144", () => new HtmlResult(indexFile, "Forward! No Relenting!", "BF Winnipeg 2018"));
+app.MapGet("/track/{path}", (string path) => new HtmlResult(indexFile, "/track/" + path));
 
 // Make sure all patterns from client/app/scripts/app.js are also in here
 app.MapGet("welcome/{*.}", handler);
