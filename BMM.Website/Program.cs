@@ -16,6 +16,8 @@ var handler = () => new HtmlResult(indexFile);
 app.MapGet("/", handler);
 app.MapGet("index.html", handler);
 app.MapGet("/track/{path}", (string path) => new HtmlResult(indexFile, "/track/" + path));
+app.MapGet("/track/{path}/{subpath}",
+    (string path, string subpath) => new HtmlResult(indexFile, "/track/" + path + "/" + subpath));
 
 // Make sure all patterns from client/app/scripts/app.js are also in here
 app.MapGet("welcome/{*.}", handler);
