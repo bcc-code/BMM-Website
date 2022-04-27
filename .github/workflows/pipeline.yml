@@ -9,6 +9,7 @@ env:
   CSharpServerUrlIndex: 1
   fileServerUrl: https://int-bmm-files.brunstad.org/
   serverUrlIndex: 1
+  Api.BaseUrl: https://int-bmm-api.brunstad.org
 jobs:
   build_javascript:
     runs-on: macos-latest
@@ -108,12 +109,7 @@ jobs:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: /WebApp/wwwroot/scripts/*.config.json
-        env:
-          CSharpServerUrlIndex: 1
-      - uses: microsoft/variable-substitution@v1
-        with:
-          files: /WebApp/wwwroot/admin/scripts/*.config.json
+          files: '/WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json, /WebApp/appsettings.json'
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
@@ -132,14 +128,12 @@ jobs:
       CSharpServerUrlIndex: 0
       fileServerUrl: https://bmm-files.brunstad.org/
       serverUrlIndex: 0
+      Api.BaseUrl: https://bmm-api.brunstad.org
     steps:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: /WebApp/wwwroot/scripts/*.config.json
-      - uses: microsoft/variable-substitution@v1
-        with:
-          files: /WebApp/wwwroot/admin/scripts/*.config.json
+          files: '/WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json, /WebApp/appsettings.json'
       - name: Deploy App Service in South Central US
         uses: Azure/webapps-deploy@v2
         with:

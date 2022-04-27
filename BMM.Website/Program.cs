@@ -3,8 +3,10 @@ using BMM.Website;
 using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection(ApiConfiguration.SectionName));
+var apiConfig = builder.Configuration.GetSection(ApiConfiguration.SectionName).Get<ApiConfiguration>();
 builder.Services.AddTransient<BmmApiClient>();
-builder.Services.AddHttpClient<BmmApiClient>(c => c.BaseAddress = new Uri("https://int-bmm-api.brunstad.org"));
+builder.Services.AddHttpClient<BmmApiClient>(c => c.BaseAddress = new Uri(apiConfig.BaseUrl));
 var app = builder.Build();
 
 var indexFile = File.ReadAllText("wwwroot/index.html");
