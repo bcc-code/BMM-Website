@@ -9,6 +9,7 @@ public class HtmlResult : IResult
     private readonly string? _path;
     private string _title = "bmm";
     private string _description = "Listen to edifying music and messages";
+    private string _coverUrl = "https://bmm.brunstad.org/bmm-logo.jpg";
     private const string Placeholder = "<!-- {{MetadataPlaceholder}} -->";
 
     public HtmlResult(string indexHtml)
@@ -32,6 +33,7 @@ public class HtmlResult : IResult
                 var data = await api.LoadMetadata(_path);
                 _title = data.Title;
                 _description = data.Description;
+                _coverUrl = data.CoverUrl;
             }
             catch (Exception)
             {
@@ -40,7 +42,9 @@ public class HtmlResult : IResult
         }
  
         var metaTags =
-            $"<meta property=\"og:title\" content=\"{_title}\"><meta property=\"og:description\" content=\"{_description}\">\n";
+            $"<meta property=\"og:title\" content=\"{_title}\">" +
+            $"<meta property=\"og:description\" content=\"{_description}\">" +
+            $"<meta property=\"og:image\" content=\"{_coverUrl}\" />\n";
         var adjustedHtml = _indexHtml.Replace(Placeholder, metaTags);
 
         httpContext.Response.Headers.Append("Cache-Control", "no-store");
