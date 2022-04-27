@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace BMM.Website;
 
 public class BmmApiClient
@@ -18,6 +20,7 @@ public class BmmApiClient
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        [JsonPropertyName("cover_url")]
         public string CoverUrl { get; set; }
     }
 }
