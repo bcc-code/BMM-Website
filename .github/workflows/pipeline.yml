@@ -107,8 +107,6 @@ jobs:
       - build_dotnet
     steps:
       - uses: actions/download-artifact@v2
-        with:
-          name: WebApp
       - uses: microsoft/variable-substitution@v1
         with:
           files: '/WebApp/*.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
