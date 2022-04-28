@@ -109,7 +109,7 @@ jobs:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: '/WebApp/appsettings.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
+          files: '/WebApp/*.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
         env:
           CSharpServerUrlIndex: 1
       - name: Deploy Client App Service
@@ -133,7 +133,7 @@ jobs:
       - uses: actions/download-artifact@v2
       - uses: microsoft/variable-substitution@v1
         with:
-          files: '/WebApp/appsettings.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
+          files: '/WebApp/*.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
       - name: Deploy App Service in South Central US
         uses: Azure/webapps-deploy@v2
         with:
