@@ -72,7 +72,7 @@ jobs:
       - run: zip '${{ github.workspace }}/admin.zip' -r ./
         working-directory: ./admin/dist
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           path: ${{ github.workspace }}/**.zip
           name: dist
@@ -95,7 +95,7 @@ jobs:
       - name: unzip admin files
         run: unzip -o '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           path: ${{ github.workspace }}/output/
           name: WebApp
