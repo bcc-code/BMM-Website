@@ -33,7 +33,8 @@ public class HtmlResult : IResult
                 var data = await api.LoadMetadata(_path);
                 _title = data.Title;
                 _description = data.Description;
-                _coverUrl = data.CoverUrl;
+                if (!string.IsNullOrWhiteSpace(data.CoverUrl))
+                    _coverUrl = data.CoverUrl;
             }
             catch (Exception)
             {
