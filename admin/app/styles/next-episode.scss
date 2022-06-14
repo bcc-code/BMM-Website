@@ -56,8 +56,11 @@
     margin-top: 20px;
 
     h5 > span {
-      color: red; 
+      color: red;
       vertical-align: top;
+    }
+    .glyphicon-exclamation-sign {
+      color: orange;
     }
   }
 
@@ -85,7 +88,7 @@
   }
 
   .glyphicon-exclamation-sign {
-    color: orange; 
+    color: orange;
     vertical-align: text-top;
   }
   .glyphicon-ok {

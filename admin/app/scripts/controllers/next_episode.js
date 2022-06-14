@@ -154,7 +154,21 @@ angular.module('bmmApp')
 
         $scope.nextEpisode.published = new Date(nextEpisode.published_at) < datetime;
         $scope.norwegianNotMainLanguage = nextEpisode.original_language != 'nb' ? true : false;
-        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage ? true : false;
+
+        $scope.songbookIsNotSet = true;
+        $scope.lyricistIsMissing = true;
+        $scope.composerIsMissing = true;
+        nextEpisode.rel.forEach(function(item){
+          if (item.type == "songbook")
+            $scope.songbookIsNotSet = false;
+          else if (item.type == "lyricist")
+            $scope.lyricistIsMissing = false;
+          else if (item.type == "composer")
+            $scope.composerIsMissing = false;
+        })
+
+        console.log("next episode", nextEpisode);
+        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing || $scope.composerIsMissing ? true : false;
 
       }).then(function(){
         doneLoading();
