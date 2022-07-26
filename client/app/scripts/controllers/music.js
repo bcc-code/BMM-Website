@@ -119,14 +119,14 @@ angular.module('bmmApp')
     $scope.randomArtists = [];
 
     //4 will randomly be selected and shown
-    var randomBrothers = [
+    var randomSingers = [
       65224, //Jermund Pedersen
       59268, //Astrid Reinhardt
       45275, //Gjermund Frivold
       81631, //Rebekka Frivold
       75152, //Elisa Frivold
       59596, //Oliver Tangen
-      43806, //Alise Helgheim
+      92568, //Alise Johnsen
       64808, //Pia Veronica Jacobsen
       80142, //Pia Gjøsund
       41600, //Dag Helge Bernhardsen
@@ -136,10 +136,12 @@ angular.module('bmmApp')
       41598, //Jostein Østmoen
       49935, //Karethe Opitz
       49933, //Kristiane Opitz
-      45272, //Linn Helgheim
+      45272, //Linn Hellesøe Drumasu
       41622, //Liv Ragnhild Fotland
       60845, //Marte Hannson
-      60844  //Vegar Sandberg
+      60844, //Vegar Sandberg
+      61069, //Simen Andresen
+      91514  //Madeleine Skreosen
     ];
 
     //Randomize function
@@ -148,9 +150,9 @@ angular.module('bmmApp')
       return o;
     };
 
-    //Catch 4 contributors
-    randomBrothers = shuffle(randomBrothers);
-    $.each(randomBrothers, function(index) {
+    //Pick 4 contributors
+    randomSingers = shuffle(randomSingers);
+    $.each(randomSingers, function(index) {
 
       _api.contributorIdGet(this).done(function(data) {
 
