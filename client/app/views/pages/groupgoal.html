@@ -10,10 +10,13 @@
   <span>{{goal.participants}} participants</span><br>
   <span>listen to {{goal.tracks}} tracks from {{goal.start | date:'dd.MM.yyyy'}} to {{goal.end | date:'dd.MM.yyyy'}}</span><br>
 </span>
-<span ng-show="!load && goal.joined" style="font-size: 15px;">
+<span ng-show="!load && goal.joined && false" style="font-size: 15px;">
   <span>participants on track: <span style="font-weight: bold; font-size: 20px;">{{goal.percent_on_track}}%</span></span>
   <span>after catching up: <span style="font-weight: bold; font-size: 20px;">{{goal.percent_caught_up}}%</span></span><br>
-  <span>current track: {{goal.current_track_title}}</span>
+</span>
+<span ng-show="!load && goal.joined" style="font-size: 15px;">
+  <span><span style="font-weight: bold; font-size: 20px;">{{goal.percent_listened_latest}}%</span> have listened to the current track ({{goal.current_track_title}}).</span><br>
+  <span>Collectively you have listened to <span style="font-weight: bold; font-size: 20px;">{{goal.collective_episodes}}</span> episodes on time.</span>
 </span>
 <div class="actionButtons">
   <div class="actionButton add-to-my-playlists" ng-click="joinGoal();" ng-show="!load && !goal.joined">
