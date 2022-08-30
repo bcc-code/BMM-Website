@@ -31,6 +31,7 @@ angular.module('bmmLibApp')
         zh: '中文',
         he: 'עברית',
         sl: 'slovenščina',
+        yue: '廣東話',
         zxx: 'Unknown'
       };
 
