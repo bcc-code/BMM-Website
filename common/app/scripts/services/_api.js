@@ -1120,10 +1120,10 @@ angular.module('bmmLibApp')
     });
   };
 
-  factory.nextTracksToBePublished = function(id) {
+  factory.nextTracksToBePublished = function() {
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl + 'notifications/next/' + id
+      url: serverUrl + 'notifications/next/'
     });
   };
 

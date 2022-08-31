@@ -13,7 +13,6 @@ angular.module('bmmApp')
   $scope.batchPeriod = 0;
 
   var timeBetweenNotificationJobs = 5;
-  var currentDatetime = new Date();
 
   function doneLoading() {
     $scope.loading = false;
@@ -34,75 +33,70 @@ angular.module('bmmApp')
 
   function init() {
     $scope.loading = true;
-    var podcastsLoaded = 0;
 
-    _api.podcastsGet().then(function(podcasts) {
-      $scope.podcasts = podcasts;
+    _api.nextTracksToBePublished().then(function(viewModel) { // Will get just unnotified tracks
+      $scope.podcasts = viewModel.podcasts;
 
-        podcasts.forEach(function(podcast) {
-          _api.nextTracksToBePublished(podcast.id).then(function(viewModel) { // Will get just unnotified tracks
-            podcast.notifications = [];
-            $scope.graceTime = viewModel.grace_time_notification_job;
-            $scope.batchPeriod = viewModel.notification_batch_period;
+      $scope.podcasts.forEach(function(podcast) {
+        podcast.notifications = [];
+        $scope.graceTime = viewModel.grace_time_notification_job;
+        $scope.batchPeriod = viewModel.notification_batch_period;
 
-            viewModel.tracks.forEach(function(track) {
-              $scope.anyNotification = true;
+        podcast.tracks.forEach(function(track) {
+          $scope.anyNotification = true;
 
-              var graceTimeWasUsed;
-              var scheduledTime = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
-              var modifiedTime = new Date(track._meta.modified_at);
-              var publishedTime = new Date(track.published_at);
+          //ToDo: maybe this calculation should happen on the server
+          var graceTimeWasUsed;
+          var scheduledTime = new Date(track._meta.modified_at > track.published_at ? track._meta.modified_at : track.published_at);
+          var modifiedTime = new Date(track._meta.modified_at);
+          var publishedTime = new Date(track.published_at);
 
-              var latestPossibleModifyTime = publishedTime;
-              latestPossibleModifyTime.setMinutes(latestPossibleModifyTime.getMinutes() - $scope.graceTime);
-              
-              if (modifiedTime < latestPossibleModifyTime) {
-                  // no grace time needed since the last edit was made enough time before publishing
-                  graceTimeWasUsed = false;
-              } else {
-                  // the last edit was made close to the publish time. Therefore we delay publishing.
-                  scheduledTime.setMinutes(scheduledTime.getMinutes() + $scope.graceTime);
-                  graceTimeWasUsed = true;
-              }
+          var latestPossibleModifyTime = publishedTime;
+          latestPossibleModifyTime.setMinutes(latestPossibleModifyTime.getMinutes() - $scope.graceTime);
 
-              // Check if we should batch the notifications together
-              var indexOfNotificationBatch = checkNotificationBatchAlreadyExists(podcast.notifications, scheduledTime);
+          if (modifiedTime < latestPossibleModifyTime) {
+            // no grace time needed since the last edit was made enough time before publishing
+            graceTimeWasUsed = false;
+          } else {
+            // the last edit was made close to the publish time. Therefore we delay publishing.
+            scheduledTime.setMinutes(scheduledTime.getMinutes() + $scope.graceTime);
+            graceTimeWasUsed = true;
+          }
 
-              if (indexOfNotificationBatch != -1) {
-                podcast.notifications[indexOfNotificationBatch].tracks.push(track);
-                podcast.notifications[indexOfNotificationBatch].graceTimeWasUsed = graceTimeWasUsed;
-                podcast.notifications[indexOfNotificationBatch].scheduledTime = Math.max(scheduledTime.getTime(), podcast.notifications[indexOfNotificationBatch].scheduledTime);
-              } else {
-                podcast.notifications.push({ tracks: [track], scheduledTime: scheduledTime.getTime(), graceTimeWasUsed: graceTimeWasUsed });
-              }
+          // Check if we should batch the notifications together
+          var indexOfNotificationBatch = checkNotificationBatchAlreadyExists(podcast.notifications, scheduledTime);
 
-              track.languages = [];
-              track.translations.forEach(function(translation) {
-                if (translation.language == track.original_language) {
-                  track.title = translation.title;
-                }
-                if (translation.is_visible) {
-                  track.languages.push(translation.language);
-                }
-              });
-            });
+          if (indexOfNotificationBatch != -1) {
+            podcast.notifications[indexOfNotificationBatch].tracks.push(track);
+            podcast.notifications[indexOfNotificationBatch].graceTimeWasUsed = graceTimeWasUsed;
+            podcast.notifications[indexOfNotificationBatch].scheduledTime = Math.max(scheduledTime.getTime(), podcast.notifications[indexOfNotificationBatch].scheduledTime);
+          } else {
+            podcast.notifications.push({ tracks: [track], scheduledTime: scheduledTime.getTime(), graceTimeWasUsed: graceTimeWasUsed });
+          }
 
-            podcast.notifications.sort(function(a, b){
-              return a.scheduledTime - b.scheduledTime;
-            });
-
-            if (++podcastsLoaded == podcasts.length) {
-              doneLoading();
+          track.languages = [];
+          track.translations.forEach(function(translation) {
+            if (translation.language == track.original_language) {
+              track.title = translation.title;
             }
-          }).fail(function(){
-            doneLoading();
+            if (translation.is_visible) {
+              track.languages.push(translation.language);
+            }
           });
         });
 
-    }).fail(function() {
+        podcast.notifications.sort(function(a, b){
+          return a.scheduledTime - b.scheduledTime;
+        });
+
+      });
+
+      doneLoading();
+    }).fail(function(){
       doneLoading();
     });
-  };
+
+  }
 
   init();
 });
