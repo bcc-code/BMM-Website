@@ -914,17 +914,24 @@ angular.module('bmmLibApp')
 
   };
 
-  /** Contributor autocompletion search **/
-  factory.contributorSuggesterCompletionGet = function(term, options) {
-
+  factory.contributorSearchGet = function(term, options) {
     if (typeof options === 'undefined') { options = {}; }
 
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'contributor/suggester/completion/'+term,
+      url: serverUrl+'contributor/search/'+term,
       data: $.param(options)
     });
+  };
 
+  factory.contributorSearchUnpublishedGet = function(term, options) {
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'contributor/search_unpublished/'+term,
+      data: $.param(options)
+    });
   };
 
   /** Update a contributor **/

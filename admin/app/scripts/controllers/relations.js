@@ -271,7 +271,7 @@ angular.module('bmmApp')
           cover_upload: null
         }).then(function() {
           $timeout(function() {
-            _api.contributorSuggesterCompletionGet(contributor).done(function(data) {
+            _api.contributorSearchUnpublishedGet(contributor).done(function(data) {
               defer.resolve(data);
             });
           }, 1000);
@@ -285,7 +285,7 @@ angular.module('bmmApp')
     $scope.contributors = {};
     $scope.$watch('contributors.interpret', function(name) {
       if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSearchUnpublishedGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.interprets = data;
           });
@@ -296,7 +296,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.lyricist', function(name) {
       if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSearchUnpublishedGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.lyricists = data;
           });
@@ -307,7 +307,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.arranger', function(name) {
       if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSearchUnpublishedGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.arrangers = data;
           });
@@ -318,7 +318,7 @@ angular.module('bmmApp')
     });
     $scope.$watch('contributors.composer', function(name) {
       if (name!=='') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+        _api.contributorSearchUnpublishedGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors.composers = data;
           });
@@ -429,7 +429,7 @@ angular.module('bmmApp')
           var promises = [];
           var missingContributors = [];
           $.each(composers.concat(authors.concat(alternativeContributors)), function(index, contributor) {
-            promises.push(_api.contributorSuggesterCompletionGet(contributor.contributor.name).done(function(list) {
+            promises.push(_api.contributorSearchUnpublishedGet(contributor.contributor.name).done(function(list) {
               for(var i = 0; i < list.length; i++) {
                 var item = list[i];
                 if (item.name == contributor.contributor.name) {

@@ -67,8 +67,8 @@ angular.module('bmmApp')
 
     //AUTOCOMPLETION
     $scope.$watch('contributor', function(name) {
-      if (name!==''&&typeof name!=='undefined') {
-        _api.contributorSuggesterCompletionGet(name).done(function(data) {
+      if (name!=='' && typeof name!=='undefined') {
+        _api.contributorSearchGet(name).done(function(data) {
           $scope.$apply(function() {
             $scope.contributors = data;
           });
