@@ -37,7 +37,8 @@ angular.module('bmmApp')
       //SEARCH RESULTS
       _api.search($routeParams.term, {
         from: _from,
-        size: loadAmount
+        size: loadAmount,
+        unpublished: "show"
       }).done(function(data) {
 
         var track,
