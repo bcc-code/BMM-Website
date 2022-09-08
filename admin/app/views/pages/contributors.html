@@ -17,7 +17,7 @@
                 style="width: 100%; display: inline-block"
                 ng-click="go('contributors/'+contributor.id);">
                 <span>
-                    {{contributor.name}}
+                    {{contributor.name}} ({{contributor.interpret_references}}|{{contributor.other_references}})
                 </span>
             </li>
         </ul>

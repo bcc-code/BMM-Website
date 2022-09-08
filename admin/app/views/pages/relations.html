@@ -29,7 +29,7 @@
                 style="width: 100%; display: inline-block"
                 ng-click="activateContributor(contributor, 'interpret')">
                 <span>
-                    {{contributor.name}}
+                    {{contributor.name}} ({{contributor.interpret_references}}|{{contributor.other_references}})
                 </span>
             </li>
         </ul>
@@ -68,7 +68,7 @@
                 style="width: 100%; display: inline-block"
                 ng-click="activateContributor(contributor, 'lyricist')">
                 <span>
-                    {{contributor.name}}
+                    {{contributor.name}} ({{contributor.interpret_references}}|{{contributor.other_references}})
                 </span>
             </li>
         </ul>
@@ -107,7 +107,7 @@
                 style="width: 100%; display: inline-block"
                 ng-click="activateContributor(contributor, 'arranger')">
                 <span>
-                    {{contributor.name}}
+                    {{contributor.name}} ({{contributor.interpret_references}}|{{contributor.other_references}})
                 </span>
             </li>
         </ul>
@@ -146,7 +146,7 @@
                 style="width: 100%; display: inline-block"
                 ng-click="activateContributor(contributor, 'composer')">
                 <span>
-                    {{contributor.name}}
+                    {{contributor.name}} ({{contributor.interpret_references}}|{{contributor.other_references}})
                 </span>
             </li>
         </ul>
