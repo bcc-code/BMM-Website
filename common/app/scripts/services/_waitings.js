@@ -34,7 +34,7 @@ angular.module('bmmLibApp')
               possibleConflicts = [],
               conflict = false;
 
-            //Find mime_types allready in track
+            //Find mime_types already in track
             if (typeof waiting.media!=='undefined'&&waiting.media.length>0) {
               $.each(waiting.media, function() {
                 if (typeof this.files!=='undefined'&&this.files.length>0) {

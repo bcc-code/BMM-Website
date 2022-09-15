@@ -90,7 +90,7 @@ angular.module('bmmApp')
     });
 
     $scope.nextEpisode.translations.forEach(function(translation) {
-      if (translation.media != null)
+      if (translation.media != null && translation.media.length > 0)
         if (Math.abs(translation.media[0].files[0].duration - originalLanguageDuration) >= $scope.differenceToleranceSeconds) {
           translation.big_difference_in_duration = true;
         }
