@@ -102,7 +102,7 @@ angular.module('bmmApp')
       for (var j = i+1; j < $scope.nextEpisode.translations.length; j++) {
         var iT = $scope.nextEpisode.translations[i];
         var jT = $scope.nextEpisode.translations[j];
-        if (iT.media != null && jT.media != null
+        if (iT.media != null && iT.media.length > 0 && jT.media != null && jT.media.length > 0
           && iT.media[0].files[0].size == jT.media[0].files[0].size){
           iT.duplicate_filesize = true;
           iT.duplicate_filesize_language = jT.language;
