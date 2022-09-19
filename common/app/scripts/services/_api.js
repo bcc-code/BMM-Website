@@ -1190,6 +1190,10 @@ angular.module('bmmLibApp')
 
   };
 
+  factory.getApkUrl = function(){
+    return serverUrl + 'file/apk';
+  }
+
   return factory;
 
 });

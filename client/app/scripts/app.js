@@ -136,6 +136,11 @@ angular.module('bmmApp', [
         templateUrl: 'views/pages/copyright.html',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
       })
+      .when('/apk', {
+        templateUrl: 'views/pages/apk.html',
+        controller: 'ApkCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
+      })
       .otherwise({
         redirectTo: '/welcome'
       });
