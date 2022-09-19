@@ -32,6 +32,7 @@ app.MapGet("track/{*.}", handler);
 app.MapGet("playlist/{*.}", handler);
 app.MapGet("groupgoal/{*.}", handler);
 app.MapGet("copyright/{*.}", handler);
+app.MapGet("apk/{*.}", handler);
 
 app.UseRewriter(new RewriteOptions()
     .AddRewrite(".well-known/apple-app-site-association", ".well-known/apple-app-site-association.json", true)
