@@ -133,5 +133,10 @@
     "hideVideo": "Sakrij video",
     "showVideo": "Prikaži video"
   },
+  "appDownload": {
+    "title": "APK Download for Android",
+    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
+    "downloadLink": "directly download the APK."
+  },
   "copyright": "Autorska prava"
 }
