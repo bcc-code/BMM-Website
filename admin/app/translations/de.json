@@ -11,7 +11,7 @@
       "notifications": "Benachrichtigungen",
       "waitings": "Wartende Dateien",
       "contributors": "Mitwirkende",
-      "trackLists": "Track Lists",
+      "trackLists": "Listen",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Benutzer",
@@ -93,7 +93,7 @@
       "interprets": "Künstler und\/oder Speechers",
       "lyricists": "Textverfasser",
       "songbooks": "Liederbücher",
-      "trackLists": "Track Lists",
+      "trackLists": "Listen",
       "bibleReferences": "Bibelverweise",
       "addBibleReference": "Bibelverweis hinzufügen",
       "externalReferences": "Externe Referenzen",
@@ -114,7 +114,7 @@
       "wrongId": "Falsche BMM-ID",
       "start": "Start",
       "end": "Ende",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "Lade Lied-Metadaten",
       "songMetadata": {
         "replace": "Metadaten ersetzen"
       }
@@ -163,10 +163,10 @@
     },
     "podcast": {
       "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Podcast bearbeiten",
+      "createNew": "Neuen Podcast erstellen",
+      "addTranslation": "Podcast-Übersetzung hinzufügen",
+      "save": "Podcast speichern"
     },
     "playlist": {
       "title": "Playlisten",

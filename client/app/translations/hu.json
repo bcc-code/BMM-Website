@@ -134,9 +134,9 @@
     "showVideo": "Videó megjelenítése"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "APK letöltése Androidnak",
+    "text": "Javasoljuk, hogy telepítsd a BMM alkalmazást a Google Play Store segítségével. Ha ez nem lehetséges, akkor ",
+    "downloadLink": "közvetlenül töltsd le az APK-t."
   },
   "copyright": "Szerzői jog"
 }
