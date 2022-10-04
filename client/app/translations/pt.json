@@ -32,7 +32,7 @@
     "copyLink": "Copiar link",
     "remove": "Remover",
     "playPlaylist": "Reproduzir playlist",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Adicionar às minhas listas de reprodução",
     "share": "Compartilhar"
   },
   "menu": {
@@ -135,7 +135,7 @@
   },
   "appDownload": {
     "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
+    "text": "Recomendamos instalar o aplicativo BMM usando a Google Play Store. Se isso não for possível, você pode",
     "downloadLink": "directly download the APK."
   },
   "copyright": "Direitos autorais"
