@@ -212,12 +212,8 @@ angular.module('bmmLibApp')
     return serverUrl;
   };
 
-  factory.getFileServerUrl = function() {
-    return fileServerUrl;
-  };
-
   factory.getProtectedFileServerUrl = function() {
-    return fileServerUrl + "file/protected/";
+    return serverUrl + "file/protected/";
   };
 
   factory.setRequestTimeout = function(time) {
