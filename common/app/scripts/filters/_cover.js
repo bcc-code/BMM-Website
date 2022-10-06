@@ -10,7 +10,11 @@ angular.module('bmmLibApp')
         cover = prefix_url + cover;
       }
 
-      if (cover && cover.indexOf('auth=') == -1) {
+      if (cover){
+        cover = _api.addLastChangedQueryString(cover);
+      }
+
+      if (cover) {
         cover = _api.addAuthorizationQueryString(cover);
       }
 

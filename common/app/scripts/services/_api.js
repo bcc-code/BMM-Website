@@ -252,6 +252,14 @@ angular.module('bmmLibApp')
     }
   };
 
+  factory.addLastChangedQueryString = function(url) {
+    if (url.indexOf('last-changed') == -1) {
+      var divider = url.indexOf('?') == -1 ? '?' : '&';
+      var unixTimestamp = Math.floor(Date.now() / 1000);
+      return url + divider + "last-changed=" + unixTimestamp;
+    }
+  }
+
   factory.setContentLanguages = function(languages) {
     contentLanguages = languages;
   };

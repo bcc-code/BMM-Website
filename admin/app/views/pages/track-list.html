@@ -26,12 +26,12 @@
         <div style="float: right" ng-controller="UploaderCtrl"
                ng-init="initialize($parent.uploadCover);"
                class="cover">
-              <div ng-hide="current.id==undefined" class="new" style="overflow: hidden;">
-                  <input ng-file-select type="file" style="opacity: 0">
-              </div>
-              <div ng-hide="current.id==undefined" class="trash" ng-click="$parent.current.cover=null"></div>
-              <img ng-src="{{current.cover | _cover:type}}">
-              <div class="progress" style="width:{{progress}}%;
+          <div ng-hide="current.id==undefined" class="new" style="overflow: hidden;">
+              <input ng-file-select type="file" style="opacity: 0">
+          </div>
+          <div ng-hide="current.id==undefined" class="trash" ng-click="$parent.current.cover=null"></div>
+          <img ng-src="{{ (progress == 0 ? current.cover : null) | _cover:type}}">
+          <div class="progress" style="width:{{progress}}%;
                                            background-color: #CAEC81;
                                            background-image: none;
                                            margin: 0"></div>
