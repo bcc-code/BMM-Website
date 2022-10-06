@@ -32,7 +32,7 @@
     "copyLink": "Copiază link",
     "remove": "Elimină",
     "playPlaylist": "Play play-list",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Adaugă la play-list-urile mele",
     "share": "Împărtășește"
   },
   "menu": {
@@ -134,9 +134,9 @@
     "showVideo": "Arată video"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Descarcă aplicația ca fișier APK pentru Android",
+    "text": "Recomandăm să instalezi aplicația BMM prin Magazinul Play de la Google. Dacă acest lucru nu este posibil, poți ",
+    "downloadLink": "descărca fișierul APK."
   },
   "copyright": "Drepturi de autor"
 }
