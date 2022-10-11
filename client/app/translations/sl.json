@@ -130,7 +130,7 @@
     "goToAlbum": "Pojdi na album",
     "showFullscreen": "Prikaži cel zaslon",
     "closeFullscreen": "Zapri cel zaslon",
-    "hideVideo": "Skrij videoposnetek",
+    "hideVideo": "Skrij video",
     "showVideo": "Prikaži video"
   },
   "appDownload": {
@@ -138,5 +138,5 @@
     "text": "Priporočljiv je prenos BMM aplikacije preko trgovine Google Play. Če to ni mogoče, lahko",
     "downloadLink": "preneseš direktno povezavo APK."
   },
-  "copyright": "Autorska prava"
+  "copyright": "Avtorske pravice"
 }
