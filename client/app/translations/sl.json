@@ -31,7 +31,7 @@
     "copyUrl": "Kopiraj URL",
     "copyLink": "Kopiraj link",
     "remove": "Odstrani",
-    "playPlaylist": "Začni seznam predvajanja",
+    "playPlaylist": "Predvajaj seznam predvajanja",
     "addToMyPlaylists": "Dodaj na moje sezname predvajanja",
     "share": "Deli"
   },
@@ -41,10 +41,10 @@
       "speeches": "Govori",
       "video": "Video",
       "archive": "Arhiv",
-      "audiobooks": "Audioknjige"
+      "audiobooks": "Zvočne knjige"
     },
     "secondary": {
-      "playlists": "Popis liste za slušanje",
+      "playlists": "Seznami predvajanja",
       "podcasts": "Podcasti",
       "latestTracks": "Nove pesmi",
       "current": "Aktualno",
@@ -97,13 +97,13 @@
     "recordedDate": "Datum snemanja",
     "artist": "Izvajalec",
     "lyricist": "Avtor besedila",
-    "arranger": "Aranžma",
+    "arranger": "Aranžer",
     "composer": "Skladatelj",
     "album": "Album",
     "bibleVerse": "Biblijska vrstica",
     "songbooks": "Številka pesmi",
     "copyright": "Avtorske pravice",
-    "publisher": "Izdajatelj"
+    "publisher": "Založnik"
   },
   "playlist": {
     "tracks": "Skladba(e)",
@@ -113,15 +113,15 @@
     "song": "Pesem",
     "allLanguages": "Vsi jeziki",
     "confirmPlaylistDeletion": "Si prepričan, da želiš izbrisati ta seznam predvajanja?",
-    "latestTracks": "Najnovejše pesmi",
+    "latestTracks": "Najnovejše skladbe",
     "instrumental": "Instrumentalna glasba",
     "by": "od"
   },
   "notify": {
-    "play": "Začni",
+    "play": "Predvajaj",
     "next": "Naslednji",
     "previous": "Prejšnji",
-    "shufflePlaylist": "Premešaj seznam predvajanja",
+    "shufflePlaylist": "Naključno predvajanje seznama",
     "loopPlaylist": "Ponovi seznam predvajanja",
     "mute": "Izklopi zvok",
     "maxVolume": "Največja glasnost",
@@ -130,8 +130,8 @@
     "goToAlbum": "Pojdi na album",
     "showFullscreen": "Prikaži cel zaslon",
     "closeFullscreen": "Zapri cel zaslon",
-    "hideVideo": "Skrij video",
-    "showVideo": "Prikaži video"
+    "hideVideo": "Skrij videoposnetek",
+    "showVideo": "Prikaži videoposnetek"
   },
   "appDownload": {
     "title": "APK prenos za Android",
