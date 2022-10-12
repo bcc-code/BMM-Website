@@ -66,6 +66,11 @@ angular.module('bmmApp', [
         controller: 'NextEpisodeCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
       })
+      .when('/year-in-review', {
+        templateUrl: 'views/pages/year-in-review.html',
+        controller: 'YearInReviewCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(true); }]}
+      })
       .when('/notifications', {
         templateUrl: 'views/pages/notifications.html',
         controller: 'NotificationsCtrl',
