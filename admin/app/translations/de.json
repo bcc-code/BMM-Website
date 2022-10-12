@@ -176,11 +176,11 @@
       "save": "Playliste speichern"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Musik Kanäle",
+      "editTitle": "Musik Kanäle bearbeiten",
+      "createNew": "Neuen Musik Kanal erstellen",
+      "addTranslation": "Übersetzung für Kanal hinzufügen",
+      "save": "Musik Kanal speichern"
     }
   },
   "states": {

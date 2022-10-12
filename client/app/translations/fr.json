@@ -32,7 +32,7 @@
     "copyLink": "Copier le lien",
     "remove": "Enlever",
     "playPlaylist": "Jouer la liste de lecture",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Ajouter à mes playlists",
     "share": "Partager"
   },
   "menu": {
@@ -97,11 +97,11 @@
     "recordedDate": "Date de l'enregistrement",
     "artist": "Artiste",
     "lyricist": "Auteur",
-    "arranger": "Arranger",
+    "arranger": "Compositeur",
     "composer": "Compositeur",
     "album": "Album",
     "bibleVerse": "Verset de la Bible",
-    "songbooks": "Song number",
+    "songbooks": "Numéro de morceau",
     "copyright": "Droits d'auteur",
     "publisher": "Éditeur"
   },
@@ -134,9 +134,9 @@
     "showVideo": "Afficher vidéo"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Télécharger APK pour Android",
+    "text": "Nous vous recommandons d'installer l'application BMM depuis le Google Play Store. Si ce n'est pas possible, vous pouvez",
+    "downloadLink": "télécharger directement le fichier APK."
   },
   "copyright": "Droits d'auteur"
 }
