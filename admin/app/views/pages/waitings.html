@@ -48,7 +48,6 @@
                                             <li ng-repeat="file in track.files" style="position: relative">
                                                 <div class="flag flags-{{file.language}}" style="float: left;">
                                                 </div>
-                                                <button ng-click="play(file.track)">{{init.translation.page.editor.play}}</button>
                                                 <button ng-click="linkWaiting(file.link, file.track.id, file.language, album, track, $index)"
                                                         style="position: absolute; right: 0">
                                                     {{init.translation.page.waitings.link}}
