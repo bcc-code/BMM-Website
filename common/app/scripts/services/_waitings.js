@@ -8,7 +8,7 @@ angular.module('bmmLibApp')
     factory.resolve = function(waitings) {
 
       var waitingsSorted = {},
-          albums = {};
+        albums = {};
 
       waitingsSorted.ready =  []; //Correct and ready
       waitingsSorted.conflicts = [];
@@ -16,111 +16,120 @@ angular.module('bmmLibApp')
       waitingsSorted.missingAlbum = [];
       waitingsSorted.wrongId = [];
 
-      $.each(waitings.guessed, function(key) {
-
-        //When album found, but no tracks
-        if (this.length<1) {
-          waitingsSorted.missingTrack.push(key);
+      $.each(waitings.guessed, function(key, item) {
+        var tracks;
+        if (item.filename){
+          if (item.tracks.length<1) {
+            //When album found, but no tracks
+            waitingsSorted.missingTrack.push(item.filename);
+            return;
+          }
+          key = item.filename;
+          tracks = item.tracks;
         } else {
+          //We changed the structure when switching from PHP to .NET but want to support both
+          if (this.length<1) {
+            waitingsSorted.missingTrack.push(key);
+            return;
+          }
+          tracks = this;
+        }
 
-          //When tracks has waitings
-          $.each(this, function() {
+        //When tracks has waitings
+        $.each(tracks, function() {
 
-            var waiting = this, track;
+          var waiting = this, track;
 
-            //Check if track in same language allready exists
-            var extension = String(key).split('.').pop(),
-              type = '',
-              possibleConflicts = [],
-              conflict = false;
+          //Check if track in same language already exists
+          var extension = String(key).split('.').pop(),
+            type = '',
+            possibleConflicts = [],
+            conflict = false;
 
-            //Find mime_types already in track
-            if (typeof waiting.media!=='undefined'&&waiting.media.length>0) {
-              $.each(waiting.media, function() {
-                if (typeof this.files!=='undefined'&&this.files.length>0) {
-                  $.each(this.files, function() {
-                    possibleConflicts.push(this);
-                  });
-                }
-              });
-            }
-
-            var mType = 'audio';
-
-            //Guess mime_type
-            switch(extension) {
-              case 'mp3': type = 'audio/mpeg'; break;
-              case 'mp4': type = 'video/mp4'; mType = 'video'; break;
-              case 'ogg': type = 'application/ogg'; mType = 'video'; break;
-              case 'oga': type = 'application/ogg'; break;
-              case 'ogv': type = 'application/ogg'; mType = 'video'; break;
-              case 'webm': type = 'video/webm'; mType = 'video'; break;
-              case 'webmv': type = 'video/webm'; mType = 'video'; break;
-              case 'webma': type = 'audio/webm'; break;
-            }
-
-            waiting.link = {};
-            waiting.link.conflict = false;
-            waiting.link.type = mType;
-            waiting.link.file = key;
-            waiting.link.mime_type = type;
-            waiting.link.duration = 0;
-            track = _track.resolve(waiting);
-
-            //Check for conflict
-            $.each(possibleConflicts, function() {
-
-              //If conflict
-              if (this.mime_type === type) {
-
-                var _conflict = waiting;
-                _conflict.link.conflict = true;
-                _conflict.link.type = mType;
-                _conflict.link.file = this.url;
-                _conflict.link.mime_type = this.mime_type;
-                _conflict.link.duration = this.duration;
-                _conflict = _track.resolve(_conflict);
-
-                conflict = true;
-                waitingsSorted.conflicts.push({
-                  track: track,
-                  conflict: _conflict
+          //Find mime_types already in track
+          if (typeof waiting.media!=='undefined'&&waiting.media.length>0) {
+            $.each(waiting.media, function() {
+              if (typeof this.files!=='undefined'&&this.files.length>0) {
+                $.each(this.files, function() {
+                  possibleConflicts.push(this);
                 });
-
-                return false;
               }
             });
+          }
 
-            if (!conflict) {
+          var mType = 'audio';
 
-              //Album
-              if (typeof albums['id_'+waiting.parent_id]==='undefined') {
-                albums['id_'+waiting.parent_id] = {};
-                albums['id_'+waiting.parent_id].tracks = {};
-              }
+          //Guess mime_type
+          switch(extension) {
+            case 'mp3': type = 'audio/mpeg'; break;
+            case 'mp4': type = 'video/mp4'; mType = 'video'; break;
+            case 'ogg': type = 'application/ogg'; mType = 'video'; break;
+            case 'oga': type = 'application/ogg'; break;
+            case 'ogv': type = 'application/ogg'; mType = 'video'; break;
+            case 'webm': type = 'video/webm'; mType = 'video'; break;
+            case 'webmv': type = 'video/webm'; mType = 'video'; break;
+            case 'webma': type = 'audio/webm'; break;
+          }
 
-              //Track
-              if (typeof albums['id_'+waiting.parent_id].tracks['id_'+waiting.id]==='undefined') {
-                albums['id_'+waiting.parent_id].tracks['id_'+waiting.id] = {};
-                albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].files = {};
-                albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].track = track;
-                albums['id_'+waiting.parent_id].album = {
-                  title: track.albumTitle
-                };
-              }
+          waiting.link = {};
+          waiting.link.conflict = false;
+          waiting.link.type = mType;
+          waiting.link.file = key;
+          waiting.link.mime_type = type;
+          waiting.link.duration = 0;
+          track = _track.resolve(waiting);
 
-              //File
-              albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].files[waiting.language] = {
-                language: waiting.language,
-                link: key,
-                track: track
-              };
+          //Check for conflict
+          $.each(possibleConflicts, function() {
 
+            //If conflict
+            if (this.mime_type === type) {
+
+              var _conflict = waiting;
+              _conflict.link.conflict = true;
+              _conflict.link.type = mType;
+              _conflict.link.file = this.url;
+              _conflict.link.mime_type = this.mime_type;
+              _conflict.link.duration = this.duration;
+              _conflict = _track.resolve(_conflict);
+
+              conflict = true;
+              waitingsSorted.conflicts.push({
+                track: track,
+                conflict: _conflict
+              });
+
+              return false;
             }
-
           });
 
-        }
+          if (!conflict) {
+
+            //Album
+            if (typeof albums['id_'+waiting.parent_id]==='undefined') {
+              albums['id_'+waiting.parent_id] = {};
+              albums['id_'+waiting.parent_id].tracks = {};
+            }
+
+            //Track
+            if (typeof albums['id_'+waiting.parent_id].tracks['id_'+waiting.id]==='undefined') {
+              albums['id_'+waiting.parent_id].tracks['id_'+waiting.id] = {};
+              albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].files = {};
+              albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].track = track;
+              albums['id_'+waiting.parent_id].album = {
+                title: track.albumTitle
+              };
+            }
+
+            //File
+            albums['id_'+waiting.parent_id].tracks['id_'+waiting.id].files[waiting.language] = {
+              language: waiting.language,
+              link: key,
+              track: track
+            };
+          }
+
+        });
 
       });
 
