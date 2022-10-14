@@ -1,19 +1,19 @@
 {
   "language": "Slovenščina",
   "general": {
-    "search": "Išči...",
-    "loading": "Nalaganje...",
+    "search": "Išči ...",
+    "loading": "Nalaganje ...",
     "noTitle": "Brez naslova"
   },
   "menu": {
     "main": {
       "dashboard": "Nadzorna plošča",
       "notifications": "Obvestila",
-      "waitings": "Na čakanju",
+      "waitings": "Čakanje na odobritev",
       "contributors": "Ustvarjalci",
-      "trackLists": "Track Lists",
-      "podcasts": "Posnetki",
-      "transmissions": "Live",
+      "trackLists": "Seznami skladb",
+      "podcasts": "Podcasti",
+      "transmissions": "V živo",
       "users": "Uporabniki",
       "statistic": "Statistika"
     },
@@ -28,7 +28,7 @@
       "tracks": "Skladbe",
       "childTracks": "Otroške skladbe",
       "open": "odpri",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Naslednji Od Kåreja"
     }
   },
   "page": {
@@ -61,15 +61,15 @@
       "available": "Dosegljiv",
       "title": "Naslov",
       "noTitle": "Brez naslova",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Naloženo",
+      "published": "Objavljeno",
       "description": "Opis",
       "selectedLanguage": "Izbrani jezik",
       "originalLanguage": "Izvirni jezik",
       "changeLanguage": "Spremeni jezik",
       "publish": "Objavi",
       "unpublish": "Prekliči objavo",
-      "missingTitle": "Prosim, najprej izpolnite naslov",
+      "missingTitle": "Prosim, najprej izpolni naslov",
       "missingFile": "Prosim, najprej dodaj datoteko",
       "album": "Album",
       "type": "Vrsta",
@@ -85,7 +85,7 @@
       "size": "Velikost",
       "mediaFiles": "Multimedijske datoteke",
       "uploadFile": "Naloži datoteko",
-      "uploadError": "Ni bilo mogoče naložiti. Prosim preverite ali je vaša datoteka v pravi obliki",
+      "uploadError": "Ni bilo mogoče naložiti. Prosim preveri ali je vaša datoteka v pravi obliki",
       "imageAllowed": "jpeg, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Skladatelji",
@@ -93,7 +93,7 @@
       "interprets": "Izvajalci in\/ali govorniki",
       "lyricists": "Pisci besedil",
       "songbooks": "Pesmarice",
-      "trackLists": "Track Lists",
+      "trackLists": "Seznami skladb",
       "bibleReferences": "Biblijske reference",
       "addBibleReference": "Dodaj biblijsko referenco",
       "externalReferences": "Zunanji sklici",
@@ -112,17 +112,17 @@
       "missingTrack": "Manjkajoča skladba",
       "missingAlbum": "Manjkajoči album",
       "wrongId": "Napačen BMM-ID",
-      "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "start": "Začni",
+      "end": "Končaj",
+      "loadSongMetadata": "Naloži metapodatke od pesmi",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Zamenjaj metapodatke"
       }
     },
     "waitings": {
       "link": "Povezava",
       "conflict": "Konflikt",
-      "conflicts": "Konflikt (dvojniki)",
+      "conflicts": "Konflikti (dvojniki)",
       "openTrack": "Odpri skladbo",
       "linkAllTracks": "Poveži vse skladbe"
     },
@@ -133,12 +133,12 @@
       "contributors": "Ustvarjalci"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Shrani prenos",
+      "edit": "Uredi prenos",
+      "add": "Dodaj prenos",
+      "cancelEditing": "Prekliči urejanje",
+      "upcomingMessage": "Prihajajoči BMM prenosi v živo",
+      "noUpcomingMessage": "Ni prihajajočih BMM prenosov v živo"
     },
     "users": {
       "adminUsers": "Administratorji",
@@ -147,8 +147,8 @@
       "contributorManager": "Ustvarjalci",
       "notificationManager": "Obvestila",
       "podcastManager": "Posnetki",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "featurePreview": "Predogled funkcij",
+      "liveManager": "V živo",
       "allRights": "Vse pravice",
       "refreshList": "Osveži seznam"
     },
@@ -158,77 +158,77 @@
       "sendPushNotification": "Pošlji potisno obvestilo",
       "sent": "Poslano",
       "failed": "Ni uspelo",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "scheduledSendTime": "Načrtovan čas pošiljanja",
+      "link": "povezava"
     },
     "podcast": {
       "title": "Posnetki",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Uredi podcast",
+      "createNew": "Ustvari nov podcast",
+      "addTranslation": "Dodaj prevod podcasta",
+      "save": "Shrani podcast"
     },
     "playlist": {
-      "title": "Popis liste za slušanje",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "title": "Seznam predvajanja",
+      "editTitle": "Uredi seznam predvajanja",
+      "createNew": "Ustvari nov seznam predvajanja",
+      "addTranslation": "Dodaj prevod seznama predvajanja",
+      "save": "Shrani seznam predvajanja"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Glasbeni kanali",
+      "editTitle": "Uredi glasbeni kanal",
+      "createNew": "Ustvari nov glasbeni kanal",
+      "addTranslation": "Dodaj prevod kanala",
+      "save": "Shrani glasbeni kanal"
     }
   },
   "states": {
     "noChanges": "Brez sprememb",
-    "allIsWell": "Vse je dobro",
-    "changesPerformed": "Sprembe so shranjene",
+    "allIsWell": "Vse je urejeno",
+    "changesPerformed": "Spremembe so shranjene",
     "couldNotCreateAlbum": "Ni bilo mogoče ustvariti albuma",
     "couldNotCreateTrack": "Ni bilo mogoče ustvariti skladbe",
     "errorCode": "Koda napake",
-    "attemptToSave": "Poskušam shraniti. Prosim počakajte...",
-    "savingContributor": "Shranjevanje prispevka. Prosim počakajte...",
-    "savingChanges": "Shranjevanje sprememb. Prosim počakajte...",
+    "attemptToSave": "Poskušam shraniti. Prosim počakaj ...",
+    "savingContributor": "Shranjevanje prispevka. Prosim počakaj ...",
+    "savingChanges": "Shranjevanje sprememb. Prosim počakaj ...",
     "saveSucceedFetchingNewData": "Uspešno shranjeno. Pridobivam nove podatke",
-    "couldNotFetchData": "Ni bilo mogoče pridobiti novih podatkov. Prosim preverite internetno povezavo",
-    "couldNotSave": "Ni bilo mogoče shraniti. Prosim preverite internetno povezavo",
+    "couldNotFetchData": "Ni bilo mogoče pridobiti novih podatkov. Prosim preveri internetno povezavo",
+    "couldNotSave": "Ni bilo mogoče shraniti. Prosim preveri internetno povezavo",
     "saved": "Shranjeno",
-    "loadingContributor": "Nalaganje prispevka...",
-    "loadingTracks": "Nalagam skladbe...",
-    "loadingUsers": "Nalaganje uporabnikov...",
-    "loadingFiles": "Nalaganje datotek, prosim počakajte...",
+    "loadingContributor": "Nalaganje prispevka ...",
+    "loadingTracks": "Nalaganje skladbe ...",
+    "loadingUsers": "Nalaganje uporabnikov ...",
+    "loadingFiles": "Nalaganje datotek, prosim počakaj ...",
     "filesLoaded": "Datoteke uspešno naložene",
     "waitingForSelection": "Čakanje na izbor",
     "contributorLoaded": "Prispevek uspešno naložen",
-    "deletingContributor": "Brisanje prispevka, prosim počakajte...",
+    "deletingContributor": "Brisanje prispevka, prosim počakaj ...",
     "trackDeleted": "Skladba izbrisana",
     "notSet": "Ni nastavljeno",
-    "attemptToLinkTracks": "Poskušam povezati skladbe v albumu. Prosim počakajte..."
+    "attemptToLinkTracks": "Poskušam povezati skladbe v albumu. Prosim počakaj ..."
   },
   "warnings": {
-    "confirmAlbumDeletion": "Ali ste prepričani, da želite izbrisati album z vsemi pod-albumi in pesmimi?",
-    "confirmTrackDeletion": "Ali ste prepričani, da želite izbrisati skladbo z vso njeno vsebino?",
-    "confirmTranslatedDeletion": "Jezik ima vsebino. Potrdite brisanje",
-    "confirmContributorDeletion": "ALI STE PREPRIČANI, DA ŽELITE IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
+    "confirmAlbumDeletion": "Ali si prepričan, da želiš izbrisati album z vsemi pod-albumi in skladbami?",
+    "confirmTrackDeletion": "Ali si prepričan, da želiš izbrisati skladbo z vso njeno vsebino?",
+    "confirmTranslatedDeletion": "Jezik ima vsebino. Potrdi brisanje",
+    "confirmContributorDeletion": "ALI SI PREPRIČAN, DA ŽELIŠ IZBRISATI TA PRISPEVEK? VSE POVEZANE SKLADBE BODO IZBRISANE!"
   },
   "track": {
     "duration": "Trajanje",
     "unknown": "Neznano",
-    "dragMeToPlaylist": "Povlecite na seznam predvajanja",
+    "dragMeToPlaylist": "Povleci na seznam predvajanja",
     "exegesis": "Razlaga",
     "copyright": "Avtorske pravice",
-    "publisher": "Publisher"
+    "publisher": "Založnik"
   },
   "statistic": {
     "chartByDateTitle": "Novi uporabniki na dan",
-    "chartByDayTitle": "Najbolj poslušano dneva",
+    "chartByDayTitle": "Dnevno najbolj poslušano ",
     "chartMostListenedTitle": "Najbolj poslušana skladba",
     "fromKaare": "Od Kåreja",
-    "others": "Drugi",
+    "others": "Ostalo",
     "clearChart": "Počisti lestvico",
     "add": "Dodaj na lestvico"
   },

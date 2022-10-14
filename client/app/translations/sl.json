@@ -1,82 +1,82 @@
 {
   "language": "Angleščina",
   "general": {
-    "search": "Traži...",
+    "search": "Išči ...",
     "searchResultsFor": "Išči rezultate za:",
-    "loading": "Nalaganje...",
-    "waysOfTheLord": "Putevi Gospodnji",
-    "almondBlossom": "Dječja Pjesmarica Bademov cvijet",
-    "noTitle": "Bez naslova",
-    "settings": "Postavke",
-    "suport": "Podrška za",
-    "readMore": "Pročitaj više"
+    "loading": "Nalaganje ...",
+    "waysOfTheLord": "Gospodove poti",
+    "almondBlossom": "Mandljev cvet",
+    "noTitle": "Brez naslova",
+    "settings": "Nastavitve",
+    "suport": "Podpora",
+    "readMore": "Preberi več"
   },
   "options": {
-    "addToPlaylist": "Dodavanje na listu",
-    "download": "Preuzimanje datoteka",
-    "goToAlbum": "Idi na album",
+    "addToPlaylist": "Dodaj na seznam predvajanja",
+    "download": "Prenesi",
+    "goToAlbum": "Pojdi na album",
     "podcast": "Podcast",
-    "removeFilter": "Ukloni filter",
-    "changeLanguage": "Promjena jezika",
-    "goBack": "Natrag",
-    "choosePlaylist": "Odaberite popis za slušanje",
-    "setupPodcast": "Za nastavitev podcasta kopirajte spodnjo povezavo in jo prilepite na izbrano programsko opremo.",
-    "chooseLanguages": "Odabir jezika",
-    "addLanguage": "Dodavanje jezika",
-    "includeLatest": "Najnoviji sadržaj",
-    "websiteLanguage": "Jezik web stranice",
-    "contentLanguages": "Jezik sadržaja",
-    "tracks": "Naslov",
-    "filterByLanguage": "Filtriranje prema jeziku",
-    "copyUrl": "Kopirajte URL",
-    "copyLink": "Kopiraj stranicu",
-    "remove": "Uklonite",
-    "playPlaylist": "Pokreni listu",
-    "addToMyPlaylists": "Add to my playlists",
-    "share": "Podijeli"
+    "removeFilter": "Odstrani filter",
+    "changeLanguage": "Spremeni jezik",
+    "goBack": "Nazaj",
+    "choosePlaylist": "Izberi seznam predvajanja",
+    "setupPodcast": "Za nastavitev podcasta kopiraj spodnjo povezavo in jo prilepi v izbrano podcast programsko opremo.",
+    "chooseLanguages": "Izberi jezike",
+    "addLanguage": "Dodaj jezik",
+    "includeLatest": "Vključi najnovejše",
+    "websiteLanguage": "Jezik spletne strani",
+    "contentLanguages": "Jezik vsebine",
+    "tracks": "skladbe",
+    "filterByLanguage": "Filtriraj glede na jezik",
+    "copyUrl": "Kopiraj URL",
+    "copyLink": "Kopiraj link",
+    "remove": "Odstrani",
+    "playPlaylist": "Predvajaj seznam predvajanja",
+    "addToMyPlaylists": "Dodaj na moje sezname predvajanja",
+    "share": "Deli"
   },
   "menu": {
     "main": {
-      "music": "Glazba",
-      "speeches": "Poruke",
+      "music": "Glasba",
+      "speeches": "Govori",
       "video": "Video",
-      "archive": "Arhiva",
-      "audiobooks": "Audioknjige"
+      "archive": "Arhiv",
+      "audiobooks": "Zvočne knjige"
     },
     "secondary": {
-      "playlists": "Popis liste za slušanje",
+      "playlists": "Seznami predvajanja",
       "podcasts": "Podcasti",
-      "latestTracks": "Nove pjesme",
-      "current": "Aktuelno",
-      "newPlaylist": "Novi popis za slušanje",
+      "latestTracks": "Nove pesmi",
+      "current": "Aktualno",
+      "newPlaylist": "Novi seznam predvajanja",
       "nameOnPlaylist": "Naslov seznama predvajanja"
     }
   },
   "page": {
     "welcome": {
-      "latestSpeeches": "Najnovejša sporočila",
+      "latestSpeeches": "Najnovejši govori",
       "latestVideos": "Najnovejši video posnetki",
       "latestMusic": "Najnovejša glasba",
       "latestAlbums": "Najnovejši albumi",
-      "playlists": "Popis liste za slušanje"
+      "playlists": "Seznami predvajanja"
     },
     "music": {
       "latestMusic": "Najnovejša glasba",
       "artists": "Izvajalci",
       "fromKaare": "Od Kåreja",
-      "mp3Source": "MP3-Izvir",
-      "childrensMp3Source": "Otroški MP3-Izvir",
+      "mp3Source": "mp3-izvir",
+      "childrensMp3Source": "Otroški mp3-izvir",
       "instrumental": "Instrumentalna glasba"
     },
     "speeches": {
-      "latestSpeeches": "Najnovejša sporočila",
+      "latestSpeeches": "Najnovejši govori",
       "recommended": "Priporočeno"
     },
     "videos": {
       "latestVideos": "Najnovejši video posnetki"
     },
     "archive": {
-      "archive": "Arhiva"
+      "archive": "Arhiv"
     },
     "audiobooks": {
       "latestAudiobooks": "Najnovejše zvočne knjige"
@@ -101,42 +101,42 @@
     "composer": "Skladatelj",
     "album": "Album",
     "bibleVerse": "Biblijska vrstica",
-    "songbooks": "Song number",
+    "songbooks": "Številka pesmi",
     "copyright": "Avtorske pravice",
-    "publisher": "Publisher"
+    "publisher": "Založnik"
   },
   "playlist": {
     "tracks": "Skladba(e)",
     "albums": "Album(i)",
     "duration": "Trajanje",
     "title": "Naslov",
-    "song": "Song",
+    "song": "Pesem",
     "allLanguages": "Vsi jeziki",
-    "confirmPlaylistDeletion": "Jeste li sigurni da želite izbrisati ovaj popis?",
-    "latestTracks": "Najnovije pjesme",
+    "confirmPlaylistDeletion": "Si prepričan, da želiš izbrisati ta seznam predvajanja?",
+    "latestTracks": "Najnovejše skladbe",
     "instrumental": "Instrumentalna glasba",
     "by": "od"
   },
   "notify": {
-    "play": "Pokreni",
-    "next": "Sljedeći",
-    "previous": "Prethodni",
-    "shufflePlaylist": "Izmiješaj popis",
-    "loopPlaylist": "Ponavljanje naslova",
-    "mute": "Beščujno",
-    "maxVolume": "Maximalno glasno",
-    "options": "Opcije",
-    "activateVideo": "Aktiviranje videa",
-    "goToAlbum": "Idi na album",
-    "showFullscreen": "Prikaži cijeli ekran",
-    "closeFullscreen": "Zatvoti zaslon",
-    "hideVideo": "Sakrij video",
-    "showVideo": "Prikaži video"
+    "play": "Predvajaj",
+    "next": "Naslednji",
+    "previous": "Prejšnji",
+    "shufflePlaylist": "Naključno predvajanje seznama",
+    "loopPlaylist": "Ponovi seznam predvajanja",
+    "mute": "Izklopi zvok",
+    "maxVolume": "Največja glasnost",
+    "options": "Možnosti",
+    "activateVideo": "Aktiviranje videoposnetka",
+    "goToAlbum": "Pojdi na album",
+    "showFullscreen": "Prikaži cel zaslon",
+    "closeFullscreen": "Zapri cel zaslon",
+    "hideVideo": "Skrij videoposnetek",
+    "showVideo": "Prikaži videoposnetek"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "APK prenos za Android",
+    "text": "Priporočljiv je prenos BMM aplikacije preko trgovine Google Play. Če to ni mogoče, lahko",
+    "downloadLink": "preneseš direktno povezavo APK."
   },
-  "copyright": "Autorska prava"
+  "copyright": "Avtorske pravice"
 }
