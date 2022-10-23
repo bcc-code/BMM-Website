@@ -11,9 +11,9 @@
       "notifications": "Ilmoitukset",
       "waitings": "Odottaa hyväksyntää",
       "contributors": "Tekijät",
-      "trackLists": "Track Lists",
+      "trackLists": "Tiedostolista",
       "podcasts": "Podcastit",
-      "transmissions": "Live",
+      "transmissions": "Suorana",
       "users": "Käyttäjät",
       "statistic": "Tilastot"
     },
@@ -28,7 +28,7 @@
       "tracks": "Kappaleet",
       "childTracks": "Aliraidat",
       "open": "Avaa",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Seuraava Terveisiä Kårelta"
     }
   },
   "page": {
@@ -55,14 +55,14 @@
       "status": "Tila",
       "languages": "Kielet",
       "tags": "Tunnisteet",
-      "addTag": "Add tag",
+      "addTag": "Lisää tagi",
       "generateTitlesByTag": "Luo otsikot tunnisteiden perusteella",
       "active": "Aktiivinen",
       "available": "Saatavilla",
       "title": "Otsikko",
       "noTitle": "Ei otsikkoa",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Ladattu",
+      "published": "Julkaistu",
       "description": "Kuvaus",
       "selectedLanguage": "Valitulla kielellä",
       "originalLanguage": "Alkuperäinen kieli",
@@ -89,15 +89,15 @@
       "imageAllowed": "JPEG, png, gif",
       "mediaAllowed": "MP3, mp4",
       "composers": "Säveltäjät",
-      "arrangers": "Arrangers",
+      "arrangers": "Sovittajat",
       "interprets": "Taiteilijoita ja\/tai kaiuttimet",
       "lyricists": "Sanoittajien",
       "songbooks": "Laulukirjat",
-      "trackLists": "Track Lists",
+      "trackLists": "Tiedostolista",
       "bibleReferences": "Raamatun viittaukset",
       "addBibleReference": "Lisää Raamattu viite",
-      "externalReferences": "External references",
-      "addExternalReference": "Add external reference",
+      "externalReferences": "Ulkoiset referenssit",
+      "addExternalReference": "Lisää ulkoinen referenssi",
       "record": "Ennätys",
       "pause": "Tauko",
       "resetTime": "Palauttaa aika",
@@ -112,11 +112,11 @@
       "missingTrack": "Puuttuvat kappale",
       "missingAlbum": "Puuttuvat albumi",
       "wrongId": "Väärä BMM-ID",
-      "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "start": "Alku",
+      "end": "Loppu",
+      "loadSongMetadata": "Lataa laulun metadata",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Korvaa metadata"
       }
     },
     "waitings": {
@@ -133,22 +133,22 @@
       "contributors": "Tekijät"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Talleta lähetys",
+      "edit": "Editoi lähetystä",
+      "add": "Lisää lähetys",
+      "cancelEditing": "Nollaa editointi",
+      "upcomingMessage": "Tulevat BMM suorat lähetykset",
+      "noUpcomingMessage": "Ei tulevia BMM suoria lähetyksiä!"
     },
     "users": {
       "adminUsers": "Käyttäjillä",
-      "albumManager": "Albums",
+      "albumManager": "Albumit",
       "trackManager": "Kappaleet",
       "contributorManager": "Tekijät",
       "notificationManager": "Ilmoitukset",
       "podcastManager": "Podcastit",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "featurePreview": "Esikatselu",
+      "liveManager": "Suorana",
       "allRights": "Kaikki oikeudet",
       "refreshList": "Päivitä luettelo"
     },
@@ -158,35 +158,35 @@
       "sendPushNotification": "Lähetä push-ilmoitus",
       "sent": "Lähetetty",
       "failed": "Epäonnistui",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "scheduledSendTime": "Aikataulun mukainen lähetysaika",
+      "link": "linkki"
     },
     "podcast": {
       "title": "Podcastit",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Editoi Podcastia",
+      "createNew": "Luo uusi Podcast",
+      "addTranslation": "Lisää podcastin tulkkaus",
+      "save": "Talleta podcast"
     },
     "playlist": {
       "title": "Soittolistat",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Editoi soittolistaa",
+      "createNew": "Luo uusi soittolista",
+      "addTranslation": "Lisää soittolistan käännös",
+      "save": "Talleta soittolista"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Musiikkikanavat",
+      "editTitle": "Editoi musiikkikanavia",
+      "createNew": "Luo uusi musiikkikanava",
+      "addTranslation": "Lisää kanavan käännös",
+      "save": "Talleta musiikkikanava"
     }
   },
   "states": {
     "noChanges": "Ei muutoksia",
     "allIsWell": "Kaikki on hyvin",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Muutokset talletettu",
     "couldNotCreateAlbum": "Albumin luominen ei onnistunut",
     "couldNotCreateTrack": "Kappaleen luominen ei onnistunut",
     "errorCode": "Virhekoodi",
@@ -212,7 +212,7 @@
   "warnings": {
     "confirmAlbumDeletion": "Oletko varma, että haluat poistaa levyn osa albumit ja kappaleet?",
     "confirmTrackDeletion": "Oletko varma, että haluat poistaa kaikki sen sisältö radan?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "Tällä kielellä on sisältöä. Vahvista poistaminen.",
     "confirmContributorDeletion": "OLETKO TODELLA VARMA, ETTÄ HALUAT POISTAA TÄMÄN TUOTTAJAN? KAIKKI LINKITETYT KAPPALEET POISTETAAN!"
   },
   "track": {
@@ -220,7 +220,7 @@
     "unknown": "Tuntematon",
     "dragMeToPlaylist": "Vedä minut soittolistalle",
     "exegesis": "Eksegeesi",
-    "copyright": "Copyright",
+    "copyright": "Tekijänoikeudet",
     "publisher": "Julkaisija"
   },
   "statistic": {
@@ -232,5 +232,5 @@
     "clearChart": "Tyhjennä kaavio",
     "add": "Lisää kaavioon"
   },
-  "copyright": "Copyright"
+  "copyright": "Tekijänoikeudet"
 }
