@@ -32,7 +32,7 @@
     "copyLink": "Kopioi linkki",
     "remove": "Poista",
     "playPlaylist": "Toista soittolista",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Lisää soittolistoihini",
     "share": "Jaa"
   },
   "menu": {
@@ -102,7 +102,7 @@
     "album": "Albumi",
     "bibleVerse": "Raamatun jae",
     "songbooks": "Laulun numero",
-    "copyright": "Copyright",
+    "copyright": "Tekijänoikeudet",
     "publisher": "Julkaisija"
   },
   "playlist": {
@@ -134,9 +134,9 @@
     "showVideo": "Näytä video"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "APK lataus Androidille",
+    "text": "Suosittelemme BMM sovelluksen asentamista Google Play Storesta. Ellei se onnistu, voit",
+    "downloadLink": "Lataa APK suoraan"
   },
-  "copyright": "Copyright"
+  "copyright": "Tekijänoikeudet"
 }
