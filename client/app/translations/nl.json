@@ -20,10 +20,10 @@
     "changeLanguage": "Taal veranderen",
     "goBack": "Ga terug",
     "choosePlaylist": "Kies afspeellijst",
-    "setupPodcast": "Om de podcast in te stellen, moet je de link hieronder kopiëren en daarna in de door jou gekozen software plakken.",
+    "setupPodcast": "Om de podcast in te stellen, moet je de link hieronder kopiëren en daarna in de door jou gekozen podcast software plakken.",
     "chooseLanguages": "Kies talen",
     "addLanguage": "Voeg een taal toe",
-    "includeLatest": "Laatste toevoegen",
+    "includeLatest": "Inclusief de laatste",
     "websiteLanguage": "Taal website",
     "contentLanguages": "Taal content",
     "tracks": "Nummers",
@@ -32,7 +32,7 @@
     "copyLink": "Link kopiëren",
     "remove": "Verwijderen",
     "playPlaylist": "Afspeellijst afspelen",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Toevoegen aan mijn afspeellijst",
     "share": "Delen"
   },
   "menu": {
@@ -63,7 +63,7 @@
     "music": {
       "latestMusic": "Nieuwste muziek",
       "artists": "Artiesten",
-      "fromKaare": "Van Kåre",
+      "fromKaare": "Fra Kåre",
       "mp3Source": "MP3-Kilden",
       "childrensMp3Source": "Barnas MP3-favoritter",
       "instrumental": "Instrumentaal"
@@ -87,7 +87,7 @@
       "bibleVerse": "Bijbelvers",
       "album": "Album",
       "artist": "Artiest",
-      "interprets": "Interpretaties"
+      "interprets": "Artiesten"
     }
   },
   "track": {
@@ -100,7 +100,7 @@
     "arranger": "Arrangeur",
     "composer": "Componist",
     "album": "Album",
-    "bibleVerse": "Bijbel vers",
+    "bibleVerse": "Bijbelvers",
     "songbooks": "Liednummer",
     "copyright": "Auteursrecht",
     "publisher": "Uitgever"
@@ -134,9 +134,9 @@
     "showVideo": "Video weergeven"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "APK download voor Android",
+    "text": "We bevelen aan om BMM te installeren via de Google Play Store. Als dat niet mogelijk is, kun je",
+    "downloadLink": "de APK downloaden."
   },
   "copyright": "Auteursrecht"
 }
