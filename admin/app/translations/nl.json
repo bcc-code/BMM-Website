@@ -1,5 +1,5 @@
 {
-  "language": "Dutch",
+  "language": "Nederlands",
   "general": {
     "search": "Zoeken...",
     "loading": "Laden...",
@@ -9,9 +9,9 @@
     "main": {
       "dashboard": "Dashboard",
       "notifications": "Meldingen",
-      "waitings": "Wachtrij",
+      "waitings": "Wacht op goedkeuring",
       "contributors": "Bijdragers",
-      "trackLists": "Track Lists",
+      "trackLists": "Tracklijsten",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Gebruikers",
@@ -28,7 +28,7 @@
       "tracks": "Nummers",
       "childTracks": "Nummers voor kinderen",
       "open": "Openen",
-      "nextFraKaare": "Volgende Van Kåre"
+      "nextFraKaare": "Volgende Fra Kåre"
     }
   },
   "page": {
@@ -74,7 +74,7 @@
       "album": "Album",
       "type": "Type",
       "parentAlbum": "Bovenliggend album",
-      "setNewParentAlbum": "Nieuw hoofdalbum",
+      "setNewParentAlbum": "Nieuw bovenliggend album",
       "lastModified": "Laatst gewijzigd",
       "by": "door",
       "noParentAlbum": "Geen bovenliggend album",
@@ -85,15 +85,15 @@
       "size": "Grootte",
       "mediaFiles": "Mediabestanden",
       "uploadFile": "Bestand uploaden",
-      "uploadError": "Kan niet uploaden. Controleer of uw bestand in het juiste formaat",
+      "uploadError": "Kan niet uploaden. Controleer of uw bestand het juiste formaat heeft",
       "imageAllowed": "JPEG, png, gif",
-      "mediaAllowed": "MP3, mp4",
+      "mediaAllowed": "mp3, mp4",
       "composers": "Componisten",
       "arrangers": "Arrangeurs",
       "interprets": "Artiesten en\/of sprekers",
       "lyricists": "Tekstschrijvers",
       "songbooks": "Liederenboeken",
-      "trackLists": "Track Lists",
+      "trackLists": "Tracklijsten",
       "bibleReferences": "Bijbel verwijzingen",
       "addBibleReference": "Bijbel verwijzing toevoegen",
       "externalReferences": "Externe referenties",
@@ -114,9 +114,9 @@
       "wrongId": "Verkeerde BMM-ID",
       "start": "Begin",
       "end": "Eind",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "Metadata lied laden",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Vervang metadata"
       }
     },
     "waitings": {
@@ -158,29 +158,29 @@
       "sendPushNotification": "Push-bericht verzenden",
       "sent": "Verzonden",
       "failed": "Mislukt",
-      "scheduledSendTime": "scheduled send time",
+      "scheduledSendTime": "Geplande zendtijd",
       "link": "link"
     },
     "podcast": {
       "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Podcast wijzigen",
+      "createNew": "Nieuwe podcast maken",
+      "addTranslation": "Podcastvertaling toevoegen",
+      "save": "Podcast opslaan"
     },
     "playlist": {
       "title": "Afspeellijsten",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Aanpassen Playlist",
+      "createNew": "Nieuwe playlist maken",
+      "addTranslation": "Voeg playlist vertaling toe",
+      "save": "Playlist opslaan"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Muziek kanalen",
+      "editTitle": "Pas muziek kanaal aan",
+      "createNew": "Maak nieuw muziek kanaal",
+      "addTranslation": "Voeg kanaal vertaling toe",
+      "save": "Sla muziek kanaal op"
     }
   },
   "states": {
