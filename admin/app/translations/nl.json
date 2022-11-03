@@ -101,14 +101,14 @@
       "record": "Opnemen",
       "pause": "Pauze",
       "resetTime": "Reset tijd",
-      "createNewContributor": "Nieuwe medewerker maken",
+      "createNewContributor": "Nieuwe bijdrager maken",
       "number": "Nummer",
       "timestamp": "Tijdstip",
       "comment": "Commentaar",
       "audio": "Audio",
       "video": "Video",
       "sortOrder": "Sorteervolgorde",
-      "waitingsReady": "Wachtrij goedgekeurd",
+      "waitingsReady": "Wachtrij klaar",
       "missingTrack": "Ontbrekend nummer",
       "missingAlbum": "Ontbrekend album",
       "wrongId": "Verkeerde BMM-ID",
@@ -204,7 +204,7 @@
     "filesLoaded": "Bestanden geladen",
     "waitingForSelection": "Wachten voor selectie",
     "contributorLoaded": "Medewerker geladen",
-    "deletingContributor": "Verwijderen medewerker, even geduld...",
+    "deletingContributor": "Verwijderen bijdrager, even geduld...",
     "trackDeleted": "Nummer verwijderd",
     "notSet": "Niet ingesteld",
     "attemptToLinkTracks": "Probeert nummers te koppelen aan het album, even geduld a.u.b..."
@@ -212,13 +212,13 @@
   "warnings": {
     "confirmAlbumDeletion": "Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
     "confirmTrackDeletion": "Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
-    "confirmTranslatedDeletion": "Taal heeft content. Verwijderen bevestigen",
+    "confirmTranslatedDeletion": "Taal heeft inhoud. Verwijderen bevestigen",
     "confirmContributorDeletion": "WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track": {
     "duration": "Afspeelduur",
     "unknown": "Onbekend",
-    "dragMeToPlaylist": "Sleep mij naar de afspeellijst",
+    "dragMeToPlaylist": "Sleep naar de afspeellijst",
     "exegesis": "Uitleg",
     "copyright": "Auteursrecht",
     "publisher": "Uitgever"
@@ -227,7 +227,7 @@
     "chartByDateTitle": "Nieuwe gebruikers per dag",
     "chartByDayTitle": "Vandaag het meest geluisterd",
     "chartMostListenedTitle": "Meest geluisterde nummer",
-    "fromKaare": "Van Kåre",
+    "fromKaare": "Fra Kåre",
     "others": "Anderen",
     "clearChart": "Grafiek leegmaken",
     "add": "Toevoegen aan de grafiek"
