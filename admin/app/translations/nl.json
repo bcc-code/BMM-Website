@@ -34,7 +34,7 @@
   "page": {
     "search": {
       "searchResults": "Zoekresultaten",
-      "content": "Inhoud",
+      "content": "Content",
       "bibleVerse": "Bijbelvers",
       "album": "Album",
       "artist": "Artiest",
@@ -47,7 +47,7 @@
       "mainSettings": "Hoofdinstellingen",
       "bmmId": "BMM-ID",
       "publishDate": "Publicatiedatum",
-      "recordDate": "Registratiedatum",
+      "recordDate": "Opnamedatum",
       "save": "Opslaan",
       "delete": "Verwijderen",
       "play": "Afspelen",
@@ -85,7 +85,7 @@
       "size": "Grootte",
       "mediaFiles": "Mediabestanden",
       "uploadFile": "Bestand uploaden",
-      "uploadError": "Kan niet uploaden. Controleer of uw bestand het juiste formaat heeft",
+      "uploadError": "Kan niet uploaden. Controleer of je bestand het juiste formaat heeft",
       "imageAllowed": "JPEG, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Componisten",
@@ -138,7 +138,7 @@
       "add": "Uitzending toevoegen",
       "cancelEditing": "Wijzigingen annuleren",
       "upcomingMessage": "Komende live-uitzendingen van BMM",
-      "noUpcomingMessage": "Geen komende live uitzendingen van BMM!"
+      "noUpcomingMessage": "Geen aankomende live uitzendingen van BMM!"
     },
     "users": {
       "adminUsers": "Administrator gebruikers",
@@ -202,16 +202,16 @@
     "loadingUsers": "Gebruikers laden...",
     "loadingFiles": "Bestanden laden, even geduld...",
     "filesLoaded": "Bestanden geladen",
-    "waitingForSelection": "Wachten voor selectie",
-    "contributorLoaded": "Medewerker geladen",
+    "waitingForSelection": "Wacht op selectie",
+    "contributorLoaded": "Bijdrager succesvol geladen",
     "deletingContributor": "Verwijderen bijdrager, even geduld...",
     "trackDeleted": "Nummer verwijderd",
     "notSet": "Niet ingesteld",
     "attemptToLinkTracks": "Probeert nummers te koppelen aan het album, even geduld a.u.b..."
   },
   "warnings": {
-    "confirmAlbumDeletion": "Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
-    "confirmTrackDeletion": "Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
+    "confirmAlbumDeletion": "Weet je zeker dat je dit album met al haar sub albums en nummers wilt verwijderen?",
+    "confirmTrackDeletion": "Weet je zeker dat je dit nummer met al haar inhoud wil verwijderen?",
     "confirmTranslatedDeletion": "Taal heeft inhoud. Verwijderen bevestigen",
     "confirmContributorDeletion": "WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
@@ -228,7 +228,7 @@
     "chartByDayTitle": "Vandaag het meest geluisterd",
     "chartMostListenedTitle": "Meest geluisterde nummer",
     "fromKaare": "Fra Kåre",
-    "others": "Anderen",
+    "others": "Overig",
     "clearChart": "Grafiek leegmaken",
     "add": "Toevoegen aan de grafiek"
   },
