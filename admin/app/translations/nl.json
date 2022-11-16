@@ -1,5 +1,5 @@
 {
-  "language": "Dutch",
+  "language": "Nederlands",
   "general": {
     "search": "Zoeken...",
     "loading": "Laden...",
@@ -9,9 +9,9 @@
     "main": {
       "dashboard": "Dashboard",
       "notifications": "Meldingen",
-      "waitings": "Wachtrij",
+      "waitings": "Wacht op goedkeuring",
       "contributors": "Bijdragers",
-      "trackLists": "Track Lists",
+      "trackLists": "Tracklijsten",
       "podcasts": "Podcasts",
       "transmissions": "Live",
       "users": "Gebruikers",
@@ -28,13 +28,13 @@
       "tracks": "Nummers",
       "childTracks": "Nummers voor kinderen",
       "open": "Openen",
-      "nextFraKaare": "Volgende Van Kåre"
+      "nextFraKaare": "Volgende Fra Kåre"
     }
   },
   "page": {
     "search": {
       "searchResults": "Zoekresultaten",
-      "content": "Inhoud",
+      "content": "Content",
       "bibleVerse": "Bijbelvers",
       "album": "Album",
       "artist": "Artiest",
@@ -47,7 +47,7 @@
       "mainSettings": "Hoofdinstellingen",
       "bmmId": "BMM-ID",
       "publishDate": "Publicatiedatum",
-      "recordDate": "Registratiedatum",
+      "recordDate": "Opnamedatum",
       "save": "Opslaan",
       "delete": "Verwijderen",
       "play": "Afspelen",
@@ -74,7 +74,7 @@
       "album": "Album",
       "type": "Type",
       "parentAlbum": "Bovenliggend album",
-      "setNewParentAlbum": "Nieuw hoofdalbum",
+      "setNewParentAlbum": "Nieuw bovenliggend album",
       "lastModified": "Laatst gewijzigd",
       "by": "door",
       "noParentAlbum": "Geen bovenliggend album",
@@ -85,15 +85,15 @@
       "size": "Grootte",
       "mediaFiles": "Mediabestanden",
       "uploadFile": "Bestand uploaden",
-      "uploadError": "Kan niet uploaden. Controleer of uw bestand in het juiste formaat",
+      "uploadError": "Kan niet uploaden. Controleer of je bestand het juiste formaat heeft",
       "imageAllowed": "JPEG, png, gif",
-      "mediaAllowed": "MP3, mp4",
+      "mediaAllowed": "mp3, mp4",
       "composers": "Componisten",
       "arrangers": "Arrangeurs",
       "interprets": "Artiesten en\/of sprekers",
       "lyricists": "Tekstschrijvers",
       "songbooks": "Liederenboeken",
-      "trackLists": "Track Lists",
+      "trackLists": "Tracklijsten",
       "bibleReferences": "Bijbel verwijzingen",
       "addBibleReference": "Bijbel verwijzing toevoegen",
       "externalReferences": "Externe referenties",
@@ -101,22 +101,22 @@
       "record": "Opnemen",
       "pause": "Pauze",
       "resetTime": "Reset tijd",
-      "createNewContributor": "Nieuwe medewerker maken",
+      "createNewContributor": "Nieuwe bijdrager maken",
       "number": "Nummer",
       "timestamp": "Tijdstip",
       "comment": "Commentaar",
       "audio": "Audio",
       "video": "Video",
       "sortOrder": "Sorteervolgorde",
-      "waitingsReady": "Wachtrij goedgekeurd",
+      "waitingsReady": "Wachtrij klaar",
       "missingTrack": "Ontbrekend nummer",
       "missingAlbum": "Ontbrekend album",
       "wrongId": "Verkeerde BMM-ID",
       "start": "Begin",
       "end": "Eind",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "Metadata lied laden",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "Vervang metadata"
       }
     },
     "waitings": {
@@ -138,7 +138,7 @@
       "add": "Uitzending toevoegen",
       "cancelEditing": "Wijzigingen annuleren",
       "upcomingMessage": "Komende live-uitzendingen van BMM",
-      "noUpcomingMessage": "Geen komende live uitzendingen van BMM!"
+      "noUpcomingMessage": "Geen aankomende live uitzendingen van BMM!"
     },
     "users": {
       "adminUsers": "Administrator gebruikers",
@@ -158,29 +158,29 @@
       "sendPushNotification": "Push-bericht verzenden",
       "sent": "Verzonden",
       "failed": "Mislukt",
-      "scheduledSendTime": "scheduled send time",
+      "scheduledSendTime": "Geplande zendtijd",
       "link": "link"
     },
     "podcast": {
       "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Podcast wijzigen",
+      "createNew": "Nieuwe podcast maken",
+      "addTranslation": "Podcastvertaling toevoegen",
+      "save": "Podcast opslaan"
     },
     "playlist": {
       "title": "Afspeellijsten",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Aanpassen Playlist",
+      "createNew": "Nieuwe playlist maken",
+      "addTranslation": "Voeg playlist vertaling toe",
+      "save": "Playlist opslaan"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Muziek kanalen",
+      "editTitle": "Pas muziek kanaal aan",
+      "createNew": "Maak nieuw muziek kanaal",
+      "addTranslation": "Voeg kanaal vertaling toe",
+      "save": "Sla muziek kanaal op"
     }
   },
   "states": {
@@ -202,23 +202,23 @@
     "loadingUsers": "Gebruikers laden...",
     "loadingFiles": "Bestanden laden, even geduld...",
     "filesLoaded": "Bestanden geladen",
-    "waitingForSelection": "Wachten voor selectie",
-    "contributorLoaded": "Medewerker geladen",
-    "deletingContributor": "Verwijderen medewerker, even geduld...",
+    "waitingForSelection": "Wacht op selectie",
+    "contributorLoaded": "Bijdrager succesvol geladen",
+    "deletingContributor": "Verwijderen bijdrager, even geduld...",
     "trackDeleted": "Nummer verwijderd",
     "notSet": "Niet ingesteld",
     "attemptToLinkTracks": "Probeert nummers te koppelen aan het album, even geduld a.u.b..."
   },
   "warnings": {
-    "confirmAlbumDeletion": "Weet u zeker dat u dit album met alle haar sub albums en nummers wilt verwijderen?",
-    "confirmTrackDeletion": "Weet u zeker dat u dit nummer met al haar inhoud wilt verwijderen?",
-    "confirmTranslatedDeletion": "Taal heeft content. Verwijderen bevestigen",
+    "confirmAlbumDeletion": "Weet je zeker dat je dit album met al haar sub albums en nummers wilt verwijderen?",
+    "confirmTrackDeletion": "Weet je zeker dat je dit nummer met al haar inhoud wil verwijderen?",
+    "confirmTranslatedDeletion": "Taal heeft inhoud. Verwijderen bevestigen",
     "confirmContributorDeletion": "WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track": {
     "duration": "Afspeelduur",
     "unknown": "Onbekend",
-    "dragMeToPlaylist": "Sleep mij naar de afspeellijst",
+    "dragMeToPlaylist": "Sleep naar de afspeellijst",
     "exegesis": "Uitleg",
     "copyright": "Auteursrecht",
     "publisher": "Uitgever"
@@ -227,8 +227,8 @@
     "chartByDateTitle": "Nieuwe gebruikers per dag",
     "chartByDayTitle": "Vandaag het meest geluisterd",
     "chartMostListenedTitle": "Meest geluisterde nummer",
-    "fromKaare": "Van Kåre",
-    "others": "Anderen",
+    "fromKaare": "Fra Kåre",
+    "others": "Overig",
     "clearChart": "Grafiek leegmaken",
     "add": "Toevoegen aan de grafiek"
   },
