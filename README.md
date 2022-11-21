@@ -1,6 +1,7 @@
-WELCOME AS DEVELOPER FOR THE BMM 2.0 PROJECT
+BMM Website under bmm.brunstad.org
 ============================================
 
+We plan to rewrite the website some time in 2023
 
 INTRODUCTION
 ------------
