@@ -159,7 +159,7 @@ angular.module('bmmApp')
         $scope.lyricistIsMissing = true;
         $scope.composerIsMissing = true;
         $scope.noUpcomingEpisode = false;
-        if ($scope.episodeShowedIndex === 0 && $scope.nextEpisode.published) {
+        if ($scope.episodeShowedIndex === $scope.nextEpisodesIds.length - 1 && $scope.nextEpisode.published) {
           $scope.noUpcomingEpisode = true;
         }
         nextEpisode.rel.forEach(function(item){
