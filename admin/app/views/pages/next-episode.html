@@ -37,6 +37,7 @@
         <div ng-if="missingLanguages">
             <h5 ng-repeat="language in missingLanguages"><span class="glyphicon glyphicon-remove"></span> <strong>{{language}}</strong> is missing but is a required language!</h5>
         </div>
+        <h5 ng-if="noUpcomingEpisode"><span class="glyphicon glyphicon-exclamation-sign"></span> No upcoming episode is scheduled! Did you forget to set "fra-kaare" as tag?</h5>
     </div>
 
     <table ng-if="nextEpisode">

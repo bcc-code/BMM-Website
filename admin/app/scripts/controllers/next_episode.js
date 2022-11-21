@@ -25,7 +25,7 @@ angular.module('bmmApp')
       offset++;
       $scope.nextEpisodesIds.unshift(episode.id);
 
-      if($scope.nextEpisodesIds.length > maxEpisodes) {
+      if ($scope.nextEpisodesIds.length > maxEpisodes) {
         $scope.nextEpisodesIds.pop();
       }
 
@@ -158,6 +158,10 @@ angular.module('bmmApp')
         $scope.songbookIsNotSet = true;
         $scope.lyricistIsMissing = true;
         $scope.composerIsMissing = true;
+        $scope.noUpcomingEpisode = false;
+        if ($scope.episodeShowedIndex === 0 && $scope.nextEpisode.published) {
+          $scope.noUpcomingEpisode = true;
+        }
         nextEpisode.rel.forEach(function(item){
           if (item.type == "songbook")
             $scope.songbookIsNotSet = false;
