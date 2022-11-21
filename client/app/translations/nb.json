@@ -134,9 +134,9 @@
     "showVideo": "Vis video"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Last ned APK for Android",
+    "text": "Vi anbefaler å installere BMM-appen ved å bruke Google Play Store. Hvis det ikke er mulig, kan du ",
+    "downloadLink": "laste ned APKen direkte."
   },
   "copyright": "Opphavsrett"
 }
