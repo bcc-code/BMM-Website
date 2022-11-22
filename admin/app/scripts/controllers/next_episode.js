@@ -172,7 +172,7 @@ angular.module('bmmApp')
         })
 
         console.log("next episode", nextEpisode);
-        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing || $scope.composerIsMissing ? true : false;
+        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing || $scope.composerIsMissing || $scope.noUpcomingEpisode;
 
       }).then(function(){
         doneLoading();
