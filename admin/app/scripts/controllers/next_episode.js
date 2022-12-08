@@ -159,6 +159,7 @@ angular.module('bmmApp')
         $scope.lyricistIsMissing = true;
         $scope.composerIsMissing = true;
         $scope.noUpcomingEpisode = false;
+        $scope.wrongTrackType = nextEpisode.subtype !== "audiobook";
         if ($scope.episodeShowedIndex === $scope.nextEpisodesIds.length - 1 && $scope.nextEpisode.published) {
           $scope.noUpcomingEpisode = true;
         }
@@ -169,10 +170,11 @@ angular.module('bmmApp')
             $scope.lyricistIsMissing = false;
           else if (item.type == "composer")
             $scope.composerIsMissing = false;
-        })
+        });
 
         console.log("next episode", nextEpisode);
-        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing || $scope.composerIsMissing || $scope.noUpcomingEpisode;
+        $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing
+          || $scope.composerIsMissing || $scope.noUpcomingEpisode || $scope.wrongTrackType;
 
       }).then(function(){
         doneLoading();
