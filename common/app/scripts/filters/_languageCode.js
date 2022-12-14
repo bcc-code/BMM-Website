@@ -20,6 +20,7 @@ angular.module('bmmLibApp')
         hr: 'Hrvatski',
         hu: 'Magyar',
         it: 'Italiano',
+        ml: 'മലയാളം',
         nl: 'Nederlands',
         pl: 'Polski',
         pt: 'Português',
