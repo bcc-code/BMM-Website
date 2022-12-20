@@ -304,8 +304,10 @@ angular.module('bmmLibApp')
                   var name;
                   if (this.name==='herrens_veier') {
                     name = 'HV';
-                  } else {
+                  } else if (this.name === 'mandelblomsten') {
                     name = 'FMB';
+                  } else {
+                    name = this.name;
                   }
                   if ((resolvedData.relations[key].length-1)===index) {
                     resolvedData.songbooks += name+' '+this.id;
