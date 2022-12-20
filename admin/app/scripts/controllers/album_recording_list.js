@@ -280,7 +280,7 @@ angular.module('bmmApp')
                                     } else if (relation.type === 'songbook') {
                                         if (relation.name === 'herrens_veier') {
                                             relation.name = 'HV';
-                                        } else {
+                                        } else if (relation.name === 'mandelblomsten') {
                                             relation.name = 'FMB';
                                         }
                                     }

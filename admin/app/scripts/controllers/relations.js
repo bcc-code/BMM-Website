@@ -362,7 +362,11 @@ angular.module('bmmApp')
 
     $scope.availableSongbooks = [
       'herrens_veier',
-      'mandelblomsten'
+      'mandelblomsten',
+      'NHV',
+      'NFMB',
+      'RB',
+      'SOS'
     ];
     $scope.activateSongbook = function(_name) {
       $scope.rel.songbooks.splice(0,0, {
@@ -392,7 +396,7 @@ angular.module('bmmApp')
         return language;
       }
 
-      var songbookName = songbook.name === "herrens_veier" ? "HV" : "FMB";
+      var songbookName = songbook.name === "herrens_veier" ? "HV" : songbook.name === "mandelblomsten" ? "FMB" : songbook.name;
       _api.songMetadataGet(songbookName, songbook.id)
         .fail(function(response) {
           alert("unable to load metadata: " + response.responseText);

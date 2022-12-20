@@ -8,8 +8,10 @@ angular.module('bmmLibApp')
         var relation = track.relations.songbook[0];
         if (relation.name === 'herrens_veier') {
           return "HV " + relation.id;
-        } else {
+        } else if (relation.name === 'mandelblomsten') {
           return "FMB " + relation.id;
+        } else {
+          return relation.name + " " + relation.id;
         }
       }
 
