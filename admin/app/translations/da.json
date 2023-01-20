@@ -28,7 +28,7 @@
       "tracks": "Sange og taler",
       "childTracks": "Børnesange",
       "open": "åben",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Næste Fra Kåre"
     }
   },
   "page": {
@@ -55,14 +55,14 @@
       "status": "Status",
       "languages": "Sprog",
       "tags": "Tags",
-      "addTag": "Add tag",
+      "addTag": "Tilføj tag",
       "generateTitlesByTag": "Generer titler fra tags",
       "active": "Aktiv",
       "available": "Tilgængelig",
       "title": "Titel",
       "noTitle": "Ingen titel",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Uploadet",
+      "published": "Udgivet",
       "description": "Beskrivelse",
       "selectedLanguage": "Vælg sprog",
       "originalLanguage": "Originalsprog",
@@ -89,15 +89,15 @@
       "imageAllowed": "jpeg, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Komponister",
-      "arrangers": "Arrangers",
+      "arrangers": "Arrangører",
       "interprets": "Artister og\/eller talere",
       "lyricists": "Forfattere",
       "songbooks": "Sangbøger",
       "trackLists": "Spillelister",
       "bibleReferences": "Bibelreferencer",
       "addBibleReference": "Tilføj bibelreference",
-      "externalReferences": "External references",
-      "addExternalReference": "Add external reference",
+      "externalReferences": "Eksterne referencer",
+      "addExternalReference": "Tilføj ekstern reference",
       "record": "Optag",
       "pause": "Pause",
       "resetTime": "Nulstil tid",
@@ -113,10 +113,10 @@
       "missingAlbum": "Mangler album",
       "wrongId": "Forkert BMM-ID",
       "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "end": "Slut",
+      "loadSongMetadata": "Load sangens metadata",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "replace metadata\n"
       }
     },
     "waitings": {
@@ -133,21 +133,21 @@
       "contributors": "Bidragsydere"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Gem sending",
+      "edit": "Rediger sending",
+      "add": "Tilføj sending",
+      "cancelEditing": "Afslut redigering",
+      "upcomingMessage": "Kommende BMM Live-sendinger",
+      "noUpcomingMessage": "Ingen kommende BMM Live-sendinger"
     },
     "users": {
       "adminUsers": "Administratorer",
-      "albumManager": "Albums",
+      "albumManager": "Album",
       "trackManager": "Sange og taler",
       "contributorManager": "Bidragydere",
       "notificationManager": "Notifikationer",
       "podcastManager": "Podcasts",
-      "featurePreview": "Feature Preview",
+      "featurePreview": "Funktionsforhåndsvisning\n",
       "liveManager": "Live",
       "allRights": "Alle rettigheder",
       "refreshList": "Opdater liste"
@@ -158,35 +158,35 @@
       "sendPushNotification": "Send push-notifikation",
       "sent": "Sendt",
       "failed": "Fejlede",
-      "scheduledSendTime": "scheduled send time",
+      "scheduledSendTime": "Planlagt afsendelsestidspunkt\n",
       "link": "link"
     },
     "podcast": {
       "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Rediger podcast",
+      "createNew": "Opret ny podcast",
+      "addTranslation": "Tilføj oversættelse af podcast",
+      "save": "Gem podcast"
     },
     "playlist": {
       "title": "Spillelister",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Rediger spilleliste",
+      "createNew": "Opret ny spilleliste",
+      "addTranslation": "Tilføj oversættelse af spilleliste",
+      "save": "Gem spilleliste"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Musikkanaler",
+      "editTitle": "Rediger musikkanal",
+      "createNew": "Opret ny musikkanal",
+      "addTranslation": "Tilføj oversættelse af kanal",
+      "save": "Gem musikkanal"
     }
   },
   "states": {
     "noChanges": "Ingen ændringer",
     "allIsWell": "Alt er godt",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Ændrringerne er gemt",
     "couldNotCreateAlbum": "Kunne ikke oprette album",
     "couldNotCreateTrack": "Kunne ikke oprette spor",
     "errorCode": "Fejlkode",
@@ -212,7 +212,7 @@
   "warnings": {
     "confirmAlbumDeletion": "Er du sikker på at du vil slette albummet med alle dets sub-albums og spor?",
     "confirmTrackDeletion": "Er du sikker på du vil slette sporet med alt dets indhold?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "Sproget har indhold. Bekræft at du vil slette",
     "confirmContributorDeletion": "ER DU VIRKELIG SIKKER PÅ, DU VIL SLETTE DENNE BIDRAGYDER? ALLE SAMMENKÆDEDE SPOR VIL BLIVE SLETTET!"
   },
   "track": {
@@ -221,7 +221,7 @@
     "dragMeToPlaylist": "Træk til spilleliste",
     "exegesis": "Tydning",
     "copyright": "Rettigheder",
-    "publisher": "Publisher"
+    "publisher": "Udgiver"
   },
   "statistic": {
     "chartByDateTitle": "Nye brugere pr. dag",
