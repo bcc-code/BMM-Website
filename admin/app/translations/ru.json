@@ -11,9 +11,9 @@
       "notifications": "Уведомления",
       "waitings": "Ожидает проверки",
       "contributors": "Исполнители",
-      "trackLists": "Track Lists",
-      "podcasts": "Podcasts",
-      "transmissions": "Live",
+      "trackLists": "Плейлисты",
+      "podcasts": "Подкасты",
+      "transmissions": "Прямой эфир",
       "users": "Пользователи",
       "statistic": "Статистика"
     },
@@ -28,7 +28,7 @@
       "tracks": "Треки",
       "childTracks": "Треки для детей",
       "open": "открыть",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Следующий выпуск От Коре"
     }
   },
   "page": {
@@ -55,14 +55,14 @@
       "status": "Статус",
       "languages": "Языки",
       "tags": "Теги",
-      "addTag": "Add tag",
+      "addTag": "Добавить тег",
       "generateTitlesByTag": "Генерировать названия по тегу",
       "active": "Активные",
       "available": "Доступно",
       "title": "Название",
       "noTitle": "Без названия",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Загружено",
+      "published": "Опубликовано",
       "description": "Описание",
       "selectedLanguage": "Выбранный язык",
       "originalLanguage": "Язык оригинала",
@@ -93,7 +93,7 @@
       "interprets": "Исполнители или говорящие",
       "lyricists": "Авторы текстов",
       "songbooks": "Песенники",
-      "trackLists": "Track Lists",
+      "trackLists": "Плейлисты",
       "bibleReferences": "Ссылки в библии",
       "addBibleReference": "Добавить ссылку в Библии",
       "externalReferences": "External references",
@@ -146,9 +146,9 @@
       "trackManager": "Треки",
       "contributorManager": "Исполнители",
       "notificationManager": "Уведомления",
-      "podcastManager": "Podcasts",
+      "podcastManager": "Подкасты",
       "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "liveManager": "Прямой эфир",
       "allRights": "Все права",
       "refreshList": "Обновить список"
     },
@@ -162,7 +162,7 @@
       "link": "link"
     },
     "podcast": {
-      "title": "Podcasts",
+      "title": "Подкасты",
       "editTitle": "Edit Podcast",
       "createNew": "Create new podcast",
       "addTranslation": "Add podcast translation",
