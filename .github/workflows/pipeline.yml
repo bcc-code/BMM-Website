@@ -138,7 +138,7 @@ jobs:
         uses: Azure/webapps-deploy@v2
         with:
           app-name: Prod-BMM
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_EUROPE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{ github.workspace }}/WebApp
           slot-name: "staging"
       - uses: "marvinpinto/action-automatic-releases@latest"
