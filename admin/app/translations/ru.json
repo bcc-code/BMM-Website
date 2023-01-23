@@ -11,9 +11,9 @@
       "notifications": "Уведомления",
       "waitings": "Ожидает проверки",
       "contributors": "Исполнители",
-      "trackLists": "Track Lists",
-      "podcasts": "Podcasts",
-      "transmissions": "Live",
+      "trackLists": "Плейлисты",
+      "podcasts": "Подкасты",
+      "transmissions": "Прямой эфир",
       "users": "Пользователи",
       "statistic": "Статистика"
     },
@@ -28,7 +28,7 @@
       "tracks": "Треки",
       "childTracks": "Треки для детей",
       "open": "открыть",
-      "nextFraKaare": "Next From Kåre"
+      "nextFraKaare": "Следующий выпуск От Коре"
     }
   },
   "page": {
@@ -55,14 +55,14 @@
       "status": "Статус",
       "languages": "Языки",
       "tags": "Теги",
-      "addTag": "Add tag",
+      "addTag": "Добавить тег",
       "generateTitlesByTag": "Генерировать названия по тегу",
       "active": "Активные",
       "available": "Доступно",
       "title": "Название",
       "noTitle": "Без названия",
-      "uploaded": "Uploaded",
-      "published": "Published",
+      "uploaded": "Загружено",
+      "published": "Опубликовано",
       "description": "Описание",
       "selectedLanguage": "Выбранный язык",
       "originalLanguage": "Язык оригинала",
@@ -89,15 +89,15 @@
       "imageAllowed": "jpeg, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Композиторы",
-      "arrangers": "Arrangers",
+      "arrangers": "Аранжировщики",
       "interprets": "Исполнители или говорящие",
       "lyricists": "Авторы текстов",
       "songbooks": "Песенники",
-      "trackLists": "Track Lists",
+      "trackLists": "Плейлисты",
       "bibleReferences": "Ссылки в библии",
       "addBibleReference": "Добавить ссылку в Библии",
-      "externalReferences": "External references",
-      "addExternalReference": "Add external reference",
+      "externalReferences": "Внешние ссылки",
+      "addExternalReference": "Добавить внешнюю ссылку",
       "record": "Запись",
       "pause": "Пауза",
       "resetTime": "Время сброса",
@@ -112,11 +112,11 @@
       "missingTrack": "Трек отсутствует",
       "missingAlbum": "Альбом отсутсвиет",
       "wrongId": "Неправильный BMM-ID",
-      "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "start": "Начало",
+      "end": "Конец",
+      "loadSongMetadata": "загрузить метаданные песни",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "заменить метаданные"
       }
     },
     "waitings": {
@@ -133,22 +133,22 @@
       "contributors": "Исполнители"
     },
     "transmissions": {
-      "save": "Save transmission",
-      "edit": "Edit transmission",
-      "add": "Add transmission",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "save": "Сохранить трансляцию",
+      "edit": "Отредактировать трансляцию",
+      "add": "Добавить трансляцию",
+      "cancelEditing": "Закончить редактирование",
+      "upcomingMessage": "Предстоящие прямые трансляции BMM",
+      "noUpcomingMessage": "Нет предстоящих трансляций BMM "
     },
     "users": {
       "adminUsers": "Администраторы",
-      "albumManager": "Albums",
+      "albumManager": "Альбомы",
       "trackManager": "Треки",
       "contributorManager": "Исполнители",
       "notificationManager": "Уведомления",
-      "podcastManager": "Podcasts",
-      "featurePreview": "Feature Preview",
-      "liveManager": "Live",
+      "podcastManager": "Подкасты",
+      "featurePreview": "Предварительный просмотр функции",
+      "liveManager": "Прямой эфир",
       "allRights": "Все права",
       "refreshList": "Обновить список"
     },
@@ -158,26 +158,26 @@
       "sendPushNotification": "Показывать уведомления на экране",
       "sent": "Отправлено",
       "failed": "Не удалось",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "scheduledSendTime": "запланированное время отправки",
+      "link": "ссылка"
     },
     "podcast": {
-      "title": "Podcasts",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "title": "Подкасты",
+      "editTitle": "Отредактировать подкаст",
+      "createNew": "Создать новый подкаст",
+      "addTranslation": "Добавить перевод подкаста",
+      "save": "Сохранить подкаст"
     },
     "playlist": {
       "title": "Списки воспроизведения",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Редактировать Плейлист",
+      "createNew": "Создать новый плейлист",
+      "addTranslation": "Добавить перевод плейлиста",
+      "save": "Сохранить плейлист"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
+      "title": "Музыкальные каналы",
+      "editTitle": "Редактировать музыкальный канал",
       "createNew": "Create new music channel",
       "addTranslation": "Add channel translation",
       "save": "Save music channel"

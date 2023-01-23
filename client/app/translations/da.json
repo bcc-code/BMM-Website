@@ -32,7 +32,7 @@
     "copyLink": "Kopier link",
     "remove": "Slet",
     "playPlaylist": "Afspil spillelisten",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Tilføj til mine spillelister",
     "share": "Del"
   },
   "menu": {
@@ -134,9 +134,9 @@
     "showVideo": "Vis video"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Download APK til Android",
+    "text": "Vi anbefaler at installere BMM-appen ved hjælp af Google Play Butik. \n",
+    "downloadLink": "Download APK direkte"
   },
   "copyright": "Rettigheder"
 }
