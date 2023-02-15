@@ -38,7 +38,6 @@ angular.module('bmmLibApp')
         'Accept-Language': contentLanguages
       },
       xhrFields: {
-        'withCredentials': true
       }
     };
 
