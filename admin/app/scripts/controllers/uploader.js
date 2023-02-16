@@ -15,7 +15,7 @@ angular.module('bmmApp')
         method: 'POST',
         scope: $scope, //to automatically update the html
         url: options.url,
-        withCredentials: true,
+        withCredentials: false,
         removeAfterUpload: true,
         headers: {
           'X-HTTP-METHOD-OVERRIDE': options.method,

@@ -43,7 +43,7 @@ SETUP DEVELOPER ENVIRONMENT
 ---------------------------
 
 **1. Install [NodeJS](http://nodejs.org/) and open Terminal / CMD**
-!! grunt-node-sass is not compatible with newer versions of nodejs. So make sure that `node -v` is <= 9.x.x !!
+!! grunt-node-sass is not compatible with newer versions of nodejs. So make sure that `node -v` is <= 10.x.x !! (maybe consider using nvm (node version manager))
 
 **2. Install Yeoman, Bower and Yeoman generator**
 ```
