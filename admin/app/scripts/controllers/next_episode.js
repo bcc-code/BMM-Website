@@ -31,10 +31,10 @@ angular.module('bmmApp')
 
       if (new Date(episode.published_at) < datetime) {
         if ($scope.episodeShowedIndex == 0) {
-          $scope.episodeShowedIndex = Math.abs(maxEpisodes - offset);
+          $scope.episodeShowedIndex = Math.abs(episodes.length - offset);
 
           // In case there are unpublished episodes set the index to the episode which is going to be published next
-          if ($scope.episodeShowedIndex < maxEpisodes-1) {
+          if ($scope.episodeShowedIndex < episodes.length-1) {
             $scope.episodeShowedIndex++;
           }
         }
@@ -190,8 +190,8 @@ angular.module('bmmApp')
     _api.trackListIdGet("podcast", $routeParams.id).then(function(podcast) {
       $scope.podcast = podcast;
 
-      _api.podcastTracksGet($routeParams.id, {size: maxEpisodes, from: offset, unpublished: 'show'}).then(function(podcast) {
-        getNextEpisodesIds(podcast);
+      _api.podcastTracksGet($routeParams.id, {size: maxEpisodes, from: offset, unpublished: 'show'}).then(function(episodes) {
+        getNextEpisodesIds(episodes);
         getEpisodeInformation();
       });
 
