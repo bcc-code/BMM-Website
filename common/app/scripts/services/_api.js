@@ -492,7 +492,6 @@ angular.module('bmmLibApp')
 
   /** Get a list of the data **/
   factory.search = function(term, options) {
-
     if (typeof options === 'undefined') { options = {}; }
 
     /** OPTIONS (Stars = Required)
@@ -509,11 +508,9 @@ angular.module('bmmLibApp')
       url: serverUrl+'search/'+term,
       data: $.param(options)
     });
-
   };
 
   factory.searchV2 = function(term, options) {
-
     if (typeof options === 'undefined') { options = {}; }
 
     return factory.addToQueue({
@@ -521,7 +518,6 @@ angular.module('bmmLibApp')
       url: serverUrl+'search/v2/'+term,
       data: $.param(options)
     });
-
   };
 
   /** Logout cookie session **/

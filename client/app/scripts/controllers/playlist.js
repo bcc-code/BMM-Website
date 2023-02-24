@@ -46,6 +46,8 @@ angular.module('bmmApp')
     $scope.albumCount = 0;
     $scope.searchResults = false;
     $scope.nextPageFromPosition = 0;
+    $scope.highlightings = null;
+    $scope.showContentColumn = false;
     $scope.path = $location.absUrl();
 
     $(window).off('scrollBottom');
@@ -85,6 +87,14 @@ angular.module('bmmApp')
           } else if (this.type==='track') {
 
             track = _track.resolve(this);
+            if ($scope.showContentColumn) {
+              $.each($scope.highlightings, function(index, item){
+                if (item.id == "track_"+track.id) {
+                  track.content = item.text.replaceAll("**|", "<b>").replaceAll("**/", "</b>");
+                  track.timestamp = item.start_position_in_seconds;
+                }
+              });
+            }
 
             if ($routeParams.playlist!=='private') {
               track.order = track.date;
@@ -169,7 +179,8 @@ angular.module('bmmApp')
             from: _from,
             size: loadAmount
           }).done(function(data) {
-            console.log("done loading search results", data);
+            $scope.highlightings = data.highlightings;
+            $scope.showContentColumn = data.highlightings && data.highlightings.length > 0;
             $scope.nextPageFromPosition = data.next_page_from_position;
             resolveTracks(data.items);
             end = data.is_fully_loaded;
@@ -180,14 +191,12 @@ angular.module('bmmApp')
         $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
-
             loading = true;
             $rootScope.safeApply(function() {
               $scope.load = true;
             });
 
             search($routeParams.id, $scope.nextPageFromPosition);
-
           }
 
         });
@@ -201,7 +210,6 @@ angular.module('bmmApp')
         $(window).on('scrollBottom', function() {
 
           if (!loading&&!end) {
-
             loading = true;
             $rootScope.safeApply(function() {
               $scope.load = true;
@@ -211,12 +219,9 @@ angular.module('bmmApp')
               from: size,
               size: loadAmount
             }).done(function(data) {
-
               resolveTracks(data);
               size+=loadAmount;
-
             });
-
           }
 
         });
@@ -224,11 +229,9 @@ angular.module('bmmApp')
         _api.trackLatest({
           size: loadAmount
         }).done(function(data) {
-
           $scope.title = _init.translation.playlist.latestTracks;
           resolveTracks(data);
           size+=loadAmount;
-
         });
 
         break;
