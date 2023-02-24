@@ -512,6 +512,18 @@ angular.module('bmmLibApp')
 
   };
 
+  factory.searchV2 = function(term, options) {
+
+    if (typeof options === 'undefined') { options = {}; }
+
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'search/v2/'+term,
+      data: $.param(options)
+    });
+
+  };
+
   /** Logout cookie session **/
   factory.logout = function() {
 

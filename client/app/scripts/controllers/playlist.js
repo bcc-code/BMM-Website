@@ -45,6 +45,7 @@ angular.module('bmmApp')
     $scope.albums = [];
     $scope.albumCount = 0;
     $scope.searchResults = false;
+    $scope.nextPageFromPosition = 0;
     $scope.path = $location.absUrl();
 
     $(window).off('scrollBottom');
@@ -164,14 +165,15 @@ angular.module('bmmApp')
           if (typeof _from === 'undefined') {
             _from = 0;
           }
-          _api.search(term, {
+          _api.searchV2(term, {
             from: _from,
             size: loadAmount
           }).done(function(data) {
-
-            resolveTracks(data);
+            console.log("done loading search results", data);
+            $scope.nextPageFromPosition = data.next_page_from_position;
+            resolveTracks(data.items);
+            end = data.is_fully_loaded;
             size+=loadAmount;
-
           });
         };
 
@@ -184,7 +186,7 @@ angular.module('bmmApp')
               $scope.load = true;
             });
 
-            search($routeParams.id, size);
+            search($routeParams.id, $scope.nextPageFromPosition);
 
           }
 
