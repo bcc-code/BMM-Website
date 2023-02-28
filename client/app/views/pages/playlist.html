@@ -73,6 +73,7 @@
         <th class="bmm-large-only"><span ng-bind="init.translation.playlist.song"></span></th>
         <th><span ng-bind="init.translation.page.search.artist"></span></th>
         <th class="bmm-large-only"><span ng-bind="init.translation.page.search.album"></span></th>
+        <th class="bmm-large-only" ng-show="showContentColumn"><span>Content</span></th>
         <th><span ng-bind="init.translation.playlist.duration"></span></th>
         <th class="bmm-large-only"></th>
         <th></th>
@@ -82,19 +83,20 @@
       <tr id="{{::track.id}}" language="{{::track.language}}" ng-repeat="track in playlist | filter: {language: languageFilter}"
 			  ng-class="{even: $even, odd: $odd, playing: track.playing}">
 				<td ng-class="{'sort': canEdit}">
-                    <div ng-show="canEdit" class="sort_handle"></div>
-                    <img ng-hide="track.playing" ng-src="{{::track.subtype | _icon}}">
-                    <img ng-show="track.playing" ng-src="{{::'playing'| _icon}}">
-                </td>
-                <td title="{{::track.title}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.title | _min:40"></span></td>
-                <td title="{{::track | _songnumber}}"><span ng-bind="::track | _songnumber"></span></td>
-                <td title="{{::track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.performers | _min:20"></span></td>
-				<td class="drag bmm-large-only" title="{{::track.albumTitle}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.albumTitle | _min:40"></span></td>
-				<td class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><span ng-bind="::track.duration | _time"></span></td>
-				<td class="bmm-large-only languageFlag" ng-click="play(getPlaylistCopy(languageFilter), $index);"><div class="bmm-flag flags-{{::track.language}}"></div></td>
-                <td>
-                    <div ng-include="'views/pages/options.html'"></div>
-                </td>
+            <div ng-show="canEdit" class="sort_handle"></div>
+            <img ng-hide="track.playing" ng-src="{{::track.subtype | _icon}}">
+            <img ng-show="track.playing" ng-src="{{::'playing'| _icon}}">
+        </td>
+        <td title="{{::track.title}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind="::track.title | _min:40"></span></td>
+        <td title="{{::track | _songnumber}}" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind="::track | _songnumber"></span></td>
+        <td title="{{::track.performers}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind="::track.performers | _min:20"></span></td>
+				<td class="drag bmm-large-only" title="{{::track.albumTitle}}" class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind="::track.albumTitle | _min:40"></span></td>
+        <td class="drag bmm-large-only" ng-show="showContentColumn" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind-html="::track.content"></span></td>
+				<td class="drag" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><span ng-bind="::track.duration | _time"></span></td>
+				<td class="bmm-large-only languageFlag" ng-click="play(getPlaylistCopy(languageFilter), $index, track.timestamp);"><div class="bmm-flag flags-{{::track.language}}"></div></td>
+        <td>
+            <div ng-include="'views/pages/options.html'"></div>
+        </td>
 			</tr>
 		</tbody>
 
