@@ -180,7 +180,7 @@ angular.module('bmmApp')
             size: loadAmount
           }).done(function(data) {
             $scope.highlightings = data.highlightings;
-            $scope.showContentColumn = data.highlightings && data.highlightings.length > 0;
+            $scope.showContentColumn = (data.highlightings && data.highlightings.length > 0) || ($scope.showContentColumn && _from > 0);
             $scope.nextPageFromPosition = data.next_page_from_position;
             resolveTracks(data.items);
             end = data.is_fully_loaded;
