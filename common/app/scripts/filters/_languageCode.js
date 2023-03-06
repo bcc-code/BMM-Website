@@ -33,6 +33,7 @@ angular.module('bmmLibApp')
         he: 'עברית',
         sl: 'slovenščina',
         yue: '廣東話',
+        kha: 'Khasi',
         zxx: 'Unknown'
       };
 
