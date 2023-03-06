@@ -88,7 +88,7 @@ jobs:
       - name: dotnet build Release
         run: dotnet build --configuration Release
       - name: dotnet publish
-        run: dotnet publish -o output/
+        run: dotnet publish --property PublishDir='${{ github.workspace }}/output/'
 
       - name: unzip client files
         run: unzip -o '${{ github.workspace }}/dist/client.zip' -d '${{ github.workspace }}/output/wwwroot'
