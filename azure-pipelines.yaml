@@ -29,7 +29,7 @@ stages:
 
           - script: dotnet build --configuration Release
             displayName: 'dotnet build Release'
-          - script: dotnet publish -o output/
+          - script: dotnet publish --property:PublishDir=output/
             displayName: 'dotnet publish'
 
           - task: CopyFiles@2
