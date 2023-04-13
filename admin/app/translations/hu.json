@@ -56,6 +56,7 @@
       "languages": "Nyelvek",
       "tags": "Címkék",
       "addTag": "Címke hozzáadása",
+      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
       "generateTitlesByTag": "Címek létrehozása címkékből",
       "active": "Aktív",
       "available": "Elérhető",
