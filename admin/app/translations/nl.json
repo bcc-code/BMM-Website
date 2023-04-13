@@ -56,6 +56,7 @@
       "languages": "Talen",
       "tags": "Tags",
       "addTag": "Tag toevoegen",
+      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
       "generateTitlesByTag": "Genereer titels aan de hand van de tags",
       "active": "Actief",
       "available": "Beschikbaar",

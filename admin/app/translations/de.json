@@ -56,6 +56,7 @@
       "languages": "Sprachen",
       "tags": "Tags",
       "addTag": "Tag hinzufügen",
+      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
       "generateTitlesByTag": "Titel aus Tags generieren",
       "active": "Aktiv",
       "available": "Verfügbar",

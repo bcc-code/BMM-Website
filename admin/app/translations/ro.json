@@ -56,6 +56,7 @@
       "languages": "Limbi",
       "tags": "Etichete",
       "addTag": "Adaugă tag",
+      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
       "generateTitlesByTag": "Generează titlu din etichete",
       "active": "Activ",
       "available": "Disponibile",

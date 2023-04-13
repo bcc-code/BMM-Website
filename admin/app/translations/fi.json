@@ -56,6 +56,7 @@
       "languages": "Kielet",
       "tags": "Tunnisteet",
       "addTag": "Lisää tagi",
+      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
       "generateTitlesByTag": "Luo otsikot tunnisteiden perusteella",
       "active": "Aktiivinen",
       "available": "Saatavilla",
