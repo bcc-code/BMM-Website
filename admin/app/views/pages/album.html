@@ -126,16 +126,20 @@
             <button ng-click="generateTitles()">
                 {{init.translation.page.editor.generateTitlesByTag}}
             </button>
-            <br>
+            <br/>
             {{init.translation.page.editor.title}}
-            <br>
+            <br/>
             <input type="text" style="width: 100%"
                    placeholder="{{originalLanguage.title}}"
-                   ng-model="edited.title"><br>
-            {{init.translation.page.editor.description}}<br>
+                   ng-model="edited.title"><br/>
+            {{init.translation.page.editor.description}}<br/>
             <textarea ng-model="edited.description" style="width: 100%"
                       placeholder="{{originalLanguage.description}}">
             </textarea>
+            <br/>
+            <label>
+              <input type="checkbox" ng-model="model.show_tracks_in_all_languages"> {{init.translation.page.editor.tracksInAllLanguages}}
+            </label>
         </div>
     </div>
 </div>
