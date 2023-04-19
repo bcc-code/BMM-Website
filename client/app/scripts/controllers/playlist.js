@@ -89,7 +89,7 @@ angular.module('bmmApp')
             track = _track.resolve(this);
             if ($scope.showContentColumn) {
               $.each($scope.highlightings, function(index, item){
-                if (item.id == "track_"+track.id) {
+                if (item.id == "track_"+track.id && !track.content) {
                   track.content = item.text.replaceAll("**|", "<b>").replaceAll("**/", "</b>");
                   track.timestamp = item.start_position_in_seconds;
                 }
