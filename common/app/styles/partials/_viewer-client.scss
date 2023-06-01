@@ -284,6 +284,10 @@
 .actionButtons .actionButton:hover {
   background-color: #0AB66F;
 }
+.actionButtons .actionButton.noIcon {
+  background-image: none;
+  padding-left: 1em;
+}
 .actionButtons .actionButton.play-playlist {
   background-image: url(../images/common/svg/v3/Icon_Play-small.svg);
 }

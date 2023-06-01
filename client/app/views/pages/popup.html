@@ -143,6 +143,31 @@
     </div>
 </div>
 
+<div class="popup" ng-if="$root.downloadInfo.showPopup">
+  <div class="container">
+    <div class="verticalCenter">
+      <div class="container" click-outside="$root.downloadInfo.showPopup=false">
+
+        <div class="exit" ng-click="$root.downloadInfo.showPopup=false"></div>
+
+        <b><span ng-bind="$root.downloadInfo.title"></span></b>
+        <br/>
+        <br/>
+
+        <p>
+          {{$root.downloadInfo.message}} <a href="mailto:bmm-support@bcc.no" target="_blank">bmm-support@bcc.no</a>.
+        </p>
+        <div class="actionButtons">
+          <a class="actionButton noIcon" href="mailto:bmm-support@bcc.no" target="_blank">
+            Contact
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--MORE INFO FOR A TRACK-->
 <div class="popup" ng-if="$root.trackInfo.show">
     <div class="container">
@@ -156,14 +181,14 @@
                 <div ng-if="$root.trackInfo.track.date != ''">
                     <b><span ng-bind="init.translation.track.recordedDate"></span></b><br>
                     {{$root.trackInfo.track.date | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}}<br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.duration != ''">
                     <b><span ng-bind="init.translation.track.duration"></span></b><br>
                     <span>
                         {{$root.trackInfo.track.duration | _time}}
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.album != ''">
                     <b><span ng-bind="init.translation.track.album"></span></b><br>
@@ -171,14 +196,14 @@
                           ng-click="go('/album/'+$root.trackInfo.track.raw.parent_id); $root.trackInfo.show=false;">
                         {{$root.trackInfo.track.albumTitle}}
                     </span><br><br>
-                </div>     
+                </div>
 
                 <div ng-if="$root.trackInfo.track.songbooks != ''">
                     <b><span ng-bind="init.translation.track.songbooks"></span></b><br>
                     <span>
                         {{$root.trackInfo.track.songbooks}}
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.interprets != ''">
                     <b><span ng-bind="init.translation.track.artist"></span></b><br>
@@ -187,7 +212,7 @@
                        ng-click="go('/playlist/contributor/'+artist.id+'/'+artist.name); $root.trackInfo.show=false;">
                         {{artist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.lyricists != ''">
                     <b><span ng-bind="init.translation.track.lyricist"></span></b><br>
@@ -196,7 +221,7 @@
                           ng-click="go('/playlist/contributor/'+lyricist.id+'/'+lyricist.name); $root.trackInfo.show=false;">
                         {{lyricist.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.arrangers != ''">
                     <b><span ng-bind="init.translation.track.arranger"></span></b><br>
@@ -205,7 +230,7 @@
                           ng-click="go('/playlist/contributor/'+arranger.id+'/'+arranger.name); $root.trackInfo.show=false;">
                         {{arranger.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.composers != ''">
                     <b><span ng-bind="init.translation.track.composer"></span></b><br>
@@ -214,7 +239,7 @@
                           ng-click="go('/playlist/contributor/'+composer.id+'/'+composer.name); $root.trackInfo.show=false;">
                         {{composer.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                </div>   
+                </div>
                 <div ng-if="$root.trackInfo.track.bible != ''">
                     <b><span ng-bind="init.translation.track.bibleVerse"></span></b><br>
                     <span class="link"
@@ -223,20 +248,20 @@
                           ng-repeat="reference in $root.trackInfo.track.bible">
                         {{reference.name}}<em ng-hide="$last">,&nbsp</em>
                     </span><br><br>
-                </div>   
+                </div>
 
                 <div ng-if="$root.trackInfo.track.publisher">
                     <b><span ng-bind="init.translation.track.publisher"></span></b><br>
                     <span>
                         {{$root.trackInfo.track.publisher}}
                     </span><br><br>
-                </div>   
+                </div>
                 <div ng-if="$root.trackInfo.track.copyright">
                     <b><span ng-bind="init.translation.track.copyright"></span></b><br>
                     <span>
                         {{$root.trackInfo.track.copyright}}
                     </span><br><br>
-                </div>   
+                </div>
 
             </div>
         </div>
