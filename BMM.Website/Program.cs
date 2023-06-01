@@ -32,6 +32,7 @@ app.MapGet("track/{*.}", handler);
 app.MapGet("playlist/{*.}", handler);
 app.MapGet("groupgoal/{*.}", handler);
 app.MapGet("copyright/{*.}", handler);
+app.MapGet("download-messages-info/{*.}", handler);
 
 // We want to allow downloading without needing to log in. It looks ugly and can't be translated but offers a better exerience.
 app.MapGet("apk/{*.}", () => new HtmlResult(File.ReadAllText("wwwroot/apk.html")));
