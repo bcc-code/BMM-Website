@@ -138,5 +138,12 @@
     "text": "Vi anbefaler å installere BMM-appen ved å bruke Google Play Store. Hvis det ikke er mulig, kan du ",
     "downloadLink": "laste ned APKen direkte."
   },
-  "copyright": "Opphavsrett"
+  "copyright": "Opphavsrett",
+  "downloadInfo": {
+    "title": "Nedlasting av taler ikke tilgjengelig",
+    "body": "Muligheten til å laste ned taler fra BMM er ikke lenger tilgjengelig. Hvis du trenger en tale for en spesifikk bruk, ta kontakt med oss og beskriv ditt behov.",
+    "playlistAddition": "Spillelisten vil bli lastet ned uten taler.",
+    "albumAddition": "Albumet vil bli lastet ned uten taler.",
+    "buttonContact": "Kontakt"
+  }
 }

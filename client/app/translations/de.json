@@ -138,5 +138,12 @@
     "text": "Wir empfehlen die BMM-App über den Google Play Store zu installieren. Falls das nicht möglich ist, kannst du",
     "downloadLink": "die APK direkt herunterladen."
   },
-  "copyright": "Copyright"
+  "copyright": "Copyright",
+  "downloadInfo": {
+    "title": "Herunterladen von Reden nicht möglich",
+    "body": "Es nicht länger möglich Reden von BMM herunterzuladen. Falls du eine Rede aus einem bestimmten Grund brauchst, schreibe uns und erkläre warum du die Rede brauchst.",
+    "playlistAddition": "Die Playliste wird ohne Reden heruntergeladen.",
+    "albumAddition": "Das Album wird ohne Reden heruntergeladen.",
+    "buttonContact": "Kontakt"
+  }
 }
