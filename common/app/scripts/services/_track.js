@@ -127,7 +127,7 @@ angular.module('bmmLibApp')
                 resolvedData.videos.push({
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
-                  downloadAction: (event) => {
+                  downloadAction: function(event) {
                     if (resolvedData.subtype === "speech") {
                       event.stopPropagation();
                       event.preventDefault();
@@ -143,7 +143,7 @@ angular.module('bmmLibApp')
                 resolvedData.audios.push({
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
-                  downloadAction: (event) => {
+                  downloadAction: function(event) {
                     if (resolvedData.subtype === "speech") {
                       event.stopPropagation();
                       event.preventDefault();
@@ -172,7 +172,7 @@ angular.module('bmmLibApp')
           resolvedData[(data.link.type+'s')].push({
             file: _file,
             downloadLink: _api.addAuthorizationQueryString(_file)+'&download=true',
-            downloadAction: (event) => {
+            downloadAction: function(event) {
               if (resolvedData.subtype === "speech") {
                 event.stopPropagation();
                 event.preventDefault();
