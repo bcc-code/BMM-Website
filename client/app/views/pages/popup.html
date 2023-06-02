@@ -143,23 +143,23 @@
     </div>
 </div>
 
-<div class="popup" ng-if="$root.downloadInfo.showPopup">
+<div class="popup" ng-if="init.downloadInfo.showPopup">
   <div class="container">
     <div class="verticalCenter">
-      <div class="container" click-outside="$root.downloadInfo.showPopup=false">
+      <div class="container" click-outside="init.downloadInfo.hide()">
 
-        <div class="exit" ng-click="$root.downloadInfo.showPopup=false"></div>
+        <div class="exit" ng-click="init.downloadInfo.hide()"></div>
 
-        <b><span ng-bind="$root.downloadInfo.title"></span></b>
+        <b><span ng-bind="init.translation.downloadInfo.title"></span></b>
         <br/>
         <br/>
 
         <p>
-          {{$root.downloadInfo.message}} <a href="mailto:bmm-support@bcc.no" target="_blank">bmm-support@bcc.no</a>.
+          {{init.translation.downloadInfo.body}}
         </p>
         <div class="actionButtons">
-          <a class="actionButton noIcon" href="mailto:bmm-support@bcc.no" target="_blank">
-            Contact
+          <a class="actionButton noIcon" href="mailto:support@bcc.media" target="_blank">
+            {{init.translation.downloadInfo.buttonContact}}
           </a>
         </div>
 

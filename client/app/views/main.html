@@ -156,19 +156,19 @@
 
                         <ul ng-if="playerOptions&&downloads">
                             <li ng-repeat="source in player.source.audios">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>
                             </li>
                             <li ng-repeat="source in player.source.videos">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>
                             </li>
                             <li ng-repeat="source in player.source.unknowns">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>

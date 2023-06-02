@@ -12,10 +12,5 @@ angular.module('bmmApp')
     _track,
     _init
   ) {
-    $rootScope.downloadInfo = {
-      showPopup: true,
-      title: "Downloading messages is not available",
-      message: "Due to copyright restrictions, the ability to download messages from BMM has been removed. If you need a message you can contact "
-    };
-    $scope.pageTitle = $rootScope.downloadInfo.title;
+    _init.downloadInfo.show();
   });
