@@ -156,10 +156,15 @@
 
         <p>
           {{init.translation.downloadInfo.body}}
+          <span ng-if="init.downloadInfo.type === 'album'">{{init.translation.downloadInfo.albumAddition}}</span>
+          <span ng-if="init.downloadInfo.type === 'playlist'">{{init.translation.downloadInfo.playlistAddition}}</span>
         </p>
         <div class="actionButtons">
           <a class="actionButton noIcon" href="mailto:support@bcc.media" target="_blank">
             {{init.translation.downloadInfo.buttonContact}}
+          </a>
+          <a class="bmm-zip" ng-if="init.downloadInfo.link" ng-href="{{init.downloadInfo.link}}" ng-click="init.downloadInfo.hide()" download style="float: none;">
+            {{init.translation.options.download}}
           </a>
         </div>
 
