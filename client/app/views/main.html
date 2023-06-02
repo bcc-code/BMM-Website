@@ -120,8 +120,8 @@
                             </li>
                             <li ng-if="!init.isIOS&&player.formatted.directDownload.exist">
                                 <div class="icon download"></div>
-                                <a download ng-href="{{player.formatted.directDownload.file}}">
-                                    <span>{{init.translation.options.download}} (1)</span>
+                                <a download ng-href="{{player.formatted.directDownload.file}}" ng-click="player.formatted.directDownload.action($event)">
+                                    <span>{{init.translation.options.download}}</span>
                                 </a>
                             </li>
                             <li ng-click="$root.share.link=player.formatted.path; $root.share.show=true">

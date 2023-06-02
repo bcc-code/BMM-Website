@@ -17,10 +17,10 @@ angular.module('bmmLibApp')
     factory.bible = {};
     factory.downloadInfo = {
       showPopup: false,
-      show: () => {
+      show: function() {
         factory.downloadInfo.showPopup = true;
       },
-      hide: () => {
+      hide: function() {
         factory.downloadInfo.showPopup = false;
       }
     };
