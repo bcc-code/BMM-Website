@@ -140,10 +140,10 @@
   },
   "copyright": "Opphavsrett",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Nedlasting av taler ikke tilgjengelig",
+    "body": "Muligheten til å laste ned taler fra BMM er ikke lenger tilgjengelig. Hvis du trenger en tale for en spesifikk bruk, ta kontakt med oss og beskriv ditt behov.",
+    "playlistAddition": "Spillelisten vil bli lastet ned uten taler.",
+    "albumAddition": "Albumet vil bli lastet ned uten taler.",
     "buttonContact": "Kontakt"
   }
 }
