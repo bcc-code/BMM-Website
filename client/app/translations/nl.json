@@ -138,5 +138,12 @@
     "text": "We bevelen aan om BMM te installeren via de Google Play Store. Als dat niet mogelijk is, kun je",
     "downloadLink": "de APK downloaden."
   },
-  "copyright": "Auteursrecht"
+  "copyright": "Auteursrecht",
+  "downloadInfo": {
+    "title": "Download of messages unavailable\n",
+    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
+    "playlistAddition": "The playlist will be downloaded without the messages.\n",
+    "albumAddition": "The album will be downloaded without the messages.\n",
+    "buttonContact": "Contact"
+  }
 }
