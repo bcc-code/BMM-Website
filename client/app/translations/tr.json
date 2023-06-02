@@ -138,5 +138,12 @@
     "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
     "downloadLink": "directly download the APK."
   },
-  "copyright": "Telif Hakkı"
+  "copyright": "Telif Hakkı",
+  "downloadInfo": {
+    "title": "Download of messages unavailable\n",
+    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
+    "playlistAddition": "The playlist will be downloaded without the messages.\n",
+    "albumAddition": "The album will be downloaded without the messages.\n",
+    "buttonContact": "İletişim"
+  }
 }
