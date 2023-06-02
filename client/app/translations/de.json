@@ -140,10 +140,10 @@
   },
   "copyright": "Copyright",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Herunterladen von Reden nicht möglich",
+    "body": "Es nicht länger möglich Reden von BMM herunterzuladen. Falls du eine Rede aus einem bestimmten Grund brauchst, schreibe uns und erkläre warum du die Rede brauchst.",
+    "playlistAddition": "Die Playliste wird ohne Reden heruntergeladen.",
+    "albumAddition": "Das Album wird ohne Reden heruntergeladen.",
     "buttonContact": "Kontakt"
   }
 }
