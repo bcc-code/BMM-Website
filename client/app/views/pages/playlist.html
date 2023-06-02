@@ -17,15 +17,13 @@
          ng-click="play(getPlaylistCopy(languageFilter), 0);">
         {{init.translation.options.playPlaylist}}
     </div>
-    <a class="bmm-zip"
-       ng-show="zip.show&&!init.isIOS"
-       target="_blank"
-       ng-href="{{zip.url}}">
+    <a class="bmm-zip" download ng-show="zip.show&&!init.isIOS"
+       ng-href="{{zip.url}}" ng-click="zip.action($event)">
         {{init.translation.options.download}}
     </a>
     <div class="options albumOptions"
-            ng-model="albumOptions"
-            click-elsewhere="albumOptions=false; languageFilterShow=false">
+         ng-model="albumOptions"
+         click-elsewhere="albumOptions=false; languageFilterShow=false">
 
         <div class="optionsToggl" ng-click="albumOptions=!albumOptions; languageFilterShow=false; removeMinHeight()" ng-show="showOptions"></div>
 

@@ -127,6 +127,13 @@ angular.module('bmmLibApp')
                 resolvedData.videos.push({
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
+                  downloadAction: function(event) {
+                    if (resolvedData.subtype === "speech") {
+                      event.stopPropagation();
+                      event.preventDefault();
+                      _init.downloadInfo.show();
+                    }
+                  },
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -136,6 +143,13 @@ angular.module('bmmLibApp')
                 resolvedData.audios.push({
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
+                  downloadAction: function(event) {
+                    if (resolvedData.subtype === "speech") {
+                      event.stopPropagation();
+                      event.preventDefault();
+                      _init.downloadInfo.show();
+                    }
+                  },
                   type: this.mime_type,
                   name: renameMimeType(this.mime_type),
                   duration: Number(this.duration)
@@ -158,6 +172,13 @@ angular.module('bmmLibApp')
           resolvedData[(data.link.type+'s')].push({
             file: _file,
             downloadLink: _api.addAuthorizationQueryString(_file)+'&download=true',
+            downloadAction: function(event) {
+              if (resolvedData.subtype === "speech") {
+                event.stopPropagation();
+                event.preventDefault();
+                _init.downloadInfo.show();
+              }
+            },
             type: data.link.mime_type,
             name: renameMimeType(data.link.mime_type),
             duration: data.link.duration
@@ -174,6 +195,7 @@ angular.module('bmmLibApp')
           if (resolvedData.audios.length===1) {
             resolvedData.directDownload = {
               file: resolvedData.audios[0].downloadLink,
+              action: resolvedData.audios[0].downloadAction,
               type: resolvedData.audios[0].mime_type,
               name: renameMimeType(resolvedData.audios[0].mime_type),
               duration: Number(resolvedData.audios[0].duration)
@@ -183,6 +205,7 @@ angular.module('bmmLibApp')
           if (resolvedData.videos.length===1) {
             resolvedData.directDownload = {
               file: resolvedData.videos[0].downloadLink,
+              action: resolvedData.videos[0].downloadAction,
               type: resolvedData.videos[0].mime_type,
               name: renameMimeType(resolvedData.videos[0].mime_type),
               duration: Number(resolvedData.videos[0].duration)
@@ -190,7 +213,6 @@ angular.module('bmmLibApp')
           }
 
           resolvedData.directDownload.exist = true;
-
         }
 
         //Find title

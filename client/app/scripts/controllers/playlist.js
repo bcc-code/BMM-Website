@@ -239,6 +239,18 @@ angular.module('bmmApp')
 
         $scope.zip.url = _api.addAuthorizationQueryString(_api.getserverUrli()+'track_collection'+'/'+$routeParams.id+'/download');
         $scope.zip.show = true;
+        $scope.zip.action = function(ev){
+          var containsMessage = false;
+          $.each($scope.playlist, function(index, item) {
+            if (item.subtype === "speech")
+              containsMessage = true;
+          });
+          if (containsMessage) {
+            _init.downloadInfo.show("playlist", $scope.zip.url);
+            ev.stopPropagation();
+            ev.preventDefault();
+          }
+        };
         $scope.private = true;
         _api.userTrackCollectionGet($routeParams.id).done(function(data) {
 

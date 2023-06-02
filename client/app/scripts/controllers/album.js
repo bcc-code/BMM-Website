@@ -28,6 +28,18 @@ angular.module('bmmApp')
     $scope.mainAlbum = [];
     $scope.zip = {};
     $scope.zip.url = _api.addAuthorizationQueryString(_api.addLanguagesToDownloadUrl(_api.getserverUrli()+'album'+'/'+$routeParams.id+'/download', true));
+    $scope.zip.action = function(ev){
+      var containsMessage = false;
+      $.each($scope.playlist, function(index, item) {
+        if (item.subtype === "speech")
+          containsMessage = true;
+      });
+      if (containsMessage) {
+        _init.downloadInfo.show("album", $scope.zip.url);
+        ev.stopPropagation();
+        ev.preventDefault();
+      }
+    };
     $scope.path = $location.absUrl();
 
     $scope.podcast = {};

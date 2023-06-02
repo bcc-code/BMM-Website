@@ -15,6 +15,19 @@ angular.module('bmmLibApp')
     factory.isIOS = false;
     factory.config = {};
     factory.bible = {};
+    factory.downloadInfo = {
+      showPopup: false,
+      type: undefined,
+      link: undefined,
+      show: function(type, downloadLink) {
+        factory.downloadInfo.showPopup = true;
+        factory.downloadInfo.type = type;
+        factory.downloadInfo.link = downloadLink;
+      },
+      hide: function() {
+        factory.downloadInfo.showPopup = false;
+      }
+    };
     factory.load = {
       percent: 0,
       progress: false,

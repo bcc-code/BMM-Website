@@ -17,10 +17,8 @@
       <span ng-bind="init.translation.options.playPlaylist"></span>
   </div>
 
-  <a class="bmm-zip"
-     ng-show="!init.isIOS"
-     target="_blank"
-     ng-href="{{zip.url}}">
+  <a class="bmm-zip" download ng-show="!init.isIOS"
+     ng-href="{{zip.url}}" ng-click="zip.action($event)">
       <span ng-bind="init.translation.options.download"></span>
   </a>
   <div class="options albumOptions"

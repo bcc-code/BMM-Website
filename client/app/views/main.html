@@ -120,8 +120,8 @@
                             </li>
                             <li ng-if="!init.isIOS&&player.formatted.directDownload.exist">
                                 <div class="icon download"></div>
-                                <a download ng-href="{{player.formatted.directDownload.file}}">
-                                    <span>{{init.translation.options.download}} (1)</span>
+                                <a download ng-href="{{player.formatted.directDownload.file}}" ng-click="player.formatted.directDownload.action($event)">
+                                    <span>{{init.translation.options.download}}</span>
                                 </a>
                             </li>
                             <li ng-click="$root.share.link=player.formatted.path; $root.share.show=true">
@@ -156,19 +156,19 @@
 
                         <ul ng-if="playerOptions&&downloads">
                             <li ng-repeat="source in player.source.audios">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>
                             </li>
                             <li ng-repeat="source in player.source.videos">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>
                             </li>
                             <li ng-repeat="source in player.source.unknowns">
-                                <a download ng-href="{{source.downloadLink}}">
+                                <a download ng-href="{{source.downloadLink}}" ng-click="source.downloadAction($event)">
                                     <div class="icon download"></div>
                                     <span ng-bind="source.name"></span>
                                 </a>
