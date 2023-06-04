@@ -140,10 +140,10 @@
   },
   "copyright": "Auteursrecht",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Het downloaden van berichten is niet beschikbaar",
+    "body": "Er is geen mogelijkheid meer om via BMM toespraken te downloaden. Als je een toespraak nodig hebt voor een specifiek doel, neem dan contact op met ons om je wensen te bespreken.",
+    "playlistAddition": "De afspeellijst wordt gedownload zonder de toespraken.",
+    "albumAddition": "Het album zal worden gedownload zonder de toespraken.",
     "buttonContact": "Contact"
   }
 }
