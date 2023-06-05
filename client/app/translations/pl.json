@@ -87,7 +87,8 @@
       "bibleVerse": "Werset z Biblii",
       "album": "Album",
       "artist": "Wykonawca",
-      "interprets": "Wykonawcy"
+      "interprets": "Wykonawcy",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
