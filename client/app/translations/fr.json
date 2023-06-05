@@ -87,7 +87,8 @@
       "bibleVerse": "Verset de la Bible",
       "album": "Album",
       "artist": "Artiste",
-      "interprets": "Interprètes"
+      "interprets": "Interprètes",
+      "autoTranscribed": "Transcription automatique"
     }
   },
   "track": {
