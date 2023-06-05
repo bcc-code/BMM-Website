@@ -87,7 +87,8 @@
       "bibleVerse": "Verset biblic",
       "album": "Album",
       "artist": "Interpreți",
-      "interprets": "Interpreți"
+      "interprets": "Interpreți",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
