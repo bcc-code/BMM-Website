@@ -87,7 +87,8 @@
       "bibleVerse": "Библейски стих",
       "album": "Албум",
       "artist": "Изпълнител",
-      "interprets": "Интерпретира"
+      "interprets": "Интерпретира",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
