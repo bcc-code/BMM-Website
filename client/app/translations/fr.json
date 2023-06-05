@@ -110,7 +110,7 @@
     "albums": "Album (s)",
     "duration": "Durée",
     "title": "Titre",
-    "song": "Chanson",
+    "song": "Chant",
     "allLanguages": "Toutes les langues",
     "confirmPlaylistDeletion": "Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
     "latestTracks": "Dernières pistes",
@@ -140,10 +140,10 @@
   },
   "copyright": "Droits d'auteur",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Téléchargement des messages indisponible",
+    "body": "La fonctionnalité de téléchargement des messages de BMM n'est plus disponible. Si vous avez besoin d'un message pour un usage spécifique, veuillez nous contacter et nous expliquer vos besoins.",
+    "playlistAddition": "La liste de lecture sera téléchargée sans les messages.",
+    "albumAddition": "L'album sera téléchargé sans les messages.",
     "buttonContact": "Contact"
   }
 }
