@@ -87,7 +87,8 @@
       "bibleVerse": "Versos bíblicos",
       "album": "Álbum",
       "artist": "Cantor",
-      "interprets": "Artistas"
+      "interprets": "Artistas",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
