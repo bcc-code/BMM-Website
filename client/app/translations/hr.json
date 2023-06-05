@@ -87,7 +87,8 @@
       "bibleVerse": "Bible verse",
       "album": "Album",
       "artist": "Artist",
-      "interprets": "Artists"
+      "interprets": "Artists",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
