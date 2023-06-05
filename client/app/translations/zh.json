@@ -87,7 +87,8 @@
       "bibleVerse": "圣经经文",
       "album": "专辑",
       "artist": "演唱家",
-      "interprets": "表演者"
+      "interprets": "表演者",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
