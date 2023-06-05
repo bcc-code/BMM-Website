@@ -87,7 +87,8 @@
       "bibleVerse": "Εδάφιο",
       "album": "Άλμπουμ",
       "artist": "Καλλιτέχνης",
-      "interprets": "Καλλιτέχνες"
+      "interprets": "Καλλιτέχνες",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
