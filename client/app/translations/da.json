@@ -87,7 +87,8 @@
       "bibleVerse": "Bibelvers",
       "album": "Album",
       "artist": "Artist",
-      "interprets": "Oversættelser"
+      "interprets": "Oversættelser",
+      "autoTranscribed": "Automatisk transskriberet"
     }
   },
   "track": {
