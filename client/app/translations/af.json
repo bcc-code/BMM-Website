@@ -87,7 +87,8 @@
       "bibleVerse": "Bybel verse",
       "album": "Album",
       "artist": "Kunstenaar",
-      "interprets": "Interpreteer"
+      "interprets": "Interpreteer",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {
