@@ -87,7 +87,8 @@
       "bibleVerse": "Versiculos Biblicos",
       "album": "Álbum",
       "artist": "Artista",
-      "interprets": "Interpretes"
+      "interprets": "Interpretes",
+      "autoTranscribed": "Auto-transcrito"
     }
   },
   "track": {

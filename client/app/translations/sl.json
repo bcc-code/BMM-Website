@@ -87,7 +87,8 @@
       "bibleVerse": "Biblijska vrstica",
       "album": "Album",
       "artist": "Izvajalec",
-      "interprets": "Izvajalci"
+      "interprets": "Izvajalci",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {

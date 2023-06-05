@@ -87,7 +87,8 @@
       "bibleVerse": "Біблійний вірш",
       "album": "Альбом",
       "artist": "Виконавець",
-      "interprets": "артист"
+      "interprets": "артист",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {

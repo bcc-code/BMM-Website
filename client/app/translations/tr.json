@@ -87,7 +87,8 @@
       "bibleVerse": "Kutsal Kitap Ayeti",
       "album": "Albüm",
       "artist": "Sanatçı",
-      "interprets": "Sanatçılar"
+      "interprets": "Sanatçılar",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {

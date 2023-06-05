@@ -87,7 +87,8 @@
       "bibleVerse": "Piibli salm",
       "album": "Album",
       "artist": "Esitaja",
-      "interprets": "Esitajad"
+      "interprets": "Esitajad",
+      "autoTranscribed": "Auto-transcribed"
     }
   },
   "track": {

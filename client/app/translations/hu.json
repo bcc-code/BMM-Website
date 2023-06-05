@@ -87,7 +87,8 @@
       "bibleVerse": "Bibliavers",
       "album": "Album",
       "artist": "Előadó",
-      "interprets": "Előadók"
+      "interprets": "Előadók",
+      "autoTranscribed": "Automatikusan átírva"
     }
   },
   "track": {
