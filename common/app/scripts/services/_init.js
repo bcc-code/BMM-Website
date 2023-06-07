@@ -201,7 +201,7 @@ angular.module('bmmLibApp')
       $.each(roles, function() {
         if (this==='ROLE_DOWNLOADER') { isDownloader = true; }
       });
-      return isDownloader;
+      return isDownloader || isAdmin(roles);
     }
 
     var findBible = function(lang, index, promise) {
