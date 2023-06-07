@@ -141,10 +141,10 @@
   },
   "copyright": "Tekijänoikeudet",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Puheiden lataaminen ei ole käytössä.",
+    "body": "Puheita ei voi enää ladata BMM:stä. Jos tarvitset tiettyä puhetta johonkin, ota yhteyttä ja kerro perustelut.",
+    "playlistAddition": "Soittolista ladataan ilman puheita.",
+    "albumAddition": "Albumi ladataan ilman puheita.",
     "buttonContact": "Yhteydenotto"
   }
 }
