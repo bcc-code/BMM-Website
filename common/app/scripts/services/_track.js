@@ -128,7 +128,7 @@ angular.module('bmmLibApp')
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
                   downloadAction: function(event) {
-                    if (resolvedData.subtype === "speech") {
+                    if (resolvedData.subtype === "speech" && !_init.downloadInfo.hasDownloadPermission) {
                       event.stopPropagation();
                       event.preventDefault();
                       _init.downloadInfo.show();
@@ -144,7 +144,7 @@ angular.module('bmmLibApp')
                   file: this.url,
                   downloadLink: _api.addAuthorizationQueryString(this.url)+'&download=true',
                   downloadAction: function(event) {
-                    if (resolvedData.subtype === "speech") {
+                    if (resolvedData.subtype === "speech" && !_init.downloadInfo.hasDownloadPermission) {
                       event.stopPropagation();
                       event.preventDefault();
                       _init.downloadInfo.show();
@@ -173,7 +173,7 @@ angular.module('bmmLibApp')
             file: _file,
             downloadLink: _api.addAuthorizationQueryString(_file)+'&download=true',
             downloadAction: function(event) {
-              if (resolvedData.subtype === "speech") {
+              if (resolvedData.subtype === "speech" && !_init.downloadInfo.hasDownloadPermission) {
                 event.stopPropagation();
                 event.preventDefault();
                 _init.downloadInfo.show();

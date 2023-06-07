@@ -18,6 +18,7 @@
                 <th>{{init.translation.page.users.contributorManager}}</th>
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>Playlists</th>
+                <th>Downloader</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
                 <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>{{init.translation.page.users.liveManager}}</th>
@@ -43,7 +44,10 @@
                     <input type="checkbox" ng-model="user.perm.ROLE_PLAYLIST_MANAGER" ng-change="updateUser(user, true)">
                 </td>
                 <td>
-                    <input type="checkbox" ng-model=" user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user, true)">
+                    <input type="checkbox" ng-model="user.perm.ROLE_DOWNLOADER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user, true)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_FEATURE_PREVIEW" ng-change="updateUser(user, true)">
@@ -107,6 +111,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_PLAYLIST_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_DOWNLOADER" ng-change="updateUser(user)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user)">
