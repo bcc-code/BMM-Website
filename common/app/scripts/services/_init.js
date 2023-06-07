@@ -17,6 +17,7 @@ angular.module('bmmLibApp')
     factory.bible = {};
     factory.downloadInfo = {
       showPopup: false,
+      hasDownloadPermission: false,
       type: undefined,
       link: undefined,
       show: function(type, downloadLink) {
@@ -28,6 +29,7 @@ angular.module('bmmLibApp')
         factory.downloadInfo.showPopup = false;
       }
     };
+
     factory.load = {
       percent: 0,
       progress: false,
@@ -94,6 +96,7 @@ angular.module('bmmLibApp')
 
           // -- Admin
           factory.admin = isAdmin(user.roles);
+          factory.downloadInfo.hasDownloadPermission = isDownloader(user.roles);
 
           //Set the username for the angulartics reports:
           $analytics.setUsername(user.username);
@@ -193,6 +196,13 @@ angular.module('bmmLibApp')
       });
       return isAdmin;
     };
+    var isDownloader = function(roles) {
+      var isDownloader = false;
+      $.each(roles, function() {
+        if (this==='ROLE_DOWNLOADER') { isDownloader = true; }
+      });
+      return isDownloader;
+    }
 
     var findBible = function(lang, index, promise) {
       factory.load.status = 'Fetch bible';

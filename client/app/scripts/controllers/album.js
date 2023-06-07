@@ -34,7 +34,7 @@ angular.module('bmmApp')
         if (item.subtype === "speech")
           containsMessage = true;
       });
-      if (containsMessage) {
+      if (containsMessage && !_init.downloadInfo.hasDownloadPermission) {
         _init.downloadInfo.show("album", $scope.zip.url);
         ev.stopPropagation();
         ev.preventDefault();
