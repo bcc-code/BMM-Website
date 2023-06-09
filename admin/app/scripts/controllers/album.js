@@ -109,6 +109,7 @@ angular.module('bmmApp')
           $scope.availableTags.push(available);
         }
       });
+      $scope.availableTags.push("Audiobook"); //We want to have Audiobook as a possible tag without translating it.
     };
 
     $scope.refreshModel = function() {
