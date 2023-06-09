@@ -116,7 +116,7 @@ angular.module('bmmLibApp')
             var hiddenLanguages = ['zxx'];
 
             // Iterate backwards because we're deleting elements.
-            for(var i = root.languages.length -1; i >= 0 ; i--){
+            for (var i = root.languages.length -1; i >= 0 ; i--){
               var language = root.languages[i];
                 if (hiddenLanguages.indexOf(language) !== -1) {
                     root.languages.splice(i, 1);
@@ -144,6 +144,26 @@ angular.module('bmmLibApp')
               localsLoaded.resolve();
               factory.load.percent+=25;
             });
+
+            if (admin){
+              factory.titles.album = {};
+              // -- Album titles
+              $.each(root.languages, function(key, language){
+                $.ajax({
+                  url: config.titlesAlbum.replace('album.json', language + '.json'),
+                  success: function(data) {
+                    $.each(data, function(key, value){
+                      var item = factory.titles.album[key];
+                      if(!item){
+                        factory.titles.album[key] = {};
+                      }
+                      factory.titles.album[key][language] = value;
+                    });
+                    console.log("loaded "+language, data, factory.titles);
+                  }
+                });
+              });
+            }
           });
 
           // -- isIOS (iphone, ipod, ipad ?)
@@ -155,17 +175,6 @@ angular.module('bmmLibApp')
           }
 
           if (admin) {
-            // -- Album titles
-            var titlesLoaded = $q.defer();
-            promises.push(titlesLoaded.promise);
-            $.ajax({
-              url: config.titlesAlbum,
-              success: function(data) {
-                factory.titles.album = data;
-                titlesLoaded.resolve();
-              }
-            });
-
             // -- Bibleverses
             var bibleLoaded = $q.defer();
             promises.push(bibleLoaded.promise);
