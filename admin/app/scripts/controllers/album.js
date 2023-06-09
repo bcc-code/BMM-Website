@@ -99,17 +99,12 @@ angular.module('bmmApp')
 
       $scope.availableTags = [];
       $.each(_init.titles.album, function(key) {
-        var available = key, found=false;
-        $.each($scope.model.tags, function() {
-          if (this===available) {
-            found = true;
-          }
-        });
-        if (!found) {
-          $scope.availableTags.push(available);
+        if (!$scope.model.tags.includes(key)) {
+          $scope.availableTags.push(key);
         }
       });
-      $scope.availableTags.push("Audiobook"); //We want to have Audiobook as a possible tag without translating it.
+      if (!$scope.model.tags.includes("Audiobook"))
+        $scope.availableTags.push("Audiobook"); //We want to have Audiobook as a possible tag without translating it.
     };
 
     $scope.refreshModel = function() {

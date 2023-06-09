@@ -159,7 +159,6 @@ angular.module('bmmLibApp')
                       }
                       factory.titles.album[key][language] = value;
                     });
-                    console.log("loaded "+language, data, factory.titles);
                   }
                 });
               });
