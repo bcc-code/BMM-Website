@@ -88,7 +88,7 @@
       "album": "Album",
       "artist": "Izvajalec",
       "interprets": "Izvajalci",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Samodejni prepis"
     }
   },
   "track": {
@@ -141,10 +141,10 @@
   },
   "copyright": "Avtorske pravice",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Ni možen prenos govorov",
+    "body": "Možnost prenosa govorov BMM ni več na voljo. Če potrebuješ govor za določen namen, nas kontaktiraj in razloži svojo željo.",
+    "playlistAddition": "Seznam bo prenesen brez govorov.",
+    "albumAddition": "Album bo prenesen brez govorov.",
     "buttonContact": "Kontakt"
   }
 }
