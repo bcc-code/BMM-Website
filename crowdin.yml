@@ -4,4 +4,4 @@ files:
   - source: /admin-translations.json
     translation: /admin/app/translations/%two_letters_code%.json
   - source: /admin-titles.json
-    translation: /admin/app/translation/titles/%two_letters_code%.json
+    translation: /admin/app/translations/titles/%two_letters_code%.json
