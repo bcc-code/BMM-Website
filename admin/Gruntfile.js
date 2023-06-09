@@ -452,6 +452,9 @@ module.exports = function (grunt) {
         files: [{
           src: '../admin-translations.json',
           dest: '<%= yeoman.app %>/translations/en.json'
+        },{
+          src: '../admin-titles.json',
+          dest: '<%= yeoman.app %>/translations/titles/en.json'
         }]
       },
       translation: {
