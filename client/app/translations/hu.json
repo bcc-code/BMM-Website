@@ -141,10 +141,10 @@
   },
   "copyright": "Szerzői jog",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Üzenetek letöltése nem elérhető",
+    "body": "A BMM-ből származó üzenetek letöltésének lehetősége már nem áll rendelkezésre. Ha egy üzenetre van szükséged egy adott felhasználási célra, kérjük, lépj velünk kapcsolatba, és ismertesd igényeidet.",
+    "playlistAddition": "A lejátszási lista az üzenetek nélkül kerül letöltésre.",
+    "albumAddition": "Az album az üzenetek nélkül kerül letöltésre.",
     "buttonContact": "Kapcsolat"
   }
 }
