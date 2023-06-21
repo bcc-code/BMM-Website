@@ -118,7 +118,9 @@
       "loadSongMetadata": "Ének metaadatai betöltése",
       "songMetadata": {
         "replace": "Metaadat áthelyezése"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Link",
