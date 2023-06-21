@@ -118,7 +118,9 @@
       "loadSongMetadata": "încarcă metadata melodiei",
       "songMetadata": {
         "replace": "înlocuiește metadata"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Link-ul",
