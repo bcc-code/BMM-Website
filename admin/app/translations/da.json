@@ -118,7 +118,9 @@
       "loadSongMetadata": "Load sangens metadata",
       "songMetadata": {
         "replace": "replace metadata\n"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Link",
