@@ -118,7 +118,9 @@
       "loadSongMetadata": "Lataa laulun metadata",
       "songMetadata": {
         "replace": "Korvaa metadata"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Linkki",

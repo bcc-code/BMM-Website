@@ -118,7 +118,9 @@
       "loadSongMetadata": "cargar metadatos de la canción",
       "songMetadata": {
         "replace": "reemplazar metadatos"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Enlace",

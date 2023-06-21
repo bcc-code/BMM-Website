@@ -118,7 +118,9 @@
       "loadSongMetadata": "Metadata lied laden",
       "songMetadata": {
         "replace": "Vervang metadata"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Link",

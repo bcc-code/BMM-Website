@@ -118,7 +118,9 @@
       "loadSongMetadata": "Naloži metapodatke od pesmi",
       "songMetadata": {
         "replace": "Zamenjaj metapodatke"
-      }
+      },
+      "lyrics": "Lyrics",
+      "transcription": "Transcription"
     },
     "waitings": {
       "link": "Povezava",
