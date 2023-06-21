@@ -150,6 +150,7 @@ angular.module('bmmApp')
       $scope.rel.interprets = [];
       $scope.rel.bibles = [];
       $scope.rel.externals = [];
+      $scope.rel.lyrics = [];
 
       $.each($scope.$parent.model.rel, function() {
         if (typeof $scope.rel[this.type+'s']==='undefined') {
@@ -400,11 +401,45 @@ angular.module('bmmApp')
       _api.songMetadataGet(songbookName, songbook.id)
         .fail(function(response) {
           alert("unable to load metadata: " + response.responseText);
-          $rootScope.songtreasures = {};
+          $rootScope.songtreasures = { };
         })
         .done(function(response) {
+          $rootScope.songtreasures.replaceTitles = true;
+          $rootScope.songtreasures.replaceLyricist = true;
+          $rootScope.songtreasures.replaceComposer = true;
+          $rootScope.songtreasures.replaceLyrics = true;
+
           var data = response.result;
           var model = $scope.$parent.model;
+
+
+          $rootScope.songtreasures.lyricsAvailable = false;
+          $rootScope.songtreasures.lyricsStatus = "loading";
+          _api.songLyricsGet(response.result.id, model.original_language)
+            .fail(function(response){
+              $rootScope.songtreasures.lyricsStatus = "not available";
+            })
+            .done(function(response){
+              if (response.result.content) {
+                var newLyrics = '';
+                for (var property in response.result.content) {
+                  var content = response.result.content[property].content;
+                  for(var i = 0; i < content.length; i++){
+                    newLyrics += content[i]+"\n";
+                  }
+                  newLyrics += "\n";
+                }
+                $rootScope.songtreasures.lyricsStatus = "available";
+                $rootScope.songtreasures.lyricsAvailable = true;
+                $rootScope.songtreasures.newLyrics = newLyrics;
+                console.log("new lyrics", $rootScope.songtreasures.newLyrics);
+              }
+              else {
+                $rootScope.songtreasures.lyricsStatus = "not available";
+              }
+
+            });
+
           var alternativeContributors = [];
           var melodyOrigin = null;
           var authors = $.grep(data.participants, function(item){return item.type=="author"});
@@ -459,17 +494,29 @@ angular.module('bmmApp')
               return;
             }
 
-            $.each($scope.$parent.model.translations, function(index, item) {
-              var newTitle = data.name[convertLanguageToSongtreasure(item.language)];
-              if (newTitle !== null && newTitle !== undefined) {
-                item.title = newTitle;
-              }
-            });
+            console.log("replace", $rootScope.songtreasures);
+
+            if ($rootScope.songtreasures.replaceTitles) {
+              $.each($scope.$parent.model.translations, function (index, item) {
+                var newTitle = data.name[convertLanguageToSongtreasure(item.language)];
+                if (newTitle !== null && newTitle !== undefined) {
+                  item.title = newTitle;
+                }
+              });
+            }
+            if ($rootScope.songtreasures.replaceLyrics && $rootScope.songtreasures.lyricsAvailable) {
+              $.each($scope.$parent.model.translations, function (index, item) {
+                if (item.language == model.original_language) {
+                  item.searchable_transcription = $rootScope.songtreasures.newLyrics;
+                  console.log("replaced lyrics", item.searchable_transcription);
+                }
+              });
+            }
 
             $rootScope.songtreasures.loading = true;
 
             var missingPromises = [];
-            if (missingContributors.length > 0) {
+            if (missingContributors.length > 0 && ($rootScope.songtreasures.replaceLyricist || $rootScope.songtreasures.replaceComposer)) {
               $.each(missingContributors, function(index, name) {
                 if (loadedRelations[name]!==undefined) {
                   //item has been added in the meantime. Most likely because composer and lyricist have the same person
@@ -498,17 +545,21 @@ angular.module('bmmApp')
             }
 
             $.when.apply(null, missingPromises).then(function() {
-              if (melodyOrigin !== null)
-                $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type:"composer"})];
-              else
-                $scope.rel.composers = $.map(composers, function(item) {
+              if ($rootScope.songtreasures.replaceComposer) {
+                if (melodyOrigin !== null)
+                  $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type: "composer"})];
+                else
+                  $scope.rel.composers = $.map(composers, function (item) {
+                    var relation = loadedRelations[item.contributor.name];
+                    return $.extend({}, relation, {type: "composer"});
+                  });
+              }
+              if ($rootScope.songtreasures.replaceLyricist) {
+                $scope.rel.lyricists = $.map(authors, function (item) {
                   var relation = loadedRelations[item.contributor.name];
-                  return $.extend({}, relation, {type:"composer"});
+                  return $.extend({}, relation, {type: "lyricist"});
                 });
-              $scope.rel.lyricists = $.map(authors, function(item) {
-                var relation = loadedRelations[item.contributor.name];
-                return $.extend({}, relation, {type:"lyricist"});
-              });
+              }
               $rootScope.songtreasures = {};
             });
 

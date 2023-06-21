@@ -12,7 +12,7 @@
 
           <table class="visible-table">
             <thead>
-            <th></th><th>Current</th><th>New</th>
+            <th></th><th>Current</th><th>New</th><th>Replace</th>
             </thead>
             <tbody>
             <tr ng-repeat="item in $root.songtreasures.titles">
@@ -25,16 +25,26 @@
               </th>
               <td>{{item.current}}</td>
               <td>{{item.new}}</td>
+              <td ng-if="$index==0"><label><input type="checkbox" ng-model="$root.songtreasures.replaceTitles"></label></td>
+              <td ng-if="$index!=0"></td>
             </tr>
             <tr>
               <th>{{init.translation.page.editor.lyricists}}</th>
               <td>{{$root.songtreasures.currentLyricists}}</td>
               <td>{{$root.songtreasures.newLyricists}}</td>
+              <td><label><input type="checkbox" ng-model="$root.songtreasures.replaceLyricist"/></label></td>
             </tr>
             <tr>
               <th>{{init.translation.page.editor.composers}}</th>
               <td>{{$root.songtreasures.currentComposers}}</td>
               <td>{{$root.songtreasures.newComposers}}</td>
+              <td><label><input type="checkbox" ng-model="$root.songtreasures.replaceComposer"/></label></td>
+            </tr>
+            <tr>
+              <th>{{init.translation.page.editor.lyrics}}</th>
+              <td></td>
+              <td>{{$root.songtreasures.lyricsStatus}}</td>
+              <td><label><input type="checkbox" ng-model="$root.songtreasures.replaceLyrics"/></label></td>
             </tr>
             </tbody>
           </table>
