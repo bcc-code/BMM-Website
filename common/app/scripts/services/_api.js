@@ -1198,8 +1198,18 @@ angular.module('bmmLibApp')
         xhr.setRequestHeader("X-Api-Version", 3);
       }
     });
-
   };
+
+  factory.songLyricsGet = function(songGuid, language){
+    var songtreasuresLanguage = language === "nb" ? "no" : language;
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl+'songtreasures/Songs/'+songGuid+'/Lyrics?language='+songtreasuresLanguage+'&format=json',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("X-Api-Version", 3);
+      }
+    })
+  }
 
   factory.getApkUrl = function(){
     return serverUrl + 'file/apk';
