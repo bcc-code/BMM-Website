@@ -119,8 +119,8 @@
       "songMetadata": {
         "replace": "replace metadata\n"
       },
-      "lyrics": "Lyrics",
-      "transcription": "Transcription"
+      "lyrics": "Tekster",
+      "transcription": "Transkribering"
     },
     "waitings": {
       "link": "Link",
