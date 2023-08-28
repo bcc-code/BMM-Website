@@ -137,14 +137,14 @@
   "appDownload": {
     "title": "安卓版 APK 下载",
     "text": "我们建议使用 Google Play 商店安装 BMM 应用程序。如果无法安装，您可以",
-    "downloadLink": "directly download the APK."
+    "downloadLink": "直接下载 APK。"
   },
-  "copyright": "Copyright",
+  "copyright": "版权所有",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "信息下载不可用",
+    "body": "不再提供从 BMM 下载信息的功能。如果您需要特定用途的信息，请联系我们并说明您的需求。",
+    "playlistAddition": "下载的播放列表将不包括信息。",
+    "albumAddition": "下载的专辑将不包含信息。",
     "buttonContact": "联系方式"
   }
 }
