@@ -141,10 +141,10 @@
   },
   "copyright": "Derechos de autor",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Descarga de mensajes no disponible",
+    "body": "La posibilidad de descargar mensajes de BMM ya no está disponible. Si necesita un mensaje para un uso específico, póngase en contacto con nosotros y explíquenos sus necesidades.",
+    "playlistAddition": "La lista de reproducción se descargará sin los mensajes.",
+    "albumAddition": "El álbum se descargará sin los mensajes.",
     "buttonContact": "Contacto"
   }
 }

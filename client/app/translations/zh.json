@@ -1,51 +1,51 @@
 {
-  "language": "中文",
+  "language": "简体中文",
   "general": {
-    "search": "搜索",
-    "searchResultsFor": "Search results for:",
-    "loading": "正在加载...",
-    "waysOfTheLord": "Ways of the Lord",
-    "almondBlossom": "Almond Blossom",
+    "search": "搜索...",
+    "searchResultsFor": "搜索结果为：",
+    "loading": "加载中...",
+    "waysOfTheLord": "主的道路",
+    "almondBlossom": "杏花",
     "noTitle": "无标题",
-    "settings": "Settings",
-    "suport": "Support",
-    "readMore": "Read more"
+    "settings": "设置",
+    "suport": "支持",
+    "readMore": "了解更多"
   },
   "options": {
-    "addToPlaylist": "Add to playlist",
+    "addToPlaylist": "添加到播放列表",
     "download": "下载",
-    "goToAlbum": "Go to album",
-    "podcast": "Podcast",
-    "removeFilter": "Remove filter",
-    "changeLanguage": "Change language",
-    "goBack": "Go back",
-    "choosePlaylist": "Choose playlist",
-    "setupPodcast": "To set up the podcast, copy the link below and paste it into your preferred podcast software.",
-    "chooseLanguages": "Choose languages",
-    "addLanguage": "Add a language",
-    "includeLatest": "Include the latest",
-    "websiteLanguage": "Website language",
-    "contentLanguages": "Content language",
-    "tracks": "tracks",
-    "filterByLanguage": "Filter by language",
-    "copyUrl": "Copy URL",
-    "copyLink": "Copy link",
-    "remove": "Remove",
-    "playPlaylist": "Play playlist",
-    "addToMyPlaylists": "Add to my playlists",
-    "share": "Share"
+    "goToAlbum": "转到专辑",
+    "podcast": "播客",
+    "removeFilter": "移除筛选器",
+    "changeLanguage": "更改语言",
+    "goBack": "返回",
+    "choosePlaylist": "选择播放列表",
+    "setupPodcast": "要设置播客，请复制下面的链接并粘贴到您喜欢的播客软件中。",
+    "chooseLanguages": "选择语言",
+    "addLanguage": "添加一种语言",
+    "includeLatest": "包括最新的",
+    "websiteLanguage": "网站语言",
+    "contentLanguages": "内容语言",
+    "tracks": "曲目",
+    "filterByLanguage": "按语言筛选",
+    "copyUrl": "复制 URL",
+    "copyLink": "复制链接",
+    "remove": "移除",
+    "playPlaylist": "播放播放列表",
+    "addToMyPlaylists": "添加到我的播放列表",
+    "share": "分享"
   },
   "menu": {
     "main": {
       "music": "音乐",
       "speeches": "信息",
       "video": "视频",
-      "archive": "存档",
+      "archive": "档案",
       "audiobooks": "有声读物"
     },
     "secondary": {
       "playlists": "播放列表",
-      "podcasts": "Podcasts",
+      "podcasts": "播客",
       "latestTracks": "新的曲目",
       "current": "当前",
       "newPlaylist": "新的播放列表",
@@ -61,90 +61,90 @@
       "playlists": "播放列表"
     },
     "music": {
-      "latestMusic": "最新的音乐",
+      "latestMusic": "最新音乐",
       "artists": "表演者",
-      "fromKaare": "From Kåre",
-      "mp3Source": "MP3 源",
+      "fromKaare": "来自Kåre",
+      "mp3Source": "MP3-源",
       "childrensMp3Source": "儿童 MP3-源",
-      "instrumental": "纯器乐"
+      "instrumental": "乐器"
     },
     "speeches": {
       "latestSpeeches": "最新消息",
-      "recommended": "建议"
+      "recommended": "推荐"
     },
     "videos": {
       "latestVideos": "最新视频"
     },
     "archive": {
-      "archive": "存档"
+      "archive": "档案"
     },
     "audiobooks": {
       "latestAudiobooks": "最新有声读物"
     },
     "search": {
       "searchResults": "搜索结果",
-      "content": "目录",
-      "bibleVerse": "圣经经文",
+      "content": "内容",
+      "bibleVerse": "圣经章节",
       "album": "专辑",
       "artist": "演唱家",
       "interprets": "表演者",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "自动转译"
     }
   },
   "track": {
-    "duration": "持续时间",
-    "details": "Details",
-    "exegesis": "Interpretation",
-    "recordedDate": "Recorded date",
+    "duration": "时长",
+    "details": "详情",
+    "exegesis": "传译",
+    "recordedDate": "录制日期",
     "artist": "演唱家",
     "lyricist": "作词家",
-    "arranger": "Arranger",
+    "arranger": "编曲",
     "composer": "作曲家",
     "album": "专辑",
-    "bibleVerse": "圣经经文",
-    "songbooks": "Song number",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "bibleVerse": "圣经章节",
+    "songbooks": "歌曲编号",
+    "copyright": "版权所有",
+    "publisher": "发布者"
   },
   "playlist": {
-    "tracks": "Track(s)",
-    "albums": "Album(s)",
-    "duration": "持续时间",
+    "tracks": "曲目",
+    "albums": "专辑",
+    "duration": "时长",
     "title": "标题",
-    "song": "Song",
-    "allLanguages": "All languages",
-    "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
-    "latestTracks": "Latest tracks",
-    "instrumental": "纯器乐",
-    "by": "by"
+    "song": "歌曲",
+    "allLanguages": "全部语言",
+    "confirmPlaylistDeletion": "您确定要删除这个播放列表吗？",
+    "latestTracks": "最新内容",
+    "instrumental": "乐器",
+    "by": "由"
   },
   "notify": {
     "play": "播放",
-    "next": "Next",
-    "previous": "Previous",
-    "shufflePlaylist": "Shuffle playlist",
-    "loopPlaylist": "Repeat playlist",
-    "mute": "Mute",
-    "maxVolume": "Maximum volume",
-    "options": "Options",
-    "activateVideo": "Activate video",
-    "goToAlbum": "Go to album",
-    "showFullscreen": "Show fullscreen",
-    "closeFullscreen": "Close fullscreen",
-    "hideVideo": "Hide video",
-    "showVideo": "Show video"
+    "next": "下一个",
+    "previous": "上一个",
+    "shufflePlaylist": "随机播放列表",
+    "loopPlaylist": "重复播放列表",
+    "mute": "静音",
+    "maxVolume": "最大音量",
+    "options": "选项",
+    "activateVideo": "播放视频",
+    "goToAlbum": "转到专辑",
+    "showFullscreen": "全屏显示",
+    "closeFullscreen": "关闭全屏",
+    "hideVideo": "隐藏视频",
+    "showVideo": "显示视频"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "安卓版 APK 下载",
+    "text": "我们建议使用 Google Play 商店安装 BMM 应用程序。如果无法安装，您可以",
+    "downloadLink": "直接下载 APK。"
   },
-  "copyright": "Copyright",
+  "copyright": "版权所有",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
-    "buttonContact": "联系人"
+    "title": "信息下载不可用",
+    "body": "不再提供从 BMM 下载信息的功能。如果您需要特定用途的信息，请联系我们并说明您的需求。",
+    "playlistAddition": "下载的播放列表将不包括信息。",
+    "albumAddition": "下载的专辑将不包含信息。",
+    "buttonContact": "联系方式"
   }
 }
