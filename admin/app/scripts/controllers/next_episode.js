@@ -21,6 +21,7 @@ angular.module('bmmApp')
 
   var getNextEpisodesIds = function(episodes) {
     // Info: Episodes are ordered newest first
+    var newestPublishedId = 0;
     episodes.forEach(function(episode) {
       offset++;
       $scope.nextEpisodesIds.unshift(episode.id);
@@ -30,23 +31,24 @@ angular.module('bmmApp')
       }
 
       if (new Date(episode.published_at) < datetime) {
-        if ($scope.episodeShowedIndex == 0) {
-          $scope.episodeShowedIndex = Math.abs(episodes.length - offset);
-
-          // In case there are unpublished episodes set the index to the episode which is going to be published next
-          if ($scope.episodeShowedIndex < episodes.length-1) {
-            $scope.episodeShowedIndex++;
-          }
+        if (newestPublishedId === 0){
+          newestPublishedId = episode.id;
         }
 
         oldEpisodesIndex++;
-        if (oldEpisodesIndex == minOldEpisodes && $scope.nextEpisodesIds.length == maxEpisodes) {
-          return;
-        }
       }
     });
 
-    if (oldEpisodesIndex < minOldEpisodes) {
+    if (newestPublishedId !== 0) {
+      $scope.episodeShowedIndex = $scope.nextEpisodesIds.indexOf(newestPublishedId);
+      if ($scope.episodeShowedIndex < $scope.nextEpisodesIds.length-1) {
+        $scope.episodeShowedIndex++;
+      }
+    } else {
+      $scope.episodeShowedIndex = 0;
+    }
+
+    if (oldEpisodesIndex < minOldEpisodes && episodes.length == maxEpisodes) {
       // In case all the episodes are unpublished episodes we load the next 30 episodes
       init(offset);
     }
@@ -83,7 +85,7 @@ angular.module('bmmApp')
     var originalLanguageDuration = 0;
 
     $scope.nextEpisode.translations.forEach(function(translation) {
-      if (translation.language == $scope.nextEpisode.original_language && translation.media != null) {
+      if (translation.language == $scope.nextEpisode.original_language && translation.media != null && translation.media[0]) {
         originalLanguageDuration = translation.media[0].files[0].duration;
         return;
       }
@@ -172,7 +174,6 @@ angular.module('bmmApp')
             $scope.composerIsMissing = false;
         });
 
-        console.log("next episode", nextEpisode);
         $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing
           || $scope.composerIsMissing || $scope.noUpcomingEpisode || $scope.wrongTrackType;
 
