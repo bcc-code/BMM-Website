@@ -141,10 +141,10 @@
   },
   "copyright": "Drepturi de autor",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Descărcarea vorbirilor nu este disponibilă",
+    "body": "Abilitatea de a descărca vorbiri de pe BMM nu mai este disponibilă. Dacă aveți nevoie de o vorbire pentru o anumită utilizare, vă rugăm să ne contactați și să ne explicați nevoile.",
+    "playlistAddition": "Lista de redare va fi descărcată fără vorbiri.",
+    "albumAddition": "Albumul va fi descărcat fără vorbiri.",
     "buttonContact": "Contact"
   }
 }
