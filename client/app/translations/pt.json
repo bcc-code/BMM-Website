@@ -1,7 +1,7 @@
 {
-  "language": "Português",
+  "language": "Inglês",
   "general": {
-    "search": "\"Buscar\"...",
+    "search": "Buscar...",
     "searchResultsFor": "Resultados de busca para:",
     "loading": "Carregando...",
     "waysOfTheLord": "Caminhos do senhor",
@@ -25,10 +25,10 @@
     "addLanguage": "Adicionar um idioma",
     "includeLatest": "Incluem o mais recente",
     "websiteLanguage": "Idioma do site",
-    "contentLanguages": "Línguas de conteúdo",
+    "contentLanguages": "Linguagem do conteúdo",
     "tracks": "faixas",
     "filterByLanguage": "Filtrar por idioma",
-    "copyUrl": "Copie a URL",
+    "copyUrl": "Copiar URL",
     "copyLink": "Copiar link",
     "remove": "Remover",
     "playPlaylist": "Reproduzir playlist",
@@ -88,7 +88,7 @@
       "album": "Álbum",
       "artist": "Cantor",
       "interprets": "Artistas",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Transcrição automática"
     }
   },
   "track": {
@@ -135,16 +135,16 @@
     "showVideo": "Mostrar o vídeo"
   },
   "appDownload": {
-    "title": "APK Download for Android",
+    "title": "Baixar APK para Android",
     "text": "Recomendamos instalar o aplicativo BMM usando a Google Play Store. Se isso não for possível, você pode",
-    "downloadLink": "directly download the APK."
+    "downloadLink": "baixe diretamente o APK."
   },
   "copyright": "Direitos autorais",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Download de falas indisponível",
+    "body": "A capacidade de baixar falas do BMM não está mais disponível. Caso necessite de uma fala para um uso específico, entre em contato conosco e explique suas necessidades.",
+    "playlistAddition": "A lista de reprodução será baixada sem as falas.",
+    "albumAddition": "O álbum será baixado sem as mensagens.",
     "buttonContact": "Contato"
   }
 }
