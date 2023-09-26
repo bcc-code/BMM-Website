@@ -56,7 +56,7 @@
       "languages": "Sprachen",
       "tags": "Tags",
       "addTag": "Tag hinzufügen",
-      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
+      "tracksInAllLanguages": "Zeige alle Titel an, unabhängig von der Spracheinstellung des Benutzers",
       "generateTitlesByTag": "Titel aus Tags generieren",
       "active": "Aktiv",
       "available": "Verfügbar",
@@ -119,8 +119,8 @@
       "songMetadata": {
         "replace": "Metadaten ersetzen"
       },
-      "lyrics": "Lyrics",
-      "transcription": "Transcription"
+      "lyrics": "Liedtext",
+      "transcription": "Transkription"
     },
     "waitings": {
       "link": "Link",
