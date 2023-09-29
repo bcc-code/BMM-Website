@@ -12,18 +12,18 @@
     "readMore": "Lies mehr"
   },
   "options": {
-    "addToPlaylist": "Zur Playliste hinzufügen",
+    "addToPlaylist": "Zur Playlist hinzufügen",
     "download": "Herunterladen",
     "goToAlbum": "Album öffnen",
     "podcast": "Podcast",
     "removeFilter": "Filter löschen",
     "changeLanguage": "Sprache ändern",
-    "goBack": "zurück",
-    "choosePlaylist": "Wiedergabeliste wählen",
+    "goBack": "Gehe zurück",
+    "choosePlaylist": "Paylist wählen",
     "setupPodcast": "Um den Podcast zu abonnieren, kopiere die URL und füge ihn in deine Podcast-Software (z. B. iTunes) ein.",
     "chooseLanguages": "Sprachen auswählen",
     "addLanguage": "Sprache hinzufügen",
-    "includeLatest": "Anzahl der Tracks",
+    "includeLatest": "Anzahl der Titel",
     "websiteLanguage": "Sprache",
     "contentLanguages": "Sprache für Audioinhalte",
     "tracks": "Titel",
@@ -31,8 +31,8 @@
     "copyUrl": "Podcast-Link kopieren",
     "copyLink": "Link",
     "remove": "Entfernen",
-    "playPlaylist": "Playliste starten",
-    "addToMyPlaylists": "Zu meinen Playlisten hinzufügen",
+    "playPlaylist": "Playlist starten",
+    "addToMyPlaylists": "Zu meinen Playlists hinzufügen",
     "share": "Teilen"
   },
   "menu": {
@@ -44,12 +44,12 @@
       "audiobooks": "Hörbücher"
     },
     "secondary": {
-      "playlists": "Playlisten",
+      "playlists": "Playlists",
       "podcasts": "Podcasts",
       "latestTracks": "Neue Titel",
       "current": "Aktuell",
       "newPlaylist": "Neue Playlist",
-      "nameOnPlaylist": "Name der Playliste"
+      "nameOnPlaylist": "Name der Playlist"
     }
   },
   "page": {
@@ -58,7 +58,7 @@
       "latestVideos": "Neue Videos",
       "latestMusic": "Neue Musik",
       "latestAlbums": "Neue Alben",
-      "playlists": "Playlisten"
+      "playlists": "Playlists"
     },
     "music": {
       "latestMusic": "Neue Musik",
@@ -123,7 +123,7 @@
     "next": "Nächstes",
     "previous": "Voriges",
     "shufflePlaylist": "Zufällige Wiedergabe",
-    "loopPlaylist": "Playliste wiederholen",
+    "loopPlaylist": "Playlist wiederholen",
     "mute": "Stumm",
     "maxVolume": "Maximale Lautstärke",
     "options": "Optionen",
