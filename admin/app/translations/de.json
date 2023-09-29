@@ -20,13 +20,13 @@
     "secondary": {
       "quickMenu": "Schnellauswahl",
       "newAlbum": "Neues Album",
-      "newTrack": "Neuer Track",
+      "newTrack": "Neuer Titel",
       "year": "Jahr",
       "album": "Album",
       "childAlbums": "Unteralben",
       "recordingList": "Aufnahmeliste",
       "tracks": "Titel",
-      "childTracks": "Tracks",
+      "childTracks": "Kinderlieder",
       "open": "Öffnen",
       "nextFraKaare": "Nächste Fra Kåre"
     }
@@ -80,7 +80,7 @@
       "by": "von",
       "noParentAlbum": "Kein übergeordnetes Album",
       "tracks": "Titel",
-      "addTrack": "Track hinzufügen",
+      "addTrack": "Titel hinzufügen",
       "select": "Auswählen",
       "duration": "Dauer",
       "size": "Größe",
@@ -91,8 +91,8 @@
       "mediaAllowed": "MP3, MP4",
       "composers": "Komponisten",
       "arrangers": "Arrangeure",
-      "interprets": "Künstler und\/oder Speechers",
-      "lyricists": "Textverfasser",
+      "interprets": "Künstler und\/oder Redner",
+      "lyricists": "Verfasser",
       "songbooks": "Liederbücher",
       "trackLists": "Listen",
       "bibleReferences": "Bibelverweise",
@@ -110,7 +110,7 @@
       "video": "Video",
       "sortOrder": "Sortierung",
       "waitingsReady": "Dateien bereit zum Verknüpfen",
-      "missingTrack": "Fehlender Track",
+      "missingTrack": "Fehlender Titel",
       "missingAlbum": "Fehlendes Album",
       "wrongId": "Falsche BMM-ID",
       "start": "Start",
@@ -126,8 +126,8 @@
       "link": "Link",
       "conflict": "Konflikt",
       "conflicts": "Konflikte (Duplikate)",
-      "openTrack": "Track öffnen",
-      "linkAllTracks": "Alle Tracks mit den wartenden Dateien verknüpfen"
+      "openTrack": "Titel öffnen",
+      "linkAllTracks": "Alle Titel mit den wartenden Dateien verknüpfen"
     },
     "contributors": {
       "name": "Name",
@@ -172,11 +172,11 @@
       "save": "Podcast speichern"
     },
     "playlist": {
-      "title": "Playlisten",
+      "title": "Playlists",
       "editTitle": "Playliste bearbeiten",
-      "createNew": "Neue Playliste erstellen",
-      "addTranslation": "Übersetzung für Playliste hinzufügen",
-      "save": "Playliste speichern"
+      "createNew": "Neue Playlist erstellen",
+      "addTranslation": "Übersetzung für Playlist hinzufügen",
+      "save": "Playlist speichern"
     },
     "musicchannel": {
       "title": "Musik Kanäle",
@@ -191,7 +191,7 @@
     "allIsWell": "Alles gut",
     "changesPerformed": "Änderungen gepeichert",
     "couldNotCreateAlbum": "Das Album konnte nicht erstellt werden",
-    "couldNotCreateTrack": "Der Track konnte nicht angelegt werden",
+    "couldNotCreateTrack": "Der Titel konnte nicht angelegt werden",
     "errorCode": "Fehlercode",
     "attemptToSave": "Änderungen werden gespeichert, bitte warten ...",
     "savingContributor": "Speichern des Mitwirkenden. Bitte warten ...",
@@ -201,22 +201,22 @@
     "couldNotSave": "Die Änderungen konnten nicht gespeichert werden. Bitte überprüfen Sie Ihre Internetverbindung",
     "saved": "Gespeichert",
     "loadingContributor": "Mitwirkenden laden ...",
-    "loadingTracks": "Tracks werden geladen ...",
+    "loadingTracks": "Titel werden geladen ...",
     "loadingUsers": "Benutzer laden ...",
     "loadingFiles": "Dateien werden geladen, bitte warten ...",
     "filesLoaded": "Dateien erfolgreich geladen",
     "waitingForSelection": "Warte auf Eingabe",
     "contributorLoaded": "Mitwirkender wurde erfolgreich geladen",
     "deletingContributor": "Der Mitwirkende wird gelöscht. Bitte warten ...",
-    "trackDeleted": "Track wurde gelöscht",
+    "trackDeleted": "Titel wurde gelöscht",
     "notSet": "Undefiniert",
-    "attemptToLinkTracks": "Die Dateien werden zu Tracks in diesem Album verknüpft. Bitte warten ..."
+    "attemptToLinkTracks": "Die Dateien werden zu Titeln in diesem Album verknüpft. Bitte warten ..."
   },
   "warnings": {
-    "confirmAlbumDeletion": "Sind Sie sicher, dass Sie dieses Album, samt den darin enthaltenen Alben und Tracks, löschen möchten?",
-    "confirmTrackDeletion": "Sind Sie sich sicher, dass sie diesen Track mit den gesamten verknüpften Inhalten löschen möchten?",
+    "confirmAlbumDeletion": "Sind Sie sicher, dass Sie dieses Album, samt den darin enthaltenen Alben und Titeln, löschen möchten?",
+    "confirmTrackDeletion": "Sind Sie sich sicher, dass sie diesen Titel mit den gesamten verknüpften Inhalten löschen möchten?",
     "confirmTranslatedDeletion": "Für diese Sprache wurden Inhalte hinterlegt, die auch gelöscht werden. Bitte Löschen bestätigen",
-    "confirmContributorDeletion": "Sind Sie sich sicher, dass Sie diesen Mitwirkenden löschen wollen? Alle Titel, wo er\/sie mitgewirkt hat, werden dadurch auch gelöscht!"
+    "confirmContributorDeletion": "Bist du wirklich sicher, dass du diesen Mitwirkenden löschen willst? Alle Titel, wo er\/sie mitgewirkt hat, werden dadurch auch gelöscht!"
   },
   "track": {
     "duration": "Dauer",
@@ -229,7 +229,7 @@
   "statistic": {
     "chartByDateTitle": "Neue Benutzer pro Tag",
     "chartByDayTitle": "Tag am meisten gehört",
-    "chartMostListenedTitle": "Meistgehörter Track",
+    "chartMostListenedTitle": "Meistgehörter Titel",
     "fromKaare": "Von Kåre",
     "others": "Andere",
     "clearChart": "Diagramm entfernen",
