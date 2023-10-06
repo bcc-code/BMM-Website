@@ -115,11 +115,11 @@
       "wrongId": "Błędny BMM-ID",
       "start": "Rozpocznij",
       "end": "Zakończ",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "ładowanie metadanych utworu",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "zastąp metadane"
       },
-      "lyrics": "Lyrics",
+      "lyrics": "Tekst",
       "transcription": "Transkrypcja "
     },
     "waitings": {
