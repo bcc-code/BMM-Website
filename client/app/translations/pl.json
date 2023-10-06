@@ -44,7 +44,7 @@
       "audiobooks": "Audiobooki"
     },
     "secondary": {
-      "playlists": "Listy odtwarzania",
+      "playlists": "Playlisty",
       "podcasts": "Podcasty",
       "latestTracks": "Nowe utwory",
       "current": "Teraz odtwarzane",
@@ -58,7 +58,7 @@
       "latestVideos": "Najnowsze filmy",
       "latestMusic": "Najnowsza muzyka",
       "latestAlbums": "Najnowsze albumy",
-      "playlists": "Listy odtwarzania"
+      "playlists": "Playlisty"
     },
     "music": {
       "latestMusic": "Najnowsza muzyka",
