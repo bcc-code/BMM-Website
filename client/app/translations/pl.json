@@ -88,7 +88,7 @@
       "album": "Album",
       "artist": "Wykonawca",
       "interprets": "Wykonawcy",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Automatycznie transkrybowane"
     }
   },
   "track": {
@@ -142,7 +142,7 @@
   "copyright": "Prawa autorskie",
   "downloadInfo": {
     "title": "Pobieranie wiadomości jest niedostępne",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
+    "body": "Możliwość pobierania przemów z BMM nie jest już dostępna. Jeśli potrzebujesz przemowy do konkretnego celu, skontaktuj się z nami i wyjaśnij swoje potrzeby.",
     "playlistAddition": "Playlista zostanie pobrana bez przemów ",
     "albumAddition": "Album zostanie pobrany bez przemów ",
     "buttonContact": "Kontakt"
