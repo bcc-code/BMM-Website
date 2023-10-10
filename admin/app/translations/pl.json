@@ -10,7 +10,7 @@
       "dashboard": "Panel",
       "notifications": "Powiadomienia",
       "waitings": "W oczekiwaniu",
-      "contributors": "Współpracownicy",
+      "contributors": "Autorzy",
       "trackLists": "Lista utworów",
       "podcasts": "Podcasty",
       "transmissions": "Na żywo",
@@ -115,11 +115,11 @@
       "wrongId": "Błędny BMM-ID",
       "start": "Rozpocznij",
       "end": "Zakończ",
-      "loadSongMetadata": "load song metadata",
+      "loadSongMetadata": "ładowanie metadanych utworu",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "zastąp metadane"
       },
-      "lyrics": "Lyrics",
+      "lyrics": "Tekst",
       "transcription": "Transkrypcja "
     },
     "waitings": {
@@ -133,7 +133,7 @@
       "name": "Nazwa",
       "tracks": "Utwory",
       "search": "Szukaj",
-      "contributors": "Osoby wnoszące wkład"
+      "contributors": "Autorzy"
     },
     "transmissions": {
       "save": "Zapisz transmisję",
