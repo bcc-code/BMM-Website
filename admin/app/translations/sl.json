@@ -120,7 +120,8 @@
         "replace": "Zamenjaj metapodatke"
       },
       "lyrics": "Besedilo",
-      "transcription": "Opis"
+      "transcription": "Opis",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Povezava",

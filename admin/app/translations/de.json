@@ -120,7 +120,8 @@
         "replace": "Metadaten ersetzen"
       },
       "lyrics": "Liedtext",
-      "transcription": "Transkription"
+      "transcription": "Transkription",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Link",
