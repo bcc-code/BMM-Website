@@ -1211,6 +1211,13 @@ angular.module('bmmLibApp')
     })
   }
 
+  factory.getAnalytics = function(trackId) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'statistics/track/'+trackId,
+    })
+  };
+
   factory.getApkUrl = function(){
     return serverUrl + 'file/apk';
   }
