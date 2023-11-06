@@ -120,7 +120,8 @@
         "replace": "zastąp metadane"
       },
       "lyrics": "Tekst",
-      "transcription": "Transkrypcja "
+      "transcription": "Transkrypcja ",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Link",
