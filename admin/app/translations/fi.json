@@ -120,7 +120,8 @@
         "replace": "Korvaa metadata"
       },
       "lyrics": "Sanat\n",
-      "transcription": "Tekstinä"
+      "transcription": "Tekstinä",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Linkki",
