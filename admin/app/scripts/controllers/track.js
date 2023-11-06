@@ -100,7 +100,10 @@ angular.module('bmmApp')
           tags: [],
           cover: null,
           cover_upload: null,
-          rel: []
+          rel: [],
+          analytics: false,
+          analyticsData: {
+          }
         };
         return;
       }
@@ -164,6 +167,15 @@ angular.module('bmmApp')
       return promise;
     };
     $scope.refreshModel();
+
+    $scope.getAnalytics = function() {
+      _api.getAnalytics($routeParams.id)
+        .done(function(response) {
+          $scope.model.analyticsData = response;
+        });
+    };
+
+    $scope.getAnalytics();
 
     var saveModel = function() {
 

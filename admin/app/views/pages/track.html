@@ -262,6 +262,30 @@
     </div>
 </div>
 
+<div class="foldbox">
+  <div class="header" ng-click="model.analytics=!model.analytics">
+    <h3>{{init.translation.page.editor.analytics}}</h3>
+  </div>
+  <div class="body" ng-class="{'visible': model.analytics}">
+    <div style="float: left; margin-right: 1em">
+      <span title="Played at least 80%. Doesn't include data from the website.">Plays:</span> <br />
+      <span title="Only considers plays from the last 90 days.">Plays last 90 days:</span> <br />
+      <span title="Number of people that listened to the full song at least once.">Unique listeners:</span> <br />
+      <span title="How many plays listen to more than 80%.">Completed percentage:</span> <br />
+      <span title="How many plays are skipped before the end of the song. Whereas Completed percentage takes into account if people stop using BMM or switch to a different playlist, a skip means that the user hit the skip button. (Only iOS for now after 01.11.2023)">
+        Skip percentage:</span>
+    </div>
+    <div style="text-align: right; display: inline-block;">
+      {{model.analyticsData.plays}} <br />
+      {{model.analyticsData.plays90_days}} <br />
+      {{model.analyticsData.unique_listeners}} <br />
+      {{model.analyticsData.completed_percentage | number : 1}}% <br />
+      {{model.analyticsData.skip_percentage | number : 1}}%
+    </div>
+
+  </div>
+</div>
+
 <div ng-include="'views/pages/relations.html'"
      ng-controller="RelationsCtrl"
      style="width: 100%;"></div>
