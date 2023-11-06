@@ -120,7 +120,8 @@
         "replace": "Vervang metadata"
       },
       "lyrics": "Lyrics",
-      "transcription": "Transcriptie"
+      "transcription": "Transcriptie",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Link",
