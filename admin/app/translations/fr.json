@@ -120,7 +120,8 @@
         "replace": "remplacer les métadonnées"
       },
       "lyrics": "Paroles",
-      "transcription": "Transcription"
+      "transcription": "Transcription",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Lien",
