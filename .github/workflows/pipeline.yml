@@ -15,10 +15,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node 10.x for compatibility with node-sass
+      - name: Use Node 14.x for compatibility with node-sass
         uses: actions/setup-node@v2
         with:
-          node-version: 10.x
+          node-version: 14.x
       - name: cache .npm folder
         uses: actions/cache@v2
         env:
