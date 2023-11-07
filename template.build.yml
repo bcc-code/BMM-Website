@@ -5,9 +5,7 @@ jobs:
       vmImage: 'macOS-latest'
     steps:
     - task: UseNode@1
-      displayName: 'Use Node 10.x for compatibility with node-sass'
-      inputs:
-        version: 10.x
+      displayName: 'Use Node'
   
     - task: Npm@1
       displayName: 'common - npm install'
