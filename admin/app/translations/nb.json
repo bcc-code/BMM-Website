@@ -120,7 +120,8 @@
         "replace": "replace metadata"
       },
       "lyrics": "Lyrics",
-      "transcription": "Transcription"
+      "transcription": "Transcription",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Koble spor",
