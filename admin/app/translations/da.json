@@ -120,7 +120,8 @@
         "replace": "replace metadata\n"
       },
       "lyrics": "Tekster",
-      "transcription": "Transkribering"
+      "transcription": "Transkribering",
+      "analytics": "Analytics"
     },
     "waitings": {
       "link": "Link",
