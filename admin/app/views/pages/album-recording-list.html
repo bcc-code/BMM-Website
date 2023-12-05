@@ -29,6 +29,9 @@
             <tr class="track" ng-if="translatedModel.children[0].type == 'track'">
                 <th></th>
                 <th>
+                    {{init.translation.page.editor.published}}
+                </th>
+                <th>
                     {{init.translation.page.editor.audio}}
                     <label class="audio-enabled"></label>
                 </th>
@@ -72,6 +75,9 @@
                 <tr class="track" ng-if="c.translated.children[0].type == 'track'">
                     <th></th>
                     <th>
+                        {{init.translation.page.editor.published}}
+                    </th>
+                    <th>
                         {{init.translation.page.editor.audio}}
                         <label class="audio-enabled"></label>
                     </th>
@@ -93,6 +99,10 @@
     </td>
 
     <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} order" width="1">{{c.raw.order}}</td>
+    <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} track-published width="1">
+        <input type="checkbox" ng-checked="trackIsPublished(c.raw)" />
+        <label ng-click="toggleTrackIsPublished(c.raw)" class="enabled-true"></label>
+    </td>
     <td ng-if="c.translated.type == 'track'" class="{{c.translated.subtype}} enabled-{{c.translated['_meta'].is_visible}} audio-enabled" width="1">
         <input ng-if="trackHasAudio(c.raw)" type="checkbox" ng-checked="trackHasAudioEnabled(c.raw)" />
         <label ng-click="toggleHasAudioEnabled(c.raw)" class="enabled-{{trackHasAudio(c.raw)}}"></label>

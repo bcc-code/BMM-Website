@@ -54,6 +54,12 @@ angular.module('bmmApp')
                                 delete toApi.id;
 
                                 var somethingHasChanged = false;
+
+                                if (toApi.is_visible !== child.is_visible) {
+                                    somethingHasChanged = true;
+                                    toApi.is_visible = child.is_visible;
+                                }
+
                                 for (var i in toApi.translations) {
                                     if (toApi.translations.hasOwnProperty(i)) {
                                         var translation = toApi.translations[i];
@@ -136,9 +142,11 @@ angular.module('bmmApp')
 
             $scope.model = false;
             $scope.children = false;
-            $scope.loadModel();
 
-            $scope.can_save = true;
+            setTimeout(function(){
+                $scope.loadModel();
+                $scope.can_save = true;
+            }, 500); //We're giving the server a bit of time to process the changes (otherwise _meta.is_visible isn't updated yet)
         };
 
         $scope.play = function (bundle, mediaType) {
@@ -176,6 +184,12 @@ angular.module('bmmApp')
             track.language = bundle.original_translation.language;
 
             _play.setPlay([track], 0);
+        };
+
+        $scope.trackIsPublished = function(rawTrack) {
+            if (rawTrack) {
+                return rawTrack.is_visible;
+            }
         };
 
         $scope.trackHasAudio = function (rawTrack) {
@@ -219,6 +233,12 @@ angular.module('bmmApp')
                         });
                     }
                 });
+            }
+        };
+
+        $scope.toggleTrackIsPublished = function(rawTrack) {
+            if (rawTrack) {
+                rawTrack.is_visible = !rawTrack.is_visible;
             }
         };
 
