@@ -141,10 +141,10 @@
   },
   "copyright": "Все права защищены",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Скачивание проповедей недоступно",
+    "body": "Возможность скачивания проповедедей из BMM больше не доступна. Если вам нужна проповедь для конкретного случая, пожалуйста, свяжитесь с нами и расскажите о цели использования.",
+    "playlistAddition": "Плейлист будет скачан без проповедей.",
+    "albumAddition": "Альбом будет скачан без проповедей.",
     "buttonContact": "Контакт"
   }
 }
