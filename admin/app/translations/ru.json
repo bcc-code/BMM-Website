@@ -56,7 +56,7 @@
       "languages": "Языки",
       "tags": "Теги",
       "addTag": "Добавить тег",
-      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
+      "tracksInAllLanguages": "Показывать все дорожки независимо от языковых настроек пользователя",
       "generateTitlesByTag": "Генерировать названия по тегу",
       "active": "Активные",
       "available": "Доступно",
@@ -119,9 +119,9 @@
       "songMetadata": {
         "replace": "заменить метаданные"
       },
-      "lyrics": "Lyrics",
-      "transcription": "Transcription",
-      "analytics": "Analytics"
+      "lyrics": "Текст",
+      "transcription": "Расшифровка текста",
+      "analytics": "Аналитика"
     },
     "waitings": {
       "link": "Ссылка",
@@ -182,15 +182,15 @@
     "musicchannel": {
       "title": "Музыкальные каналы",
       "editTitle": "Редактировать музыкальный канал",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "createNew": "Создать новый музыкальный канал",
+      "addTranslation": "Добавить перевод канала",
+      "save": "Сохранить музыкальный канал"
     }
   },
   "states": {
     "noChanges": "Нет изменений",
     "allIsWell": "Все в порядке",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Изменения сохранены",
     "couldNotCreateAlbum": "Не удалось создать альбом",
     "couldNotCreateTrack": "Не удалось создать трек",
     "errorCode": "Код ошибки",
@@ -216,7 +216,7 @@
   "warnings": {
     "confirmAlbumDeletion": "Вы уверены, что вы хотите удалить альбом со всеми вложенными альбомами и треками?",
     "confirmTrackDeletion": "Вы уверены, что вы хотите удалить трек?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "Язык содержид контент. Подтвердить удаление",
     "confirmContributorDeletion": "ВЫ ДЕЙСТВИТЕЛЬНО УВЕРЕНЫ, ЧТО ХОТИТЕ УДАЛИТЬ ЭТОГО УЧАСТНИКА? БУДУТ УДАЛЕНЫ ВСЕ СВЯЗАННЫЕ С НИМ ТРЕКИ!"
   },
   "track": {
@@ -225,7 +225,7 @@
     "dragMeToPlaylist": "Перетащите в плейлист",
     "exegesis": "Толкование",
     "copyright": "Авторское право",
-    "publisher": "Publisher"
+    "publisher": "Опубликовано"
   },
   "statistic": {
     "chartByDateTitle": "Новые пользователи за день",
