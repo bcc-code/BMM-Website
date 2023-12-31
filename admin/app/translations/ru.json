@@ -11,7 +11,7 @@
       "notifications": "Уведомления",
       "waitings": "Ожидает проверки",
       "contributors": "Исполнители",
-      "trackLists": "Плейлисты",
+      "trackLists": "Списки дорожек",
       "podcasts": "Подкасты",
       "transmissions": "Прямой эфир",
       "users": "Пользователи",
@@ -20,13 +20,13 @@
     "secondary": {
       "quickMenu": "Быстрое меню",
       "newAlbum": "Новый альбом",
-      "newTrack": "Новый трек",
+      "newTrack": "Новая дорожка",
       "year": "Год",
       "album": "Альбом",
       "childAlbums": "Альбомы для детей",
       "recordingList": "Список записей",
-      "tracks": "Треки",
-      "childTracks": "Треки для детей",
+      "tracks": "Дорожки",
+      "childTracks": "Дорожки для детей",
       "open": "открыть",
       "nextFraKaare": "Следующий выпуск От Коре"
     }
@@ -56,7 +56,7 @@
       "languages": "Языки",
       "tags": "Теги",
       "addTag": "Добавить тег",
-      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
+      "tracksInAllLanguages": "Показывать все дорожки независимо от языковых настроек пользователя",
       "generateTitlesByTag": "Генерировать названия по тегу",
       "active": "Активные",
       "available": "Доступно",
@@ -80,7 +80,7 @@
       "by": "Кем:",
       "noParentAlbum": "Нет родительских альбомов",
       "tracks": "Треки",
-      "addTrack": "Добавить трек",
+      "addTrack": "Добавить дорожку",
       "select": "Выберите",
       "duration": "Продолжительность",
       "size": "Размер",
@@ -94,7 +94,7 @@
       "interprets": "Исполнители или говорящие",
       "lyricists": "Авторы текстов",
       "songbooks": "Песенники",
-      "trackLists": "Плейлисты",
+      "trackLists": "Списки дорожек",
       "bibleReferences": "Ссылки в библии",
       "addBibleReference": "Добавить ссылку в Библии",
       "externalReferences": "Внешние ссылки",
@@ -110,7 +110,7 @@
       "video": "Видео",
       "sortOrder": "Порядок сортировки",
       "waitingsReady": "Проверено",
-      "missingTrack": "Трек отсутствует",
+      "missingTrack": "Дорожка отсутствует",
       "missingAlbum": "Альбом отсутсвиет",
       "wrongId": "Неправильный BMM-ID",
       "start": "Начало",
@@ -119,20 +119,20 @@
       "songMetadata": {
         "replace": "заменить метаданные"
       },
-      "lyrics": "Lyrics",
-      "transcription": "Transcription",
-      "analytics": "Analytics"
+      "lyrics": "Текст",
+      "transcription": "Расшифровка текста",
+      "analytics": "Аналитика"
     },
     "waitings": {
       "link": "Ссылка",
       "conflict": "Конфликт",
       "conflicts": "Конфликты (дубликатов)",
-      "openTrack": "Открыть трек",
-      "linkAllTracks": "Связать все треки"
+      "openTrack": "Открыть дорожку",
+      "linkAllTracks": "Связать все дорожки"
     },
     "contributors": {
       "name": "Имя",
-      "tracks": "Треки",
+      "tracks": "Дорожки",
       "search": "Поиск",
       "contributors": "Исполнители"
     },
@@ -147,7 +147,7 @@
     "users": {
       "adminUsers": "Администраторы",
       "albumManager": "Альбомы",
-      "trackManager": "Треки",
+      "trackManager": "Дорожки",
       "contributorManager": "Исполнители",
       "notificationManager": "Уведомления",
       "podcastManager": "Подкасты",
@@ -182,17 +182,17 @@
     "musicchannel": {
       "title": "Музыкальные каналы",
       "editTitle": "Редактировать музыкальный канал",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "createNew": "Создать новый музыкальный канал",
+      "addTranslation": "Добавить перевод канала",
+      "save": "Сохранить музыкальный канал"
     }
   },
   "states": {
     "noChanges": "Нет изменений",
     "allIsWell": "Все в порядке",
-    "changesPerformed": "Changes saved",
+    "changesPerformed": "Изменения сохранены",
     "couldNotCreateAlbum": "Не удалось создать альбом",
-    "couldNotCreateTrack": "Не удалось создать трек",
+    "couldNotCreateTrack": "Не удалось создать дорожку",
     "errorCode": "Код ошибки",
     "attemptToSave": "Сохраняю. Подождите...",
     "savingContributor": "Сохранение исполнителя. Подождите...",
@@ -202,21 +202,21 @@
     "couldNotSave": "Не удалось сохранить. Пожалуйста, проверьте подключение к Интернету",
     "saved": "Сохранено",
     "loadingContributor": "Загрузка исполнителей...",
-    "loadingTracks": "Загрузка треков...",
+    "loadingTracks": "Загрузка дорожек...",
     "loadingUsers": "Загрузка пользователей...",
     "loadingFiles": "Загрузка файлов, пожалуйста, подождите...",
     "filesLoaded": "Файлы успешно загружен",
     "waitingForSelection": "Ожидание выбора",
     "contributorLoaded": "Исполнитель успешно загружен",
     "deletingContributor": "Удаление исполнителей, пожалуйста, подождите...",
-    "trackDeleted": "Трек удален",
+    "trackDeleted": "Дорожка удалена",
     "notSet": "Не задано",
-    "attemptToLinkTracks": "Попытка связать треки в альбоме. Подождите..."
+    "attemptToLinkTracks": "Попытка связать дорожки в альбоме. Подождите..."
   },
   "warnings": {
     "confirmAlbumDeletion": "Вы уверены, что вы хотите удалить альбом со всеми вложенными альбомами и треками?",
     "confirmTrackDeletion": "Вы уверены, что вы хотите удалить трек?",
-    "confirmTranslatedDeletion": "Language has content. Confirm deletion",
+    "confirmTranslatedDeletion": "Язык содержид контент. Подтвердить удаление",
     "confirmContributorDeletion": "ВЫ ДЕЙСТВИТЕЛЬНО УВЕРЕНЫ, ЧТО ХОТИТЕ УДАЛИТЬ ЭТОГО УЧАСТНИКА? БУДУТ УДАЛЕНЫ ВСЕ СВЯЗАННЫЕ С НИМ ТРЕКИ!"
   },
   "track": {
@@ -225,7 +225,7 @@
     "dragMeToPlaylist": "Перетащите в плейлист",
     "exegesis": "Толкование",
     "copyright": "Авторское право",
-    "publisher": "Publisher"
+    "publisher": "Опубликовано"
   },
   "statistic": {
     "chartByDateTitle": "Новые пользователи за день",

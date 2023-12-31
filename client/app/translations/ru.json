@@ -32,7 +32,7 @@
     "copyLink": "Копировать ссылку",
     "remove": "Удалить",
     "playPlaylist": "Играть плейлист",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Добавить в мои плейлисты",
     "share": "Пделиться"
   },
   "menu": {
@@ -88,7 +88,7 @@
       "album": "Альбом",
       "artist": "Исполнитель",
       "interprets": "артист",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Автоматическая расшифровка текста"
     }
   },
   "track": {
@@ -102,16 +102,16 @@
     "composer": "Композитор",
     "album": "Альбом",
     "bibleVerse": "Библейский стих",
-    "songbooks": "Song number",
+    "songbooks": "Номер песни",
     "copyright": "Авторское право",
-    "publisher": "Publisher"
+    "publisher": "Опубликовано"
   },
   "playlist": {
     "tracks": "Трек(и)",
     "albums": "Альбом(ы)",
     "duration": "Продолжительность",
     "title": "Название",
-    "song": "Song",
+    "song": "Песня",
     "allLanguages": "Все языки",
     "confirmPlaylistDeletion": "Вы уверены, что хотите удалить этот плейлист?",
     "latestTracks": "Последние треки",
@@ -135,16 +135,16 @@
     "showVideo": "Показать видео"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Скачать APK для Android",
+    "text": "Мы рекомендуем устанавливать приложение BMM через Google Play Store. Если это невозможно, вы можете",
+    "downloadLink": "скачать APK напрямую."
   },
   "copyright": "Все права защищены",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Скачивание проповедей недоступно",
+    "body": "Возможность скачивания проповедедей из BMM больше не доступна. Если вам нужна проповедь для конкретного случая, пожалуйста, свяжитесь с нами и расскажите о цели использования.",
+    "playlistAddition": "Плейлист будет скачан без проповедей.",
+    "albumAddition": "Альбом будет скачан без проповедей.",
     "buttonContact": "Контакт"
   }
 }
