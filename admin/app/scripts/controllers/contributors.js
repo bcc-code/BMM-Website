@@ -75,11 +75,15 @@ angular.module('bmmApp')
       if (confirm(_init.translation.warnings.confirmContributorDeletion)) {
         $scope.status = _init.translation.states.deletingContributor;
 
-        _api.contributorIdDelete($scope.model.id).always(function() {
-          $scope.$apply(function() {
-            $location.path('contributors');
+        _api.contributorIdDelete($scope.model.id)
+          .done(function() {
+            $scope.$apply(function() {
+              $location.path('contributors');
+            });
+          })
+          .fail(function() {
+            alert("unable to delete contributor. Probably it still has attached tracks.");
           });
-        });
       }
     };
 

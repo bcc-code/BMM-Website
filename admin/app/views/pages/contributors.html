@@ -32,7 +32,7 @@
 <div class="controlbar">
     <b>{{init.translation.page.editor.status}}</b>: {{status}}
     <button ng-click="save();" style="margin-left: .5em">{{init.translation.page.editor.save}}</button>
-    <button ng-show="user.username=='tobisokac' || user.username=='towa' "
+    <button ng-show="init.user.username=='tobisokac' || init.user.username=='towa' "
             ng-click="delete();">
         {{init.translation.page.editor.delete}}</button>
 </div>
@@ -95,7 +95,7 @@
                     {{init.translation.page.editor.play}}
                 </button>
                 <button>
-                    <a ng-href="#track/{{track.id}}">
+                    <a ng-href="track/{{track.id}}">
                         {{init.translation.page.waitings.openTrack}}
                     </a>
                 </button>
