@@ -1,150 +1,150 @@
 {
-  "language": "English",
+  "language": "ஆங்கிலம்",
   "general": {
-    "search": "Search...",
-    "searchResultsFor": "Search results for:",
-    "loading": "Loading...",
-    "waysOfTheLord": "Ways of the Lord",
-    "almondBlossom": "Almond Blossom",
-    "noTitle": "No title",
-    "settings": "Settings",
-    "suport": "Support",
-    "readMore": "Read more"
+    "search": "தேடு...",
+    "searchResultsFor": "தேடல் முடிவுகள்:",
+    "loading": "ஏற்றுகிறது...",
+    "waysOfTheLord": "கர்த்தருடைய  வழிகள்",
+    "almondBlossom": "வாதுமை பூக்கள் ",
+    "noTitle": "தலைப்பு இல்லை",
+    "settings": "அமைப்புகள்",
+    "suport": "உதவி ",
+    "readMore": "மேலும் படிக்கவும்"
   },
   "options": {
-    "addToPlaylist": "Add to playlist",
-    "download": "Download",
-    "goToAlbum": "Go to album",
-    "podcast": "Podcast",
-    "removeFilter": "Remove filter",
-    "changeLanguage": "Change language",
-    "goBack": "Go back",
-    "choosePlaylist": "Choose playlist",
-    "setupPodcast": "To set up the podcast, copy the link below and paste it into your preferred podcast software.",
-    "chooseLanguages": "Choose languages",
-    "addLanguage": "Add a language",
-    "includeLatest": "Include the latest",
-    "websiteLanguage": "Website language",
-    "contentLanguages": "Content language",
-    "tracks": "tracks",
-    "filterByLanguage": "Filter by language",
-    "copyUrl": "Copy URL",
-    "copyLink": "Copy link",
-    "remove": "Remove",
-    "playPlaylist": "Play playlist",
-    "addToMyPlaylists": "Add to my playlists",
-    "share": "Share"
+    "addToPlaylist": "பிளேலிஸ்ட்டில் சேர்",
+    "download": "பதிவிறக்கு ",
+    "goToAlbum": "ஆல்பத்திற்குச் செல்லவும்",
+    "podcast": "பாட்காஸ்ட்",
+    "removeFilter": "வடிகட்டியை அகற்று",
+    "changeLanguage": "மொழியை மாற்றவும்",
+    "goBack": "திரும்பி போ",
+    "choosePlaylist": "பிளேலிஸ்ட்டைத் தேர்ந்தெடுக்கவும்",
+    "setupPodcast": "பாட்காஸ்டை அமைக்க, கீழே உள்ள இணைப்பை நகலெடுத்து உங்களுக்கு விருப்பமான பாட்காஸ்ட் மென்பொருளில் ஒட்டவும்.",
+    "chooseLanguages": "மொழிகளை தேர்வு செய்யவும்",
+    "addLanguage": "ஒரு மொழியைச் சேர்க்கவும்",
+    "includeLatest": "சமீபத்தியவற்றைச் சேர்க்கவும்",
+    "websiteLanguage": "இணையதள மொழி",
+    "contentLanguages": "உள்ளடக்க மொழி",
+    "tracks": "ட்ராக்குகள்",
+    "filterByLanguage": "மொழியின்படி வடிகட்டவும்",
+    "copyUrl": "URL ஐ நகலெடுக்கவும்",
+    "copyLink": "இணைப்பை நகலெடுக்கவும்",
+    "remove": "அகற்று",
+    "playPlaylist": "பிளேலிஸ்ட் பிளே செய் ",
+    "addToMyPlaylists": "எனது பிளேலிஸ்ட்களில் சேர்",
+    "share": "பகிர்"
   },
   "menu": {
     "main": {
-      "music": "Music",
-      "speeches": "Messages",
-      "video": "Videos",
-      "archive": "Archive",
-      "audiobooks": "Audiobooks"
+      "music": "இசை",
+      "speeches": "செய்திகள்",
+      "video": "வீடியோக்கள்",
+      "archive": "காப்பகம்",
+      "audiobooks": "ஆடியோ புத்தகங்கள்"
     },
     "secondary": {
-      "playlists": "Playlists",
-      "podcasts": "Podcasts",
-      "latestTracks": "New tracks",
-      "current": "Current",
-      "newPlaylist": "New playlist",
-      "nameOnPlaylist": "Playlist title"
+      "playlists": "பிளேலிஸ்ட்கள்",
+      "podcasts": "பாட்காஸ்ட்கள்",
+      "latestTracks": "புதிய ட்ராக்",
+      "current": "தற்போதைய",
+      "newPlaylist": "புதிய பிளேலிஸ்ட்",
+      "nameOnPlaylist": "பிளேலிஸ்ட் தலைப்பு"
     }
   },
   "page": {
     "welcome": {
-      "latestSpeeches": "Latest Messages",
-      "latestVideos": "Latest Videos",
-      "latestMusic": "Latest Music",
-      "latestAlbums": "Latest Albums",
-      "playlists": "Playlists"
+      "latestSpeeches": "சமீபத்திய செய்திகள்",
+      "latestVideos": "சமீபத்திய வீடியோக்கள்",
+      "latestMusic": "சமீபத்திய இசை",
+      "latestAlbums": "சமீபத்திய ஆல்பங்கள்",
+      "playlists": "பிளேலிஸ்ட்கள்"
     },
     "music": {
-      "latestMusic": "Latest Music",
-      "artists": "Artists",
-      "fromKaare": "From Kåre",
-      "mp3Source": "MP3-Fountain",
-      "childrensMp3Source": "Childen's MP3-Fountain",
-      "instrumental": "Instrumental"
+      "latestMusic": "சமீபத்திய இசை",
+      "artists": "கலைஞர்கள்",
+      "fromKaare": "Kåre- விடமிருந்து ",
+      "mp3Source": "MP3- நீரூற்று",
+      "childrensMp3Source": "குழந்தைகளுக்கான MP3- நீரூற்று",
+      "instrumental": "வாத்திய இசை "
     },
     "speeches": {
-      "latestSpeeches": "Latest Messages",
-      "recommended": "Recommended"
+      "latestSpeeches": "சமீபத்திய செய்திகள்",
+      "recommended": "பரிந்துரைக்கப்படுகிறது"
     },
     "videos": {
-      "latestVideos": "Latest Videos"
+      "latestVideos": "சமீபத்திய வீடியோக்கள்"
     },
     "archive": {
-      "archive": "Archive"
+      "archive": "காப்பகம்"
     },
     "audiobooks": {
-      "latestAudiobooks": "Latest Audiobooks"
+      "latestAudiobooks": "சமீபத்திய ஆடியோ புத்தகங்கள்"
     },
     "search": {
-      "searchResults": "Search Results",
-      "content": "Content",
-      "bibleVerse": "Bible verse",
-      "album": "Album",
-      "artist": "Artist",
-      "interprets": "Artists",
-      "autoTranscribed": "Auto-transcribed"
+      "searchResults": "தேடல் முடிவுகள்",
+      "content": "உள்ளடக்கம்",
+      "bibleVerse": "பைபிள் வசனம்",
+      "album": "ஆல்பம்",
+      "artist": "கலைஞர்",
+      "interprets": "கலைஞர்கள்",
+      "autoTranscribed": "தானாக எழுதப்பட்டது"
     }
   },
   "track": {
-    "duration": "Duration",
-    "details": "Details",
-    "exegesis": "Interpretation",
-    "recordedDate": "Recorded date",
-    "artist": "Artist",
-    "lyricist": "Lyricist",
-    "arranger": "Arranger",
-    "composer": "Composer",
-    "album": "Album",
-    "bibleVerse": "Bible verse",
-    "songbooks": "Song number",
-    "copyright": "Copyright",
-    "publisher": "Publisher"
+    "duration": "கால அளவு",
+    "details": "விவரங்கள்",
+    "exegesis": "விளக்கம்",
+    "recordedDate": "பதிவு செய்யப்பட்ட தேதி",
+    "artist": "கலைஞர்",
+    "lyricist": "பாடலாசிரியர்",
+    "arranger": "ஏற்பாடு செய்பவர்",
+    "composer": "இசையமைப்பாளர்",
+    "album": "ஆல்பம்",
+    "bibleVerse": "பைபிள் வசனம்",
+    "songbooks": "பாடல் எண்",
+    "copyright": "காப்புரிமை",
+    "publisher": "பதிப்பகத்தார்"
   },
   "playlist": {
-    "tracks": "Track(s)",
-    "albums": "Album(s)",
-    "duration": "Duration",
-    "title": "Title",
-    "song": "Song",
-    "allLanguages": "All languages",
-    "confirmPlaylistDeletion": "Are you sure you want to delete this playlist?",
-    "latestTracks": "Latest tracks",
-    "instrumental": "Instrumental",
-    "by": "by"
+    "tracks": "ட்ராக்குகள்",
+    "albums": "ஆல்பம்(கள்)",
+    "duration": "கால அளவு",
+    "title": "தலைப்பு",
+    "song": "பாடல்",
+    "allLanguages": "அனைத்து மொழிகளும்",
+    "confirmPlaylistDeletion": "இந்த பிளேலிஸ்ட்டை நிச்சயமாக நீக்க விரும்புகிறீர்களா?",
+    "latestTracks": " சமீபத்திய ட்ராக்குகள்",
+    "instrumental": "வாத்திய இசை ",
+    "by": "மூலம்"
   },
   "notify": {
-    "play": "Play",
-    "next": "Next",
-    "previous": "Previous",
-    "shufflePlaylist": "Shuffle playlist",
-    "loopPlaylist": "Repeat playlist",
-    "mute": "Mute",
-    "maxVolume": "Maximum volume",
-    "options": "Options",
-    "activateVideo": "Activate video",
-    "goToAlbum": "Go to album",
-    "showFullscreen": "Show fullscreen",
-    "closeFullscreen": "Close fullscreen",
-    "hideVideo": "Hide video",
-    "showVideo": "Show video"
+    "play": "பிளே",
+    "next": "அடுத்தது",
+    "previous": "முந்தைய",
+    "shufflePlaylist": "பிளேலிஸ்ட்டை கலக்கவும்",
+    "loopPlaylist": "பிளேலிஸ்ட்டை மீண்டும் பிளே செய்யவும்",
+    "mute": "ஒலிநிறுத்தம்",
+    "maxVolume": "அதிகபட்ச ஒலி அளவு",
+    "options": "விருப்பங்கள்",
+    "activateVideo": "வீடியோவை இயக்கவும்",
+    "goToAlbum": "ஆல்பத்திற்குச் செல்லவும்",
+    "showFullscreen": "முழுத்திரையைக் காட்டு",
+    "closeFullscreen": "முழுத்திரையை மூடு",
+    "hideVideo": "வீடியோவை மறை",
+    "showVideo": "வீடியோவைக் காட்டு"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Android க்கான APK பதிவிறக்கம்",
+    "text": "Google Play Store ஐப் பயன்படுத்தி BMM பயன்பாட்டை நிறுவப் பரிந்துரைக்கிறோம். அது முடியாவிட்டால், உங்களால் முடியும் ",
+    "downloadLink": "APK ஐ நேரடியாகப் பதிவிறக்கவும்."
   },
-  "copyright": "Copyright",
+  "copyright": "காப்புரிமை",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
-    "buttonContact": "Contact"
+    "title": "செய்திகளின் பதிவிறக்கம் கிடைக்கவில்லை\n",
+    "body": "BMM இலிருந்து செய்திகளைப் பதிவிறக்கும் திறன் இனி கிடைக்காது. குறிப்பிட்ட பயன்பாட்டிற்கான செய்தி உங்களுக்குத் தேவைப்பட்டால், தயவுசெய்து எங்களைத் தொடர்புகொண்டு உங்கள் தேவைகளை விளக்கவும்.",
+    "playlistAddition": "செய்திகள் இல்லாமல் பிளேலிஸ்ட் பதிவிறக்கப்படும்.\n",
+    "albumAddition": "செய்திகள் இல்லாமல் ஆல்பம் பதிவிறக்கப்படும்.\n",
+    "buttonContact": "தொடர்பு கொள்ளவும்"
   }
 }

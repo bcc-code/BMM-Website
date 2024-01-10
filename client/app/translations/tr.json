@@ -32,7 +32,7 @@
     "copyLink": "Link'i kopyala",
     "remove": "Kaldır",
     "playPlaylist": "Çalma Listesini Çal",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Çalma listelerime ekle",
     "share": "Paylaş"
   },
   "menu": {
@@ -88,7 +88,7 @@
       "album": "Albüm",
       "artist": "Sanatçı",
       "interprets": "Sanatçılar",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Otomatik olarak metne dönüştürüldü"
     }
   },
   "track": {
@@ -102,16 +102,16 @@
     "composer": "Besteci",
     "album": "Albüm",
     "bibleVerse": "Kutsal Kitap Ayet",
-    "songbooks": "Song number",
+    "songbooks": "Şarkı numarası",
     "copyright": "Telif Hakkı",
-    "publisher": "Publisher"
+    "publisher": "Yayımcı"
   },
   "playlist": {
     "tracks": "Parça(lar)",
     "albums": "Albüm(ler)",
     "duration": "Süre",
     "title": "Başlık",
-    "song": "Song",
+    "song": "Şarkı",
     "allLanguages": "Tüm Diller",
     "confirmPlaylistDeletion": "Çalma Listesini silmeye emin misin?",
     "latestTracks": "En yeni Parçalar",
@@ -135,16 +135,16 @@
     "showVideo": "Video Göster"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Android için APK İndir",
+    "text": "BMM uygulamasını Google Play Store'u kullanarak yüklemenizi öneririz. Bu mümkün değilse, yapabilirsiniz ",
+    "downloadLink": "APK'yı doğrudan indirin."
   },
   "copyright": "Telif Hakkı",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Mesajların indirilmesi kullanılamıyor\n",
+    "body": "BMM'den mesaj indirme özelliği artık kullanılamıyor. Belirli bir kullanıma yönelik bir mesaja ihtiyacınız varsa lütfen bizimle iletişime geçin ve ihtiyaçlarınızı açıklayın.",
+    "playlistAddition": "Çalma listesi mesajlar olmadan indirilecektir.\n",
+    "albumAddition": "Albüm mesajlar olmadan indirilecektir.\n",
     "buttonContact": "İletişim"
   }
 }
