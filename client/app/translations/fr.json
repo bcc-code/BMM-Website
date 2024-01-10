@@ -86,7 +86,7 @@
       "content": "Contenu",
       "bibleVerse": "Verset de la Bible",
       "album": "Album",
-      "artist": "Artiste",
+      "artist": "Interprète",
       "interprets": "Interprètes",
       "autoTranscribed": "Transcription automatique"
     }
@@ -94,15 +94,15 @@
   "track": {
     "duration": "Durée",
     "details": "Détails",
-    "exegesis": "Exégèse",
+    "exegesis": "Interprétation",
     "recordedDate": "Date de l'enregistrement",
-    "artist": "Artiste",
+    "artist": "Interprète",
     "lyricist": "Auteur",
-    "arranger": "Compositeur",
+    "arranger": "Arrangement",
     "composer": "Compositeur",
     "album": "Album",
     "bibleVerse": "Verset de la Bible",
-    "songbooks": "Numéro de morceau",
+    "songbooks": "Numéro de chant",
     "copyright": "Droits d'auteur",
     "publisher": "Éditeur"
   },
