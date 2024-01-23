@@ -9,7 +9,7 @@
     "noTitle": "Sans titre",
     "settings": "Paramètres",
     "suport": "Support",
-    "readMore": "Lire la suite"
+    "readMore": "En savoir plus"
   },
   "options": {
     "addToPlaylist": "Ajouter à la liste de lecture",
@@ -20,7 +20,7 @@
     "changeLanguage": "Changer la langue",
     "goBack": "Retour",
     "choosePlaylist": "Choisir la liste de lecture",
-    "setupPodcast": "Pour parametrer un podcast, vous devez copier le lien ci-dessous et le coller dans votre application de lecture podcast, préférée.",
+    "setupPodcast": "Pour configurer le podcast, copiez le lien ci-dessous et collez-le dans votre logiciel de podcast préféré.",
     "chooseLanguages": "Choisir les langues",
     "addLanguage": "Ajouter une langue",
     "includeLatest": "Inclure le plus récent",
@@ -86,7 +86,7 @@
       "content": "Contenu",
       "bibleVerse": "Verset de la Bible",
       "album": "Album",
-      "artist": "Artiste",
+      "artist": "Interprète",
       "interprets": "Interprètes",
       "autoTranscribed": "Transcription automatique"
     }
@@ -94,15 +94,15 @@
   "track": {
     "duration": "Durée",
     "details": "Détails",
-    "exegesis": "Exégèse",
+    "exegesis": "Interprétation",
     "recordedDate": "Date de l'enregistrement",
-    "artist": "Artiste",
+    "artist": "Interprète",
     "lyricist": "Auteur",
-    "arranger": "Compositeur",
+    "arranger": "Arrangement",
     "composer": "Compositeur",
     "album": "Album",
     "bibleVerse": "Verset de la Bible",
-    "songbooks": "Numéro de morceau",
+    "songbooks": "Numéro de chant",
     "copyright": "Droits d'auteur",
     "publisher": "Éditeur"
   },

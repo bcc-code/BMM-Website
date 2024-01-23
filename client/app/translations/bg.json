@@ -1,5 +1,5 @@
 {
-  "language": "Български",
+  "language": "Английски",
   "general": {
     "search": "Търси...",
     "searchResultsFor": "Резултати от търсенето за:",
@@ -32,7 +32,7 @@
     "copyLink": "Копирай връзка",
     "remove": "Премахни",
     "playPlaylist": "Пусни списъка",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Прибави към списъка",
     "share": "Сподели"
   },
   "menu": {
@@ -111,7 +111,7 @@
     "albums": "Албум(и)",
     "duration": "Продължителност",
     "title": "Заглавие",
-    "song": "Song",
+    "song": "Песен",
     "allLanguages": "Всички езици",
     "confirmPlaylistDeletion": "Наистина ли искаш да изтриеш този списък?",
     "latestTracks": "Последни песни и речи",
@@ -135,16 +135,16 @@
     "showVideo": "Покажи видеоклип"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "Изтегляне на APK за Android",
+    "text": "Препоръчваме да инсталирате приложението BMM от Google Play Store. Ако това не е възможно, можете ",
+    "downloadLink": "изтеглете директно APK."
   },
   "copyright": "Авторско право",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Недостъпно изтегляне на съобщения\n",
+    "body": "Възможността за изтегляне на съобщения от BMM вече не е налична. Ако имате нужда от съобщение за конкретна употреба, моля свържете се с нас и обяснете вашите нужди.",
+    "playlistAddition": "Плейлистът ще бъде изтеглен без съобщенията.\n",
+    "albumAddition": "Плейлистът ще бъде изтеглен без съобщенията.\n",
     "buttonContact": "Контакти"
   }
 }
