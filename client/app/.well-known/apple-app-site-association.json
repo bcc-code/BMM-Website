@@ -3,11 +3,7 @@
      "apps": [],
      "details": [
        {
-         "appID": "KJ6LCYQ3A8.org.brunstad.bmm",
-         "paths": ["/browse/*", "/native-login-callback", "/archive", "/album/*", "/track/*", "/playlist/curated/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/shared/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured", "/year-in-review"]
-       },
-       {
-         "appID": "S9X3H6TVG5.org.brunstad.bmm-dev",
+         "appID": ["6734NUF6AV.org.brunstad.bmm","KJ6LCYQ3A8.org.brunstad.bmm","S9X3H6TVG5.org.brunstad.bmm-dev"],
          "paths": ["/browse/*", "/native-login-callback", "/archive", "/album/*", "/track/*", "/playlist/curated/*", "/playlist/private/*", "/playlist/contributor/*", "/playlist/podcast/*", "/playlist/shared/*", "/playlist/latest", "/copyright", "/", "/daily-fra-kaare", "/messages", "/speeches", "/music", "/contributors", "/featured", "/year-in-review"]
        }
      ]
