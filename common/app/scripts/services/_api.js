@@ -1054,6 +1054,13 @@ angular.module('bmmLibApp')
     })
   };
 
+  factory.churchStatisticsGet = function() {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'statistics/project/church/'
+    })
+  };
+
   factory.trackListOverview = function(type, options) {
     return factory.addToQueue({
       method: 'GET',

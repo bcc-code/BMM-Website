@@ -1,0 +1,26 @@
+.table-element{
+}
+
+.table-element th {
+  background-color: #ddd;
+  white-space: nowrap;
+}
+
+.table-element tr td:first-child,
+.table-element tr td:last-child
+{
+  background-color: #eee;
+}
+
+.table-element tr td {
+  text-align: right;
+}
+
+.table-element tr td:first-child {
+  text-align: left;
+}
+
+.table-element th,
+.table-element td {
+  padding: 4px 12px;
+}

@@ -146,6 +146,11 @@ angular.module('bmmApp', [
         controller: 'DownloadInfoCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
       })
+      .when('/romans-statistics', {
+        templateUrl: 'views/pages/statistics.html',
+        controller: 'StatisticsCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
+      })
       .otherwise({
         redirectTo: '/welcome'
       });
