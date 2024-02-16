@@ -14,18 +14,25 @@ angular.module('bmmApp')
   ) {
     $scope.load = true;
     $scope.data = null;
+    $scope.selectedChurch = null;
 
     $(window).off('scrollBottom');
 
-    var load = function() {
-      _api.churchStatisticsGet($routeParams.secret).done(function (data) {
-        console.log("data", data);
+    var load = function(churchId) {
+      _api.churchStatisticsGet(churchId).done(function (data) {
+        console.log("loaded data", data);
         $scope.data = data;
-        console.log("data", data);
         $scope.load = false;
+        $scope.selectedChurch = {id: data.church_id, name: data.church};
       });
     };
-    load();
+    load("");
+
+    $scope.changeChurch = function(selected) {
+      console.log("test", selected);
+      $scope.load = true;
+      load(selected.id);
+    }
 
     // This is a workaround to fix the scroll problem (#5317 in VSTS)
     $scope.setMinHeight = function() {
