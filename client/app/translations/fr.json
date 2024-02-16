@@ -1,5 +1,5 @@
 {
-  "language": "Française",
+  "language": "Français",
   "general": {
     "search": "Recherche...",
     "searchResultsFor": "Résultats de la recherche pour :",
@@ -143,7 +143,7 @@
   "downloadInfo": {
     "title": "Téléchargement des messages indisponible",
     "body": "La fonctionnalité de téléchargement des messages de BMM n'est plus disponible. Si vous avez besoin d'un message pour un usage spécifique, veuillez nous contacter et nous expliquer vos besoins.",
-    "playlistAddition": "La liste de lecture sera téléchargée sans les messages.",
+    "playlistAddition": "La playlist sera téléchargée sans les messages.",
     "albumAddition": "L'album sera téléchargé sans les messages.",
     "buttonContact": "Contact"
   }
