@@ -1,5 +1,10 @@
 
-<div ng-show="!load">
+<div ng-show="failed">
+  <p>An error occurred:</p>
+  <p>{{message}}</p>
+</div>
+
+<div ng-show="!load && !failed">
   <h3>Message to the Romans</h3>
 
   <div ng-show="data.available_churches">

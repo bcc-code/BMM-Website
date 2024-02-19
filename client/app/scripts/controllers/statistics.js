@@ -15,15 +15,19 @@ angular.module('bmmApp')
     $scope.load = true;
     $scope.data = null;
     $scope.selectedChurch = null;
+    $scope.failed = false;
 
     $(window).off('scrollBottom');
 
     var load = function(churchId) {
       _api.churchStatisticsGet(churchId).done(function (data) {
-        console.log("loaded data", data);
         $scope.data = data;
         $scope.load = false;
         $scope.selectedChurch = {id: data.church_id, name: data.church};
+      }).fail(function(data){
+        $scope.failed = true;
+        $scope.load = false;
+        $scope.message = data.responseJSON?.message ?? "an unexpected error occurred";
       });
     };
     load("");
