@@ -27,7 +27,7 @@ angular.module('bmmApp')
       }).fail(function(data){
         $scope.failed = true;
         $scope.load = false;
-        $scope.message = data.responseJSON?.message ?? "an unexpected error occurred";
+        $scope.message = data.responseJSON.message || "an unexpected error occurred";
       });
     };
     load("");
