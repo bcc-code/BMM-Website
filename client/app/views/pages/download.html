@@ -1,0 +1,26 @@
+<div ng-show="load" style="margin-top: 2em">
+  <img ng-src="fallback_images/gif/load.gif">
+</div>
+
+<div ng-hide="load">
+  <p>
+    <h1>Download the BMM app</h1>
+  </p>
+
+  <h2 style="font-size: 32px; margin-bottom: 16px">Mobile</h2>
+  <a ng-href="{{data.ios || data.i_os}}" target="_blank">
+    <img src="images/common/svg/appstore_en.svg" height="63">
+  </a>
+
+  <a ng-href="{{data.android}}" target="_blank">
+    <img src="images/common/svg/google-play-badge.png" width="240">
+  </a>
+
+  <h2 style="font-size: 32px; margin-bottom: 16px">Desktop</h2>
+
+  <div class="download-links">
+    <a ng-href="{{data.windows}}">Windows</a>
+    <a ng-href="{{data.mac_arm}}">New Macs (M1, M2, M3, ...)</a>
+    <a ng-href="{{data.mac_intel}}">Intel Macs (produced before 2021)</a>
+  </div>
+</div>

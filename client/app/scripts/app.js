@@ -141,6 +141,11 @@ angular.module('bmmApp', [
         controller: 'ApkCtrl',
         resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
       })
+      .when('/download', {
+        templateUrl: 'views/pages/download.html',
+        controller: 'DownloadCtrl',
+        resolve: { '_initData': ['_init', function(_init) { return _init.promise(); }]}
+      })
       .when('/messages-unavailable', {
         templateUrl: 'views/pages/blank.html',
         controller: 'DownloadInfoCtrl',

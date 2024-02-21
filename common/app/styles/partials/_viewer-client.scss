@@ -291,6 +291,9 @@
 .actionButtons .actionButton.play-playlist {
   background-image: url(../images/common/svg/v3/Icon_Play-small.svg);
 }
+.actionButton .actionButton.download {
+  background-image: url(../images/common/svg/v3/Icon_Download-small.svg);
+}
 
 .bmm-zip {
   float: left;
@@ -541,4 +544,8 @@
 }
 .albumDescription.clearFix {
   margin-top: .3em;
+}
+
+.download-links a {
+  margin-right: 16px;
 }

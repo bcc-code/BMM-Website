@@ -1227,7 +1227,14 @@ angular.module('bmmLibApp')
 
   factory.getApkUrl = function(){
     return serverUrl + 'file/apk';
-  }
+  };
+
+  factory.getDownloadLinks = function() {
+    return factory.addToQueue({
+      method: "GET",
+      url: serverUrl + 'download-links'
+    })
+  };
 
   return factory;
 
