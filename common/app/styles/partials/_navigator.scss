@@ -126,6 +126,31 @@
   }
 }
 
+
+.download-button {
+  background-color: transparent;
+  padding: .5em 0;
+  text-align: left;
+  span {
+    @include bmm-transition(all, .2s);
+    font-weight: bold;
+    background-color: #03d67f;
+    background-size: .8em .8em;
+    background-position: .75em .8em;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-top: 1em;
+    padding: .5em 1.5em;
+    border-radius: 2em;
+    cursor: pointer;
+    color: #fff;//$colorForeground;
+    border: .2em solid transparent;
+  }
+  span:hover {
+    background-color: #0AB66F;
+  }
+}
+
 .playlists-private {
   margin: 0 0 1em 0;
   padding: 0;

@@ -3,11 +3,13 @@
 </div>
 
 <div ng-hide="load">
-  <p>
-    <h1>Download the BMM app</h1>
-  </p>
+  <h1 style="">Download the BMM app</h1>
 
-  <h2 style="font-size: 32px; margin-bottom: 16px">Mobile</h2>
+  <div style="text-align: center">
+    <a ng-href="{{linkForArchitecture()}}" class="download-button"><span>Download</span></a>
+  </div>
+
+  <h2 style="font-size: 26px; margin-bottom: 16px">Mobile</h2>
   <a ng-href="{{data.ios || data.i_os}}" target="_blank">
     <img src="images/common/svg/appstore_en.svg" height="63">
   </a>
@@ -16,7 +18,7 @@
     <img src="images/common/svg/google-play-badge.png" width="240">
   </a>
 
-  <h2 style="font-size: 32px; margin-bottom: 16px">Desktop</h2>
+  <h2 style="font-size: 26px; margin-bottom: 16px">Desktop</h2>
 
   <div class="download-links">
     <a ng-href="{{data.windows}}">Windows</a>
