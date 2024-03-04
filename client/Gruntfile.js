@@ -226,6 +226,9 @@ module.exports = function (grunt) {
 
     // Renames files for browser caching purposes
     rev: {
+      options: {
+        length: 9
+      },
       dist: {
         files: {
           src: [
