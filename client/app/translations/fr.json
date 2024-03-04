@@ -1,5 +1,5 @@
 {
-  "language": "Française",
+  "language": "Français",
   "general": {
     "search": "Recherche...",
     "searchResultsFor": "Résultats de la recherche pour :",
@@ -48,8 +48,8 @@
       "podcasts": "Podcasts",
       "latestTracks": "Nouvelles pistes",
       "current": "En cours de lecture",
-      "newPlaylist": "Nouvelle liste de lecture",
-      "nameOnPlaylist": "Titre de la liste de lecture"
+      "newPlaylist": "Nouvelle playlist",
+      "nameOnPlaylist": "Titre de la playlist"
     }
   },
   "page": {
@@ -58,14 +58,14 @@
       "latestVideos": "Dernières vidéos",
       "latestMusic": "Dernières musiques",
       "latestAlbums": "Derniers Albums",
-      "playlists": "Listes de lecture"
+      "playlists": "Playlists"
     },
     "music": {
       "latestMusic": "Dernières musiques",
       "artists": "Artistes",
       "fromKaare": "Fra Kåre ",
-      "mp3Source": "MP3-Kilden",
-      "childrensMp3Source": "Barna's MP3 Kilden",
+      "mp3Source": "La source MP3",
+      "childrensMp3Source": "La source MP3 des enfants",
       "instrumental": "Instrumental"
     },
     "speeches": {
@@ -113,7 +113,7 @@
     "title": "Titre",
     "song": "Chant",
     "allLanguages": "Toutes les langues",
-    "confirmPlaylistDeletion": "Êtes-vous sûr de que vouloir supprimer cette liste de lecture ?",
+    "confirmPlaylistDeletion": "Êtes-vous sûr de que vouloir supprimer cette playlist ?",
     "latestTracks": "Dernières pistes",
     "instrumental": "Instrumental",
     "by": "par"
@@ -123,7 +123,7 @@
     "next": "Suivant",
     "previous": "Précédent",
     "shufflePlaylist": "Lecture aléatoire de la liste",
-    "loopPlaylist": "Activer la répétition",
+    "loopPlaylist": "Répéter la playlist",
     "mute": "Muet",
     "maxVolume": "Volume max",
     "options": "Options",
@@ -143,7 +143,7 @@
   "downloadInfo": {
     "title": "Téléchargement des messages indisponible",
     "body": "La fonctionnalité de téléchargement des messages de BMM n'est plus disponible. Si vous avez besoin d'un message pour un usage spécifique, veuillez nous contacter et nous expliquer vos besoins.",
-    "playlistAddition": "La liste de lecture sera téléchargée sans les messages.",
+    "playlistAddition": "La playlist sera téléchargée sans les messages.",
     "albumAddition": "L'album sera téléchargé sans les messages.",
     "buttonContact": "Contact"
   }
