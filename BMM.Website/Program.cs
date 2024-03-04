@@ -48,7 +48,8 @@ app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
     {
-        if (ctx.Context.Request.Path.ToString() == "/admin/index.html")
+        var path = ctx.Context.Request.Path.ToString();
+        if (ctx.Context.Request.Path.ToString() == "/admin/index.html" || path.Contains("main.js"))
         {
             ctx.Context.Response.Headers.Append("Cache-Control", "no-store");
         }
