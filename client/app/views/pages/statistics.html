@@ -22,44 +22,44 @@
     <table class="table-element" style="width: auto">
       <tr style="background-color: lightgrey">
         <th></th>
-        <th ng-show="!data.limit_to_youth">U18</th>
-        <th ng-show="!data.limit_to_youth">19 - 25</th>
+        <th ng-show="!data.limit_to_youth">13 - 17</th>
+        <th ng-show="!data.limit_to_youth">18 - 25</th>
         <th ng-show="!data.limit_to_youth">26 - 35</th>
         <th>13 - 35</th>
       </tr>
       <tr style="color: #999">
         <td>Har brukt BMM-appen siden september</td>
-        <td ng-show="!data.limit_to_youth">{{data.has_bmm_account_percent_u18 | number : 1}}%</td>
-        <td ng-show="!data.limit_to_youth">{{data.has_bmm_account_percent19to25 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.has_bmm_account_percent13to17 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.has_bmm_account_percent18to25 | number : 1}}%</td>
         <td ng-show="!data.limit_to_youth">{{data.has_bmm_account_percent26to35 | number : 1}}%</td>
         <td>{{data.has_bmm_account_percent_youth | number : 1}}%</td>
       </tr>
       <tr>
         <td>Hørt på minst 1 episode</td>
-        <td ng-show="!data.limit_to_youth">{{data.percent_u18 | number : 1}}%</td>
-        <td ng-show="!data.limit_to_youth">{{data.percent19to25 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.percent13to17 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.percent18to25 | number : 1}}%</td>
         <td ng-show="!data.limit_to_youth">{{data.percent26to35 | number : 1}}%</td>
         <td>{{data.percent_youth | number : 1}}%</td>
       </tr>
       <tr>
         <td>Hørt på alle episoder fra forrige uken</td>
-        <td ng-show="!data.limit_to_youth">{{data.last_week_percent_u18 | number : 1}}%</td>
-        <td ng-show="!data.limit_to_youth">{{data.last_week_percent19to25 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.last_week_percent13to17 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.last_week_percent18to25 | number : 1}}%</td>
         <td ng-show="!data.limit_to_youth">{{data.last_week_percent26to35 | number : 1}}%</td>
         <td>{{data.last_week_percent_youth | number : 1}}%</td>
       </tr>
 
       <tr>
         <td>Hørt på alle episoder fra og med 12. februar</td>
-        <td ng-show="!data.limit_to_youth">{{data.since_february12_percent_u18 | number : 1}}%</td>
-        <td ng-show="!data.limit_to_youth">{{data.since_february12_percent19to25 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.since_february12_percent13to17 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.since_february12_percent18to25 | number : 1}}%</td>
         <td ng-show="!data.limit_to_youth">{{data.since_february12_percent26to35 | number : 1}}%</td>
         <td>{{data.since_february12_percent_youth | number : 1}}%</td>
       </tr>
       <tr>
         <td>Hørt på alle episoder så langt</td>
-        <td ng-show="!data.limit_to_youth">{{data.on_track_percent_u18 | number : 1}}%</td>
-        <td ng-show="!data.limit_to_youth">{{data.on_track_percent19to25 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.on_track_percent13to17 | number : 1}}%</td>
+        <td ng-show="!data.limit_to_youth">{{data.on_track_percent18to25 | number : 1}}%</td>
         <td ng-show="!data.limit_to_youth">{{data.on_track_percent26to35 | number : 1}}%</td>
         <td>{{data.on_track_percent_youth | number : 1}}%</td>
       </tr>
@@ -72,7 +72,7 @@
         Dersom du har spørsmål til hvordan tallene kan brukes, vennligst kontakt oss på <a href="mailto:support@bcc.media">support@bcc.media</a>.
       </p>
       <p>
-        Alderskategoriene er basert på alderen i begynnelsen av året. Det betyr at hvis du fyller 19 i år, regnes du med i kategorien U18.
+        Alderskategoriene er basert på alderen i begynnelsen av året. Det betyr at hvis du fyller 18 i år, regnes du med i kategorien 13-17.
         Alderskategoriene er basert på personlige brukerkontoer, og brukere som f.eks. låner foreldres innlogging vil ikke telle med i statistikken for sin aldersgruppe.
       </p>
     </div>
