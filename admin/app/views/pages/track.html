@@ -77,8 +77,19 @@
                     >
         </div>
         <div style="float: left">
-            <b>{{init.translation.page.editor.album}}</b><br>
-            <u>{{parentAlbumCurrent}}</u><br>
+            <div style="display: flex; gap: 8px; ">
+              <div>
+                <b>{{init.translation.page.editor.album}}</b><br>
+                <u>{{parentAlbumCurrent}}</u>
+              </div>
+              <div>
+                <b>Mediabanken Id</b><br>
+                <a ng-if="model.mediabanken_id" ng-href="https://vault.bcc.media/item/{{model.mediabanken_id.split('-').slice(0, 2).join('-')}}/" target="_blank">
+                  {{model.mediabanken_id}}
+                </a>
+              </div>
+            </div>
+            <br>
             <i>{{init.translation.page.editor.setNewParentAlbum}}</i>
             <select ng-change="parentAlbums = []; findParentAlbums(albumParentYear);"
                     ng-model="albumParentYear"
