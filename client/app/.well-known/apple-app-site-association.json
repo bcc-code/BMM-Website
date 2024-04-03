@@ -18,7 +18,8 @@
            { "/": "/music" },
            { "/": "/contributors" },
            { "/": "/featured" },
-           { "/": "/year-in-review" }
+           { "/": "/year-in-review" },
+           { "/": "/romans-questions"}
          ]
        }
      ]
