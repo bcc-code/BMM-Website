@@ -30,6 +30,20 @@
   }
 }
 
+header {
+
+  .banner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 1px;
+    background: #a4e16a;
+    text-align: center;
+  }
+}
+
+
 .push-messages {
   position: relative;
   background-color: $colorLightGreen;
