@@ -142,12 +142,14 @@ body {
   }
 
   .audio-enabled,
-  .video-enabled {
+  .video-enabled,
+  .track-published {
     white-space: nowrap;
   }
 
   .audio-enabled button,
-  .video-enabled button {
+  .video-enabled button,
+  .track-published button {
     float: none;
   }
 
