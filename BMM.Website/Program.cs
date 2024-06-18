@@ -1,6 +1,5 @@
 using System.Globalization;
 using BMM.Website;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,12 +13,12 @@ var indexFile = File.ReadAllText("wwwroot/index.html");
 
 var handler = (HttpContext context) =>
 {
-    if (context.Request.QueryString.ToUriComponent().Contains("force-old"))
+    if (context.Request.Host.ToUriComponent().EndsWith("bmm.brunstad.org"))
     {
-        return new HtmlResult(indexFile);
+        return Helper.Redirect();
     }
 
-    return Helper.Result();
+    return new HtmlResult(indexFile);
 };
 
 app.MapGet("/", handler);

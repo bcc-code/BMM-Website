@@ -71,7 +71,7 @@ public class RedirectResult : IResult
 
 public static class Helper
 {
-    public static IResult Result()
+    public static IResult Redirect()
     {
         return new RedirectResult();
     }
