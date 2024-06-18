@@ -1,5 +1,6 @@
 using System.Globalization;
 using BMM.Website;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,15 @@ var app = builder.Build();
 
 var indexFile = File.ReadAllText("wwwroot/index.html");
 
-var handler = () => new HtmlResult(indexFile);
+var handler = (HttpContext context) =>
+{
+    if (context.Request.QueryString.ToUriComponent().Contains("force-old"))
+    {
+        return new HtmlResult(indexFile);
+    }
+
+    return Helper.Result();
+};
 
 app.MapGet("/", handler);
 app.MapGet("index.html", handler);

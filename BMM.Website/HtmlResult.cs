@@ -1,5 +1,6 @@
 using System.Net.Mime;
 using System.Text;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BMM.Website;
 
@@ -53,5 +54,25 @@ public class HtmlResult : IResult
         httpContext.Response.ContentType = MediaTypeNames.Text.Html;
         httpContext.Response.ContentLength = Encoding.UTF8.GetByteCount(adjustedHtml);
         await httpContext.Response.WriteAsync(adjustedHtml);
+    }
+}
+
+public class RedirectResult : IResult
+{
+    public async Task ExecuteAsync(HttpContext httpContext)
+    {
+        var newUrl = $"https://bmm.bcc.media{httpContext.Request.Path}{httpContext.Request.QueryString}";
+        
+        httpContext.Response.StatusCode = StatusCodes.Status302Found;
+        httpContext.Response.Headers.Add("Location", newUrl);
+        await Task.CompletedTask;
+    }
+}
+
+public static class Helper
+{
+    public static IResult Result()
+    {
+        return new RedirectResult();
     }
 }
