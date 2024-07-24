@@ -276,12 +276,12 @@ angular.module('bmmApp')
               defer.resolve(data);
             });
           }, 1000);
-        })
+        });
       } else {
         defer.fail();
       }
       return defer.promise();
-    }
+    };
 
     $scope.contributors = {};
     $scope.$watch('contributors.interpret', function(name) {
@@ -343,7 +343,7 @@ angular.module('bmmApp')
 
     $scope.addExternalReference = function() {
       $scope.rel.externals.push({
-        type: "external"
+        type: 'external'
       });
     };
 
@@ -390,17 +390,17 @@ angular.module('bmmApp')
       };
 
       var convertLanguageToSongtreasure = function(language) {
-        if (language === "nb")
-          return "no";
-        if (language === "zxx")
-          return "no"; // use norwegian title for instrumental songs
+        if (language === 'nb')
+          return 'no';
+        if (language === 'zxx')
+          return 'no'; // use norwegian title for instrumental songs
         return language;
       }
 
-      var songbookName = songbook.name === "herrens_veier" ? "HV" : songbook.name === "mandelblomsten" ? "FMB" : songbook.name;
+      var songbookName = songbook.name === 'herrens_veier' ? 'HV' : songbook.name === 'mandelblomsten' ? 'FMB' : songbook.name;
       _api.songMetadataGet(songbookName, songbook.id)
         .fail(function(response) {
-          alert("unable to load metadata: " + response.responseText);
+          alert('unable to load metadata: ' + response.responseText);
           $rootScope.songtreasures = { };
         })
         .done(function(response) {
@@ -414,10 +414,10 @@ angular.module('bmmApp')
 
 
           $rootScope.songtreasures.lyricsAvailable = false;
-          $rootScope.songtreasures.lyricsStatus = "loading";
+          $rootScope.songtreasures.lyricsStatus = 'loading';
           _api.songLyricsGet(response.result.id, model.original_language)
             .fail(function(response){
-              $rootScope.songtreasures.lyricsStatus = "not available";
+              $rootScope.songtreasures.lyricsStatus = 'not available';
             })
             .done(function(response){
               if (response.result.content) {
@@ -425,42 +425,52 @@ angular.module('bmmApp')
                 for (var property in response.result.content) {
                   var content = response.result.content[property].content;
                   for(var i = 0; i < content.length; i++){
-                    newLyrics += content[i]+"\n";
+                    newLyrics += content[i]+'\n';
                   }
-                  newLyrics += "\n";
+                  newLyrics += '\n';
                 }
-                $rootScope.songtreasures.lyricsStatus = "available";
+                $rootScope.songtreasures.lyricsStatus = 'available';
                 $rootScope.songtreasures.lyricsAvailable = true;
                 $rootScope.songtreasures.newLyrics = newLyrics;
-                console.log("new lyrics", $rootScope.songtreasures.newLyrics);
+                console.log('new lyrics', $rootScope.songtreasures.newLyrics);
               }
               else {
-                $rootScope.songtreasures.lyricsStatus = "not available";
+                $rootScope.songtreasures.lyricsStatus = 'not available';
               }
 
             });
 
           var alternativeContributors = [];
           var melodyOrigin = null;
-          var authors = $.grep(data.participants, function(item){return item.type=="author"});
-          var composers = $.grep(data.participants, function(item){return item.type=="composer"});
+          var authors = $.grep(data.participants, function(item){return item.type==='author'});
+          var composers = $.grep(data.participants, function(item){return item.type==='composer'});
+          var ukjent = 'Ukjent';
           $rootScope.songtreasures.titles =
           $.map(model.translations, function(item) {
             return {language: item.language, current: item.title, new: data.name[convertLanguageToSongtreasure(item.language)]};
           });
-          $rootScope.songtreasures.newLyricists = $.map(authors, function(author){return author.contributor.name}).join(", ");
+          if (authors.length > 0)
+            $rootScope.songtreasures.newLyricists = $.map(authors, function(author){return author.contributor.name}).join(', ');
+          else if (data.type === 'lyrics')
+          {
+            $rootScope.songtreasures.newLyricists = ukjent;
+            alternativeContributors.push({contributor: {name: ukjent}});
+          }
           if (composers.length > 0)
-            $rootScope.songtreasures.newComposers = $.map(composers, function(composer){return composer.contributor.name}).join(", ");
+            $rootScope.songtreasures.newComposers = $.map(composers, function(composer){return composer.contributor.name}).join(', ');
           else {
-            var mOrigin = $.grep(data.origins, function(item){return item.type == "melody";});
+            var mOrigin = $.grep(data.origins, function(item){return item.type === 'melody';});
             if (mOrigin.length>0 && mOrigin[0].description.no) {
               melodyOrigin = mOrigin[0].description.no;
               $rootScope.songtreasures.newComposers = melodyOrigin;
               alternativeContributors.push({contributor: {name: melodyOrigin}});
+            } else {
+              $rootScope.songtreasures.newComposers = ukjent;
+              alternativeContributors.push({contributor: {name: ukjent}});
             }
           }
-          $rootScope.songtreasures.currentLyricists = $.map($scope.rel["lyricists"], function(l){return l.name}).join(", ");
-          $rootScope.songtreasures.currentComposers = $.map($scope.rel["composers"], function(composer){return composer.name}).join(", ");
+          $rootScope.songtreasures.currentLyricists = $.map($scope.rel.lyricists, function(l){return l.name}).join(', ');
+          $rootScope.songtreasures.currentComposers = $.map($scope.rel.composers, function(composer){return composer.name}).join(', ');
           $rootScope.songtreasures.loading = false;
 
           var contributorsLoaded = false;
@@ -471,7 +481,7 @@ angular.module('bmmApp')
             promises.push(_api.contributorSearchUnpublishedGet(contributor.contributor.name).done(function(list) {
               for(var i = 0; i < list.length; i++) {
                 var item = list[i];
-                if (item.name == contributor.contributor.name) {
+                if (item.name === contributor.contributor.name) {
                   loadedRelations[contributor.contributor.name]={
                     id: item.id,
                     name: item.name,
@@ -481,7 +491,7 @@ angular.module('bmmApp')
                 }
               }
               missingContributors.push(contributor.contributor.name);
-              console.log("contributor "+contributor.contributor.name+" is missing in BMM");
+              console.log('contributor '+contributor.contributor.name+' is missing in BMM');
             }));
           });
           $.when.apply(null, promises).then(function() {
@@ -490,11 +500,11 @@ angular.module('bmmApp')
 
           $rootScope.songtreasures.replace = function() {
             if (!contributorsLoaded) {
-              alert("unable to load contributors");
+              alert('unable to load contributors');
               return;
             }
 
-            console.log("replace", $rootScope.songtreasures);
+            console.log('replace', $rootScope.songtreasures);
 
             if ($rootScope.songtreasures.replaceTitles) {
               $.each($scope.$parent.model.translations, function (index, item) {
@@ -506,9 +516,9 @@ angular.module('bmmApp')
             }
             if ($rootScope.songtreasures.replaceLyrics && $rootScope.songtreasures.lyricsAvailable) {
               $.each($scope.$parent.model.translations, function (index, item) {
-                if (item.language == model.original_language) {
+                if (item.language === model.original_language) {
                   item.searchable_transcription = $rootScope.songtreasures.newLyrics;
-                  console.log("replaced lyrics", item.searchable_transcription);
+                  console.log('replaced lyrics', item.searchable_transcription);
                 }
               });
             }
@@ -526,7 +536,7 @@ angular.module('bmmApp')
                 var defer = $.Deferred();
                 missingPromises.push(defer.promise());
                 $scope.createContributor(name).then(function(list) {
-                  console.log("created a new contributor for "+name);
+                  console.log('created a new contributor for '+name);
                   for(var i = 0; i < list.length; i++) {
                     var item = list[i];
                     if (item.name === name) {
@@ -539,7 +549,7 @@ angular.module('bmmApp')
                       return;
                     }
                   }
-                  alert("an unexpected error occurred");
+                  alert('an unexpected error occurred');
                 });
               });
             }
@@ -547,18 +557,23 @@ angular.module('bmmApp')
             $.when.apply(null, missingPromises).then(function() {
               if ($rootScope.songtreasures.replaceComposer) {
                 if (melodyOrigin !== null)
-                  $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type: "composer"})];
+                  $scope.rel.composers = [$.extend({}, loadedRelations[melodyOrigin], {type: 'composer'})];
+                else if (composers.length === 0)
+                  $scope.rel.composers = [$.extend({}, loadedRelations[ukjent], {type: 'composer'})];
                 else
                   $scope.rel.composers = $.map(composers, function (item) {
                     var relation = loadedRelations[item.contributor.name];
-                    return $.extend({}, relation, {type: "composer"});
+                    return $.extend({}, relation, {type: 'composer'});
                   });
               }
               if ($rootScope.songtreasures.replaceLyricist) {
-                $scope.rel.lyricists = $.map(authors, function (item) {
-                  var relation = loadedRelations[item.contributor.name];
-                  return $.extend({}, relation, {type: "lyricist"});
-                });
+                if (authors.length === 0 && data.type === 'lyrics')
+                  $scope.rel.lyricists = [$.extend({}, loadedRelations[ukjent], {type: 'lyricist'})];
+                else
+                  $scope.rel.lyricists = $.map(authors, function (item) {
+                    var relation = loadedRelations[item.contributor.name];
+                    return $.extend({}, relation, {type: 'lyricist'});
+                  });
               }
               $rootScope.songtreasures = {};
             });
