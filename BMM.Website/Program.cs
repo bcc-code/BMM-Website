@@ -23,9 +23,25 @@ var handler = (HttpContext context) =>
 
 app.MapGet("/", handler);
 app.MapGet("index.html", handler);
-app.MapGet("/track/{path}", (string path) => new HtmlResult(indexFile, "/track/" + path));
+app.MapGet("/track/{path}", (string path, HttpContext context) =>
+{
+    if (context.Request.Host.ToUriComponent().EndsWith("bmm.brunstad.org"))
+    {
+        return Helper.Redirect();
+    }
+
+    return new HtmlResult(indexFile, "/track/" + path);
+});
 app.MapGet("/track/{path}/{subpath}",
-    (string path, string subpath) => new HtmlResult(indexFile, "/track/" + path + "/" + subpath));
+    (string path, string subpath, HttpContext context) =>
+    {
+        if (context.Request.Host.ToUriComponent().EndsWith("bmm.brunstad.org"))
+        {
+            return Helper.Redirect();
+        }
+
+        return new HtmlResult(indexFile, "/track/" + path + "/" + subpath);
+    });
 
 // Make sure all patterns from client/app/scripts/app.js are also in here
 app.MapGet("welcome/{*.}", handler);
