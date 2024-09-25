@@ -34,6 +34,43 @@
     }
   }
 
+  table.sideways-header {
+    width: 100%;
+    padding-right: 30px;
+
+    tbody tr {
+      background-color: #f0f0f0;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: inherit;
+    }
+    th {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(200deg);
+      min-width: 30px;
+      position: relative;
+      left: 16px;
+    }
+    th:first-child {
+      writing-mode: unset;
+      transform: unset;
+      left: unset;
+      vertical-align: bottom;
+      text-align: center;
+    }
+    th:last-child {
+      min-width: 60px;
+    }
+    td {
+      text-align: center;
+    }
+    td:first-child {
+      text-align: left;
+    }
+  }
+
   .foldbox {
     $blueHover: #44B4FF;
     $greenHover: #71BB50;

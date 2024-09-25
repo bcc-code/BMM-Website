@@ -10,15 +10,16 @@
             <input type="text" ng-model="userSearch">
         </ul>
 
-        <table style="width: 100%">
-            <tr>
-                <th>{{init.translation.page.contributors.name}}</th>
+        <table class="sideways-header" style="width: 100%">
+            <tr class="sideways-header">
+                <th style="min-width: 200px">{{init.translation.page.contributors.name}}</th>
                 <th>{{init.translation.page.users.albumManager}}</th>
                 <th>{{init.translation.page.users.trackManager}}</th>
                 <th>{{init.translation.page.users.contributorManager}}</th>
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>Playlists</th>
                 <th>Downloader</th>
+                <th>Transcriptions</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
                 <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>{{init.translation.page.users.liveManager}}</th>
@@ -45,6 +46,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_DOWNLOADER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_TRANSCRIPTION_MANAGER" ng-change="updateUser(user, true)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user, true)">
@@ -80,15 +84,16 @@
             {{init.translation.page.users.refreshList}}
         </button>
 
-        <table style="width: 100%">
-            <tr>
-                <th>{{init.translation.page.contributors.name}}</th>
+        <table class="sideways-header" style="width: 100%">
+            <tr class="sideways-header">
+                <th style="min-width: 200px">{{init.translation.page.contributors.name}}</th>
                 <th>{{init.translation.page.users.albumManager}}</th>
                 <th>{{init.translation.page.users.trackManager}}</th>
                 <th>{{init.translation.page.users.contributorManager}}</th>
                 <th>{{init.translation.page.users.podcastManager}}</th>
                 <th>Playlists</th>
                 <th>Downloader</th>
+                <th>Transcriptions</th>
                 <th>{{init.translation.page.users.notificationManager}}</th>
                 <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>{{init.translation.page.users.liveManager}}</th>
@@ -115,6 +120,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_DOWNLOADER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_TRANSCRIPTION_MANAGER" ng-change="updateUser(user)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_NOTIFICATION_MANAGER" ng-change="updateUser(user)">
