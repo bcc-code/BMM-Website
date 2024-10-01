@@ -87,6 +87,7 @@
         <table class="sideways-header" style="width: 100%">
             <tr class="sideways-header">
                 <th style="min-width: 200px">{{init.translation.page.contributors.name}}</th>
+                <th>Made admin</th>
                 <th>{{init.translation.page.users.albumManager}}</th>
                 <th>{{init.translation.page.users.trackManager}}</th>
                 <th>{{init.translation.page.users.contributorManager}}</th>
@@ -101,7 +102,10 @@
             </tr>
             <tr ng-repeat="user in users">
                 <td>
-                    {{user.id}}
+                    {{user.display_name}} ({{user.id}})
+                </td>
+                <td>
+                    {{user.made_admin_at | date:'dd.MM.yy'}}
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ALBUM_MANAGER" ng-change="updateUser(user)">
