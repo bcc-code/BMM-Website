@@ -23,7 +23,8 @@ angular.module('bmmApp')
                 ROLE_NOTIFICATION_MANAGER: false,
                 ROLE_CONTRIBUTOR_MANAGER: false,
                 ROLE_FEATURE_PREVIEW: false,
-                ROLE_LIVE_MANAGER: false
+                ROLE_LIVE_MANAGER: false,
+                ROLE_FRAKAARE_DASHBOARD: false
               };
 
               $.each(this.roles, function() {
@@ -75,20 +76,7 @@ angular.module('bmmApp')
     $scope.fetchUsers = function() {
 
       _api.userGet({
-        size: 500,
-        roles: [
-          'ROLE_ADMINISTRATOR',
-          'ROLE_ALBUM_MANAGER',
-          'ROLE_TRACK_MANAGER',
-          'ROLE_PODCAST_MANAGER',
-          'ROLE_PLAYLIST_MANAGER',
-          'ROLE_DOWNLOADER',
-          'ROLE_TRANSCRIPTION_MANAGER',
-          'ROLE_NOTIFICATION_MANAGER',
-          'ROLE_CONTRIBUTOR_MANAGER',
-          'ROLE_FEATURE_PREVIEW',
-          'ROLE_LIVE_MANAGER'
-        ]
+        size: 500
       }).done(function(users) {
         $scope.$apply(function() {
 
@@ -100,7 +88,8 @@ angular.module('bmmApp')
               ROLE_TRACK_MANAGER: false,
               ROLE_CONTRIBUTOR_MANAGER: false,
               ROLE_FEATURE_PREVIEW: false,
-              ROLE_LIVE_MANAGER: false
+              ROLE_LIVE_MANAGER: false,
+              ROLE_FRAKAARE_DASHBOARD: false
             };
 
             $.each(this.roles, function() {
