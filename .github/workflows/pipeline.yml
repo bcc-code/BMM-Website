@@ -18,7 +18,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v2
       - name: cache .npm folder
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
       - name: cache client node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-client-node-modules
         with:
@@ -37,7 +37,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-client-node-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: cache admin node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-admin-node-modules
         with:
