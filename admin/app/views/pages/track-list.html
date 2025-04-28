@@ -76,9 +76,10 @@
         <li
           style="background: white;"
           ng-repeat="translation in current.translations">
-          <div style="height: 40px" class="foldbox">
-            <h3 style="margin-left: 10px; margin-top: 10px; display: inline" ng-bind="translation.language | _languageCode"></h3>:
+          <div style="min-height: 40px; background-color: #f4f4f4" class="foldbox">
+            <h3 style="margin-left: 10px; margin-top: 10px; display: inline" ng-bind="translation.language | _languageCode"></h3>
             <input type="text" ng-model="translation.title">
+            <input type="text" style="width: 30em" ng-model="translation.description">
             <div ng-click="removeTranslation(translation)" style="float:right; margin: 2px">
               <a style="font-size: 1.7em; color: red" class="btn_remove">
                 <span class="glyphicon glyphicon-remove"></span>
