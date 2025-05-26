@@ -7,6 +7,7 @@
     <li ng-repeat="item in publishedItems" style="background-color: white;">
       <div style="height: 50px" class="foldbox">
         <h3 style="display: inline;">{{getTitle(item)}}</h3>
+
         <div ng-click="unpublishTrackList(item)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: red">
             <span class="glyphicon glyphicon-remove"></span>
@@ -22,6 +23,12 @@
         <div ng-click="go('/'+type+'s/' + item.id)" style="float:right; margin: 10px">
           <a style="font-size: 1.7em; color: black">
             <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </div>
+
+        <div ng-click="moveToTop(item)" style="float:right; margin: 10px">
+          <a style="font-size: 1.7em; color: #888888;">
+            <span class="glyphicon glyphicon-arrow-up"></span>
           </a>
         </div>
       </div>

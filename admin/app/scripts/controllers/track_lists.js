@@ -55,6 +55,12 @@ angular.module('bmmApp')
     return translation.title;
   };
 
+  $scope.moveToTop = function(item) {
+    var index = $scope.publishedItems.indexOf(item);
+    var itemToMove = $scope.publishedItems.splice(index, 1);
+    $scope.publishedItems.unshift.apply($scope.publishedItems, itemToMove);
+  }
+
   $scope.unpublishTrackList = function(item) {
     var publishedItems = $scope.publishedItems;
     var availableItems = $scope.availableItems;
