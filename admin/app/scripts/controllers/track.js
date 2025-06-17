@@ -33,6 +33,7 @@ angular.module('bmmApp')
       'exegesis',
       'video'
     ];
+    $scope.isProductionEnvironment = _api.getserverUrli().indexOf('https://bmm-api.brunstad.org') >= 0;
     $scope.replaceLyrics = false;
 
     // We have these default values hardcoded for the website as well for a nice UX

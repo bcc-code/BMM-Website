@@ -198,7 +198,13 @@
                    ng-model="edited.title"><br>
             <span ng-hide="model.id==undefined">
                 <b>{{init.translation.page.editor.uploadFile}}</b> ({{edited.language | _languageCode}})
-            </span><br>
+            </span>
+            <a target="_blank"
+               style="margin-left: 8px;"
+              ng-href="https://tools.bcc.media/upload/bmm/{{model.id}}?lang={{edited.language}}{{isProductionEnvironment?'':'&env=int'}}&title={{edited.title}}">
+              Upload via Mediabanken
+            </a>
+            <br>
             <div ng-hide="model.id==undefined" ng-controller="UploaderCtrl"
                  ng-init="initialize($parent.uploadMedia);">
 
