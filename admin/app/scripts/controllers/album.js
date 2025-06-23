@@ -374,13 +374,15 @@ angular.module('bmmApp')
         if (typeof translation[tag]!=='undefined') {
           $.each($scope.model.translations, function() {
 
+            var intl = new Intl.DateTimeFormat(this.language, {day: 'numeric', month: 'long'});
             if (typeof translation[tag][this.language]!=='undefined') {
               this.title = translation[tag][this.language];
 
-              if (tag==='Meeting') {
-                this.title+=' '+$filter('_locals')($scope.model.published_at, this.language);
-              } else {
-                this.title+=' '+$filter('date')($scope.model.published_at,'yyyy');
+              if ($scope.model.parent_id) { // Use year if it's a first level album
+                this.title+=' '+intl.format(new Date($scope.model.published_at));
+              }
+              else {
+                this.title+=' '+$filter('date')($scope.model.published_at, 'yyyy');
               }
               this.is_visible = true;
             }
