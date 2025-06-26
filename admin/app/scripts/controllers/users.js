@@ -25,7 +25,8 @@ angular.module('bmmApp')
                 ROLE_FEATURE_PREVIEW: false,
                 ROLE_LIVE_MANAGER: false,
                 ROLE_FRAKAARE_DASHBOARD: false,
-                ROLE_LYRICS_MANAGER: false
+                ROLE_LYRICS_MANAGER: false,
+                ROLE_HOME_SCREEN_MANAGER: false
               };
 
               $.each(this.roles, function() {
@@ -91,7 +92,8 @@ angular.module('bmmApp')
               ROLE_FEATURE_PREVIEW: false,
               ROLE_LIVE_MANAGER: false,
               ROLE_FRAKAARE_DASHBOARD: false,
-              ROLE_LYRICS_MANAGER: false
+              ROLE_LYRICS_MANAGER: false,
+              ROLE_HOME_SCREEN_MANAGER: false
             };
 
             $.each(this.roles, function() {
