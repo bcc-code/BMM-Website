@@ -205,7 +205,7 @@
               Upload via Mediabanken
             </a>
             <br>
-            <div ng-hide="model.id==undefined" ng-controller="UploaderCtrl"
+            <div id="upload-field" style="visibility: hidden" ng-hide="model.id==undefined" ng-controller="UploaderCtrl"
                  ng-init="initialize($parent.uploadMedia);">
 
                 <input ng-file-select type="file" accept=".mp3">
