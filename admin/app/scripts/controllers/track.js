@@ -189,7 +189,7 @@ angular.module('bmmApp')
         $scope.lyricsData = {};
     };
 
-    $scope.getAnalytics();
+    // $scope.getAnalytics();
 
     var saveModel = function() {
 
