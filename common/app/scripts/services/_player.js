@@ -103,6 +103,7 @@ angular.module('bmmLibApp')
 
   //Keyboard shortcuts
   $(document).keydown(function(e){
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     if(!$("input,textarea").is(":focus")){
       switch(e.keyCode) {
         case 32: //Space
